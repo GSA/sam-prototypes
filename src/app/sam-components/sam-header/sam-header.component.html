@@ -1,0 +1,8 @@
+<div class="sam-header">	
+	<ul>
+		<li *ngIf="!model.isSignedIn" class="align-right" (click)="model.signIn('/')">Sign In</li>
+		<li *ngIf="model.isSignedIn" class="align-right" (click)="model.signOut('/')">Sign Out</li>
+		<li><a href="/feed"><i class="fa fa-bell-o"></i>Messages</a></li>
+		<li *ngIf="model.isSignedIn"><a href="/requests"><i class="fa fa-tasks"></i>Requests</a></li>
+	</ul>
+</div>

@@ -1,0 +1,30 @@
+
+.sam-vertical-toolbar {
+
+	padding: 0;
+	margin: 0;
+
+	ul {
+	  	list-style-type: none;
+	  	padding: .2em;
+
+	  	li.sam-selected-tool {
+	  		background-color: #f1f1f1;
+	  		border: 1px solid #ccd6df;
+	  		margin-right: 0em;
+	  	}
+
+	  	li {
+			padding: 1em 0em;
+			font-size: .6em;
+			text-align: center;
+
+			div, i {
+	  			color: #323a45;
+				display: block;
+				font-weight: 300;
+			}
+		}
+	}
+
+}

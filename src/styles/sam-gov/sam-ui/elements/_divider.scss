@@ -1,0 +1,188 @@
+/*******************************
+            Divider
+*******************************/
+
+/*-------------------
+       Element
+--------------------*/
+
+$margin: 1rem 0rem;
+
+$highlightWidth: 1px;
+$highlightColor: #f1f7fb;
+
+$shadowWidth: 1px;
+$shadowColor: $highlightColor;
+
+/* Text */
+$letterSpacing: 0.05em;
+$fontWeight: bold;
+$color: $black;
+$textTransform: uppercase;
+
+/*-------------------
+       Coupling
+--------------------*/
+
+/* Icon */
+$dividerIconSize: 1rem;
+$dividerIconMargin: 0rem;
+
+
+/*******************************
+         Variations
+*******************************/
+
+/* Horizontal */
+$horizontalMargin: '';
+$horizontalDividerMargin: 1em;
+$horizontalRulerOffset: calc(-50% - #{$horizontalDividerMargin});
+
+
+/* Inverted */
+$invertedTextColor: $white;
+$invertedHighlightColor: rgba(255, 255, 255, 0.15);
+$invertedShadowColor: $borderColor;
+
+/* Section */
+$sectionMargin: 3.5rem;
+
+
+/*******************************
+            Divider 
+*******************************/
+
+.#{$prefix}.divider {
+  margin: $margin;
+
+  line-height: 1;
+  height: 0em;
+
+  font-weight: $fontWeight;
+  text-transform: $textTransform;
+  letter-spacing: $letterSpacing;
+  color: $color;
+
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/*--------------
+      Basic
+---------------*/
+
+.#{$prefix}.divider:not(.horizontal) {
+  border-top: $shadowWidth solid $shadowColor;
+  border-bottom: $highlightWidth solid $highlightColor;
+}
+
+/*--------------
+    Coupling
+---------------*/
+
+/* Allow divider between each column row */
+.#{$prefix}.grid > .column + .divider,
+.#{$prefix}.grid > .row > .column + .divider {
+  left: auto;
+}
+
+/*--------------
+   Horizontal
+---------------*/
+
+.#{$prefix}.horizontal.divider {
+  display: table;
+  white-space: nowrap;
+
+  height: auto;
+  margin: $horizontalMargin;
+  line-height: 1;
+  text-align: center;
+}
+
+.#{$prefix}.horizontal.divider:before,
+.#{$prefix}.horizontal.divider:after {
+  content: '';
+  display: table-cell;
+  position: relative;
+  top: 50%;
+  width: 50%;
+  background-repeat: no-repeat;
+}
+
+.#{$prefix}.horizontal.divider:before {
+  background-position: right $horizontalDividerMargin top 50%;
+}
+.#{$prefix}.horizontal.divider:after {
+  background-position: left $horizontalDividerMargin top 50%;
+}
+
+
+/*--------------
+      Icon
+---------------*/
+
+.#{$prefix}.divider > .icon {
+  margin: $dividerIconMargin;
+  font-size: $dividerIconSize;
+  height: 1em;
+  vertical-align: middle;
+}
+
+/*******************************
+          Variations
+*******************************/
+
+/*--------------
+    Hidden
+---------------*/
+
+.#{$prefix}.hidden.divider {
+  border-color: transparent !important;
+}
+.#{$prefix}.hidden.divider:before,
+.#{$prefix}.hidden.divider:after {
+  display: none;
+}
+
+/*--------------
+    Inverted
+---------------*/
+
+.#{$prefix}.divider.inverted,
+.#{$prefix}.horizontal.inverted.divider {
+  color: $invertedTextColor;
+}
+.#{$prefix}.divider.inverted,
+.#{$prefix}.divider.inverted:after,
+.#{$prefix}.divider.inverted:before {
+  border-top-color: $invertedShadowColor !important;
+  border-left-color: $invertedShadowColor !important;
+  border-bottom-color: $invertedHighlightColor !important;
+  border-right-color: $invertedHighlightColor !important;
+}
+
+/*--------------
+    Fitted
+---------------*/
+
+.#{$prefix}.fitted.divider {
+  margin: 0em;
+}
+
+/*--------------
+    Clearing
+---------------*/
+
+.#{$prefix}.clearing.divider {
+  clear: both;
+}
+
+/*--------------
+    Section
+---------------*/
+
+.#{$prefix}.section.divider {
+  margin-top: $sectionMargin;
+  margin-bottom: $sectionMargin;
+}

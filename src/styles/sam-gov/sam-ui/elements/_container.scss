@@ -1,0 +1,180 @@
+/*******************************
+     Variables
+*******************************/
+
+/*-------------------
+       Element
+--------------------*/
+
+$maxWidth: 100%;
+
+/* Devices */
+$mobileMinimumGutter: 0em;
+$mobileWidth: auto;
+$mobileGutter: 1em;
+
+$tabletMinimumGutter: ($emSize  * 1);
+$tabletWidth: $tabletBreakpoint - ($tabletMinimumGutter * 2) - $scrollbarWidth;
+$tabletGutter: auto;
+
+$computerMinimumGutter: ($emSize  * 1.5);
+$computerWidth: $computerBreakpoint - ($computerMinimumGutter * 2) - $scrollbarWidth;
+$computerGutter: auto;
+
+$largeMonitorMinimumGutter: ($emSize  * 2);
+$largeMonitorWidth: $largeMonitorBreakpoint - ($largeMonitorMinimumGutter * 2) - $scrollbarWidth;
+$largeMonitorGutter: auto;
+
+/* Coupling (Add Negative Margin to container size) */
+$gridGutterWidth: 2rem;
+$relaxedGridGutterWidth: 3rem;
+$veryRelaxedGridGutterWidth: 5rem;
+
+$mobileGridWidth: $mobileWidth;
+$tabletGridWidth: calc(#{$tabletWidth} + #{$gridGutterWidth});
+$computerGridWidth: calc(#{$computerWidth} + #{$gridGutterWidth});
+$largeMonitorGridWidth: calc(#{$largeMonitorWidth} + #{$gridGutterWidth});
+
+$mobileRelaxedGridWidth: $mobileWidth;
+$tabletRelaxedGridWidth: calc(#{$tabletWidth} + #{$relaxedGridGutterWidth});
+$computerRelaxedGridWidth: calc(#{$computerWidth} + #{$relaxedGridGutterWidth});
+$largeMonitorRelaxedGridWidth: calc(#{$largeMonitorWidth} + #{$relaxedGridGutterWidth});
+
+$mobileVeryRelaxedGridWidth: $mobileWidth;
+$tabletVeryRelaxedGridWidth: calc(#{$tabletWidth} + #{$veryRelaxedGridGutterWidth});
+$computerVeryRelaxedGridWidth: calc(#{$computerWidth} + #{$veryRelaxedGridGutterWidth});
+$largeMonitorVeryRelaxedGridWidth: calc(#{$largeMonitorWidth} + #{$veryRelaxedGridGutterWidth});
+
+/*-------------------
+       Types
+--------------------*/
+
+/* Text */
+$textWidth: 700px;
+$textFontFamily: $pageFont;
+$textLineHeight: 1.5;
+$textSize: $large;
+
+
+/*******************************
+        Theme
+*******************************/
+
+/* All Sizes */
+.#{$prefix}.container {
+  display: block;
+  max-width: $maxWidth !important;
+}
+
+/* Mobile */
+@media only screen and (max-width: $largestMobileScreen) {
+  .#{$prefix}.container {
+    width: $mobileWidth !important;
+    margin-left: $mobileGutter !important;
+    margin-right: $mobileGutter !important;
+  }
+  .#{$prefix}.grid.container {
+    width: $mobileGridWidth !important;
+  }
+  .#{$prefix}.relaxed.grid.container {
+    width: $mobileRelaxedGridWidth !important;
+  }
+  .#{$prefix}.very.relaxed.grid.container {
+    width: $mobileVeryRelaxedGridWidth !important;
+  }
+}
+
+/* Tablet */
+@media only screen and (min-width: $tabletBreakpoint) and (max-width: $largestTabletScreen) {
+  .#{$prefix}.container {
+    width: $tabletWidth;
+    margin-left: $tabletGutter !important;
+    margin-right: $tabletGutter !important;
+  }
+  .#{$prefix}.grid.container {
+    width: $tabletGridWidth !important;
+  }
+  .#{$prefix}.relaxed.grid.container {
+    width: $tabletRelaxedGridWidth !important;
+  }
+  .#{$prefix}.very.relaxed.grid.container {
+    width: $tabletVeryRelaxedGridWidth !important;
+  }
+}
+
+/* Small Monitor */
+@media only screen and (min-width: $computerBreakpoint) and (max-width: $largestSmallMonitor) {
+  .#{$prefix}.container {
+    width: $computerWidth;
+    margin-left: $computerGutter !important;
+    margin-right: $computerGutter !important;
+  }
+  .#{$prefix}.grid.container {
+    width: $computerGridWidth !important;
+  }
+  .#{$prefix}.relaxed.grid.container {
+    width: $computerRelaxedGridWidth !important;
+  }
+  .#{$prefix}.very.relaxed.grid.container {
+    width: $computerVeryRelaxedGridWidth !important;
+  }
+}
+
+/* Large Monitor */
+@media only screen and (min-width: $largeMonitorBreakpoint) {
+  .#{$prefix}.container {
+    width: $largeMonitorWidth;
+    margin-left: $largeMonitorGutter !important;
+    margin-right: $largeMonitorGutter !important;
+  }
+  .#{$prefix}.grid.container {
+    width: $largeMonitorGridWidth !important;
+  }
+  .#{$prefix}.relaxed.grid.container {
+    width: $largeMonitorRelaxedGridWidth !important;
+  }
+  .#{$prefix}.very.relaxed.grid.container {
+    width: $largeMonitorVeryRelaxedGridWidth !important;
+  }
+}
+
+/*******************************
+             Types
+*******************************/
+
+
+/* Text Container */
+.#{$prefix}.text.container {
+  font-family: $textFontFamily;
+  max-width: $textWidth !important;
+  line-height: $textLineHeight;
+}
+
+.#{$prefix}.text.container {
+  font-size: $textSize;
+}
+
+/* Fluid */
+.#{$prefix}.fluid.container {
+  width: 100%;
+}
+
+
+/*******************************
+           Variations
+*******************************/
+
+.#{$prefix}[class*="left aligned"].container {
+  text-align: left;
+}
+.#{$prefix}[class*="center aligned"].container {
+  text-align: center;
+}
+.#{$prefix}[class*="right aligned"].container {
+  text-align: right;
+}
+.#{$prefix}.justified.container {
+  text-align: justify;
+  hyphens: auto;
+}
+

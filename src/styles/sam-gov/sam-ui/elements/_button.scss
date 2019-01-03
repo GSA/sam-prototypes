@@ -1,0 +1,2204 @@
+/*******************************
+       Variables
+*******************************/
+
+/*-------------------
+       Element
+--------------------*/
+
+/* Button */
+$verticalMargin: 0em;
+$horizontalMargin: 0.25em;
+$backgroundColor: #E0E1E2;
+$backgroundImage: none;
+$background: $backgroundColor $backgroundImage;
+$lineHeight: 0.7em;
+
+/* Button defaults to using same height as input globally */
+$verticalPadding: $inputVerticalPadding;
+$horizontalPadding: 1.5em;
+
+/* Text */
+$textTransform: none;
+$tapColor: transparent;
+$fontFamily: $pageFont;
+$fontWeight: 600;
+// $textColor: rgba(0, 0, 0, 0.6);
+$textShadow: none;
+$invertedTextShadow: $textShadow;
+$borderRadius: $defaultBorderRadius;
+$verticalAlign: baseline;
+
+/* Internal Shadow */
+$shadowDistance: 0em;
+$shadowOffset: ($shadowDistance / 2);
+$shadowBoxShadow: 0 -$shadowDistance 0 0 $borderColor inset;
+
+/* Box Shadow */
+$borderBoxShadowColor: transparent;
+$borderBoxShadowWidth: 1px;
+$borderBoxShadow: 0px 0px 0px $borderBoxShadowWidth $borderBoxShadowColor inset;
+$boxShadow:
+  $borderBoxShadow,
+  $shadowBoxShadow
+;
+
+/* Icon */
+$iconHeight: $relativeTiny;
+$iconOpacity: 0.8;
+$iconDistance: 0.6em;
+$iconColor: '';
+$iconTransition: opacity $defaultDuration $defaultEasing;
+$iconVerticalAlign: '';
+
+$iconMargin: 0em ($iconDistance/2) -0.2em (-$iconDistance/2);
+$rightIconMargin: 0em (-$iconDistance/2) 0em $iconDistance;
+
+
+$transition:
+  opacity $defaultDuration $defaultEasing,
+  background-color $defaultDuration $defaultEasing,
+  color $defaultDuration $defaultEasing,
+  box-shadow $defaultDuration $defaultEasing,
+  background $defaultDuration $defaultEasing
+;
+/*
+$willChange: box-shadow, transform, opacity, color, background;
+*/
+$willChange: '';
+
+/*-------------------
+        Group
+--------------------*/
+
+$groupBoxShadow: none;
+$groupButtonBoxShadow: $boxShadow;
+$verticalBoxShadow: none;
+$groupButtonOffset: 0px 0px 0px 0px;
+$verticalGroupOffset: 0px 0px 0px 0px;
+
+/*-------------------
+        States
+--------------------*/
+
+/* Hovered */
+$hoverBackgroundColor: #CACBCD;
+$hoverBackgroundImage: $backgroundImage;
+$hoverBoxShadow: $boxShadow;
+$hoverColor: $hoveredTextColor;
+$iconHoverOpacity: 0.85;
+
+/* Focused */
+$focusBackgroundColor: $hoverBackgroundColor;
+$focusBackgroundImage: '';
+$focusBoxShadow: '';
+$focusColor: $hoveredTextColor;
+$iconFocusOpacity: 0.85;
+
+/* Disabled */
+$disabledBackgroundImage: none;
+$disabledBoxShadow: none;
+
+/* Pressed Down */
+$downBackgroundColor: #BABBBC;
+$downBackgroundImage: '';
+$downPressedShadow: none;
+$downBoxShadow:
+  $borderBoxShadow,
+  $downPressedShadow
+;
+$downColor: $pressedTextColor;
+
+/* Active */
+$activeBackgroundColor: #C0C1C2;
+$activeBackgroundImage: none;
+$activeColor: $selectedTextColor;
+$activeBoxShadow: $borderBoxShadow;
+
+/* Active + Hovered */
+$activeHoverBackgroundColor: $activeBackgroundColor;
+$activeHoverBackgroundImage: none;
+$activeHoverColor: $activeColor;
+$activeHoverBoxShadow: $activeBoxShadow;
+
+
+/*-------------------
+        Types
+--------------------*/
+
+/* Icon */
+$iconButtonOpacity: 0.9;
+
+/* Labeled */
+$labeledLabelFontSize: $medium;
+$labeledLabelAlign: center;
+$labeledLabelPadding: '';
+$labeledLabelFontSize: $relativeMedium;
+$labeledLabelBorderColor: $borderColor;
+$labeledLabelBorderOffset: -$borderBoxShadowWidth;
+$labeledTagLabelSize: 1.85em; /* hypotenuse of triangle */
+$labeledIconMargin: 0em;
+
+/* Labeled Icon */
+$labeledIconWidth: 1em + (1.1 * 2); //$verticalPadding = 1.1
+$labeledIconBackgroundColor: rgba(0, 0, 0, 0.05);
+$labeledIconPadding: ($horizontalPadding + $labeledIconWidth);
+$labeledIconBorder: transparent;
+$labeledIconColor: '';
+
+$labeledIconLeftShadow: -1px 0px 0px 0px $labeledIconBorder inset;
+$labeledIconRightShadow: 1px 0px 0px 0px $labeledIconBorder inset;
+
+
+/* Inverted */
+$invertedBorderSize: 2px;
+$invertedTextColor: $white;
+$invertedTextHoverColor: $hoverColor;
+$invertedGroupButtonOffset: 0px 0px 0px -($invertedBorderSize);
+$invertedVerticalGroupButtonOffset: 0px 0px -($invertedBorderSize) 0px;
+
+/* Basic */
+$basicBorderRadius: $borderRadius;
+$basicBorderSize: 1px;
+$basicTextColor: $textColor;
+$basicColoredBorderSize: 1px;
+
+$basicBackground: transparent none;
+$basicFontWeight: 600;
+$basicBorder: 1px solid $borderColor;
+$basicBoxShadow: 0px 0px 0px $basicBorderSize $borderColor inset;
+$basicTextTransform: none;
+
+/* Basic Hover */
+$basicHoverBackground: #FFFFFF;
+$basicHoverTextColor: $hoveredTextColor;
+$basicHoverBoxShadow:
+  0px 0px 0px $basicBorderSize $selectedBorderColor inset,
+  0px 0px 0px 0px $borderColor inset
+;
+/* Basic Focus */
+$basicFocusBackground: $basicHoverBackground;
+$basicFocusTextColor: $basicHoverTextColor;
+$basicFocusBoxShadow: $basicHoverBoxShadow;
+
+/* Basic Down */
+$basicDownBackground: #F8F8F8;
+$basicDownTextColor: $pressedTextColor;
+$basicDownBoxShadow:
+  0px 0px 0px $basicBorderSize rgba(0, 0, 0, 0.15) inset,
+  0px 1px 4px 0px $borderColor inset
+;
+/* Basic Active */
+$basicActiveBackground: $transparentBlack;
+$basicActiveBoxShadow: '';
+$basicActiveTextColor: $selectedTextColor;
+
+/* Basic Inverted */
+$basicInvertedBackground: transparent;
+$basicInvertedFocusBackground: transparent;
+$basicInvertedDownBackground: $transparentWhite;
+$basicInvertedActiveBackground: $transparentWhite;
+
+$basicInvertedBoxShadow: 0px 0px 0px $invertedBorderSize rgba(255, 255, 255, 0.5) inset;
+$basicInvertedHoverBoxShadow: 0px 0px 0px $invertedBorderSize rgba(255, 255, 255, 1) inset;
+$basicInvertedFocusBoxShadow: 0px 0px 0px $invertedBorderSize rgba(255, 255, 255, 1) inset;
+$basicInvertedDownBoxShadow: 0px 0px 0px $invertedBorderSize rgba(255, 255, 255, 0.9) inset;
+$basicInvertedActiveBoxShadow: 0px 0px 0px $invertedBorderSize rgba(255, 255, 255, 0.7) inset;
+
+/* Basic Group */
+$basicGroupBorder: $basicBorderSize solid $borderColor;
+$basicGroupBoxShadow: none;
+
+/*-------------------
+      Variations
+--------------------*/
+
+/* Colors */
+$coloredBackgroundImage: none;
+$coloredBoxShadow: $shadowBoxShadow;
+
+/* Colored */
+$redTextColor: $invertedTextColor;
+$redTextShadow: $invertedTextShadow;
+
+$greenTextColor: $invertedTextColor;
+$greenTextShadow: $invertedTextShadow;
+
+$blueTextColor: $invertedTextColor;
+$blueTextShadow: $invertedTextShadow;
+
+$darkBlueTextColor: $invertedTextColor;
+$darkBlueTextShadow: $invertedTextShadow;
+
+$greyTextColor: $invertedTextColor;
+$greyTextShadow: $invertedTextShadow;
+
+/* Inverted */
+$lightRedTextColor: $invertedTextColor;
+$lightBlueTextColor: $invertedTextColor;
+$lightGreyTextColor: $textColor;
+
+
+/* Ordinality */
+$primaryBackgroundImage: $coloredBackgroundImage;
+$primaryTextColor: $invertedTextColor;
+$primaryTextShadow: $invertedTextShadow;
+$primaryBoxShadow: $coloredBoxShadow;
+
+$secondaryBackgroundImage: $coloredBackgroundImage;
+$secondaryTextColor: $darkBlue;
+$secondaryTextShadow: $invertedTextShadow;
+$secondaryBoxShadow: $coloredBoxShadow;
+
+$positiveBackgroundImage: $coloredBackgroundImage;
+$positiveTextColor: $invertedTextColor;
+$positiveTextShadow: $invertedTextShadow;
+$positiveBoxShadow: $coloredBoxShadow;
+
+$negativeBackgroundImage: $coloredBackgroundImage;
+$negativeTextColor: $invertedTextColor;
+$negativeTextShadow: $invertedTextShadow;
+$negativeBoxShadow: $coloredBoxShadow;
+
+/* Compact */
+$compactVerticalPadding: (1.1 * 0.75); //$verticalPadding
+$compactHorizontalPadding: ($horizontalPadding * 0.75);
+
+/* Attached */
+$attachedOffset: -1px;
+$attachedBoxShadow: 0px 0px 0px 1px $borderColor;
+$attachedHorizontalPadding: 0.75em;
+$attachedZIndex: 2;
+
+/* Floated */
+$floatedMargin: 0.25em;
+
+/* Animated */
+$animatedVerticalAlign: middle;
+$animatedZIndex: 1;
+$animationDuration: 0.3s;
+$animationEasing: ease;
+$fadeScaleHigh: 1.5;
+$fadeScaleLow: 0.75;
+
+
+/*******************************
+            Button Theme
+*******************************/
+
+.#{$prefix}.button {
+  cursor: pointer;
+  display: inline-block;
+
+  min-height: 1em;
+
+  outline: none;
+  border: none;
+  vertical-align: $verticalAlign;
+  background: $background;
+  color: $textColor;
+
+  font-family: $fontFamily;
+
+  margin: 0em $horizontalMargin $verticalMargin 0em;
+  padding: $verticalPadding $horizontalPadding ($verticalPadding + $shadowOffset);
+
+  text-transform: $textTransform;
+  text-shadow: $textShadow;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+
+  border-radius: $borderRadius;
+  box-shadow: $boxShadow;
+
+  user-select: none;
+  transition: $transition;
+  will-change: $willChange;
+
+  -webkit-tap-highlight-color: $tapColor;
+}
+
+
+/*******************************
+            States
+*******************************/
+
+/*--------------
+      Hover
+---------------*/
+
+.#{$prefix}.button:hover {
+  background-color: $hoverBackgroundColor;
+  background-image: $hoverBackgroundImage;
+  box-shadow: $hoverBoxShadow;
+  color: $hoverColor;
+}
+
+.#{$prefix}.button:hover .icon {
+  opacity: $iconHoverOpacity;
+}
+
+/*--------------
+      Focus
+---------------*/
+
+.#{$prefix}.button:focus {
+  background-color: $focusBackgroundColor;
+  color: $focusColor;
+  background-image: $focusBackgroundImage !important;
+  box-shadow: $focusBoxShadow !important;
+}
+
+.#{$prefix}.button:focus .icon {
+  opacity: $iconFocusOpacity;
+}
+
+/*--------------
+      Down
+---------------*/
+
+.#{$prefix}.button:active,
+.#{$prefix}.active.button:active {
+  background-color: $downBackgroundColor;
+  background-image: $downBackgroundImage;
+  color: $downColor;
+  box-shadow: $downBoxShadow;
+}
+
+/*--------------
+     Active
+---------------*/
+
+.#{$prefix}.active.button {
+  background-color: $activeBackgroundColor;
+  background-image: $activeBackgroundImage;
+  box-shadow: $activeBoxShadow;
+  color: $activeColor;
+}
+.#{$prefix}.active.button:hover {
+  background-color: $activeHoverBackgroundColor;
+  background-image: $activeHoverBackgroundImage;
+  color: $activeHoverColor;
+}
+.#{$prefix}.active.button:active {
+  background-color: $activeBackgroundColor;
+  background-image: $activeBackgroundImage;
+}
+
+
+/*-------------------
+      Disabled
+--------------------*/
+
+.#{$prefix}.buttons .disabled.button,
+.#{$prefix}.disabled.button,
+.#{$prefix}.button:disabled,
+.#{$prefix}.disabled.button:hover,
+.#{$prefix}.disabled.active.button {
+  cursor: default;
+  opacity: $disabledOpacity !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  pointer-events: none !important;
+}
+
+/* Basic Group With Disabled */
+.#{$prefix}.basic.buttons .#{$prefix}.disabled.button {
+  border-color: $disabledBorderColor;
+}
+
+/*******************************
+             Types
+*******************************/
+
+/*-------------------
+       Animated
+--------------------*/
+
+.#{$prefix}.animated.button {
+  position: relative;
+  overflow: hidden;
+  padding-right: 0em !important;
+  vertical-align: $animatedVerticalAlign;
+  z-index: $animatedZIndex;
+}
+
+.#{$prefix}.animated.button .content {
+  will-change: transform, opacity;
+}
+.#{$prefix}.animated.button .visible.content {
+  position: relative;
+  margin-right: $horizontalPadding;
+}
+.#{$prefix}.animated.button .hidden.content {
+  position: absolute;
+  width: 100%;
+}
+
+/* Horizontal */
+.#{$prefix}.animated.button .visible.content,
+.#{$prefix}.animated.button .hidden.content {
+  transition: right $animationDuration $animationEasing 0s;
+}
+.#{$prefix}.animated.button .visible.content {
+  left: auto;
+  right: 0%;
+}
+.#{$prefix}.animated.button .hidden.content {
+  top: 50%;
+  left: auto;
+  right: -100%;
+  margin-top: -($lineHeight / 2);
+}
+.#{$prefix}.animated.button:focus .visible.content,
+.#{$prefix}.animated.button:hover .visible.content {
+  left: auto;
+  right: 200%;
+}
+.#{$prefix}.animated.button:focus .hidden.content,
+.#{$prefix}.animated.button:hover .hidden.content {
+  left: auto;
+  right: 0%;
+}
+
+/* Vertical */
+.#{$prefix}.vertical.animated.button .visible.content,
+.#{$prefix}.vertical.animated.button .hidden.content {
+  transition: top $animationDuration $animationEasing, transform $animationDuration $animationEasing;
+}
+.#{$prefix}.vertical.animated.button .visible.content {
+  transform: translateY(0%);
+  right: auto;
+}
+.#{$prefix}.vertical.animated.button .hidden.content {
+  top: -50%;
+  left: 0%;
+  right: auto;
+}
+.#{$prefix}.vertical.animated.button:focus .visible.content,
+.#{$prefix}.vertical.animated.button:hover .visible.content {
+  transform: translateY(200%);
+  right: auto;
+}
+.#{$prefix}.vertical.animated.button:focus .hidden.content,
+.#{$prefix}.vertical.animated.button:hover .hidden.content {
+  top: 50%;
+  right: auto;
+}
+
+/* Fade */
+.#{$prefix}.fade.animated.button .visible.content,
+.#{$prefix}.fade.animated.button .hidden.content {
+  transition: opacity $animationDuration $animationEasing, transform $animationDuration $animationEasing;
+}
+.#{$prefix}.fade.animated.button .visible.content {
+  left: auto;
+  right: auto;
+  opacity: 1;
+  transform: scale(1);
+}
+.#{$prefix}.fade.animated.button .hidden.content {
+  opacity: 0;
+  left: 0%;
+  right: auto;
+  transform: scale($fadeScaleHigh);
+}
+.#{$prefix}.fade.animated.button:focus .visible.content,
+.#{$prefix}.fade.animated.button:hover .visible.content {
+  left: auto;
+  right: auto;
+  opacity: 0;
+  transform: scale($fadeScaleLow);
+}
+.#{$prefix}.fade.animated.button:focus .hidden.content,
+.#{$prefix}.fade.animated.button:hover .hidden.content {
+  left: 0%;
+  right: auto;
+  opacity: 1;
+  transform: scale(1);
+}
+
+/*-------------------
+       Inverted
+--------------------*/
+
+.#{$prefix}.inverted.button {
+  box-shadow: 0px 0px 0px $invertedBorderSize $white inset !important;
+  background: transparent none;
+  color: $white;
+  text-shadow: none !important;
+}
+
+/* Group */
+.#{$prefix}.inverted.buttons .button {
+  margin: $invertedGroupButtonOffset;
+}
+.#{$prefix}.inverted.buttons .button:first-child {
+  margin-left: 0em;
+}
+.#{$prefix}.inverted.vertical.buttons .button {
+  margin: $invertedVerticalGroupButtonOffset;
+}
+.#{$prefix}.inverted.vertical.buttons .button:first-child {
+  margin-top: 0em;
+}
+
+/* States */
+
+/* Hover */
+.#{$prefix}.inverted.button:hover {
+  background: $white;
+  box-shadow: 0px 0px 0px $invertedBorderSize $white inset !important;
+  color: $hoverColor;
+}
+
+/* Active / Focus */
+.#{$prefix}.inverted.button:focus,
+.#{$prefix}.inverted.button.active {
+  background: $white;
+  box-shadow: 0px 0px 0px $invertedBorderSize $white inset !important;
+  color: $focusColor;
+}
+
+/* Active Focus */
+.#{$prefix}.inverted.button.active:focus {
+  background: $midWhite;
+  box-shadow: 0px 0px 0px $invertedBorderSize $midWhite inset !important;
+  color: $focusColor;
+}
+
+
+/*-------------------
+    Labeled Button
+--------------------*/
+
+.#{$prefix}.labeled.button:not(.icon) {
+  display: inline-flex;
+  flex-direction: row;
+  background: none !important;
+  padding: 0px !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.#{$prefix}.labeled.button > .button {
+  margin: 0px;
+}
+.#{$prefix}.labeled.button > .label {
+  display: flex;
+  align-items: $labeledLabelAlign;
+  margin: 0px 0px 0px $labeledLabelBorderOffset !important;
+  font-size: $labeledLabelFontSize;
+  padding: $labeledLabelPadding;
+  font-size: $labeledLabelFontSize;
+  border-color: $labeledLabelBorderColor;
+}
+
+/* Tag */
+.#{$prefix}.labeled.button > .tag.label:before {
+  width: $labeledTagLabelSize;
+  height: $labeledTagLabelSize;
+}
+
+/* Right */
+.#{$prefix}.labeled.button:not([class*="left labeled"]) > .button {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.#{$prefix}.labeled.button:not([class*="left labeled"]) > .label {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+/* Left Side */
+.#{$prefix}[class*="left labeled"].button > .button {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.#{$prefix}[class*="left labeled"].button > .label {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+/*--------------
+     Icon
+---------------*/
+
+.#{$prefix}.button > .icon:not(.button) {
+  height: $iconHeight;
+  opacity: $iconOpacity;
+  margin: $iconMargin;
+  transition: $iconTransition;
+  vertical-align: $iconVerticalAlign;
+  color: $iconColor;
+}
+
+.#{$prefix}.button:not(.icon) > .icon:not(.button):not(.dropdown) {
+  margin: $iconMargin;
+}
+.#{$prefix}.button:not(.icon) > .right.icon:not(.button):not(.dropdown) {
+  margin: $rightIconMargin;
+}
+
+/*******************************
+           Variations
+*******************************/
+
+
+/*-------------------
+       Floated
+--------------------*/
+
+.#{$prefix}[class*="left floated"].buttons,
+.#{$prefix}[class*="left floated"].button {
+  float: left;
+  margin-left: 0em;
+  margin-right: $floatedMargin;
+}
+.#{$prefix}[class*="right floated"].buttons,
+.#{$prefix}[class*="right floated"].button {
+  float: right;
+  margin-right: 0em;
+  margin-left: $floatedMargin;
+}
+
+/*-------------------
+       Compact
+--------------------*/
+
+.#{$prefix}.compact.buttons .button,
+.#{$prefix}.compact.button {
+  padding: $compactVerticalPadding $compactHorizontalPadding ( $compactVerticalPadding + $shadowOffset );
+}
+.#{$prefix}.compact.icon.buttons .button,
+.#{$prefix}.compact.icon.button {
+  padding: $compactVerticalPadding $compactVerticalPadding ( $compactVerticalPadding + $shadowOffset );
+}
+.#{$prefix}.compact.labeled.icon.buttons .button,
+.#{$prefix}.compact.labeled.icon.button {
+  padding: $compactVerticalPadding ($compactHorizontalPadding + $labeledIconWidth) ( $compactVerticalPadding + $shadowOffset );
+}
+
+/*-------------------
+        Sizes
+--------------------*/
+
+.#{$prefix}.mini.buttons .button,
+.#{$prefix}.mini.buttons .or,
+.#{$prefix}.mini.button {
+  font-size: $mini;
+}
+.#{$prefix}.tiny.buttons .button,
+.#{$prefix}.tiny.buttons .or,
+.#{$prefix}.tiny.button {
+  font-size: $tiny;
+}
+.#{$prefix}.small.buttons .button,
+.#{$prefix}.small.buttons .or,
+.#{$prefix}.small.button {
+  font-size: $small;
+}
+.#{$prefix}.buttons .button,
+.#{$prefix}.buttons .or,
+.#{$prefix}.button {
+  font-size: $medium;
+}
+.#{$prefix}.large.buttons .button,
+.#{$prefix}.large.buttons .or,
+.#{$prefix}.large.button {
+  font-size: $large;
+}
+.#{$prefix}.big.buttons .button,
+.#{$prefix}.big.buttons .or,
+.#{$prefix}.big.button {
+  font-size: $big;
+}
+.#{$prefix}.huge.buttons .button,
+.#{$prefix}.huge.buttons .or,
+.#{$prefix}.huge.button {
+  font-size: $huge;
+}
+.#{$prefix}.massive.buttons .button,
+.#{$prefix}.massive.buttons .or,
+.#{$prefix}.massive.button {
+  font-size: $massive;
+}
+
+/*--------------
+    Icon Only
+---------------*/
+
+.#{$prefix}.icon.buttons .button,
+.#{$prefix}.icon.button {
+  padding: $verticalPadding $verticalPadding ( $verticalPadding + $shadowOffset );
+}
+.#{$prefix}.icon.buttons .button > .icon,
+.#{$prefix}.icon.button > .icon {
+  opacity: $iconButtonOpacity;
+  margin: 0em !important;
+  vertical-align: top;
+}
+
+
+/*-------------------
+        Basic
+--------------------*/
+
+.#{$prefix}.basic.buttons .button,
+.#{$prefix}.basic.button {
+  background: $basicBackground !important;
+  color: $basicTextColor !important;
+  font-weight: $basicFontWeight;
+  border-radius: $basicBorderRadius;
+  text-transform: $basicTextTransform;
+  text-shadow: none !important;
+  box-shadow: $basicBoxShadow;
+}
+.#{$prefix}.basic.buttons {
+  box-shadow: $basicGroupBoxShadow;
+  border: $basicGroupBorder;
+  border-radius: $borderRadius;
+}
+.#{$prefix}.basic.buttons .button {
+  border-radius: 0em;
+}
+
+.#{$prefix}.basic.buttons .button:hover,
+.#{$prefix}.basic.button:hover {
+  background: $basicHoverBackground !important;
+  color: $basicHoverTextColor !important;
+  box-shadow: $basicHoverBoxShadow;
+}
+.#{$prefix}.basic.buttons .button:focus,
+.#{$prefix}.basic.button:focus {
+  background: $basicFocusBackground !important;
+  color: $basicFocusTextColor !important;
+  box-shadow: $basicFocusBoxShadow;
+}
+.#{$prefix}.basic.buttons .button:active,
+.#{$prefix}.basic.button:active {
+  background: $basicDownBackground !important;
+  color: $basicDownTextColor !important;
+  box-shadow: $basicDownBoxShadow;
+}
+.#{$prefix}.basic.buttons .active.button,
+.#{$prefix}.basic.active.button {
+  background: $basicActiveBackground !important;
+  box-shadow: $basicActiveBoxShadow !important;
+  color: $basicActiveTextColor;
+  box-shadow: $selectedBorderColor;
+}
+.#{$prefix}.basic.buttons .active.button:hover,
+.#{$prefix}.basic.active.button:hover {
+  background-color: $transparentBlack;
+}
+
+/* Vertical */
+.#{$prefix}.basic.buttons .button:hover {
+  box-shadow: $basicHoverBoxShadow inset;
+}
+.#{$prefix}.basic.buttons .button:active {
+  box-shadow: $basicDownBoxShadow inset;
+}
+.#{$prefix}.basic.buttons .active.button {
+  box-shadow: $selectedBorderColor inset;
+}
+
+/* Standard Basic Inverted */
+.#{$prefix}.basic.inverted.buttons .button,
+.#{$prefix}.basic.inverted.button {
+  background-color: transparent !important;
+  color: $white !important;
+  box-shadow: $basicInvertedBoxShadow !important;
+}
+.#{$prefix}.basic.inverted.buttons .button:hover,
+.#{$prefix}.basic.inverted.button:hover {
+  color: $white !important;
+  box-shadow: $basicInvertedHoverBoxShadow !important;
+}
+.#{$prefix}.basic.inverted.buttons .button:focus,
+.#{$prefix}.basic.inverted.button:focus {
+  color: $white !important;
+  box-shadow: $basicInvertedFocusBoxShadow !important;
+}
+.#{$prefix}.basic.inverted.buttons .button:active,
+.#{$prefix}.basic.inverted.button:active {
+  background-color: $transparentWhite !important;
+  color: $white !important;
+  box-shadow: $basicInvertedDownBoxShadow !important;
+}
+.#{$prefix}.basic.inverted.buttons .active.button,
+.#{$prefix}.basic.inverted.active.button {
+  background-color: $transparentWhite;
+  color: $invertedTextColor;
+  text-shadow: $invertedTextShadow;
+  box-shadow: $basicInvertedActiveBoxShadow;
+}
+.#{$prefix}.basic.inverted.buttons .active.button:hover,
+.#{$prefix}.basic.inverted.active.button:hover {
+  background-color: $transparentWhite;
+  box-shadow: $basicInvertedHoverBoxShadow !important;
+}
+
+
+/* Basic Group */
+.#{$prefix}.basic.buttons .button {
+  border-left: $basicGroupBorder;
+  box-shadow: none;
+}
+.#{$prefix}.basic.vertical.buttons .button {
+  border-left: none;
+}
+.#{$prefix}.basic.vertical.buttons .button {
+  border-left-width: 0px;
+  border-top: $basicGroupBorder;
+}
+.#{$prefix}.basic.vertical.buttons .button:first-child {
+  border-top-width: 0px;
+}
+
+
+
+/*--------------
+  Labeled Icon
+---------------*/
+
+.#{$prefix}.labeled.icon.buttons .button,
+.#{$prefix}.labeled.icon.button {
+  position: relative;
+  padding-left: $labeledIconPadding !important;
+  padding-right: $horizontalPadding !important;
+}
+
+/* Left Labeled */
+.#{$prefix}.labeled.icon.buttons > .button > .icon,
+.#{$prefix}.labeled.icon.button > .icon {
+  position: absolute;
+  height: 100%;
+  line-height: 1;
+  border-radius: 0px;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+  text-align: center;
+
+  margin: $labeledIconMargin;
+  width: $labeledIconWidth;
+  background-color: $labeledIconBackgroundColor;
+  color: $labeledIconColor;
+  box-shadow: $labeledIconLeftShadow;
+}
+
+/* Left Labeled */
+.#{$prefix}.labeled.icon.buttons > .button > .icon,
+.#{$prefix}.labeled.icon.button > .icon {
+  top: 0em;
+  left: 0em;
+}
+
+/* Right Labeled */
+.#{$prefix}[class*="right labeled"].icon.button {
+  padding-right: $labeledIconPadding !important;
+  padding-left: $horizontalPadding !important;
+}
+.#{$prefix}[class*="right labeled"].icon.button > .icon {
+  left: auto;
+  right: 0em;
+  border-radius: 0px;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+  box-shadow: $labeledIconRightShadow;
+}
+
+
+.#{$prefix}.labeled.icon.buttons > .button > .icon:before,
+.#{$prefix}.labeled.icon.button > .icon:before,
+.#{$prefix}.labeled.icon.buttons > .button > .icon:after,
+.#{$prefix}.labeled.icon.button > .icon:after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.#{$prefix}.labeled.icon.buttons .button > .icon {
+  border-radius: 0em;
+}
+.#{$prefix}.labeled.icon.buttons .button:first-child > .icon {
+  border-top-left-radius: $borderRadius;
+  border-bottom-left-radius: $borderRadius;
+}
+.#{$prefix}.labeled.icon.buttons .button:last-child > .icon {
+  border-top-right-radius: $borderRadius;
+  border-bottom-right-radius: $borderRadius;
+}
+.#{$prefix}.vertical.labeled.icon.buttons .button:first-child > .icon {
+  border-radius: 0em;
+  border-top-left-radius: $borderRadius;
+}
+.#{$prefix}.vertical.labeled.icon.buttons .button:last-child > .icon {
+  border-radius: 0em;
+  border-bottom-left-radius: $borderRadius;
+}
+
+/* Fluid Labeled */
+.#{$prefix}.fluid[class*="left labeled"].icon.button,
+.#{$prefix}.fluid[class*="right labeled"].icon.button {
+  padding-left: $horizontalPadding !important;
+  padding-right: $horizontalPadding !important;
+}
+
+
+
+
+/*--------------
+     Toggle
+---------------*/
+
+/* Toggle (Modifies active state to give affordances) */
+.#{$prefix}.toggle.buttons .active.button,
+.#{$prefix}.buttons .button.toggle.active,
+.#{$prefix}.button.toggle.active {
+  background-color: $positiveColor !important;
+  box-shadow: none !important;
+  text-shadow: $invertedTextShadow;
+  color: $invertedTextColor !important;
+}
+.#{$prefix}.button.toggle.active:hover {
+  background-color: $positiveColorHover !important;
+  text-shadow: $invertedTextShadow;
+  color: $invertedTextColor !important;
+}
+
+/*--------------
+    Circular
+---------------*/
+
+.#{$prefix}.circular.button {
+  border-radius: 10em;
+}
+.#{$prefix}.circular.button > .icon {
+  width: 1em;
+  vertical-align: baseline;
+}
+
+
+/*-------------------
+       Attached
+--------------------*/
+
+/* Singular */
+.#{$prefix}.attached.button {
+  position: relative;
+  display: block;
+  margin: 0em;
+  border-radius: 0em;
+  box-shadow: $attachedBoxShadow !important;
+}
+
+/* Top / Bottom */
+.#{$prefix}.attached.top.button {
+  border-radius: $borderRadius $borderRadius 0em 0em;
+}
+.#{$prefix}.attached.bottom.button {
+  border-radius: 0em 0em $borderRadius $borderRadius;
+}
+
+/* Left / Right */
+.#{$prefix}.left.attached.button {
+  display: inline-block;
+  border-left: none;
+  text-align: right;
+
+  padding-right: $attachedHorizontalPadding;
+  border-radius: $borderRadius 0em 0em $borderRadius;
+}
+.#{$prefix}.right.attached.button {
+  display: inline-block;
+  text-align: left;
+  padding-left: $attachedHorizontalPadding;
+  border-radius: 0em $borderRadius $borderRadius 0em;
+}
+
+/* Plural */
+.#{$prefix}.attached.buttons {
+  position: relative;
+  display: flex;
+  border-radius: 0em;
+  width: auto !important;
+  z-index: $attachedZIndex;
+  margin-left: $attachedOffset;
+  margin-right: $attachedOffset;
+}
+.#{$prefix}.attached.buttons .button {
+  margin: 0em;
+}
+.#{$prefix}.attached.buttons .button:first-child {
+  border-radius: 0em;
+}
+.#{$prefix}.attached.buttons .button:last-child {
+  border-radius: 0em;
+}
+
+/* Top / Bottom */
+.#{$prefix}[class*="top attached"].buttons {
+  margin-bottom: $attachedOffset;
+  border-radius: $borderRadius $borderRadius 0em 0em;
+}
+.#{$prefix}[class*="top attached"].buttons .button:first-child {
+  border-radius: $borderRadius 0em 0em 0em;
+}
+.#{$prefix}[class*="top attached"].buttons .button:last-child {
+  border-radius: 0em $borderRadius 0em 0em;
+}
+
+.#{$prefix}[class*="bottom attached"].buttons {
+  margin-top: $attachedOffset;
+  border-radius: 0em 0em $borderRadius $borderRadius;
+}
+.#{$prefix}[class*="bottom attached"].buttons .button:first-child {
+  border-radius: 0em 0em 0em $borderRadius;
+}
+.#{$prefix}[class*="bottom attached"].buttons .button:last-child {
+  border-radius: 0em 0em $borderRadius 0em;
+}
+
+/* Left / Right */
+.#{$prefix}[class*="left attached"].buttons {
+  display: inline-flex;
+  margin-right: 0em;
+  margin-left: $attachedOffset;
+  border-radius: 0em $borderRadius $borderRadius 0em;
+}
+.#{$prefix}[class*="left attached"].buttons .button:first-child {
+  margin-left: $attachedOffset;
+  border-radius: 0em $borderRadius 0em 0em;
+}
+.#{$prefix}[class*="left attached"].buttons .button:last-child {
+  margin-left: $attachedOffset;
+  border-radius: 0em 0em $borderRadius 0em;
+}
+
+.#{$prefix}[class*="right attached"].buttons {
+  display: inline-flex;
+  margin-left: 0em;
+  margin-right: $attachedOffset;
+  border-radius: $borderRadius 0em 0em $borderRadius;
+}
+.#{$prefix}[class*="right attached"].buttons .button:first-child {
+  margin-left: $attachedOffset;
+  border-radius: $borderRadius 0em 0em 0em;
+}
+.#{$prefix}[class*="right attached"].buttons .button:last-child {
+  margin-left: $attachedOffset;
+  border-radius: 0em 0em 0em $borderRadius;
+}
+
+/*-------------------
+        Fluid
+--------------------*/
+
+.#{$prefix}.fluid.buttons,
+.#{$prefix}.fluid.button {
+  width: 100%;
+}
+.#{$prefix}.fluid.button {
+  display: block;
+}
+
+.#{$prefix}.two.buttons {
+  width: 100%;
+}
+.#{$prefix}.two.buttons > .button {
+  width: 50%;
+}
+
+.#{$prefix}.three.buttons {
+  width: 100%;
+}
+.#{$prefix}.three.buttons > .button {
+  width: 33.333%;
+}
+
+.#{$prefix}.four.buttons {
+  width: 100%;
+}
+.#{$prefix}.four.buttons > .button {
+  width: 25%;
+}
+
+.#{$prefix}.five.buttons {
+  width: 100%;
+}
+.#{$prefix}.five.buttons > .button {
+  width: 20%;
+}
+
+.#{$prefix}.six.buttons {
+  width: 100%;
+}
+.#{$prefix}.six.buttons > .button {
+  width: 16.666%;
+}
+
+.#{$prefix}.seven.buttons {
+  width: 100%;
+}
+.#{$prefix}.seven.buttons > .button {
+  width: 14.285%;
+}
+
+.#{$prefix}.eight.buttons {
+  width: 100%;
+}
+.#{$prefix}.eight.buttons > .button {
+  width: 12.500%;
+}
+
+.#{$prefix}.nine.buttons {
+  width: 100%;
+}
+.#{$prefix}.nine.buttons > .button {
+  width: 11.11%;
+}
+
+.#{$prefix}.ten.buttons {
+  width: 100%;
+}
+.#{$prefix}.ten.buttons > .button {
+  width: 10%;
+}
+
+.#{$prefix}.eleven.buttons {
+  width: 100%;
+}
+.#{$prefix}.eleven.buttons > .button {
+  width: 9.09%;
+}
+
+.#{$prefix}.twelve.buttons {
+  width: 100%;
+}
+.#{$prefix}.twelve.buttons > .button {
+  width: 8.3333%;
+}
+
+/* Fluid Vertical Buttons */
+.#{$prefix}.fluid.vertical.buttons,
+.#{$prefix}.fluid.vertical.buttons > .button {
+  display: flex;
+  width: auto;
+}
+
+.#{$prefix}.two.vertical.buttons > .button {
+  height: 50%;
+}
+.#{$prefix}.three.vertical.buttons > .button {
+  height: 33.333%;
+}
+.#{$prefix}.four.vertical.buttons > .button {
+  height: 25%;
+}
+.#{$prefix}.five.vertical.buttons > .button {
+  height: 20%;
+}
+.#{$prefix}.six.vertical.buttons > .button {
+  height: 16.666%;
+}
+.#{$prefix}.seven.vertical.buttons > .button {
+  height: 14.285%;
+}
+.#{$prefix}.eight.vertical.buttons > .button {
+  height: 12.500%;
+}
+.#{$prefix}.nine.vertical.buttons > .button {
+  height: 11.11%;
+}
+.#{$prefix}.ten.vertical.buttons > .button {
+  height: 10%;
+}
+.#{$prefix}.eleven.vertical.buttons > .button {
+  height: 9.09%;
+}
+.#{$prefix}.twelve.vertical.buttons > .button {
+  height: 8.3333%;
+}
+
+
+/*-------------------
+       Colors
+--------------------*/
+
+/*--- Grey ---*/
+.#{$prefix}.grey.buttons .button,
+.#{$prefix}.grey.button {
+  background-color: $grey;
+  color: $greyTextColor;
+  text-shadow: $greyTextShadow;
+  background-image: $coloredBackgroundImage;
+}
+.#{$prefix}.grey.button {
+  box-shadow: $coloredBoxShadow;
+}
+.#{$prefix}.grey.buttons .button:hover,
+.#{$prefix}.grey.button:hover {
+  background-color: $greyHover;
+  color: $greyTextColor;
+  text-shadow: $greyTextShadow;
+}
+.#{$prefix}.grey.buttons .button:focus,
+.#{$prefix}.grey.button:focus {
+  background-color: $greyFocus;
+  color: $greyTextColor;
+  text-shadow: $greyTextShadow;
+}
+.#{$prefix}.grey.buttons .button:active,
+.#{$prefix}.grey.button:active {
+  background-color: $greyDown;
+  color: $greyTextColor;
+  text-shadow: $greyTextShadow;
+}
+.#{$prefix}.grey.buttons .active.button,
+.#{$prefix}.grey.buttons .active.button:active,
+.#{$prefix}.grey.active.button,
+.#{$prefix}.grey.button .active.button:active {
+  background-color: $greyActive;
+  color: $greyTextColor;
+  text-shadow: $greyTextShadow;
+}
+
+/* Basic */
+.#{$prefix}.basic.grey.buttons .button,
+.#{$prefix}.basic.grey.button {
+  box-shadow: 0px 0px 0px $basicBorderSize $grey inset !important;
+  color: $grey !important;
+}
+.#{$prefix}.basic.grey.buttons .button:hover,
+.#{$prefix}.basic.grey.button:hover {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $greyHover inset !important;
+  color: $greyHover !important;
+}
+.#{$prefix}.basic.grey.buttons .button:focus,
+.#{$prefix}.basic.grey.button:focus {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $greyFocus inset !important;
+  color: $greyHover !important;
+}
+.#{$prefix}.basic.grey.buttons .active.button,
+.#{$prefix}.basic.grey.active.button {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $greyActive inset !important;
+  color: $greyDown !important;
+}
+.#{$prefix}.basic.grey.buttons .button:active,
+.#{$prefix}.basic.grey.button:active {
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $greyDown inset !important;
+  color: $greyDown !important;
+}
+.#{$prefix}.buttons:not(.vertical) > .basic.grey.button:not(:first-child) {
+  margin-left: -$basicColoredBorderSize;
+}
+
+/* Inverted */
+.#{$prefix}.inverted.grey.buttons .button,
+.#{$prefix}.inverted.grey.button {
+  background-color: transparent;
+  box-shadow: 0px 0px 0px $invertedBorderSize $solidBorderColor inset !important;
+  color: $invertedTextColor;
+}
+.#{$prefix}.inverted.grey.buttons .button:hover,
+.#{$prefix}.inverted.grey.button:hover,
+.#{$prefix}.inverted.grey.buttons .button:focus,
+.#{$prefix}.inverted.grey.button:focus,
+.#{$prefix}.inverted.grey.buttons .button.active,
+.#{$prefix}.inverted.grey.button.active,
+.#{$prefix}.inverted.grey.buttons .button:active,
+.#{$prefix}.inverted.grey.button:active {
+  box-shadow: none !important;
+  color: $lightGreyTextColor;
+}
+.#{$prefix}.inverted.grey.buttons .button:hover,
+.#{$prefix}.inverted.grey.button:hover {
+  background-color: $lightGreyHover;
+}
+.#{$prefix}.inverted.grey.buttons .button:focus,
+.#{$prefix}.inverted.grey.button:focus {
+  background-color: $lightGreyFocus;
+}
+.#{$prefix}.inverted.grey.buttons .active.button,
+.#{$prefix}.inverted.grey.active.button {
+  background-color: $lightGreyActive;
+}
+.#{$prefix}.inverted.grey.buttons .button:active,
+.#{$prefix}.inverted.grey.button:active {
+  background-color: $lightGreyDown;
+}
+
+/* Inverted Basic */
+.#{$prefix}.inverted.grey.basic.buttons .button,
+.#{$prefix}.inverted.grey.buttons .basic.button,
+.#{$prefix}.inverted.grey.basic.button {
+  background-color: transparent;
+  box-shadow: $basicInvertedBoxShadow !important;
+  color: $white !important;
+}
+.#{$prefix}.inverted.grey.basic.buttons .button:hover,
+.#{$prefix}.inverted.grey.buttons .basic.button:hover,
+.#{$prefix}.inverted.grey.basic.button:hover {
+  box-shadow: 0px 0px 0px $invertedBorderSize $lightGreyHover inset !important;
+  color: $white !important;
+}
+.#{$prefix}.inverted.grey.basic.buttons .button:focus,
+.#{$prefix}.inverted.grey.basic.buttons .button:focus,
+.#{$prefix}.inverted.grey.basic.button:focus {
+  box-shadow: 0px 0px 0px $invertedBorderSize $lightGreyFocus inset !important;
+  color: $lightGrey !important;
+}
+.#{$prefix}.inverted.grey.basic.buttons .active.button,
+.#{$prefix}.inverted.grey.buttons .basic.active.button,
+.#{$prefix}.inverted.grey.basic.active.button {
+  box-shadow: 0px 0px 0px $invertedBorderSize $lightGreyActive inset !important;
+  color: $white !important;
+}
+.#{$prefix}.inverted.grey.basic.buttons .button:active,
+.#{$prefix}.inverted.grey.buttons .basic.button:active,
+.#{$prefix}.inverted.grey.basic.button:active {
+  box-shadow: 0px 0px 0px $invertedBorderSize $lightGreyDown inset !important;
+  color: $white !important;
+}
+
+/*--- Blue ---*/
+.#{$prefix}.blue.buttons .button,
+.#{$prefix}.blue.button {
+  background-color: $blue;
+  color: $blueTextColor;
+  text-shadow: $blueTextShadow;
+  background-image: $coloredBackgroundImage;
+}
+.#{$prefix}.blue.button {
+  box-shadow: $coloredBoxShadow;
+}
+.#{$prefix}.blue.buttons .button:hover,
+.#{$prefix}.blue.button:hover {
+  background-color: $blueHover;
+  color: $blueTextColor;
+  text-shadow: $blueTextShadow;
+}
+.#{$prefix}.blue.buttons .button:focus,
+.#{$prefix}.blue.button:focus {
+  background-color: $blueFocus;
+  color: $blueTextColor;
+  text-shadow: $blueTextShadow;
+}
+.#{$prefix}.blue.buttons .button:active,
+.#{$prefix}.blue.button:active {
+  background-color: $blueDown;
+  color: $blueTextColor;
+  text-shadow: $blueTextShadow;
+}
+.#{$prefix}.blue.buttons .active.button,
+.#{$prefix}.blue.buttons .active.button:active,
+.#{$prefix}.blue.active.button,
+.#{$prefix}.blue.button .active.button:active {
+  background-color: $blueActive;
+  color: $blueTextColor;
+  text-shadow: $blueTextShadow;
+}
+
+/*--- Dark Blue ---*/
+.#{$prefix}.dark.blue.buttons .button,
+.#{$prefix}.dark.blue.button {
+  background-color: $darkBlue;
+  color: $darkBlueTextColor;
+  text-shadow: $darkBlueTextShadow;
+  background-image: $coloredBackgroundImage;
+}
+.#{$prefix}.dark.blue.button {
+  box-shadow: $coloredBoxShadow;
+}
+.#{$prefix}.dark.blue.buttons .button:hover,
+.#{$prefix}.dark.blue.button:hover {
+  background-color: $darkBlueHover;
+  color: $darkBlueTextColor;
+  text-shadow: $darkBlueTextShadow;
+}
+.#{$prefix}.dark.blue.buttons .button:focus,
+.#{$prefix}.dark.blue.button:focus {
+  background-color: $darkBlueFocus;
+  color: $darkBlueTextColor;
+  text-shadow: $darkBlueTextShadow;
+}
+.#{$prefix}.dark.blue.buttons .button:active,
+.#{$prefix}.dark.blue.button:active {
+  background-color: $darkBlueDown;
+  color: $darkBlueTextColor;
+  text-shadow: $darkBlueTextShadow;
+}
+.#{$prefix}.dark.blue.buttons .active.button,
+.#{$prefix}.dark.blue.buttons .active.button:active,
+.#{$prefix}.dark.blue.active.button,
+.#{$prefix}.dark.blue.button .active.button:active {
+  background-color: $darkBlueActive;
+  color: $darkBlueTextColor;
+  text-shadow: $darkBlueTextShadow;
+}
+
+/* Basic */
+.#{$prefix}.basic.blue.buttons .button,
+.#{$prefix}.basic.blue.button {
+  box-shadow: 0px 0px 0px $basicBorderSize $blue inset !important;
+  color: $blue !important;
+}
+.#{$prefix}.basic.blue.buttons .button:hover,
+.#{$prefix}.basic.blue.button:hover {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $blueHover inset !important;
+  color: $blueHover !important;
+}
+.#{$prefix}.basic.blue.buttons .button:focus,
+.#{$prefix}.basic.blue.button:focus {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $blueFocus inset !important;
+  color: $blueHover !important;
+}
+.#{$prefix}.basic.blue.buttons .active.button,
+.#{$prefix}.basic.blue.active.button {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $blueActive inset !important;
+  color: $blueDown !important;
+}
+.#{$prefix}.basic.blue.buttons .button:active,
+.#{$prefix}.basic.blue.button:active {
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $blueDown inset !important;
+  color: $blueDown !important;
+}
+.#{$prefix}.buttons:not(.vertical) > .basic.blue.button:not(:first-child) {
+  margin-left: -$basicColoredBorderSize;
+}
+
+/* Inverted */
+.#{$prefix}.inverted.blue.buttons .button,
+.#{$prefix}.inverted.blue.button {
+  background-color: transparent;
+  box-shadow: 0px 0px 0px $invertedBorderSize $lightBlue inset !important;
+  color: $lightBlue;
+}
+.#{$prefix}.inverted.blue.buttons .button:hover,
+.#{$prefix}.inverted.blue.button:hover,
+.#{$prefix}.inverted.blue.buttons .button:focus,
+.#{$prefix}.inverted.blue.button:focus,
+.#{$prefix}.inverted.blue.buttons .button.active,
+.#{$prefix}.inverted.blue.button.active,
+.#{$prefix}.inverted.blue.buttons .button:active,
+.#{$prefix}.inverted.blue.button:active {
+  box-shadow: none !important;
+  color: $lightBlueTextColor;
+}
+.#{$prefix}.inverted.blue.buttons .button:hover,
+.#{$prefix}.inverted.blue.button:hover {
+  background-color: $lightBlueHover;
+}
+.#{$prefix}.inverted.blue.buttons .button:focus,
+.#{$prefix}.inverted.blue.button:focus {
+  background-color: $lightBlueFocus;
+}
+.#{$prefix}.inverted.blue.buttons .active.button,
+.#{$prefix}.inverted.blue.active.button {
+  background-color: $lightBlueActive;
+}
+.#{$prefix}.inverted.blue.buttons .button:active,
+.#{$prefix}.inverted.blue.button:active {
+  background-color: $lightBlueDown;
+}
+
+/* Inverted Basic */
+.#{$prefix}.inverted.blue.basic.buttons .button,
+.#{$prefix}.inverted.blue.buttons .basic.button,
+.#{$prefix}.inverted.blue.basic.button {
+  background-color: transparent;
+  box-shadow: $basicInvertedBoxShadow !important;
+  color: $white !important;
+}
+.#{$prefix}.inverted.blue.basic.buttons .button:hover,
+.#{$prefix}.inverted.blue.buttons .basic.button:hover,
+.#{$prefix}.inverted.blue.basic.button:hover {
+  box-shadow: 0px 0px 0px $invertedBorderSize $lightBlueHover inset !important;
+  color: $lightBlue !important;
+}
+.#{$prefix}.inverted.blue.basic.buttons .button:focus,
+.#{$prefix}.inverted.blue.basic.buttons .button:focus,
+.#{$prefix}.inverted.blue.basic.button:focus {
+  box-shadow: 0px 0px 0px $invertedBorderSize $lightBlueFocus inset !important;
+  color: $lightBlue !important;
+}
+.#{$prefix}.inverted.blue.basic.buttons .active.button,
+.#{$prefix}.inverted.blue.buttons .basic.active.button,
+.#{$prefix}.inverted.blue.basic.active.button {
+  box-shadow: 0px 0px 0px $invertedBorderSize $lightBlueActive inset !important;
+  color: $lightBlue !important;
+}
+.#{$prefix}.inverted.blue.basic.buttons .button:active,
+.#{$prefix}.inverted.blue.buttons .basic.button:active,
+.#{$prefix}.inverted.blue.basic.button:active {
+  box-shadow: 0px 0px 0px $invertedBorderSize $lightBlueDown inset !important;
+  color: $lightBlue !important;
+}
+
+/*--- Green ---*/
+.#{$prefix}.green.buttons .button,
+.#{$prefix}.green.button {
+  background-color: $green;
+  color: $greenTextColor;
+  text-shadow: $greenTextShadow;
+  background-image: $coloredBackgroundImage;
+}
+.#{$prefix}.green.button {
+  box-shadow: $coloredBoxShadow;
+}
+.#{$prefix}.green.buttons .button:hover,
+.#{$prefix}.green.button:hover {
+  background-color: $greenHover;
+  color: $greenTextColor;
+  text-shadow: $greenTextShadow;
+}
+.#{$prefix}.green.buttons .button:focus,
+.#{$prefix}.green.button:focus {
+  background-color: $greenFocus;
+  color: $greenTextColor;
+  text-shadow: $greenTextShadow;
+}
+.#{$prefix}.green.buttons .button:active,
+.#{$prefix}.green.button:active {
+  background-color: $greenDown;
+  color: $greenTextColor;
+  text-shadow: $greenTextShadow;
+}
+.#{$prefix}.green.buttons .active.button,
+.#{$prefix}.green.buttons .active.button:active,
+.#{$prefix}.green.active.button,
+.#{$prefix}.green.button .active.button:active {
+  background-color: $greenActive;
+  color: $greenTextColor;
+  text-shadow: $greenTextShadow;
+}
+
+
+/* Basic */
+.#{$prefix}.basic.green.buttons .button,
+.#{$prefix}.basic.green.button {
+  box-shadow: 0px 0px 0px $basicBorderSize $green inset !important;
+  color: $green !important;
+}
+.#{$prefix}.basic.green.buttons .button:hover,
+.#{$prefix}.basic.green.button:hover {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $greenHover inset !important;
+  color: $greenHover !important;
+}
+.#{$prefix}.basic.green.buttons .button:focus,
+.#{$prefix}.basic.green.button:focus {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $greenFocus inset !important;
+  color: $greenHover !important;
+}
+.#{$prefix}.basic.green.buttons .active.button,
+.#{$prefix}.basic.green.active.button {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $greenActive inset !important;
+  color: $greenDown !important;
+}
+.#{$prefix}.basic.green.buttons .button:active,
+.#{$prefix}.basic.green.button:active {
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $greenDown inset !important;
+  color: $greenDown !important;
+}
+.#{$prefix}.buttons:not(.vertical) > .basic.green.button:not(:first-child) {
+  margin-left: -$basicColoredBorderSize;
+}
+
+/* Inverted */
+.#{$prefix}.inverted.green.buttons .button,
+.#{$prefix}.inverted.green.button {
+  background-color: transparent;
+  box-shadow: 0px 0px 0px $invertedBorderSize $lightGreen inset !important;
+  color: $lightGreen;
+}
+.#{$prefix}.inverted.green.buttons .button:hover,
+.#{$prefix}.inverted.green.button:hover,
+.#{$prefix}.inverted.green.buttons .button:focus,
+.#{$prefix}.inverted.green.button:focus,
+.#{$prefix}.inverted.green.buttons .button.active,
+.#{$prefix}.inverted.green.button.active,
+.#{$prefix}.inverted.green.buttons .button:active,
+.#{$prefix}.inverted.green.button:active {
+  box-shadow: none !important;
+  color: $greenTextColor;
+}
+.#{$prefix}.inverted.green.buttons .button:hover,
+.#{$prefix}.inverted.green.button:hover {
+  background-color: $lightGreenHover;
+}
+.#{$prefix}.inverted.green.buttons .button:focus,
+.#{$prefix}.inverted.green.button:focus {
+  background-color: $lightGreenFocus;
+}
+.#{$prefix}.inverted.green.buttons .active.button,
+.#{$prefix}.inverted.green.active.button {
+  background-color: $lightGreenActive;
+}
+.#{$prefix}.inverted.green.buttons .button:active,
+.#{$prefix}.inverted.green.button:active {
+  background-color: $lightGreenDown;
+}
+
+/* Inverted Basic */
+.#{$prefix}.inverted.green.basic.buttons .button,
+.#{$prefix}.inverted.green.buttons .basic.button,
+.#{$prefix}.inverted.green.basic.button {
+  background-color: transparent;
+  box-shadow: $basicInvertedBoxShadow !important;
+  color: $white !important;
+}
+.#{$prefix}.inverted.green.basic.buttons .button:hover,
+.#{$prefix}.inverted.green.buttons .basic.button:hover,
+.#{$prefix}.inverted.green.basic.button:hover {
+  box-shadow: 0px 0px 0px $invertedBorderSize $lightGreenHover inset !important;
+  color: $lightGreen !important;
+}
+.#{$prefix}.inverted.green.basic.buttons .button:focus,
+.#{$prefix}.inverted.green.basic.buttons .button:focus,
+.#{$prefix}.inverted.green.basic.button:focus {
+  box-shadow: 0px 0px 0px $invertedBorderSize $lightGreenFocus inset !important;
+  color: $lightGreen !important;
+}
+.#{$prefix}.inverted.green.basic.buttons .active.button,
+.#{$prefix}.inverted.green.buttons .basic.active.button,
+.#{$prefix}.inverted.green.basic.active.button {
+  box-shadow: 0px 0px 0px $invertedBorderSize $lightGreenActive inset !important;
+  color: $lightGreen !important;
+}
+.#{$prefix}.inverted.green.basic.buttons .button:active,
+.#{$prefix}.inverted.green.buttons .basic.button:active,
+.#{$prefix}.inverted.green.basic.button:active {
+  box-shadow: 0px 0px 0px $invertedBorderSize $lightGreenDown inset !important;
+  color: $lightGreen !important;
+}
+
+
+/*--- Red ---*/
+.#{$prefix}.red.buttons .button,
+.#{$prefix}.red.button {
+  background-color: $red;
+  color: $redTextColor;
+  text-shadow: $redTextShadow;
+  background-image: $coloredBackgroundImage;
+}
+.#{$prefix}.red.button {
+  box-shadow: $coloredBoxShadow;
+}
+.#{$prefix}.red.buttons .button:hover,
+.#{$prefix}.red.button:hover {
+  background-color: $redHover;
+  color: $redTextColor;
+  text-shadow: $redTextShadow;
+}
+.#{$prefix}.red.buttons .button:focus,
+.#{$prefix}.red.button:focus {
+  background-color: $redFocus;
+  color: $redTextColor;
+  text-shadow: $redTextShadow;
+}
+.#{$prefix}.red.buttons .button:active,
+.#{$prefix}.red.button:active {
+  background-color: $redDown;
+  color: $redTextColor;
+  text-shadow: $redTextShadow;
+}
+.#{$prefix}.red.buttons .active.button,
+.#{$prefix}.red.buttons .active.button:active,
+.#{$prefix}.red.active.button,
+.#{$prefix}.red.button .active.button:active {
+  background-color: $redActive;
+  color: $redTextColor;
+  text-shadow: $redTextShadow;
+}
+
+/* Basic */
+.#{$prefix}.basic.red.buttons .button,
+.#{$prefix}.basic.red.button {
+  box-shadow: 0px 0px 0px $basicBorderSize $red inset !important;
+  color: $red !important;
+}
+.#{$prefix}.basic.red.buttons .button:hover,
+.#{$prefix}.basic.red.button:hover {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $redHover inset !important;
+  color: $redHover !important;
+}
+.#{$prefix}.basic.red.buttons .button:focus,
+.#{$prefix}.basic.red.button:focus {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $redFocus inset !important;
+  color: $redHover !important;
+}
+.#{$prefix}.basic.red.buttons .active.button,
+.#{$prefix}.basic.red.active.button {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $redActive inset !important;
+  color: $redDown !important;
+}
+.#{$prefix}.basic.red.buttons .button:active,
+.#{$prefix}.basic.red.button:active {
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $redDown inset !important;
+  color: $redDown !important;
+}
+.#{$prefix}.buttons:not(.vertical) > .basic.red.button:not(:first-child) {
+  margin-left: -$basicColoredBorderSize;
+}
+
+/* Inverted */
+.#{$prefix}.inverted.red.buttons .button,
+.#{$prefix}.inverted.red.button {
+  background-color: transparent;
+  box-shadow: 0px 0px 0px $invertedBorderSize $lightRed inset !important;
+  color: $lightRed;
+}
+.#{$prefix}.inverted.red.buttons .button:hover,
+.#{$prefix}.inverted.red.button:hover,
+.#{$prefix}.inverted.red.buttons .button:focus,
+.#{$prefix}.inverted.red.button:focus,
+.#{$prefix}.inverted.red.buttons .button.active,
+.#{$prefix}.inverted.red.button.active,
+.#{$prefix}.inverted.red.buttons .button:active,
+.#{$prefix}.inverted.red.button:active {
+  box-shadow: none !important;
+  color: $lightRedTextColor;
+}
+.#{$prefix}.inverted.red.buttons .button:hover,
+.#{$prefix}.inverted.red.button:hover {
+  background-color: $lightRedHover;
+}
+.#{$prefix}.inverted.red.buttons .button:focus,
+.#{$prefix}.inverted.red.button:focus {
+  background-color: $lightRedFocus;
+}
+.#{$prefix}.inverted.red.buttons .active.button,
+.#{$prefix}.inverted.red.active.button {
+  background-color: $lightRedActive;
+}
+.#{$prefix}.inverted.red.buttons .button:active,
+.#{$prefix}.inverted.red.button:active {
+  background-color: $lightRedDown;
+}
+
+/* Inverted Basic */
+.#{$prefix}.inverted.red.basic.buttons .button,
+.#{$prefix}.inverted.red.buttons .basic.button,
+.#{$prefix}.inverted.red.basic.button {
+  background-color: transparent;
+  box-shadow: $basicInvertedBoxShadow !important;
+  color: $white !important;
+}
+.#{$prefix}.inverted.red.basic.buttons .button:hover,
+.#{$prefix}.inverted.red.buttons .basic.button:hover,
+.#{$prefix}.inverted.red.basic.button:hover {
+  box-shadow: 0px 0px 0px $invertedBorderSize $lightRedHover inset !important;
+  color: $lightRed !important;
+}
+.#{$prefix}.inverted.red.basic.buttons .button:focus,
+.#{$prefix}.inverted.red.basic.buttons .button:focus,
+.#{$prefix}.inverted.red.basic.button:focus {
+  box-shadow: 0px 0px 0px $invertedBorderSize $lightRedFocus inset !important;
+  color: $lightRed !important;
+}
+.#{$prefix}.inverted.red.basic.buttons .active.button,
+.#{$prefix}.inverted.red.buttons .basic.active.button,
+.#{$prefix}.inverted.red.basic.active.button {
+  box-shadow: 0px 0px 0px $invertedBorderSize $lightRedActive inset !important;
+  color: $lightRed !important;
+}
+.#{$prefix}.inverted.red.basic.buttons .button:active,
+.#{$prefix}.inverted.red.buttons .basic.button:active,
+.#{$prefix}.inverted.red.basic.button:active {
+  box-shadow: 0px 0px 0px $invertedBorderSize $lightRedDown inset !important;
+  color: $lightRed !important;
+}
+
+
+/*-------------------
+       Primary
+--------------------*/
+
+/*--- Standard ---*/
+.#{$prefix}.primary.buttons .button,
+.#{$prefix}.primary.button {
+  background-color: $primaryColor;
+  color: $primaryTextColor;
+  text-shadow: $primaryTextShadow;
+  background-image: $coloredBackgroundImage;
+}
+.#{$prefix}.primary.button {
+  box-shadow: $coloredBoxShadow;
+}
+.#{$prefix}.primary.buttons .button:hover,
+.#{$prefix}.primary.button:hover {
+  background-color: $primaryColorHover;
+  color: $primaryTextColor;
+  text-shadow: $primaryTextShadow;
+}
+.#{$prefix}.primary.buttons .button:focus,
+.#{$prefix}.primary.button:focus {
+  background-color: $primaryColorFocus;
+  color: $primaryTextColor;
+  text-shadow: $primaryTextShadow;
+}
+.#{$prefix}.primary.buttons .button:active,
+.#{$prefix}.primary.button:active {
+  background-color: $primaryColorDown;
+  color: $primaryTextColor;
+  text-shadow: $primaryTextShadow;
+}
+.#{$prefix}.primary.buttons .active.button,
+.#{$prefix}.primary.buttons .active.button:active,
+.#{$prefix}.primary.active.button,
+.#{$prefix}.primary.button .active.button:active {
+  background-color: $primaryColorActive;
+  color: $primaryTextColor;
+  text-shadow: $primaryTextShadow;
+}
+
+/* Basic */
+.#{$prefix}.basic.primary.buttons .button,
+.#{$prefix}.basic.primary.button {
+  box-shadow: 0px 0px 0px $basicBorderSize $primaryColor inset !important;
+  color: $primaryColor !important;
+}
+.#{$prefix}.basic.primary.buttons .button:hover,
+.#{$prefix}.basic.primary.button:hover {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $primaryColorHover inset !important;
+  color: $primaryColorHover !important;
+}
+.#{$prefix}.basic.primary.buttons .button:focus,
+.#{$prefix}.basic.primary.button:focus {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $primaryColorFocus inset !important;
+  color: $primaryColorHover !important;
+}
+.#{$prefix}.basic.primary.buttons .active.button,
+.#{$prefix}.basic.primary.active.button {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $primaryColorActive inset !important;
+  color: $primaryColorDown !important;
+}
+.#{$prefix}.basic.primary.buttons .button:active,
+.#{$prefix}.basic.primary.button:active {
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $primaryColorDown inset !important;
+  color: $primaryColorDown !important;
+}
+.#{$prefix}.buttons:not(.vertical) > .basic.primary.button:not(:first-child) {
+  margin-left: -$basicColoredBorderSize;
+}
+
+/*-------------------
+      Secondary
+--------------------*/
+
+/* Standard */
+.#{$prefix}.secondary.buttons .button,
+.#{$prefix}.secondary.button {
+  background-color: $secondaryColor;
+  color: $secondaryTextColor;
+  text-shadow: $secondaryTextShadow;
+  background-image: $coloredBackgroundImage;
+}
+.#{$prefix}.secondary.button {
+  box-shadow: $coloredBoxShadow;
+}
+.#{$prefix}.secondary.buttons .button:hover,
+.#{$prefix}.secondary.button:hover {
+  background-color: $secondaryColorHover;
+  color: $secondaryTextColor;
+  text-shadow: $secondaryTextShadow;
+}
+.#{$prefix}.secondary.buttons .button:focus,
+.#{$prefix}.secondary.button:focus {
+  background-color: $secondaryColorFocus;
+  color: $secondaryTextColor;
+  text-shadow: $secondaryTextShadow;
+}
+.#{$prefix}.secondary.buttons .button:active,
+.#{$prefix}.secondary.button:active {
+  background-color: $secondaryColorDown;
+  color: $secondaryTextColor;
+  text-shadow: $secondaryTextShadow;
+}
+.#{$prefix}.secondary.buttons .active.button,
+.#{$prefix}.secondary.buttons .active.button:active,
+.#{$prefix}.secondary.active.button,
+.#{$prefix}.secondary.button .active.button:active {
+  background-color: $secondaryColorActive;
+  color: $secondaryTextColor;
+  text-shadow: $secondaryTextShadow;
+}
+
+/* Basic */
+.#{$prefix}.basic.secondary.buttons .button,
+.#{$prefix}.basic.secondary.button {
+  box-shadow: 0px 0px 0px $basicBorderSize $secondaryColor inset !important;
+  color: $secondaryColor !important;
+}
+.#{$prefix}.basic.secondary.buttons .button:hover,
+.#{$prefix}.basic.secondary.button:hover {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $secondaryColorHover inset !important;
+  color: $secondaryColorHover !important;
+}
+.#{$prefix}.basic.secondary.buttons .button:focus,
+.#{$prefix}.basic.secondary.button:focus {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $secondaryColorFocus inset !important;
+  color: $secondaryColorHover !important;
+}
+.#{$prefix}.basic.secondary.buttons .active.button,
+.#{$prefix}.basic.secondary.active.button {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $secondaryColorActive inset !important;
+  color: $secondaryColorDown !important;
+}
+.#{$prefix}.basic.secondary.buttons .button:active,
+.#{$prefix}.basic.secondary.button:active {
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $secondaryColorDown inset !important;
+  color: $secondaryColorDown !important;
+}
+.#{$prefix}.buttons:not(.vertical) > .basic.primary.button:not(:first-child) {
+  margin-left: -$basicColoredBorderSize;
+}
+
+/*---------------
+    Positive
+----------------*/
+
+/* Standard */
+.#{$prefix}.positive.buttons .button,
+.#{$prefix}.positive.button {
+  background-color: $positiveColor;
+  color: $positiveTextColor;
+  text-shadow: $positiveTextShadow;
+  background-image: $coloredBackgroundImage;
+}
+.#{$prefix}.positive.button {
+  box-shadow: $coloredBoxShadow;
+}
+.#{$prefix}.positive.buttons .button:hover,
+.#{$prefix}.positive.button:hover {
+  background-color: $positiveColorHover;
+  color: $positiveTextColor;
+  text-shadow: $positiveTextShadow;
+}
+.#{$prefix}.positive.buttons .button:focus,
+.#{$prefix}.positive.button:focus {
+  background-color: $positiveColorFocus;
+  color: $positiveTextColor;
+  text-shadow: $positiveTextShadow;
+}
+.#{$prefix}.positive.buttons .button:active,
+.#{$prefix}.positive.button:active {
+  background-color: $positiveColorDown;
+  color: $positiveTextColor;
+  text-shadow: $positiveTextShadow;
+}
+.#{$prefix}.positive.buttons .active.button,
+.#{$prefix}.positive.buttons .active.button:active,
+.#{$prefix}.positive.active.button,
+.#{$prefix}.positive.button .active.button:active {
+  background-color: $positiveColorActive;
+  color: $positiveTextColor;
+  text-shadow: $positiveTextShadow;
+}
+
+/* Basic */
+.#{$prefix}.basic.positive.buttons .button,
+.#{$prefix}.basic.positive.button {
+  box-shadow: 0px 0px 0px $basicBorderSize $positiveColor inset !important;
+  color: $positiveColor !important;
+}
+.#{$prefix}.basic.positive.buttons .button:hover,
+.#{$prefix}.basic.positive.button:hover {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $positiveColorHover inset !important;
+  color: $positiveColorHover !important;
+}
+.#{$prefix}.basic.positive.buttons .button:focus,
+.#{$prefix}.basic.positive.button:focus {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $positiveColorFocus inset !important;
+  color: $positiveColorHover !important;
+}
+.#{$prefix}.basic.positive.buttons .active.button,
+.#{$prefix}.basic.positive.active.button {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $positiveColorActive inset !important;
+  color: $positiveColorDown !important;
+}
+.#{$prefix}.basic.positive.buttons .button:active,
+.#{$prefix}.basic.positive.button:active {
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $positiveColorDown inset !important;
+  color: $positiveColorDown !important;
+}
+.#{$prefix}.buttons:not(.vertical) > .basic.primary.button:not(:first-child) {
+  margin-left: -$basicColoredBorderSize;
+}
+
+/*---------------
+     Negative
+----------------*/
+
+/* Standard */
+.#{$prefix}.negative.buttons .button,
+.#{$prefix}.negative.button {
+  background-color: $negativeColor;
+  color: $negativeTextColor;
+  text-shadow: $negativeTextShadow;
+  background-image: $coloredBackgroundImage;
+}
+.#{$prefix}.negative.button {
+  box-shadow: $coloredBoxShadow;
+}
+.#{$prefix}.negative.buttons .button:hover,
+.#{$prefix}.negative.button:hover {
+  background-color: $negativeColorHover;
+  color: $negativeTextColor;
+  text-shadow: $negativeTextShadow;
+}
+.#{$prefix}.negative.buttons .button:focus,
+.#{$prefix}.negative.button:focus {
+  background-color: $negativeColorFocus;
+  color: $negativeTextColor;
+  text-shadow: $negativeTextShadow;
+}
+.#{$prefix}.negative.buttons .button:active,
+.#{$prefix}.negative.button:active {
+  background-color: $negativeColorDown;
+  color: $negativeTextColor;
+  text-shadow: $negativeTextShadow;
+}
+.#{$prefix}.negative.buttons .active.button,
+.#{$prefix}.negative.buttons .active.button:active,
+.#{$prefix}.negative.active.button,
+.#{$prefix}.negative.button .active.button:active {
+  background-color: $negativeColorActive;
+  color: $negativeTextColor;
+  text-shadow: $negativeTextShadow;
+}
+
+/* Basic */
+.#{$prefix}.basic.negative.buttons .button,
+.#{$prefix}.basic.negative.button {
+  box-shadow: 0px 0px 0px $basicBorderSize $negativeColor inset !important;
+  color: $negativeColor !important;
+}
+.#{$prefix}.basic.negative.buttons .button:hover,
+.#{$prefix}.basic.negative.button:hover {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $negativeColorHover inset !important;
+  color: $negativeColorHover !important;
+}
+.#{$prefix}.basic.negative.buttons .button:focus,
+.#{$prefix}.basic.negative.button:focus {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $negativeColorFocus inset !important;
+  color: $negativeColorHover !important;
+}
+.#{$prefix}.basic.negative.buttons .active.button,
+.#{$prefix}.basic.negative.active.button {
+  background: transparent !important;
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $negativeColorActive inset !important;
+  color: $negativeColorDown !important;
+}
+.#{$prefix}.basic.negative.buttons .button:active,
+.#{$prefix}.basic.negative.button:active {
+  box-shadow: 0px 0px 0px $basicColoredBorderSize $negativeColorDown inset !important;
+  color: $negativeColorDown !important;
+}
+.#{$prefix}.buttons:not(.vertical) > .basic.primary.button:not(:first-child) {
+  margin-left: -$basicColoredBorderSize;
+}
+
+/*******************************
+            Groups
+*******************************/
+
+.#{$prefix}.buttons {
+  display: inline-flex;
+  flex-direction: row;
+  font-size: 0em;
+  vertical-align: baseline;
+  margin: $verticalMargin $horizontalMargin 0em 0em;
+}
+.#{$prefix}.buttons:not(.basic):not(.inverted) {
+  box-shadow: $groupBoxShadow;
+}
+
+/* Clearfix */
+.#{$prefix}.buttons:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* Standard Group */
+.#{$prefix}.buttons .button {
+  flex: 1 0 auto;
+  margin: 0em;
+  border-radius: 0em;
+  margin: $groupButtonOffset;
+}
+.#{$prefix}.buttons > .#{$prefix}.button:not(.basic):not(.inverted),
+.#{$prefix}.buttons:not(.basic):not(.inverted) > .button {
+  box-shadow: $groupButtonBoxShadow;
+}
+
+.#{$prefix}.buttons .button:first-child {
+  border-left: none;
+  margin-left: 0em;
+  border-top-left-radius: $borderRadius;
+  border-bottom-left-radius: $borderRadius;
+}
+.#{$prefix}.buttons .button:last-child {
+  border-top-right-radius: $borderRadius;
+  border-bottom-right-radius: $borderRadius;
+}
+
+/* Vertical  Style */
+.#{$prefix}.vertical.buttons {
+  display: inline-flex;
+  flex-direction: column;
+}
+.#{$prefix}.vertical.buttons .button {
+  display: block;
+  float: none;
+  width: 100%;
+  margin: $verticalGroupOffset;
+  box-shadow: $verticalBoxShadow;
+  border-radius: 0em;
+}
+.#{$prefix}.vertical.buttons .button:first-child {
+  border-top-left-radius: $borderRadius;
+  border-top-right-radius: $borderRadius;
+}
+.#{$prefix}.vertical.buttons .button:last-child {
+  margin-bottom: 0px;
+  border-bottom-left-radius: $borderRadius;
+  border-bottom-right-radius: $borderRadius;
+}
+.#{$prefix}.vertical.buttons .button:only-child {
+  border-radius: $borderRadius;
+}

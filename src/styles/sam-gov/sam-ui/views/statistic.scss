@@ -1,0 +1,557 @@
+/*******************************
+           Statistic
+*******************************/
+
+/*-------------------
+         View
+--------------------*/
+
+$margin: 1em 0em;
+$textAlign: center;
+$maxWidth: auto;
+
+/* Group */
+$horizontalSpacing: 1.5em;
+$rowSpacing: 2em;
+$groupMargin: 1em -$horizontalSpacing -$rowSpacing;
+
+/* Group Element */
+$elementMargin: 0em $horizontalSpacing $rowSpacing;
+$elementMaxWidth: $maxWidth;
+
+/*-------------------
+       Content
+--------------------*/
+
+/* Value */
+$valueFont: $pageFont;
+$valueFontWeight: 300;
+$valueLineHeight: 1em;
+$valueColor: $black;
+$valueTextTransform: none;
+
+/* Label */
+$labelSize: $relativeMedium;
+$topLabelDistance: 1rem;
+$bottomLabelDistance: 0.8rem;
+$labelFont: $headerFont;
+$labelFontWeight: 600;
+$labelColor: $textColor;
+$labelLineHeight: $relativeLarge;
+$labelTextTransform: none;
+
+/* Text */
+$textValueLineHeight: 1em;
+$textValueMinHeight: 2em;
+$textValueFontWeight: bold;
+
+/* Label Image */
+$imageHeight: 3rem;
+$imageVerticalAlign: baseline;
+
+/*-------------------
+      Types
+--------------------*/
+
+$horizontalGroupElementMargin: 1em 0em;
+$horizontalLabelDistance: 0.75em;
+
+/*-------------------
+      Variations
+--------------------*/
+
+/* Floated */
+$leftFloatedMargin: 0em 2em 1em 0em;
+$rightFloatedMargin: 0em 0em 1em 2em;
+
+/* Inverted */
+$invertedValueColor: $white;
+$invertedLabelColor: $invertedTextColor;
+
+/* Item Width */
+$itemGroupMargin: 0em 0em -$rowSpacing;
+$itemMargin: 0em 0em $rowSpacing;
+
+/* Size */
+$miniTextValueSize: 1rem;
+$miniValueSize: 1.5rem;
+$miniHorizontalValueSize: 1.5rem;
+
+$tinyTextValueSize: 1rem;
+$tinyValueSize: 2rem;
+$tinyHorizontalValueSize: 2rem;
+
+$smallTextValueSize: 1rem;
+$smallValueSize: 3rem;
+$smallHorizontalValueSize: 2rem;
+
+$textValueSize: 2rem;
+$valueSize: 4rem;
+$horizontalValueSize: 3rem;
+
+$largeTextValueSize: 2.5rem;
+$largeValueSize: 5rem;
+$largeHorizontalValueSize: 4rem;
+
+$hugeTextValueSize: 2.5rem;
+$hugeValueSize: 6rem;
+$hugeHorizontalValueSize: 5rem;
+
+
+
+/*******************************
+           Statistic
+*******************************/
+
+/* Standalone */
+.#{$prefix}.statistic {
+  display: inline-flex;
+  flex-direction: column;
+  margin: $margin;
+  max-width: $maxWidth;
+}
+
+.#{$prefix}.statistic + #{$prefix}.statistic {
+  margin: 0em 0em 0em $horizontalSpacing;
+}
+
+.#{$prefix}.statistic:first-child {
+  margin-top: 0em;
+}
+.#{$prefix}.statistic:last-child {
+  margin-bottom: 0em;
+}
+
+
+
+/*******************************
+            Group
+*******************************/
+
+/* Grouped */
+.#{$prefix}.statistics {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.#{$prefix}.statistics > .statistic {
+  display: inline-flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  margin: $elementMargin;
+  max-width: $elementMaxWidth;
+}
+.#{$prefix}.statistics {
+  display: flex;
+  margin: $groupMargin;
+}
+
+/* Clearing */
+.#{$prefix}.statistics:after {
+  display: block;
+  content: ' ';
+  height: 0px;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.#{$prefix}.statistics:first-child {
+  margin-top: 0em;
+}
+.#{$prefix}.statistics:last-child {
+  margin-bottom: 0em;
+}
+
+
+/*******************************
+            Content
+*******************************/
+
+
+/*--------------
+      Value
+---------------*/
+
+.#{$prefix}.statistics .statistic > .value,
+.#{$prefix}.statistic > .value {
+  font-family: $valueFont;
+  font-size: $valueSize;
+  font-weight: $valueFontWeight;
+  line-height: $valueLineHeight;
+  color: $valueColor;
+  text-transform: $valueTextTransform;
+  text-align: $textAlign;
+}
+
+/*--------------
+     Label
+---------------*/
+
+.#{$prefix}.statistics .statistic > .label,
+.#{$prefix}.statistic > .label {
+  font-family: $labelFont;
+  font-size: $labelSize;
+  font-weight: $labelFontWeight;
+  color: $labelColor;
+  text-transform: $labelTextTransform;
+  text-align: $textAlign;
+  line-height: $labelLineHeight;
+}
+
+/* Top Label */
+.#{$prefix}.statistics .statistic > .label ~ .value,
+.#{$prefix}.statistic > .label ~ .value {
+  margin-top: $topLabelDistance;
+}
+
+/* Bottom Label */
+.#{$prefix}.statistics .statistic > .value ~ .label,
+.#{$prefix}.statistic > .value ~ .label {
+  margin-top: $bottomLabelDistance;
+}
+
+
+
+/*******************************
+             Types
+*******************************/
+
+/*--------------
+   Icon Value
+---------------*/
+
+.#{$prefix}.statistics .statistic > .value .icon,
+.#{$prefix}.statistic > .value .icon {
+  opacity: 1;
+  width: auto;
+  margin: 0em;
+}
+
+/*--------------
+   Text Value
+---------------*/
+
+.#{$prefix}.statistics .statistic > .text.value,
+.#{$prefix}.statistic > .text.value {
+  line-height: $textValueLineHeight;
+  min-height: $textValueMinHeight;
+  font-weight: $textValueFontWeight;
+  text-align: center;
+}
+.#{$prefix}.statistics .statistic > .text.value + .label,
+.#{$prefix}.statistic > .text.value + .label {
+  text-align: center;
+}
+
+/*--------------
+   Image Value
+---------------*/
+
+.#{$prefix}.statistics .statistic > .value img,
+.#{$prefix}.statistic > .value img {
+  max-height: $imageHeight;
+  vertical-align: $imageVerticalAlign;
+}
+
+
+
+/*******************************
+            Variations
+*******************************/
+
+
+/*--------------
+      Count
+---------------*/
+
+
+.#{$prefix}.ten.statistics {
+  margin: $itemGroupMargin;
+}
+.#{$prefix}.ten.statistics .statistic {
+  min-width: $tenColumn;
+  margin: $itemMargin;
+}
+
+.#{$prefix}.nine.statistics {
+  margin: $itemGroupMargin;
+}
+.#{$prefix}.nine.statistics .statistic {
+  min-width: $nineColumn;
+  margin: $itemMargin;
+}
+
+.#{$prefix}.eight.statistics {
+  margin: $itemGroupMargin;
+}
+.#{$prefix}.eight.statistics .statistic {
+  min-width: $eightColumn;
+  margin: $itemMargin;
+}
+
+.#{$prefix}.seven.statistics {
+  margin: $itemGroupMargin;
+}
+.#{$prefix}.seven.statistics .statistic {
+  min-width: $sevenColumn;
+  margin: $itemMargin;
+}
+
+.#{$prefix}.six.statistics {
+  margin: $itemGroupMargin;
+}
+.#{$prefix}.six.statistics .statistic {
+  min-width: $sixColumn;
+  margin: $itemMargin;
+}
+
+.#{$prefix}.five.statistics {
+  margin: $itemGroupMargin;
+}
+.#{$prefix}.five.statistics .statistic {
+  min-width: $fiveColumn;
+  margin: $itemMargin;
+}
+
+.#{$prefix}.four.statistics {
+  margin: $itemGroupMargin;
+}
+.#{$prefix}.four.statistics .statistic {
+  min-width: $fourColumn;
+  margin: $itemMargin;
+}
+
+.#{$prefix}.three.statistics {
+  margin: $itemGroupMargin;
+}
+.#{$prefix}.three.statistics .statistic {
+  min-width: $threeColumn;
+  margin: $itemMargin;
+}
+
+.#{$prefix}.two.statistics {
+  margin: $itemGroupMargin;
+}
+.#{$prefix}.two.statistics .statistic {
+  min-width: $twoColumn;
+  margin: $itemMargin;
+}
+
+.#{$prefix}.one.statistics {
+  margin: $itemGroupMargin;
+}
+.#{$prefix}.one.statistics .statistic {
+  min-width: $oneColumn;
+  margin: $itemMargin;
+}
+
+
+
+
+/*--------------
+   Horizontal
+---------------*/
+
+.#{$prefix}.horizontal.statistic {
+  flex-direction: row;
+  align-items: center;
+}
+.#{$prefix}.horizontal.statistics {
+  flex-direction: column;
+  margin: 0em;
+  max-width: none;
+}
+.#{$prefix}.horizontal.statistics .statistic {
+  flex-direction: row;
+  align-items: center;
+  max-width: none;
+  margin: $horizontalGroupElementMargin;
+}
+
+.#{$prefix}.horizontal.statistic > .text.value,
+.#{$prefix}.horizontal.statistics > .statistic > .text.value {
+  min-height: 0em !important;
+}
+.#{$prefix}.horizontal.statistics .statistic > .value .icon,
+.#{$prefix}.horizontal.statistic > .value .icon {
+  width: 1.18em //$iconWidth;
+}
+
+.#{$prefix}.horizontal.statistics .statistic > .value,
+.#{$prefix}.horizontal.statistic > .value {
+  display: inline-block;
+  vertical-align: middle;
+}
+.#{$prefix}.horizontal.statistics .statistic > .label,
+.#{$prefix}.horizontal.statistic > .label {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0em 0em 0em $horizontalLabelDistance;
+}
+
+/*--------------
+     Colors
+---------------*/
+
+.#{$prefix}.red.statistics .statistic > .value,
+.#{$prefix}.statistics .red.statistic > .value,
+.#{$prefix}.red.statistic > .value {
+  color: $red;
+}
+.#{$prefix}.green.statistics .statistic > .value,
+.#{$prefix}.statistics .green.statistic > .value,
+.#{$prefix}.green.statistic > .value {
+  color: $green;
+}
+.#{$prefix}.blue.statistics .statistic > .value,
+.#{$prefix}.statistics .blue.statistic > .value,
+.#{$prefix}.blue.statistic > .value {
+  color: $blue;
+}
+.#{$prefix}.grey.statistics .statistic > .value,
+.#{$prefix}.statistics .grey.statistic > .value,
+.#{$prefix}.grey.statistic > .value {
+  color: $grey;
+}
+
+/*--------------
+    Inverted
+---------------*/
+
+.#{$prefix}.inverted.statistics .statistic > .value,
+.#{$prefix}.inverted.statistic .value {
+  color: $invertedValueColor;
+}
+.#{$prefix}.inverted.statistics .statistic > .label,
+.#{$prefix}.inverted.statistic .label {
+  color: $invertedLabelColor;
+}
+
+.#{$prefix}.inverted.red.statistics .statistic > .value,
+.#{$prefix}.statistics .inverted.red.statistic > .value,
+.#{$prefix}.inverted.red.statistic > .value {
+  color: $lightRed;
+}
+.#{$prefix}.inverted.green.statistics .statistic > .value,
+.#{$prefix}.statistics .inverted.green.statistic > .value,
+.#{$prefix}.inverted.green.statistic > .value {
+  color: $lightGreen;
+}
+.#{$prefix}.inverted.blue.statistics .statistic > .value,
+.#{$prefix}.statistics .inverted.blue.statistic > .value,
+.#{$prefix}.inverted.blue.statistic > .value {
+  color: $lightBlue;
+}
+.#{$prefix}.inverted.grey.statistics .statistic > .value,
+.#{$prefix}.statistics .inverted.grey.statistic > .value,
+.#{$prefix}.inverted.grey.statistic > .value {
+  color: $lightGrey;
+}
+
+/*--------------
+    Floated
+---------------*/
+
+.#{$prefix}[class*="left floated"].statistic {
+  float: left;
+  margin: $leftFloatedMargin;
+}
+.#{$prefix}[class*="right floated"].statistic {
+  float: right;
+  margin: $rightFloatedMargin;
+}
+.#{$prefix}.floated.statistic:last-child {
+  margin-bottom: 0em;
+}
+
+
+/*--------------
+     Sizes
+---------------*/
+
+
+/* Mini */
+.#{$prefix}.mini.statistics .statistic > .value,
+.#{$prefix}.mini.statistic > .value {
+  font-size: $miniValueSize !important;
+}
+.#{$prefix}.mini.horizontal.statistics .statistic > .value,
+.#{$prefix}.mini.horizontal.statistic > .value {
+  font-size: $miniHorizontalValueSize !important;
+}
+.#{$prefix}.mini.statistics .statistic > .text.value,
+.#{$prefix}.mini.statistic > .text.value {
+  font-size: $miniTextValueSize !important;
+}
+
+
+/* Tiny */
+.#{$prefix}.tiny.statistics .statistic > .value,
+.#{$prefix}.tiny.statistic > .value {
+  font-size: $tinyValueSize !important;
+}
+.#{$prefix}.tiny.horizontal.statistics .statistic > .value,
+.#{$prefix}.tiny.horizontal.statistic > .value {
+  font-size: $tinyHorizontalValueSize !important;
+}
+.#{$prefix}.tiny.statistics .statistic > .text.value,
+.#{$prefix}.tiny.statistic > .text.value {
+  font-size: $tinyTextValueSize !important;
+}
+
+/* Small */
+.#{$prefix}.small.statistics .statistic > .value,
+.#{$prefix}.small.statistic > .value {
+  font-size: $smallValueSize !important;
+}
+.#{$prefix}.small.horizontal.statistics .statistic > .value,
+.#{$prefix}.small.horizontal.statistic > .value {
+  font-size: $smallHorizontalValueSize !important;
+}
+.#{$prefix}.small.statistics .statistic > .text.value,
+.#{$prefix}.small.statistic > .text.value {
+  font-size: $smallTextValueSize !important;
+}
+
+/* Medium */
+.#{$prefix}.statistics .statistic > .value,
+.#{$prefix}.statistic > .value {
+  font-size: $valueSize !important;
+}
+.#{$prefix}.horizontal.statistics .statistic > .value,
+.#{$prefix}.horizontal.statistic > .value {
+  font-size: $horizontalValueSize !important;
+}
+.#{$prefix}.statistics .statistic > .text.value,
+.#{$prefix}.statistic > .text.value {
+  font-size: $textValueSize !important;
+}
+
+/* Large */
+.#{$prefix}.large.statistics .statistic > .value,
+.#{$prefix}.large.statistic > .value {
+  font-size: $largeValueSize !important;
+}
+.#{$prefix}.large.horizontal.statistics .statistic > .value,
+.#{$prefix}.large.horizontal.statistic > .value {
+  font-size: $largeHorizontalValueSize !important;
+}
+.#{$prefix}.large.statistics .statistic > .text.value,
+.#{$prefix}.large.statistic > .text.value {
+  font-size: $largeTextValueSize !important;
+}
+
+/* Huge */
+.#{$prefix}.huge.statistics .statistic > .value,
+.#{$prefix}.huge.statistic > .value {
+  font-size: $hugeValueSize !important;
+}
+.#{$prefix}.huge.horizontal.statistics .statistic > .value,
+.#{$prefix}.huge.horizontal.statistic > .value {
+  font-size: $hugeHorizontalValueSize !important;
+}
+.#{$prefix}.huge.statistics .statistic > .text.value,
+.#{$prefix}.huge.statistic > .text.value {
+  font-size: $hugeTextValueSize !important;
+}

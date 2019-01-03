@@ -1,0 +1,112 @@
+/*******************************
+         Global
+*******************************/
+
+/*-------------------
+       Helpers
+--------------------*/
+/*
+  USWDS 0.13.3 Vendor scss files moved to the top
+  of this file to be used by all files
+*/
+@import 'vendor/uswds/lib/bourbon';
+@import 'vendor/uswds/lib/neat';
+
+/*-------------------
+     Variables
+--------------------*/
+// Internal variable should be declared before uswds
+// variable to take higher precendence
+@import 'variables';
+@import 'layout';
+
+/*-------------------
+       Reset
+--------------------*/
+@import 'vendor/uswds/lib/normalize';
+
+/*-------------------
+       Icons
+--------------------*/
+@import '~font-awesome/scss/font-awesome';
+
+
+/*******************************
+        USWDS 0.13.3
+*******************************/
+
+// Core -------------- //
+
+@import 'vendor/uswds/core/variables';
+/*
+  Variables moved here to avoid
+  overriding USWDS grid variables
+*/
+// Store current variable values
+$current-small: $small;
+$current-medium: $medium;
+$current-large: $large;
+// Override current variables values for grid only
+$small: new-breakpoint(min-width $small-screen $grid-columns-small);
+$medium: new-breakpoint(min-width $medium-screen $grid-columns-medium);
+$large: new-breakpoint(min-width $large-screen $grid-columns-large);
+@import 'vendor/uswds/core/grid';
+// Restore variables to values defined in variables.scss
+$small: $current-small;
+$medium: $current-medium;
+$large: $current-large;
+
+@import 'vendor/uswds/core/utilities';
+
+// Elements -------------- //
+
+@import 'vendor/uswds/elements/buttons';
+@import 'sam-ui/vendor/uswds'; // modified USWDS Input file
+@import 'vendor/uswds/elements/labels';
+
+
+// Components -------------- //
+
+@import 'vendor/uswds/components/accordions';
+@import 'vendor/uswds/components/alerts';
+@import 'vendor/uswds/components/forms';
+@import 'vendor/uswds/components/sidenav';
+@import 'vendor/uswds/components/search';
+
+
+/*******************************
+        SAM UI
+*******************************/
+
+/* Global */
+@import 'sam-ui/globals/fonts';
+@import 'sam-ui/globals/site';
+
+/* Elements */
+@import 'sam-ui/elements/button';
+@import 'sam-ui/elements/container';
+@import 'sam-ui/elements/divider';
+@import 'sam-ui/elements/header';
+@import 'sam-ui/elements/image';
+@import 'sam-ui/elements/label';
+@import 'sam-ui/elements/list';
+@import 'sam-ui/elements/segment';
+@import 'sam-ui/elements/step';
+
+/* Collections */
+@import 'sam-ui/collections/grid';
+@import 'sam-ui/collections/table';
+@import 'sam-ui/collections/menu';
+@import 'sam-ui/collections/message';
+
+/* Views */
+@import 'sam-ui/views/statistic';
+@import 'sam-ui/views/item';
+@import 'sam-ui/views/feed';
+
+/* Vendor Extentions */
+@import 'vendor/font-awesome/font-awesome';
+
+/* Font Awesome Fallback when fonts are blocked */
+@import 'font-awesome-fallback';
+

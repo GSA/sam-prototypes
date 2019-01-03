@@ -1,0 +1,48 @@
+
+
+h2.home {
+	font-size: 1.6em;
+	font-weight: 600;
+	color: #717171;
+}
+
+ul.feature-list {
+	margin-top: .5em;
+	font-size: 1em;
+  	margin-left: 2em;
+
+  	li {
+  		line-height: 1.2em;
+  		margin-bottom: .2em;
+  	}
+}
+
+
+
+.panels {
+	display: flex;
+}
+
+.feature-icon {
+	display: block;
+	padding: 1em;
+
+	h4 {
+		font-size: 1em;
+		font-weight: 600;
+	}
+
+	p {
+		font-size: .8em;
+	}
+
+	img {
+		height: 6em;
+		margins: auto;
+	}
+}
+
+.feature-icon:hover {
+	background-color: #f1f1f1;
+	cursor: pointer;
+}

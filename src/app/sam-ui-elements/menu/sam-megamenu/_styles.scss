@@ -1,0 +1,144 @@
+.sam-megamenu {
+	font-weight: normal;
+	font-size: 1em;
+	margin-bottom: 0px;
+	padding: 8px 15px;
+	float: left;
+	width: 100%;
+	z-index: 5;
+	
+	a {
+	    display: inline;
+	    padding: 8px 20px;
+	    margin-right: 10px;
+	    margin-top: 10px;
+	    border-radius: 2%;
+	    border: 1px solid #aeb0b5;
+	    color: #323a45;
+	    background-color: #ffffff;
+	    text-decoration: none;
+	}
+
+	a:hover {
+    	color: #fff;
+    	background-color: #5b616b;
+	}
+
+	button {
+	    display: inline;
+	    font-size: .9em;
+	    border-radius: 0;
+	    background-color: #02bfe7;
+	    padding: 0px 4px;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    margin-left: 0px;
+	    line-height: .9em;
+	    height: 42px;
+	    width: 80px;
+	    position: relative;    
+	}
+
+	li {
+	    float: left;
+	    display: inline;
+	}
+
+	i {
+	  margin-left: 8px;
+	}
+
+	/*--- DROPDOWN ---*/
+	ul {
+		margin-left: 5.92916%;
+		padding-left: 0;
+		margin-top: 7px;
+		width: 94.07084%;
+	    list-style: none;
+	    position: absolute;
+	    background-color: #5b616b;
+	    left: -9999px; /* Hide off-screen when not needed (this is more accessible than display: none;) */
+	}
+
+	ul li {
+	    float: left;
+	     margin: 0px -1px 0px 0px;
+		 padding: 0px 0px;
+		 display: inline-block;
+	     height: 100%;
+	     border-left: 1px solid #d6d7d9;
+	     border-right: 1px solid #d6d7d9;
+	}
+
+	ul a {
+	    white-space: nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+	}
+
+	li:hover ul { /* Display the dropdown on hover */
+	    left: 0; /* Bring back on-screen when needed */
+	}
+
+	li:hover a { /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+	    background-color: #5b616b;
+	}
+
+	li:hover ul a { /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
+	    text-decoration: none;
+	}
+
+	li:hover ul li a:hover { /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+	    background-color: #205493;
+	}
+
+	div.megatool {
+	    display: table-cell;
+	    padding: 5px 20px;
+	    margin: 1%;
+	    border: 1px solid transparent;
+	    height: 140px;
+
+	    i {
+		    margin-left: 40%;
+		    margin-right: 40%;
+		    margin-bottom: 2px;
+		    margin-top: 25px;
+		    color: white;
+		}
+		p.mega-title {
+		    font-size: 1em;
+		    font-weight: bolder;
+		}
+
+		p {
+		    font-size: .7em;
+		    font-weight: normal;
+		    color: white;
+		    width: 140px;
+		    line-height: 1;
+		    text-align: center;
+		}
+
+		button {
+		    display: block;
+		    background-color: transparent;
+		}
+	}
+
+	ul li:hover {
+	    background-color: #ffffff22;
+	    cursor: pointer;
+
+	}
+
+	div.additional-info {
+	    display: table-cell;
+	    background-color: #ffffff22;
+	    color: #fff;
+	    width: 140px;
+	    font-size: .7em;
+	    text-align: center;
+	    padding: 16px 20px;
+	    margin: 0px;
+	    border: 1px solid #d6d7d9;
+	}
+}

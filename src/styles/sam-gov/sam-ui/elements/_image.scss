@@ -1,0 +1,29 @@
+/*******************************
+             Image
+*******************************/
+
+.#{$prefix}.image {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  background-color: $lightestBlue;
+}
+
+img.#{$prefix}.image {
+  display: block;
+}
+
+.#{$prefix}.image svg,
+.#{$prefix}.image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.#{$prefix}.floated.image, 
+.#{$prefix}.floated.images {
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}

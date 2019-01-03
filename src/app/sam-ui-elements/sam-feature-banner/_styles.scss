@@ -1,0 +1,45 @@
+
+.sam-feature-banner {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	display: flex;
+
+	.sam-feature-content {
+	    float: left;
+		color: #ffffff;
+		background-color: #434545;
+		width: 45%;
+		padding: 1.9em;
+		font-size: 1em;
+		font-weight: 300;
+
+		a {
+			font-size: 1em;
+			font-weight: 600;
+			color: #f1f1f1;
+		}
+
+		h2 {
+			font-size: 1.3em;
+			font-weight: 600;
+		}
+
+		ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+		li {
+			padding: 1em;
+			font-size: .5em;
+		}
+	}
+
+	.sam-feature-image {
+		background-color: #434545;
+		width: 55%;
+		margin: 0;
+		padding: 0;
+	}
+}

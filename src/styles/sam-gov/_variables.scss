@@ -1,0 +1,523 @@
+/*******************************
+      SAM-UI Settings
+*******************************/
+
+/*-------------------
+       Class
+--------------------*/
+ $prefix: sam-ui;
+
+
+/*-------------------
+      Base Sizes
+--------------------*/
+$emSize   : 10px;
+
+/* The size of page text  */
+$fontSize : 1.7rem;
+
+
+/*-------------------
+        Sizes
+--------------------*/
+$miniSize        : 1.4;
+$tinySize        : 1.5;
+$smallSize       : 1.6;
+$mediumSize      : 1.7;
+$largeSize       : 1.9;
+$bigSize         : 2.0;
+$hugeSize        : 2.1;
+$massiveSize     : 2.2;
+
+/* rem */
+$mini            : $miniSize * 1rem;
+$tiny            : $tinySize * 1rem;
+$small           : $smallSize * 1rem;
+$medium          : $mediumSize * 1rem;
+$large           : $largeSize * 1rem;
+$big             : $bigSize * 1rem;
+$huge            : $hugeSize * 1rem;
+$massive         : $massiveSize * 1rem;
+
+/* em */
+$relativeMini    : strip-units(round($miniSize / $fontSize)) * 1em;
+$relativeTiny    : strip-units(round($tinySize / $fontSize)) * 1em;
+$relativeSmall   : strip-units($smallSize / $fontSize) * 1em;
+$relativeMedium  : strip-units(round($mediumSize / $fontSize)) * 1em;
+$relativeLarge   : strip-units(round($largeSize / $fontSize)) * 1em;
+$relativeBig     : strip-units(round($bigSize / $fontSize)) * 1em;
+$relativeHuge    : strip-units(round($hugeSize / $fontSize)) * 1em;
+$relativeMassive : strip-units(round($massiveSize / $fontSize)) * 1em;
+
+
+/*-------------------
+       Fonts
+--------------------*/
+$fontName          : 'Source Sans Pro';
+
+$headerFont        : $fontName, $helvetica;
+$pageFont          : $fontName, $helvetica;
+
+
+/*-------------------
+     Neutral Text
+--------------------*/
+$mutedTextColor              : rgba(0, 0, 0, 0.6);
+$lightTextColor              : rgba(0, 0, 0, 0.4);
+
+$unselectedTextColor         : rgba(0, 0, 0, 0.4);
+$hoveredTextColor            : rgba(0, 0, 0, 0.8);
+$pressedTextColor            : rgba(0, 0, 0, 0.9);
+$selectedTextColor           : rgba(0, 0, 0, 0.95);
+
+$invertedMutedTextColor      : rgba(255, 255, 255, 0.8);
+
+$invertedLightTextColor      : rgba(255, 255, 255, 0.7);
+$invertedUnselectedTextColor : rgba(255, 255, 255, 0.5);
+$invertedHoveredTextColor    : rgba(255, 255, 255, 1);
+$invertedPressedTextColor    : rgba(255, 255, 255, 1);
+$invertedSelectedTextColor   : rgba(255, 255, 255, 1);
+
+/*-------------------
+      Site Colors
+--------------------*/
+/*--- Colors ---*/
+$blue             : #0071bc;
+$red              : #DB2828;
+$orange           : #F2711C;
+$green            : #21BA45;
+$grey             : #767676;
+$black            : #1B1C1D;
+
+/*--- Cool Colors ---*/
+$coolBlue : #205493;
+
+/*--- Light Colors ---*/
+$lightBlue        : #4773aa;
+$lightRed         : #FF695E;
+$lightGreen       : #2ECC40;
+$lightGrey        : #DCDDDE;
+
+/*--- Lighter Colors ---*/
+$lighterBlue : #8ba6ca;
+$lighterGrey: #d6d7d9;
+
+/*--- Lightest Colors ---*/
+$lightestBlue     : #dce4ef;
+
+/*--- Dark Colors ---*/
+$darkBlue: #112e51;
+$darkGrey: #323a45;
+
+/*--- Colored Text ---*/
+$redTextColor    : $red;
+$orangeTextColor : $orange;
+$yellowTextColor : #B58105;
+$oliveTextColor  : #8ABC1E;
+$greenTextColor  : #1EBC30;
+$tealTextColor   : #10A3A3;
+$blueTextColor   : $blue;
+
+
+/*--- Colored Border ---*/
+$redBorderColor    : $redTextColor;
+$orangeBorderColor : $orangeTextColor;
+$yellowBorderColor : $yellowTextColor;
+$oliveBorderColor  : $oliveTextColor;
+$greenBorderColor  : $greenTextColor;
+$tealBorderColor   : $tealTextColor;
+$blueBorderColor   : $blueTextColor;
+
+
+/*--- Neutrals ---*/
+$white            : #FFFFFF;
+$offWhite         : #F9FAFB;
+$darkWhite        : #F3F4F5;
+$midWhite         : #DCDDDE;
+
+/*--- Colored Backgrounds ---*/
+$redBackground    : #FFE8E6;
+$orangeBackground : #FFEDDE;
+$yellowBackground : #FFF8DB;
+$oliveBackground  : #FBFDEF;
+$greenBackground  : #E5F9E7;
+$tealBackground   : #E1F7F7;
+$blueBackground   : #DFF0FF;
+$violetBackground : #EAE7FF;
+$purpleBackground : #F6E7FF;
+$pinkBackground   : #FFE3FB;
+$brownBackground  : #F1E2D3;
+
+/*--- Colored Headers ---*/
+$redHeaderColor    : darken($redTextColor, 5);
+$oliveHeaderColor  : darken($oliveTextColor, 5);
+$greenHeaderColor  : darken($greenTextColor, 5);
+$yellowHeaderColor : darken($yellowTextColor, 5);
+$blueHeaderColor   : darken($blueTextColor, 5);
+$tealHeaderColor   : darken($tealTextColor, 5);
+$orangeHeaderColor : darken($orangeTextColor, 5);
+
+/*--- Alpha ---*/
+$subtleTransparentBlack     : rgba(0, 0, 0, 0.03);
+$transparentBlack : rgba(0, 0, 0, 0.05);
+$strongTransparentBlack     : rgba(0, 0, 0, 0.10);
+$veryStrongTransparentBlack : rgba(0, 0, 0, 0.15);
+
+$subtleTransparentWhite     : rgba(255, 255, 255, 0.02);
+$transparentWhite : rgba(255, 255, 255, 0.08);
+
+/*--- Accents ---*/
+$floatingShadow:
+  0 15px 35px rgba(50,50,93,.1),
+  0 5px 15px rgba(0,0,0,.07);
+
+
+/*-------------------
+    Emotive Colors
+--------------------*/
+
+/* Positive */
+$positiveColor           : $green;
+$positiveBackgroundColor : #FCFFF5;
+$positiveBorderColor     : #A3C293;
+$positiveHeaderColor     : #1A531B;
+$positiveTextColor       : #2C662D;
+
+/* Success */
+$successBackgroundColor : $positiveBackgroundColor;
+$successColor           : $positiveColor;
+$successBorderColor     : $positiveBorderColor;
+$successHeaderColor     : $positiveHeaderColor;
+$successTextColor       : $positiveTextColor;
+
+/* Negative */
+$negativeColor           : $red;
+$negativeBackgroundColor : #FFF6F6;
+$negativeBorderColor     : #E0B4B4;
+$negativeHeaderColor     : #912D2B;
+$negativeTextColor       : #9F3A38;
+
+/* Warning */
+$warningColor           : #F2C037;
+$warningBorderColor     : #C9BA9B;
+$warningBackgroundColor : #FFFAF3;
+$warningHeaderColor     : #794B02;
+$warningTextColor       : #573A08;
+
+/* Info */
+$infoColor              : #31CCEC;
+$infoBackgroundColor    : #F8FFFF;
+$infoBorderColor        : #A9D5DE;
+$infoHeaderColor        : #0E566C;
+$infoTextColor          : #276F86;
+
+/* Error */
+$errorBackgroundColor   : $negativeBackgroundColor;
+$errorBorderColor       : $negativeBorderColor;
+$errorHeaderColor       : $negativeHeaderColor;
+$errorTextColor         : $negativeTextColor;
+
+/*-------------------
+    Brand Colors
+--------------------*/
+$primaryColor        : $blue;
+$secondaryColor      : #9bdaf1;
+
+/*-------------------
+        Page
+--------------------*/
+$pageBackground      : $white;
+$lineHeight          : 1.53em;
+$textColor           : rgba(0, 0, 0, 0.7);
+
+
+/*--------------
+  Page Heading
+---------------*/
+$h1 : 4rem;;
+$h2 : 3rem;
+$h3 : 2.3rem;
+$h4 : 2rem;
+$h5 : 1.5rem;
+
+$headerFontWeight       : 700;
+$headerLineHeight       : 1.1em;
+
+/* Used to match floats with text */
+$headerLineHeightOffset : ($headerLineHeight - 1em) / 2;
+
+/* Header Spacing */
+$headerTopMargin        : calc(2rem - #{$headerLineHeightOffset});
+$headerBottomMargin     : 1rem;
+$headerMargin           : $headerTopMargin 0em $headerBottomMargin;
+
+
+/*-------------------
+       Links
+--------------------*/
+$linkColor          : $blue;
+$linkUnderline      : none;
+$linkHoverColor     : darken(saturate($linkColor, 20), 15);
+$linkHoverUnderline : none;
+$linkFontWeight     : 600;
+
+
+/*-------------------
+      Paragraph
+--------------------*/
+$paragraphMargin     : 0em 0em 1em;
+$paragraphLineHeight : $lineHeight;
+
+
+/*-------------------
+  Highlighted Text
+--------------------*/
+$highlightBackground      : #CCE2FF;
+$highlightColor           : $textColor;
+
+$inputHighlightBackground : rgba(100, 100, 100, 0.4);
+$inputHighlightColor      : $textColor;
+
+
+/*-------------------
+    Border Radius
+--------------------*/
+$defaultBorderRadius: 0.3rem;
+
+
+/*-------------------
+      Borders
+--------------------*/
+$borderColor           : rgba(151, 151, 151, 0.2);
+$internalBorderColor   : rgba(34, 36, 38, 0.1);
+$solidBorderColor      : #D4D4D5;
+$whiteBorderColor      : rgba(255, 255, 255, 0.1);
+$disabledBorderColor   : rgba(34, 36, 38, 0.5);
+$selectedBorderColor   : rgba(34, 36, 38, 0.35);
+$solidWhiteBorderColor : #555555;
+
+/*--------------
+   Form Input
+---------------*/
+/* This adjusts the default form input across all elements */
+$inputVerticalPadding   : 0.9em;
+
+
+/*-------------------
+     Transitions
+--------------------*/
+$defaultDuration : 0.1s;
+$defaultEasing   : ease;
+
+
+/*-------------------
+    Window Values
+--------------------*/
+/* Minimum Mobile Width */
+$pageMinWidth   : 320px;
+/* Rendered Scrollbar Width */
+$scrollbarWidth : 17px;
+
+
+/*-------------------
+     Breakpoints
+--------------------*/
+$mobileBreakpoint            : 576px;
+$tabletBreakpoint            : 768px;
+$computerBreakpoint          : 992px;
+$largeMonitorBreakpoint      : 1200px;
+$widescreenMonitorBreakpoint : 1920px;
+
+/* Responsive */
+$largestMobileScreen : ($tabletBreakpoint - 1px);
+$largestTabletScreen : ($computerBreakpoint - 1px);
+$largestSmallMonitor : ($largeMonitorBreakpoint - 1px);
+$largestLargeMonitor : ($widescreenMonitorBreakpoint - 1px);
+
+/*-------------------
+        Grid
+--------------------*/
+$columnCount: 12;
+
+/* Columns */
+$oneWide        : (1 / $columnCount * 100%);
+$twoWide        : (2 / $columnCount * 100%);
+$threeWide      : (3 / $columnCount * 100%);
+$fourWide       : (4 / $columnCount * 100%);
+$fiveWide       : (5 / $columnCount * 100%);
+$sixWide        : (6 / $columnCount * 100%);
+$sevenWide      : (7 / $columnCount * 100%);
+$eightWide      : (8 / $columnCount * 100%);
+$nineWide       : (9 / $columnCount * 100%);
+$tenWide        : (10 / $columnCount * 100%);
+$elevenWide     : (11 / $columnCount * 100%);
+$twelveWide     : (12 / $columnCount * 100%);
+
+$oneColumn      : (1 / 1 * 100%);
+$twoColumn      : (1 / 2 * 100%);
+$threeColumn    : (1 / 3 * 100%);
+$fourColumn     : (1 / 4 * 100%);
+$fiveColumn     : (1 / 5 * 100%);
+$sixColumn      : (1 / 6 * 100%);
+$sevenColumn    : (1 / 7 * 100%);
+$eightColumn    : (1 / 8 * 100%);
+$nineColumn     : (1 / 9 * 100%);
+$tenColumn      : (1 / 10 * 100%);
+$elevenColumn   : (1 / 11 * 100%);
+$twelveColumn   : (1 / 12 * 100%);
+$thirteenColumn : (1 / 13 * 100%);
+$fourteenColumn : (1 / 14 * 100%);
+$fifteenColumn  : (1 / 15 * 100%);
+$sixteenColumn  : (1 / 16 * 100%);
+
+/*-------------------
+      Paths
+--------------------*/
+$fa-font-path          : "/assets/fonts/font-awesome";
+$assets-path           : '/assets';
+
+/*******************************
+             States
+*******************************/
+
+/*-------------------
+      Disabled
+--------------------*/
+$disabledOpacity: 0.45;
+$disabledTextColor: rgba(40, 40, 40, 0.3);
+$invertedDisabledTextColor: rgba(225, 225, 225, 0.3);
+
+/*-------------------
+        Hover
+--------------------*/
+/*---  Colors  ---*/
+$primaryColorHover    : saturate(darken($primaryColor, 5), 10);
+$secondaryColorHover  : saturate(lighten($secondaryColor, 5), 10);
+
+$blueHover            : saturate(darken($blue, 5), 10);
+$redHover             : saturate(darken($red, 5), 10);
+$greenHover           : saturate(darken($green, 5), 10);
+
+$lightBlueHover       : saturate(darken($lightBlue, 5), 10);
+$lightRedHover        : saturate(darken($lightRed, 5), 10);
+$lightGreenHover      : saturate(darken($lightGreen, 5), 10);
+$lightGreyHover       : saturate(darken($lightGrey, 5), 10);
+
+$darkBlueHover            : saturate(darken($darkBlue, 5), 10);
+
+/*---  Emotive  ---*/
+$positiveColorHover   : saturate(darken($positiveColor, 5), 10);
+$negativeColorHover   : saturate(darken($negativeColor, 5), 10);
+
+/*---  Dark Tones  ---*/
+$greyHover            : lighten($grey, 5);
+
+/*-------------------
+        Focus
+--------------------*/
+/*---  Colors  ---*/
+$primaryColorFocus    : saturate(darken($primaryColor, 8), 20);
+$secondaryColorFocus  : saturate(lighten($secondaryColor, 8), 20);
+
+$blueFocus            : saturate(darken($blue, 8), 20);
+$redFocus             : saturate(darken($red, 8), 20);
+$greenFocus           : saturate(darken($green, 8), 20);
+
+$lightBlueFocus       : saturate(darken($lightBlue, 8), 20);
+$lightRedFocus        : saturate(darken($lightRed, 8), 20);
+$lightGreenFocus      : saturate(darken($lightGreen, 8), 20);
+$lightGreyFocus       : saturate(darken($lightGrey, 8), 20);
+
+$darkBlueFocus            : saturate(darken($darkBlue, 8), 20);
+
+/*---  Emotive  ---*/
+$positiveColorFocus   : saturate(darken($positiveColor, 8), 20);
+$negativeColorFocus   : saturate(darken($negativeColor, 8), 20);
+
+/*---  Dark Tones  ---*/
+$greyFocus            : lighten($grey, 8);
+
+/*-------------------
+    Down (:active)
+--------------------*/
+/*---  Colors  ---*/
+$primaryColorDown    : darken($primaryColor, 10);
+$secondaryColorDown  : lighten($secondaryColor, 10);
+
+$blueDown            : darken($blue, 10);
+$redDown             : darken($red, 10);
+$greenDown           : darken($green, 10);
+
+$lightBlueDown       : darken($lightBlue, 10);
+$lightRedDown        : darken($lightRed, 10);
+$lightGreenDown      : darken($lightGreen, 10);
+$lightGreyDown       : darken($lightGrey, 10);
+
+$darkBlueDown            : darken($darkBlue, 10);
+
+/*---  Emotive  ---*/
+$positiveColorDown   : darken($positiveColor, 10);
+$negativeColorDown   : darken($negativeColor, 10);
+
+/*---  Dark Tones  ---*/
+$greyDown            : lighten($grey, 10);
+
+/*-------------------
+        Active
+--------------------*/
+/*---  Colors  ---*/
+$primaryColorActive    : saturate(darken($primaryColor, 5), 15);
+$secondaryColorActive  : saturate(lighten($secondaryColor, 5), 15);
+
+$blueActive            : saturate(darken($blue, 5), 15);
+$redActive             : saturate(darken($red, 5), 15);
+$greenActive           : saturate(darken($green, 5), 15);
+
+$lightBlueActive       : saturate(darken($lightBlue, 5), 15);
+$lightRedActive        : saturate(darken($lightRed, 5), 15);
+$lightGreenActive      : saturate(darken($lightGreen, 5), 15);
+$lightGreyActive       : saturate(darken($lightGrey, 5), 15);
+
+$darkBlueActive            : saturate(darken($darkBlue, 5), 15);
+
+/*---  Emotive  ---*/
+$positiveColorActive   : saturate(darken($positiveColor, 5), 15);
+$negativeColorActive   : saturate(darken($negativeColor, 5), 15);
+
+/*---  Dark Tones  ---*/
+$greyActive            : darken($grey, 5);
+
+
+/*******************************
+             Legacy
+*******************************/
+/*
+  Legacy (DO NOT USE)
+*/
+
+// Color
+$iae-color-primary     : #112e51;
+$iae-color-primary-alt : #205493;
+$iae-color-gray        : #f1f1f1;
+
+
+
+/*******************************
+      USWDS Variables
+*******************************/
+
+// Typography
+$base-font-size:  $fontSize;
+$font-serif     : $pageFont;
+$h4-font-size:    $fontSize ;
+$h5-font-size:    $h5 ;
+
+// Color
+$color-primary  : $iae-color-primary;
+
+// Relative font and image file paths
+$font-path      : '/assets/fonts';
+$image_path     : '/assets/img';
+
+// Magic Numbers
+$site-max-width : 1140px;

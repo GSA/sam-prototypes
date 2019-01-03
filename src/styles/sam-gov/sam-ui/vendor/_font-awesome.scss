@@ -1,0 +1,36 @@
+/*******************************
+       Font Awesome
+*******************************/
+
+/*-------------------
+    Icon Sizes
+--------------------*/
+.#{$fa-css-prefix}-sm{
+  font-size: .6em;
+  vertical-align: 10%;
+}
+
+/*-------------------
+    Background
+--------------------*/
+/* Adds icon to container background */
+.#{$fa-css-prefix}.background{
+  font-family: $pageFont;
+  font-size: $fontSize;
+}
+.#{$fa-css-prefix}.background::before{
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  font: normal normal normal #{$fa-font-size-base}/#{$fa-line-height-base} FontAwesome;
+  opacity: .1;
+}
+.#{$fa-css-prefix}.#{$fa-css-prefix}-5x.background::before{
+  font-size: 5em;
+}
+.#{$fa-css-prefix}.#{$fa-css-prefix}-6x.background::before{
+  font-size: 6em;
+}
+.#{$fa-css-prefix}.#{$fa-css-prefix}-7x.background::before{
+  font-size: 7em;
+}

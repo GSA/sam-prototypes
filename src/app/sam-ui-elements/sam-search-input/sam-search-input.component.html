@@ -1,0 +1,6 @@
+<div [ngClass]="domains != null ? 'sam-search-domains' : 'sam-search-input'">
+	<select *ngIf="domains" (change)="selectDomain($event)">
+		<option *ngFor="let dom of domains" [value]="dom.key" >{{dom.title}}</option>
+	</select>
+	<input #search (keyup.enter)="onSearch(search.value)" placeholder="{{selectedDomain.placeholder}}">
+</div>

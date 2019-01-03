@@ -1,0 +1,674 @@
+
+/*******************************
+      Segment Variables
+*******************************/
+
+/*-------------------
+       Element
+--------------------*/
+
+$background: $white;
+$borderWidth: 1px;
+$border: $borderWidth solid rgba(151, 151, 151, 0.2);
+
+$boxShadow: none; //$subtleShadow
+$verticalPadding: 1em;
+$horizontalPadding: 1em;
+$padding: $verticalPadding $horizontalPadding;
+
+$verticalMargin: 1rem;
+$horizontalMargin: 0em;
+$margin: $verticalMargin $horizontalMargin;
+$borderRadius: $defaultBorderRadius;
+
+/*-------------------
+       Group
+--------------------*/
+
+$groupedMargin: $margin;
+$groupedBorder: $border;
+$groupedBoxShadow: $boxShadow;
+$groupedBorderRadius: $borderRadius;
+
+$nestedGroupMargin: $verticalMargin $verticalMargin;
+
+$groupedSegmentBorder: none;
+$groupedSegmentDivider: $border;
+$groupedSegmentMargin: 0em;
+$groupedSegmentWidth: auto;
+$groupedSegmentBoxShadow: none;
+
+/*-------------------
+       Coupling
+--------------------*/
+
+/* Page Grid Segment */
+$pageGridMargin: (2 * $verticalPadding);
+
+
+/*******************************
+            Variations
+*******************************/
+
+/* Circular */
+$circularPadding: 2em;
+
+/* Raised */
+$raisedBoxShadow: $floatingShadow;
+
+/* Padded */
+$paddedSegmentPadding: 2em;
+$veryPaddedSegmentPadding: 3em;
+
+/* Attached */
+$attachedTopOffset: 0px;
+$attachedBottomOffset: 0px;
+$attachedHorizontalOffset: -$borderWidth;
+$attachedWidth: calc(100% + (#{-$attachedHorizontalOffset} * 2) );
+$attachedBoxShadow: none;
+$attachedBorder: $borderWidth solid $solidBorderColor;
+$attachedBottomBoxShadow:
+  $boxShadow,
+  $attachedBoxShadow
+;
+
+/* Inverted */
+$invertedBackground: $black;
+
+/* Floated */
+$floatedDistance: 1em;
+
+/* Basic */
+$basicBackground: none transparent;
+$basicBorder: none;
+$basicBoxShadow: none;
+$basicBorderRadius: 0px;
+
+/* Colors */
+$coloredBorderSize: 2px;
+
+/* Ordinality */
+$secondaryBackground: $darkWhite;
+$secondaryColor: $mutedTextColor;
+
+$tertiaryBackground:  $midWhite;
+$tertiaryColor: $mutedTextColor;
+
+$secondaryInvertedLightness: 0.2;
+$secondaryInvertedBackground:
+  lighten($black, ($secondaryInvertedLightness * 100))
+  linear-gradient(
+    rgba(255, 255, 255, $secondaryInvertedLightness) 0%,
+    rgba(255, 255, 255, $secondaryInvertedLightness) 100%
+  )
+;
+$secondaryInvertedColor: $invertedMutedTextColor;
+
+$tertiaryInvertedLightness: 0.35;
+$tertiaryInvertedBackground:
+  lighten($black, ($tertiaryInvertedLightness * 100))
+  linear-gradient(
+    rgba(255, 255, 255, $tertiaryInvertedLightness) 0%,
+    rgba(255, 255, 255, $tertiaryInvertedLightness) 100%
+  )
+;
+$tertiaryInvertedColor: $invertedMutedTextColor;
+
+
+/*******************************
+       Segment Theme
+*******************************/
+
+.#{$prefix}.segment {
+  position: relative;
+  background: $background;
+  box-shadow: $boxShadow;
+  margin: $margin;
+  padding: $padding;
+  border-radius: $borderRadius;
+  border: $border;
+}
+
+.#{$prefix}.segment:first-child {
+  margin-top: 0em;
+}
+.#{$prefix}.segment:last-child {
+  margin-bottom: 0em;
+}
+
+.#{$prefix}.segment.icon.top{
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.#{$prefix}.segment.icon.top .icon{
+  position: absolute;
+  top: -40px;
+  background-color: $white;
+  align-self: center;
+}
+
+
+/* Vertical */
+.#{$prefix}.vertical.segment {
+  margin: 0em;
+  padding-left: 0em;
+  padding-right: 0em;
+
+  background: none transparent;
+  border-radius: 0px;
+  box-shadow: none;
+  border: none;
+  border-bottom: $borderWidth solid $borderColor;
+}
+.#{$prefix}.vertical.segment:last-child {
+  border-bottom: none;
+}
+
+
+/*-------------------
+    Loose Coupling
+--------------------*/
+
+/* Header */
+.#{$prefix}.inverted.segment > .#{$prefix}.header {
+  color: $white;
+}
+
+/* Label */
+.#{$prefix}[class*="bottom attached"].segment > [class*="top attached"].label {
+  border-top-left-radius: 0em;
+  border-top-right-radius: 0em;
+}
+.#{$prefix}[class*="top attached"].segment > [class*="bottom attached"].label {
+  border-bottom-left-radius: 0em;
+  border-bottom-right-radius: 0em;
+}
+.#{$prefix}.attached.segment:not(.top):not(.bottom) > [class*="top attached"].label {
+  border-top-left-radius: 0em;
+  border-top-right-radius: 0em;
+}
+.#{$prefix}.attached.segment:not(.top):not(.bottom) > [class*="bottom attached"].label {
+  border-bottom-left-radius: 0em;
+  border-bottom-right-radius: 0em;
+}
+
+/* Grid */
+.#{$prefix}.page.grid.segment,
+.#{$prefix}.grid > .row > .#{$prefix}.segment.column,
+.#{$prefix}.grid > .#{$prefix}.segment.column {
+  padding-top: $pageGridMargin;
+  padding-bottom: $pageGridMargin;
+}
+.#{$prefix}.grid.segment {
+  margin: $margin;
+  border-radius: $borderRadius;
+}
+
+/* Table */
+.#{$prefix}.basic.table.segment {
+  background: $background;
+  border: $border;
+  box-shadow: $boxShadow;
+}
+.#{$prefix}[class*="very basic"].table.segment {
+  padding: $padding;
+}
+
+
+/*******************************
+             Types
+*******************************/
+
+/*-------------------
+       Padded
+--------------------*/
+
+.#{$prefix}.padded.segment {
+  padding: $paddedSegmentPadding;
+}
+
+.#{$prefix}[class*="very padded"].segment {
+  padding: $veryPaddedSegmentPadding;
+}
+
+/* Padded vertical */
+.#{$prefix}.padded.segment.vertical.segment,
+.#{$prefix}[class*="very padded"].vertical.segment {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+/*-------------------
+       Compact
+--------------------*/
+
+.#{$prefix}.compact.segment {
+  display: table;
+}
+
+/* Compact Group */
+.#{$prefix}.compact.segments {
+  display: inline-flex;
+}
+.#{$prefix}.compact.segments .segment,
+.#{$prefix}.segments .compact.segment {
+  display: block;
+  flex: 0 1 auto;
+}
+
+/*-------------------
+       Circular
+--------------------*/
+
+.#{$prefix}.circular.segment {
+  display: table-cell;
+  padding: $circularPadding;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 500em;
+}
+
+/*-------------------
+       Raised
+--------------------*/
+
+.#{$prefix}.raised.segments,
+.#{$prefix}.raised.segment {
+  box-shadow: $raisedBoxShadow;
+}
+
+
+/*******************************
+            Groups
+*******************************/
+
+/* Group */
+.#{$prefix}.segments {
+  flex-direction: column;
+  position: relative;
+  margin: $groupedMargin;
+  border: $groupedBorder;
+  box-shadow: $groupedBoxShadow;
+  border-radius: $groupedBorderRadius;
+}
+.#{$prefix}.segments:first-child {
+  margin-top: 0em;
+}
+.#{$prefix}.segments:last-child {
+  margin-bottom: 0em;
+}
+
+
+/* Nested Segment */
+.#{$prefix}.segments > .segment {
+  top: 0px;
+  bottom: 0px;
+  border-radius: 0px;
+  margin: $groupedSegmentMargin;
+  width: $groupedSegmentWidth;
+  box-shadow: $groupedSegmentBoxShadow;
+  border: $groupedSegmentBorder;
+  border-top: $groupedSegmentDivider;
+}
+
+.#{$prefix}.segments:not(.horizontal) > .segment:first-child {
+  top: $attachedTopOffset;
+  bottom: 0px;
+  border-top: none;
+  margin-top: 0em;
+  bottom: 0px;
+  margin-bottom: 0em;
+  top: $attachedTopOffset;
+  border-radius: $borderRadius $borderRadius 0em 0em;
+}
+
+/* Bottom */
+.#{$prefix}.segments:not(.horizontal) > .segment:last-child {
+  top: $attachedBottomOffset;
+  bottom: 0px;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  box-shadow: $attachedBottomBoxShadow;
+  border-radius: 0em 0em $borderRadius $borderRadius;
+}
+
+/* Only */
+.#{$prefix}.segments:not(.horizontal) > .segment:only-child {
+  border-radius: $borderRadius;
+}
+
+/* Nested Group */
+.#{$prefix}.segments > .#{$prefix}.segments {
+  border-top: $groupedSegmentDivider;
+  margin: $nestedGroupMargin;
+}
+.#{$prefix}.segments > .segments:first-child {
+  border-top: none;
+}
+.#{$prefix}.segments > .segment + .segments:not(.horizontal) {
+  margin-top: 0em;
+}
+
+/* Horizontal Group */
+.#{$prefix}.horizontal.segments {
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  border-radius: 0px;
+  padding: 0em;
+  background-color: $background;
+  box-shadow: $boxShadow;
+  margin: $margin;
+  border-radius: $borderRadius;
+  border: $border;
+}
+
+/* Nested Horizontal Group */
+.#{$prefix}.segments > .horizontal.segments {
+  margin: 0em;
+  background-color: transparent;
+  border-radius: 0px;
+  border: none;
+  box-shadow: none;
+  border-top: $groupedSegmentDivider;
+}
+
+/* Horizontal Segment */
+.#{$prefix}.horizontal.segments > .segment {
+  flex: 1 1 auto;
+  -ms-flex: 1 1 0px; /* Solves #2550 MS Flex */
+  margin: 0em;
+  min-width: 0px;
+  background-color: transparent;
+  border-radius: 0px;
+  border: none;
+  box-shadow: none;
+  border-left: $borderWidth solid $borderColor;
+}
+
+/* Border Fixes */
+.#{$prefix}.segments > .horizontal.segments:first-child {
+  border-top: none;
+}
+.#{$prefix}.horizontal.segments > .segment:first-child {
+  border-left: none;
+}
+
+
+/*******************************
+            States
+*******************************/
+
+/*--------------
+    Disabled
+---------------*/
+
+.#{$prefix}.disabled.segment {
+  opacity: $disabledOpacity;
+  color: $disabledTextColor;
+}
+
+
+/*******************************
+           Variations
+*******************************/
+
+
+/*-------------------
+       Basic
+--------------------*/
+
+.#{$prefix}.basic.segment {
+  background: $basicBackground;
+  box-shadow: $basicBoxShadow;
+  border: $basicBorder;
+  border-radius: $basicBorderRadius;
+}
+
+/*-------------------
+       Clearing
+--------------------*/
+
+.#{$prefix}.clearing.segment:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/*-------------------
+       Colors
+--------------------*/
+
+/* Red */
+.#{$prefix}.red.segment:not(.inverted) {
+  border-top: $coloredBorderSize solid $red;
+}
+.#{$prefix}.inverted.red.segment {
+  background-color: $red !important;
+  color: $white !important;
+}
+
+/* Green */
+.#{$prefix}.green.segment:not(.inverted) {
+  border-top: $coloredBorderSize solid $green;
+}
+.#{$prefix}.inverted.green.segment {
+  background-color: $green !important;
+  color: $white !important;
+}
+
+/* Blue */
+.#{$prefix}.blue.segment:not(.inverted) {
+  background-color: $blue !important;
+}
+.#{$prefix}.inverted.blue.segment {
+  background-color: $blue !important;
+  color: $white !important;
+}
+
+/* Cool Blue */
+.#{$prefix}.cool.blue.segment:not(.inverted) {
+  background-color: $coolBlue !important;
+}
+.#{$prefix}.inverted.cool.blue.segment {
+  background-color: $coolBlue !important;
+  color: $white !important;
+}
+
+/* Lightest Blue */
+.#{$prefix}.lightest.blue.segment {
+  background-color: $lightestBlue !important;
+}
+
+/* Grey */
+.#{$prefix}.grey.segment:not(.inverted) {
+  border-top: $coloredBorderSize solid $grey;
+}
+.#{$prefix}.inverted.grey.segment {
+  background-color: $grey !important;
+  color: $white !important;
+}
+
+/* Dark White */
+.#{$prefix}.dark.white.segment:not(.inverted) {
+  background-color: $darkWhite;
+}
+.#{$prefix}.inverted.dark.white.segment {
+  background-color: $darkWhite !important;
+  color: $white !important;
+}
+
+/* Black */
+.#{$prefix}.black.segment:not(.inverted) {
+  border-top: $coloredBorderSize solid $black;
+}
+.#{$prefix}.inverted.black.segment {
+  background-color: $black !important;
+  color: $white !important;
+}
+
+/*-------------------
+       Aligned
+--------------------*/
+
+.#{$prefix}[class*="left aligned"].segment {
+  text-align: left;
+}
+.#{$prefix}[class*="right aligned"].segment {
+  text-align: right;
+}
+.#{$prefix}[class*="center aligned"].segment {
+  text-align: center;
+}
+
+/*-------------------
+       Floated
+--------------------*/
+
+.#{$prefix}.floated.segment,
+.#{$prefix}[class*="left floated"].segment {
+  float: left;
+  margin-right: $floatedDistance;
+}
+.#{$prefix}[class*="right floated"].segment {
+  float: right;
+  margin-left: $floatedDistance;
+}
+
+
+/*-------------------
+      Inverted
+--------------------*/
+
+.#{$prefix}.inverted.segment {
+  border: none;
+  box-shadow: none;
+}
+.#{$prefix}.inverted.segment,
+.#{$prefix}.primary.inverted.segment {
+  background: $invertedBackground;
+  color: $invertedTextColor;
+}
+
+/* Nested */
+.#{$prefix}.inverted.segment .segment {
+  color: $textColor;
+}
+.#{$prefix}.inverted.segment .inverted.segment {
+  color: $invertedTextColor;
+}
+
+/* Attached */
+.#{$prefix}.inverted.attached.segment {
+  border-color: $solidWhiteBorderColor;
+}
+
+/*-------------------
+     Emphasis
+--------------------*/
+
+/* Secondary */
+.#{$prefix}.secondary.segment {
+  background: $secondaryBackground;
+  color: $secondaryColor;
+}
+.#{$prefix}.secondary.inverted.segment {
+  background: $secondaryInvertedBackground;
+  color: $secondaryInvertedColor;
+}
+
+/* Tertiary */
+.#{$prefix}.tertiary.segment {
+  background: $tertiaryBackground;
+  color: $tertiaryColor;
+}
+.#{$prefix}.tertiary.inverted.segment {
+  background: $tertiaryInvertedBackground;
+  color: $tertiaryInvertedColor;
+}
+
+
+/*-------------------
+      Attached
+--------------------*/
+
+/* Middle */
+.#{$prefix}.attached.segment {
+  top: 0px;
+  bottom: 0px;
+  border-radius: 0px;
+  margin: 0em $attachedHorizontalOffset;
+  width: $attachedWidth;
+  max-width: $attachedWidth;
+  box-shadow: $attachedBoxShadow;
+  border: $attachedBorder;
+}
+.#{$prefix}.attached:not(.message) + .#{$prefix}.attached.segment:not(.top) {
+  border-top: none;
+}
+
+/* Top */
+.#{$prefix}[class*="top attached"].segment {
+  bottom: 0px;
+  margin-bottom: 0em;
+  top: $attachedTopOffset;
+  margin-top: $verticalMargin;
+  border-radius: $borderRadius $borderRadius 0em 0em;
+}
+.#{$prefix}.segment[class*="top attached"]:first-child {
+  margin-top: 0em;
+}
+
+/* Bottom */
+.#{$prefix}.segment[class*="bottom attached"] {
+  bottom: 0px;
+  margin-top: 0em;
+  top: $attachedBottomOffset;
+  margin-bottom: $verticalMargin;
+  box-shadow: $attachedBottomBoxShadow;
+  border-radius: 0em 0em $borderRadius $borderRadius;
+}
+.#{$prefix}.segment[class*="bottom attached"]:last-child {
+  margin-bottom: 0em;
+}
+
+/*-------------------
+        Size
+--------------------*/
+
+.#{$prefix}.mini.segments .segment,
+.#{$prefix}.mini.segment {
+  font-size: $mini;
+}
+.#{$prefix}.tiny.segments .segment,
+.#{$prefix}.tiny.segment {
+  font-size: $tiny;
+}
+.#{$prefix}.small.segments .segment,
+.#{$prefix}.small.segment {
+  font-size: $small;
+}
+.#{$prefix}.segments .segment,
+.#{$prefix}.segment {
+  font-size: $medium;
+}
+.#{$prefix}.large.segments .segment,
+.#{$prefix}.large.segment {
+  font-size: $large;
+}
+.#{$prefix}.big.segments .segment,
+.#{$prefix}.big.segment {
+  font-size: $big;
+}
+.#{$prefix}.huge.segments .segment,
+.#{$prefix}.huge.segment {
+  font-size: $huge;
+}
+.#{$prefix}.massive.segments .segment,
+.#{$prefix}.massive.segment {
+  font-size: $massive;
+}

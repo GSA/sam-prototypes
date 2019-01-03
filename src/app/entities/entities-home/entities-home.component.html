@@ -1,0 +1,34 @@
+<div class="usa-grid-full">
+	<div class="usa-width-one-whole">
+		<sam-feature-banner title="Entities" featureImage="/assets/img/entity-home-feature.jpg">
+			<p>SAM.gov is the official U.S. government website where you can do the following.</p>
+  		    	<ul class="feature-list">
+  		    		<li>Register to do business with the U.S. government</li>
+					<li>Update or renew your entity registration</li>
+					<li>Check status of an entity registration</li>
+					<li>Search for entity registration and exclusion records</li>
+				</ul>
+			<sam-search-input [selectedDomain]="domain"></sam-search-input>
+		</sam-feature-banner>
+	</div>
+</div>
+<h2 class="home">Register</h2>
+<div class="usa-grid-full panels">
+	<div class="usa-width-one-third feature-icon" (click)="navigateTo('/')">
+		<h4>Create a User Account</h4>
+		<img src="/assets/img/user.png">
+		<p>Start by creating a SAM user account.</p>
+	</div>
+	<div class="usa-width-one-third feature-icon" (click)="navigateTo('/')">
+		<h4>Register Entity</h4>
+		<img src="/assets/img/register.png">
+		<p>After creating your SAM user account, log in to register to do business with the U.S. government.</p>
+	</div>
+	<div class="usa-width-one-third feature-icon" (click)="navigateTo('/entities-search')">
+		<h4>Search Records</h4>
+		<img src="/assets/img/search2.png">
+		<p>Do a public search for existing entity registration records or exclusion records.</p>
+		<p>Federal users can log in to see additional information.</p>
+	</div>
+</div>
+

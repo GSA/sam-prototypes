@@ -1,0 +1,26 @@
+
+.no-margin {
+	margin: 0;
+	padding: 0;
+}
+
+.hidden {
+	display: none;
+}
+
+.sam-toolpanel {
+	margin: 0;
+	height: 100%;
+}
+
+.sam-body {
+	
+}
+
+.sam-container {
+	height: 100%;
+
+	ng-container {
+		height: 100%;
+	}
+}

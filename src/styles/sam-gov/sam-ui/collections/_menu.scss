@@ -1,0 +1,2343 @@
+/*******************************
+             Menu
+*******************************/
+
+/*-------------------
+      Collection
+--------------------*/
+
+/* Menu */
+$verticalMargin: $medium;
+$horizontalMargin: 0em;
+$margin: $verticalMargin $horizontalMargin;
+$background: #FFFFFF;
+$fontFamily: $pageFont;
+$itemBackground: none;
+$fontWeight: normal;
+$borderWidth: 1px;
+$border: $borderWidth solid $borderColor;
+$boxShadow: 0px 1px 2px 0 $borderColor;
+$borderRadius: 0;
+$minHeight: ($itemVerticalPadding * 2) + 1em;
+
+/* Menu Item */
+$itemVerticalPadding: $relativeSmall;
+$itemHorizontalPadding: $relativeLarge;
+$itemTextTransform: none;
+$itemTransition:
+  background $defaultDuration $defaultEasing,
+  box-shadow $defaultDuration $defaultEasing,
+  color $defaultDuration $defaultEasing
+;
+$itemFontWeight: 600;
+$itemTextColor: $textColor;
+
+/* Divider */
+$dividerSize: 1px;
+$dividerBackground: $internalBorderColor;
+
+/* Sub Menu */
+$subMenuDistance: 0.5em;
+$subMenuMargin: $subMenuDistance -$itemHorizontalPadding 0em;
+$subMenuFontSize: $relativeTiny;
+$subMenuTextColor: rgba(0, 0, 0, 0.5);
+
+$subMenuIndent: 0em;
+$subMenuHorizontalPadding: ($itemHorizontalPadding / $tinySize) + $subMenuIndent;
+$subMenuVerticalPadding: 0.5em;
+
+/* Text Item */
+$textLineHeight: 1.3;
+
+/*--------------
+    Elements
+---------------*/
+
+/* Icon */
+$iconFloat: none;
+$iconMargin: 0em .5em 0em 0em;
+$iconOpacity: 0.9;
+
+/* Dropdown Icon */
+$dropdownIconFloat: right;
+$dropdownIconDistance: 1em;
+
+/* Header */
+$headerBackground: '';
+$headerWeight: bold;
+$headerTextTransform: normal;
+
+/* Vertical Icon */
+$verticalIconFloat: right;
+$verticalIconMargin: 0em 0em 0em 0.5em;
+
+/* Vertical Header */
+$verticalHeaderMargin: 0em 0em 0.5em;
+$verticalHeaderFontSize: $relativeMedium;
+$verticalHeaderFontWeight: bold;
+
+/* Pointing Arrow */
+$arrowSize: .8em;
+$arrowBorderWidth: .1em;
+$arrowBorder: 1px solid $solidBorderColor;
+$arrowTransition: background $defaultDuration $defaultEasing;
+$arrowZIndex: 2;
+
+$arrowHoverColor: #F2F2F2;
+$arrowActiveColor: $arrowHoverColor;
+$arrowActiveHoverColor: $arrowActiveColor;
+
+$arrowVerticalHoverColor: $arrowHoverColor;
+$arrowVerticalActiveColor: $arrowActiveColor;
+$arrowVerticalSubMenuColor: $white;
+
+/*--------------
+    Couplings
+---------------*/
+
+/* Button */
+$buttonSize: $relativeMedium;
+$buttonOffset: 0em;
+$buttonMargin: -0.5em 0em;
+$buttonVerticalPadding: .7em;
+
+/* Input */
+$inputSize: $relativeMedium;
+$inputVerticalMargin: -0.5em;
+$inputOffset: 0em;
+$inputVerticalPadding: .8em;
+
+/* Image */
+$imageMargin: -0.3em 0em;
+$imageWidth: 2.5em;
+$verticalImageWidth: auto;
+
+/* Label */
+$labelOffset: -0.15em;
+$labelBackground: #999999;
+$labelTextColor: $white;
+
+$labelTextMargin: 1em;
+$labelVerticalPadding: 0.3em;
+$labelHorizontalPadding: $relativeMini;
+
+$labelAndIconFloat: none;
+$labelAndIconMargin: 0em 0.5em 0em 0em;
+
+/* Dropdown in Menu */
+$dropdownMenuBoxShadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+
+$dropdownBackground: #FFFFFF;
+$dropdownMenuDistance: 0em;
+$dropdownMenuBorderRadius: $borderRadius;
+
+$dropdownItemFontSize: $relativeMedium;
+$dropdownItemPadding: $relativeMini $relativeLarge;
+$dropdownItemBackground: transparent;
+$dropdownItemColor: $textColor;
+$dropdownItemTextTransform: none;
+$dropdownItemFontWeight: normal;
+$dropdownItemBoxShadow: none;
+$dropdownItemTransition: none;
+
+$dropdownItemIconFloat: none;
+$dropdownItemIconFontSize: $relativeMedium;
+$dropdownItemIconMargin: 0em 0.75em 0em 0em;
+
+$dropdownHoveredItemBackground: $transparentBlack;
+$dropdownHoveredItemColor: $selectedTextColor;
+
+/* Dropdown Variations */
+$dropdownVerticalMenuBoxShadow: 0 1px 3px 0px rgba(0, 0, 0, 0.08);
+$secondaryDropdownMenuDistance: .5em;
+$pointingDropdownMenuDistance: 0.75em;
+$invertedSelectionDropdownColor: $invertedTextColor;
+
+/*--------------
+     States
+---------------*/
+
+/* Hovered Item */
+$hoverItemBackground: $subtleTransparentBlack;
+$hoverItemTextColor: $selectedTextColor;
+
+/* Pressed Item */
+$pressedItemBackground: $subtleTransparentBlack;
+$pressedItemTextColor: $hoverItemTextColor;
+
+
+/* Active Item */
+$activeItemBackground: $transparentBlack;
+$activeItemTextColor: $selectedTextColor;
+$activeItemFontWeight: 600;
+$activeIconOpacity: 1;
+$activeItemBoxShadow: none;
+
+/* Active Hovered Item */
+$activeHoverItemBackground: $transparentBlack;
+$activeHoverItemColor: $selectedTextColor;
+
+/* Selected Dropdown */
+$dropdownSelectedItemBackground: $transparentBlack;
+$dropdownSelectedItemColor: $selectedTextColor;
+
+/* Active Dropdown */
+$dropdownActiveItemBackground: $subtleTransparentBlack;
+$dropdownActiveItemColor: $selectedTextColor;
+$dropdownActiveItemFontWeight: bold;
+
+/* Active Sub Menu */
+$subMenuActiveBackground: transparent;
+$subMenuActiveTextColor: $activeItemTextColor;
+$subMenuActiveFontWeight: bold;
+
+
+/*--------------
+     Types
+---------------*/
+
+/* Vertical */
+$verticalBoxShadow: $boxShadow;
+$verticalPointerWidth: 2px;
+$verticalBackground: #FFFFFF;
+$verticalItemBackground: none;
+$verticalDividerBackground: $dividerBackground;
+
+$verticalActiveBoxShadow: none;
+
+
+/* Secondary */
+$secondaryBackground: none;
+$secondaryItemSpacing: .5em;
+$secondaryMargin: 0em -$secondaryItemSpacing;
+$secondaryItemBackground: none;
+$secondaryItemMargin: 0em $secondaryItemSpacing;
+$secondaryItemVerticalPadding: $relativeMini;
+$secondaryItemHorizontalPadding: $relativeSmall;
+$secondaryItemPadding: $relativeMini $relativeSmall;
+$secondaryItemBorderRadius: $defaultBorderRadius;
+$secondaryItemTransition: color $defaultDuration $defaultEasing;
+$secondaryItemColor: $unselectedTextColor;
+
+$secondaryHoverItemBackground: $transparentBlack;
+$secondaryHoverItemColor: $selectedTextColor;
+
+$secondaryActiveItemBackground: $transparentBlack;
+$secondaryActiveItemColor: $selectedTextColor;
+$secondaryActiveHoverItemBackground: $transparentBlack;
+$secondaryActiveHoverItemColor: $selectedTextColor;
+
+$secondaryActiveHoveredItemBackground: $transparentBlack;
+$secondaryActiveHoveredItemColor: $selectedTextColor;
+
+$secondaryHeaderBackground: none transparent;
+$secondaryHeaderBorder: none;
+
+$secondaryItemVerticalSpacing: $secondaryItemSpacing;
+$secondaryVerticalItemMargin: 0em 0em $secondaryItemVerticalSpacing;
+$secondaryVerticalItemBorderRadius: $defaultBorderRadius;
+
+$secondaryMenuSubMenuMargin: 0em -$secondaryItemHorizontalPadding;
+$secondaryMenuSubMenuItemMargin: 0em;
+$secondarySubMenuHorizontalPadding: ($itemHorizontalPadding / $tinySize) + $subMenuIndent;
+$secondaryMenuSubMenuItemPadding: .7em $secondarySubMenuHorizontalPadding;
+
+/* Pointing */
+$secondaryPointingBorderWidth: .2em;
+$secondaryPointingBorderColor: $borderColor;
+$secondaryPointingItemVerticalPadding: $relativeTiny;
+$secondaryPointingItemHorizontalPadding: $relativeLarge;
+
+$secondaryPointingHoverTextColor: $textColor;
+
+$secondaryPointingActiveBorderColor: $primaryColor;
+$secondaryPointingActiveTextColor: $primaryColor ;
+$secondaryPointingActiveFontWeight: 600;
+
+$secondaryPointingActiveDropdownBorderColor: transparent;
+
+$secondaryPointingActiveHoverBorderColor: $secondaryPointingActiveBorderColor;
+$secondaryPointingActiveHoverTextColor: $secondaryPointingActiveTextColor;
+
+$secondaryPointingHeaderColor: rgba(0, 0, 0, 0.85);
+$secondaryVerticalPointingItemMargin: 0em -$secondaryPointingBorderWidth 0em 0em;
+
+
+/* Inverted Secondary */
+$secondaryInvertedColor: $invertedLightTextColor;
+
+$secondaryInvertedHoverBackground: $transparentWhite;
+$secondaryInvertedHoverColor: $invertedSelectedTextColor;
+
+$secondaryInvertedActiveBackground: rgba(255, 255, 255, 0.15);
+$secondaryInvertedActiveColor: $invertedSelectedTextColor;
+
+/* Inverted Pointing */
+$secondaryPointingInvertedBorderColor: $whiteBorderColor;
+$secondaryPointingInvertedItemTextColor: $invertedTextColor;
+$secondaryPointingInvertedItemHeaderColor: $white;
+$secondaryPointingInvertedItemHoverTextColor: $selectedTextColor;
+$secondaryPointingInvertedActiveBorderColor: $white;
+$secondaryPointingInvertedActiveColor: $invertedSelectedTextColor;
+
+
+/* Tiered */
+$tieredActiveItemBackground: #FCFCFC;
+$tieredActiveMenuBackground: #FCFCFC;
+
+$tieredSubMenuTextTransform: normal;
+$tieredSubMenuFontWeight: normal;
+
+$tieredSubMenuColor: $lightTextColor;
+
+$tieredSubMenuHoverBackground: none transparent;
+$tieredSubMenuHoverColor: $hoveredTextColor;
+
+$tieredSubMenuActiveBackground: none transparent;
+$tieredSubMenuActiveColor: $selectedTextColor;
+
+$tieredInvertedSubMenuBackground: rgba(0, 0, 0, 0.2);
+
+
+/* Icon */
+$iconMenuTextAlign: center;
+$iconMenuItemColor: $black;
+$iconMenuInvertedItemColor: $white;
+
+
+/* Tabular */
+$tabularBorderColor: $solidBorderColor;
+$tabularBackgroundColor: transparent;
+$tabularBackground: none $tabularBackgroundColor;
+$tabularBorderWidth: 1px;
+$tabularOppositeBorderWidth: $tabularBorderWidth + 1px;
+$tabularVerticalPadding: $itemVerticalPadding;
+$tabularHorizontalPadding: $relativeHuge;
+$tabularBorderRadius: $defaultBorderRadius;
+$tabularTextColor: $itemTextColor;
+
+$tabularHoveredTextColor: $hoveredTextColor;
+
+$tabularVerticalBackground: none $tabularBackgroundColor;
+
+$tabularFluidOffset: 1px;
+$tabularFluidWidth: calc(100% + #{$tabularFluidOffset} * 2 );
+
+$tabularActiveBackground: none $white;
+$tabularActiveColor: $selectedTextColor;
+$tabularActiveBoxShadow: none;
+$tabularActiveWeight: 600;
+
+/* Separate */
+$separateBackground: $subtleTransparentBlack;
+$separateActiveBackground: $white;
+$separateDisabledBackground: $subtleTransparentBlack;
+
+/* Pagination */
+$paginationMinWidth: 3em;
+$paginationActiveBackground: $transparentBlack;
+$paginationActiveTextColor: $selectedTextColor;
+
+/* Labeled Icon */
+$labeledIconItemHorizontalPadding: $relativeMassive;
+$labeledIconSize: $relativeMassive;
+$labeledIconMinWidth: 6em;
+$labeledIconTextMargin: 0.5rem;
+
+
+/* Text */
+$textMenuItemSpacing: .7em;
+$textMenuMargin: $relativeMedium -($textMenuItemSpacing);
+$textMenuItemColor: $mutedTextColor;
+$textMenuItemFontWeight: normal;
+$textMenuItemMargin: 0em 0em;
+$textMenuItemPadding: .5em $textMenuItemSpacing;
+$textMenuItemTransition: opacity $defaultDuration $defaultEasing;
+
+$textMenuSubMenuMargin: 0em;
+$textMenuSubMenuItemMargin: 0em;
+$textMenuSubMenuItemPadding: .7em 0em;
+
+$textMenuActiveItemFontWeight: normal;
+$textMenuActiveItemColor: $selectedTextColor;
+
+$textMenuHeaderSize: $relativeSmall;
+$textMenuHeaderColor: rgba(0, 0, 0, 0.85);
+$textMenuHeaderFontWeight: bold;
+$textMenuHeaderTextTransform: uppercase;
+
+$textVerticalMenuMargin: $relativeMedium 0em;
+$textVerticalMenuHeaderMargin: .8em 0em 1em;
+$textVerticalMenuItemMargin: .8em 0em;
+
+$textVerticalMenuIconFloat: none;
+$textVerticalMenuIconMargin: $iconMargin;
+
+
+/*--------------
+   Variations
+---------------*/
+
+/* Inverted */
+$invertedBackground: #323a45;
+$invertedBoxShadow: none;
+$invertedBorder: 0px solid transparent;
+$invertedHeaderBackground: transparent;
+
+$invertedItemBackground: transparent;
+$invertedItemTextColor: $invertedTextColor;
+
+/* Inverted Sub Menu */
+$invertedSubMenuBackground: transparent;
+$invertedSubMenuColor: $invertedUnselectedTextColor;
+
+/* Inverted Hover */
+$invertedHoverBackground: $transparentWhite;
+$invertedHoverColor: $invertedSelectedTextColor;
+
+$invertedSubMenuHoverBackground: transparent;
+$invertedSubMenuHoverColor: $invertedSelectedTextColor;
+
+/* Pressed */
+$invertedMenuPressedBackground: $transparentWhite;
+$invertedMenuPressedColor: $invertedSelectedTextColor;
+
+/* Inverted Active */
+$invertedActiveBackground: rgba(255, 255, 255, 0.15);
+$invertedActiveColor: $invertedSelectedTextColor;
+$invertedArrowActiveColor: #3D3E3F;
+
+/* Inverted Active Hover  */
+$invertedActiveHoverBackground: $invertedActiveBackground;
+$invertedActiveHoverColor: $white;
+$invertedArrowActiveHoverColor: $invertedArrowActiveColor;
+
+$invertedSubMenuActiveBackground: transparent;
+$invertedSubMenuActiveColor: $white;
+
+/* Inverted Menu Divider */
+$invertedDividerBackground: rgba(255, 255, 255, 0.08);
+$invertedVerticalDividerBackground: $invertedDividerBackground;
+
+/* Inverted Colored */
+$invertedColoredDividerBackground: $dividerBackground;
+$invertedColoredActiveBackground: $strongTransparentBlack;
+
+/* Fixed */
+$fixedPrecedingGridMargin: 2.75rem;
+
+/* Floated */
+$floatedDistance: 0.5rem;
+
+/* Attached */
+$attachedTopOffset: 0px;
+$attachedBottomOffset: 0px;
+$attachedHorizontalOffset: -$borderWidth;
+$attachedWidth: calc(100% + #{-$attachedHorizontalOffset} * 2);
+$attachedBoxShadow: none;
+$attachedBorder: $borderWidth solid $solidBorderColor;
+$attachedBottomBoxShadow:
+  $boxShadow,
+  $attachedBoxShadow
+;
+
+/* Resize large sizes */
+$mini: 12px;
+$tiny: 13px;
+$small: 15px;
+$large: 18px;
+$huge: 19px;
+$big: 20px;
+$massive: 21px;
+
+/* Sizes */
+$miniWidth: 9rem;
+$tinyWidth: 11rem;
+$smallWidth: 13rem;
+$mediumWidth: 15rem;
+$largeWidth: 18rem;
+$hugeWidth: 20rem;
+$bigWidth: 22rem;
+$massiveWidth: 25rem;
+
+
+/*******************************
+            Standard
+*******************************/
+
+/*--------------
+      Menu
+---------------*/
+
+.#{$prefix}.menu {
+  display: flex;
+  margin: $margin;
+  font-family: $fontFamily;
+  background: $background;
+  font-weight: $fontWeight;
+  border: $border;
+  box-shadow: $boxShadow;
+  border-radius: $borderRadius;
+  min-height: $minHeight;
+}
+
+.#{$prefix}.menu:after {
+  content: '';
+  display: block;
+  height: 0px;
+  clear: both;
+  visibility: hidden;
+}
+
+.#{$prefix}.menu:first-child {
+  margin-top: 0rem;
+}
+.#{$prefix}.menu:last-child {
+  margin-bottom: 0rem;
+}
+
+
+/*--------------
+    Sub-Menu
+---------------*/
+
+.#{$prefix}.menu .menu {
+  margin: 0em;
+}
+
+.#{$prefix}.menu:not(.vertical) > .menu {
+  display: flex;
+}
+
+/*--------------
+      Item
+---------------*/
+
+.#{$prefix}.menu:not(.vertical) .item {
+  display: flex;
+  align-items: center;
+}
+
+.#{$prefix}.menu .item {
+  position: relative;
+  vertical-align: middle;
+  line-height: 1;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  flex: 0 0 auto;
+  user-select: none;
+
+  background: $itemBackground;
+  padding: $itemVerticalPadding $itemHorizontalPadding;
+  text-transform: $itemTextTransform;
+  color: $itemTextColor;
+  font-weight: $itemFontWeight;
+  transition: $itemTransition;
+}
+
+.#{$prefix}.menu > .item:first-child {
+  border-radius: $borderRadius 0px 0px $borderRadius;
+}
+
+/* Border */
+.#{$prefix}.menu .item:before {
+  position: absolute;
+  content: '';
+  top: 0%;
+  right: 0px;
+  height: 100%;
+
+  width: $dividerSize;
+  background: $dividerBackground;
+}
+
+/*--------------
+  Text Content
+---------------*/
+
+.#{$prefix}.menu .text.item > *,
+.#{$prefix}.menu .item > a:not(.#{$prefix}),
+.#{$prefix}.menu .item > p:only-child {
+  user-select: text;
+  line-height: $textLineHeight;
+}
+.#{$prefix}.menu .item > p:first-child {
+  margin-top: 0;
+}
+.#{$prefix}.menu .item > p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------
+      Icons
+---------------*/
+
+.#{$prefix}.menu .item > i.icon {
+  opacity: $iconOpacity;
+  float: $iconFloat;
+  margin: $iconMargin;
+}
+
+/*--------------
+     Button
+---------------*/
+
+.#{$prefix}.menu:not(.vertical) .item > .button {
+  position: relative;
+  top: $buttonOffset;
+  margin: $buttonMargin;
+  padding-bottom: $buttonVerticalPadding;
+  padding-top: $buttonVerticalPadding;
+  font-size: $buttonSize;
+}
+
+/*----------------
+ Grid / Container
+-----------------*/
+
+.#{$prefix}.menu >  .grid,
+.#{$prefix}.menu > .container {
+  display: flex;
+  align-items: inherit;
+  flex-direction: inherit;
+}
+
+/*--------------
+     Inputs
+---------------*/
+
+.#{$prefix}.menu .item > .input {
+  width: 100%;
+}
+.#{$prefix}.menu:not(.vertical) .item > .input {
+  position: relative;
+  top: $inputOffset;
+  margin: $inputVerticalMargin 0em;
+}
+.#{$prefix}.menu .item > .input input {
+  font-size: $inputSize;
+  padding-top: $inputVerticalPadding;
+  padding-bottom: $inputVerticalPadding;
+}
+
+
+/*--------------
+     Header
+---------------*/
+
+.#{$prefix}.menu .header.item,
+.#{$prefix}.vertical.menu .header.item {
+  margin: 0em;
+  background: $headerBackground;
+  text-transform: $headerTextTransform;
+  font-weight: $headerWeight;
+}
+
+.#{$prefix}.vertical.menu .item > .header:not(.#{$prefix}) {
+  margin: $verticalHeaderMargin;
+  font-size: $verticalHeaderFontSize;
+  font-weight: $verticalHeaderFontWeight;
+}
+
+/*--------------
+    Dropdowns
+---------------*/
+
+
+/* Dropdown Icon */
+.#{$prefix}.menu .item > i.dropdown.icon {
+  padding: 0em;
+  float: $dropdownIconFloat;
+  margin: 0em 0em 0em $dropdownIconDistance;
+}
+
+/* Menu */
+.#{$prefix}.menu .dropdown.item .menu {
+  left: 0px;
+  min-width: calc(100% - 1px);
+  border-radius: 0em 0em $dropdownMenuBorderRadius $dropdownMenuBorderRadius;
+  background: $dropdownBackground;
+  margin: $dropdownMenuDistance 0px 0px;
+  box-shadow: $dropdownMenuBoxShadow;
+  flex-direction: column !important;
+}
+
+
+/* Menu Items */
+.#{$prefix}.menu .#{$prefix}.dropdown .menu > .item {
+  margin: 0;
+  text-align: left;
+  font-size: $dropdownItemFontSize !important;
+  padding: $dropdownItemPadding !important;
+  background: $dropdownItemBackground !important;
+  color: $dropdownItemColor !important;
+  text-transform: $dropdownItemTextTransform !important;
+  font-weight: $dropdownItemFontWeight !important;
+  box-shadow: $dropdownItemBoxShadow !important;
+  transition: $dropdownItemTransition !important;
+}
+.#{$prefix}.menu .#{$prefix}.dropdown .menu > .item:hover {
+  background: $dropdownHoveredItemBackground !important;
+  color: $dropdownHoveredItemColor !important;
+}
+.#{$prefix}.menu .#{$prefix}.dropdown .menu > .selected.item {
+  background: $dropdownSelectedItemBackground !important;
+  color: $dropdownSelectedItemColor !important;
+}
+.#{$prefix}.menu .#{$prefix}.dropdown .menu > .active.item {
+  background: $dropdownActiveItemBackground !important;
+  font-weight: $dropdownActiveItemFontWeight !important;
+  color: $dropdownActiveItemColor !important;
+}
+
+.#{$prefix}.menu .#{$prefix}.dropdown.item .menu .item:not(.filtered) {
+  display: block;
+}
+.#{$prefix}.menu .#{$prefix}.dropdown .menu > .item .icon:not(.dropdown) {
+  display: inline-block;
+  font-size: $dropdownItemIconFontSize !important;
+  float: $dropdownItemIconFloat;
+  margin: $dropdownItemIconMargin;
+}
+
+
+/* Secondary */
+.#{$prefix}.secondary.menu .dropdown.item > .menu,
+.#{$prefix}.text.menu .dropdown.item > .menu {
+  border-radius: $dropdownMenuBorderRadius;
+  margin-top: $secondaryDropdownMenuDistance;
+}
+
+/* Pointing */
+.#{$prefix}.menu .pointing.dropdown.item .menu {
+  margin-top: $pointingDropdownMenuDistance;
+}
+
+/* Inverted */
+.#{$prefix}.inverted.menu .search.dropdown.item > .search,
+.#{$prefix}.inverted.menu .search.dropdown.item > .text {
+  color: $invertedSelectionDropdownColor;
+}
+
+/* Vertical */
+.#{$prefix}.vertical.menu .dropdown.item > .icon {
+  float: right;
+  content: "\f0da";
+  margin-left: 1em;
+}
+.#{$prefix}.vertical.menu .dropdown.item .menu {
+  left: 100%;
+  min-width: 0;
+  margin: 0em 0em 0em $dropdownMenuDistance;
+  box-shadow: $dropdownVerticalMenuBoxShadow;
+  border-radius: 0em $dropdownMenuBorderRadius $dropdownMenuBorderRadius $dropdownMenuBorderRadius;
+}
+.#{$prefix}.vertical.menu .dropdown.item.upward .menu {
+  bottom: 0;
+}
+.#{$prefix}.vertical.menu .dropdown.item:not(.upward) .menu {
+  top: 0;
+}
+.#{$prefix}.vertical.menu .active.dropdown.item {
+  border-top-right-radius: 0em;
+  border-bottom-right-radius: 0em;
+}
+.#{$prefix}.vertical.menu .dropdown.active.item {
+  box-shadow: none;
+}
+
+/* Evenly Divided */
+.#{$prefix}.item.menu .dropdown .menu .item {
+  width: 100%;
+}
+
+/*--------------
+     Labels
+---------------*/
+
+.#{$prefix}.menu .item > .label {
+  background: $labelBackground;
+  color: $labelTextColor;
+  margin-left: $labelTextMargin;
+  padding: $labelVerticalPadding $labelHorizontalPadding;
+}
+.#{$prefix}.vertical.menu .item > .label {
+  background: $labelBackground;
+  color: $labelTextColor;
+  margin-top: $labelOffset;
+  margin-bottom: $labelOffset;
+  padding: $labelVerticalPadding $labelHorizontalPadding;
+}
+.#{$prefix}.menu .item > .floating.label {
+  padding: $labelVerticalPadding $labelHorizontalPadding;
+}
+
+/*--------------
+     Images
+---------------*/
+
+.#{$prefix}.menu .item > img:not(.#{$prefix}) {
+  display: inline-block;
+  vertical-align: middle;
+  margin: $imageMargin;
+  width: $imageWidth;
+}
+.#{$prefix}.vertical.menu .item > img:not(.#{$prefix}):only-child {
+  display: block;
+  max-width: 100%;
+  width: $verticalImageWidth;
+}
+
+/*******************************
+          Coupling
+*******************************/
+
+/*--------------
+     Sidebar
+---------------*/
+
+/* Show vertical dividers below last */
+
+.#{$prefix}.vertical.sidebar.menu > .item:first-child:before {
+  display: block !important;
+}
+.#{$prefix}.vertical.sidebar.menu > .item::before {
+  top: auto;
+  bottom: 0px;
+}
+
+/*--------------
+    Container
+---------------*/
+
+@media only screen and (max-width: $largestMobileScreen) {
+  .#{$prefix}.menu > .#{$prefix}.container {
+    width: 100% !important;
+    margin-left: 0em !important;
+    margin-right: 0em !important;
+  }
+}
+@media only screen and (min-width: $tabletBreakpoint) {
+  .#{$prefix}.menu:not(.secondary):not(.text):not(.tabular):not(.borderless) > .container > .item:not(.right):not(.borderless):first-child {
+    border-left: $dividerSize solid $dividerBackground;
+  }
+}
+
+
+/*******************************
+             States
+*******************************/
+
+/*--------------
+      Hover
+---------------*/
+
+
+.#{$prefix}.link.menu .item:hover,
+.#{$prefix}.menu .dropdown.item:hover,
+.#{$prefix}.menu .link.item:hover,
+.#{$prefix}.menu a.item:hover {
+  cursor: pointer;
+  background: $hoverItemBackground;
+  color: $hoverItemTextColor;
+}
+
+
+/*--------------
+     Pressed
+---------------*/
+
+.#{$prefix}.link.menu .item:active,
+.#{$prefix}.menu .link.item:active,
+.#{$prefix}.menu a.item:active {
+  background: $pressedItemBackground;
+  color: $pressedItemTextColor;
+}
+
+
+/*--------------
+     Active
+---------------*/
+
+.#{$prefix}.menu .active.item  {
+  background: $activeItemBackground;
+  color: $activeItemTextColor;
+  font-weight: $activeItemFontWeight;
+  box-shadow: $activeItemBoxShadow;
+}
+.#{$prefix}.menu .active.item > i.icon {
+  opacity: $activeIconOpacity;
+}
+
+/*--------------
+  Active Hover
+---------------*/
+
+.#{$prefix}.menu .active.item:hover,
+.#{$prefix}.vertical.menu .active.item:hover {
+  background-color: $activeHoverItemBackground;
+  color: $activeHoverItemColor;
+}
+
+
+/*--------------
+     Disabled
+---------------*/
+
+.#{$prefix}.menu .item.disabled,
+.#{$prefix}.menu .item.disabled:hover {
+  cursor: default;
+  background-color: transparent !important;
+  color: $disabledTextColor !important;
+}
+
+
+/*******************************
+             Types
+*******************************/
+
+/*------------------
+Floated Menu / Item
+-------------------*/
+
+/* Left Floated */
+.#{$prefix}.menu:not(.vertical) .left.item,
+.#{$prefix}.menu:not(.vertical) .left.menu {
+  display: flex;
+  margin-right: auto !important;
+}
+/* Right Floated */
+.#{$prefix}.menu:not(.vertical) .right.item,
+.#{$prefix}.menu:not(.vertical) .right.menu {
+  display: flex;
+  margin-left: auto !important;
+}
+
+/* Swapped Borders */
+.#{$prefix}.menu .right.item::before,
+.#{$prefix}.menu .right.menu > .item::before {
+  right: auto;
+  left: 0;
+}
+
+
+/*--------------
+    Vertical
+---------------*/
+
+.#{$prefix}.vertical.menu {
+  display: block;
+  flex-direction: column;
+  background: $verticalBackground;
+  box-shadow: $verticalBoxShadow;
+}
+
+/*--- Item ---*/
+.#{$prefix}.vertical.menu .item {
+  display: block;
+  background: $verticalItemBackground;
+  border-top: none;
+  border-right: none;
+}
+.#{$prefix}.vertical.menu > .item:first-child {
+  border-radius: $borderRadius $borderRadius 0px 0px;
+}
+.#{$prefix}.vertical.menu > .item:last-child {
+  border-radius: 0px 0px $borderRadius $borderRadius;
+}
+
+/*--- Label ---*/
+.#{$prefix}.vertical.menu .item > .label {
+  float: right;
+  text-align: center;
+}
+
+/*--- Icon ---*/
+.#{$prefix}.vertical.menu .item > i.icon {
+  width: 1.18em;
+  float: $verticalIconFloat;
+  margin: $verticalIconMargin;
+}
+.#{$prefix}.vertical.menu .item > .label + i.icon {
+  float: $labelAndIconFloat;
+  margin: $labelAndIconMargin;
+}
+
+
+/*--- Border ---*/
+.#{$prefix}.vertical.menu .item:before {
+  position: absolute;
+  content: '';
+  top: 0%;
+  left: 0px;
+  width: 100%;
+  height: $dividerSize;
+  background: $verticalDividerBackground;
+}
+
+.#{$prefix}.vertical.menu .item:first-child:before {
+  display: none !important;
+}
+
+
+/*--- Sub Menu ---*/
+.#{$prefix}.vertical.menu .item > .menu {
+  margin: $subMenuMargin;
+}
+.#{$prefix}.vertical.menu .menu .item {
+  background: none;
+  padding: $subMenuVerticalPadding $subMenuHorizontalPadding;
+  font-size: $subMenuFontSize;
+  color: $subMenuTextColor;
+}
+.#{$prefix}.vertical.menu .item .menu a.item:hover,
+.#{$prefix}.vertical.menu .item .menu .link.item:hover {
+  color: rgba(0, 0, 0, 0.85);
+}
+.#{$prefix}.vertical.menu .menu .item:before {
+  display: none;
+}
+
+/* Vertical Active */
+.#{$prefix}.vertical.menu .active.item {
+  background: $activeItemBackground;
+  border-radius: 0em;
+  box-shadow: $verticalActiveBoxShadow;
+}
+.#{$prefix}.vertical.menu > .active.item:first-child {
+  border-radius: $borderRadius $borderRadius 0em 0em;
+}
+.#{$prefix}.vertical.menu > .active.item:last-child {
+  border-radius: 0em 0em $borderRadius $borderRadius;
+}
+.#{$prefix}.vertical.menu > .active.item:only-child {
+  border-radius: $borderRadius;
+}
+.#{$prefix}.vertical.menu .active.item .menu .active.item {
+  border-left: none;
+}
+.#{$prefix}.vertical.menu .item .menu .active.item {
+  background-color: $subMenuActiveBackground;
+  font-weight: $subMenuActiveFontWeight;
+  color: $subMenuActiveTextColor;
+}
+
+
+/*--------------
+     Tabular
+---------------*/
+
+.#{$prefix}.tabular.menu {
+  border-radius: 0em;
+  box-shadow: none !important;
+  border: none;
+  background: $tabularBackground;
+  border-bottom: $tabularBorderWidth solid $tabularBorderColor;
+}
+.#{$prefix}.tabular.fluid.menu {
+  width: $tabularFluidWidth !important;
+}
+.#{$prefix}.tabular.menu .item {
+  background: transparent;
+  border-bottom: none;
+
+  border-left: $tabularBorderWidth solid transparent;
+  border-right: $tabularBorderWidth solid transparent;
+  border-top: $tabularOppositeBorderWidth solid transparent;
+  padding: $tabularVerticalPadding $tabularHorizontalPadding;
+  color: $tabularTextColor;
+}
+.#{$prefix}.tabular.menu .item:before {
+  display: none;
+}
+
+/* Hover */
+.#{$prefix}.tabular.menu .item:hover {
+  background-color: transparent;
+  color: $tabularHoveredTextColor;
+}
+
+/* Active */
+.#{$prefix}.tabular.menu .active.item {
+  background: $tabularActiveBackground;
+  color: $tabularActiveColor;
+  border-top-width: $tabularBorderWidth;
+  border-color: $tabularBorderColor;
+  font-weight: $tabularActiveWeight;
+  margin-bottom: -$tabularBorderWidth;
+  box-shadow: $tabularActiveBoxShadow;
+  border-radius: $tabularBorderRadius $tabularBorderRadius 0px 0px !important;
+}
+
+/* Coupling with segment for attachment */
+.#{$prefix}.tabular.menu + .attached:not(.top).segment,
+.#{$prefix}.tabular.menu + .attached:not(.top).segment + .attached:not(.top).segment {
+  border-top: none;
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
+  width: 100%;
+}
+.top.attached.segment + .#{$prefix}.bottom.tabular.menu {
+  position: relative;
+  width: $tabularFluidWidth;
+  left: -$tabularFluidOffset;
+}
+
+/* Bottom Vertical Tabular */
+.#{$prefix}.bottom.tabular.menu {
+  background: $tabularBackground;
+  border-radius: 0em;
+  box-shadow: none !important;
+  border-bottom: none;
+  border-top: $tabularBorderWidth solid $tabularBorderColor;
+}
+.#{$prefix}.bottom.tabular.menu .item {
+  background: none;
+  border-left: $tabularBorderWidth solid transparent;
+  border-right: $tabularBorderWidth solid transparent;
+  border-bottom: $tabularBorderWidth solid transparent;
+  border-top: none;
+}
+.#{$prefix}.bottom.tabular.menu .active.item {
+  background: $tabularActiveBackground;
+  color: $tabularActiveColor;
+  border-color: $tabularBorderColor;
+  margin: -$tabularBorderWidth 0px 0px 0px;
+  border-radius: 0px 0px $tabularBorderRadius $tabularBorderRadius !important;
+}
+
+/* Vertical Tabular (Left) */
+.#{$prefix}.vertical.tabular.menu {
+  background: $tabularVerticalBackground;
+  border-radius: 0em;
+  box-shadow: none !important;
+  border-bottom: none;
+  border-right: $tabularBorderWidth solid $tabularBorderColor;
+}
+.#{$prefix}.vertical.tabular.menu .item {
+  background: none;
+  border-left: $tabularBorderWidth solid transparent;
+  border-bottom: $tabularBorderWidth solid transparent;
+  border-top: $tabularBorderWidth solid transparent;
+  border-right: none;
+}
+.#{$prefix}.vertical.tabular.menu .active.item {
+  background: $tabularActiveBackground;
+  color: $tabularActiveColor;
+  border-color: $tabularBorderColor;
+  margin: 0px -$tabularBorderWidth 0px 0px;
+  border-radius: $tabularBorderRadius 0px 0px $tabularBorderRadius !important;
+}
+
+/* Vertical Right Tabular */
+.#{$prefix}.vertical.right.tabular.menu {
+  background: $tabularVerticalBackground;
+  border-radius: 0em;
+  box-shadow: none !important;
+  border-bottom: none;
+  border-right: none;
+  border-left: $tabularBorderWidth solid $tabularBorderColor;
+}
+.#{$prefix}.vertical.right.tabular.menu .item {
+  background: none;
+  border-right: $tabularBorderWidth solid transparent;
+  border-bottom: $tabularBorderWidth solid transparent;
+  border-top: $tabularBorderWidth solid transparent;
+  border-left: none;
+}
+.#{$prefix}.vertical.right.tabular.menu .active.item {
+  background: $tabularActiveBackground;
+  color: $tabularActiveColor;
+  border-color: $tabularBorderColor;
+  margin: 0px 0px 0px -$tabularBorderWidth;
+  border-radius: 0px $tabularBorderRadius $tabularBorderRadius 0px !important;
+}
+
+/* Dropdown */
+.#{$prefix}.tabular.menu .active.dropdown.item {
+  margin-bottom: 0px;
+  border-left: $tabularBorderWidth solid transparent;
+  border-right: $tabularBorderWidth solid transparent;
+  border-top: $tabularOppositeBorderWidth solid transparent;
+  border-bottom: none;
+}
+
+/*--------------
+   Separate
+---------------*/
+.#{$prefix}.tabular.separate.menu {
+  .item {
+    border-color: $tabularBorderColor;
+    border-width: 1px;
+    border-radius: 0px !important;
+    background: $separateBackground;
+
+    &.active {
+      border-width: 1px;
+      background: $separateActiveBackground;
+    }
+
+    &.disabled {
+      background: $separateDisabledBackground !important;
+    }
+  }
+
+  .item + .item {
+    border-left-width: 0px;
+  }
+
+  .button {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 0.7em;
+  }
+}
+
+/*--------------
+   Pagination
+---------------*/
+
+.#{$prefix}.pagination.menu {
+  margin: 0em;
+  display: inline-flex;
+  vertical-align: middle;
+}
+.#{$prefix}.pagination.menu .item:last-child {
+  border-radius: 0em $borderRadius $borderRadius 0em;
+}
+.#{$prefix}.compact.menu .item:last-child {
+  border-radius: 0em $borderRadius $borderRadius 0em;
+}
+.#{$prefix}.pagination.menu .item:last-child:before {
+  display: none;
+}
+
+.#{$prefix}.pagination.menu .item {
+  min-width: $paginationMinWidth;
+  text-align: center;
+}
+.#{$prefix}.pagination.menu .icon.item i.icon {
+  vertical-align: top;
+}
+
+/* Active */
+.#{$prefix}.pagination.menu .active.item {
+  border-top: none;
+  padding-top: $itemVerticalPadding;
+  background-color: $paginationActiveBackground;
+  color: $paginationActiveTextColor;
+  box-shadow: none;
+}
+
+.#{$prefix}.secondary.menu {
+  background: $secondaryBackground;
+  margin-left: -$secondaryItemSpacing;
+  margin-right: -$secondaryItemSpacing;
+  border-radius: 0em;
+  border: none;
+  box-shadow: none;
+}
+
+/* Item */
+.#{$prefix}.secondary.menu .item {
+  align-self: center;
+  box-shadow: none;
+  border: none;
+  color: $linkColor;
+  padding: $secondaryItemPadding;
+  margin: $secondaryItemMargin;
+  background: $secondaryItemBackground;
+  transition: $secondaryItemTransition;
+  border-radius: $secondaryItemBorderRadius;
+}
+
+/* No Divider */
+.#{$prefix}.secondary.menu .item:before {
+  display: none !important;
+}
+
+/* Header */
+.#{$prefix}.secondary.menu .header.item {
+  border-radius: 0em;
+  border-right: $secondaryHeaderBorder;
+  background: $secondaryHeaderBackground;
+}
+
+/* Image */
+.#{$prefix}.secondary.menu .item > img:not(.#{$prefix}) {
+  margin: 0em;
+}
+
+/* Hover */
+.#{$prefix}.secondary.menu .dropdown.item:hover,
+.#{$prefix}.secondary.menu .link.item:hover,
+.#{$prefix}.secondary.menu a.item:hover {
+  background: $secondaryHoverItemBackground;
+  color: $secondaryHoverItemColor;
+}
+
+/* Active */
+.#{$prefix}.secondary.menu .active.item {
+  box-shadow: none;
+  background: $secondaryActiveItemBackground;
+  color: $secondaryActiveItemColor;
+  border-radius: $secondaryItemBorderRadius;
+}
+
+/* Active Hover */
+.#{$prefix}.secondary.menu .active.item:hover {
+  box-shadow: none;
+  background: $secondaryActiveHoverItemBackground;
+  color: $secondaryActiveHoverItemColor;
+}
+
+
+/* Inverted */
+.#{$prefix}.secondary.inverted.menu .link.item,
+.#{$prefix}.secondary.inverted.menu a.item {
+  color: $secondaryInvertedColor !important;
+}
+.#{$prefix}.secondary.inverted.menu .dropdown.item:hover,
+.#{$prefix}.secondary.inverted.menu .link.item:hover,
+.#{$prefix}.secondary.inverted.menu a.item:hover {
+  background: $secondaryInvertedHoverBackground;
+  color: $secondaryInvertedHoverColor !important;
+}
+.#{$prefix}.secondary.inverted.menu .active.item {
+  background: $secondaryInvertedActiveBackground;
+  color: $secondaryInvertedActiveColor !important;
+}
+
+/* Fix item margins */
+.#{$prefix}.secondary.item.menu {
+  margin-left: 0em;
+  margin-right: 0em;
+}
+.#{$prefix}.secondary.item.menu .item:last-child {
+  margin-right: 0em;
+}
+.#{$prefix}.secondary.attached.menu {
+  box-shadow: none;
+}
+
+/* Sub Menu */
+.#{$prefix}.vertical.secondary.menu .item:not(.dropdown) > .menu {
+  margin: $secondaryMenuSubMenuMargin;
+}
+.#{$prefix}.vertical.secondary.menu .item:not(.dropdown) > .menu > .item {
+  margin: $secondaryMenuSubMenuItemMargin;
+  padding: $secondaryMenuSubMenuItemPadding;
+}
+
+
+/*---------------------
+   Secondary Vertical
+-----------------------*/
+
+.#{$prefix}.secondary.vertical.menu > .item {
+  border: none;
+  margin: $secondaryVerticalItemMargin;
+  border-radius: $secondaryVerticalItemBorderRadius !important;
+}
+.#{$prefix}.secondary.vertical.menu > .header.item {
+  border-radius: 0em;
+}
+
+/* Sub Menu */
+.#{$prefix}.vertical.secondary.menu .item > .menu .item {
+  background-color: transparent;
+}
+
+/* Inverted */
+.#{$prefix}.secondary.inverted.menu {
+  background-color: transparent;
+}
+
+/*---------------------
+   Secondary Pointing
+-----------------------*/
+
+.#{$prefix}.secondary.pointing.menu {
+  margin-left: 0em;
+  margin-right: 0em;
+  border-bottom: $secondaryPointingBorderWidth solid $secondaryPointingBorderColor;
+}
+
+.#{$prefix}.secondary.pointing.menu .item {
+  border-bottom-color: transparent;
+  border-bottom-style: solid;
+  border-radius: 0em;
+  align-self: flex-end;
+
+  margin: 0em 0em -#{$secondaryPointingBorderWidth} 0em;
+  padding: $secondaryPointingItemVerticalPadding $secondaryPointingItemHorizontalPadding;
+  border-bottom-width: $secondaryPointingBorderWidth;
+  transition: $secondaryItemTransition;
+}
+
+/* Item Types */
+.#{$prefix}.secondary.pointing.menu .header.item {
+  color: $secondaryPointingHeaderColor !important;
+}
+.#{$prefix}.secondary.pointing.menu .text.item {
+  box-shadow: none !important;
+}
+.#{$prefix}.secondary.pointing.menu .item:after {
+  display: none;
+}
+
+/* Hover */
+.#{$prefix}.secondary.pointing.menu .dropdown.item:hover,
+.#{$prefix}.secondary.pointing.menu .link.item:hover,
+.#{$prefix}.secondary.pointing.menu a.item:hover {
+  background-color: transparent;
+  color: $secondaryPointingHoverTextColor;
+}
+
+/* Pressed */
+.#{$prefix}.secondary.pointing.menu .dropdown.item:active,
+.#{$prefix}.secondary.pointing.menu .link.item:active,
+.#{$prefix}.secondary.pointing.menu a.item:active {
+  background-color: transparent;
+  border-color: $secondaryPointingBorderColor;
+}
+
+/* Active */
+.#{$prefix}.secondary.pointing.menu .active.item {
+  background-color: transparent;
+  box-shadow: none;
+  border-color: $secondaryPointingActiveBorderColor;
+  font-weight: $secondaryPointingActiveFontWeight;
+  color: $secondaryPointingActiveTextColor;
+}
+
+/* Active Hover */
+.#{$prefix}.secondary.pointing.menu .active.item:hover {
+  border-color: $secondaryPointingActiveHoverBorderColor;
+  color: $secondaryPointingActiveHoverTextColor;
+}
+
+/* Active Dropdown */
+.#{$prefix}.secondary.pointing.menu .active.dropdown.item {
+  border-color: $secondaryPointingActiveDropdownBorderColor;
+}
+
+/* Vertical Pointing */
+.#{$prefix}.secondary.vertical.pointing.menu {
+  border-bottom-width: 0px;
+  border-right-width: $secondaryPointingBorderWidth;
+  border-right-style: solid;
+  border-right-color: $secondaryPointingBorderColor;
+}
+.#{$prefix}.secondary.vertical.pointing.menu .item {
+  border-bottom: none;
+  border-right-style: solid;
+  border-right-color: transparent;
+  border-radius: 0em !important;
+  margin: $secondaryVerticalPointingItemMargin;
+  border-right-width: $secondaryPointingBorderWidth;
+}
+
+/* Vertical Active */
+.#{$prefix}.secondary.vertical.pointing.menu .active.item {
+  border-color: $secondaryPointingActiveBorderColor;
+}
+
+/* Inverted */
+.#{$prefix}.secondary.inverted.pointing.menu {
+  border-color: $secondaryPointingInvertedBorderColor;
+}
+
+.#{$prefix}.secondary.inverted.pointing.menu {
+  border-width: $secondaryPointingBorderWidth;
+  border-color: $secondaryPointingBorderColor;
+}
+.#{$prefix}.secondary.inverted.pointing.menu .item {
+  color: $secondaryPointingInvertedItemTextColor;
+}
+.#{$prefix}.secondary.inverted.pointing.menu .header.item {
+  color: $secondaryPointingInvertedItemHeaderColor !important;
+}
+
+/* Hover */
+.#{$prefix}.secondary.inverted.pointing.menu .link.item:hover,
+.#{$prefix}.secondary.inverted.pointing.menu a.item:hover {
+  color: $secondaryPointingInvertedItemHoverTextColor;
+}
+
+
+/* Active */
+.#{$prefix}.secondary.inverted.pointing.menu .active.item {
+  border-color: $secondaryPointingInvertedActiveBorderColor;
+  color: $secondaryPointingInvertedActiveColor;
+}
+
+/*--------------
+    Text Menu
+---------------*/
+
+.#{$prefix}.text.menu {
+  background: none transparent;
+  border-radius: 0px;
+  box-shadow: none;
+  border: none;
+
+  margin: $textMenuMargin;
+}
+.#{$prefix}.text.menu .item {
+  border-radius: 0px;
+  box-shadow: none;
+  align-self: center;
+  margin: $textMenuItemMargin;
+  padding: $textMenuItemPadding;
+  font-weight: $textMenuItemFontWeight;
+  color: $textMenuItemColor;
+  transition: $textMenuItemTransition;
+}
+
+/* Border */
+.#{$prefix}.text.menu .item:before,
+.#{$prefix}.text.menu .menu .item:before {
+  display: none !important;
+}
+
+/* Header */
+.#{$prefix}.text.menu .header.item {
+  background-color: transparent;
+  opacity: 1;
+  color: $textMenuHeaderColor;
+  font-size: $textMenuHeaderSize;
+  text-transform: $textMenuHeaderTextTransform;
+  font-weight: $textMenuHeaderFontWeight;
+}
+
+/* Image */
+.#{$prefix}.text.menu .item > img:not(.#{$prefix}) {
+  margin: 0em;
+}
+
+/*--- fluid text ---*/
+.#{$prefix}.text.item.menu .item {
+  margin: 0em;
+}
+
+/*--- vertical text ---*/
+.#{$prefix}.vertical.text.menu {
+  margin: $textVerticalMenuMargin;
+}
+.#{$prefix}.vertical.text.menu:first-child {
+  margin-top: 0rem;
+}
+.#{$prefix}.vertical.text.menu:last-child {
+  margin-bottom: 0rem;
+}
+.#{$prefix}.vertical.text.menu .item {
+  margin: $textVerticalMenuItemMargin;
+  padding-left: 0em;
+  padding-right: 0em;
+}
+.#{$prefix}.vertical.text.menu .item > i.icon {
+  float: $textVerticalMenuIconFloat;
+  margin: $iconMargin;
+}
+.#{$prefix}.vertical.text.menu .header.item {
+  margin: $textVerticalMenuHeaderMargin;
+}
+
+/* Vertical Sub Menu */
+.#{$prefix}.vertical.text.menu .item:not(.dropdown) > .menu {
+  margin: $textMenuSubMenuMargin;
+}
+.#{$prefix}.vertical.text.menu .item:not(.dropdown) > .menu > .item {
+  margin: $textMenuSubMenuItemMargin;
+  padding: $textMenuSubMenuItemPadding;
+}
+
+/*--- hover ---*/
+.#{$prefix}.text.menu .item:hover {
+  opacity: 1;
+  background-color: transparent;
+}
+
+/*--- active ---*/
+.#{$prefix}.text.menu .active.item {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  font-weight: $textMenuActiveItemFontWeight;
+  color: $textMenuActiveItemColor;
+}
+
+/*--- active hover ---*/
+.#{$prefix}.text.menu .active.item:hover {
+  background-color: transparent;
+}
+
+/* Disable Bariations */
+.#{$prefix}.text.pointing.menu .active.item:after {
+  box-shadow: none;
+}
+.#{$prefix}.text.attached.menu {
+  box-shadow: none;
+}
+
+/* Inverted */
+.#{$prefix}.inverted.text.menu,
+.#{$prefix}.inverted.text.menu .item,
+.#{$prefix}.inverted.text.menu .item:hover,
+.#{$prefix}.inverted.text.menu .active.item {
+  background-color: transparent !important;
+}
+
+/* Fluid */
+.#{$prefix}.fluid.text.menu {
+  margin-left: 0em;
+  margin-right: 0em;
+}
+
+/*--------------
+    Icon Only
+---------------*/
+
+/* Vertical Menu */
+.#{$prefix}.vertical.icon.menu {
+  display: inline-block;
+  width: auto;
+}
+
+/* Item */
+.#{$prefix}.icon.menu .item {
+  height: auto;
+  text-align: $iconMenuTextAlign;
+  color: $iconMenuItemColor;
+}
+
+/* Icon */
+.#{$prefix}.icon.menu .item > .icon:not(.dropdown) {
+  margin: 0;
+  opacity: 1;
+}
+
+/* Icon Gylph */
+.#{$prefix}.icon.menu .icon:before {
+  opacity: 1;
+}
+
+/* (x) Item Icon */
+.#{$prefix}.menu .icon.item > .icon {
+  width: auto;
+  margin: 0em auto;
+}
+
+/* Vertical Icon */
+.#{$prefix}.vertical.icon.menu .item > .icon:not(.dropdown) {
+  display: block;
+  opacity: 1;
+  margin: 0em auto;
+  float: none;
+}
+
+/* Inverted */
+.#{$prefix}.inverted.icon.menu .item {
+  color: $iconMenuInvertedItemColor;
+}
+
+/*--------------
+   Labeled Icon
+---------------*/
+
+/* Menu */
+.#{$prefix}.labeled.icon.menu {
+  text-align: center;
+}
+
+/* Item */
+.#{$prefix}.labeled.icon.menu  .item {
+  min-width: $labeledIconMinWidth;
+  flex-direction: column;
+}
+
+/* Icon */
+.#{$prefix}.labeled.icon.menu .item > .icon:not(.dropdown) {
+  height: 1em;
+  display: block;
+  font-size: $labeledIconSize !important;
+  margin: 0em auto $labeledIconTextMargin !important;
+}
+
+/* Fluid */
+.#{$prefix}.fluid.labeled.icon.menu > .item {
+  min-width: 0em;
+}
+
+
+/*******************************
+           Variations
+*******************************/
+
+/*--------------
+    Stackable
+---------------*/
+
+@media only screen and (max-width: $largestMobileScreen) {
+  .#{$prefix}.stackable.menu {
+    flex-direction: column;
+  }
+  .#{$prefix}.stackable.menu .item {
+    width: 100% !important;
+  }
+  .#{$prefix}.stackable.menu .item:before {
+    position: absolute;
+    content: '';
+    top: auto;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: $dividerSize;
+    background: $verticalDividerBackground;
+  }
+
+  .#{$prefix}.stackable.menu .left.menu,
+  .#{$prefix}.stackable.menu .left.item {
+    margin-right: 0 !important;
+  }
+  .#{$prefix}.stackable.menu .right.menu,
+  .#{$prefix}.stackable.menu .right.item {
+    margin-left: 0 !important;
+  }
+}
+
+/*--------------
+     Colors
+---------------*/
+
+/*--- Standard Colors  ---*/
+.#{$prefix}.menu .red.active.item,
+.#{$prefix}.red.menu .active.item {
+  border-color: $red !important;
+  color: $red !important;
+}
+.#{$prefix}.menu .green.active.item,
+.#{$prefix}.green.menu .active.item {
+  border-color: $green !important;
+  color: $green !important;
+}
+.#{$prefix}.menu .blue.active.item,
+.#{$prefix}.blue.menu .active.item {
+  border-color: $blue !important;
+  color: $blue !important;
+}
+.#{$prefix}.menu .grey.active.item,
+.#{$prefix}.grey.menu .active.item {
+  border-color: $grey !important;
+  color: $grey !important;
+}
+
+/* Lighter Grey */
+.#{$prefix}.lighter.grey.menu .item{
+  color: $darkBlue;
+}
+.#{$prefix}.menu .lighter.grey.active.item,
+.#{$prefix}.lighter.grey.menu {
+  background-color: $lighterGrey;
+  //border: none !important;
+}
+.#{$prefix}.lighter.grey.menu .item:before {
+  background-color: $offWhite;
+}
+.#{$prefix}.lighter.grey.menu .active.item {
+  background-color: $darkGrey !important;
+}
+.#{$prefix}.menu .lighter.grey.active.item,
+.#{$prefix}.lighter.grey.menu .active.item {
+  border-color: transparent !important;
+  color: $darkWhite !important;
+}
+
+
+/*--------------
+    Subtle
+---------------*/
+
+/* Border */
+.#{$prefix}.subtle.menu{
+  border: none;
+}
+
+/* Menu Item */
+.#{$prefix}.subtle.menu .item:before {
+  background: $white;
+}
+
+/*--------------
+    Inverted
+---------------*/
+
+.#{$prefix}.inverted.menu {
+  border: $invertedBorder;
+  background: $invertedBackground;
+  box-shadow: $invertedBoxShadow;
+}
+
+/* Menu Item */
+.#{$prefix}.inverted.menu .item,
+.#{$prefix}.inverted.menu .item > a:not(.#{$prefix}) {
+  background: $invertedItemBackground;
+  color: $invertedItemTextColor;
+}
+.#{$prefix}.inverted.menu .item.menu {
+  background: $invertedSubMenuBackground;
+}
+
+/*--- Border ---*/
+.#{$prefix}.inverted.menu .item:before {
+  background: $invertedDividerBackground;
+}
+.#{$prefix}.vertical.inverted.menu .item:before {
+  background: $invertedVerticalDividerBackground;
+}
+
+/* Sub Menu */
+.#{$prefix}.vertical.inverted.menu .menu .item,
+.#{$prefix}.vertical.inverted.menu .menu .item a:not(.#{$prefix}) {
+  color: $invertedSubMenuColor;
+}
+
+/* Header */
+.#{$prefix}.inverted.menu .header.item {
+  margin: 0em;
+  background: $invertedHeaderBackground;
+  box-shadow: none;
+}
+
+/* Disabled */
+.#{$prefix}.inverted.menu .item.disabled,
+.#{$prefix}.inverted.menu .item.disabled:hover {
+  color: $invertedDisabledTextColor;
+}
+
+/*--- Hover ---*/
+.#{$prefix}.link.inverted.menu .item:hover,
+.#{$prefix}.inverted.menu .dropdown.item:hover,
+.#{$prefix}.inverted.menu .link.item:hover,
+.#{$prefix}.inverted.menu a.item:hover {
+  background: $invertedHoverBackground;
+  color: $invertedHoverColor;
+}
+.#{$prefix}.vertical.inverted.menu .item .menu a.item:hover,
+.#{$prefix}.vertical.inverted.menu .item .menu .link.item:hover {
+  background: $invertedSubMenuBackground;
+  color: $invertedSubMenuHoverColor;
+}
+
+/*--- Pressed ---*/
+.#{$prefix}.inverted.menu a.item:active,
+.#{$prefix}.inverted.menu .link.item:active{
+  background: $invertedMenuPressedBackground;
+  color: $invertedMenuPressedColor;
+}
+
+/*--- Active ---*/
+.#{$prefix}.inverted.menu .active.item {
+  background: $invertedActiveBackground;
+  color: $invertedActiveColor !important;
+}
+.#{$prefix}.inverted.vertical.menu .item .menu .active.item {
+  background: $invertedSubMenuActiveBackground;
+  color: $invertedSubMenuActiveColor;
+}
+.#{$prefix}.inverted.pointing.menu .active.item:after {
+  background: $invertedArrowActiveColor !important;
+  margin: 0em !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/*--- Active Hover ---*/
+.#{$prefix}.inverted.menu .active.item:hover {
+  background: $invertedActiveHoverBackground;
+  color: $invertedActiveHoverColor !important;
+}
+.#{$prefix}.inverted.pointing.menu .active.item:hover:after {
+  background: $invertedArrowActiveHoverColor !important;
+}
+
+
+/*--------------
+     Floated
+---------------*/
+
+.#{$prefix}.floated.menu {
+  float: left;
+  margin: 0rem $floatedDistance 0rem 0rem;
+}
+.#{$prefix}.floated.menu .item:last-child:before {
+  display: none;
+}
+
+.#{$prefix}.right.floated.menu {
+  float: right;
+  margin: 0rem 0rem 0rem $floatedDistance;
+}
+
+
+/*--------------
+    Inverted
+---------------*/
+
+/* Red */
+.#{$prefix}.inverted.menu .red.active.item,
+.#{$prefix}.inverted.red.menu {
+  background-color: $red;
+}
+.#{$prefix}.inverted.red.menu .item:before {
+  background-color: $invertedColoredDividerBackground;
+}
+.#{$prefix}.inverted.red.menu .active.item {
+  background-color: $invertedColoredActiveBackground !important;
+}
+
+
+/* Green */
+.#{$prefix}.inverted.menu .green.active.item,
+.#{$prefix}.inverted.green.menu {
+  background-color: $green;
+}
+.#{$prefix}.inverted.green.menu .item:before {
+  background-color: $invertedColoredDividerBackground;
+}
+.#{$prefix}.inverted.green.menu .active.item {
+  background-color: $invertedColoredActiveBackground !important;
+}
+
+
+/* Blue */
+.#{$prefix}.inverted.menu .blue.active.item,
+.#{$prefix}.inverted.blue.menu {
+  background-color: $blue;
+}
+.#{$prefix}.inverted.blue.menu .item:before {
+  background-color: $invertedColoredDividerBackground;
+}
+.#{$prefix}.inverted.blue.menu .active.item {
+  background-color: $invertedColoredActiveBackground !important;
+}
+.#{$prefix} .inverted.blue.active.item {
+  color: #fff !important;
+  background-color: $blue;
+}
+
+
+/* Grey */
+.#{$prefix}.inverted.menu .grey.active.item,
+.#{$prefix}.inverted.grey.menu {
+  background-color: $grey;
+}
+.#{$prefix}.inverted.grey.menu .item:before {
+  background-color: $invertedColoredDividerBackground;
+}
+.#{$prefix}.inverted.grey.menu .active.item {
+  background-color: $invertedColoredActiveBackground !important;
+}
+
+/* Bluish Grey */
+.#{$prefix}.inverted.menu .bluish.grey.active.item,
+.#{$prefix}.inverted.bluish.grey.menu {
+  background-color: #838b96;
+}
+
+
+/*--------------
+     Fitted
+---------------*/
+
+.#{$prefix}.fitted.menu .item,
+.#{$prefix}.fitted.menu .item .menu .item,
+.#{$prefix}.menu .fitted.item {
+  padding: 0em;
+}
+.#{$prefix}.horizontally.fitted.menu .item,
+.#{$prefix}.horizontally.fitted.menu .item .menu .item,
+.#{$prefix}.menu .horizontally.fitted.item {
+  padding-top: $itemVerticalPadding;
+  padding-bottom: $itemVerticalPadding;
+}
+.#{$prefix}.vertically.fitted.menu .item,
+.#{$prefix}.vertically.fitted.menu .item .menu .item,
+.#{$prefix}.menu .vertically.fitted.item {
+  padding-left: $itemHorizontalPadding;
+  padding-right: $itemHorizontalPadding;
+}
+
+/*--------------
+   Borderless
+---------------*/
+
+.#{$prefix}.borderless.menu .item:before,
+.#{$prefix}.borderless.menu .item .menu .item:before,
+.#{$prefix}.menu .borderless.item:before {
+  background: none !important;
+}
+
+/*-------------------
+       Compact
+--------------------*/
+
+.#{$prefix}.compact.menu {
+  display: inline-flex;
+  margin: 0em;
+  vertical-align: middle;
+}
+.#{$prefix}.compact.vertical.menu {
+  display: inline-block;
+}
+.#{$prefix}.compact.menu .item:last-child {
+  border-radius: 0em $borderRadius $borderRadius 0em;
+}
+.#{$prefix}.compact.menu .item:last-child:before {
+  display: none;
+}
+.#{$prefix}.compact.vertical.menu {
+  width: auto !important;
+}
+.#{$prefix}.compact.vertical.menu .item:last-child::before {
+  display: block;
+}
+
+/*-------------------
+        Fluid
+--------------------*/
+
+.#{$prefix}.menu.fluid,
+.#{$prefix}.vertical.menu.fluid {
+  width: 100% !important;
+}
+
+
+/*-------------------
+      Evenly Sized
+--------------------*/
+
+.#{$prefix}.item.menu,
+.#{$prefix}.item.menu .item {
+  width: 100%;
+  padding-left: 0em !important;
+  padding-right: 0em !important;
+  margin-left: 0em !important;
+  margin-right: 0em !important;
+  text-align: center;
+  justify-content: center;
+}
+
+.#{$prefix}.item.menu .item:last-child:before {
+  display: none;
+}
+
+.#{$prefix}.menu.two.item .item {
+  width: 50%;
+}
+.#{$prefix}.menu.three.item .item {
+  width: 33.333%;
+}
+.#{$prefix}.menu.four.item .item {
+  width: 25%;
+}
+.#{$prefix}.menu.five.item .item {
+  width: 20%;
+}
+.#{$prefix}.menu.six.item .item {
+  width: 16.666%;
+}
+.#{$prefix}.menu.seven.item .item {
+  width: 14.285%;
+}
+.#{$prefix}.menu.eight.item .item {
+  width: 12.500%;
+}
+.#{$prefix}.menu.nine.item .item {
+  width: 11.11%;
+}
+.#{$prefix}.menu.ten.item .item {
+  width: 10.0%;
+}
+.#{$prefix}.menu.eleven.item .item {
+  width: 9.09%;
+}
+.#{$prefix}.menu.twelve.item .item {
+  width: 8.333%;
+}
+
+/*--------------
+     Fixed
+---------------*/
+
+.#{$prefix}.menu.fixed {
+  position: fixed;
+  z-index: 101;
+  margin: 0em;
+  width: 100%;
+}
+.#{$prefix}.menu.fixed,
+.#{$prefix}.menu.fixed .item:first-child,
+.#{$prefix}.menu.fixed .item:last-child {
+  border-radius: 0px !important;
+}
+
+.#{$prefix}.fixed.menu,
+.#{$prefix}[class*="top fixed"].menu {
+  top: 0px;
+  left: 0px;
+  right: auto;
+  bottom: auto;
+}
+.#{$prefix}[class*="top fixed"].menu {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+.#{$prefix}[class*="right fixed"].menu {
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+  top: 0px;
+  right: 0px;
+  left: auto;
+  bottom: auto;
+  width: auto;
+  height: 100%;
+}
+.#{$prefix}[class*="bottom fixed"].menu {
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  bottom: 0px;
+  left: 0px;
+  top: auto;
+  right: auto;
+}
+.#{$prefix}[class*="left fixed"].menu {
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  top: 0px;
+  left: 0px;
+  right: auto;
+  bottom: auto;
+  width: auto;
+  height: 100%;
+}
+
+/* Coupling with Grid */
+.#{$prefix}.fixed.menu + .#{$prefix}.grid {
+  padding-top: $fixedPrecedingGridMargin;
+}
+
+
+/*-------------------
+       Pointing
+--------------------*/
+
+.#{$prefix}.pointing.menu .item:after {
+  visibility: hidden;
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  background: none;
+
+  margin: ($arrowBorderWidth / 2) 0em 0em;
+  width: $arrowSize;
+  height: $arrowSize;
+
+  border: none;
+  border-bottom: $arrowBorder;
+  border-right: $arrowBorder;
+
+  z-index: $arrowZIndex;
+  transition: $arrowTransition;
+}
+.#{$prefix}.vertical.pointing.menu .item:after {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  bottom: auto;
+  left: auto;
+
+  transform: translateX(50%) translateY(-50%) rotate(45deg);
+  margin: 0em -($arrowBorderWidth / 2) 0em 0em;
+
+  border: none;
+  border-top: $arrowBorder;
+  border-right: $arrowBorder;
+}
+
+/* Active */
+.#{$prefix}.pointing.menu .active.item:after {
+  visibility: visible;
+}
+.#{$prefix}.pointing.menu .active.dropdown.item:after {
+  visibility: hidden;
+}
+
+/* Don't double up pointers */
+.#{$prefix}.pointing.menu .dropdown.active.item:after,
+.#{$prefix}.pointing.menu .active.item .menu .active.item:after {
+  display: none;
+}
+
+/* Colors */
+.#{$prefix}.pointing.menu .active.item:hover:after {
+  background-color: $arrowHoverColor;
+}
+.#{$prefix}.pointing.menu .active.item:after {
+  background-color: $arrowActiveColor;
+}
+.#{$prefix}.pointing.menu .active.item:hover:after {
+  background-color: $arrowActiveHoverColor;
+}
+
+.#{$prefix}.vertical.pointing.menu .active.item:hover:after {
+  background-color: $arrowVerticalHoverColor;
+}
+.#{$prefix}.vertical.pointing.menu .active.item:after {
+  background-color: $arrowVerticalActiveColor;
+}
+.#{$prefix}.vertical.pointing.menu .menu .active.item:after {
+  background-color: $arrowVerticalSubMenuColor;
+}
+
+
+
+/*--------------
+    Attached
+---------------*/
+
+/* Middle */
+.#{$prefix}.attached.menu {
+  top: 0px;
+  bottom: 0px;
+  border-radius: 0px;
+  margin: 0em $attachedHorizontalOffset;
+  width: $attachedWidth;
+  max-width: $attachedWidth;
+  box-shadow: $attachedBoxShadow;
+}
+.#{$prefix}.attached + .#{$prefix}.attached.menu:not(.top) {
+  border-top: none;
+}
+
+/* Top */
+.#{$prefix}[class*="top attached"].menu {
+  bottom: 0px;
+  margin-bottom: 0em;
+  top: $attachedTopOffset;
+  margin-top: $verticalMargin;
+  border-radius: $borderRadius $borderRadius 0em 0em;
+}
+.#{$prefix}.menu[class*="top attached"]:first-child {
+  margin-top: 0em;
+}
+
+/* Bottom */
+.#{$prefix}[class*="bottom attached"].menu {
+  bottom: 0px;
+  margin-top: 0em;
+  top: $attachedBottomOffset;
+  margin-bottom: $verticalMargin;
+  box-shadow: $attachedBottomBoxShadow;
+  border-radius: 0em 0em $borderRadius $borderRadius;
+}
+.#{$prefix}[class*="bottom attached"].menu:last-child {
+  margin-bottom: 0em;
+}
+
+/* Attached Menu Item */
+.#{$prefix}.top.attached.menu > .item:first-child {
+  border-radius: $borderRadius 0em 0em 0em;
+}
+.#{$prefix}.bottom.attached.menu > .item:first-child {
+  border-radius: 0em 0em 0em $borderRadius;
+}
+
+/* Tabular Attached */
+.#{$prefix}.attached.menu:not(.tabular) {
+  border: $attachedBorder;
+}
+.#{$prefix}.attached.inverted.menu {
+  border: none;
+}
+.#{$prefix}.attached.tabular.menu {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
+/*--------------
+     Sizes
+---------------*/
+
+/* Mini */
+.#{$prefix}.mini.menu {
+  font-size: $mini;
+}
+.#{$prefix}.mini.vertical.menu {
+  width: $miniWidth;
+}
+
+/* Tiny */
+.#{$prefix}.tiny.menu {
+  font-size: $tiny;
+}
+.#{$prefix}.tiny.vertical.menu {
+  width: $tinyWidth;
+}
+
+/* Small */
+.#{$prefix}.small.menu {
+  font-size: $small;
+}
+.#{$prefix}.small.vertical.menu {
+  width: $smallWidth;
+}
+
+/* Medium */
+.#{$prefix}.menu {
+  font-size: $medium;
+}
+.#{$prefix}.vertical.menu {
+  width: $mediumWidth;
+}
+
+/* Large */
+.#{$prefix}.large.menu {
+  font-size: $large;
+}
+.#{$prefix}.large.vertical.menu {
+  width: $largeWidth;
+}
+
+/* Huge */
+.#{$prefix}.huge.menu {
+  font-size: $huge;
+}
+.#{$prefix}.huge.vertical.menu {
+  width: $hugeWidth;
+}
+
+/* Big */
+.#{$prefix}.big.menu {
+  font-size: $big;
+}
+.#{$prefix}.big.vertical.menu {
+  width: $bigWidth;
+}
+
+/* Massive */
+.#{$prefix}.massive.menu {
+  font-size: $massive;
+}
+.#{$prefix}.massive.vertical.menu {
+  width: $massiveWidth;
+}

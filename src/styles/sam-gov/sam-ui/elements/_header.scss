@@ -1,0 +1,572 @@
+/*******************************
+            Header
+*******************************/
+
+/*-------------------
+       Element
+--------------------*/
+
+$textTransform: none;
+$fontFamily: $headerFont;
+$fontWeight: $headerFontWeight;
+$lineHeight: $headerLineHeight;
+$lineHeightOffset: $headerLineHeightOffset;
+
+$topMargin: $headerTopMargin;
+$bottomMargin: $headerBottomMargin;
+$margin: $topMargin 0em $bottomMargin;
+
+$firstMargin: -$lineHeightOffset;
+$lastMargin: 0em;
+$horizontalPadding: 0em;
+$verticalPadding: 0em;
+
+/* Sub Heading */
+$subHeadingDistance: 2px;
+$subHeadingFontSize: $relativeTiny;
+$subHeadingFontWeight: bold;
+$subHeadingTextTransform: uppercase;
+$subHeadingColor: '';
+
+$smallSubHeadingSize: $relativeMini;
+$largeSubHeadingSize: $relativeSmall;
+$hugeSubHeadingSize: $relativeMedium;
+
+/* Sub Header */
+$subHeaderMargin: 0em;
+$subHeaderLineHeight: 1.2em;
+$subHeaderColor: $mutedTextColor;
+
+/* Label */
+$labelSize: '';
+$labelDistance: 0.5rem;
+$labelVerticalAlign: middle;
+
+/* Content */
+$contentAlignment: top;
+$contentIconAlignment: middle;
+$contentImageAlignment: middle;
+
+/* Paragraph after Header */
+$nextParagraphDistance: 0em;
+
+/*-------------------
+      Variations
+--------------------*/
+
+/* Sizing */
+$hugeFontSize   : strip-units($h1) * 1em;
+$largeFontSize  : strip-units($h2) * 1em;
+$mediumFontSize : 1em;
+$smallFontSize  : strip-units($h4) * 1em;
+$tinyFontSize   : strip-units($h5) * 1em;
+
+/* Sub Header */
+$h1SubHeaderFontSize: $large;
+$h2SubHeaderFontSize: $large;
+$h3SubHeaderFontSize: $medium;
+$h4SubHeaderFontSize: $medium;
+$h5SubHeaderFontSize: $small;
+
+$hugeSubHeaderFontSize  : $h1SubHeaderFontSize;
+$largeSubHeaderFontSize : $h2SubHeaderFontSize;
+$subHeaderFontSize      : $h3SubHeaderFontSize;
+$smallSubHeaderFontSize : $h4SubHeaderFontSize;
+$tinySubHeaderFontSize  : $h5SubHeaderFontSize;
+
+/* Divided */
+$dividedBorderWidth: 1px;
+$dividedBorder: $dividedBorderWidth solid $borderColor;
+$dividedColoredBorderWidth: 2px;
+
+$dividedBorderPadding: 10px;
+$dividedSubHeaderPadding: 3px;
+
+/* Attached */
+$attachedOffset: -1px;
+$attachedBoxShadow: none;
+$attachedBorder: 1px solid $solidBorderColor;
+$attachedVerticalPadding: $mini;
+$attachedHorizontalPadding: $medium;
+$attachedBackground: $white;
+$attachedBorderRadius: $defaultBorderRadius;
+
+$tinyAttachedSize: $relativeTiny;
+$smallAttachedSize: $relativeSmall;
+$mediumAttachedSize: $relativeMedium;
+$largeAttachedSize: $relativeLarge;
+$bigAttachedSize: $relativeBig;
+$hugeAttachedSize: $relativeHuge;
+
+/* Inverted */
+$invertedColor: $white;
+$invertedSubHeaderColor: $invertedMutedTextColor;
+$invertedDividedBorderColor: $whiteBorderColor;
+$invertedAttachedBackground: #545454 linear-gradient(transparent,rgba(0,0,0,.8));
+
+/* Floated */
+$floatedMargin: 0.5em;
+
+
+/*******************************
+            Header
+*******************************/
+
+/* Standard */
+.#{$prefix}.header {
+  border: none;
+  margin: $margin;
+  padding: $verticalPadding $horizontalPadding;
+  font-family: $fontFamily;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+  text-transform: $textTransform;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.#{$prefix}.header:first-child {
+  margin-top: $firstMargin;
+}
+.#{$prefix}.header:last-child {
+  margin-bottom: $lastMargin;
+}
+
+/*--------------
+   Sub Header
+---------------*/
+
+.#{$prefix}.header .sub.header {
+  display: block;
+  font-weight: normal;
+  padding: 0em;
+  margin: $subHeaderMargin;
+  font-size: $subHeaderFontSize;
+  line-height: $subHeaderLineHeight;
+  color: $subHeaderColor;
+}
+
+/*--------------
+   Sup Header
+---------------*/
+.#{$prefix}.header .sup.header {
+  display: block;
+  font-weight: 300;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  padding: 0em;
+  margin: $subHeaderMargin;
+  font-size: $subHeaderFontSize;
+  line-height: $subHeaderLineHeight;
+  color: $subHeaderColor;
+}
+
+/*--------------
+     Content
+---------------*/
+
+.#{$prefix}.header .content {
+  display: inline-block;
+  vertical-align: $contentAlignment;
+}
+
+
+/*--------------
+ Loose Coupling
+---------------*/
+
+.#{$prefix}.header .#{$prefix}.label {
+  font-size: $labelSize;
+  margin-left: $labelDistance;
+  vertical-align: $labelVerticalAlign;
+}
+
+/* Positioning */
+.#{$prefix}.header + p {
+  margin-top: $nextParagraphDistance;
+}
+
+
+
+/*******************************
+            Types
+*******************************/
+
+
+/*--------------
+     Page
+---------------*/
+
+h1.#{$prefix}.header {
+  font-size: $h1;
+}
+h2.#{$prefix}.header {
+  font-size: $h2;
+}
+h3.#{$prefix}.header {
+  font-size: $h3;
+}
+h4.#{$prefix}.header {
+  font-size: $h4;
+  font-weight: 600;
+}
+h5.#{$prefix}.header {
+  font-size: $h5;
+  font-weight: 600;
+}
+
+
+/* Sub Header */
+h1.#{$prefix}.header .sub.header {
+  font-size: $h1SubHeaderFontSize;
+}
+h2.#{$prefix}.header .sub.header {
+  font-size: $h2SubHeaderFontSize;
+}
+h3.#{$prefix}.header .sub.header {
+  font-size: $h3SubHeaderFontSize;
+}
+h4.#{$prefix}.header .sub.header {
+  font-size: $h4SubHeaderFontSize;
+}
+h5.#{$prefix}.header .sub.header {
+  font-size: $h5SubHeaderFontSize;
+}
+
+/* Sup Header */
+h1.#{$prefix}.header .sup.header {
+  font-size: 2.5rem;
+}
+h2.#{$prefix}.header .sup.header {
+  font-size: $h2SubHeaderFontSize;
+}
+h3.#{$prefix}.header .sup.header {
+  font-size: $h3SubHeaderFontSize;
+}
+h4.#{$prefix}.header .sup.header {
+  font-size: $h4SubHeaderFontSize;
+}
+h5.#{$prefix}.header .sup.header {
+  font-size: $h5SubHeaderFontSize;
+}
+
+
+/*--------------
+ Content Heading
+---------------*/
+
+.#{$prefix}.huge.header {
+  min-height: 1em;
+  font-size: $hugeFontSize;
+}
+.#{$prefix}.large.header {
+  font-size: $largeFontSize;
+}
+.#{$prefix}.medium.header {
+  font-size: $mediumFontSize;
+  font-weight: 600;
+}
+.#{$prefix}.small.header {
+  font-size: $smallFontSize;
+}
+.#{$prefix}.tiny.header {
+  font-size: $tinyFontSize;
+}
+
+/* Sub Header */
+.#{$prefix}.huge.header .sub.header {
+  font-size: $hugeSubHeaderFontSize;
+}
+.#{$prefix}.large.header .sub.header {
+  font-size: $hugeSubHeaderFontSize;
+}
+.#{$prefix}.header .sub.header {
+  font-size: $subHeaderFontSize;
+}
+.#{$prefix}.small.header .sub.header {
+  font-size: $smallSubHeaderFontSize;
+}
+.#{$prefix}.tiny.header .sub.header {
+  font-size: $tinySubHeaderFontSize;
+}
+
+/*--------------
+   Sub Heading
+---------------*/
+
+.#{$prefix}.sub.header {
+  padding: 0em;
+  margin-bottom: $subHeadingDistance;
+  font-weight: $subHeadingFontWeight;
+  font-size: $subHeadingFontSize;
+  text-transform: $subHeadingTextTransform;
+  color: $subHeadingColor;
+}
+
+.#{$prefix}.small.sub.header {
+  font-size: $smallSubHeadingSize;
+}
+.#{$prefix}.sub.header {
+  font-size: $subHeadingFontSize;
+}
+.#{$prefix}.large.sub.header {
+  font-size: $largeSubHeadingSize;
+}
+.#{$prefix}.huge.sub.header {
+  font-size: $hugeSubHeadingSize;
+}
+
+
+
+/*******************************
+            States
+*******************************/
+
+.#{$prefix}.disabled.header {
+  opacity: $disabledOpacity;
+}
+
+
+/*******************************
+           Variations
+*******************************/
+
+/*-------------------
+        Light
+--------------------*/
+
+.#{$prefix}.light.header {
+  font-weight: 600;
+}
+
+/*-------------------
+        Lighter
+--------------------*/
+
+.#{$prefix}.lighter.header {
+  font-weight: 300;
+}
+
+/*-------------------
+      Inverted
+--------------------*/
+
+.#{$prefix}.inverted.header {
+  color: $invertedColor;
+}
+.#{$prefix}.inverted.header .sub.header {
+  color: $invertedSubHeaderColor;
+}
+.#{$prefix}.inverted.attached.header {
+  background: $invertedAttachedBackground;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+
+/*-------------------
+       Colors
+--------------------*/
+
+/*--- Red ---*/
+.#{$prefix}.red.header {
+  color: $red !important;
+}
+a.#{$prefix}.red.header:hover {
+  color: $redHover !important;
+}
+.#{$prefix}.red.dividing.header {
+  border-bottom: $dividedColoredBorderWidth solid $red;
+}
+
+/* Inverted */
+.#{$prefix}.inverted.red.header {
+  color: $lightRed !important;
+}
+a.#{$prefix}.inverted.red.header:hover {
+  color: $lightRedHover !important;
+}
+
+
+/*--- Green ---*/
+.#{$prefix}.green.header {
+  color: $green !important;
+}
+a.#{$prefix}.green.header:hover {
+  color: $greenHover !important;
+}
+.#{$prefix}.green.dividing.header {
+  border-bottom: $dividedColoredBorderWidth solid $green;
+}
+/* Inverted */
+.#{$prefix}.inverted.green.header {
+  color: $lightGreen !important;
+}
+a.#{$prefix}.inverted.green.header:hover {
+  color: $lightGreenHover !important;
+}
+
+/*--- Blue ---*/
+.#{$prefix}.blue.header {
+  color: $blue !important;
+}
+a.#{$prefix}.blue.header:hover {
+  color: $blueHover !important;
+}
+.#{$prefix}.blue.dividing.header {
+  border-bottom: $dividedColoredBorderWidth solid $blue;
+}
+/* Inverted */
+.#{$prefix}.inverted.blue.header {
+  color: $lightBlue !important;
+}
+a.#{$prefix}.inverted.blue.header:hover {
+  color: $lightBlueHover !important;
+}
+
+
+/*--- Grey ---*/
+.#{$prefix}.grey.header {
+  color: $grey !important;
+}
+a.#{$prefix}.grey.header:hover {
+  color: $greyHover !important;
+}
+.#{$prefix}.grey.dividing.header {
+  border-bottom: $dividedColoredBorderWidth solid $grey;
+}
+/* Inverted */
+.#{$prefix}.inverted.grey.header {
+  color: $lightGrey !important;
+}
+a.#{$prefix}.inverted.grey.header:hover {
+  color: $lightGreyHover !important;
+}
+
+
+/*-------------------
+       Aligned
+--------------------*/
+
+.#{$prefix}.left.aligned.header {
+  text-align: left;
+}
+.#{$prefix}.right.aligned.header {
+  text-align: right;
+}
+.#{$prefix}.centered.header,
+.#{$prefix}.center.aligned.header {
+  text-align: center;
+}
+.#{$prefix}.justified.header {
+  text-align: justify;
+}
+.#{$prefix}.justified.header:after {
+  display: inline-block;
+  content: '';
+  width: 100%;
+}
+
+/*-------------------
+       Floated
+--------------------*/
+
+.#{$prefix}.floated.header,
+.#{$prefix}[class*="left floated"].header {
+  float: left;
+  margin-top: 0em;
+  margin-right: $floatedMargin;
+}
+.#{$prefix}[class*="right floated"].header {
+  float: right;
+  margin-top: 0em;
+  margin-left: $floatedMargin;
+}
+
+/*-------------------
+       Fitted
+--------------------*/
+
+.#{$prefix}.fitted.header {
+  padding: 0em;
+}
+
+
+/*-------------------
+      Dividing
+--------------------*/
+
+.#{$prefix}.dividing.header {
+  padding-bottom: $dividedBorderPadding;
+  border-bottom: $dividedBorder;
+}
+.#{$prefix}.dividing.header .sub.header {
+  padding-bottom: $dividedSubHeaderPadding;
+}
+
+.#{$prefix}.inverted.dividing.header {
+  border-bottom-color: $invertedDividedBorderColor;
+}
+
+
+/*-------------------
+       Attached
+--------------------*/
+
+.#{$prefix}.attached.header {
+  background: $attachedBackground;
+  padding: $attachedVerticalPadding $attachedHorizontalPadding;
+  margin-left: $attachedOffset;
+  margin-right: $attachedOffset;
+  box-shadow: $attachedBoxShadow;
+  border: $attachedBorder;
+}
+
+.#{$prefix}.attached:not(.top):not(.bottom).header {
+  margin-top: 0em;
+  margin-bottom: 0em;
+  border-top: none;
+  border-radius: 0em;
+}
+.#{$prefix}.top.attached.header {
+  margin-bottom: 0em;
+  border-radius: $attachedBorderRadius $attachedBorderRadius 0em 0em;
+  flex-grow: 0 !important;
+}
+.#{$prefix}.bottom.attached.header {
+  margin-top: 0em;
+  border-top: none;
+  border-radius: 0em 0em $attachedBorderRadius $attachedBorderRadius;
+}
+
+/* Attached Sizes */
+.#{$prefix}.tiny.attached.header {
+  font-size: $tinyAttachedSize;
+}
+.#{$prefix}.small.attached.header {
+  font-size: $smallAttachedSize;
+}
+.#{$prefix}.attached.header:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+  font-size: $mediumAttachedSize;
+}
+.#{$prefix}.large.attached.header {
+  font-size: $largeAttachedSize;
+}
+.#{$prefix}.huge.attached.header {
+  font-size: $hugeAttachedSize;
+}
+
+/*-------------------
+        Sizing
+--------------------*/
+
+.#{$prefix}.header:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+  font-size: $mediumFontSize;
+}
+
+/*-------------------
+      Truncating
+--------------------*/
+.#{$prefix}.header .truncate{
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

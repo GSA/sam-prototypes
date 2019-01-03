@@ -1,21 +1,48 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<sam-header></sam-header>
+<sam-subheader></sam-subheader>
+<div class="sam-body usa-grid-full">
+	<div class="usa-width-toolbar sam-sidetools">
+		<sam-vertical-toolbar [tools]="model.localTools">
+		</sam-vertical-toolbar>
+		<sam-vertical-toolbar [tools]="model.globalTools">
+		</sam-vertical-toolbar>
+	</div>
+	<div class="usa-width-body">
+		<div class="sam-container usa-grid-full">
+				<div [ngClass]="{'hidden': !model.selectedTool, 
+	                 'sam-toolpanel usa-width-one-fourth': model.selectedTool && model.selectedTool.width=='normal',
+	                 'sam-toolpanel usa-width-one-third': model.selectedTool && model.selectedTool.width=='wide' }" >
+					<ng-container 
+						  *ngIf="model.selectedToolTemplate" 
+						  [ngTemplateOutlet]="model.selectedToolTemplate" 
+						  [ngTemplateOutletContext]="{data: dataContext}"
+					></ng-container>
+				</div>
+				<div [ngClass]="{'usa-width-one-whole': !model.selectedTool, 
+				                 'usa-width-three-fourths': model.selectedTool && model.selectedTool.width=='normal',
+				                 'usa-width-two-thirds': model.selectedTool && model.selectedTool.width=='wide' }" >
+					<router-outlet></router-outlet>
+				</div>
+		</div>
+	</div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<sam-footer>
+</sam-footer>
 
-<router-outlet></router-outlet>
+<ng-template #feedback>
+	<sam-sidebar title="Feedback">
+		
+	</sam-sidebar>
+</ng-template>
+
+<ng-template #helpdesk>
+	<sam-sidebar title="Help Desk">
+		
+	</sam-sidebar>
+</ng-template>
+
+<ng-template #glossary>
+	<sam-sidebar title="Glossary">
+		
+	</sam-sidebar>
+</ng-template>

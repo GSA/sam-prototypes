@@ -1,0 +1,737 @@
+/*******************************
+             Label
+*******************************/
+
+/*-------------------
+       Element
+--------------------*/
+
+$verticalAlign: baseline;
+$verticalMargin: 0em;
+$horizontalMargin: .2em;
+$backgroundColor: #E8E8E8;
+$color: $mutedTextColor;
+$backgroundImage: none;
+$verticalPadding: 0.5em; /* medium is not $emSize custom value required */
+$horizontalPadding: 0.833em;
+$borderRadius: $defaultBorderRadius;
+$textTransform: none;
+$fontWeight: 600;
+$border: 0px solid transparent;
+
+$lineHeightOffset: -($verticalPadding / 2);
+
+$labelTransitionDuration: $defaultDuration;
+$labelTransitionEasing: $defaultEasing;
+$transition: background $labelTransitionDuration $labelTransitionEasing;
+
+/* Group */
+$groupVerticalMargin: 0.5em;
+$groupHorizontalMargin: 0.5em;
+
+/*-------------------
+        Parts
+--------------------*/
+
+/* Link */
+$linkOpacity: 0.5;
+$linkTransition: $labelTransitionDuration opacity $labelTransitionEasing;
+
+/* Icon */
+$iconDistance: 0.75em;
+
+/* Image */
+$imageHeight: (1em + $verticalPadding * 2);
+
+/* Detail */
+$detailFontWeight: bold;
+$detailOpacity: 0.8;
+$detailIconDistance: 0.25em;
+$detailMargin: 1em;
+
+/* Delete */
+$deleteOpacity: $linkOpacity;
+$deleteSize: $relativeSmall;
+$deleteMargin: 0.5em;
+$deleteTransition: background $labelTransitionDuration $labelTransitionEasing;
+
+/*-------------------
+        Types
+--------------------*/
+
+/* Image Label */
+$imageLabelBackground: $backgroundColor;
+$imageLabelVerticalPadding: $verticalPadding;
+$imageLabelHorizontalPadding: $horizontalPadding;
+$imageLabelTextDistance: 0.5em;
+$imageLabelDetailDistance: $imageLabelTextDistance;
+$imageLabelBorderRadius: $borderRadius;
+$imageLabelBoxShadow: none;
+$imageLabelPadding: $imageLabelVerticalPadding $imageLabelHorizontalPadding $imageLabelVerticalPadding $imageLabelTextDistance;
+
+$imageLabelImageMargin: -$verticalPadding $imageLabelTextDistance -$verticalPadding -$imageLabelTextDistance;
+$imageLabelImageBorderRadius: $imageLabelBorderRadius 0em 0em $imageLabelBorderRadius;
+$imageLabelImageHeight: $imageHeight;
+
+$imageLabelDetailBackground: $strongTransparentBlack;
+$imageLabelDetailPadding: $imageLabelVerticalPadding $imageLabelHorizontalPadding;
+$imageLabelDetailMargin: -$imageLabelVerticalPadding -$imageLabelHorizontalPadding -$imageLabelVerticalPadding $imageLabelDetailDistance;
+
+/*-------------------
+        States
+--------------------*/
+
+/* Hover */
+$labelHoverBackgroundColor: #E0E0E0;
+$labelHoverBackgroundImage: none;
+$labelHoverTextColor: $hoveredTextColor;
+
+/* Active */
+$labelActiveBackgroundColor: #D0D0D0;
+$labelActiveBackgroundImage: none;
+$labelActiveTextColor: $selectedTextColor;
+
+/* Active Hover */
+$labelActiveHoverBackgroundColor: #C8C8C8;
+$labelActiveHoverBackgroundImage: none;
+$labelActiveHoverTextColor: $selectedTextColor;
+
+
+/*-------------------
+      Variations
+--------------------*/
+
+/* Basic */
+$basicBackground: none $white;
+$basicBorderWidth: 1px;
+$basicBorder: $basicBorderWidth solid $borderColor;
+$basicColor: $textColor;
+$basicBoxShadow: none;
+
+$basicHoverBackground: $basicBackground;
+$basicHoverColor: $linkHoverColor;
+$basicHoverBorder: $basicBorder;
+$basicHoverBoxShadow: $basicBoxShadow;
+
+/* Colors */
+$redTextColor: $white;
+$greenTextColor: $white;
+$blueTextColor: $white;
+$darkBlueTextColor: $white;
+$greyTextColor: $white;
+
+$redHoverTextColor: $white;
+$greenHoverTextColor: $white;
+$blueHoverTextColor: $white;
+$darkBlueHoverTextColor: $white;
+$greyHoverTextColor: $white;
+
+/* Attached */
+$attachedSegmentPadding: 2rem;
+$attachedVerticalPadding: 0.75em;
+$attachedHorizontalPadding: 1em;
+
+$attachedCornerBorderRadius: 0.3rem;
+$attachedBorderRadius: $borderRadius;
+
+/* Horizontal */
+$horizontalLabelMinWidth: 3em;
+$horizontalLabelMargin: 0.5em;
+$horizontalLabelVerticalPadding: 0.4em;
+
+/* Circular  */
+$circularRadius: 500rem;
+$circularPadding: 0.5em;
+$circularMinSize: 2em;
+$emptyCircleSize: 0.5em;
+
+/* Floating */
+$floatingTopOffset: -1em;
+$floatingLeftOffset: -1.5em;
+$floatingZIndex: 100;
+
+/*-------------------
+        Group
+--------------------*/
+
+/* Sizing */
+// $mini    : 0.9rem;
+// $tiny    : 1rem;
+// $small   : 1.1rem;
+// $medium  : 1.4rem;
+// $large   : 1.7rem;
+// $big     : 2rem;
+// $huge    : 2.1rem;
+// $massive : 2.2rem;
+
+
+/*******************************
+            Theme
+*******************************/
+
+
+/*******************************
+            Label
+*******************************/
+
+.#{$prefix}.label {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: $verticalAlign;
+
+  margin: $verticalMargin $horizontalMargin;
+
+  background-color: $backgroundColor;
+  background-image: $backgroundImage;
+  padding: $verticalPadding $horizontalPadding;
+  color: $color;
+
+  text-transform: $textTransform;
+  font-weight: $fontWeight;
+
+  border: $border;
+  border-radius: $borderRadius;
+  transition: $transition;
+}
+
+.#{$prefix}.label:first-child {
+  margin-left: 0em;
+}
+.#{$prefix}.label:last-child {
+  margin-right: 0em;
+}
+
+/* Link */
+a.#{$prefix}.label {
+  cursor: pointer;
+}
+
+/* Inside Link */
+.#{$prefix}.label > a {
+  cursor: pointer;
+  color: inherit;
+  opacity: $linkOpacity;
+  transition: $linkTransition;
+}
+.#{$prefix}.label > a:hover {
+  opacity: 1;
+}
+
+/* Image */
+.#{$prefix}.label > img {
+  width: auto !important;
+  vertical-align: middle;
+  height: $imageHeight !important;
+}
+
+/* Icon */
+.#{$prefix}.label > .icon {
+  width: auto;
+  margin: 0em $iconDistance 0em 0em;
+}
+
+/* Detail */
+.#{$prefix}.label > .detail {
+  display: inline-block;
+  vertical-align: top;
+  font-weight: $detailFontWeight;
+  margin-left: $detailMargin;
+  opacity: $detailOpacity;
+}
+.#{$prefix}.label > .detail .icon {
+  margin: 0em $detailIconDistance 0em 0em;
+}
+
+
+/* Removable label */
+.#{$prefix}.label > .close.icon,
+.#{$prefix}.label > .delete.icon {
+  cursor: pointer;
+  margin-right: 0em;
+  margin-left: $deleteMargin;
+  font-size: $deleteSize;
+  opacity: $deleteOpacity;
+  transition: $deleteTransition;
+}
+.#{$prefix}.label > .delete.icon:hover {
+  opacity: 1;
+}
+
+/*-------------------
+       Group
+--------------------*/
+
+.#{$prefix}.labels > .label {
+  margin: 0em $groupHorizontalMargin $groupVerticalMargin 0em;
+}
+
+
+/*-------------------
+       Coupling
+--------------------*/
+
+.#{$prefix}.header > .#{$prefix}.label:not(.attached) {
+  margin-top: $lineHeightOffset;
+}
+
+/* Remove border radius on attached segment */
+.#{$prefix}.attached.segment > .#{$prefix}.top.left.attached.label,
+.#{$prefix}.bottom.attached.segment > .#{$prefix}.top.left.attached.label  {
+  border-top-left-radius: 0;
+}
+.#{$prefix}.attached.segment > .#{$prefix}.top.right.attached.label,
+.#{$prefix}.bottom.attached.segment > .#{$prefix}.top.right.attached.label  {
+  border-top-right-radius: 0;
+}
+.#{$prefix}.top.attached.segment > .#{$prefix}.bottom.left.attached.label  {
+  border-bottom-left-radius: 0;
+}
+.#{$prefix}.top.attached.segment > .#{$prefix}.bottom.right.attached.label  {
+  border-bottom-right-radius: 0;
+}
+
+/* Padding on next content after a label */
+.#{$prefix}.top.attached.label:first-child + :not(.attached),
+.#{$prefix}.top.attached.label + [class*="right floated"] + * {
+  margin-top: $attachedSegmentPadding !important;
+}
+.#{$prefix}.bottom.attached.label:first-child ~ :last-child:not(.attached) {
+  margin-top: 0em;
+  margin-bottom: $attachedSegmentPadding !important;
+}
+
+
+/*******************************
+             Types
+*******************************/
+
+.#{$prefix}.image.label {
+  width: auto !important;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  max-width: 9999px;
+  vertical-align: baseline;
+  text-transform: none;
+
+  background: $imageLabelBackground;
+  padding: $imageLabelPadding;
+  border-radius: $imageLabelBorderRadius;
+  box-shadow: $imageLabelBoxShadow;
+}
+
+.#{$prefix}.image.label img {
+  display: inline-block;
+  vertical-align: top;
+
+  height: $imageLabelImageHeight;
+  margin: $imageLabelImageMargin;
+  border-radius: $imageLabelImageBorderRadius;
+}
+
+.#{$prefix}.image.label .detail {
+  background: $imageLabelDetailBackground;
+  margin: $imageLabelDetailMargin;
+  padding: $imageLabelDetailPadding;
+  border-radius: 0em $imageLabelBorderRadius $imageLabelBorderRadius 0em;
+}
+
+
+/*-------------------
+      Attached
+--------------------*/
+.#{$prefix}[class*="top attached"].label,
+.#{$prefix}.attached.label {
+  width: 100%;
+  position: absolute;
+  margin: 0em;
+  top: 0em;
+  left: 0em;
+
+  padding: $attachedVerticalPadding $attachedHorizontalPadding;
+
+  border-radius: $attachedCornerBorderRadius $attachedCornerBorderRadius 0em 0em;
+}
+.#{$prefix}[class*="bottom attached"].label {
+  top: auto;
+  bottom: 0em;
+  border-radius: 0em 0em $attachedCornerBorderRadius $attachedCornerBorderRadius;
+}
+
+.#{$prefix}[class*="top left attached"].label {
+  width: auto;
+  margin-top: 0em !important;
+  border-radius: $attachedCornerBorderRadius 0em $attachedBorderRadius 0em;
+}
+
+.#{$prefix}[class*="top right attached"].label {
+  width: auto;
+  left: auto;
+  right: 0em;
+  border-radius: 0em $attachedCornerBorderRadius 0em $attachedBorderRadius;
+}
+.#{$prefix}[class*="bottom left attached"].label {
+  width: auto;
+  top: auto;
+  bottom: 0em;
+  border-radius: 0em $attachedBorderRadius 0em $attachedCornerBorderRadius;
+}
+.#{$prefix}[class*="bottom right attached"].label {
+  top: auto;
+  bottom: 0em;
+  left: auto;
+  right: 0em;
+  width: auto;
+  border-radius: $attachedBorderRadius 0em $attachedCornerBorderRadius 0em;
+}
+
+
+/*******************************
+             States
+*******************************/
+
+/*-------------------
+      Disabled
+--------------------*/
+.#{$prefix}.label.disabled {
+  opacity: 0.5;
+}
+
+/*-------------------
+        Hover
+--------------------*/
+a.#{$prefix}.labels .label:hover,
+a.#{$prefix}.label:hover {
+  background-color: $labelHoverBackgroundColor;
+  border-color: $labelHoverBackgroundColor;
+
+  background-image: $labelHoverBackgroundImage;
+  color: $labelHoverTextColor;
+}
+.#{$prefix}.labels a.label:hover:before,
+a.#{$prefix}.label:hover:before {
+  color: $labelHoverTextColor;
+}
+
+/*-------------------
+        Active
+--------------------*/
+.#{$prefix}.active.label {
+  background-color: $labelActiveBackgroundColor;
+  border-color: $labelActiveBackgroundColor;
+
+  background-image: $labelActiveBackgroundImage;
+  color: $labelActiveTextColor;
+}
+.#{$prefix}.active.label:before {
+  background-color: $labelActiveBackgroundColor;
+  background-image: $labelActiveBackgroundImage;
+  color: $labelActiveTextColor;
+}
+
+/*-------------------
+     Active Hover
+--------------------*/
+a.#{$prefix}.labels .active.label:hover,
+a.#{$prefix}.active.label:hover {
+  background-color: $labelActiveHoverBackgroundColor;
+  border-color: $labelActiveHoverBackgroundColor;
+
+  background-image: $labelActiveHoverBackgroundImage;
+  color: $labelActiveHoverTextColor;
+}
+.#{$prefix}.labels a.active.label:ActiveHover:before,
+a.#{$prefix}.active.label:ActiveHover:before {
+  background-color: $labelActiveHoverBackgroundColor;
+  background-image: $labelActiveHoverBackgroundImage;
+  color: $labelActiveHoverTextColor;
+}
+
+/*-------------------
+      Visible
+--------------------*/
+.#{$prefix}.labels.visible .label,
+.#{$prefix}.label.visible:not(.dropdown) {
+  display: inline-block !important;
+}
+
+/*-------------------
+      Hidden
+--------------------*/
+.#{$prefix}.labels.hidden .label,
+.#{$prefix}.label.hidden {
+  display: none !important;
+}
+
+
+/*******************************
+           Variations
+*******************************/
+
+
+/*-------------------
+       Colors
+--------------------*/
+
+/*--- Red ---*/
+.#{$prefix}.red.labels .label,
+.#{$prefix}.red.label {
+  background-color: $red !important;
+  border-color: $red !important;
+  color: $redTextColor !important;
+}
+/* Link */
+.#{$prefix}.red.labels .label:hover,
+a.#{$prefix}.red.label:hover{
+  background-color: $redHover !important;
+  border-color: $redHover !important;
+  color: $redHoverTextColor !important;
+}
+/* Basic */
+.#{$prefix}.basic.red.label {
+  background-color: $white !important;
+  color: $red !important;
+  border-color: $red !important;
+}
+.#{$prefix}.basic.red.labels a.label:hover,
+a.#{$prefix}.basic.red.label:hover {
+  background-color: $white !important;
+  color: $redHover !important;
+  border-color: $redHover !important;
+}
+
+/*--- Green ---*/
+.#{$prefix}.green.labels .label,
+.#{$prefix}.green.label {
+  background-color: $green !important;
+  border-color: $green !important;
+  color: $greenTextColor !important;
+}
+/* Link */
+.#{$prefix}.green.labels .label:hover,
+a.#{$prefix}.green.label:hover{
+  background-color: $greenHover !important;
+  border-color: $greenHover !important;
+  color: $greenHoverTextColor !important;
+}
+/* Basic */
+.#{$prefix}.basic.green.label {
+  background-color: $white !important;
+  color: $green !important;
+  border-color: $green !important;
+}
+.#{$prefix}.basic.green.labels a.label:hover,
+a.#{$prefix}.basic.green.label:hover {
+  background-color: $white !important;
+  color: $greenHover !important;
+  border-color: $greenHover !important;
+}
+
+/*--- Blue ---*/
+.#{$prefix}.blue.labels .label,
+.#{$prefix}.blue.label {
+  background-color: $blue !important;
+  border-color: $blue !important;
+  color: $blueTextColor !important;
+}
+/* Link */
+.#{$prefix}.blue.labels .label:hover,
+a.#{$prefix}.blue.label:hover{
+  background-color: $blueHover !important;
+  border-color: $blueHover !important;
+  color: $blueHoverTextColor !important;
+}
+/* Basic */
+.#{$prefix}.basic.blue.label {
+  background-color: $white !important;
+  color: $blue !important;
+  border-color: $blue !important;
+}
+.#{$prefix}.basic.blue.labels a.label:hover,
+a.#{$prefix}.basic.blue.label:hover {
+  background-color: $white !important;
+  color: $blueHover !important;
+  border-color: $blueHover !important;
+}
+
+/*--- Dark Blue ---*/
+.#{$prefix}.dark.blue.labels .label,
+.#{$prefix}.dark.blue.label {
+  background-color: $darkBlue !important;
+  border-color: $darkBlue !important;
+  color: $darkBlueTextColor !important;
+}
+/* Link */
+.#{$prefix}.dark.blue.labels .label:hover,
+a.#{$prefix}.dark.blue.label:hover{
+  background-color: $darkBlueHover !important;
+  border-color: $darkBlueHover !important;
+  color: $darkBlueHoverTextColor !important;
+}
+/* Basic */
+.#{$prefix}.basic.dark.blue.label {
+  background-color: $white !important;
+  color: $darkBlue !important;
+  border-color: $darkBlue !important;
+}
+.#{$prefix}.basic.dark.blue.labels a.label:hover,
+a.#{$prefix}.basic.dark.blue.label:hover {
+  background-color: $white !important;
+  color: $darkBlueHover !important;
+  border-color: $darkBlueHover !important;
+}
+
+/*--- Grey ---*/
+.#{$prefix}.grey.labels .label,
+.#{$prefix}.grey.label {
+  background-color: $grey !important;
+  border-color: $grey !important;
+  color: $greyTextColor !important;
+}
+/* Link */
+.#{$prefix}.grey.labels .label:hover,
+a.#{$prefix}.grey.label:hover{
+  background-color: $greyHover !important;
+  border-color: $greyHover !important;
+  color: $greyHoverTextColor !important;
+}
+/* Basic */
+.#{$prefix}.basic.grey.label {
+  background-color: $white !important;
+  color: $grey !important;
+  border-color: $grey !important;
+}
+.#{$prefix}.basic.grey.labels a.label:hover,
+a.#{$prefix}.basic.grey.label:hover {
+  background-color: $white !important;
+  color: $greyHover !important;
+  border-color: $greyHover !important;
+}
+
+
+/*-------------------
+        Basic
+--------------------*/
+
+.#{$prefix}.basic.label {
+  background: $basicBackground;
+  border: $basicBorder;
+  color: $basicColor;
+  box-shadow: $basicBoxShadow;
+}
+
+/* Link */
+a.#{$prefix}.basic.label:hover {
+  text-decoration: none;
+  background: $basicHoverBackground;
+  color: $basicHoverColor;
+  box-shadow: $basicHoverBorder;
+  box-shadow: $basicHoverBoxShadow;
+}
+
+
+/*-------------------
+       Fluid
+--------------------*/
+
+.#{$prefix}.label.fluid,
+.#{$prefix}.fluid.labels > .label {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/*-------------------
+       Inverted
+--------------------*/
+
+.#{$prefix}.inverted.labels .label,
+.#{$prefix}.inverted.label {
+  color: $invertedTextColor !important;
+}
+
+/*-------------------
+     Horizontal
+--------------------*/
+
+.#{$prefix}.horizontal.labels .label,
+.#{$prefix}.horizontal.label {
+  margin: 0em $horizontalLabelMargin 0em 0em;
+
+  padding: $horizontalLabelVerticalPadding $horizontalPadding;
+  min-width: $horizontalLabelMinWidth;
+  text-align: center;
+}
+
+
+/*-------------------
+       Circular
+--------------------*/
+
+.#{$prefix}.circular.labels .label,
+.#{$prefix}.circular.label {
+  min-width: $circularMinSize;
+  min-height: $circularMinSize;
+
+  padding: $circularPadding !important;
+
+  line-height: 1em;
+  text-align: center;
+  border-radius: $circularRadius;
+}
+.#{$prefix}.empty.circular.labels .label,
+.#{$prefix}.empty.circular.label {
+  min-width: 0em;
+  min-height: 0em;
+  overflow: hidden;
+  width: $emptyCircleSize;
+  height: $emptyCircleSize;
+  vertical-align: baseline;
+}
+
+/*------------------
+   Floating Label
+-------------------*/
+
+.#{$prefix}.floating.label {
+  position: absolute;
+  z-index: $floatingZIndex;
+  top: $floatingTopOffset;
+  left: 100%;
+  margin: 0em 0em 0em $floatingLeftOffset !important;
+}
+
+/*-------------------
+        Sizes
+--------------------*/
+
+.#{$prefix}.mini.labels .label,
+.#{$prefix}.mini.label {
+  font-size: $mini;
+}
+.#{$prefix}.tiny.labels .label,
+.#{$prefix}.tiny.label {
+  font-size: $tiny;
+}
+.#{$prefix}.small.labels .label,
+.#{$prefix}.small.label {
+  font-size: $small;
+}
+.#{$prefix}.labels .label,
+.#{$prefix}.label {
+  font-size: $medium;
+}
+.#{$prefix}.large.labels .label,
+.#{$prefix}.large.label {
+  font-size: $large;
+}
+.#{$prefix}.big.labels .label,
+.#{$prefix}.big.label {
+  font-size: $big;
+}
+.#{$prefix}.huge.labels .label,
+.#{$prefix}.huge.label {
+  font-size: $huge;
+}
+.#{$prefix}.massive.labels .label,
+.#{$prefix}.massive.label {
+  font-size: $massive;
+}

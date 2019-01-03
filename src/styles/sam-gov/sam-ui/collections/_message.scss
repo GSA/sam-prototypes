@@ -1,0 +1,567 @@
+/*******************************
+            Message
+*******************************/
+
+/*-------------------
+       Elements
+--------------------*/
+
+$verticalMargin: 1em;
+$verticalPadding: 1em;
+$horizontalPadding: 1.5em;
+$padding: $verticalPadding $horizontalPadding;
+$background: #F8F8F9;
+$lineHeightOffset: (($lineHeight - 1em) / 2);
+
+$borderRadius: $defaultBorderRadius;
+$borderWidth: 1px;
+$borderShadow: 0px 0px 0px $borderWidth rgba(34, 36, 38, 0.22) inset;
+$shadowShadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+$boxShadow:
+  $borderShadow,
+  $shadowShadow
+;
+
+$transition:
+  opacity $defaultDuration $defaultEasing,
+  color $defaultDuration $defaultEasing,
+  background $defaultDuration $defaultEasing,
+  box-shadow $defaultDuration $defaultEasing
+;
+
+/* Header */
+$headerFontSize: $relativeLarge;
+$headerFontWeight: bold;
+$headerDisplay: block;
+$headerDistance: 0rem;
+$headerMargin: -$headerLineHeightOffset 0em $headerDistance 0em;
+$headerParagraphDistance: 0.25em;
+
+/* Paragraph */
+$messageTextOpacity: 0.85;
+$messageParagraphMargin: 0.75em;
+
+/* List */
+$listOpacity: 0.85;
+$listStylePosition: inside;
+$listMargin: 0.5em;
+$listItemIndent: 1em;
+$listItemMargin: 0.3em;
+
+/* Icon */
+$iconDistance: 0.6em;
+
+/* Close Icon */
+$closeTopDistance: $verticalPadding - $lineHeightOffset;
+$closeRightDistance: 0.5em;
+$closeOpacity: 0.7;
+$closeTransition: opacity $defaultDuration $defaultEasing;
+
+
+/*-------------------
+        Types
+--------------------*/
+
+/* Icon Message */
+$iconSize: 3em;
+$iconOpacity: 0.8;
+$iconContentDistance: 0rem;
+$iconVerticalAlign: middle;
+
+/* Attached */
+$attachedXOffset: -1px;
+$attachedYOffset: -1px;
+$attachedBoxShadow: 0em 0em 0em $borderWidth $borderColor inset;
+$attachedBottomBoxShadow:
+  $attachedBoxShadow,
+  0px 1px 2px 0 $borderColor
+;
+
+/* Floating */
+$floatingBoxShadow:
+  $borderShadow,
+  $floatingShadow
+;
+
+/* Colors */
+$redBoxShadow:
+  0px 0px 0px $borderWidth $redBorderColor inset,
+  $shadowShadow
+;
+$orangeBoxShadow:
+  0px 0px 0px $borderWidth $orangeBorderColor inset,
+  $shadowShadow
+;
+$yellowBoxShadow:
+  0px 0px 0px $borderWidth $yellowBorderColor inset,
+  $shadowShadow
+;
+$oliveBoxShadow:
+  0px 0px 0px $borderWidth $oliveBorderColor inset,
+  $shadowShadow
+;
+$greenBoxShadow:
+  0px 0px 0px $borderWidth $greenBorderColor inset,
+  $shadowShadow
+;
+$tealBoxShadow:
+  0px 0px 0px $borderWidth $tealBorderColor inset,
+  $shadowShadow
+;
+$blueBoxShadow:
+  0px 0px 0px $borderWidth $blueBorderColor inset,
+  $shadowShadow
+;
+
+/* Warning / Positive / Negative / Info */
+$positiveBoxShadow:
+  0px 0px 0px $borderWidth $positiveBorderColor inset,
+  $shadowShadow
+;
+$negativeBoxShadow:
+  0px 0px 0px $borderWidth $negativeBorderColor inset,
+  $shadowShadow
+;
+$infoBoxShadow:
+  0px 0px 0px $borderWidth $infoBorderColor inset,
+  $shadowShadow
+;
+$warningBoxShadow:
+  0px 0px 0px $borderWidth $warningBorderColor inset,
+  $shadowShadow
+;
+$errorBoxShadow:
+  0px 0px 0px $borderWidth $errorBorderColor inset,
+  $shadowShadow
+;
+$successBoxShadow:
+  0px 0px 0px $borderWidth $successBorderColor inset,
+  $shadowShadow
+;
+
+
+/*******************************
+            Message
+*******************************/
+
+.#{$prefix}.message {
+  position: relative;
+  min-height: 1em;
+  margin: $verticalMargin 0em;
+  background: $background;
+  padding: $padding;
+  line-height: $lineHeight;
+  color: $textColor;
+  transition: $transition;
+  border-radius: $borderRadius;
+  box-shadow: $boxShadow;
+}
+
+.#{$prefix}.message:first-child {
+  margin-top: 0em;
+}
+.#{$prefix}.message:last-child {
+  margin-bottom: 0em;
+}
+
+
+/*--------------
+     Content
+---------------*/
+
+/* Header */
+.#{$prefix}.message .header {
+  display: $headerDisplay;
+  font-family: $headerFont;
+  font-weight: $headerFontWeight;
+  margin: $headerMargin;
+}
+
+/* Default font size */
+.#{$prefix}.message .header:not(.ui) {
+  font-size: $headerFontSize;
+}
+
+/* Paragraph */
+.#{$prefix}.message p {
+  opacity: $messageTextOpacity;
+  margin: $messageParagraphMargin 0em;
+}
+.#{$prefix}.message p:first-child {
+  margin-top: 0em;
+}
+.#{$prefix}.message p:last-child {
+  margin-bottom: 0em;
+}
+.#{$prefix}.message .header + p {
+  margin-top: $headerParagraphDistance;
+}
+
+/* List */
+.#{$prefix}.message .list:not(.ui) {
+  text-align: left;
+  padding: 0em;
+  opacity: $listOpacity;
+  list-style-position: $listStylePosition;
+  margin: $listMargin 0em 0em;
+}
+.#{$prefix}.message .list:not(.ui):first-child {
+  margin-top: 0em;
+}
+.#{$prefix}.message .list:not(.ui):last-child {
+  margin-bottom: 0em;
+}
+.#{$prefix}.message .list:not(.ui) li {
+  position: relative;
+  list-style-type: none;
+  margin: 0em 0em $listItemMargin $listItemIndent;
+  padding: 0em;
+}
+.#{$prefix}.message .list:not(.ui) li:before {
+  position: absolute;
+  content: '•';
+  left: -1em;
+  height: 100%;
+  vertical-align: baseline;
+}
+.#{$prefix}.message .list:not(.ui) li:last-child {
+  margin-bottom: 0em;
+}
+
+
+/* Icon */
+.#{$prefix}.message > .icon {
+  margin-right: $iconDistance;
+}
+
+/* Close Icon */
+.#{$prefix}.message > .close.icon {
+  cursor: pointer;
+  position: absolute;
+  margin: 0em;
+  top: $closeTopDistance;
+  right: $closeRightDistance;
+  opacity: $closeOpacity;
+  transition: $closeTransition;
+}
+.#{$prefix}.message > .close.icon:hover {
+  opacity: 1;
+}
+
+/* First / Last Element */
+.#{$prefix}.message > :first-child {
+  margin-top: 0em;
+}
+.#{$prefix}.message > :last-child {
+  margin-bottom: 0em;
+}
+
+/*******************************
+            Coupling
+*******************************/
+
+.#{$prefix}.dropdown .menu > .message {
+  margin: 0px -$borderWidth;
+}
+
+/*******************************
+            States
+*******************************/
+
+/*--------------
+    Visible
+---------------*/
+
+.#{$prefix}.visible.visible.visible.visible.message {
+  display: block;
+}
+
+.#{$prefix}.icon.visible.visible.visible.visible.message {
+  display: flex;
+}
+
+/*--------------
+     Hidden
+---------------*/
+
+.#{$prefix}.hidden.hidden.hidden.hidden.message {
+  display: none;
+}
+
+
+/*******************************
+            Variations
+*******************************/
+
+/*--------------
+    Compact
+---------------*/
+
+.#{$prefix}.compact.message {
+  display: inline-block;
+}
+.#{$prefix}.compact.icon.message {
+  display: inline-flex;
+}
+
+
+/*--------------
+    Attached
+---------------*/
+
+.#{$prefix}.attached.message {
+  margin-bottom: $attachedYOffset;
+  border-radius: $borderRadius $borderRadius 0em 0em;
+  box-shadow: $attachedBoxShadow;
+  margin-left: $attachedXOffset;
+  margin-right: $attachedXOffset;
+}
+.#{$prefix}.attached + .#{$prefix}.attached.message:not(.top):not(.bottom) {
+  margin-top: $attachedYOffset;
+  border-radius: 0em;
+}
+.#{$prefix}.bottom.attached.message {
+  margin-top: $attachedYOffset;
+  border-radius: 0em 0em $borderRadius $borderRadius;
+  box-shadow: $attachedBottomBoxShadow;
+}
+.#{$prefix}.bottom.attached.message:not(:last-child) {
+  margin-bottom: $verticalMargin;
+}
+.#{$prefix}.attached.icon.message {
+  width: auto;
+}
+
+
+/*--------------
+      Icon
+---------------*/
+
+.#{$prefix}.icon.message {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.#{$prefix}.icon.message > .icon:not(.close) {
+  display: block;
+  flex: 0 0 auto;
+  width: auto;
+  line-height: 1;
+  vertical-align: $iconVerticalAlign;
+  font-size: $iconSize;
+  opacity: $iconOpacity;
+}
+.#{$prefix}.icon.message > .content {
+  display: block;
+  flex: 1 1 auto;
+  vertical-align: $iconVerticalAlign;
+}
+
+
+.#{$prefix}.icon.message .icon:not(.close) + .content {
+  padding-left: $iconContentDistance;
+}
+.#{$prefix}.icon.message .circular.icon {
+  width: 1em;
+}
+
+/*--------------
+    Floating
+---------------*/
+
+.#{$prefix}.floating.message {
+  box-shadow: $floatingBoxShadow;
+}
+
+
+/*--------------
+     Colors
+---------------*/
+
+.#{$prefix}.black.message {
+  background-color: $black;
+  color: $invertedTextColor;
+}
+
+/*--------------
+     Types
+---------------*/
+
+/* Positive */
+.#{$prefix}.positive.message {
+  background-color: $positiveBackgroundColor;
+  color: $positiveTextColor;
+}
+.#{$prefix}.positive.message,
+.#{$prefix}.attached.positive.message {
+  box-shadow: $positiveBoxShadow;
+}
+.#{$prefix}.positive.message .header {
+  color: $positiveHeaderColor;
+}
+
+/* Negative */
+.#{$prefix}.negative.message {
+  background-color: $negativeBackgroundColor;
+  color: $negativeTextColor;
+}
+.#{$prefix}.negative.message,
+.#{$prefix}.attached.negative.message {
+  box-shadow: $negativeBoxShadow;
+}
+.#{$prefix}.negative.message .header {
+  color: $negativeHeaderColor;
+}
+
+/* Info */
+.#{$prefix}.info.message {
+  background-color: $infoBackgroundColor;
+  color: $infoTextColor;
+}
+.#{$prefix}.info.message,
+.#{$prefix}.attached.info.message {
+  box-shadow: $infoBoxShadow;
+}
+.#{$prefix}.info.message .header {
+  color: $infoHeaderColor;
+}
+
+/* Warning */
+.#{$prefix}.warning.message {
+  background-color: $warningBackgroundColor;
+  color: $warningTextColor;
+}
+.#{$prefix}.warning.message,
+.#{$prefix}.attached.warning.message {
+  box-shadow: $warningBoxShadow;
+}
+.#{$prefix}.warning.message .header {
+  color: $warningHeaderColor;
+}
+
+/* Error */
+.#{$prefix}.error.message {
+  background-color: $errorBackgroundColor;
+  color: $errorTextColor;
+}
+.#{$prefix}.error.message,
+.#{$prefix}.attached.error.message {
+  box-shadow: $errorBoxShadow;
+}
+.#{$prefix}.error.message .header {
+  color: $errorHeaderColor;
+}
+
+/* Success */
+.#{$prefix}.success.message {
+  background-color: $successBackgroundColor;
+  color: $successTextColor;
+}
+.#{$prefix}.success.message,
+.#{$prefix}.attached.success.message {
+  box-shadow: $successBoxShadow;
+}
+.#{$prefix}.success.message .header {
+  color: $successHeaderColor;
+}
+
+
+/* Colors */
+.#{$prefix}.inverted.message,
+.#{$prefix}.black.message {
+  background-color: $black;
+  color: $invertedTextColor;
+}
+
+.#{$prefix}.red.message {
+  background-color: $redBackground;
+  color: $redTextColor;
+  box-shadow: $redBoxShadow;
+}
+.#{$prefix}.red.message .header {
+  color: $redHeaderColor;
+}
+
+.#{$prefix}.orange.message {
+  background-color: $orangeBackground;
+  color: $orangeTextColor;
+  box-shadow: $orangeBoxShadow;
+}
+.#{$prefix}.orange.message .header {
+  color: $orangeHeaderColor;
+}
+
+.#{$prefix}.yellow.message {
+  background-color: $yellowBackground;
+  color: $yellowTextColor;
+  box-shadow: $yellowBoxShadow;
+}
+.#{$prefix}.yellow.message .header {
+  color: $yellowHeaderColor;
+}
+
+.#{$prefix}.olive.message {
+  background-color: $oliveBackground;
+  color: $oliveTextColor;
+  box-shadow: $oliveBoxShadow;
+}
+.#{$prefix}.olive.message .header {
+  color: $oliveHeaderColor;
+}
+
+.#{$prefix}.green.message {
+  background-color: $greenBackground;
+  color: $greenTextColor;
+  box-shadow: $greenBoxShadow;
+}
+.#{$prefix}.green.message .header {
+  color: $greenHeaderColor;
+}
+
+.#{$prefix}.teal.message {
+  background-color: $tealBackground;
+  color: $tealTextColor;
+  box-shadow: $tealBoxShadow;
+}
+.#{$prefix}.teal.message .header {
+  color: $tealHeaderColor;
+}
+
+.#{$prefix}.blue.message {
+  background-color: $blueBackground;
+  color: $blueTextColor;
+  box-shadow: $blueBoxShadow;
+}
+.#{$prefix}.blue.message .header {
+  color: $blueHeaderColor;
+}
+
+
+/*--------------
+     Sizes
+---------------*/
+
+.#{$prefix}.mini.message {
+  font-size: $relativeMini;
+}
+.#{$prefix}.tiny.message {
+  font-size: $relativeTiny;
+}
+.#{$prefix}.small.message {
+  font-size: 0.9em;
+}
+.#{$prefix}.message {
+  font-size: $relativeMedium;
+}
+.#{$prefix}.large.message {
+  font-size: $relativeLarge;
+}
+.#{$prefix}.big.message {
+  font-size: $relativeBig;
+}
+.#{$prefix}.huge.message {
+  font-size: $relativeHuge;
+}
+.#{$prefix}.massive.message {
+  font-size: $relativeMassive;
+}
