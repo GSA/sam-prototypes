@@ -1,30 +1,22 @@
 
 .sam-sidebar {
-	width: 100%;
 	background-color: #f1f1f1;
-	border-right: #d6d7d9;
-	margin: 0em;
-	padding: .8em;
-	height: 100%;
+	border-right: 1px solid #ccd6df;
+	border-top: 1px solid #ccd6df;
+	padding: 1em;
+	height: 100%
 }
 
 .tools-header {
-	width: 100%;
-	margin: 0em;
+
+	font-size: 1em;
+	font-weight: 600;
 
 	i {
 		float: right;
 	}
 }
 
-.tools-title {
-	margin: 0em;
-	font-size: .8em;
-	font-weight: 400;
-	width: 100%;
-}
-
 .tools-content {
-	margin: 0em;
-	width: 100%;
+	flex: 1;
 }

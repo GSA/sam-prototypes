@@ -7,8 +7,28 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomeModule'
   },
   {
+    path: 'workspace',
+    loadChildren: './workspace/workspace.module#WorkspaceModule'
+  },
+  {
+    path: 'help',
+    loadChildren: './help/help.module#HelpModule'
+  },
+  {
+    path: 'contracting',
+    loadChildren: './contracting/contracting-home/contracting-home.module#ContractingHomeModule'
+  }, 
+  {
+    path: 'assistance',
+    loadChildren: './assistance/assistance-home/assistance-home.module#AssistanceHomeModule'
+  },
+  {
     path: 'entities',
     loadChildren: './entities/entities-home/entities-home.module#EntitiesHomeModule'
+  },
+  {
+    path: 'evaluation',
+    loadChildren: './performance/performance-data/performance-data.module#PerformanceDataModule'
   },
   {
     path: 'navigate',

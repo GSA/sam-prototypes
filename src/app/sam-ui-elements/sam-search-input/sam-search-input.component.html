@@ -1,6 +1,13 @@
-<div [ngClass]="domains != null ? 'sam-search-domains' : 'sam-search-input'">
+<form class="usa-search">
+  <div role="search">
 	<select *ngIf="domains" (change)="selectDomain($event)">
 		<option *ngFor="let dom of domains" [value]="dom.key" >{{dom.title}}</option>
 	</select>
-	<input #search (keyup.enter)="onSearch(search.value)" placeholder="{{selectedDomain.placeholder}}">
-</div>
+    <label class="usa-sr-only" for="search-field">Search</label>
+    <input #search class="usa-input" id="search-field" type="search" name="search"
+    	(keyup.enter)="onSearch(search.value)" placeholder="{{selectedDomain.placeholder}}">
+    <button class="usa-button" type="submit">
+      <span class="usa-search-submit-text">Search</span>
+    </button>
+  </div>
+</form>

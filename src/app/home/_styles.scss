@@ -5,90 +5,31 @@ h2.home {
 	color: #717171;
 }
 
-.home-feature-panel {
-	margin: 0em;
-	padding: 2em;
-}
-
-.feature-tabs {
+.sam-card {
 	
-	ul {
-	
-		list-style-type: none;
+	padding: 3em;
+	margin: auto;
 
-		li {
-			padding: .6em 0 .6em .6em;
-			color: #205593;
-			border-right: 1px solid #a1a1a1;
-			margin: 0em;
-		}
+	h3 {
+		font-size: 1.3em;
+		font-weight: 300;
+		font-family: Merriweather;
+		margin: auto;
+	}
 
-		li.selectedTab {
-			border-right: 1px solid transparent;
-			border-left: 1px solid #a1a1a1;
-			border-top: 1px solid #a1a1a1;
-			border-bottom: 1px solid #a1a1a1;
-			font-weight: 600;
-		}
-
-		li:hover {
-			background-color: #E2DEC9;
-			cursor: pointer;
-		}
+	img {
+		height: 3em;
+		margin: auto;
 	}
 }
 
-.home-feature {
-	margin: 0em;
-	padding: 0em 1em;
-	min-height: 6em;
-	
+.intro-text {
+	font-size: 1.3em;
+	font-weight: 300;
+	margin-bottom: 1.5em;
 }
 
-.panels {
-	display: flex;
-}
-
-.feature-tab {
-	min-height: 12em;
-
-	ul {
-		list-style-type: none;
-		padding-left: 0;
-
-		li {
-			font-size: 1em;
-			color: #717171;
-			padding: 0;
-			margin-left: 0;
-
-			i {
-				color: #7db242;
-				margin-right: .7em;
-			}
-		}
-	}
-
-	.feature-icon {
-		display: block;
-		padding: 1em;
-
-		h4 {
-			font-size: 1em;
-			font-weight: 600;
-		}
-
-		p {
-			font-size: .8em;
-		}
-
-		img {
-			height: 6em;
-		}
-	}
-
-	.feature-icon:hover {
-		background-color: #f1f1f1;
-		cursor: pointer;
-	}
+.search-text {
+	font-size: .9em;
+	margin-bottom: .75em;
 }

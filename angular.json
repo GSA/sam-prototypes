@@ -32,10 +32,13 @@
               ]
             },
             "styles": [
-              "node_modules/uswds/dist/css/uswds.min.css",
-              "src/styles/all.scss"
+              "src/styles/sam-styles-ext/sam-styles-ext.scss",
+              "src/styles/sam-styles/sam-styles.scss",
+              "src/styles/uswds/scss/uswds.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/styles/uswds/js/uswds.min.js"
+            ]
           },
           "configurations": {
             "production": {

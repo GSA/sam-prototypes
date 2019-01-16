@@ -1,4 +1,3 @@
-@import "src/styles/all.scss";
 
 .sam-footer {
   
@@ -13,13 +12,8 @@
       display: inline-block;
       min-height: 15rem;
       min-width: 15rem;
-      background-image: url($assets-path + '/img/gsa-logo.png');
       background-size: 13rem auto;
       background-repeat: no-repeat;
-    }
-
-    span {
-      @include sr-only();
     }
   }
   h2.sam-ui.header {

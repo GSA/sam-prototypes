@@ -1,0 +1,97 @@
+<div class="sam-subheader grid-row">
+	<div class="nav sam-meganav flex-1">
+		<a href="#">All Data</a>
+        <ul style="width: 100%">
+                <li style="width: 100%">
+                    <div class="megabox grid-row">
+                    	<div class="grid-col flex-6">
+                    		<h5>Search All Data</h5>
+                    		<div class="search-container">
+								<sam-search-input [domains]="allDomains" [selectedDomain]="allDomains[0]"></sam-search-input>
+							</div>
+                    	</div>
+                        <div class="grid-col flex-6">
+                        	<div class="grid-row">
+                        		<div class="grid-col flex-4 sam-stamp">
+                        			<img src="/assets/img/databank.png">
+                        			<h5>Databank</h5>
+                        			<p class="hint">Sign in to access all of our databank reports</p>
+                        		</div>
+                        		<div class="grid-col flex-4 sam-stamp">
+                        			<img src="/assets/img/databank.png">
+                        			<h5>Databank</h5>
+                        			<p class="hint">Sign in to access all of our databank reports</p>
+                        		</div>
+                        		<div class="grid-col flex-4 sam-stamp">
+                        			<img src="/assets/img/workspace 1.png">
+                        			<h5>Databank</h5>
+                        			<p class="hint">Sign in to access all of our databank reports</p>
+                        		</div>
+                        	</div>
+                        </div>
+                    </div>
+                </li>
+        </ul>
+	</div>
+	<div class="nav sam-meganav flex-1">
+		<a href="#">Contracting</a>
+        <ul style="width: 100%">
+                <li style="width: 100%">
+                    <div class="usa-grid-full megabox">
+                        <div class="usa-width-one-sixth">
+                        	<h5><a class="normal" href="/entities">Entities Home</a></h5>
+                        	<img src="/assets/img/entities 3.png">
+                        </div>
+                        <div class="usa-width-one-sixth">
+                        	<h5><a class="normal" href="/search?domain=entities">Entities Search</a></h5>
+                        	<p><a class="normal" href="/search?domain=registrations">Entity Registrations</a></p>
+                        	<p><a class="normal" href="/search?domain=recovery">Disaster Recovery Registry</a></p>
+                        	<p><a class="normal" href="/search?domain=exclusions">Exclusions</a></p>
+                        </div>
+                        <div class="usa-width-one-sixth">
+                        	<h5><a class="normal" href="">Entities Databank</a></h5>
+                        	<p><a class="normal" href="">Standard Reports</a></p>
+                        	<p><a class="normal" href="">Ad-hoc Reports</a></p>
+                        	<p><a class="normal" href="">Static Reports</a></p>
+                        </div>
+                        <div class="usa-width-one-sixth">
+                        	<h5><a class="normal" href="">Entities APIs</a></h5>
+                        </div>
+                        <div class="usa-width-one-third">
+                        	<h5><a class="normal" href="">Entity Workspace</a></h5>
+		                </div>
+                    </div>
+                </li>
+        </ul>
+    </div>
+	<div class="nav sam-meganav flex-1">
+		<a href="#">Federal Assistance</a>
+        <ul style="width: 100%">
+                <li style="width: 100%">
+                    <div class="usa-grid-full megabox">
+                        <div class="usa-width-one-sixth">
+                        	<h5><a class="normal" href="">Federal Assistance Home</a></h5>
+                        	<img src="/assets/img/entities 3.png">
+                        </div>
+                        <div class="usa-width-one-sixth">
+                        	<h5><a class="normal" href="/search?domain=assistance">Search</a></h5>
+                        	<p><a class="normal" href="/search?domain=assistance">Assistance Listings</a></p>
+                        </div>
+                        <div class="usa-width-one-sixth">
+                        	<h5><a class="normal" href="">Databank</a></h5>
+                        	<p><a class="normal" href="">Standard Reports</a></p>
+                        	<p><a class="normal" href="">Ad-hoc Reports</a></p>
+                        </div>
+                        <div class="usa-width-one-sixth">
+                        	<h5><a class="normal" href="">Data Services</a></h5>
+                        	<p><a class="normal" href="">Web Service APIs</a></p>
+                        	<p><a class="normal" href="">File Extracts</a></p>
+                        </div>
+                        <div class="usa-width-one-third">
+                        	<h5><a class="normal" href="">Workspace</a></h5>
+		                </div>
+                    </div>
+                </li>
+        </ul>
+    </div>
+</div>

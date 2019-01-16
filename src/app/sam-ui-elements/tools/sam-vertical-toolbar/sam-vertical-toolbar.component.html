@@ -1,8 +1,11 @@
-<div class="sam-vertical-toolbar">
-	<ul>
-		<li *ngFor="let tool of tools" [ngClass]="(tool == model.selectedTool) ? 'sam-selected-tool':'sam-tool'" (click)="model.setSelectedTool(tool)">
-			<i class="{{tool.icon}}"></i>
-			<div>{{tool.title}}</div>
-		</li>
-	</ul>
-</div>
+<ul class="sam-vertical-toolbar">
+	<li *ngFor="let tool of tools" 
+		[ngClass]="(tool == model.selectedTool) ? 'sam-tool sam-selected' : 'sam-tool'" (click)="model.setSelectedTool(tool)">
+			<div class="sam-tool grid-row">
+					<i class="grid-col-12 flex-align-center {{tool.icon}}"></i>
+					<span class="grid-col-12 flex-align-center">
+					{{tool.title}}
+				</span>
+			</div>
+	</li>
+</ul>

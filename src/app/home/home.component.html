@@ -1,96 +1,29 @@
-<div class="usa-grid-full">
-	<div class="usa-width-one-whole">
-		<sam-feature-banner title="Wecome to SAM.gov" domain="all" featureImage="/assets/img/home-page-feature.jpg">
-  		    <p>The official U.S. government website for people who make, receive, and manage federal awards.</p>
-		    <p>To search all of our data, enter an Entity ID, Contract ID, CFDA Number, Solicitation Number, or other ID; or enter keywords.</p>
+<div class="grid-row flex-column">
+	<div class="grid-col">
+		<sam-feature-banner title="Welcome to SAM.gov" domain="all" featureImage="/assets/img/home-page-feature.jpg">
+  		    <div class="intro-text">The official U.S. government website for people who make, receive, and manage federal awards</div>
+		    <div class="search-text">Start searching our data by entering an ID or keyword below</div>
 			<sam-search-input [selectedDomain]="domain"></sam-search-input>
 		</sam-feature-banner>
 	</div>
-</div>
-<h2 class="home">Benefits at a glance</h2>
-<div class="usa-grid-full home-feature-panel">
-	<div class="usa-width-one-fourth feature-tabs">
-		<ul>
-			<li [ngClass]="selectedTab===overviewTab?'selectedTab':''" (click)="selectedTab=overviewTab">Overview</li>
-			<li [ngClass]="selectedTab===entitiesTab?'selectedTab':''" (click)="selectedTab=entitiesTab">Entities</li>
-			<li [ngClass]="selectedTab===contractingTab?'selectedTab':''" (click)="selectedTab=contractingTab">Contracting</li>
-			<li [ngClass]="selectedTab===assistanceTab?'selectedTab':''" (click)="selectedTab=assistanceTab">Federal Assistance</li>
-			<li [ngClass]="selectedTab===hierarchyTab?'selectedTab':''" (click)="selectedTab=hierarchyTab">Federal Hierarchy</li>
-			<li [ngClass]="selectedTab===wagesTab?'selectedTab':''" (click)="selectedTab=wagesTab">Wage Determinations</li>
-			<li [ngClass]="selectedTab===moreTab?'selectedTab':''" (click)="selectedTab=moreTab">More</li>
-		</ul>
+	<div class="grid-row">
+		<h2 class="home">What can I do here?</h2>
 	</div>
-	<div class="usa-width-three-fourths" >
-		<ng-container 
-			  *ngIf="selectedTab" 
-			  [ngTemplateOutlet]="selectedTab" 
-			  [ngTemplateOutletContext]="{data: dataContext}"
-		></ng-container>
-	</div>
-</div>
-
-<ng-template #overview>
-	<div class="feature-tab">
-		Overview
-	</div>
-</ng-template>
-
-<ng-template #entities>
-	<div class="feature-tab">
-		<p>SAM.gov is a FREE service of the U.S. federal government.  It is an official U.S. government website where you can do the following.
-		<ul>
-			<li><i class="fa fa-arrow-circle-right"></i>Register to do business with the U.S. government</li>
-			<li><i class="fa fa-arrow-circle-right"></i>Update or renew your entity registration</li>
-			<li><i class="fa fa-arrow-circle-right"></i>Check status of an entity registration</li>
-			<li><i class="fa fa-arrow-circle-right"></i>Search for entity registration and exclusion records</li>
-		</ul>
-		<div class="usa-grid-full panels">
-			<div class="usa-width-one-third feature-icon" (click)="navigateTo('/')">
-				<h4>Create a User Account</h4>
-				<img src="/assets/img/user.png">
-				<p>Start by creating a SAM user account.</p>
-			</div>
-			<div class="usa-width-one-third feature-icon" (click)="navigateTo('/')">
-				<h4>Register Entity</h4>
-				<img src="/assets/img/register.png">
-				<p>After creating your SAM user account, log in to register to do business with the U.S. government.</p>
-			</div>
-			<div class="usa-width-one-third feature-icon" (click)="navigateTo('/entities-search')">
-				<h4>Search Records</h4>
-				<img src="/assets/img/search2.png">
-				<p>Do a public search for existing entity registration records or exclusion records.</p>
-				<p>Federal users can log in to see additional information.</p>
-			</div>
+	<div class="grid-row">
+		<div class="sam-card grid-col">
+			<img src="/assets/img/sam-icons/contracting.svg">
+			<h3>Contracting</h3>
+			<ul>
+				<li>Contract Opportunities (formerly FBO.gov)</li>
+				<li>Contract Data (formerly FPDS.gov)</li>
+				<li>Sub-Awards (formerly eSRS.gov and FSRS.gov)</li>
+				<li>Past Performance (formerly CPARS.gov)</li>
+				<li>Wage Determinations (formerly WDOL.gov)</li>
+			</ul>
+		</div>
+		<div class="sam-card grid-col">
+			<img src="/assets/img/sam-icons/federal assistance.svg">
+			<h3>Federal Assistance</h3>
 		</div>
 	</div>
-</ng-template>
-
-<ng-template #contracting>
-	<div class="feature-tab">
-		Contracting
-	</div>
-</ng-template>
-
-<ng-template #assistance>
-	<div class="feature-tab">
-		Federal Assistance
-	</div>
-</ng-template>
-
-<ng-template #hierarchy>
-	<div class="feature-tab">
-		Federal Hierarchy
-	</div>
-</ng-template>
-
-<ng-template #wages>
-	<div class="feature-tab">
-		Wage Determinations
-	</div>
-</ng-template>
-
-<ng-template #more>
-	<div class="feature-tab">
-		More
-	</div>
-</ng-template>
+</div>

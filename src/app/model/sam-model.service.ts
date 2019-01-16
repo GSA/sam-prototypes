@@ -13,6 +13,8 @@ export class SamModelService {
    */
   isSignedIn: boolean = false;
 
+  isMainNavigationVisible: boolean = true;
+
   /**
    * Toolbar configuration and state 
    */
@@ -47,6 +49,14 @@ export class SamModelService {
     if(redirectUrl) {
       this.router.navigateByUrl(redirectUrl);
     }
+  }
+
+  goTo(url: string) {
+    this.router.navigateByUrl(url);
+  }
+
+  setMainNavigationVisible(isVisible: boolean) {
+    this.isMainNavigationVisible = isVisible;
   }
 
   closeTools() {

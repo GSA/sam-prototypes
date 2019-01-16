@@ -1,93 +1,196 @@
-<div class="sam-subheader">
-	<a href="/" class="sam align-left"><img src="assets/img/beta_samgov_horizontal.jpg"></a>
-	<ul class="nav sam-meganav">
-			<li>
-			<a href="#">All Data</a>
-	        <ul style="width: 100%">
-	                <li style="width: 100%">
-	                    <div class="usa-grid-full megabox">
-	                    	<div class="usa-width-one-half">
-	                    		<h5>Search All Data</h5>
-	                    		<div class="search-container">
-									<sam-search-input [domains]="allDomains" [selectedDomain]="allDomains[0]"></sam-search-input>
-								</div>
-	                    	</div>
-	                        <div class="usa-width-one-half">
-	                        	<div class="usa-grid-full">
-	                        		<div class="usa-width-one-third sam-stamp">
-	                        			<img src="/assets/img/databank.png">
-	                        			<h5>Databank</h5>
-	                        			<p class="hint">Sign in to access all of our databank reports</p>
-	                        		</div>
-	                        		<div class="usa-width-one-third sam-stamp">
-
-	                        		</div>
-	                        	</div>
-	                        </div>
-	                    </div>
-	                </li>
-	        </ul>
-	    </li>
-	    <li>
-			<a href="#">Contracting</a>
-	        <ul style="width: 100%">
-	                <li style="width: 100%">
-	                    <div class="usa-grid-full megabox">
-	                        <div class="usa-width-one-sixth">
-	                        	<h5><a class="normal" href="/entities">Entities Home</a></h5>
-	                        	<img src="/assets/img/entities 3.png">
-	                        </div>
-	                        <div class="usa-width-one-sixth">
-	                        	<h5><a class="normal" href="/search?domain=entities">Entities Search</a></h5>
-	                        	<p><a class="normal" href="/search?domain=registrations">Entity Registrations</a></p>
-	                        	<p><a class="normal" href="/search?domain=recovery">Disaster Recovery Registry</a></p>
-	                        	<p><a class="normal" href="/search?domain=exclusions">Exclusions</a></p>
-	                        </div>
-	                        <div class="usa-width-one-sixth">
-	                        	<h5><a class="normal" href="">Entities Databank</a></h5>
-	                        	<p><a class="normal" href="">Standard Reports</a></p>
-	                        	<p><a class="normal" href="">Ad-hoc Reports</a></p>
-	                        	<p><a class="normal" href="">Static Reports</a></p>
-	                        </div>
-	                        <div class="usa-width-one-sixth">
-	                        	<h5><a class="normal" href="">Entities APIs</a></h5>
-	                        </div>
-	                        <div class="usa-width-one-third">
-	                        	<h5><a class="normal" href="">Entity Workspace</a></h5>
-			                </div>
-	                    </div>
-	                </li>
-	        </ul>
-	    </li>
-	    <li>
-			<a href="#">Federal Assistance</a>
-	        <ul style="width: 100%">
-	                <li style="width: 100%">
-	                    <div class="usa-grid-full megabox">
-	                        <div class="usa-width-one-sixth">
-	                        	<h5><a class="normal" href="">Federal Assistance Home</a></h5>
-	                        	<img src="/assets/img/entities 3.png">
-	                        </div>
-	                        <div class="usa-width-one-sixth">
-	                        	<h5><a class="normal" href="/search?domain=assistance">Search</a></h5>
-	                        	<p><a class="normal" href="/search?domain=assistance">Assistance Listings</a></p>
-	                        </div>
-	                        <div class="usa-width-one-sixth">
-	                        	<h5><a class="normal" href="">Databank</a></h5>
-	                        	<p><a class="normal" href="">Standard Reports</a></p>
-	                        	<p><a class="normal" href="">Ad-hoc Reports</a></p>
-	                        </div>
-	                        <div class="usa-width-one-sixth">
-	                        	<h5><a class="normal" href="">Data Services</a></h5>
-	                        	<p><a class="normal" href="">Web Service APIs</a></p>
-	                        	<p><a class="normal" href="">File Extracts</a></p>
-	                        </div>
-	                        <div class="usa-width-one-third">
-	                        	<h5><a class="normal" href="">Workspace</a></h5>
-			                </div>
-	                    </div>
-	                </li>
-	        </ul>
-	    </li>
-    </ul>
-</div>
+<header class="usa-header usa-header-extended" role="banner">
+  <div class="usa-navbar">
+        <div class="usa-logo" id="extended-mega-logo">
+          <em class="usa-logo-text"><a href="/" title="Home" aria-label="Home"><img class="sam-logo" src="assets/img/beta_samgov_horizontal.jpg"></a></em>
+        </div>
+      </div>
+      <nav role="navigation" class="usa-nav">
+        <div class="sam-nav usa-nav-inner">
+          <button class="usa-nav-close"><img src="/assets/img/close.svg" alt="close"></button>
+          <ul class="usa-nav-primary usa-accordion">
+            <li class="usa-nav-primary-item">
+              <button class="usa-accordion-button usa-nav-link  usa-current" aria-expanded="false" aria-controls="sam-mega-nav-section-one"><span>Overview</span></button>
+              <div id="sam-mega-nav-section-one" class="usa-nav-submenu usa-megamenu">
+                <div class="grid-row grid-gap-4">
+                  <div class="desktop:grid-col-3">
+                    <ul class="usa-nav-submenu-list">
+                      <li class="sam-nav-title usa-nav-submenu-item">
+                        Search
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Contract Opportunities and Contract Data</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Entity Information</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Federal Hierarchy</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Wage Determinations</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="desktop:grid-col-3">
+                    <ul class="usa-nav-submenu-list">
+                      <li class="sam-nav-title usa-nav-submenu-item">
+                        Databank
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Standard Reports</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Ad-hoc Reports</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Static Reports</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="desktop:grid-col-3">
+                    <ul class="usa-nav-submenu-list">
+                      <li class="sam-nav-title usa-nav-submenu-item">
+                        Workspace
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Register an Entity</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Check Registration Status</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Upload Sub-Awards</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Review Past Performance</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="usa-nav-primary-item">
+              <button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="sam-mega-nav-section-two"><span>Contracting</span></button>
+              <div id="sam-mega-nav-section-two" class="usa-nav-submenu usa-megamenu">
+                <div class="grid-row grid-gap-4">
+                  <div class="desktop:grid-col-3">
+                    <ul class="usa-nav-submenu-list">
+                      <li class="sam-nav-title usa-nav-submenu-item">
+                        Search
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Contract Opportunities and Contract Data</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Entity Information</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Federal Hierarchy</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Wage Determinations</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="desktop:grid-col-3">
+                    <ul class="usa-nav-submenu-list">
+                      <li class="sam-nav-title usa-nav-submenu-item">
+                        Databank
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Standard Reports</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Ad-hoc Reports</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Static Reports</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="desktop:grid-col-3">
+                    <ul class="usa-nav-submenu-list">
+                      <li class="sam-nav-title usa-nav-submenu-item">
+                        Workspace
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Register an Entity</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Check Registration Status</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Upload Sub-Awards</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Review Past Performance</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="usa-nav-primary-item">
+              <button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="sam-mega-nav-section-three"><span>Federal Assistance</span></button>
+              <div id="sam-mega-nav-section-three" class="usa-nav-submenu usa-megamenu"><div class="grid-row grid-gap-4"><div class="desktop:grid-col-3">
+                <ul class="usa-nav-submenu-list">
+                  <li class="usa-nav-submenu-item">
+                    <a href="#">Navigation link</a>
+                  </li>
+                  <li class="usa-nav-submenu-item">
+                    <a href="#">Navigation link</a>
+                  </li>
+                  <li class="usa-nav-submenu-item">
+                    <a href="#">Navigation link</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="desktop:grid-col-3">
+                <ul class="usa-nav-submenu-list">
+                  <li class="usa-nav-submenu-item">
+                    <a href="#">Navigation link</a>
+                  </li>
+                  <li class="usa-nav-submenu-item">
+                    <a href="#">A very long navigation link that goes onto two lines</a>
+                  </li>
+                  <li class="usa-nav-submenu-item">
+                    <a href="#">Navigation link</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="desktop:grid-col-3">
+                <ul class="usa-nav-submenu-list">
+                  <li class="usa-nav-submenu-item">
+                    <a href="#">Navigation link</a>
+                  </li>
+                  <li class="usa-nav-submenu-item">
+                    <a href="#">Navigation link</a>
+                  </li>
+                  <li class="usa-nav-submenu-item">
+                    <a href="#">Navigation link</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="usa-nav-secondary">
+        <ul class="usa-nav-secondary-links">
+          <li class="usa-nav-secondary-item">
+            <a href="">Requests</a>
+          </li>
+          <li class="usa-nav-secondary-item">
+            <a href="">Messages</a>
+          </li>
+          <li class="usa-nav-secondary-item">
+            <a href="">My Workspace</a>
+          </li>
+          <li class="usa-nav-secondary-item">
+            <a href="">Sign Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

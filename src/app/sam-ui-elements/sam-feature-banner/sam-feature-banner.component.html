@@ -1,9 +1,14 @@
-<div class="sam-feature-banner">
-	<div class="sam-feature-content">
+<div class="sam-feature-title grid-row">
+	<div class="grid-col-5">
 		<h2>{{title}}</h2>
+	</div>
+	<div class="grid-col-7">
+		<a class="register-button flex-align-end" href="#">Register Entity</a>
+	</div>
+</div>
+<div class="sam-feature-banner grid-row">
+	<div class="sam-feature-content grid-col-5">
 		<ng-content></ng-content>
 	</div>
-	<div class="sam-feature-image">
-		<img src="{{featureImage}}">
-	</div>
+	<img class="sam-feature-image grid-col-7" src="{{featureImage}}">
 </div>

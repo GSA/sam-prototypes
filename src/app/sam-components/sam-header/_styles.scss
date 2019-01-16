@@ -1,39 +1,48 @@
-@import 'sam-gov/_layout';
 
-div.sam-header {
-	display: inline-block;
-	background-color: #323a45;
-	margin: 0;
-	width: 100%;
-	padding: .25em;
+.sam-nav {
 
-	ul {
-		width: 100%;
-		display: inline;
-		list-style-type: none;
+	background-color: #ffffff;
+}
 
-		li {
-			float: right;
-			color: #ffffff;
-			font-weight: 300;
-			font-size: .9em;		
-			margin: 0;
-			padding: 0 1em;
-		}
-	}
+ul.sam-data-nav {
+	list-style-type: none;
+}
+
+li.sam-close-link {
+	float: right;
 
 	a {
-		float: right;
-		margin: 0;
-		padding: 0 1em;
-		color: #ffffff;
-		font-weight: 300;
-		font-size: .9em;
-
-		i {
-			margin-bottom: 0;
-			margin-right: $icon-margin;
-		}
+		color: #323a45;
+		text-decoration: none;
 	}
+}
+
+.sam-header-nav {
+	
+	span {
+		color: #757575;
+	}
+
+	span:hover {
+		cursor: pointer;
+		text-decoration: underline;
+	}
+}
+
+.sam-help-nav {
+	
+	i {
+		margin-right: .5em;
+	}
+}
+
+.sam-nav-title {
+  font-weight: 500;
+  font-size: 1.4em;
+  color: white;
+}
+
+img.sam-logo {
+    height: 1em;
 }
 

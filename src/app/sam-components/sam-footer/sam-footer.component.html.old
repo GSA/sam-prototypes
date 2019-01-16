@@ -1,0 +1,79 @@
+<footer id="sam-footer" class="sam-footer" aria-label="footer-navigation">
+  <div class="sam-ui padded grid">
+    <div class="lighter grey row">
+      <nav class="sam-ui container" aria-label="footer-nav">
+        <ul class="sam-ui four column stackable vertically very padded grid">
+          <li class="column sam-footer-logo">
+            <a href="http://www.gsa.gov" target="gsa.gov" title="GSA.gov">
+              <span>General Services Administration Website</span>
+            </a>
+          </li>
+          <li class="column">
+            <h2 class="sam-ui header">About Us</h2>
+            <ul class="sam-ui list">
+              <li>
+                <a href="https://interact.gsa.gov/group/integrated-award-environment-iae-industry-community" title="Explore Our Community" target="Explore Our Community">
+                  Explore Our Community
+                  <i class="fa fa-external-link fa-sm" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                  <a [routerLink]="['release-notes']" title="Release Notes">
+                    Release Notes
+                  </a>
+              </li>
+            </ul>
+          </li>
+          <li class="column">
+            <h2 class="sam-ui header">Partners</h2>
+            <ul class="sam-ui list">
+              <li>
+                <a href="https://www.acquisition.gov/" title="Acquisition.gov" target="Acquisition.gov">
+                  Acquisition.gov
+                  <!-- <i class="fa fa-external-link fa-sm" aria-hidden="true"></i> -->
+                </a>
+              </li>
+              <li>
+                <a href="https://www.usaspending.gov/Pages/Default.aspx" title="USASpending.gov" target="USASpending.gov">
+                  USASpending.gov
+                  <!-- <i class="fa fa-external-link fa-sm" aria-hidden="true"></i> -->
+                </a>
+              </li>
+              <li>
+                <a href="http://www.grants.gov/" title="Grants.gov" target="Grants.gov">
+                  Grants.gov
+                  <!-- <i class="fa fa-external-link fa-sm" aria-hidden="true"></i> -->
+                </a>
+              </li>
+              <li>
+                <a [routerLink]="['/help/partners']" title="More Partners">
+                  More Partners
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="column">
+            <h2 class="sam-ui header">Customer Service</h2>
+            <ul class="sam-ui list">
+              <li>
+                <a [routerLink]="['/help/support']" title="Contact Federal Service Desk">
+                  Contact Federal Service Desk
+                </a>
+              </li>
+              <li>
+                <a href="https://www.gsa.gov/reference/freedom-of-information-act-foia" title="Freedom of Information Act" target="Freedom of Information Act">
+                  Freedom of Information Act
+                  <i class="fa fa-external-link fa-sm" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p>
+          This is a U.S. General Services Administration Federal Government computer system that is <strong>"FOR OFFICIAL USE ONLY."</strong> This system is subject to monitoring. Individuals found performing unauthorized activities are subject to disciplinary
+          action including criminal prosecution.
+        </p>
+      </nav>
+    </div>
+  </div>
+</footer>

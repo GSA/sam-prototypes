@@ -27,7 +27,7 @@ export class SamSearchComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit() {
-      this.domain = this.route.snapshot.queryParamMap.get('domain')
+      this.domain = this.route.snapshot.queryParamMap.get('domain');
       this.route.queryParamMap.subscribe(queryParams => {
         this.domain = queryParams.get('domain');
         this.searchService.setDomain(this.domain);

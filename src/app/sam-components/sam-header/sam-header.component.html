@@ -1,8 +1,228 @@
-<div class="sam-header">	
-	<ul>
-		<li *ngIf="!model.isSignedIn" class="align-right" (click)="model.signIn('/')">Sign In</li>
-		<li *ngIf="model.isSignedIn" class="align-right" (click)="model.signOut('/')">Sign Out</li>
-		<li><a href="/feed"><i class="fa fa-bell-o"></i>Messages</a></li>
-		<li *ngIf="model.isSignedIn"><a href="/requests"><i class="fa fa-tasks"></i>Requests</a></li>
-	</ul>
-</div>
+<header class="usa-header usa-header-extended" role="banner">
+  <div class="usa-navbar">
+      <div class="usa-logo" id="extended-mega-logo">
+          <em class="usa-logo-text"><a [routerLink]="['/']" title="Home" aria-label="Home"><img class="sam-logo" src="assets/img/beta_samgov_horizontal.jpg"></a></em>
+        </div>
+      </div>
+      <nav *ngIf="!model.isMainNavigationVisible" role="navigation" class="sam-data-nav usa-nav">
+      	<div class="usa-nav-inner">
+          <button class="usa-nav-close"><img src="/assets/img/close.svg" alt="close"></button>
+          <ul class="sam-data-nav">
+            <li class="sam-close-link">
+            	<a href="javascript:void(0)"><span><i class="fa fa-times fa3x"></i></span></a>
+            </li>
+        </ul>
+    	</div>
+	    <div class="usa-nav-secondary">
+	       <ul class="usa-nav-secondary-links">
+	          <li class="usa-nav-secondary-item">
+	            <a href="">Requests</a>
+	          </li>
+	          <li class="usa-nav-secondary-item">
+	            <a href="">Messages</a>
+	          </li>
+	          <li class="usa-nav-secondary-item">
+	            <a href="">My Workspace</a>
+	          </li>
+	          <li class="usa-nav-secondary-item">
+	            <a href="">Sign Out</a>
+	          </li>
+	        </ul>
+	      </div>
+      </nav>
+      <nav *ngIf="model.isMainNavigationVisible" role="navigation" class="sam-nav usa-nav">
+        <div class="usa-nav-inner">
+          <button class="usa-nav-close"><img src="/assets/img/close.svg" alt="close"></button>
+          <ul class="usa-nav-primary usa-accordion">
+            <li class="usa-nav-primary-item">
+              <button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="sam-mega-nav-section-one"><span>Overview</span></button>
+              <div id="sam-mega-nav-section-one" class="usa-nav-submenu usa-megamenu">
+                <div class="grid-row grid-gap-4">
+                  <div class="desktop:grid-col-3">
+                    <ul class="usa-nav-submenu-list">
+                      <li class="sam-nav-title usa-nav-submenu-item">
+                        Search
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="/search?domain=contracting">Contract Opportunities and Contract Data</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="/search?domain=entities">Entity Information</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="/search?domain=hierarchy">Federal Hierarchy</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="/search?domain=wages">Wage Determinations</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="desktop:grid-col-3">
+                    <ul class="usa-nav-submenu-list">
+                      <li class="sam-nav-title usa-nav-submenu-item">
+                        Databank
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Standard Reports</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Ad-hoc Reports</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Static Reports</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="desktop:grid-col-3">
+                    <ul class="usa-nav-submenu-list">
+                      <li class="sam-nav-title usa-nav-submenu-item">
+                        Workspace
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Register an Entity</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Check Registration Status</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Upload Sub-Awards</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Review Past Performance</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="usa-nav-primary-item">
+              <button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="sam-mega-nav-section-two"><span>Contracting</span></button>
+              <div id="sam-mega-nav-section-two" class="usa-nav-submenu usa-megamenu">
+                <div class="grid-row grid-gap-4">
+                  <div class="desktop:grid-col-3">
+                    <ul class="usa-nav-submenu-list">
+                      <li class="sam-nav-title usa-nav-submenu-item">
+                        Search
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="/search?domain=contracting">Contract Opportunities and Contract Data</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="/search?domain=entities">Entity Information</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="/search?domain=hierarchy">Federal Hierarchy</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="/search?domain=wages">Wage Determinations</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="desktop:grid-col-3">
+                    <ul class="usa-nav-submenu-list">
+                      <li class="sam-nav-title usa-nav-submenu-item">
+                        Databank
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Standard Reports</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Ad-hoc Reports</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Static Reports</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="desktop:grid-col-3">
+                    <ul class="usa-nav-submenu-list">
+                      <li class="sam-nav-title usa-nav-submenu-item">
+                        Workspace
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Register an Entity</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Check Registration Status</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Upload Sub-Awards</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a href="#">Review Past Performance</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="usa-nav-primary-item">
+              <button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="sam-mega-nav-section-three"><span>Federal Assistance</span></button>
+              <div id="sam-mega-nav-section-three" class="usa-nav-submenu usa-megamenu"><div class="grid-row grid-gap-4"><div class="desktop:grid-col-3">
+                <ul class="usa-nav-submenu-list">
+                  <li class="usa-nav-submenu-item">
+                    <a href="#">Navigation link</a>
+                  </li>
+                  <li class="usa-nav-submenu-item">
+                    <a href="#">Navigation link</a>
+                  </li>
+                  <li class="usa-nav-submenu-item">
+                    <a href="#">Navigation link</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="desktop:grid-col-3">
+                <ul class="usa-nav-submenu-list">
+                  <li class="usa-nav-submenu-item">
+                    <a href="#">Navigation link</a>
+                  </li>
+                  <li class="usa-nav-submenu-item">
+                    <a href="#">A very long navigation link that goes onto two lines</a>
+                  </li>
+                  <li class="usa-nav-submenu-item">
+                    <a href="#">Navigation link</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="desktop:grid-col-3">
+                <ul class="usa-nav-submenu-list">
+                  <li class="usa-nav-submenu-item">
+                    <a href="#">Navigation link</a>
+                  </li>
+                  <li class="usa-nav-submenu-item">
+                    <a href="#">Navigation link</a>
+                  </li>
+                  <li class="usa-nav-submenu-item">
+                    <a href="#">Navigation link</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="sam-help-nav usa-nav-primary-item">
+            <a [routerLink]="['/help']"><i class="fa fa-info-circle"></i>Help</a>
+        </li>
+      </ul>
+      <div class="usa-nav-secondary">
+        <ul class="usa-nav-secondary-links">
+          <li *ngIf="model.isSignedIn" class="usa-nav-secondary-item">
+            <a routerLink="/requests" routerLinkActive="active">Requests</a>
+          </li>
+          <li class="usa-nav-secondary-item">
+            <a routerLink="/messages" routerLinkActive="active">Messages</a>
+          </li>
+          <li *ngIf="model.isSignedIn" class="usa-nav-secondary-item">
+            <a routerLink="/workspace" routerLinkActive="active">My Workspace</a>
+          </li>
+          <li *ngIf="model.isSignedIn" class="sam-header-nav usa-nav-secondary-item">
+            <span (click)="model.signOut('/')">Sign Out</span>
+          </li>
+          <li *ngIf="!model.isSignedIn" class="sam-header-nav usa-nav-secondary-item">
+            <span (click)="model.signIn('/workspace')">Sign In</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

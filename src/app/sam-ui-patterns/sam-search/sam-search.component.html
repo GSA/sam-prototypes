@@ -1,5 +1,16 @@
-<sam-list title="{{searchService.data.title}}">
-</sam-list>
+<div class="sam-content grid-row">
+	<div class="grid-col-5">
+		<sam-search-input [selectedDomain]="domain"></sam-search-input>
+	</div>
+</div>
+<div class="sam-content grid-row">
+	<div class="grid-col-12">
+		<sam-list title="{{searchService.data.title}}">
+		</sam-list>
+	</div>
+</div>
+
+
 
 <ng-template #search>
 	<sam-sidebar title="Search">

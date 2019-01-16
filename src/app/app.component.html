@@ -1,33 +1,27 @@
+<sam-federal-site-banner></sam-federal-site-banner>
 <sam-header></sam-header>
-<sam-subheader></sam-subheader>
-<div class="sam-body usa-grid-full">
-	<div class="usa-width-toolbar sam-sidetools">
+<div class="grid-row">
+	<div class="grid-auto">
 		<sam-vertical-toolbar [tools]="model.localTools">
 		</sam-vertical-toolbar>
 		<sam-vertical-toolbar [tools]="model.globalTools">
 		</sam-vertical-toolbar>
 	</div>
-	<div class="usa-width-body">
-		<div class="sam-container usa-grid-full">
-				<div [ngClass]="{'hidden': !model.selectedTool, 
-	                 'sam-toolpanel usa-width-one-fourth': model.selectedTool && model.selectedTool.width=='normal',
-	                 'sam-toolpanel usa-width-one-third': model.selectedTool && model.selectedTool.width=='wide' }" >
-					<ng-container 
-						  *ngIf="model.selectedToolTemplate" 
-						  [ngTemplateOutlet]="model.selectedToolTemplate" 
-						  [ngTemplateOutletContext]="{data: dataContext}"
-					></ng-container>
-				</div>
-				<div [ngClass]="{'usa-width-one-whole': !model.selectedTool, 
-				                 'usa-width-three-fourths': model.selectedTool && model.selectedTool.width=='normal',
-				                 'usa-width-two-thirds': model.selectedTool && model.selectedTool.width=='wide' }" >
-					<router-outlet></router-outlet>
-				</div>
-		</div>
+	<div [ngClass]="{'hidden': !model.selectedTool, 
+	                 'sam-toolpanel grid-col-3': model.selectedTool && model.selectedTool.width=='normal',
+	                 'sam-toolpanel grid-col-4': model.selectedTool && model.selectedTool.width=='wide' }" >
+		<ng-container *ngIf="model.selectedToolTemplate" 
+			[ngTemplateOutlet]="model.selectedToolTemplate" 
+			[ngTemplateOutletContext]="{data: dataContext}">
+		</ng-container>
+	</div>
+	<div class="grid-col-fill">
+		<router-outlet></router-outlet>
 	</div>
 </div>
-<sam-footer>
-</sam-footer>
+<sam-footer></sam-footer>
+
+
 
 <ng-template #feedback>
 	<sam-sidebar title="Feedback">

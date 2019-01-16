@@ -1,30 +1,25 @@
 
-.sam-vertical-toolbar {
+ul.sam-vertical-toolbar {
 
-	padding: 0;
+	list-style-type: none;
 	margin: 0;
+	padding: 0;
+	font-size: .7em;
+	font-weight: 400;
+	color: #323a45;
 
-	ul {
-	  	list-style-type: none;
-	  	padding: .2em;
-
-	  	li.sam-selected-tool {
-	  		background-color: #f1f1f1;
-	  		border: 1px solid #ccd6df;
-	  		margin-right: 0em;
-	  	}
-
-	  	li {
-			padding: 1em 0em;
-			font-size: .6em;
-			text-align: center;
-
-			div, i {
-	  			color: #323a45;
-				display: block;
-				font-weight: 300;
-			}
-		}
+	.sam-tool {
+		padding: 1em .4em;
+		height: 7em;
+		border: 1px solid transparent;
 	}
+
+	.sam-selected {
+  		background-color: #f1f1f1;
+  		border-left: 1px solid #ccd6df;
+  		border-top: 1px solid #ccd6df;
+  		border-bottom: 1px solid #ccd6df;
+
+	 }
 
 }

@@ -1,79 +1,79 @@
-<footer id="sam-footer" class="sam-footer" aria-label="footer-navigation">
-  <div class="sam-ui padded grid">
-    <div class="lighter grey row">
-      <nav class="sam-ui container" aria-label="footer-nav">
-        <ul class="sam-ui four column stackable vertically very padded grid">
-          <li class="column sam-footer-logo">
-            <a href="http://www.gsa.gov" target="gsa.gov" title="GSA.gov">
-              <span>General Services Administration Website</span>
-            </a>
-          </li>
-          <li class="column">
-            <h2 class="sam-ui header">About Us</h2>
-            <ul class="sam-ui list">
-              <li>
-                <a href="https://interact.gsa.gov/group/integrated-award-environment-iae-industry-community" title="Explore Our Community" target="Explore Our Community">
-                  Explore Our Community
-                  <i class="fa fa-external-link fa-sm" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li>
-                  <a [routerLink]="['release-notes']" title="Release Notes">
-                    Release Notes
-                  </a>
-              </li>
-            </ul>
-          </li>
-          <li class="column">
-            <h2 class="sam-ui header">Partners</h2>
-            <ul class="sam-ui list">
-              <li>
-                <a href="https://www.acquisition.gov/" title="Acquisition.gov" target="Acquisition.gov">
-                  Acquisition.gov
-                  <!-- <i class="fa fa-external-link fa-sm" aria-hidden="true"></i> -->
-                </a>
-              </li>
-              <li>
-                <a href="https://www.usaspending.gov/Pages/Default.aspx" title="USASpending.gov" target="USASpending.gov">
-                  USASpending.gov
-                  <!-- <i class="fa fa-external-link fa-sm" aria-hidden="true"></i> -->
-                </a>
-              </li>
-              <li>
-                <a href="http://www.grants.gov/" title="Grants.gov" target="Grants.gov">
-                  Grants.gov
-                  <!-- <i class="fa fa-external-link fa-sm" aria-hidden="true"></i> -->
-                </a>
-              </li>
-              <li>
-                <a [routerLink]="['/help/partners']" title="More Partners">
-                  More Partners
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="column">
-            <h2 class="sam-ui header">Customer Service</h2>
-            <ul class="sam-ui list">
-              <li>
-                <a [routerLink]="['/help/support']" title="Contact Federal Service Desk">
-                  Contact Federal Service Desk
-                </a>
-              </li>
-              <li>
-                <a href="https://www.gsa.gov/reference/freedom-of-information-act-foia" title="Freedom of Information Act" target="Freedom of Information Act">
-                  Freedom of Information Act
-                  <i class="fa fa-external-link fa-sm" aria-hidden="true"></i>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <p>
-          This is a U.S. General Services Administration Federal Government computer system that is <strong>"FOR OFFICIAL USE ONLY."</strong> This system is subject to monitoring. Individuals found performing unauthorized activities are subject to disciplinary
-          action including criminal prosecution.
-        </p>
-      </nav>
+<footer class="usa-footer usa-footer-big" role="contentinfo">
+  <div class="usa-footer-primary-section">
+    <div class="grid-container">
+      <div class="grid-row grid-gap">
+        <div class="tablet:grid-col-8">
+          <nav class="usa-footer-nav">
+            <div class="grid-row grid-gap-4">
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-4">
+                <section class="usa-footer-primary-content usa-footer-collapsible">
+                  <h4 class="usa-footer-primary-link">About Us</h4>
+                  <ul class="usa-unstyled-list">
+                    <li class="usa-footer-secondary-link"><a href="javascript:void(0);">Our Program</a></li>
+                    <li class="usa-footer-secondary-link"><a href="javascript:void(0);">Join Our Community</a></li>
+                    <li class="usa-footer-secondary-link"><a href="javascript:void(0);">Policies</a></li>
+                    <li class="usa-footer-secondary-link"><a href="javascript:void(0);">Release Notes</a></li>
+                  </ul>
+                </section>
+              </div>
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-4">
+                <section class="usa-footer-primary-content usa-footer-collapsible">
+                  <h4 class="usa-footer-primary-link">Partners</h4>
+                  <ul class="usa-unstyled-list">
+                    <li class="usa-footer-secondary-link"><a href="javascript:void(0);">Acquisition.gov</a></li>
+                    <li class="usa-footer-secondary-link"><a href="javascript:void(0);">USASpending.gov</a></li>
+                    <li class="usa-footer-secondary-link"><a href="javascript:void(0);">Grants.gov</a></li>
+                    <li class="usa-footer-secondary-link"><a href="javascript:void(0);">More Partners</a></li>
+                  </ul>
+                </section>
+              </div>
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-4">
+                <section class="usa-footer-primary-content usa-footer-collapsible">
+                  <h4 class="usa-footer-primary-link">Customer Service</h4>
+                  <ul class="usa-unstyled-list">
+                    <li class="usa-footer-secondary-link"><a href="javascript:void(0);">SAM.gov Help Desk</a></li>
+                    <li class="usa-footer-secondary-link"><a href="javascript:void(0);">Freedom of Information Act</a></li>
+                  </ul>
+                </section>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="tablet:grid-col-4">
+          <div class="usa-sign_up-block">
+            <h3 class="usa-sign_up-header">Sign up</h3>
+            <form class="usa-form">
+              <label class="usa-label" for="email" id="">Your email address</label>
+              <input class="usa-input" id="email" name="email" type="email">
+              <button class="usa-button" type="submit">Sign up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="usa-footer-secondary-section">
+    <div class="grid-container">
+      <div class="grid-row grid-gap">
+        <div class="usa-footer-logo grid-row mobile-lg:grid-col-6 mobile-lg:grid-gap-2">
+          <div class="mobile-lg:grid-col-auto">
+            <img class="usa-footer-logo-img" src="/assets/img/gsa-logo.png" alt="">
+          </div>
+          <div class="mobile-lg:grid-col-auto">
+            <h3 class="usa-footer-logo-heading">Name of Agency</h3>
+          </div>
+        </div>
+        <div class="usa-footer-contact-links mobile-lg:grid-col-6">
+          <h3 class="usa-footer-contact-heading">Contact Us</h3>
+          <address class="usa-footer-address">
+            <div class="usa-footer-contact_info grid-row grid-gap">
+              <div class="grid-col-auto">
+                <a href="mailto:info@agency.gov">info@sam.gov</a>
+              </div>
+            </div>
+          </address>
+        </div>
+      </div>
     </div>
   </div>
 </footer>

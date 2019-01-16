@@ -84,6 +84,21 @@ export const SearchModels: Map<string, ListModel> = new Map(
 			}
 		]
 	}
+  ],  
+  ['contracting', {
+		title: 'All Contracting',
+		automaticRefresh: true,
+		filterFields: [
+			{
+				key: 'keywords',
+				type: 'input',
+				templateOptions: {
+					label: 'Keywords',
+					placeholder: 'Search All Contract Data'
+				}
+			}
+		]
+	}
   ], 
   	['assistance', {
 		title: 'Assistance Listings',

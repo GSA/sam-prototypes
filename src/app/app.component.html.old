@@ -1,0 +1,48 @@
+<sam-header></sam-header>
+<sam-subheader></sam-subheader>
+<div class="grid-row">
+	<div class="grid-col flex-1">
+		<sam-vertical-toolbar [tools]="model.localTools">
+		</sam-vertical-toolbar>
+		<sam-vertical-toolbar [tools]="model.globalTools">
+		</sam-vertical-toolbar>
+	</div>
+	<div class="grid-col flex-11">
+		<div class="grid-row">
+				<div [ngClass]="{'hidden': !model.selectedTool, 
+	                 'sam-toolpanel grid-col flex-3': model.selectedTool && model.selectedTool.width=='normal',
+	                 'sam-toolpanel grid-col flex-4': model.selectedTool && model.selectedTool.width=='wide' }" >
+					<ng-container 
+						  *ngIf="model.selectedToolTemplate" 
+						  [ngTemplateOutlet]="model.selectedToolTemplate" 
+						  [ngTemplateOutletContext]="{data: dataContext}"
+					></ng-container>
+				</div>
+				<div [ngClass]="{'grid-col flex-12': !model.selectedTool, 
+				                 'grid-col flex-9': model.selectedTool && model.selectedTool.width=='normal',
+				                 'grid-col flex-8': model.selectedTool && model.selectedTool.width=='wide' }" >
+					<router-outlet></router-outlet>
+				</div>
+		</div>
+	</div>
+</div>
+<sam-footer>
+</sam-footer>
+
+<ng-template #feedback>
+	<sam-sidebar title="Feedback">
+		
+	</sam-sidebar>
+</ng-template>
+
+<ng-template #helpdesk>
+	<sam-sidebar title="Help Desk">
+		
+	</sam-sidebar>
+</ng-template>
+
+<ng-template #glossary>
+	<sam-sidebar title="Glossary">
+		
+	</sam-sidebar>
+</ng-template>

@@ -29,21 +29,21 @@ export const SearchTools: ToolItem[] = [
 export const GlobalTools: ToolItem[] = [
 	{
 		title: 'Help Desk',
-		icon: 'fa fa-headphones fa-lg',
+		icon: 'fa fa-headphones fa-2x',
 		info: 'Contact the help desk',
 		eventID: 'helpdesk',
 		width: 'normal'
 	},
 	{
 		title: 'Glossary',
-		icon: 'fas fa-book fa-lg',
+		icon: 'fas fa-book fa-2x',
 		info: 'Look up glossary terms',
 		eventID: 'glossary',
 		width: 'normal'
 	},
 	{
 		title: 'Feedback',
-		icon: 'fa fa-comments fa-lg',
+		icon: 'fa fa-comments fa-2x',
 		info: 'Tell us what you think',
 		eventID: 'feedback',
 		width: 'normal'
