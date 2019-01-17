@@ -1,0 +1,35 @@
+<div class="sam-content">
+	<div class="sam-page-title grid-row">
+		<div class="grid-col-5">
+			<h2>First, Last</h2>
+		</div>
+		<div style="margin-top: auto; margin-bottom:auto;" class="grid-col-7">
+
+		</div>
+	</div>
+</div>
+
+<ng-template #profile>
+	<sam-sidebar title="Profile">
+		<form class="sam-sidebar-form usa-form">
+		<nav id="profile-menu" class="sam-edit-sidemenu">
+			<a [routerLink]="['/profile?page=details']"><i class="fa fa-check"></i>Account Details</a>
+			<a [routerLink]="['/profile?page=reset']"><i class="fa fa-check"></i>Reset Password</a>
+			<a [routerLink]="['/profile?page=migrate']"><i class="fa fa-check"></i>Migrate Roles</a>
+			<a [routerLink]="['/profile?page=roles']"><i class="fa fa-check"></i>Roles</a>
+		</nav>
+		</form>
+	</sam-sidebar>
+</ng-template>
+
+<ng-template #history>
+	<sam-sidebar title="History">
+		
+	</sam-sidebar>
+</ng-template>
+
+<ng-template #download>
+	<sam-sidebar title="Download">
+		
+	</sam-sidebar>
+</ng-template>

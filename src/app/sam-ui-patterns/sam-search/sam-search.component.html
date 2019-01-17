@@ -1,16 +1,13 @@
-<div class="sam-content grid-row">
-	<div class="grid-col-5">
-		<sam-search-input [selectedDomain]="domain"></sam-search-input>
+<div class="sam-content">
+	<div class="sam-page-title grid-row">
+		<div class="grid-col-5">
+			<h2>{{searchService.data.title}}</h2>
+		</div>
+		<div style="margin-top: auto; margin-bottom:auto;" class="grid-col-7">
+			<sam-search-input selectedDomain="all"></sam-search-input>
+		</div>
 	</div>
 </div>
-<div class="sam-content grid-row">
-	<div class="grid-col-12">
-		<sam-list title="{{searchService.data.title}}">
-		</sam-list>
-	</div>
-</div>
-
-
 
 <ng-template #search>
 	<sam-sidebar title="Search">

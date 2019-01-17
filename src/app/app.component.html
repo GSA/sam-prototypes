@@ -8,7 +8,7 @@
 		</sam-vertical-toolbar>
 	</div>
 	<div [ngClass]="{'hidden': !model.selectedTool, 
-	                 'sam-toolpanel grid-col-3': model.selectedTool && model.selectedTool.width=='normal',
+	                 'sam-toolpanel grid-col-2': model.selectedTool && model.selectedTool.width=='normal',
 	                 'sam-toolpanel grid-col-4': model.selectedTool && model.selectedTool.width=='wide' }" >
 		<ng-container *ngIf="model.selectedToolTemplate" 
 			[ngTemplateOutlet]="model.selectedToolTemplate" 

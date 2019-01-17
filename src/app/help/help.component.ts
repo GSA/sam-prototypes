@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, TemplateRef  } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, ActivationEnd } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { SamModelService } from '../model/sam-model.service';
 import { HelpTools } from './help.config';
@@ -15,8 +15,12 @@ export class HelpComponent implements OnInit {
 
   domain: string;
 
-  constructor(private route: ActivatedRoute, public model: SamModelService) {
-  	this.model.setLocalTools(HelpTools);
+  constructor(private router: Router, private route: ActivatedRoute, public model: SamModelService) {
+      router.events.subscribe((event) => {
+        if(event instanceof ActivationEnd && event.snapshot.component == HelpComponent) {      
+           this.model.setLocalTools(HelpTools);
+        }
+      });
   }
 
   ngOnInit() {
@@ -40,6 +44,5 @@ export class HelpComponent implements OnInit {
             this.loadTemplates();
         });
   }
-
 
 }

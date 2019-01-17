@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, TemplateRef  } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, ActivationEnd } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { SamModelService } from '../../model/sam-model.service';
 import { SearchTools } from './sam-search.config';
@@ -22,8 +22,12 @@ export class SamSearchComponent implements AfterViewInit, OnInit {
   title: string;
   domain: string;
 
-  constructor(private route: ActivatedRoute, public model: SamModelService, public searchService: SamSearchService) {
-  	this.model.setLocalTools(SearchTools);
+  constructor(private router: Router, private route: ActivatedRoute, public model: SamModelService, public searchService: SamSearchService) {  
+      router.events.subscribe((event) => {
+        if(event instanceof ActivationEnd && event.snapshot.component == SamSearchComponent) {      
+           this.model.setLocalTools(SearchTools);
+        }
+      });
   }
 
   ngOnInit() {

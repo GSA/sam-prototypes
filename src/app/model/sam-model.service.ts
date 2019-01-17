@@ -1,5 +1,5 @@
 import { Injectable, ElementRef } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationStart, Router } from '@angular/router';
 import { ToolItem } from '../sam-ui-elements/tools';
 import { GlobalTools, SearchTools } from './tools.config';
 
@@ -35,6 +35,13 @@ export class SamModelService {
   constructor(router: Router) {
       this.router = router;
       this.toolTemplates = new Map<string, ElementRef<any>>();
+      router.events.subscribe((event) => {
+        if(event instanceof NavigationStart) {
+          this.localTools = null;
+          this.selectedTool = null;
+          this.isMainNavigationVisible = true;
+        }
+      });
   }
 
   signIn(redirectUrl?: string) {

@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomeModule'
   },
   {
+    path: 'profile',
+    loadChildren: './profile/profile.module#ProfileModule'
+  },
+  {
     path: 'workspace',
     loadChildren: './workspace/workspace.module#WorkspaceModule'
   },
@@ -39,7 +43,7 @@ const routes: Routes = [
     loadChildren: './request/request.module#RequestModule'
   },
   {
-    path: 'feed',
+    path: 'messages',
     loadChildren: './feed/feed.module#FeedModule'
   },
   {

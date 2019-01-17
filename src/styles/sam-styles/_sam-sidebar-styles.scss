@@ -1,0 +1,21 @@
+.sam-sidebar-form {
+	
+	a {
+		color: #323a45;
+		text-decoration: none;
+		line-height: 2em;
+		display: block;
+		width: 100%;
+		padding-left: .5em;
+
+		i {
+			color: #538200;
+			margin-right: .3em;
+		}
+	}
+
+	a:hover {
+		cursor: pointer;
+		background-color: #fce2c5;
+	}
+}

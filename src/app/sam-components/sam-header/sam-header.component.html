@@ -5,15 +5,7 @@
         </div>
       </div>
       <nav *ngIf="!model.isMainNavigationVisible" role="navigation" class="sam-data-nav usa-nav">
-      	<div class="usa-nav-inner">
-          <button class="usa-nav-close"><img src="/assets/img/close.svg" alt="close"></button>
-          <ul class="sam-data-nav">
-            <li class="sam-close-link">
-            	<a href="javascript:void(0)"><span><i class="fa fa-times fa3x"></i></span></a>
-            </li>
-        </ul>
-    	</div>
-	    <div class="usa-nav-secondary">
+	      <div class="usa-nav-secondary">
 	       <ul class="usa-nav-secondary-links">
 	          <li class="usa-nav-secondary-item">
 	            <a href="">Requests</a>
@@ -105,16 +97,16 @@
                         Search
                       </li>
                       <li class="usa-nav-submenu-item">
-                        <a href="/search?domain=contracting">Contract Opportunities and Contract Data</a>
+                        <a [routerLink]="['/search']" [queryParams]="{domain:'contracting'}">Contract Opportunities and Contract Data</a>
                       </li>
                       <li class="usa-nav-submenu-item">
-                        <a href="/search?domain=entities">Entity Information</a>
+                        <a [routerLink]="['/search']" [queryParams]="{domain:'entities'}">Entity Information</a>
                       </li>
                       <li class="usa-nav-submenu-item">
-                        <a href="/search?domain=hierarchy">Federal Hierarchy</a>
+                        <a [routerLink]="['/search']" [queryParams]="{domain:'hierarchy'}">Federal Hierarchy</a>
                       </li>
                       <li class="usa-nav-submenu-item">
-                        <a href="/search?domain=wages">Wage Determinations</a>
+                        <a [routerLink]="['/search']" [queryParams]="{domain:'wages'}">Wage Determinations</a>
                       </li>
                     </ul>
                   </div>
