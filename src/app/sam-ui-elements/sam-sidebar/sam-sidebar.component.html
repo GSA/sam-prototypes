@@ -1,9 +1,8 @@
-<div class="sam-sidebar grid-row flex-column">
-	<div class="tools-header grid-col-auto">
-		{{title}}
-		<i class="fa fa-arrow-circle-left" (click)="model.closeTools()"></i>
+<div class="sam-sidebar">
+<div class="grid-row">
+	<div class="grid-col-fill">
+		<i style="float:right" class="fa fa-arrow-circle-left" (click)="model.closeTools()"></i>
 	</div>
-	<div class="tools-content grid-col-fill">
-		<ng-content></ng-content>
-	</div>
+</div>
+<ng-content></ng-content>
 </div>

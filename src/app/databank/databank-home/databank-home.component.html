@@ -1,8 +1,8 @@
 <div class="grid-row">
 	<div class="grid-col-12">
-		<sam-feature-banner title="Contracting" domain="contracting" featureImage="/assets/img/contracting-home-feature.jpg">
-			<p class="sam lead">Grow your business by having the federal government of the United States as a customer.</p>
-			<sam-search-input [selectedDomain]="contracting"></sam-search-input>
+		<sam-feature-banner title="Databank" domain="databank" featureImage="/assets/img/contracting-home-feature.jpg">
+			<p class="sam lead">Perform detailed analysis of federal spending.</p>
+			<sam-search-input [selectedDomain]="databank"></sam-search-input>
 		</sam-feature-banner>
 	</div>
 </div>
@@ -14,28 +14,14 @@
 			</div>
 			<div class="grid-col-9">
 				<h3 class="sam header">
-					Register Your Entity
+					Entity Reports
 				</h3>
-				<p>You must be registered in SAM.gov to receive a contract from the U.S. Federal Government</p>
-				<p *ngIf="!model.isSignedIn">
-        			<span class="sam link" (click)="model.signIn('/entities-workspace')">Sign In</span> to register your entity.
-				</p>
-				<p *ngIf="model.isSignedIn">
-					<a>Register</a>
-				</p>
-				<p *ngIf="model.isSignedIn">
-					<a >Check Registration Status</a>
-				</p>
-				<p class="sam lead">SAM.gov Registration is FREE</p>
 			</div>
 		</div>
 	</div>
 	<div class="sam landing card grid-col-8">
-		<h3 class="sam header"><a>Contracting Databank</a></h3>
-		<p>The databank hosts a wide variety of static, standard, and ad-hoc contracting and administrative reports.</p>
-		<p class="sam small" *ngIf="!model.isSignedIn">
-			<span class="sam link" (click)="model.signIn('/entities-workspace')">Sign In</span> to access Databank reports.
-		</p>
+		<h3 class="sam header"><a>Contract Data Reports</a></h3>
+		<p>Contract data reports can be used to support analysis of federal spending including geographical analysis, market analysis, and analysis on the impact of the congressional and presidential initiatives in socio-economic areas such as small business spending. The data is also a reliable basis for measuring and assessing the impact of Federal acquisition policy and management improvement.</p>
 		<h3 class="sam header">Featured Reports</h3>
 		<h4 class="sam header">Recovery Reports</h4>
 			<ul class="sam linklist">
@@ -51,7 +37,7 @@
 				<img src="/assets/img/workspace 3.png">
 			</div>
 			<div class="grid-col-11">
-				<h3 class="sam header">Workspace</h3>
+				<h3 class="sam header">Contract Opportunity Reports</h3>
 				<p><span class="sam link" (click)="model.signIn('/entities-workspace')">Sign In</span> to access your workspace.</p>
 			</div>
 		</div>

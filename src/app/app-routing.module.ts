@@ -55,6 +55,10 @@ const routes: Routes = [
     loadChildren: './entities/entities-workspace/entities-workspace.module#EntitiesWorkspaceModule'
   },
   {
+    path: 'databank',
+    loadChildren: './databank/databank-home/databank-home.module#DatabankHomeModule'
+  },
+  {
     path: '*',
     redirectTo: '/',
     pathMatch: 'full'

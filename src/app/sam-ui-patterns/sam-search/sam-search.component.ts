@@ -19,7 +19,6 @@ export class SamSearchComponent implements AfterViewInit, OnInit {
   @ViewChild('save') saveTool: ElementRef;
   @ViewChild('download') downloadTool: ElementRef;
 
-  title: string;
   domain: string;
 
   constructor(private router: Router, private route: ActivatedRoute, public model: SamModelService, public searchService: SamSearchService) {  

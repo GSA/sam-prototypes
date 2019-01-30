@@ -11,7 +11,34 @@
 
 <ng-template #messages>
 	<sam-sidebar title="Messages">
-		
+				  <label class="sam-sidebar-label usa-label" for="domain-dropdown">Domain</label>
+		  <select class="usa-select" name="domain-dropdown" id="domain-dropdown">
+		    <option value="all">All</option>
+		    <option value="contracting">Contracting</option>
+		    <option value="assistance">Federal Assistance</option>
+		  </select>
+		<form class="usa-form">
+		  <label class="sam-sidebar-label usa-label" for="keyword-input">Keywords</label>
+		  <input class="usa-input" id="keyword-input" name="name-input" type="text" >
+		  <label class="sam-sidebar-label usa-label" for="article-type-checkboxes">Message Type</label>
+		  <fieldset class="usa-fieldset">
+		    <legend class="usa-sr-only">Message Type</legend>
+		    <ul id="article-type-checkboxes" class="usa-input-list">
+		      <li>
+		        <input class="usa-checkbox-input" id="notifications" type="checkbox" name="notifications" value="notifications">
+		        <label class="usa-checkbox-label" for="notifications">Notifications</label>
+		      </li>
+		      <li>
+		        <input class="usa-checkbox-input" id="announcements" type="checkbox" name="announcements" value="announcements">
+		        <label class="usa-checkbox-label" for="announcements">Announcements</label>
+		      </li>
+		      <li>
+		        <input class="usa-checkbox-input" id="alerts" type="checkbox" name="alerts" value="alerts">
+		        <label class="usa-checkbox-label" for="alerts">Alerts</label>
+		      </li>
+		    </ul>
+		  </fieldset>
+		</form>
 	</sam-sidebar>
 </ng-template>
 

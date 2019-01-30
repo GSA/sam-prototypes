@@ -1,3 +1,63 @@
-<p>
-  entities-list works!
-</p>
+
+<div class="sam-page-title grid-row">
+	<div class="grid-col-fill">
+		<h2>Entities</h2>
+	</div>
+	<div style="margin-top: auto; margin-bottom:auto;" class="grid-col-4">
+		<sam-search-input selectedDomain="all"></sam-search-input>
+	</div>
+	<div class="sam-action grid-col-auto">
+		<button class="usa-button usa-button-secondary">Register</button>
+	</div>
+</div>
+
+<ng-template #entities>
+	<sam-sidebar title="Entities">
+		<form class="usa-form">
+		  <label class="sam-sidebar-label usa-label" for="keyword-input">Keywords</label>
+		  <input class="usa-input" id="keyword-input" name="name-input" type="text" >
+		  <label class="sam-sidebar-label usa-label" for="name-input">Entity Name/ID</label>
+		  <input class="usa-input" id="name-input" name="name-input" type="text" placeholder="Enter name or ID">
+		  <label class="sam-sidebar-label usa-label" for="status">Status</label>
+		  <fieldset id="status" class="usa-fieldset">
+		    <legend class="usa-sr-only">Article</legend>
+		    <ul class="usa-input-list">
+		      <li>
+		        <input class="usa-checkbox-input" id="draft" type="checkbox" name="draft" value="draft">
+		        <label class="usa-checkbox-label" for="draft">Draft</label>
+		      </li>
+		      <li>
+		        <input class="usa-checkbox-input" id="progress" type="checkbox" name="progress" value="progress">
+		        <label class="usa-checkbox-label" for="progress">In Progress</label>
+		      </li>
+		      <li>
+		        <input class="usa-checkbox-input" id="submitted" type="checkbox" name="submitted" value="submitted">
+		        <label class="usa-checkbox-label" for="submitted">Submitted</label>
+		      </li>
+		      <li>
+		        <input class="usa-checkbox-input" id="active" type="checkbox" name="active" value="active">
+		        <label class="usa-checkbox-label" for="active">Active</label>
+		      </li>
+		      <li>
+		        <input class="usa-checkbox-input" id="expired" type="checkbox" name="expired" value="expired">
+		        <label class="usa-checkbox-label" for="expired">Expired</label>
+		      </li>
+		      <li>
+		        <input class="usa-checkbox-input" id="deleted" type="checkbox" name="deleted" value="deleted">
+		        <label class="usa-checkbox-label" for="deleted">Deleted</label>
+		      </li>
+		      <li>
+		        <input class="usa-checkbox-input" id="inactive" type="checkbox" name="inactive" value="inactive">
+		        <label class="usa-checkbox-label" for="inactive">Inative</label>
+		      </li>
+		    </ul>
+		  </fieldset>
+		</form>
+	</sam-sidebar>
+</ng-template>
+
+<ng-template #download>
+	<sam-sidebar title="Download">
+		
+	</sam-sidebar>
+</ng-template>

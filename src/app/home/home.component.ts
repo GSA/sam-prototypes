@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angula
 import {Router} from '@angular/router';
 import { SamFeatureBannerComponent } from '../sam-ui-elements/sam-feature-banner/sam-feature-banner.component';
 import { SamDomain } from '../model/sam-domain';
+import { SamModelService } from '../model/sam-model.service';
 
 @Component({
   selector: 'app-home',
@@ -25,7 +26,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
   }
 
   selectedTab: ElementRef;
-  constructor(private router: Router) {
+  constructor(private router: Router, public model: SamModelService) {
   }
 
   ngOnInit() {

@@ -8,7 +8,7 @@
 	      <div class="usa-nav-secondary">
 	       <ul class="usa-nav-secondary-links">
 	          <li class="usa-nav-secondary-item">
-	            <a href="">Requests</a>
+	            <a href="">Requests (6)</a>
 	          </li>
 	          <li class="usa-nav-secondary-item">
 	            <a href="">Messages</a>
@@ -45,7 +45,7 @@
                         <a href="/search?domain=hierarchy">Federal Hierarchy</a>
                       </li>
                       <li class="usa-nav-submenu-item">
-                        <a href="/search?domain=wages">Wage Determinations</a>
+                        <a href="/search?domain=wdnumber">Wage Determinations</a>
                       </li>
                     </ul>
                   </div>
@@ -94,10 +94,32 @@
                   <div class="desktop:grid-col-3">
                     <ul class="usa-nav-submenu-list">
                       <li class="sam-nav-title usa-nav-submenu-item">
+                        Overview
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a [routerLink]="['/contracting']">Contracting Home</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a [routerLink]="['/help']" [queryParams]="{domain:'entities'}">Contracting Help</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a [routerLink]="['/resources']" [queryParams]="{domain:'contracting'}">Contracting Resources</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a [routerLink]="['/resources']" [queryParams]="{domain:'contracting'}">Wage Determination Resources</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="desktop:grid-col-3">
+                    <ul class="usa-nav-submenu-list">
+                      <li class="sam-nav-title usa-nav-submenu-item">
                         Search
                       </li>
                       <li class="usa-nav-submenu-item">
                         <a [routerLink]="['/search']" [queryParams]="{domain:'contracting'}">Contract Opportunities and Contract Data</a>
+                      </li>
+                      <li class="usa-nav-submenu-item">
+                        <a [routerLink]="['/search']" [queryParams]="{domain:'contracting'}">Disaster Response Registry</a>
                       </li>
                       <li class="usa-nav-submenu-item">
                         <a [routerLink]="['/search']" [queryParams]="{domain:'entities'}">Entity Information</a>
@@ -106,7 +128,7 @@
                         <a [routerLink]="['/search']" [queryParams]="{domain:'hierarchy'}">Federal Hierarchy</a>
                       </li>
                       <li class="usa-nav-submenu-item">
-                        <a [routerLink]="['/search']" [queryParams]="{domain:'wages'}">Wage Determinations</a>
+                        <a [routerLink]="['/search']" [queryParams]="{domain:'wdnumber'}">Wage Determinations</a>
                       </li>
                     </ul>
                   </div>
@@ -115,14 +137,32 @@
                       <li class="sam-nav-title usa-nav-submenu-item">
                         Databank
                       </li>
-                      <li class="usa-nav-submenu-item">
-                        <a href="#">Standard Reports</a>
+                      <li *ngIf="!model.isSignedIn" class="sam-nav-submenu-item usa-nav-submenu-item">
+                        <span class="sam-inline-link" (click)="model.signIn('/databank/home')">Sign In</span> to use our reports and reporting tools.
                       </li>
-                      <li class="usa-nav-submenu-item">
-                        <a href="#">Ad-hoc Reports</a>
+                      <li *ngIf="model.isSignedIn" class="usa-nav-submenu-item">
+                        <a [routerLink]="['/search']" [queryParams]="{domain:'wdnumber'}">Static Reports</a>
                       </li>
-                      <li class="usa-nav-submenu-item">
-                        <a href="#">Static Reports</a>
+                      <li *ngIf="model.isSignedIn" class="usa-nav-submenu-item">
+                        <a [routerLink]="['/search']" [queryParams]="{domain:'wdnumber'}">Standard Reports</a>
+                      </li>
+                      <li *ngIf="model.isSignedIn" class="usa-nav-submenu-item">
+                        <a [routerLink]="['/search']" [queryParams]="{domain:'wdnumber'}">Ad-Hoc Reports</a>
+                      </li>
+                      <li class="sam-nav-title usa-nav-submenu-item">
+                        Data Services
+                      </li>
+                      <li *ngIf="!model.isSignedIn" class="sam-nav-submenu-item usa-nav-submenu-item">
+                        <span class="sam-inline-link" (click)="model.signIn('/databank/home')">Sign In</span> to download file extracts or access our technical specifications.
+                      </li>
+                      <li *ngIf="model.isSignedIn" class="usa-nav-submenu-item">
+                        <a [routerLink]="['/search']" [queryParams]="{domain:'wdnumber'}">System Accounts</a>
+                      </li>
+                      <li *ngIf="model.isSignedIn" class="usa-nav-submenu-item">
+                        <a [routerLink]="['/search']" [queryParams]="{domain:'wdnumber'}">File Extracts</a>
+                      </li>
+                      <li *ngIf="model.isSignedIn" class="usa-nav-submenu-item">
+                        <a [routerLink]="['/search']" [queryParams]="{domain:'wdnumber'}">Technical Specifications</a>
                       </li>
                     </ul>
                   </div>
@@ -199,7 +239,7 @@
       <div class="usa-nav-secondary">
         <ul class="usa-nav-secondary-links">
           <li *ngIf="model.isSignedIn" class="usa-nav-secondary-item">
-            <a routerLink="/requests" routerLinkActive="active">Requests</a>
+            <a routerLink="/requests" routerLinkActive="active">Requests (6)</a>
           </li>
           <li class="usa-nav-secondary-item">
             <a routerLink="/messages" routerLinkActive="active">Messages</a>

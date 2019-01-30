@@ -3,19 +3,19 @@ import { SamDomain } from '../../model/sam-domain';
 import { SamModelService } from '../../model/sam-model.service';
 
 @Component({
-  selector: 'contracting-home',
-  templateUrl: './contracting-home.component.html',
+  selector: 'databank-home',
+  templateUrl: './databank-home.component.html',
   styleUrls: ['./_styles.scss']
 })
-export class ContractingHomeComponent implements OnInit {
+export class DatabankHomeComponent implements OnInit {
 
   domain: SamDomain = {
-    title: 'All Data',
-    key: 'all',
-    placeholder: 'Search All Data'
+    title: 'Databank',
+    key: 'databank',
+    placeholder: 'Search All Databank'
   }
 
-  constructor(public model: SamModelService) { }
+ constructor(public model: SamModelService) { }
 
   ngOnInit() {
   }

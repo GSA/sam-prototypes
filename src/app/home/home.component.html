@@ -7,23 +7,76 @@
 		</sam-feature-banner>
 	</div>
 	<div class="grid-row">
-		<h2 class="home">What can I do here?</h2>
+		<div class="sam landing card orange grid-col-4">
+			<div class="grid-row">
+				<div class="grid-col-3">
+					<img src="/assets/img/sam-icons/entities 2.svg">
+				</div>
+				<div class="grid-col-9">
+					<h3 class="sam header">
+						Register Your Entity
+					</h3>
+					<p *ngIf="!model.isSignedIn">
+            			<span class="sam link" (click)="model.signIn('/entities-workspace')">Sign In</span> to register your entity.
+					</p>
+					<p *ngIf="model.isSignedIn">
+						<a>Register</a>
+					</p>
+					<p *ngIf="model.isSignedIn">
+						<a >Check Registration Status</a>
+					</p>
+
+				</div>
+			</div>
+		</div>
+		<div class="sam landing card grid-col-8">
+			<h4 class="sam heading">SAM.gov Registration is FREE</h4>
+			<p class="sam lead">There is NO FEE to register your entity or use any of the other functions provided by SAM.gov.</p>
+			<p class="sam small">If you receive an email from a company claiming to represent SAM.gov, be cautious. If you get an e-mail from a company offering to help you register in SAM.gov, or asking you to contact them or pay them money, be cautious. These messages are not from the U.S. Federal Government.</p>
+		</div>
 	</div>
 	<div class="grid-row">
-		<div class="sam-card grid-col">
-			<img src="/assets/img/sam-icons/contracting.svg">
-			<h3>Contracting</h3>
-			<ul>
-				<li>Contract Opportunities (formerly FBO.gov)</li>
-				<li>Contract Data (formerly FPDS.gov)</li>
-				<li>Sub-Awards (formerly eSRS.gov and FSRS.gov)</li>
-				<li>Past Performance (formerly CPARS.gov)</li>
-				<li>Wage Determinations (formerly WDOL.gov)</li>
-			</ul>
+		<div class="sam landing card grid-col-4">
+			<div class="grid-row">
+				<div class="grid-col-3">
+					<img src="/assets/img/sam-icons/contracting.svg">
+				</div>
+				<div class="grid-col-9">
+					<h3 class="sam header">
+						Contracting
+					</h3>
+					<p>This website brings together all of the functionality of theses former federal contracting websites, plus the original SAM.gov</p>
+					<ul>
+						<li>FBO.gov</li>
+						<li>FPDS.gov</li>
+						<li>WDOL.gov</li>
+					</ul>
+					<p><a [routerLink]="['/contracting']">Go to Contracting</a></p>
+				</div>
+			</div>
 		</div>
-		<div class="sam-card grid-col">
-			<img src="/assets/img/sam-icons/federal assistance.svg">
-			<h3>Federal Assistance</h3>
+		<div class="sam landing card grid-col-4">
+			<div class="grid-row">
+				<div class="grid-col-3">
+					<img src="/assets/img/sam-icons/federal assistance.svg">
+				</div>
+				<div class="grid-col-9">
+					<h3 class="sam header">
+						Federal Assistance
+					</h3>
+					<p>This website brings together all of the functionality of theses former federal assistance websites, plus the original SAM.gov</p>
+					<ul>
+						<li>CFDA.gov</li>
+						<li>WDOL.gov</li>
+					</ul>
+					<p><a [routerLink]="['/contracting/home']">Go to Federal Assistance</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="sam landing card grid-col-4">
+			<h4 class="sam header">
+				News
+			</h4>
 		</div>
 	</div>
 </div>

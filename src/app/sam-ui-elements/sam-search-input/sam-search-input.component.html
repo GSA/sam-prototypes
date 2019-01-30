@@ -5,7 +5,7 @@
 	</select>
     <label class="usa-sr-only" for="search-field">Search</label>
     <input #search class="usa-input" id="search-field" type="search" name="search"
-    	(keyup.enter)="onSearch(search.value)" placeholder="{{selectedDomain.placeholder}}">
+    	(keyup.enter)="onSearch(search.value)" placeholder="{{selectedDomain ? selectedDomain.placeholder : 'Search by ID or keyword'}}">
     <button class="usa-button" type="submit">
       <span class="usa-search-submit-text">Search</span>
     </button>

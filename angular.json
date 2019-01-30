@@ -10,6 +10,8 @@
       "prefix": "app",
       "schematics": {
         "@ngrx/schematics:component": {
+          "changeDetection" : "OnPush",
+          "export": true,
           "styleext": "scss"
         }
       },
