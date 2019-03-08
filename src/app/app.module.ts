@@ -18,11 +18,13 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { reducers, metaReducers } from './store/reducers';
+import { PublicWorkspaceComponent } from './workspace/public-workspace.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PublicWorkspaceComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { reducers, metaReducers } from './store/reducers';
     EffectsModule.forRoot([AppEffects])
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [PublicWorkspaceComponent]
 })
 export class AppModule { 
   static forRoot(): ModuleWithProviders {

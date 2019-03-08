@@ -1,55 +1,57 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, TemplateRef  } from '@angular/core';
-import { ActivatedRoute, Router, ActivationEnd } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { SamModelService } from '../../model/sam-model.service';
-import { SearchTools } from './sam-search.config';
-import { SamSearchService } from './service/sam-search.service';
 
 @Component({
   selector: 'sam-search',
   templateUrl: './sam-search.component.html',
   styleUrls: ['./_styles.scss']
 })
-export class SamSearchComponent implements AfterViewInit, OnInit {
-
-  @Input() bodyTemplate: TemplateRef<any>;
-
-  @ViewChild('search') searchTool: ElementRef;
-  @ViewChild('share') shareTool: ElementRef;
-  @ViewChild('save') saveTool: ElementRef;
-  @ViewChild('download') downloadTool: ElementRef;
+export class SamSearchComponent implements OnInit {
 
   domain: string;
+  view: string;
+  showFilters: boolean;
+  showNav: boolean;
 
-  constructor(private router: Router, private route: ActivatedRoute, public model: SamModelService, public searchService: SamSearchService) {  
-      router.events.subscribe((event) => {
-        if(event instanceof ActivationEnd && event.snapshot.component == SamSearchComponent) {      
-           this.model.setLocalTools(SearchTools);
-        }
-      });
+  constructor(private route: ActivatedRoute, public model: SamModelService) {  
+    this.view = 'open';
+    this.showFilters = false;
+    this.showNav = true;
+  }
+
+  setView(view: string) {
+    this.view = view;
+  }
+
+  setModelDomain(domain: string) {
+    this.model.domain = domain;
+  }
+
+  isDomainIn(parentDomain: string) {
+    if(parentDomain == 'contractinginfo') {
+      return this.domain == 'contractinginfo' || this.domain == 'contractopportunities' || this.domain == 'contractdata';
+    }
+    if(parentDomain == 'entityinfo') {
+      return this.domain == 'entityinfo' || this.domain == 'registration' || this.domain == 'disasterresponse' ||
+            this.domain == 'exclusions' || this.domain == 'integrityinfo';
+    }
+    if(parentDomain == 'assistance') {
+      return this.domain == 'assistance' || this.domain == 'assistancelist';
+    }
+    if(parentDomain == 'wagedeterminations') {
+        return this.domain == 'wagedeterminations' || this.domain == 'dbawd' || this.domain == 'scawd';
+    }
   }
 
   ngOnInit() {
       this.domain = this.route.snapshot.queryParamMap.get('domain');
       this.route.queryParamMap.subscribe(queryParams => {
         this.domain = queryParams.get('domain');
-        this.searchService.setDomain(this.domain);
-      })
-  }
-
-  loadTemplates() {
-     this.model.setToolTemplate('search', this.searchTool);
-     this.model.setToolTemplate('share', this.shareTool);
-     this.model.setToolTemplate('save', this.saveTool);
-     this.model.setToolTemplate('download', this.downloadTool);
-     this.model.setSelectedTool(SearchTools[0]);
-  }
-
-  ngAfterViewInit()
-  {
-        setTimeout(() => {
-            this.loadTemplates();
-        });
+        if(!this.domain) {
+          this.domain = 'all';
+        }
+      });
   }
 
 }

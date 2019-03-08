@@ -9,9 +9,7 @@ import { SamDomain } from '../../model/sam-domain';
 })
 export class SamSearchInputComponent implements OnInit {
 
-  @Input() selectedDomain: SamDomain;
-  @Input() domains: SamDomain[];
-  domainKey: string = 'all';
+  @Input() domain: string;
 
   constructor(private router: Router) { 
   }
@@ -19,12 +17,8 @@ export class SamSearchInputComponent implements OnInit {
   ngOnInit() {  	
   }
 
-  selectDomain(selectEvent: any) {
-    this.domainKey = selectEvent.currentTarget.value;
-  }
-
   onSearch(searchText: string) {
-		  this.router.navigateByUrl('/search?domain=' + this.domainKey);
+		  this.router.navigateByUrl('/search?domain=' + this.domain + '&keyword=' + searchText);
   }
 
 }

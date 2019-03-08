@@ -1,8 +1,6 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, TemplateRef  } from '@angular/core';
-import { Router, ActivationEnd } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { SamModelService } from '../model/sam-model.service';
-import { RequestTools } from './request.config';
 
 @Component({
   selector: 'sam-request',
@@ -11,33 +9,49 @@ import { RequestTools } from './request.config';
 })
 export class RequestComponent implements OnInit {
 
-  @ViewChild('requests') requestsTool: ElementRef;
-  @ViewChild('download') downloadTool: ElementRef;
-
   domain: string;
+  view: string;
+  showFilters: boolean;
+  showNav: boolean;
 
-  constructor(private router: Router, public model: SamModelService) {
-      router.events.subscribe((event) => {
-        if(event instanceof ActivationEnd && event.snapshot.component == RequestComponent) {      
-           this.model.setLocalTools(RequestTools);
-        }
-      });
+  constructor(private route: ActivatedRoute, public model: SamModelService) {  
+    this.view = 'open';
+    this.showFilters = false;
+    this.showNav = true;
+  }
+
+  setView(view: string) {
+    this.view = view;
+  }
+
+  setModelDomain(domain: string) {
+    this.model.domain = domain;
+  }
+
+  isDomainIn(parentDomain: string) {
+    if(parentDomain == 'contractinginfo') {
+      return this.domain == 'contractinginfo' || this.domain == 'contractopportunities' || this.domain == 'contractdata';
+    }
+    if(parentDomain == 'entityinfo') {
+      return this.domain == 'entityinfo' || this.domain == 'registration' || this.domain == 'disasterresponse' ||
+            this.domain == 'exclusions' || this.domain == 'integrityinfo';
+    }
+    if(parentDomain == 'assistance') {
+      return this.domain == 'assistance' || this.domain == 'assistancelist';
+    }
+    if(parentDomain == 'wagedeterminations') {
+        return this.domain == 'wagedeterminations' || this.domain == 'dbawd' || this.domain == 'scawd';
+    }
   }
 
   ngOnInit() {
-  }
-
-  loadTemplates() {
-     this.model.setToolTemplate('requests', this.requestsTool);
-     this.model.setToolTemplate('download', this.downloadTool);
-     this.model.setSelectedTool(RequestTools[0]);
-  }
-
-  ngAfterViewInit()
-  {
-        setTimeout(() => {
-            this.loadTemplates();
-        });
+      this.domain = this.route.snapshot.queryParamMap.get('domain');
+      this.route.queryParamMap.subscribe(queryParams => {
+        this.domain = queryParams.get('domain');
+        if(!this.domain) {
+          this.domain = 'all';
+        }
+      });
   }
 
 }

@@ -1,18 +1,20 @@
 
 
 .register-button {
-	background-color: #e52207;
-	color: white;
+	background-color: #21C834;
+	color: #0A3466;
 	float: right;
 	text-decoration: none;
 	font-weight: 600;
-	padding: .7em 1.3em;
-	margin-top: .3em;
+	padding: .5em 1em;
+	margin-top: .2em;
 }
 
-.sam-feature-banner {
+.sam.feature-banner {
 
-	.sam-feature-content {
+	padding: 1.5em 0em;
+
+	.sam.feature-content {
 		color: #ffffff;
 		background-color: #323a45;
 		padding: 2em;
@@ -26,8 +28,8 @@
 		}
 
 		h2 {
-			font-size: 1.3em;
-			font-weight: 600;
+			font-size: 1.5em;
+			font-weight: 300;
 		}
 
 		ul {

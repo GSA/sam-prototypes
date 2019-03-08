@@ -1,5 +1,4 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { SamModelService } from './model/sam-model.service';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +8,8 @@ import { SamModelService } from './model/sam-model.service';
 export class AppComponent {
   
   title = 'sam-gov';
-  model: SamModelService;
 
-  @ViewChild('glossary') glossaryTool: ElementRef;
-  @ViewChild('feedback') feedbackTool: ElementRef;
-  @ViewChild('helpdesk') helpdeskTool: ElementRef;
-
-  constructor(model: SamModelService) {
-    this.model = model;
-
+  constructor() {
   }
 
   ngOnInit() {
@@ -26,11 +18,6 @@ export class AppComponent {
 
   ngAfterViewInit()
   {
-        setTimeout(() => {          
-            this.model.setToolTemplate('glossary', this.glossaryTool);
-            this.model.setToolTemplate('feedback', this.feedbackTool);
-            this.model.setToolTemplate('helpdesk', this.helpdeskTool);
-        });
   }
 
   ngOnDestroy() {

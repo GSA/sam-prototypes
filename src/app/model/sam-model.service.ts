@@ -15,30 +15,17 @@ export class SamModelService {
 
   isMainNavigationVisible: boolean = true;
 
-  /**
-   * Toolbar configuration and state 
-   */
-  globalTools: ToolItem[] = GlobalTools;
-  localTools: ToolItem[];
-  defaultTool: ToolItem;
-  selectedTool: ToolItem;
-
-  toolTemplates: Map<string, ElementRef<any>>;
-  selectedToolTemplate: ElementRef<any>;
-
 
   router: Router;
+  domain: string;
 
   /**
    * Constructor
    */
   constructor(router: Router) {
       this.router = router;
-      this.toolTemplates = new Map<string, ElementRef<any>>();
       router.events.subscribe((event) => {
         if(event instanceof NavigationStart) {
-          this.localTools = null;
-          this.selectedTool = null;
           this.isMainNavigationVisible = true;
         }
       });
@@ -66,24 +53,4 @@ export class SamModelService {
     this.isMainNavigationVisible = isVisible;
   }
 
-  closeTools() {
-      this.selectedTool = null;
-  }
-
-  setToolTemplate(key: string, template: ElementRef<any>) {
-      this.toolTemplates.set(key, template);
-  }
-
-  setLocalTools(localTools: ToolItem[]) {
-      this.localTools = localTools;
-      this.defaultTool = localTools[0];
-      this.selectedTool = localTools[0];
-  }
-
-  setSelectedTool(selectedTool: ToolItem) {
-      this.selectedTool = selectedTool;
-      if(this.toolTemplates) {
-        this.selectedToolTemplate = this.toolTemplates.get(this.selectedTool.eventID);
-      }
-  }
 }

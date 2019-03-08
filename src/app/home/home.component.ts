@@ -25,11 +25,16 @@ export class HomeComponent implements AfterViewInit, OnInit {
     placeholder: 'Search All Data'
   }
 
-  selectedTab: ElementRef;
+  selectedTabID: string = "allTab";
+
   constructor(private router: Router, public model: SamModelService) {
   }
 
   ngOnInit() {
+  }
+
+  selectTab(tabID: string) {
+    this.selectedTabID = tabID;
   }
 
   navigateTo(route: string) {
@@ -38,8 +43,5 @@ export class HomeComponent implements AfterViewInit, OnInit {
 
   ngAfterViewInit()
   {
-        setTimeout(() => {
-            this.selectedTab = this.entitiesTab;
-        });
   }
 }

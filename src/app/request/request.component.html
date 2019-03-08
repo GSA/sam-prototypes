@@ -1,88 +1,98 @@
-<div class="sam-content">
-	<div class="sam-page-title grid-row">
-		<div class="grid-col-5">
-			<h2>Requests</h2>
+<div class="grid-row sam subheader">
+	<div class="grid-col-auto">
+		<h2>Requests</h2>
+	</div>
+	<div class="grid-col-fill">
+		<form class="usa-search usa-search-small">
+		  <div role="search">
+		    <label class="usa-sr-only" for="search-field-small">Search</label>
+		    <input class="sam search-input usa-input" id="search-field-small" type="search" name="search" placeholder="Search requests">
+		    <button class="sam search-button usa-button" type="submit">
+		      <span class="usa-sr-only">Search</span>
+		    </button>
+		  </div>
+		</form>
+	</div>
+</div>
+<div class="sam page grid-row">
+	<div *ngIf="view=='open'" class="grid-col-3 sam sidebar">
+		<div class="sam sidebar section grid-row">
+			<div class="grid-col-auto">
+				<button class="sam viewswitcher" (click)="setView('closed')"><img height="32px" src="/assets/img/view-open.png"></button>
+			</div>
 		</div>
-		<div style="margin-top: auto; margin-bottom:auto;" class="grid-col-7">
-			<sam-search-input selectedDomain="all"></sam-search-input>
+		<div [ngClass]="{'sam': true, 'sidebar': true, 'section': true, 'selected': showNav}">
+			<div class="grid-row" (click)="showNav=!showNav">
+				<div class="grid-col-fill">
+					<h4>Show Results For</h4>
+				</div>
+				<div class="grid-auto">
+					<div class="sam circle" *ngIf="!showNav">+</div>
+					<div class="sam circle" *ngIf="showNav">-</div>
+				</div>
+			</div>
+			<nav *ngIf="showNav">
+			  <ul class="usa-sidenav">
+			  	<li class="usa-sidenav-item"><a [class.usa-current]="domain == 'all'" [routerLink]="['/requests']" [queryParams]="{domain:'all'}">All Requests</a></li>
+			  	<li class="usa-sidenav-item"><a [class.usa-current]="domain == 'contractopportunities'" [routerLink]="['/requests']" [queryParams]="{domain:'contractopportunities'}">Contract Opportunities</a></li>		    
+			  	<li class="usa-sidenav-item">
+			    	<a [class.usa-current]="domain === 'assistancelist'" [routerLink]="['/requests']" [queryParams]="{domain:'assistancelist'}">Assistance Listings</a>
+			  	</li>
+			  	<li class="usa-sidenav-item">
+			  		<a [class.usa-current]="domain == 'hierarchy'" [routerLink]="['/requests']" [queryParams]="{domain:'hierarchy'}">Federal Hierarchy</a>
+			  	</li>
+			  	<li class="usa-sidenav-item">
+			  		<a [class.usa-current]="domain == 'users'" [routerLink]="['/requests']" [queryParams]="{domain:'users'}">User Directory</a>
+			  	</li>
+			  </ul>
+			</nav>
+		</div>
+		<div [ngClass]="{'sam': true, 'sidebar': true, 'section': true, 'selected': showFilters}">
+			<div class="grid-row" (click)="showFilters=!showFilters">
+				<div class="grid-col-fill">
+					<h4>Refine By</h4>
+				</div>
+				<div class="grid-auto">
+					<div class="sam circle" *ngIf="!showFilters">+</div>
+					<div class="sam circle" *ngIf="showFilters">-</div>
+				</div>
+			</div>
+		  <form *ngIf="showFilters" class="usa-form">
+			  <label class="sam-sidebar-label usa-label" for="keyword-input">Keywords</label>
+			  <input class="usa-input" id="keyword-input" name="name-input" type="text" >
+			  <label class="sam-sidebar-label usa-label" for="article-type-checkboxes">Request Type</label>
+			  <fieldset class="usa-fieldset">
+			    <legend class="usa-sr-only">Request Type</legend>
+			    <ul id="article-type-checkboxes" class="usa-input-list">
+			      <li>
+			        <input class="usa-checkbox-input" id="truth" type="checkbox" name="historical-figures-1" value="truth">
+			        <label class="usa-checkbox-label" for="truth">Assign Role</label>
+			      </li>
+			      <li>
+			        <input class="usa-checkbox-input" id="douglass" type="checkbox" name="historical-figures-1" value="douglass">
+			        <label class="usa-checkbox-label" for="douglass">Change Title</label>
+			      </li>
+			      <li>
+			        <input class="usa-checkbox-input" id="washington" type="checkbox" name="historical-figures-1" value="washington">
+			        <label class="usa-checkbox-label" for="washington">Move Organization</label>
+			      </li>
+			      <li>
+			        <input class="usa-checkbox-input" id="carver" type="checkbox" name="historical-figures-1">
+			        <label class="usa-checkbox-label" for="carver">Publish Listing</label>
+			      </li>
+			    </ul>
+			  </fieldset>
+			</form>
+		</div>
+	</div>
+	<div class="grid-col-fill sam body">
+		<div class="sam grid-row">
+			<div *ngIf="view=='closed'" class="sam sidesection grid-col-auto">
+				<button class="sam viewswitcher" (click)="setView('open')"><img height="32px" src="/assets/img/view-closed.png"></button>
+			</div>
+			<div class="grid-col-fill">
+			</div>
 		</div>
 	</div>
 </div>
-
-<ng-template #requests>
-	<sam-sidebar title="Requests">
-		<label class="sam-sidebar-label usa-label" for="domain-dropdown">Domain</label>
-		  <select class="usa-select" name="domain-dropdown" id="domain-dropdown">
-		    <option value="all">All</option>
-		    <option value="contracting">Contracting</option>
-		    <option value="assistance">Federal Assistance</option>
-		  </select>
-		<form class="usa-form">
-		  <label class="sam-sidebar-label usa-label" for="keyword-input">Keywords</label>
-		  <input class="usa-input" id="keyword-input" name="name-input" type="text" >
-		  <label class="sam-sidebar-label usa-label" for="data-set-checkboxes">Data Set</label>
-		    <fieldset class="usa-fieldset">
-		    <legend class="usa-sr-only">Dataset</legend>
-		    <ul id="data-set-checkboxes" class="usa-input-list">
-		      <li *ngIf="domain == 'all' || domain == 'assistance'">
-		        <input class="usa-checkbox-input" id="assistance-listings" type="checkbox" name="assistance-listings" value="assistance-listings">
-		        <label class="usa-checkbox-label" for="assistance-listings">Assistance Listings</label>
-		      </li>
-		      <li *ngIf="domain == 'all' || domain == 'contracting'">
-		        <input class="usa-checkbox-input" id="opportunities" type="checkbox" name="opportunities" value="opportunities">
-		        <label class="usa-checkbox-label" for="opportunities">Contract Opportunities</label>
-		      </li>
-		      <li *ngIf="domain == 'all' || domain == 'contracting'">
-		        <input class="usa-checkbox-input" id="contract-data" type="checkbox" name="contract-data" value="contract-data">
-		        <label class="usa-checkbox-label" for="contract-data">Contract Data</label>
-		      </li>
-		      <li>
-		        <input class="usa-checkbox-input" id="registrations" type="checkbox" name="registrations" value="registrations">
-		        <label class="usa-checkbox-label" for="registrations">Entity Registration</label>
-		      </li>
-		      <li>
-		        <input class="usa-checkbox-input" id="exclusions" type="checkbox" name="exclusions" value="exclusions">
-		        <label class="usa-checkbox-label" for="exclusions">Exclusions</label>
-		      </li>    
-		      <li>
-		        <input class="usa-checkbox-input" id="hierarchy" type="checkbox" name="hierarchy" value="hierarchy">
-		        <label class="usa-checkbox-label" for="hierarchy">Federal Hierarchy</label>
-		      </li>  
-		      <li>
-		        <input class="usa-checkbox-input" id="wage-determinations" type="checkbox" name="wage-determinations" value="wage-determinations">
-		        <label class="usa-checkbox-label" for="wage-determinations">Wage Determinations</label>
-		      </li>
-		    </ul>
-		  </fieldset>
-		  <label class="sam-sidebar-label usa-label" for="article-type-checkboxes">Request Type</label>
-		  <fieldset class="usa-fieldset">
-		    <legend class="usa-sr-only">Request Type</legend>
-		    <ul id="article-type-checkboxes" class="usa-input-list">
-		      <li>
-		        <input class="usa-checkbox-input" id="truth" type="checkbox" name="historical-figures-1" value="truth">
-		        <label class="usa-checkbox-label" for="truth">Assign Role</label>
-		      </li>
-		      <li>
-		        <input class="usa-checkbox-input" id="douglass" type="checkbox" name="historical-figures-1" value="douglass">
-		        <label class="usa-checkbox-label" for="douglass">Change Title</label>
-		      </li>
-		      <li>
-		        <input class="usa-checkbox-input" id="washington" type="checkbox" name="historical-figures-1" value="washington">
-		        <label class="usa-checkbox-label" for="washington">Move Organization</label>
-		      </li>
-		      <li>
-		        <input class="usa-checkbox-input" id="carver" type="checkbox" name="historical-figures-1">
-		        <label class="usa-checkbox-label" for="carver">Publish Listing</label>
-		      </li>
-		    </ul>
-		  </fieldset>
-		</form>
-	</sam-sidebar>
-</ng-template>
-
-<ng-template #download>
-	<sam-sidebar title="Download">
-		
-	</sam-sidebar>
-</ng-template>
 
