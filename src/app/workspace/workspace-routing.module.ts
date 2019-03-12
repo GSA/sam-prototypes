@@ -42,6 +42,22 @@ const routes: Routes = [
 				loadChildren: './integrity/integrity.module#IntegrityModule'
 			},
 			{
+				path: 'profile',
+				loadChildren: './profile/profile.module#ProfileModule'
+			},
+			{
+				path: 'customerservice',
+				loadChildren: './customer-service/customer-service.module#CustomerServiceModule'
+			},
+			{
+				path: 'reset',
+				loadChildren: './reset-password/reset-password.module#ResetPasswordModule'
+			},
+			{
+				path: 'roles',
+				loadChildren: './user-roles/user-roles.module#UserRolesModule'
+			},
+			{
 				path: '**',
 				redirectTo: 'dashboard'
 			}

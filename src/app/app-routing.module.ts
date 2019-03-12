@@ -7,10 +7,6 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomeModule'
   },
   {
-    path: 'profile',
-    loadChildren: './profile/profile.module#ProfileModule'
-  },
-  {
     path: 'workspace',
     loadChildren: './workspace/workspace.module#WorkspaceModule'
   },
