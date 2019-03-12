@@ -18,6 +18,7 @@ export class SamModelService {
 
   router: Router;
   domain: string;
+  feature: string;
 
   /**
    * Constructor
@@ -29,6 +30,12 @@ export class SamModelService {
           this.isMainNavigationVisible = true;
         }
       });
+      this.domain = 'all';
+      this.feature = 'none';
+  }
+
+  setFeature(feature: string) {
+    this.feature = feature;
   }
 
   signIn(redirectUrl?: string) {

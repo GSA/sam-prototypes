@@ -18,6 +18,7 @@ export class HelpComponent implements OnInit {
     this.view = 'open';
     this.showFilters = false;
     this.showNav = true;
+    this.model.feature = 'help';
   }
 
   setView(view: string) {

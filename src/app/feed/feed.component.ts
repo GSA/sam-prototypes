@@ -18,6 +18,8 @@ export class FeedComponent implements OnInit {
     this.view = 'open';
     this.showFilters = true;
     this.showNav = false;
+
+    this.model.feature = 'messages';
   }
 
   setView(view: string) {

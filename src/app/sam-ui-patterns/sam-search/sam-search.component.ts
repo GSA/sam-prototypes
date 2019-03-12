@@ -18,6 +18,7 @@ export class SamSearchComponent implements OnInit {
     this.view = 'open';
     this.showFilters = false;
     this.showNav = true;
+    this.model.feature = 'search';
   }
 
   setView(view: string) {

@@ -1,6 +1,6 @@
 <div class="grid-row sam subheader">
 	<div class="grid-col-auto">
-		<h2>Search Our Data</h2>
+		<h2>Search</h2>
 	</div>
 	<div class="grid-col-fill">
 		<form class="usa-search usa-search-small">
@@ -40,7 +40,7 @@
 			</div>
 			<nav *ngIf="showNav">
 			  <ul class="usa-sidenav">
-			  	<li class="usa-sidenav-item"><a [class.usa-current]="domain == 'all'" [routerLink]="['/search']" [queryParams]="{domain:'all'}">All Help</a></li>
+			  	<li class="usa-sidenav-item"><a [class.usa-current]="domain == 'all'" [routerLink]="['/search']" [queryParams]="{domain:'all'}">All Data</a></li>
 			    <li class="usa-sidenav-item" *ngIf="model.domain != 'assistance'">
 			    	<a [class.usa-current]="isDomainIn('contractinginfo')" [routerLink]="['/search']" [queryParams]="{domain:'contractinginfo'}">Contracting Information</a>
 			    	<ul class="usa-sidenav-sublist">

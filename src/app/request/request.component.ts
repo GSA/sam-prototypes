@@ -18,6 +18,9 @@ export class RequestComponent implements OnInit {
     this.view = 'open';
     this.showFilters = false;
     this.showNav = true;
+
+
+    this.model.feature = 'requests';
   }
 
   setView(view: string) {

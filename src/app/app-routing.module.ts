@@ -21,10 +21,6 @@ const routes: Routes = [
   {
     path: 'contracting',
     loadChildren: './contracting/contracting-home/contracting-home.module#ContractingHomeModule'
-  }, 
-  {
-    path: 'assistance',
-    loadChildren: './assistance/assistance-home/assistance-home.module#AssistanceHomeModule'
   },
   {
     path: 'entities',
@@ -56,7 +52,11 @@ const routes: Routes = [
   },
   {
     path: 'databank',
-    loadChildren: './databank/databank-home/databank-home.module#DatabankHomeModule'
+    loadChildren: './databank/databank.module#DatabankModule'
+  },
+  {
+    path: 'dataservices',
+    loadChildren: './data-services/data-services.module#DataServicesModule'
   },
   {
     path: '*',
