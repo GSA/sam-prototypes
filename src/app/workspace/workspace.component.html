@@ -18,7 +18,7 @@
   <div *ngIf="workspaceModel.view=='open'" class="grid-col-3 sam sidebar">
     <div class="sam sidebar section grid-row">
       <div class="grid-col-auto">
-        <button class="sam viewswitcher" (click)="setView('closed')"><img height="32px" src="/assets/img/view-open.png"></button>
+        <button class="sam viewswitcher" (click)="setView('closed')"><img height="32px" src="./assets/img/view-open.png"></button>
       </div>
     </div>
     <div [ngClass]="{'sam': true, 'sidebar': true, 'section': true, 'selected': workspaceModel.showNav}">
@@ -114,7 +114,7 @@
   <div class="grid-col-fill sam body">
     <div class="sam grid-row">
       <div *ngIf="workspaceModel.view=='closed'" class="sam sidesection grid-col-auto">
-        <button class="sam viewswitcher" (click)="setView('open')"><img height="32px" src="/assets/img/view-closed.png"></button>
+        <button class="sam viewswitcher" (click)="setView('open')"><img height="32px" src="./assets/img/view-closed.png"></button>
       </div>
       <div class="grid-col-fill">
       </div>

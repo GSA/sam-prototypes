@@ -1,6 +1,6 @@
 <div class="grid-row flex-column">
 	<div class="grid-col">
-		<sam-feature-banner title="Wecome to SAM.gov" domain="all" featureImage="/assets/img/home-page-feature.jpg">
+		<sam-feature-banner title="Wecome to SAM.gov" domain="all" featureImage="./assets/img/home-page-feature.jpg">
   		    <p>The official U.S. government website for people who make, receive, and manage federal awards</p>
 		    <p>Start searching our data by entering an ID or keyword below</p>
 			<sam-search-input [selectedDomain]="domain"></sam-search-input>
@@ -49,17 +49,17 @@
 		<div class="usa-grid-full panels">
 			<div class="usa-width-one-third feature-icon" (click)="navigateTo('/')">
 				<h4>Create a User Account</h4>
-				<img src="/assets/img/user.png">
+				<img src="./assets/img/user.png">
 				<p>Start by creating a SAM user account.</p>
 			</div>
 			<div class="usa-width-one-third feature-icon" (click)="navigateTo('/')">
 				<h4>Register Entity</h4>
-				<img src="/assets/img/register.png">
+				<img src="./assets/img/register.png">
 				<p>After creating your SAM user account, log in to register to do business with the U.S. government.</p>
 			</div>
 			<div class="usa-width-one-third feature-icon" (click)="navigateTo('/entities-search')">
 				<h4>Search Records</h4>
-				<img src="/assets/img/search2.png">
+				<img src="./assets/img/search2.png">
 				<p>Do a public search for existing entity registration records or exclusion records.</p>
 				<p>Federal users can log in to see additional information.</p>
 			</div>

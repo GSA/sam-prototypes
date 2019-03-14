@@ -13,17 +13,17 @@
                         <div class="grid-col flex-6">
                         	<div class="grid-row">
                         		<div class="grid-col flex-4 sam-stamp">
-                        			<img src="/assets/img/databank.png">
+                        			<img src="./assets/img/databank.png">
                         			<h5>Databank</h5>
                         			<p class="hint">Sign in to access all of our databank reports</p>
                         		</div>
                         		<div class="grid-col flex-4 sam-stamp">
-                        			<img src="/assets/img/databank.png">
+                        			<img src="./assets/img/databank.png">
                         			<h5>Databank</h5>
                         			<p class="hint">Sign in to access all of our databank reports</p>
                         		</div>
                         		<div class="grid-col flex-4 sam-stamp">
-                        			<img src="/assets/img/workspace 1.png">
+                        			<img src="./assets/img/workspace 1.png">
                         			<h5>Databank</h5>
                         			<p class="hint">Sign in to access all of our databank reports</p>
                         		</div>
@@ -40,7 +40,7 @@
                     <div class="usa-grid-full megabox">
                         <div class="usa-width-one-sixth">
                         	<h5><a class="normal" href="/entities">Entities Home</a></h5>
-                        	<img src="/assets/img/entities 3.png">
+                        	<img src="./assets/img/entities 3.png">
                         </div>
                         <div class="usa-width-one-sixth">
                         	<h5><a class="normal" href="/search?domain=entities">Entities Search</a></h5>
@@ -71,7 +71,7 @@
                     <div class="usa-grid-full megabox">
                         <div class="usa-width-one-sixth">
                         	<h5><a class="normal" href="">Federal Assistance Home</a></h5>
-                        	<img src="/assets/img/entities 3.png">
+                        	<img src="./assets/img/entities 3.png">
                         </div>
                         <div class="usa-width-one-sixth">
                         	<h5><a class="normal" href="/search?domain=assistance">Search</a></h5>

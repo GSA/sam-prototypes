@@ -21,7 +21,7 @@
       </nav>
       <nav *ngIf="model.isMainNavigationVisible" role="navigation" class="sam-nav usa-nav">
         <div class="usa-nav-inner">
-          <button class="usa-nav-close"><img src="/assets/img/close.svg" alt="close"></button>
+          <button class="usa-nav-close"><img src="./assets/img/close.svg" alt="close"></button>
           <ul class="usa-nav-primary usa-accordion">
             <li class="usa-nav-primary-item">
               <button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="sam-mega-nav-section-two"><span>Contracting</span></button>
