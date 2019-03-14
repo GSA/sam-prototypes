@@ -1,3 +1,46 @@
 <p>
   entities works!
 </p>
+
+<ng-template #entityfilters>
+  <label class="sam-sidebar-label usa-label" for="keyword-input">Unique Entity ID / Name (SAM)</label>
+  <input class="usa-input" id="keyword-input" name="name-input" type="text" >
+  <label class="sam-sidebar-label usa-label" for="keyword-input">Unique Entity ID / Name (DUNS)</label>
+  <input class="usa-input" id="keyword-input" name="name-input" type="text" >
+  <label class="sam-sidebar-label usa-label" for="keyword-input">Expires Within</label>				
+  <select class="sam no-margin usa-select" name="domain-dropdown" id="domain-dropdown">
+		<option value="seven">1 week</option>
+	    <option value="thirty">30 days</option>
+		<option value="sixty">60 days</option>
+  </select>
+  <label class="sam-sidebar-label usa-label" for="article-type-checkboxes">Status</label>
+  <fieldset class="usa-fieldset">
+    <legend class="usa-sr-only">Status</legend>
+    <ul id="article-type-checkboxes" class="usa-input-list">
+      <li>
+        <input class="usa-checkbox-input" id="truth" type="checkbox" name="historical-figures-1" value="truth">
+        <label class="usa-checkbox-label" for="truth">Draft</label>
+      </li>
+      <li>
+        <input class="usa-checkbox-input" id="douglass" type="checkbox" name="historical-figures-1" value="douglass">
+        <label class="usa-checkbox-label" for="douglass">Awaiting Role Approval</label>
+      </li>
+      <li>
+        <input class="usa-checkbox-input" id="washington" type="checkbox" name="historical-figures-1" value="washington">
+        <label class="usa-checkbox-label" for="washington">Processing</label>
+      </li>
+      <li>
+        <input class="usa-checkbox-input" id="carver" type="checkbox" name="historical-figures-1">
+        <label class="usa-checkbox-label" for="carver">Active</label>
+      </li>
+      <li>
+        <input class="usa-checkbox-input" id="expired" type="checkbox" name="historical-figures-1" value="expired">
+        <label class="usa-checkbox-label" for="expired">Expired</label>
+      </li>
+      <li>
+        <input class="usa-checkbox-input" id="inactive" type="checkbox" name="inactive">
+        <label class="usa-checkbox-label" for="inactive">Inactive</label>
+      </li>
+    </ul>
+  </fieldset>
+</ng-template>

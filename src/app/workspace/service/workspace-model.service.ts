@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, TemplateRef } from '@angular/core';
 import { WorkspaceModelModule } from './workspace-model.module';
 
 import { SamModelService } from '../../model/sam-model.service';
@@ -15,6 +15,7 @@ export class WorkspaceModelService {
   showFilters: boolean;
   showSearchBar: boolean;
   placeholderText: string;
+  template: TemplateRef<any>;
 
   constructor(public model: SamModelService) { 
   		this.page = 'dashboard';
@@ -24,6 +25,7 @@ export class WorkspaceModelService {
   		this.showFilters = false;
   		this.showSearchBar = false;
   		this.placeholderText = "Enter an id or keyword";
+      this.template = null;
 
 
       this.model.feature = 'workspace';
@@ -34,7 +36,7 @@ export class WorkspaceModelService {
       return this.page == 'contractinginfo' || this.page == 'contractopportunities' || this.page == 'contractdata';
     }
     if(parentDomain == 'entityinfo') {
-      return this.page == 'entityinfo' || this.page == 'registration' || this.page == 'disasterresponse' ||
+      return this.page == 'entityinfo' || this.page == 'registrations' || this.page == 'disasterresponse' ||
             this.page == 'exclusions' || this.page == 'integrityinfo';
     }
     if(parentDomain == 'assistancelist') {

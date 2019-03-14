@@ -85,7 +85,6 @@
             <ul class="usa-sidenav-sublist">
               <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'reset'" [routerLink]="['/workspace/reset']" [queryParams]="{}">Reset Password</a></li>
               <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'roles'" [routerLink]="['/workspace/roles']" [queryParams]="{}">Roles</a></li>
-              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'customerservice'" [routerLink]="['/workspace/customerservice']" [queryParams]="{}">Customer Service</a></li>
             </ul>
           </li>
         </ul>
@@ -101,10 +100,15 @@
           <div class="sam circle" *ngIf="workspaceModel.showFilters">-</div>
         </div>
       </div>
-      <form *ngIf="workspaceModel.showFilters" class="usa-form">
+      <form *ngIf="workspaceModel.showFilters && !workspaceModel.template" class="usa-form">
         <label class="sam-sidebar-label usa-label" for="keyword-input">Keywords</label>
         <input class="usa-input" id="keyword-input" name="name-input" type="text" >
       </form>
+      <ng-container 
+          *ngIf="workspaceModel.template && workspaceModel.showFilters" 
+          [ngTemplateOutlet]="workspaceModel.template" 
+          [ngTemplateOutletContext]="{data: dataContext}"> 
+      </ng-container>
     </div>
   </div>
   <div class="grid-col-fill sam body">

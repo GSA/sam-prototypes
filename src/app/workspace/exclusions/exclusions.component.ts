@@ -17,6 +17,7 @@ export class ExclusionsComponent implements OnInit {
   	this.workspaceModel.showFilters = true;
     this.workspaceModel.showSearchBar = true;
     this.workspaceModel.placeholderText = 'Enter a name or keyword';
+    this.workspaceModel.template = null;
   }
 
   ngOnInit() {

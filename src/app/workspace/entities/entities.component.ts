@@ -1,13 +1,15 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ViewChild, AfterViewInit, TemplateRef } from '@angular/core';
 import { WorkspaceModelService } from '../service/workspace-model.service';
 
 @Component({
   selector: 'app-entities',
   templateUrl: './entities.component.html',
   styleUrls: ['./entities.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.Default
 })
-export class EntitiesComponent implements OnInit {
+export class EntitiesComponent implements OnInit, AfterViewInit {
+
+  @ViewChild('entityfilters') filtersTemplate: TemplateRef<any>;
 
   constructor(public workspaceModel: WorkspaceModelService) {
   	this.workspaceModel.title = "Entity Registrations";
@@ -20,6 +22,10 @@ export class EntitiesComponent implements OnInit {
   }
 
   ngOnInit() {
+  	this.workspaceModel.template = this.filtersTemplate;
+  }
+
+  ngAfterViewInit() {
   }
 
 }

@@ -15,6 +15,7 @@ export class OpportunitiesComponent implements OnInit {
   	this.workspaceModel.view = 'open';
   	this.workspaceModel.showNav = false;
   	this.workspaceModel.showFilters = true;
+    this.workspaceModel.template = null;
   }
 
   ngOnInit() {

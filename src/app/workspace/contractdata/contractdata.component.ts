@@ -17,6 +17,7 @@ export class ContractdataComponent implements OnInit {
   	this.workspaceModel.showFilters = true;
     this.workspaceModel.showSearchBar = true;
     this.workspaceModel.placeholderText = 'Enter a contract ID or keyword';
+    this.workspaceModel.template = null;
   }
 
   ngOnInit() {
