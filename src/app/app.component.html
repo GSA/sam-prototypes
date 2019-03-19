@@ -1,4 +1,11 @@
 <sam-federal-site-banner></sam-federal-site-banner>
-<sam-header></sam-header>
+
+<!-- added sam-alert to test sam-ui-elements are installed correctly or not -->
+<sam-alert
+  [type]="'success'"
+  [title]="'Sample Title 1'"
+  [description]="'lorem ipsum lorem ipsum lorem ipsum lorem ipsum.'"></sam-alert>
+
+<app-sam-header></app-sam-header>
 <router-outlet></router-outlet>
 <sam-footer></sam-footer>
