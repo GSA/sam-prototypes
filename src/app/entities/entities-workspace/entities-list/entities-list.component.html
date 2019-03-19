@@ -1,3 +1,84 @@
-<p>
-  entities-list works!
-</p>
+
+<div class="grid-row sam subheader">
+	<div class="grid-col-auto">
+		<h2>Entity Workspace</h2>
+	</div>
+	<div class="grid-col-fill">
+		<form class="usa-search usa-search-small">
+		  <div role="search">
+		    <label class="usa-sr-only" for="search-field-small">Search</label>
+		    <input class="sam search-input usa-input" id="search-field-small" type="search" name="search" placeholder="Enter an ID, name, or keyword">
+		    <button class="sam search-button usa-button" type="submit">
+		      <span class="usa-sr-only">Search</span>
+		    </button>
+		  </div>
+		</form>
+	</div>
+</div>
+<div class="sam page grid-row">
+	<div *ngIf="view=='open'" class="grid-col-3 sam sidebar">
+		<div class="sam sidebar section grid-row">
+			<div class="grid-col-auto">
+				<button class="sam viewswitcher" (click)="setView('closed')"><img height="32px" src="./assets/img/view-open.png"></button>
+			</div>
+		</div>
+		<div class="sam sidebar section selected">
+			<div class="grid-row" (click)="showFilters=!showFilters">
+				<div class="grid-col-fill">
+					<h4>Refine By</h4>
+				</div>
+			</div>
+		  <form class="usa-form">
+			  <label class="sam-sidebar-label usa-label" for="keyword-input">Keywords</label>
+			  <input class="usa-input" id="keyword-input" name="name-input" type="text" >		  
+			  <label class="sam-sidebar-label usa-label" for="name-input">Unique Entity ID (SAM) or Name</label>
+			  <input class="usa-input" id="name-input" name="name-input" type="text" placeholder="Enter name or ID">
+			  <label class="sam-sidebar-label usa-label" for="name-input">Unique Entity ID (DUNS) or Name</label>
+			  <input class="usa-input" id="name-input" name="name-input" type="text" placeholder="Enter name or ID">
+			  <label class="sam-sidebar-label usa-label" for="status">Status</label>
+			  <fieldset id="status" class="usa-fieldset">
+			    <legend class="usa-sr-only">Article</legend>
+			    <ul class="usa-input-list">
+			      <li>
+			        <input class="usa-checkbox-input" id="draft" type="checkbox" name="draft" value="draft">
+			        <label class="usa-checkbox-label" for="draft">Draft</label>
+			      </li>
+			      <li>
+			        <input class="usa-checkbox-input" id="progress" type="checkbox" name="progress" value="progress">
+			        <label class="usa-checkbox-label" for="progress">In Progress</label>
+			      </li>
+			      <li>
+			        <input class="usa-checkbox-input" id="submitted" type="checkbox" name="submitted" value="submitted">
+			        <label class="usa-checkbox-label" for="submitted">Submitted</label>
+			      </li>
+			      <li>
+			        <input class="usa-checkbox-input" id="active" type="checkbox" name="active" value="active">
+			        <label class="usa-checkbox-label" for="active">Active</label>
+			      </li>
+			      <li>
+			        <input class="usa-checkbox-input" id="expired" type="checkbox" name="expired" value="expired">
+			        <label class="usa-checkbox-label" for="expired">Expired</label>
+			      </li>
+			      <li>
+			        <input class="usa-checkbox-input" id="deleted" type="checkbox" name="deleted" value="deleted">
+			        <label class="usa-checkbox-label" for="deleted">Deleted</label>
+			      </li>
+			      <li>
+			        <input class="usa-checkbox-input" id="inactive" type="checkbox" name="inactive" value="inactive">
+			        <label class="usa-checkbox-label" for="inactive">Inative</label>
+			      </li>
+			    </ul>
+			  </fieldset>
+			</form>
+		</div>
+	</div>
+	<div class="grid-col-fill sam body">
+		<div class="sam grid-row">
+			<div *ngIf="view=='closed'" class="sam sidesection grid-col-auto">
+				<button class="sam viewswitcher" (click)="setView('open')"><img height="32px" src="./assets/img/view-closed.png"></button>
+			</div>
+			<div class="grid-col-fill">
+			</div>
+		</div>
+	</div>
+</div>

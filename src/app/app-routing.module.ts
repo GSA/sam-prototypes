@@ -7,10 +7,6 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomeModule'
   },
   {
-    path: 'profile',
-    loadChildren: './profile/profile.module#ProfileModule'
-  },
-  {
     path: 'workspace',
     loadChildren: './workspace/workspace.module#WorkspaceModule'
   },
@@ -21,10 +17,6 @@ const routes: Routes = [
   {
     path: 'contracting',
     loadChildren: './contracting/contracting-home/contracting-home.module#ContractingHomeModule'
-  }, 
-  {
-    path: 'assistance',
-    loadChildren: './assistance/assistance-home/assistance-home.module#AssistanceHomeModule'
   },
   {
     path: 'entities',
@@ -53,6 +45,14 @@ const routes: Routes = [
   {
     path: 'entities-workspace',
     loadChildren: './entities/entities-workspace/entities-workspace.module#EntitiesWorkspaceModule'
+  },
+  {
+    path: 'databank',
+    loadChildren: './databank/databank.module#DatabankModule'
+  },
+  {
+    path: 'dataservices',
+    loadChildren: './data-services/data-services.module#DataServicesModule'
   },
   {
     path: '*',

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SamDomain } from '../../model/sam-domain';
+import { SamModelService } from '../../model/sam-model.service';
 
 @Component({
   selector: 'contracting-home',
@@ -14,7 +15,7 @@ export class ContractingHomeComponent implements OnInit {
     placeholder: 'Search All Data'
   }
 
-  constructor() { }
+  constructor(public model: SamModelService) { }
 
   ngOnInit() {
   }

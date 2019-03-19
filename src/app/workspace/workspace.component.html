@@ -1,434 +1,127 @@
-<div class="workspace dash">
-  <div class="workspace dash content">
-      <!-- ************************** 2 CARDS ****************************-->
-    <div class="sam workspace cards">
-      <!-- CONTRACTING -->
-          <h3 class="sam heading">Contracting</h3>
-          <sam-card raised="true">
-            <ng-container class="header">
-              <h4 class="sam heading">
-                <a class="sam link arrow">
-                  Opportunities
-                  <span class="sam ink black visible mobile only">
-                    (18)
-                  </span>
-                </a>
-              </h4>
-              <button class="sam secondary button">Create Opportunity</button>
-            </ng-container>
-
-            <div class="sam statistics visible tablet up">
-              <a class="green statistic">
-                <div class="value"><span class="circular">15</span></div>
-                <div class="label">Active</div>
-              </a>
-              <a class="blue statistic">
-                <div class="value"><span class="circular">0</span></div>
-                <div class="label">Draft</div>
-              </a>
-              <a class="red statistic">
-                <div class="value"><span class="circular">1</span></div>
-                <div class="label">Rejected</div>
-              </a>
-              <a class="orange statistic">
-                <div class="value"><span class="circular">2</span></div>
-                <div class="label">Overdue</div>
-              </a>
-            </div>
-          </sam-card>
-
-          <!-- FEDERAL ASSISTANCE LISTING -->
-          <h3 class="sam heading">Federal Assistance</h3>
-          <sam-card raised="true">
-            <ng-container class="header">
-              <h4 class="sam heading">
-                <a class="sam link arrow">
-                  Federal Assistance Listing
-                  <span class="sam ink black visible mobile only">
-                    (8)
-                  </span>
-                </a>
-              </h4>
-              <button class="sam secondary button">Create Listing</button>
-            </ng-container>
-
-            <div class="sam statistics visible tablet up">
-              <a class="green statistic">
-                <div class="value"><span class="circular">15</span></div>
-                <div class="label">Published</div>
-              </a>
-              <a class="blue statistic">
-                <div class="value"><span class="circular">0</span></div>
-                <div class="label">Draft</div>
-              </a>
-              <a class="red statistic">
-                <div class="value"><span class="circular">1</span></div>
-                <div class="label">Rejected</div>
-              </a>
-              <a class="orange statistic">
-                <div class="value"><span class="circular">2</span></div>
-                <div class="label">Overdue</div>
-              </a>
-            </div>
-          </sam-card>
-
-          <!-- SYSTEM ACCOUNTS -->
-          <h3 class="sam heading">System Accounts</h3>
-          <sam-card raised="true">
-            <ng-container class="header">
-              <h4 class="sam heading">
-                <a class="sam link arrow">
-                  System Accounts
-                  <span class="sam ink black visible mobile only">
-                    (18)
-                  </span>
-                </a>
-              </h4>
-            </ng-container>
-
-            <div class="sam statistics visible tablet up">
-              <a class="green statistic">
-                <div class="value"><span class="circular">15</span></div>
-                <div class="label">Active</div>
-              </a>
-              <a class="blue statistic">
-                <div class="value"><span class="circular">0</span></div>
-                <div class="label">Draft</div>
-              </a>
-              <a class="red statistic">
-                <div class="value"><span class="circular">1</span></div>
-                <div class="label">Rejected</div>
-              </a>
-              <a class="yellow statistic">
-                <div class="value"><span class="circular">1</span></div>
-                <div class="label">Pending</div>
-              </a>
-              <a class="orange statistic">
-                <div class="value"><span class="circular">1</span></div>
-                <div class="label">Expired</div>
-              </a>
-              <a class="grey statistic">
-                <div class="value"><span class="circular">0</span></div>
-                <div class="label">Cancelled</div>
-              </a>
-            </div>
-          </sam-card>
-          <!-- SAM SEGMENT -->
-
-          <!-- USER DIRECTORY -->
-          <div class="userdir">
-          <sam-segment>
-                <h3 class="sam heading middle aligned">
-                  <span class="icon">
-                    <img src="\assets\icon\workspace\user directory 1.svg" class="federal icon" alt="">
-                  </span>
-                  <a class="sam semibold link arrow">
-                    User Directory
-                  </a>
-                </h3>
-                <div class="sam visible tablet up">
-                  <label class="sam input label" for="input-type-text">
-                    Who are you looking for?
-                  </label>
-                  <div class="sam search">
-                    <input class="sam input" id="input-type-text" name="input-type-text" type="text">
-                    <button class="sam tertiary button">
-                      <span class="fa fa-search" aria-hidden="true"></span>
-                    </button>
-                  </div>
-                </div>
-          </sam-segment>
-          </div>
-
-          <!-- FEDERAL HIERARCHY -->
-          <div class="fedassist">
-          <sam-segment>
-                <h3 class="sam heading middle aligned">
-                  <!-- SVG: Created by Henry Chung from the Noun Project -->
-                  <span class="icon">
-                    <img src="\assets\icon\workspace\federal hierarchy 1.svg" class="federal icon" alt="">
-                  </span>
-                  <a class="sam semibold link arrow">
-                    Federal Hierarchy
-                  </a>
-                </h3>
-
-                <div class="sam visible tablet up">
-                  <label class="sam input label" for="input-type-text">
-                    Federal Hierarchy organization lookup
-                  </label>
-                  <div class="sam search">
-                    <input class="sam input" id="input-type-text" name="input-type-text" type="text">
-                    <button class="sam tertiary button">
-                      <span class="fa fa-search" aria-hidden="true"></span>
-                    </button>
-                  </div>
-                </div>
-          </sam-segment>
-          </div>
-    </div>
-    <!-- ************************** 3 SAM SEGMENT ****************************-->
-    <div class="sam search cards">
-
-      <!-- USER DIRECTORY -->
-      <div class=" user search">
-        <sam-segment>
-          <h3 class="sam heading middle aligned">
-            <span class="icon">
-              <img src="\assets\icon\workspace\user directory 1.svg" class="federal icon" alt="">
-            </span>
-            <a class="sam semibold link arrow">
-              User Directory
-            </a>
-          </h3>
-          <div class="sam visible tablet up">
-            <label class="sam input label" for="input-type-text">
-              Who are you looking for?
-            </label>
-            <div class="sam search">
-              <input class="sam input" id="input-type-text" name="input-type-text" type="text">
-              <button class="sam tertiary button">
-                <span class="fa fa-search" aria-hidden="true"></span>
-              </button>
-            </div>
-          </div>
-        </sam-segment>
+<div class="grid-row sam subheader">
+  <div class="grid-col-auto">
+    <h2>{{workspaceModel.title}}</h2>
+  </div>
+  <div class="grid-col-fill">
+    <form *ngIf="workspaceModel.showSearchBar" class="usa-search usa-search-small">
+      <div role="search">
+        <label class="usa-sr-only" for="search-field-small">Search</label>
+        <input class="sam search-input usa-input" id="search-field-small" type="search" name="search" placeholder="{{workspaceModel.placeholderText}}">
+        <button class="sam search-button usa-button" type="submit">
+          <span class="usa-sr-only">Search</span>
+        </button>
       </div>
-
-        <!-- FEDERAL HIERARCHY -->
-      <div class="hierarchy search">
-        <sam-segment>
-          <h3 class="sam heading middle aligned">
-            <span class="icon">
-              <img src="\assets\icon\workspace\federal hierarchy 1.svg" class="federal icon" alt="">
-            </span>
-            <a class="sam semibold link arrow">
-              Federal Hierarchy
-            </a>
-          </h3>
-
-          <div class="sam visible tablet up">
-            <label class="sam input label" for="input-type-text">
-              Federal Hierarchy organization lookup
-            </label>
-            <div class="sam search">
-              <input class="sam input" id="input-type-text" name="input-type-text" type="text">
-              <button class="sam tertiary button">
-                <span class="fa fa-search" aria-hidden="true"></span>
-              </button>
-            </div>
-          </div>
-        </sam-segment>
+    </form>
+  </div>
+</div>
+<div class="sam page grid-row">
+  <div *ngIf="workspaceModel.view=='open'" class="grid-col-3 sam sidebar">
+    <div class="sam sidebar section grid-row">
+      <div class="grid-col-auto">
+        <button class="sam viewswitcher" (click)="setView('closed')"><img height="32px" src="./assets/img/view-open.png"></button>
       </div>
     </div>
-    <!-- ************************ 4 ASIDE** ****************************-->
-    <aside class="sam workspace aside">
-        <!-- Profile -->
-          <sam-card>
-            <ng-container class="header">
-              <h3 class="sam heading">
-                <a [routerLink]="['/profile']" class="sam semibold">Profile</a>
-              </h3>
-            </ng-container>
-            <div class="sam feed visible tablet up">
-              <div class="profile content">
-                <div class="profile-icon">
-                  <img src="\assets\icon\workspace\profile 1.svg" alt="Profile Icon">
-                </div>
-                <div class="profile">
-                  Firstname Lastname
-                  <br> Firstname.lastname.cfda@hhs.gov
-                  <div class="dept-label">
-                    <a class="department">HEALTH AND HUMAN SERVICES</a><br>
-                      <i>Department</i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </sam-card>
-            <!-- PENDING REQUEST -->
-          <sam-card>
-            <ng-container class="header">
-              <h3 class="sam heading">
-                <a class="sam semibold">Pending Requests</a>
-              </h3>
-              <span class="sam circular red label visible mobile only">
-                4
-              </span>
-            </ng-container>
-            <div class="sam feed visible tablet up">
-              <div class="event">
-                <div class="content">
-                  <div class="summary">
-                    <a class="action">Assign Role</a> to K. Litchfield
-                    <div class="date">Sep 24 8:55 AM</div>
-                  </div>
-                  <div class="meta">
-                    <em>Type of role and name of organization</em>
-                  </div>
-                </div>
-              </div>
-              <div class="event">
-                <div class="content">
-                  <div class="summary">
-                    <a class="action">Assign Role</a> to M. Sanchez
-                    <div class="date">10:04 AM</div>
-                  </div>
-                  <div class="meta">
-                    <em>Type of role and name of organization</em>
-                  </div>
-                </div>
-              </div>
-              <div class="event">
-                <div class="content">
-                  <div class="summary">
-                    <a class="action">Delete Opportunity</a> for A. Lewis
-                    <div class="date">Monday</div>
-                  </div>
-                  <div class="meta">
-                    <em>Details and name of organization</em>
-                  </div>
-                </div>
-              </div>
-              <div class="event">
-                <div class="content">
-                  <div class="summary">
-                    <a class="action">Assign Role</a> to J. Wong
-                    <div class="date">Nov 12</div>
-                  </div>
-                  <div class="meta">
-                    <em>Type of role and name of organization</em>
-                  </div>
-                </div>
-              </div>
-              <div class="event">
-                <div class="content">
-                  <div class="summary">
-                    <a class="action">Approve Sub-Award Report</a> for A. Peterson
-                    <div class="date">Nov 9</div>
-                  </div>
-                  <div class="meta">
-                    <em>Details and name of organization</em>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </sam-card>
-          <!-- NOTIFICATION -->
-          <sam-card>
-            <ng-container class="header">
-              <h3 class="sam heading">
-                <a class="sam semibold">Notifications</a>
-              </h3>
-            </ng-container>
-            <div class="sam feed visible tablet up">
-              <div class="event">
-                <div class="content">
-                  <div class="notif content">
-                    <div class="notif icon">
-                      <img src="\assets\icon\workspace\contracting.svg" alt="icon" width="25">
-                    </div>
-                    <div class="sam notif summary">
-                      Wage Determinations: <b>CA09832498</b> has been updated.
-                    </div>
-                    <div class="date">
-                      Nov 12
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="event">
-                <div class="content">
-                  <div class="notif content">
-                    <div class="notif icon">
-                      <img src="\assets\icon\workspace\contracting.svg" alt="" width="25">
-                    </div>
-                    <div class="sam notif summary">
-                      Contract Opportunities: <b>Z-Replacement and installation of an irrigation system</b> has been updated.
-                    </div>
-                    <div class="date">
-                      10:04 AM
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="event">
-                <div class="content">
-                  <div class="notif content">
-                    <div class="notif icon">
-                      <img src="\assets\icon\workspace\contracting.svg" alt="" width="25">
-                    </div>
-                    <div class="sam notif summary">
-                      Planned System Downtime Sep 29, 2019 from 2am-3am
-                    </div>
-                    <div class="date">
-                      Nov 9
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </sam-card>
-          <!-- ROLE CARD-->
-          <div class="sam workspace role">
-          <sam-card>
-              <ng-container class="header">
-                <h3 class="sam heading">
-                  <a class="sam semibold">Add A New Role</a>
-                </h3>
-              </ng-container>
-              <div class="sam feed visible tablet up">
-              <div class="sam role request">
-                <div class="role content">
-                  Select one of the options below to request a new role. If you need a role that you do not see below, contact a website administrator from your agency directly.
-                </div>
-                <div class="roledropdown">
-                  <select>
-                    <option value="contracting specialist">Contracting Specialist</option>
-                    <option value="role1">Role 1</option>
-                    <option value="role2">Role 2</option>
-                    <option value="role3">Role 3</option>
-                  </select>
-                  A contracting specialist contributes to contract opportunities.
-                </div>
-                <form class="checkrole"> <input type="checkbox" name="checkrole" value="verified">
-                  <label for="verified"> I verify I have a business need for this role.</label>
-                </form>
-                <button type="button" class="rolerequest">Request Role</button>
-              </div>
-              </div>
-          </sam-card>
-          </div>
-    </aside>
-    <!-- ************************ 5 ROLE CARD*******************************-->
-    <div class="sam workspace role">
-      <sam-card>
-        <ng-container class="header">
-          <h3 class="sam heading">
-            <a class="sam semibold">Add A New Role</a>
-          </h3>
-        </ng-container>
-        <div class="sam feed visible tablet up">
-        <div class="sam role request">
-          <div class="role content">
-            Select one of the options below to request a new role. If you need a role that you do not see below, contact a website administrator from your agency directly.
-          </div>
-          <div class="roledropdown">
-            <select>
-              <option value="contracting specialist">Contracting Specialist</option>
-              <option value="role1">Role 1</option>
-              <option value="role2">Role 2</option>
-              <option value="role3">Role 3</option>
-            </select>
-            A contracting specialist contributes to contract opportunities.
-          </div>
-          <form class="checkrole"> <input type="checkbox" name="checkrole" value="verified">
-            <label for="verified"> I verify I have a business need for this role.</label>
-          </form>
-          <button type="button" class="rolerequest">Request Role</button>
+    <div [ngClass]="{'sam': true, 'sidebar': true, 'section': true, 'selected': workspaceModel.showNav}">
+      <div class="grid-row" (click)="workspaceModel.showNav=!workspaceModel.showNav">
+        <div class="grid-col-fill">
+          <h4>Go To Workspace</h4>
         </div>
+        <div class="grid-auto">
+          <div class="sam circle" *ngIf="!workspaceModel.showNav">+</div>
+          <div class="sam circle" *ngIf="workspaceModel.showNav">-</div>
         </div>
-      </sam-card>
+      </div>
+            <nav *ngIf="workspaceModel.showNav">
+        <ul class="usa-sidenav">
+            <li class="usa-sidenav-item">
+                <a [class.usa-current]="workspaceModel.page == 'dashboard'" [routerLink]="['/workspace']" [queryParams]="{}">Workspace Home</a>
+            </li> 
+            <li>
+            <a [class.usa-current]="workspaceModel.isPageInDomain('contractinginfo')" [routerLink]="['/workspace']" [queryParams]="{}">Contracting</a>
+            <ul class="usa-sidenav-sublist">
+              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'contractopportunities'" [routerLink]="['/workspace/contractopportunities']" [queryParams]="{}">Contract Opportunities</a></li>
+              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'contractdata'" [routerLink]="['/workspace/contractdata']" [queryParams]="{}">Contract Data</a></li>
+            </ul>
+          </li> 
+          <li class="usa-sidenav-item">
+            <a [class.usa-current]="workspaceModel.isPageInDomain('assistancelist')" [routerLink]="['/workspace/fal/dashboard']" [queryParams]="{}">Federal Assistance</a>
+            <ul class="usa-sidenav-sublist">
+              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page === 'assistancelist'" [routerLink]="['/workspace/fal/assistancelist']" [queryParams]="{}">Assistance Listings</a></li>
+              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page === 'cfdanumber'" [routerLink]="['/workspace/fal/cfdanumber']" [queryParams]="{}">CFDA Numbers</a></li>
+              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page === 'regionallocation'" [routerLink]="['/workspace/fal/regionallocation']" [queryParams]="{}">Regional Locations</a></li>
+            </ul>
+          </li>          
+          <li class="usa-sidenav-item">
+            <a [class.usa-current]="workspaceModel.isPageInDomain('entityinfo')" [routerLink]="['/workspace/entities/dashboard']" [queryParams]="{domain:'entityinfo'}">Entity Information</a>
+            <ul class="usa-sidenav-sublist">
+              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'registrations'" [routerLink]="['/workspace/registrations']" [queryParams]="{}">Entity Registrations</a></li>
+              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'exclusions'" [routerLink]="['/workspace/exclusions']" [queryParams]="{}">Exclusions</a></li>
+              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'integrityinfo'" [routerLink]="['/workspace/integrity']" [queryParams]="{}">Integrity Information</a></li>
+            </ul>
+          </li>
+          <li class="usa-sidenav-item">
+            <a [class.usa-current]="workspaceModel.isPageInDomain('compliance')" [routerLink]="['/workspace/compliance/dashboard']" [queryParams]="{}">Compliance</a>
+            <ul class="usa-sidenav-sublist">
+              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'pastperformance'" [routerLink]="['/workspace/compliance/pastperformance']" [queryParams]="{domain:'registration'}">Past Performance</a></li>
+              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'ffatasubaward'" [routerLink]="['/workspace/ffatasubaward']" [queryParams]="{}">FFATA Sub-Awards</a></li>
+              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'far19subaward'" [routerLink]="['/workspace/far19subaward']" [queryParams]="{}">FAR 19 Sub-Awards</a></li>
+              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'biopreferred'" [routerLink]="['/workspace/biopreferred']" [queryParams]="{}">Bio-Preferred Reports</a></li>
+              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'src'" [routerLink]="['/workspace/scr']" [queryParams]="{}">Service Contract Reports</a></li>
+            </ul>
+          </li>
+          <li class="usa-sidenav-item">
+            <a [class.usa-current]="domain == 'hierarchy'" [routerLink]="['/workspace']" [queryParams]="{domain:'hierarchy'}">Federal Hierarchy</a>
+          </li>
+          <li class="usa-sidenav-item">
+            <a [class.usa-current]="workspaceModel.isPageInDomain('admin')" [routerLink]="['/workspace/admin']" [queryParams]="{}">Administration</a>
+              <ul class="usa-sidenav-sublist">
+                <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'users'" [routerLink]="['/workspace/admin/users']" [queryParams]="{}">User Directory</a>
+                </li>
+                <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'systemusers'" [routerLink]="['/workspace/admin/systemusers']" [queryParams]="{}">System Accounts</a></li>
+              </ul>
+          </li>
+          <li class="usa-sidenav-item">
+            <a [class.usa-current]="workspaceModel.isPageInDomain('profile')" [routerLink]="['/workspace/profile']" [queryParams]="{}">User Profile</a>
+            <ul class="usa-sidenav-sublist">
+              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'reset'" [routerLink]="['/workspace/reset']" [queryParams]="{}">Reset Password</a></li>
+              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'roles'" [routerLink]="['/workspace/roles']" [queryParams]="{}">Roles</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div [ngClass]="{'sam': true, 'sidebar': true, 'section': true, 'selected': workspaceModel.showFilters}">
+      <div class="grid-row" (click)="workspaceModel.showFilters=!workspaceModel.showFilters">
+        <div class="grid-col-fill">
+          <h4>Refine By</h4>
+        </div>
+        <div class="grid-auto">
+          <div class="sam circle" *ngIf="!workspaceModel.showFilters">+</div>
+          <div class="sam circle" *ngIf="workspaceModel.showFilters">-</div>
+        </div>
+      </div>
+      <form *ngIf="workspaceModel.showFilters && !workspaceModel.template" class="usa-form">
+        <label class="sam-sidebar-label usa-label" for="keyword-input">Keywords</label>
+        <input class="usa-input" id="keyword-input" name="name-input" type="text" >
+      </form>
+      <ng-container 
+          *ngIf="workspaceModel.template && workspaceModel.showFilters" 
+          [ngTemplateOutlet]="workspaceModel.template" 
+          [ngTemplateOutletContext]="{data: dataContext}"> 
+      </ng-container>
+    </div>
+  </div>
+  <div class="grid-col-fill sam body">
+    <div class="sam grid-row">
+      <div *ngIf="workspaceModel.view=='closed'" class="sam sidesection grid-col-auto">
+        <button class="sam viewswitcher" (click)="setView('open')"><img height="32px" src="./assets/img/view-closed.png"></button>
+      </div>
+      <div class="grid-col-fill">
+      </div>
+    </div>
+    <div class="sam grid-row">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
+

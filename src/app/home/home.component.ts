@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angula
 import {Router} from '@angular/router';
 import { SamFeatureBannerComponent } from '../sam-ui-elements/sam-feature-banner/sam-feature-banner.component';
 import { SamDomain } from '../model/sam-domain';
+import { SamModelService } from '../model/sam-model.service';
 
 @Component({
   selector: 'app-home',
@@ -24,11 +25,16 @@ export class HomeComponent implements AfterViewInit, OnInit {
     placeholder: 'Search All Data'
   }
 
-  selectedTab: ElementRef;
-  constructor(private router: Router) {
+  selectedTabID: string = "allTab";
+
+  constructor(private router: Router, public model: SamModelService) {
   }
 
   ngOnInit() {
+  }
+
+  selectTab(tabID: string) {
+    this.selectedTabID = tabID;
   }
 
   navigateTo(route: string) {
@@ -37,8 +43,5 @@ export class HomeComponent implements AfterViewInit, OnInit {
 
   ngAfterViewInit()
   {
-        setTimeout(() => {
-            this.selectedTab = this.entitiesTab;
-        });
   }
 }

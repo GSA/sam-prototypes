@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import * as fromStore from '../store/reducers';
+import { Component, OnInit, Input } from '@angular/core';
+import { SamModelService } from '../../../model/sam-model.service';
 
 @Component({
-  selector: 'entities-list',
+  selector: 'entity-workspace',
   templateUrl: './entities-list.component.html',
   styleUrls: ['./_styles.scss']
 })
 export class EntitiesListComponent implements OnInit {
 
-  constructor(private store: Store<fromStore.State>) { }
+  view: string;
+
+  constructor(public model: SamModelService) {  
+    this.view = 'open';
+  }
+
+  setView(view: string) {
+    this.view = view;
+  }
 
   ngOnInit() {
   }

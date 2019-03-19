@@ -23,10 +23,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { PublicWorkspaceComponent } from './workspace/public-workspace.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PublicWorkspaceComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -48,7 +51,8 @@ import { HttpClientModule } from '@angular/common/http';
     SamUIKitModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [PublicWorkspaceComponent]
 })
 export class AppModule {
   static forRoot(): ModuleWithProviders {

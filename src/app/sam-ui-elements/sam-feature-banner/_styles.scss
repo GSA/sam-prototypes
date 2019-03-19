@@ -1,29 +1,20 @@
 
-.sam-feature-title {
-	border: 1px solid #dbdee1;
-	background-color: #e7f6f8;
-	padding: 0em 2em;
-
-	h2 {
-		font-weight: 300;
-		font-size: 1.75em;
-		line-height: .5;
-	}
-}
 
 .register-button {
-	background-color: #e52207;
-	color: white;
+	background-color: #21C834;
+	color: #0A3466;
 	float: right;
 	text-decoration: none;
 	font-weight: 600;
-	padding: .75em 1.5em;
-	margin-top: .5em;
+	padding: .5em 1em;
+	margin-top: .2em;
 }
 
-.sam-feature-banner {
+.sam.feature-banner {
 
-	.sam-feature-content {
+	padding: 1.5em 0em;
+
+	.sam.feature-content {
 		color: #ffffff;
 		background-color: #323a45;
 		padding: 2em;
@@ -37,8 +28,8 @@
 		}
 
 		h2 {
-			font-size: 1.3em;
-			font-weight: 600;
+			font-size: 1.5em;
+			font-weight: 300;
 		}
 
 		ul {

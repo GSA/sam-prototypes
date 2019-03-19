@@ -1,8 +1,6 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, TemplateRef  } from '@angular/core';
-import { Router, ActivationEnd } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { SamModelService } from '../model/sam-model.service';
-import { FeedTools } from './feed.config';
 
 @Component({
   selector: 'sam-feed',
@@ -11,33 +9,51 @@ import { FeedTools } from './feed.config';
 })
 export class FeedComponent implements OnInit {
 
-  @ViewChild('messages') messagesTool: ElementRef;
-  @ViewChild('download') downloadTool: ElementRef;
-
   domain: string;
+  view: string;
+  showFilters: boolean;
+  showNav: boolean;
 
-  constructor(private router: Router, public model: SamModelService) {
-      router.events.subscribe((event) => {
-        if(event instanceof ActivationEnd && event.snapshot.component == FeedComponent) {      
-           this.model.setLocalTools(FeedTools);
-        }
-      });
+  constructor(private route: ActivatedRoute, public model: SamModelService) {  
+    this.view = 'open';
+    this.showFilters = true;
+    this.showNav = false;
+
+    this.model.feature = 'messages';
+  }
+
+  setView(view: string) {
+    this.view = view;
+  }
+
+  setModelDomain(domain: string) {
+    this.model.domain = domain;
+  }
+
+  isDomainIn(parentDomain: string) {
+    if(parentDomain == 'contractinginfo') {
+      return this.domain == 'contractinginfo' || this.domain == 'contractopportunities' || this.domain == 'contractdata';
+    }
+    if(parentDomain == 'entityinfo') {
+      return this.domain == 'entityinfo' || this.domain == 'registration' || this.domain == 'disasterresponse' ||
+            this.domain == 'exclusions' || this.domain == 'integrityinfo';
+    }
+    if(parentDomain == 'assistance') {
+      return this.domain == 'assistance' || this.domain == 'assistancelist';
+    }
+    if(parentDomain == 'wagedeterminations') {
+        return this.domain == 'wagedeterminations' || this.domain == 'dbawd' || this.domain == 'scawd';
+    }
   }
 
   ngOnInit() {
-  }
-
-  loadTemplates() {
-     this.model.setToolTemplate('messages', this.messagesTool);
-     this.model.setToolTemplate('download', this.downloadTool);
-     this.model.setSelectedTool(FeedTools[0]);
-  }
-
-  ngAfterViewInit()
-  {
-        setTimeout(() => {
-            this.loadTemplates();
-        });
+      this.domain = this.route.snapshot.queryParamMap.get('domain');
+      this.route.queryParamMap.subscribe(queryParams => {
+        this.domain = queryParams.get('domain');
+        if(!this.domain) {
+          this.domain = 'all';
+        }
+      });
   }
 
 }

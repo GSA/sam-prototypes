@@ -1,8 +1,6 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, TemplateRef  } from '@angular/core';
-import { Router, ActivatedRoute, ActivationEnd } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { SamModelService } from '../model/sam-model.service';
-import { HelpTools } from './help.config';
 
 @Component({
   selector: 'sam-help',
@@ -11,16 +9,40 @@ import { HelpTools } from './help.config';
 })
 export class HelpComponent implements OnInit {
 
-  @ViewChild('help') helpTool: ElementRef;
-
   domain: string;
+  view: string;
+  showFilters: boolean;
+  showNav: boolean;
 
-  constructor(private router: Router, private route: ActivatedRoute, public model: SamModelService) {
-      router.events.subscribe((event) => {
-        if(event instanceof ActivationEnd && event.snapshot.component == HelpComponent) {      
-           this.model.setLocalTools(HelpTools);
-        }
-      });
+  constructor(private route: ActivatedRoute, public model: SamModelService) {  
+    this.view = 'open';
+    this.showFilters = false;
+    this.showNav = true;
+    this.model.feature = 'help';
+  }
+
+  setView(view: string) {
+    this.view = view;
+  }
+
+  setModelDomain(domain: string) {
+    this.model.domain = domain;
+  }
+
+  isDomainIn(parentDomain: string) {
+    if(parentDomain == 'contractinginfo') {
+      return this.domain == 'contractinginfo' || this.domain == 'contractopportunities' || this.domain == 'contractdata';
+    }
+    if(parentDomain == 'entityinfo') {
+      return this.domain == 'entityinfo' || this.domain == 'registration' || this.domain == 'disasterresponse' ||
+            this.domain == 'exclusions' || this.domain == 'integrityinfo';
+    }
+    if(parentDomain == 'assistance') {
+      return this.domain == 'assistance' || this.domain == 'assistancelist';
+    }
+    if(parentDomain == 'wagedeterminations') {
+        return this.domain == 'wagedeterminations' || this.domain == 'dbawd' || this.domain == 'scawd';
+    }
   }
 
   ngOnInit() {
@@ -28,21 +50,9 @@ export class HelpComponent implements OnInit {
       this.route.queryParamMap.subscribe(queryParams => {
         this.domain = queryParams.get('domain');
         if(!this.domain) {
-      		this.domain = 'all';
-      	}
-      })
-  }
-
-  loadTemplates() {
-     this.model.setToolTemplate('help', this.helpTool);
-     this.model.setSelectedTool(HelpTools[0]);
-  }
-
-  ngAfterViewInit()
-  {
-        setTimeout(() => {
-            this.loadTemplates();
-        });
+          this.domain = 'all';
+        }
+      });
   }
 
 }

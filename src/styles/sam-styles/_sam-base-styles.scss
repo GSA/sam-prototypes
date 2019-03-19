@@ -1,4 +1,42 @@
 
+.sam.link {
+	color: #0071bc;
+}
+
+.sam.link:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.sam.landing.card {
+	
+	padding: 3em;
+
+	img {
+		height: 3em;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.sam.landing.card.orange {
+	background-color: orange;
+}
+
+.sam-nav-submenu-item {
+	color: #ffffff;	
+}
+
+.sam-inline-link {
+	color: #d9e8f6;
+	font-weight: 400;
+}
+
+.sam-inline-link:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
 .sam-content {
 	min-height: 35em;
 }

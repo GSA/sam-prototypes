@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { SamNav } from '../model/sam-nav';
 import { SamModelService } from '../../model/sam-model.service';
 
 @Component({
@@ -9,8 +10,10 @@ import { SamModelService } from '../../model/sam-model.service';
 export class SamSidebarComponent implements OnInit {
 
   @Input() title: string;
+  @Input() navList: SamNav[];
 
-  constructor(public model: SamModelService) { }
+  constructor(public model: SamModelService) { 
+  }
 
   ngOnInit() {
   }
