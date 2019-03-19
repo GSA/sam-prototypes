@@ -18,6 +18,11 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { reducers, metaReducers } from './store/reducers';
+import { SamUIKitModule } from '@gsa-sam/sam-ui-elements';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { PublicWorkspaceComponent } from './workspace/public-workspace.component';
 
 
@@ -27,10 +32,14 @@ import { PublicWorkspaceComponent } from './workspace/public-workspace.component
     PublicWorkspaceComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
+    FormsModule,
+    HttpModule,
+    HttpClientModule,
     RouterModule,
-    AppRoutingModule, 
-    SamFederalSiteBannerModule,   
+    AppRoutingModule,
+    SamFederalSiteBannerModule,
     SamToolsModule,
     SamHeaderModule,
     SamSubheaderModule,
@@ -38,13 +47,14 @@ import { PublicWorkspaceComponent } from './workspace/public-workspace.component
     SamSidebarModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    EffectsModule.forRoot([AppEffects])
+    EffectsModule.forRoot([AppEffects]),
+    SamUIKitModule
   ],
   providers: [],
   bootstrap: [AppComponent],
   exports: [PublicWorkspaceComponent]
 })
-export class AppModule { 
+export class AppModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: AppModule,

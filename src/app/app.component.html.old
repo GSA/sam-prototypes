@@ -1,4 +1,4 @@
-<sam-header></sam-header>
+<app-sam-header></app-sam-header>
 <sam-subheader></sam-subheader>
 <div class="grid-row">
 	<div class="grid-col flex-1">
