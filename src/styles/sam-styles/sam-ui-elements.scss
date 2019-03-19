@@ -276,3 +276,32 @@
 	margin-top: 0em;
 	margin-bottom: .5em;
 }
+
+.sam.result {
+	margin-left: 1.5em;
+	padding-bottom: .6em;
+	border-bottom: 1px solid #a9aeb1;
+
+	h4 {
+		margin-bottom: .4em;
+
+		a {
+			font-size: 1.3em;
+			font-weight: 600;
+			text-decoration: none;
+			color: #112F4E;
+		}
+
+		a:visited {
+			color: #112F4E;
+		}
+	}
+}
+
+.sam.field {
+	font-size: .95em;
+	line-height: 140%;
+	margin: 0;
+	padding-right: .3em;
+}
+

@@ -1,6 +1,12 @@
-<p>
-  entities works!
-</p>
+<div class="sam result grid-row" *ngFor="let entity of entityService.entities">
+	<div class="grid-col-12"><h4><a [routerLink]="[]">{{entity.entityName}}</a></h4></div>
+	<div class="grid-col-7">
+		<div class="sam field"><span class="sam field title">Entity ID:</span><span class="sam field value">{{entity.entityID}}</span></div>
+		<div class="sam field"><span class="sam field title">Entity ID (DUNS):</span><span class="sam field value">{{entity.dunsID}}</span></div>
+		<div class="sam field"><span class="sam field title">CAGE/NCAGE:</span><span class="sam field value">{{entity.cageID}}/{{entity.ncageID}}</span></div>
+	</div>
+	<div class="grid-col-5"></div>
+</div>
 
 <ng-template #entityfilters>
   <label class="sam-sidebar-label usa-label" for="keyword-input">Unique Entity ID / Name (SAM)</label>

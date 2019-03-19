@@ -39,6 +39,7 @@
             <li>
             <a [class.usa-current]="workspaceModel.isPageInDomain('contractinginfo')" [routerLink]="['/workspace']" [queryParams]="{}">Contracting</a>
             <ul class="usa-sidenav-sublist">
+              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'contractopportunities'" [routerLink]="['/workspace/contractopportunities']" [queryParams]="{}">Contract Opportunity Forecasts</a></li>
               <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'contractopportunities'" [routerLink]="['/workspace/contractopportunities']" [queryParams]="{}">Contract Opportunities</a></li>
               <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'contractdata'" [routerLink]="['/workspace/contractdata']" [queryParams]="{}">Contract Data</a></li>
             </ul>

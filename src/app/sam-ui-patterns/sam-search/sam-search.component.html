@@ -44,6 +44,7 @@
 			    <li class="usa-sidenav-item" *ngIf="model.domain != 'assistance'">
 			    	<a [class.usa-current]="isDomainIn('contractinginfo')" [routerLink]="['/search']" [queryParams]="{domain:'contractinginfo'}">Contracting Information</a>
 			    	<ul class="usa-sidenav-sublist">
+			    		<li class="usa-sidenav-item"><a [class.usa-current]="domain == 'contractopportunities'" [routerLink]="['/search']" [queryParams]="{domain:'contractopportunities'}">Contract Opportunity Forecasts</a></li>
 			    		<li class="usa-sidenav-item"><a [class.usa-current]="domain == 'contractopportunities'" [routerLink]="['/search']" [queryParams]="{domain:'contractopportunities'}">Contract Opportunities</a></li>
 			    		<li class="usa-sidenav-item"><a [class.usa-current]="domain == 'contractdata'" [routerLink]="['/search']" [queryParams]="{domain:'contractdata'}">Contract Data</a></li>
 			    	</ul>
