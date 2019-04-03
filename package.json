@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
     "@gsa-sam/sam-ui-elements": "0.8.9",
+    "@gsa-sam/sam-styles": "0.0.5",
     "@fortawesome/fontawesome-svg-core": "1.2.2",
     "@fortawesome/free-solid-svg-icons": "5.2.0",
     "@ngrx/effects": "^6.1.2",
@@ -37,7 +38,7 @@
     "font-awesome": "^4.7.0",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.3.3",
-    "uswds": "^1.6.9",
+    "uswds": "2.0.0-beta.6",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

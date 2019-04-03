@@ -10,7 +10,7 @@
       "prefix": "app",
       "schematics": {
         "@ngrx/schematics:component": {
-          "changeDetection" : "OnPush",
+          "changeDetection": "OnPush",
           "export": true,
           "styleext": "scss"
         }
@@ -31,15 +31,17 @@
             "stylePreprocessorOptions": {
               "includePaths": [
                 "src/styles"
+                
               ]
             },
             "styles": [
-              "src/styles/sam-styles-ext/sam-styles-ext.scss",
-              "src/styles/sam-styles/sam-styles.scss",
-              "src/styles/uswds/scss/uswds.scss"
+              "node_modules/uswds/dist/scss/uswds.scss",
+              "node_modules/@gsa-sam/sam-styles/src/stylesheets/sam.scss",
+			  "src/styles/sam-proto-styles/sam-proto-styles.scss"
+   
             ],
             "scripts": [
-              "src/styles/uswds/js/uswds.min.js"
+              "node_modules/uswds/dist/js/uswds.min.js"
             ]
           },
           "configurations": {
