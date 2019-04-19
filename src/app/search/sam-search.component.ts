@@ -3,7 +3,7 @@ import { ActivatedRoute, Router, NavigationStart } from '@angular/router';
 import { SamModelService } from '..//model/sam-model.service';
 import { FormGroup } from '@angular/forms';
 import { FormlyFieldConfig } from '@ngx-formly/core';
-import { fieldsList, modelList } from '../search1/data/formly-list';
+import { fieldsList, modelList } from './data/formly-list';
 
 @Component({
   selector: 'sam-search',
@@ -20,7 +20,7 @@ export class SamSearchComponent implements OnInit {
   showFilters: boolean;
   showNav: boolean;
 
-  constructor(private route: ActivatedRoute, public model: SamModelService,  private router: Router) {  
+  constructor(private route: ActivatedRoute, public model: SamModelService, private router: Router) {
     this.view = 'open';
     this.showFilters = false;
     this.showNav = true;
@@ -49,29 +49,29 @@ export class SamSearchComponent implements OnInit {
   }
 
   isDomainIn(parentDomain: string) {
-    if(parentDomain == 'contractinginfo') {
+    if (parentDomain == 'contractinginfo') {
       return this.domain == 'contractinginfo' || this.domain == 'contractopportunities' || this.domain == 'contractdata';
     }
-    if(parentDomain == 'entityinfo') {
+    if (parentDomain == 'entityinfo') {
       return this.domain == 'entityinfo' || this.domain == 'registration' || this.domain == 'disasterresponse' ||
-            this.domain == 'exclusions' || this.domain == 'integrityinfo';
+        this.domain == 'exclusions' || this.domain == 'integrityinfo';
     }
-    if(parentDomain == 'assistance') {
+    if (parentDomain == 'assistance') {
       return this.domain == 'assistance' || this.domain == 'assistancelist';
     }
-    if(parentDomain == 'wagedeterminations') {
-        return this.domain == 'wagedeterminations' || this.domain == 'dbawd' || this.domain == 'scawd';
+    if (parentDomain == 'wagedeterminations') {
+      return this.domain == 'wagedeterminations' || this.domain == 'dbawd' || this.domain == 'scawd';
     }
   }
 
   ngOnInit() {
-      this.domain = this.route.snapshot.queryParamMap.get('domain');
-      this.route.queryParamMap.subscribe(queryParams => {
-        this.domain = queryParams.get('domain');
-        if(!this.domain) {
-          this.domain = 'all';
-        }
-      });
+    this.domain = this.route.snapshot.queryParamMap.get('domain');
+    this.route.queryParamMap.subscribe(queryParams => {
+      this.domain = queryParams.get('domain');
+      if (!this.domain) {
+        this.domain = 'all';
+      }
+    });
   }
 
 }
