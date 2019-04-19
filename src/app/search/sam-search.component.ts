@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationStart } from '@angular/router';
 import { SamModelService } from '..//model/sam-model.service';
+import { FormGroup } from '@angular/forms';
+import { FormlyFieldConfig } from '@ngx-formly/core';
+import { fieldsList, modelList } from '../search1/data/formly-list';
 
 @Component({
   selector: 'sam-search',
@@ -8,17 +11,33 @@ import { SamModelService } from '..//model/sam-model.service';
   styleUrls: ['./_styles.scss']
 })
 export class SamSearchComponent implements OnInit {
+  public form: FormGroup;
+  public searchModel;
+  public fields: FormlyFieldConfig[];
 
   domain: string;
   view: string;
   showFilters: boolean;
   showNav: boolean;
 
-  constructor(private route: ActivatedRoute, public model: SamModelService) {  
+  constructor(private route: ActivatedRoute, public model: SamModelService,  private router: Router) {  
     this.view = 'open';
     this.showFilters = false;
     this.showNav = true;
     this.model.feature = 'search';
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationStart) {
+        // Show loading indicator
+        this.domain = this.route.snapshot.queryParamMap.get('domain');
+        const list = fieldsList.filter(x => x.domain == this.domain);
+        const listModel = modelList.filter(x => x.domain == this.domain);
+
+        this.fields = list[0].FormlyFields;
+        this.searchModel = listModel[0].model;
+      }
+    });
+
   }
 
   setView(view: string) {
