@@ -40,7 +40,7 @@ const routes: Routes = [
   },
   {
     path: 'search',
-    loadChildren: './sam-ui-patterns/sam-search/sam-search.module#SamSearchModule'
+    loadChildren: './search/sam-search.module#SamSearchModule'
   },
   {
     path: 'entities-workspace',

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SamModelService } from '../../model/sam-model.service';
+import { SamModelService } from '..//model/sam-model.service';
 
 @Component({
   selector: 'sam-search',
