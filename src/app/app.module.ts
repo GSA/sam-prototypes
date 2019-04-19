@@ -24,7 +24,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { PublicWorkspaceComponent } from './workspace/public-workspace.component';
-import { SearchModule } from './search1/search.module';
 import { FormlyModule } from '@ngx-formly/core';
 import {FormlySAMUIModule} from '@gsa-sam/sam-ui-elements/src/formly';
 
@@ -47,7 +46,6 @@ import {FormlySAMUIModule} from '@gsa-sam/sam-ui-elements/src/formly';
     SamSubheaderModule,
     SamFooterModule,
     SamSidebarModule,
-    SearchModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([AppEffects]),
