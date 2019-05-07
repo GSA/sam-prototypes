@@ -6,9 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { SamToolsModule } from './sam-ui-elements/tools/tools.module';
 import { SamFederalSiteBannerModule } from './sam-components/sam-federal-site-banner/sam-federal-site-banner.module';
-import { SamHeaderModule } from './sam-components/sam-header/sam-header.module';
+//import { SamHeaderModule } from './sam-components/sam-header/sam-header.module';
 import { SamSubheaderModule } from './sam-components/sam-subheader/sam-subheader.module';
-import { SamFooterModule } from './sam-components/sam-footer/sam-footer.module';
+//import { SamFooterModule } from './sam-components/sam-footer/sam-footer.module';
 import { SamSidebarModule } from './sam-ui-elements/sam-sidebar/sam-sidebar.module';
 import { AppComponent } from './app.component';
 import { SamModelService } from './model/sam-model.service';
@@ -24,6 +24,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { PublicWorkspaceComponent } from './workspace/public-workspace.component';
+import { SdsHeaderModule } from '@gsa-sam/components/esm2015/lib/header/header.module';
+import { SdsFooterModule } from '@gsa-sam/components/esm2015/lib/footer/footer.module';
+import { fromPromise } from 'rxjs/internal-compatibility';
 
 
 @NgModule({
@@ -41,9 +44,9 @@ import { PublicWorkspaceComponent } from './workspace/public-workspace.component
     AppRoutingModule,
     SamFederalSiteBannerModule,
     SamToolsModule,
-    SamHeaderModule,
+    SdsHeaderModule,
     SamSubheaderModule,
-    SamFooterModule,
+    SdsFooterModule,
     SamSidebarModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
@@ -58,7 +61,7 @@ export class AppModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: AppModule,
-      providers: [ SamModelService ]
+      providers: [SamModelService]
     };
   }
 }
