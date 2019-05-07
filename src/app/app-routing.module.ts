@@ -68,6 +68,7 @@ const routes: Routes = [
   },
   {
     path: 'search',
+
     loadChildren: './sam-ui-patterns/sam-search/sam-search.module#SamSearchModule',
     data: {
       id: "search"

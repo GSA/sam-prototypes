@@ -30,8 +30,8 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
+             
                 "src/styles"
-                
               ]
             },
             "styles": [

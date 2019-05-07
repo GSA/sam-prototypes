@@ -27,6 +27,8 @@ import { PublicWorkspaceComponent } from './workspace/public-workspace.component
 import { SdsHeaderModule } from '@gsa-sam/components/esm2015/lib/header/header.module';
 import { SdsFooterModule } from '@gsa-sam/components/esm2015/lib/footer/footer.module';
 import { fromPromise } from 'rxjs/internal-compatibility';
+import { FormlyModule } from '@ngx-formly/core';
+import {FormlySAMUIModule} from '@gsa-sam/sam-ui-elements/src/formly';
 
 
 @NgModule({
@@ -51,7 +53,9 @@ import { fromPromise } from 'rxjs/internal-compatibility';
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([AppEffects]),
-    SamUIKitModule
+    SamUIKitModule,
+    FormlyModule,
+    FormlySAMUIModule
   ],
   providers: [],
   bootstrap: [AppComponent],
