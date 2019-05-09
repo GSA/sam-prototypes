@@ -24,12 +24,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { PublicWorkspaceComponent } from './workspace/public-workspace.component';
-import { SdsHeaderModule } from '@gsa-sam/components/esm5/lib/header/header.module';
-import { SdsFooterModule } from '@gsa-sam/components/esm5/lib/footer/footer.module';
-import { fromPromise } from 'rxjs/internal-compatibility';
+import { SdsHeaderModule } from '@gsa-sam/components/esm2015/lib/header/header.module';
+import { SdsFooterModule } from '@gsa-sam/components/esm2015/lib/footer/footer.module';
 import { FormlyModule } from '@ngx-formly/core';
-import {FormlySAMUIModule} from '@gsa-sam/sam-ui-elements/src/formly';
+import { FormlySAMUIModule } from '@gsa-sam/sam-ui-elements/src/formly';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+//import { sdsIcons } from '@gsa-sam/components';
 
+
+const appIcons = {
+  // App Specific Icons
+ };
 
 @NgModule({
   declarations: [
@@ -55,7 +61,7 @@ import {FormlySAMUIModule} from '@gsa-sam/sam-ui-elements/src/formly';
     EffectsModule.forRoot([AppEffects]),
     SamUIKitModule,
     FormlyModule,
-    FormlySAMUIModule
+    FormlySAMUIModule,FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -67,5 +73,8 @@ export class AppModule {
       ngModule: AppModule,
       providers: [SamModelService]
     };
+  }
+  constructor() {
+  //  library.add(sdsIcons, appIcons);
   }
 }

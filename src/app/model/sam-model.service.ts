@@ -15,25 +15,24 @@ export class SamModelService {
 
   signInItem =
     {
-      imageSourcePath: 'assets/icon/header-footer/Signin.png', imageAltText: 'Sign In Icon',
+      imageClassPrefix: 'fas', imageClass: 'sign-out-alt',
       text: 'Sign In', route: '/', id: 'signin'
     };
   signOutItem =
     {
-      imageSourcePath: 'assets/icon/header-footer/SignOut.png', imageAltText: 'Sign Out Icon',
+      imageClassPrefix: 'fas', imageClass: 'sign-out-alt',
       text: 'Sign Out', route: '/', id: 'signOut'
     };
 
   secondaryLinks = [{
-    imageSourcePath: 'assets/icon/header-footer/Messages.png',
-    imageAltText: 'Messages Icon', text: 'Messages', route: '/messages', id: 'messages'
+    imageClassPrefix: 'fas', imageClass: 'comment', text: 'Messages', route: '/messages', id: 'messages'
   },
   {
-    imageSourcePath: 'assets/icon/header-footer/Requests.png', imageAltText: 'Requests Icon',
+    imageClassPrefix: 'fas', imageClass: 'edit',
     text: 'Requests', route: '/', id: 'request'
   },
   {
-    imageSourcePath: 'assets/icon/header-footer/Workspace.png', imageAltText: 'Workspace Icon',
+    imageClassPrefix: 'fas', imageClass: 'th', imageAltText: 'Workspace Icon',
     text: 'Workspace', route: '/workspace', id: 'workspace'
   }];
   navigationLinks: [
