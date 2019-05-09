@@ -9,7 +9,6 @@ import { SamLinkListModule } from '../sam-ui-elements/sam-link-list/sam-link-lis
 import { SamBodyModule } from '../sam-ui-elements/sam-body/sam-body.module';
 import { SearchServiceModule } from './service/service.module';
 import { SamSearchComponent } from './sam-search.component';
-import { SamUIKitModule, SamFilterModule } from '@gsa-sam/sam-ui-elements';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormsModule } from '@angular/forms';
 
@@ -17,8 +16,6 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     SamSearchRoutingModule,
-    SamUIKitModule,
-    SamFilterModule,
     SamSidebarModule,
     SamListModule,
     SamSearchInputModule,

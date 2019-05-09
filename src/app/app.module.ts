@@ -18,7 +18,6 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { reducers, metaReducers } from './store/reducers';
-import { SamUIKitModule } from '@gsa-sam/sam-ui-elements';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -27,10 +26,9 @@ import { PublicWorkspaceComponent } from './workspace/public-workspace.component
 import { SdsHeaderModule } from '@gsa-sam/components/esm2015/lib/header/header.module';
 import { SdsFooterModule } from '@gsa-sam/components/esm2015/lib/footer/footer.module';
 import { FormlyModule } from '@ngx-formly/core';
-import { FormlySAMUIModule } from '@gsa-sam/sam-ui-elements/src/formly';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-//import { sdsIcons } from '@gsa-sam/components';
+import { sdsIcons } from '@gsa-sam/components';
 
 
 const appIcons = {
@@ -59,9 +57,8 @@ const appIcons = {
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([AppEffects]),
-    SamUIKitModule,
     FormlyModule,
-    FormlySAMUIModule,FontAwesomeModule
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -75,6 +72,6 @@ export class AppModule {
     };
   }
   constructor() {
-  //  library.add(sdsIcons, appIcons);
+   library.add(sdsIcons, appIcons);
   }
 }

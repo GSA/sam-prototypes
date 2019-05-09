@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, Router, CanActivate } from '@angular/router';
-import { Observable } from "rxjs/Rx"
 import { SamModelService } from '../model/sam-model.service';
 
 @Injectable({
