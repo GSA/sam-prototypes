@@ -5,15 +5,12 @@
     "types": ["node"],
   },
   "include": [
-    "**/*.ts",
-    "../node_modules/@gsa-sam/sam-ui-elements"
+    "**/*.ts"
   ],
   "exclude": [
     "./test.ts",
     "**/*.e2e.ts",
     "**/*.e2e-spec.ts",
-    "**/*.spec.ts",
-    "../node_modules/@gsa-sam/sam-ui-elements/test-app",
-    "../node_modules/@gsa-sam/sam-ui-elements/**/*.spec.ts"
+    "**/*.spec.ts"
   ]
 }

@@ -6,9 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { SamToolsModule } from './sam-ui-elements/tools/tools.module';
 import { SamFederalSiteBannerModule } from './sam-components/sam-federal-site-banner/sam-federal-site-banner.module';
-import { SamHeaderModule } from './sam-components/sam-header/sam-header.module';
+//import { SamHeaderModule } from './sam-components/sam-header/sam-header.module';
 import { SamSubheaderModule } from './sam-components/sam-subheader/sam-subheader.module';
-import { SamFooterModule } from './sam-components/sam-footer/sam-footer.module';
+//import { SamFooterModule } from './sam-components/sam-footer/sam-footer.module';
 import { SamSidebarModule } from './sam-ui-elements/sam-sidebar/sam-sidebar.module';
 import { AppComponent } from './app.component';
 import { SamModelService } from './model/sam-model.service';
@@ -18,14 +18,21 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { reducers, metaReducers } from './store/reducers';
-import { SamUIKitModule } from '@gsa-sam/sam-ui-elements';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { PublicWorkspaceComponent } from './workspace/public-workspace.component';
+import { SdsHeaderModule, SdsFooterModule } from '@gsa-sam/components';
 import { FormlyModule } from '@ngx-formly/core';
-import {FormlySAMUIModule} from '@gsa-sam/sam-ui-elements/src/formly';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { sdsIcons } from '@gsa-sam/components';
+
+
+const appIcons = {
+  // App Specific Icons
+ };
 
 @NgModule({
   declarations: [
@@ -42,16 +49,15 @@ import {FormlySAMUIModule} from '@gsa-sam/sam-ui-elements/src/formly';
     AppRoutingModule,
     SamFederalSiteBannerModule,
     SamToolsModule,
-    SamHeaderModule,
+    SdsHeaderModule,
     SamSubheaderModule,
-    SamFooterModule,
+    SdsFooterModule,
     SamSidebarModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([AppEffects]),
-    SamUIKitModule,
     FormlyModule,
-    FormlySAMUIModule
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -61,7 +67,10 @@ export class AppModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: AppModule,
-      providers: [ SamModelService ]
+      providers: [SamModelService]
     };
+  }
+  constructor() {
+   library.add(sdsIcons, appIcons);
   }
 }
