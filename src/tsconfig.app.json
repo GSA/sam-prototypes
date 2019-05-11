@@ -2,15 +2,10 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
-    "types": ["node"],
+    "types": []
   },
-  "include": [
-    "**/*.ts"
-  ],
   "exclude": [
-    "./test.ts",
-    "**/*.e2e.ts",
-    "**/*.e2e-spec.ts",
+    "test.ts",
     "**/*.spec.ts"
   ]
 }
