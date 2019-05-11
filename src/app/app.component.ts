@@ -11,7 +11,6 @@ import { filter, map } from "rxjs/operators";
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
-  styleUrls: ["./_styles.scss"]
 })
 export class AppComponent {
   title = "sam-gov";

@@ -1,14 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { RouterModule, RouterLink, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 
 import { SamToolsModule } from './sam-ui-elements/tools/tools.module';
 import { SamFederalSiteBannerModule } from './sam-components/sam-federal-site-banner/sam-federal-site-banner.module';
-//import { SamHeaderModule } from './sam-components/sam-header/sam-header.module';
-import { SamSubheaderModule } from './sam-components/sam-subheader/sam-subheader.module';
-//import { SamFooterModule } from './sam-components/sam-footer/sam-footer.module';
 import { SamSidebarModule } from './sam-ui-elements/sam-sidebar/sam-sidebar.module';
 import { AppComponent } from './app.component';
 import { SamModelService } from './model/sam-model.service';
@@ -48,7 +45,6 @@ const appIcons = {
     SamFederalSiteBannerModule,
     SamToolsModule,
     SdsHeaderModule,
-    SamSubheaderModule,
     SdsFooterModule,
     SamSidebarModule,
     StoreModule.forRoot(reducers, { metaReducers }),
