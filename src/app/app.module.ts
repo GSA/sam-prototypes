@@ -20,7 +20,6 @@ import { AppEffects } from './app.effects';
 import { reducers, metaReducers } from './store/reducers';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { PublicWorkspaceComponent } from './workspace/public-workspace.component';
 import { SdsHeaderModule, SdsFooterModule } from '@gsa-sam/components';
@@ -43,7 +42,6 @@ const appIcons = {
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
-    HttpModule,
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
