@@ -28,14 +28,9 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "stylePreprocessorOptions": {
-              "includePaths": [
-                "src/styles"
-              ]
-            },
             "styles": [
               "node_modules/@gsa-sam/sam-styles/src/stylesheets/sam.scss",
-              "src/styles/sam-proto-styles/sam-proto-styles.scss"
+              "src/styles.scss"
             ],
             "scripts": [
               "node_modules/uswds/dist/js/uswds.min.js"
