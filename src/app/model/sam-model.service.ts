@@ -2,7 +2,7 @@ import { Injectable, ElementRef } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import { ToolItem } from '../sam-ui-elements/tools';
 import { GlobalTools, SearchTools } from './tools.config';
-
+import { NavigationMode } from '@gsa-sam/components';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,31 +15,31 @@ export class SamModelService {
 
   signInItem =
     {
-      imageClassPrefix: 'fas', imageClass: 'sign-out-alt',
+      imageClassPrefix: 'fas', imageClass: 'sign-out-alt', mode: NavigationMode.INTERNAL,
       text: 'Sign In', route: '/', id: 'signin'
     };
   signOutItem =
     {
-      imageClassPrefix: 'fas', imageClass: 'sign-out-alt',
+      imageClassPrefix: 'fas', imageClass: 'sign-out-alt', mode: NavigationMode.INTERNAL,
       text: 'Sign Out', route: '/', id: 'signOut'
     };
 
   secondaryLinks = [{
-    imageClassPrefix: 'fas', imageClass: 'comment', text: 'Messages', route: '/messages', id: 'messages'
+    imageClassPrefix: 'fas', imageClass: 'comment', text: 'Messages', route: '/messages', mode: NavigationMode.INTERNAL, id: 'messages'
   },
   {
-    imageClassPrefix: 'fas', imageClass: 'edit',
+    imageClassPrefix: 'fas', imageClass: 'edit', mode: NavigationMode.INTERNAL,
     text: 'Requests', route: '/', id: 'request'
   },
   {
-    imageClassPrefix: 'fas', imageClass: 'th', imageAltText: 'Workspace Icon',
+    imageClassPrefix: 'fas', imageClass: 'th', imageAltText: 'Workspace Icon', mode: NavigationMode.INTERNAL,
     text: 'Workspace', route: '/workspace', id: 'workspace'
   }];
   navigationLinks: [
-    { text: 'Search', route: '/search', id: 'search' },
-    { text: 'Databank', route: '/databank', id: 'databank' },
-    { text: 'Data Services', route: '/dataservices', id: 'dataService' },
-    { text: 'Help', route: '/help', id: 'help' }
+    { text: 'Search', route: '/search', mode: NavigationMode.INTERNAL, id: 'search' },
+    { text: 'Databank', route: '/databank', mode: NavigationMode.INTERNAL, id: 'databank' },
+    { text: 'Data Services', route: '/dataservices', mode: NavigationMode.INTERNAL, id: 'dataService' },
+    { text: 'Help', route: '/help', mode: NavigationMode.INTERNAL, id: 'help' }
   ];
 
 
@@ -48,16 +48,16 @@ export class SamModelService {
   modelHeader = {
     secondaryLinks: this.secondaryLinks.concat([this.signOutItem]),
     navigationLinks: [
-      { text: 'Search', route: '/search', id: 'search' },
-      { text: 'Databank', route: '/databank', id: 'databank' },
-      { text: 'Data Services', route: '/dataservices', id: 'dataService' },
-      { text: 'Help', route: '/help', id: 'help' }
+      { text: 'Search', route: '/search', mode: NavigationMode.INTERNAL, id: 'search' },
+      { text: 'Databank', route: '/databank', mode: NavigationMode.INTERNAL, id: 'databank' },
+      { text: 'Data Services', route: '/dataservices', mode: NavigationMode.INTERNAL, id: 'dataService' },
+      { text: 'Help', route: '/help', mode: NavigationMode.INTERNAL, id: 'help' }
     ],
     home: {
       text: 'Home',
       route: '/',
       imageSourcePath: '/assets/img/sam-r9-logo-color.png',
-      imageAltText: 'Beta Sam Logo',
+      imageAltText: 'Beta Sam Logo', mode: NavigationMode.INTERNAL,
       id: 'home'
     }
   };
@@ -71,24 +71,24 @@ export class SamModelService {
     linkSections: [
       {
         text: 'About beta.SAM.gov', links: [
-          { text: 'Explore Our Community', route: '/' },
-          { text: 'Release Notes', route: '/' }
+          { text: 'Explore Our Community', mode: NavigationMode.INTERNAL, route: '/' },
+          { text: 'Release Notes', mode: NavigationMode.INTERNAL, route: '/' }
         ]
       },
       {
         text: 'Our Partners', links: [
-          { text: 'Aquisition.gov', route: '/' },
-          { text: 'USASpending.gov', route: '/' },
-          { text: 'Grants.gov', route: '/' },
-          { text: 'More Partners', route: '/' },
+          { text: 'Aquisition.gov', mode: NavigationMode.INTERNAL, route: '/' },
+          { text: 'USASpending.gov', mode: NavigationMode.INTERNAL, route: '/' },
+          { text: 'Grants.gov', mode: NavigationMode.INTERNAL, route: '/' },
+          { text: 'More Partners', mode: NavigationMode.INTERNAL, route: '/' },
         ]
       },
       {
         text: 'Customer Service', links: [
-          { text: 'Learning Center', route: '/' },
-          { text: 'Contact Federal Service Desk', route: '/' },
-          { text: 'Resources', route: '/' },
-          { text: 'Freedom of Information Act', route: '/' },
+          { text: 'Learning Center', mode: NavigationMode.INTERNAL, route: '/' },
+          { text: 'Contact Federal Service Desk', mode: NavigationMode.INTERNAL, route: '/' },
+          { text: 'Resources', mode: NavigationMode.INTERNAL, route: '/' },
+          { text: 'Freedom of Information Act', mode: NavigationMode.INTERNAL, route: '/' },
         ]
       }
     ]
