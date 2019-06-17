@@ -29,10 +29,10 @@ export class WorkspaceComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    console.log(this.sideNav);
+    console.log(this.sideNavModel);
     this.change.detectChanges();
   }
-  public sideNav: SideNavigationModel = {
+  public sideNavModel: SideNavigationModel = {
     navigationLinks: [
       { id: 'workspacehome', text: 'Workspace Home', mode: NavigationMode.INTERNAL, route: '/workspace' },
       {
@@ -40,93 +40,116 @@ export class WorkspaceComponent implements OnInit, AfterViewInit {
           { id: 'contractOpportunityForecasts', text: 'Contract Opportunity Forecasts', mode: NavigationMode.INTERNAL, route: '/workspace/contractopportunities' },
           { id: 'contractOpportunites', text: 'Contract Opportunities', mode: NavigationMode.INTERNAL, route: '/workspace/contractopportunities' },
           { id: 'contractData', text: 'Contract Data', mode: NavigationMode.INTERNAL, route: '/workspace/contractdata' }
+        ]
+      }, {
+        id: 'federalAssistance', text: 'Federal Assistance', mode: NavigationMode.INTERNAL, route: '/workspace/fal/dashboard', children: [
 
+          {
+            id: 'assistancelist', mode: NavigationMode.INTERNAL,
+            route: '/workspace/fal/assistancelist', text: 'Assistance Listings'
+          },
+          {
+            id: 'cfdanumber', mode: NavigationMode.INTERNAL,
+            route: '/workspace/fal/cfdanumber', text: 'CFDA Numbers'
+          },
+          {
+            id: 'regionallocation', mode: NavigationMode.INTERNAL,
+            route: '/workspace/fal/regionallocation', text: 'Regional Locations'
+          }
+        ]
+      },
+      {
+        id: 'entityInformation', text: 'Entity Information', route: '/workspace/entities/dashboard', mode: NavigationMode.INTERNAL, children: [
+          {
+            id: 'registrations', mode: NavigationMode.INTERNAL,
+            route: '/workspace/registrations', text: 'Entity Registrations'
+          },
+          {
+            id: 'exclusions', mode: NavigationMode.INTERNAL,
+            route: '/workspace/exclusions', text: 'Exclusions'
+          },
+          {
+            id: 'integrityinfo', mode: NavigationMode.INTERNAL,
+            route: '/workspace/integrity', text: 'Integrity Information'
+          }]
+      },
+      {
+        id: 'compliance', mode: NavigationMode.INTERNAL,
+        route: '/workspace/compliance/dashboard', text: 'Compliance'
+        , children: [
+          {
+            id: 'pastperformance', mode: NavigationMode.INTERNAL,
+            route: '/workspace/compliance/pastperformance', text: 'Past Performance'
+          },
+          {
+            id: 'ffatasubaward', mode: NavigationMode.INTERNAL,
+            route: '/workspace/ffatasubaward', text: 'FFATA Sub-Awards'
+          },
+          {
+            id: 'far19subaward', mode: NavigationMode.INTERNAL,
+            route: '/workspace/far19subaward', text: 'FAR 19 Sub-Awards'
+          },
+          {
+            id: 'biopreferred', mode: NavigationMode.INTERNAL,
+            route: '/workspace/biopreferred', text: 'Bio-Preferred Reports'
+          },
+          {
+            id: 'src', mode: NavigationMode.INTERNAL,
+            route: '/workspace/scr', text: 'Service Contract Reports'
+          }
+        ]
+      },
+      {
+        id: 'federalHierarchy', route: '/workspace', mode: NavigationMode.INTERNAL,
+        text: 'Federal Hierarchy'
+      },
+      {
+        id: 'admin', route: '/workspace/admin', mode: NavigationMode.INTERNAL,
+        text: 'Administration',
+        children: [
+          {
+            id: 'users', mode: NavigationMode.INTERNAL,
+            route: '/workspace/admin/users', text: 'User Directory'
+          }
+          ,
+          {
+            id: 'systemusers', mode: NavigationMode.INTERNAL,
+            route: '/workspace/admin/systemusers', text: 'System Accounts'
+          }
+        ]
+      },
+
+      {
+        id: 'profile', route: '/workspace/profile', mode: NavigationMode.INTERNAL,
+        text: 'User Profile',
+        children: [
+          {
+            id: 'reset', mode: NavigationMode.INTERNAL,
+            route: '/workspace/reset', text: 'Reset Password'
+          },
+          {
+            id: 'roles', mode: NavigationMode.INTERNAL,
+            route: '/workspace/roles', text: 'Roles'
+          }
         ]
       }
     ]
   };
 
 
+
+
+
   //   <ul class="usa-sidenav">
 
-  //   <li>
-  //     <a [class.usa-current]="workspaceModel.isPageInDomain('contractinginfo')" [routerLink]="['/workspace']"
-  //       [queryParams]="{}">Contracting</a>
-  //     <ul class="usa-sidenav-sublist">
-  //       <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'contractopportunities'"
-  //           [routerLink]="['/workspace/contractopportunities']" [queryParams]="{}">Contract Opportunity
-  //           Forecasts</a></li>
-  //       <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'contractopportunities'"
-  //           [routerLink]="['/workspace/contractopportunities']" [queryParams]="{}">Contract Opportunities</a></li>
-  //       <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'contractdata'"
-  //           [routerLink]="['/workspace/contractdata']" [queryParams]="{}">Contract Data</a></li>
-  //     </ul>
-  //   </li>
-  //   <li class="usa-sidenav-item">
-  //     <a [class.usa-current]="workspaceModel.isPageInDomain('assistancelist')"
-  //       [routerLink]="['/workspace/fal/dashboard']" [queryParams]="{}">Federal Assistance</a>
-  //     <ul class="usa-sidenav-sublist">
-  //       <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page === 'assistancelist'"
-  //           [routerLink]="['/workspace/fal/assistancelist']" [queryParams]="{}">Assistance Listings</a></li>
-  //       <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page === 'cfdanumber'"
-  //           [routerLink]="['/workspace/fal/cfdanumber']" [queryParams]="{}">CFDA Numbers</a></li>
-  //       <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page === 'regionallocation'"
-  //           [routerLink]="['/workspace/fal/regionallocation']" [queryParams]="{}">Regional Locations</a></li>
-  //     </ul>
-  //   </li>
-  //   <li class="usa-sidenav-item">
-  //     <a [class.usa-current]="workspaceModel.isPageInDomain('entityinfo')"
-  //       [routerLink]="['/workspace/entities/dashboard']" [queryParams]="{domain:'entityinfo'}">Entity
-  //       Information</a>
-  //     <ul class="usa-sidenav-sublist">
-  //       <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'registrations'"
-  //           [routerLink]="['/workspace/registrations']" [queryParams]="{}">Entity Registrations</a></li>
-  //       <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'exclusions'"
-  //           [routerLink]="['/workspace/exclusions']" [queryParams]="{}">Exclusions</a></li>
-  //       <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'integrityinfo'"
-  //           [routerLink]="['/workspace/integrity']" [queryParams]="{}">Integrity Information</a></li>
-  //     </ul>
-  //   </li>
-  //   <li class="usa-sidenav-item">
-  //     <a [class.usa-current]="workspaceModel.isPageInDomain('compliance')"
-  //       [routerLink]="['/workspace/compliance/dashboard']" [queryParams]="{}">Compliance</a>
-  //     <ul class="usa-sidenav-sublist">
-  //       <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'pastperformance'"
-  //           [routerLink]="['/workspace/compliance/pastperformance']" [queryParams]="{domain:'registration'}">Past
-  //           Performance</a></li>
-  //       <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'ffatasubaward'"
-  //           [routerLink]="['/workspace/ffatasubaward']" [queryParams]="{}">FFATA Sub-Awards</a></li>
-  //       <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'far19subaward'"
-  //           [routerLink]="['/workspace/far19subaward']" [queryParams]="{}">FAR 19 Sub-Awards</a></li>
-  //       <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'biopreferred'"
-  //           [routerLink]="['/workspace/biopreferred']" [queryParams]="{}">Bio-Preferred Reports</a></li>
-  //       <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'src'"
-  //           [routerLink]="['/workspace/scr']" [queryParams]="{}">Service Contract Reports</a></li>
-  //     </ul>
-  //   </li>
-  //   <li class="usa-sidenav-item">
-  //     <a [class.usa-current]="domain == 'hierarchy'" [routerLink]="['/workspace']"
-  //       [queryParams]="{domain:'hierarchy'}">Federal Hierarchy</a>
-  //   </li>
-  //   <li class="usa-sidenav-item">
-  //     <a [class.usa-current]="workspaceModel.isPageInDomain('admin')" [routerLink]="['/workspace/admin']"
-  //       [queryParams]="{}">Administration</a>
-  //     <ul class="usa-sidenav-sublist">
-  //       <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'users'"
-  //           [routerLink]="['/workspace/admin/users']" [queryParams]="{}">User Directory</a>
-  //       </li>
-  //       <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'systemusers'"
-  //           [routerLink]="['/workspace/admin/systemusers']" [queryParams]="{}">System Accounts</a></li>
-  //     </ul>
-  //   </li>
-  //   <li class="usa-sidenav-item">
-  //     <a [class.usa-current]="workspaceModel.isPageInDomain('profile')" [routerLink]="['/workspace/profile']"
-  //       [queryParams]="{}">User Profile</a>
-  //     <ul class="usa-sidenav-sublist">
-  //       <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'reset'"
-  //           [routerLink]="['/workspace/reset']" [queryParams]="{}">Reset Password</a></li>
-  //       <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'roles'"
-  //           [routerLink]="['/workspace/roles']" [queryParams]="{}">Roles</a></li>
+  //   <li >
+  //     { id: 'profile', route:'/workspace/profile']"
+  //       >User Profile</a>
+  //     <ul children: [
+  //       { id: 'reset',
+  //           route:'/workspace/reset', text: 'Reset Password'}
+  //       { id: 'roles',
+  //           route:'/workspace/roles', text: 'Roles'}
   //     </ul>
   //   </li>
   // </ul>
