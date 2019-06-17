@@ -62,11 +62,12 @@ const routes: Routes = [
 				redirectTo: 'dashboard'
 			}
 		]
-	},
-	{
-		path: 'public',
-		component: PublicWorkspaceComponent
-	}
+	 }
+	//,
+	// {
+	// 	path: 'public',
+	// 	component: PublicWorkspaceComponent
+	// }
 ];
 
 @NgModule({
