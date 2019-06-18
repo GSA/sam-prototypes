@@ -9,9 +9,9 @@ import { SamSearchInputModule } from '../../sam-ui-elements/sam-search-input/sam
 import { EntitiesListComponent } from './entities-list/entities-list.component';
 import { EntitiesWorkspaceRoutingModule } from './entities-workspace-routing.module';
 import { SearchListServiceModule } from '@gsa-sam/layouts';
-import { SearchResultListEntityDataItemComponent } from './entities-list/entity-entry/search-list-item-entity.component';
-import { EntityListComponent } from './entities-list/entity-list.component';
-import { EntityService } from '../entities-service/entity.service';
+import { SearchResultListEntityDataItemComponent } from '../../workspace/entities/entity-entry/search-list-item-entity.component';
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -23,7 +23,7 @@ import { EntityService } from '../entities-service/entity.service';
     SearchListServiceModule,
     SearchResultListEntityDataItemComponent
   ],
-  declarations: [EntitiesListComponent, EntityListComponent],
-  providers: [EntityService]
+  declarations: [EntitiesListComponent],
+  providers: []
 })
 export class EntitiesWorkspaceModule { }

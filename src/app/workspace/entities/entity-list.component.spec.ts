@@ -1,24 +1,24 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EntitiesListComponent } from './entities-list.component';
+import { EntityListComponent } from './entity-list.component';
 import { Store, StoreModule } from '@ngrx/store';
 
-describe('EntitiesListComponent', () => {
-  let component: EntitiesListComponent;
-  let fixture: ComponentFixture<EntitiesListComponent>;
+describe('EntityListComponent', () => {
+  let component: EntityListComponent;
+  let fixture: ComponentFixture<EntityListComponent>;
   let store: Store<any>;
 
   beforeEach(async() => {
     TestBed.configureTestingModule({
       imports: [ StoreModule.forRoot({}) ],
-      declarations: [ EntitiesListComponent ]
+      declarations: [ EntityListComponent ]
     });
 
     await TestBed.compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EntitiesListComponent);
+    fixture = TestBed.createComponent(EntityListComponent);
     component = fixture.componentInstance;
     store = TestBed.get(Store);
 
