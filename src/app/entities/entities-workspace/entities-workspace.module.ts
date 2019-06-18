@@ -9,7 +9,7 @@ import { SamSearchInputModule } from '../../sam-ui-elements/sam-search-input/sam
 import { EntitiesListComponent } from './entities-list/entities-list.component';
 import { EntitiesWorkspaceRoutingModule } from './entities-workspace-routing.module';
 import { SearchListServiceModule } from '@gsa-sam/layouts';
-import { SearchResultListEntityDataItemComponent } from '../../workspace/entities/entity-entry/search-list-item-entity.component';
+
 
 
 @NgModule({
@@ -20,8 +20,7 @@ import { SearchResultListEntityDataItemComponent } from '../../workspace/entitie
     EntitiesWorkspaceRoutingModule,
     StoreModule.forFeature('entities', fromEntities.reducer),
     EffectsModule.forFeature([EntitiesEffects]),
-    SearchListServiceModule,
-    SearchResultListEntityDataItemComponent
+    SearchListServiceModule
   ],
   declarations: [EntitiesListComponent],
   providers: []
