@@ -6,11 +6,59 @@ export class EntityService implements SearchListInterface {
     getData(search: SearchParameters): Observable<SearchResult> {
         let start = search.page.pageNumber * search.page.pageSize - search.page.pageSize;
         let end = start + search.page.pageSize;
+        let itemList = data.entityData;
+        let valueA = '';
+        let valueB = '';
+        let lessValueExpress = -1;
+        let moreValueExpress = 1;
+        itemList.sort((a, b) => {
+            switch (search.sortField) {
+                case 'expirationDateAscending':
+                    lessValueExpress = -1;
+                    moreValueExpress = 1;
+                    valueA = a.entityRegistration.expirationDate;
+                    valueB = b.entityRegistration.expirationDate;
+                    break;
+                case 'expirationDateDescending':
+                    lessValueExpress = 1;
+                    moreValueExpress = -1;
+                    valueA = a.entityRegistration.expirationDate;
+                    valueB = b.entityRegistration.expirationDate;
+                    break;
+                case 'titleA-Z':
+                    lessValueExpress = -1;
+                    moreValueExpress = 1;
+                    valueA = a.entityRegistration.legalBusinessName;
+                    valueB = b.entityRegistration.legalBusinessName;
+                    break;
+                case 'titleZ-A':
+                    lessValueExpress = 1;
+                    moreValueExpress = -1;
+                    valueA = a.entityRegistration.legalBusinessName;
+                    valueB = b.entityRegistration.legalBusinessName;
+                    break;
+                default:
+                    break;
+            }
+
+            if (valueA < valueB) {
+                return lessValueExpress;
+            }
+            else if (valueA > valueB) {
+                return moreValueExpress;
+            }
+            else {
+                return 0;
+            }
+        });
         //SORT DATA
         return of({
-            items: data.entityData.slice(start, end),
-            totalItems: data.entityData.length
+            items: itemList.slice(start, end),
+            totalItems: itemList.length
         });
     }
+
+
+
 
 }

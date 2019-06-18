@@ -16,8 +16,13 @@ export class EntityListComponent implements OnInit {
   }
 
   configuration: SearchListConfiguration = {
-    defaultSortValue: '', pageSize: 25,
-    sortList: [{ text: '', value: '' }]
+    defaultSortValue: 'expirationDateAscending', pageSize: 25,
+    sortList: [{ text: 'Expiration Date Ascending', value: 'expirationDateAscending' },
+    { text: 'Expiration Date Descending', value: 'expirationDateDescending' },
+    { text: 'Title A - Z', value: 'titleA-Z' },
+    { text: 'Title Z - A', value: 'titleZ-A' },
+    ]
+
   }
 
 

@@ -9,7 +9,7 @@ import { SdsSideNavigationModule, SdsToolbarModule, SdsAccordionModule, SdsPageM
     CommonModule,
     WorkspaceRoutingModule, SdsSideNavigationModule,
     SdsToolbarModule, SdsAccordionModule, WorkspaceModelModule.forRoot(),
-    SdsPageModule,    SdsToolbarModule, SdsSideNavigationModule, SdsAccordionModule
+    SdsPageModule, SdsToolbarModule, SdsSideNavigationModule, SdsAccordionModule
   ],
   declarations: [WorkspaceComponent],
   exports: [WorkspaceComponent]
