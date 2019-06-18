@@ -1,12 +1,26 @@
 import { data } from './entity.data';
 import { Observable, of } from 'rxjs';
 import { SearchParameters, SearchListInterface, SearchResult } from '@gsa-sam/layouts';
-
+import { EntityData } from './entity.model';
 export class EntityService implements SearchListInterface {
     getData(search: SearchParameters): Observable<SearchResult> {
         let start = search.page.pageNumber * search.page.pageSize - search.page.pageSize;
         let end = start + search.page.pageSize;
         let itemList = data.entityData;
+        console.log('COUNT:');
+        console.log(itemList.length+0);
+        this.sortEntityItem(itemList, search);
+        return of({
+            items: itemList.slice(start, end),
+            totalItems: itemList.length
+        });
+    }
+
+
+
+
+
+    private sortEntityItem(itemList: EntityData[], search: SearchParameters) {
         let valueA = '';
         let valueB = '';
         let lessValueExpress = -1;
@@ -40,7 +54,6 @@ export class EntityService implements SearchListInterface {
                 default:
                     break;
             }
-
             if (valueA < valueB) {
                 return lessValueExpress;
             }
@@ -51,14 +64,5 @@ export class EntityService implements SearchListInterface {
                 return 0;
             }
         });
-        //SORT DATA
-        return of({
-            items: itemList.slice(start, end),
-            totalItems: itemList.length
-        });
     }
-
-
-
-
 }
