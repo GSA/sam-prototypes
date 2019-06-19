@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { EntitiesComponent } from './entities.component';
+import { EntityListComponent } from './entity-list.component';
 
 const routes: Routes = [
 	{
 		path: '',
-		component: EntitiesComponent
+		component: EntityListComponent
 	}
 ];
 

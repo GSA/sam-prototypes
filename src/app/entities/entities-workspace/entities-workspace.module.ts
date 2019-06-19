@@ -8,6 +8,7 @@ import { SamSidebarModule } from '../../sam-ui-elements/sam-sidebar/sam-sidebar.
 import { SamSearchInputModule } from '../../sam-ui-elements/sam-search-input/sam-search-input.module';
 import { EntitiesListComponent } from './entities-list/entities-list.component';
 import { EntitiesWorkspaceRoutingModule } from './entities-workspace-routing.module';
+import { SearchListServiceModule } from '@gsa-sam/layouts';
 
 @NgModule({
   imports: [
@@ -16,8 +17,10 @@ import { EntitiesWorkspaceRoutingModule } from './entities-workspace-routing.mod
     SamSearchInputModule,
     EntitiesWorkspaceRoutingModule,
     StoreModule.forFeature('entities', fromEntities.reducer),
-    EffectsModule.forFeature([EntitiesEffects])
+    EffectsModule.forFeature([EntitiesEffects]),
+    SearchListServiceModule
   ],
-  declarations: [EntitiesListComponent]
+  declarations: [EntitiesListComponent],
+  providers: []
 })
 export class EntitiesWorkspaceModule { }
