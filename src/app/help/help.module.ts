@@ -6,6 +6,7 @@ import { SamListModule } from '../sam-ui-elements/sam-list/sam-list.module';
 import { SamSearchInputModule } from '../sam-ui-elements/sam-search-input/sam-search-input.module';
 import { HelpRoutingModule } from './help-routing.module';
 import { HelpComponent } from './help.component';
+import { SdsSubheaderModule } from '@gsa-sam/layouts';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { HelpComponent } from './help.component';
     SamSidebarModule,
     SamListModule,
     SamSearchInputModule,
-    HelpRoutingModule
+    HelpRoutingModule,
+    SdsSubheaderModule
   ],
   declarations: [HelpComponent]
 })
