@@ -11,39 +11,66 @@ const routes: Routes = [
 		children: [
 			{
 				path: '',
-				redirectTo: 'dashboard'
+				redirectTo: 'dashboard',
+				data: {
+				  id: "workspace"
+				}
 			},
 			{
 				path: 'dashboard',
-				loadChildren: './dashboard/dashboard.module#DashboardModule'
+				loadChildren: './dashboard/dashboard.module#DashboardModule',
+				data: {
+				  id: "workspace"
+				}
 			},
 			{
 				path: 'contractopportunities',
-				loadChildren: './opportunities/opportunities.module#OpportunitiesModule'
+				loadChildren: './opportunities/opportunities.module#OpportunitiesModule',
+				data: {
+				  id: "workspace"
+				}
 			},
 			{
 				path: 'contractdata',
-				loadChildren: './contractdata/contractdata.module#ContractdataModule'
+				loadChildren: './contractdata/contractdata.module#ContractdataModule',
+				data: {
+				  id: "workspace"
+				}
 			},
 			{
 				path: 'fal',
-				loadChildren: './assistance/assistance.module#AssistanceModule'
+				loadChildren: './assistance/assistance.module#AssistanceModule',
+				data: {
+				  id: "workspace"
+				}
 			},
 			{
 				path: 'registrations',
-				loadChildren: './entities/entities.module#EntitiesModule'
+				loadChildren: './entities/entities.module#EntitiesModule',
+				data: {
+				  id: "workspace"
+				}
 			},
 			{
 				path: 'exclusions',
-				loadChildren: './exclusions/exclusions.module#ExclusionsModule'
+				loadChildren: './exclusions/exclusions.module#ExclusionsModule',
+				data: {
+				  id: "workspace"
+				}
 			},
 			{
 				path: 'integrity',
-				loadChildren: './integrity/integrity.module#IntegrityModule'
+				loadChildren: './integrity/integrity.module#IntegrityModule',
+				data: {
+				  id: "workspace"
+				}
 			},
 			{
 				path: 'profile',
-				loadChildren: './profile/profile.module#ProfileModule'
+				loadChildren: './profile/profile.module#ProfileModule',
+				data: {
+				  id: "workspace"
+				}
 			},
 			{
 				path: 'customerservice',
@@ -62,7 +89,7 @@ const routes: Routes = [
 				redirectTo: 'dashboard'
 			}
 		]
-	 }
+	}
 	//,
 	// {
 	// 	path: 'public',
@@ -71,7 +98,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule]
 })
 export class WorkspaceRoutingModule { }
