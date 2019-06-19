@@ -1,4 +1,4 @@
-<div class="grid-row sam subheader">
+<!-- <div class="grid-row sam subheader">
   <div class="grid-col-auto">
     <h2>{{workspaceModel.title}}</h2>
   </div>
@@ -6,123 +6,25 @@
     <form *ngIf="workspaceModel.showSearchBar" class="usa-search usa-search-small">
       <div role="search">
         <label class="usa-sr-only" for="search-field-small">Search</label>
-        <input class="sam search-input usa-input" id="search-field-small" type="search" name="search" placeholder="{{workspaceModel.placeholderText}}">
+        <input class="sam search-input usa-input" id="search-field-small" type="search" name="search"
+          placeholder="{{workspaceModel.placeholderText}}">
         <button class="sam search-button usa-button" type="submit">
           <span class="usa-sr-only">Search</span>
         </button>
       </div>
     </form>
   </div>
-</div>
-<div class="sam page grid-row">
-  <div *ngIf="workspaceModel.view=='open'" class="grid-col-3 sam sidebar">
-    <div class="sam sidebar section grid-row">
-      <div class="grid-col-auto">
-        <button class="sam viewswitcher" (click)="setView('closed')"><img height="32px" src="./assets/img/view-open.png"></button>
-      </div>
-    </div>
-    <div [ngClass]="{'sam': true, 'sidebar': true, 'section': true, 'selected': workspaceModel.showNav}">
-      <div class="grid-row" (click)="workspaceModel.showNav=!workspaceModel.showNav">
-        <div class="grid-col-fill">
-          <h4>Go To Workspace</h4>
-        </div>
-        <div class="grid-auto">
-          <div class="sam circle" *ngIf="!workspaceModel.showNav">+</div>
-          <div class="sam circle" *ngIf="workspaceModel.showNav">-</div>
-        </div>
-      </div>
-            <nav *ngIf="workspaceModel.showNav">
-        <ul class="usa-sidenav">
-            <li class="usa-sidenav-item">
-                <a [class.usa-current]="workspaceModel.page == 'dashboard'" [routerLink]="['/workspace']" [queryParams]="{}">Workspace Home</a>
-            </li> 
-            <li>
-            <a [class.usa-current]="workspaceModel.isPageInDomain('contractinginfo')" [routerLink]="['/workspace']" [queryParams]="{}">Contracting</a>
-            <ul class="usa-sidenav-sublist">
-              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'contractopportunities'" [routerLink]="['/workspace/contractopportunities']" [queryParams]="{}">Contract Opportunity Forecasts</a></li>
-              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'contractopportunities'" [routerLink]="['/workspace/contractopportunities']" [queryParams]="{}">Contract Opportunities</a></li>
-              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'contractdata'" [routerLink]="['/workspace/contractdata']" [queryParams]="{}">Contract Data</a></li>
-            </ul>
-          </li> 
-          <li class="usa-sidenav-item">
-            <a [class.usa-current]="workspaceModel.isPageInDomain('assistancelist')" [routerLink]="['/workspace/fal/dashboard']" [queryParams]="{}">Federal Assistance</a>
-            <ul class="usa-sidenav-sublist">
-              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page === 'assistancelist'" [routerLink]="['/workspace/fal/assistancelist']" [queryParams]="{}">Assistance Listings</a></li>
-              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page === 'cfdanumber'" [routerLink]="['/workspace/fal/cfdanumber']" [queryParams]="{}">CFDA Numbers</a></li>
-              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page === 'regionallocation'" [routerLink]="['/workspace/fal/regionallocation']" [queryParams]="{}">Regional Locations</a></li>
-            </ul>
-          </li>          
-          <li class="usa-sidenav-item">
-            <a [class.usa-current]="workspaceModel.isPageInDomain('entityinfo')" [routerLink]="['/workspace/entities/dashboard']" [queryParams]="{domain:'entityinfo'}">Entity Information</a>
-            <ul class="usa-sidenav-sublist">
-              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'registrations'" [routerLink]="['/workspace/registrations']" [queryParams]="{}">Entity Registrations</a></li>
-              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'exclusions'" [routerLink]="['/workspace/exclusions']" [queryParams]="{}">Exclusions</a></li>
-              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'integrityinfo'" [routerLink]="['/workspace/integrity']" [queryParams]="{}">Integrity Information</a></li>
-            </ul>
-          </li>
-          <li class="usa-sidenav-item">
-            <a [class.usa-current]="workspaceModel.isPageInDomain('compliance')" [routerLink]="['/workspace/compliance/dashboard']" [queryParams]="{}">Compliance</a>
-            <ul class="usa-sidenav-sublist">
-              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'pastperformance'" [routerLink]="['/workspace/compliance/pastperformance']" [queryParams]="{domain:'registration'}">Past Performance</a></li>
-              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'ffatasubaward'" [routerLink]="['/workspace/ffatasubaward']" [queryParams]="{}">FFATA Sub-Awards</a></li>
-              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'far19subaward'" [routerLink]="['/workspace/far19subaward']" [queryParams]="{}">FAR 19 Sub-Awards</a></li>
-              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'biopreferred'" [routerLink]="['/workspace/biopreferred']" [queryParams]="{}">Bio-Preferred Reports</a></li>
-              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'src'" [routerLink]="['/workspace/scr']" [queryParams]="{}">Service Contract Reports</a></li>
-            </ul>
-          </li>
-          <li class="usa-sidenav-item">
-            <a [class.usa-current]="domain == 'hierarchy'" [routerLink]="['/workspace']" [queryParams]="{domain:'hierarchy'}">Federal Hierarchy</a>
-          </li>
-          <li class="usa-sidenav-item">
-            <a [class.usa-current]="workspaceModel.isPageInDomain('admin')" [routerLink]="['/workspace/admin']" [queryParams]="{}">Administration</a>
-              <ul class="usa-sidenav-sublist">
-                <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'users'" [routerLink]="['/workspace/admin/users']" [queryParams]="{}">User Directory</a>
-                </li>
-                <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'systemusers'" [routerLink]="['/workspace/admin/systemusers']" [queryParams]="{}">System Accounts</a></li>
-              </ul>
-          </li>
-          <li class="usa-sidenav-item">
-            <a [class.usa-current]="workspaceModel.isPageInDomain('profile')" [routerLink]="['/workspace/profile']" [queryParams]="{}">User Profile</a>
-            <ul class="usa-sidenav-sublist">
-              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'reset'" [routerLink]="['/workspace/reset']" [queryParams]="{}">Reset Password</a></li>
-              <li class="usa-sidenav-item"><a [class.usa-current]="workspaceModel.page == 'roles'" [routerLink]="['/workspace/roles']" [queryParams]="{}">Roles</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <div [ngClass]="{'sam': true, 'sidebar': true, 'section': true, 'selected': workspaceModel.showFilters}">
-      <div class="grid-row" (click)="workspaceModel.showFilters=!workspaceModel.showFilters">
-        <div class="grid-col-fill">
-          <h4>Refine By</h4>
-        </div>
-        <div class="grid-auto">
-          <div class="sam circle" *ngIf="!workspaceModel.showFilters">+</div>
-          <div class="sam circle" *ngIf="workspaceModel.showFilters">-</div>
-        </div>
-      </div>
-      <form *ngIf="workspaceModel.showFilters && !workspaceModel.template" class="usa-form">
-        <label class="sam-sidebar-label usa-label" for="keyword-input">Keywords</label>
-        <input class="usa-input" id="keyword-input" name="name-input" type="text" >
-      </form>
-      <ng-container 
-          *ngIf="workspaceModel.template && workspaceModel.showFilters" 
-          [ngTemplateOutlet]="workspaceModel.template" 
-          [ngTemplateOutletContext]="{data: dataContext}"> 
-      </ng-container>
-    </div>
-  </div>
-  <div class="grid-col-fill sam body">
-    <div class="sam grid-row">
-      <div *ngIf="workspaceModel.view=='closed'" class="sam sidesection grid-col-auto">
-        <button class="sam viewswitcher" (click)="setView('open')"><img height="32px" src="./assets/img/view-closed.png"></button>
-      </div>
-      <div class="grid-col-fill">
-      </div>
-    </div>
-    <div class="sam grid-row">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
-</div>
+</div> -->
 
+<sds-page>
+  <sds-page-options class="sam-page__options">
+    <sds-toolbar #toolbar="sdsToolbar">
+      <sds-accordion multi="true">
+        <sds-side-navigation #sideNav [model]="sideNavModel"></sds-side-navigation>
+      </sds-accordion>
+    </sds-toolbar>
+  </sds-page-options>
+  <div class="sds-page__content" [sdsToolbarExpand]="toolbar">
+    <router-outlet></router-outlet>
+  </div>
+</sds-page>
