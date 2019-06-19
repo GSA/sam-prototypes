@@ -1,103 +1,211 @@
-<div class="grid-row sam subheader">
-	<div class="grid-col-auto">
-		<h2>Data Services</h2>
-	</div>
-	<div class="grid-col-fill">
-		<form class="usa-search usa-search-small">
-		  <div role="search">
-		    <label class="usa-sr-only" for="search-field-small">Search</label>
-		    <input class="sam search-input usa-input" id="search-field-small" type="search" name="search" placeholder="Enter a file name or keyword">
-		    <button class="sam search-button usa-button" type="submit">
-		      <span class="usa-sr-only">Search</span>
-		    </button>
-		  </div>
-		</form>
-	</div>
-</div>
-<div class="sam page grid-row">
-	<div *ngIf="view=='open'" class="grid-col-3 sam sidebar">
-		<div class="sam sidebar section grid-row">
-			<div class="grid-col-auto">
-				<button class="sam viewswitcher" (click)="setView('closed')"><img height="32px" src="./assets/img/view-open.png"></button>
-			</div>
-			<div class="grid-col-fill">
-				<select class="sam no-margin usa-select" name="domain-dropdown" id="domain-dropdown" (change)="setModelDomain($event.target.value)">
-			    	<option value="all" [selected]="model.domain === 'all'">All</option>
-			    	<option value="contracting" [selected]="model.domain === 'contracting'">Contracting</option>
-			    	<option value="assistance" [selected]="model.domain === 'assistance'">Federal Assistance</option>
-			  	</select>
-			</div>
-		</div>
-		<div [ngClass]="{'sam': true, 'sidebar': true, 'section': true, 'selected': showNav}">
-			<div class="grid-row" (click)="showNav=!showNav">
-				<div class="grid-col-fill">
-					<h4>Show Results For</h4>
-				</div>
-				<div class="grid-auto">
-					<div class="sam circle" *ngIf="!showNav">+</div>
-					<div class="sam circle" *ngIf="showNav">-</div>
-				</div>
-			</div>
-			<nav *ngIf="showNav">
-			  <ul class="usa-sidenav">
-			  	<li class="usa-sidenav-item"><a [class.usa-current]="domain == 'all'" [routerLink]="['/search']" [queryParams]="{domain:'all'}">All Data</a></li>
-			    <li class="usa-sidenav-item" *ngIf="model.domain != 'assistance'">
-			    	<a [class.usa-current]="isDomainIn('contractinginfo')" [routerLink]="['/search']" [queryParams]="{domain:'contractinginfo'}">Contracting Information</a>
-			    	<ul class="usa-sidenav-sublist">
-			    		<li class="usa-sidenav-item"><a [class.usa-current]="domain == 'contractopportunities'" [routerLink]="['/search']" [queryParams]="{domain:'contractopportunities'}">Contract Opportunities</a></li>
-			    		<li class="usa-sidenav-item"><a [class.usa-current]="domain == 'contractdata'" [routerLink]="['/search']" [queryParams]="{domain:'contractdata'}">Contract Data</a></li>
-			    	</ul>
-			  	</li>			    
-			  	<li class="usa-sidenav-item" *ngIf="model.domain != 'contracting'">
-			    	<a [class.usa-current]="domain === 'assistancelist'" [routerLink]="['/search']" [queryParams]="{domain:'assistancelist'}">Assistance Listings</a>
-			  	</li>
-			  	<li class="usa-sidenav-item">
-			    	<a [class.usa-current]="isDomainIn('entityinfo')" [routerLink]="['/search']" [queryParams]="{domain:'entityinfo'}">Entity Information</a>
-			    	<ul class="usa-sidenav-sublist">
-			    		<li class="usa-sidenav-item"><a [class.usa-current]="domain == 'registration'" [routerLink]="['/search']" [queryParams]="{domain:'registration'}">Entity Registrations</a></li>
-			    		<li class="usa-sidenav-item"><a [class.usa-current]="domain == 'disasterresponse'" [routerLink]="['/search']" [queryParams]="{domain:'disasterresponse'}">Disaster Response</a></li>
-			    		<li class="usa-sidenav-item"><a [class.usa-current]="domain == 'exclusions'" [routerLink]="['/search']" [queryParams]="{domain:'exclusions'}">Exclusions</a></li>
-			    		<li class="usa-sidenav-item"><a [class.usa-current]="domain == 'integrityinfo'" [routerLink]="['/search']" [queryParams]="{domain:'integrityinfo'}">Integrity Information</a></li>
-			    	</ul>
-			  	</li>
-			  	<li class="usa-sidenav-item">
-			  		<a [class.usa-current]="domain == 'hierarchy'" [routerLink]="['/search']" [queryParams]="{domain:'hierarchy'}">Federal Hierarchy</a>
-			  	</li>
-			  	<li class="usa-sidenav-item">
-			  		<a [class.usa-current]="isDomainIn('wagedeterminations')" [routerLink]="['/search']" [queryParams]="{domain:'wagedeterminations'}">Wage Determinations</a>
-			  			<ul class="usa-sidenav-sublist">
-			    			<li class="usa-sidenav-item"><a [class.usa-current]="domain == 'dbawd'" [routerLink]="['/search']" [queryParams]="{domain:'dbawd'}">Davis-Bacon Act</a>
-			    			</li>
-			    			<li class="usa-sidenav-item"><a [class.usa-current]="domain == 'scawd'" [routerLink]="['/search']" [queryParams]="{domain:'scawd'}">Service Contract Act</a></li>
-			    		</ul>
-			  	</li>
-			  </ul>
-			</nav>
-		</div>
-		<div [ngClass]="{'sam': true, 'sidebar': true, 'section': true, 'selected': showFilters}">
-			<div class="grid-row" (click)="showFilters=!showFilters">
-				<div class="grid-col-fill">
-					<h4>Refine By</h4>
-				</div>
-				<div class="grid-auto">
-					<div class="sam circle" *ngIf="!showFilters">+</div>
-					<div class="sam circle" *ngIf="showFilters">-</div>
-				</div>
-			</div>
-		  <form *ngIf="showFilters" class="usa-form">
-			  <label class="sam-sidebar-label usa-label" for="keyword-input">Keywords</label>
-			  <input class="usa-input" id="keyword-input" name="name-input" type="text" >
-			</form>
-		</div>
-	</div>
-	<div class="grid-col-fill sam body">
-		<div class="sam grid-row">
-			<div *ngIf="view=='closed'" class="sam sidesection grid-col-auto">
-				<button class="sam viewswitcher" (click)="setView('open')"><img height="32px" src="./assets/img/view-closed.png"></button>
-			</div>
-			<div class="grid-col-fill">
-			</div>
-		</div>
-	</div>
-</div>
+<sds-subheader>
+  <!-- =============== TITLE =============== -->
+  Data Services
 
+  <!-- =============== SEARCH =============== -->
+  <sds-subheader-search (searchTerm)="log($event)"> </sds-subheader-search>
+</sds-subheader>
+
+<div class="sam page grid-row">
+  <div *ngIf="view == 'open'" class="grid-col-3 sam sidebar">
+    <div class="sam sidebar section grid-row">
+      <div class="grid-col-auto">
+        <button class="sam viewswitcher" (click)="setView('closed')">
+          <img height="32px" src="./assets/img/view-open.png" />
+        </button>
+      </div>
+      <div class="grid-col-fill">
+        <select
+          class="sam no-margin usa-select"
+          name="domain-dropdown"
+          id="domain-dropdown"
+          (change)="setModelDomain($event.target.value)"
+        >
+          <option value="all" [selected]="model.domain === 'all'">All</option>
+          <option
+            value="contracting"
+            [selected]="model.domain === 'contracting'"
+            >Contracting</option
+          >
+          <option value="assistance" [selected]="model.domain === 'assistance'"
+            >Federal Assistance</option
+          >
+        </select>
+      </div>
+    </div>
+    <div
+      [ngClass]="{ sam: true, sidebar: true, section: true, selected: showNav }"
+    >
+      <div class="grid-row" (click)="showNav = !showNav">
+        <div class="grid-col-fill">
+          <h4>Show Results For</h4>
+        </div>
+        <div class="grid-auto">
+          <div class="sam circle" *ngIf="!showNav">+</div>
+          <div class="sam circle" *ngIf="showNav">-</div>
+        </div>
+      </div>
+      <nav *ngIf="showNav">
+        <ul class="usa-sidenav">
+          <li class="usa-sidenav-item">
+            <a
+              [class.usa-current]="domain == 'all'"
+              [routerLink]="['/search']"
+              [queryParams]="{ domain: 'all' }"
+              >All Data</a
+            >
+          </li>
+          <li class="usa-sidenav-item" *ngIf="model.domain != 'assistance'">
+            <a
+              [class.usa-current]="isDomainIn('contractinginfo')"
+              [routerLink]="['/search']"
+              [queryParams]="{ domain: 'contractinginfo' }"
+              >Contracting Information</a
+            >
+            <ul class="usa-sidenav-sublist">
+              <li class="usa-sidenav-item">
+                <a
+                  [class.usa-current]="domain == 'contractopportunities'"
+                  [routerLink]="['/search']"
+                  [queryParams]="{ domain: 'contractopportunities' }"
+                  >Contract Opportunities</a
+                >
+              </li>
+              <li class="usa-sidenav-item">
+                <a
+                  [class.usa-current]="domain == 'contractdata'"
+                  [routerLink]="['/search']"
+                  [queryParams]="{ domain: 'contractdata' }"
+                  >Contract Data</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="usa-sidenav-item" *ngIf="model.domain != 'contracting'">
+            <a
+              [class.usa-current]="domain === 'assistancelist'"
+              [routerLink]="['/search']"
+              [queryParams]="{ domain: 'assistancelist' }"
+              >Assistance Listings</a
+            >
+          </li>
+          <li class="usa-sidenav-item">
+            <a
+              [class.usa-current]="isDomainIn('entityinfo')"
+              [routerLink]="['/search']"
+              [queryParams]="{ domain: 'entityinfo' }"
+              >Entity Information</a
+            >
+            <ul class="usa-sidenav-sublist">
+              <li class="usa-sidenav-item">
+                <a
+                  [class.usa-current]="domain == 'registration'"
+                  [routerLink]="['/search']"
+                  [queryParams]="{ domain: 'registration' }"
+                  >Entity Registrations</a
+                >
+              </li>
+              <li class="usa-sidenav-item">
+                <a
+                  [class.usa-current]="domain == 'disasterresponse'"
+                  [routerLink]="['/search']"
+                  [queryParams]="{ domain: 'disasterresponse' }"
+                  >Disaster Response</a
+                >
+              </li>
+              <li class="usa-sidenav-item">
+                <a
+                  [class.usa-current]="domain == 'exclusions'"
+                  [routerLink]="['/search']"
+                  [queryParams]="{ domain: 'exclusions' }"
+                  >Exclusions</a
+                >
+              </li>
+              <li class="usa-sidenav-item">
+                <a
+                  [class.usa-current]="domain == 'integrityinfo'"
+                  [routerLink]="['/search']"
+                  [queryParams]="{ domain: 'integrityinfo' }"
+                  >Integrity Information</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="usa-sidenav-item">
+            <a
+              [class.usa-current]="domain == 'hierarchy'"
+              [routerLink]="['/search']"
+              [queryParams]="{ domain: 'hierarchy' }"
+              >Federal Hierarchy</a
+            >
+          </li>
+          <li class="usa-sidenav-item">
+            <a
+              [class.usa-current]="isDomainIn('wagedeterminations')"
+              [routerLink]="['/search']"
+              [queryParams]="{ domain: 'wagedeterminations' }"
+              >Wage Determinations</a
+            >
+            <ul class="usa-sidenav-sublist">
+              <li class="usa-sidenav-item">
+                <a
+                  [class.usa-current]="domain == 'dbawd'"
+                  [routerLink]="['/search']"
+                  [queryParams]="{ domain: 'dbawd' }"
+                  >Davis-Bacon Act</a
+                >
+              </li>
+              <li class="usa-sidenav-item">
+                <a
+                  [class.usa-current]="domain == 'scawd'"
+                  [routerLink]="['/search']"
+                  [queryParams]="{ domain: 'scawd' }"
+                  >Service Contract Act</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div
+      [ngClass]="{
+        sam: true,
+        sidebar: true,
+        section: true,
+        selected: showFilters
+      }"
+    >
+      <div class="grid-row" (click)="showFilters = !showFilters">
+        <div class="grid-col-fill">
+          <h4>Refine By</h4>
+        </div>
+        <div class="grid-auto">
+          <div class="sam circle" *ngIf="!showFilters">+</div>
+          <div class="sam circle" *ngIf="showFilters">-</div>
+        </div>
+      </div>
+      <form *ngIf="showFilters" class="usa-form">
+        <label class="sam-sidebar-label usa-label" for="keyword-input"
+          >Keywords</label
+        >
+        <input
+          class="usa-input"
+          id="keyword-input"
+          name="name-input"
+          type="text"
+        />
+      </form>
+    </div>
+  </div>
+  <div class="grid-col-fill sam body">
+    <div class="sam grid-row">
+      <div *ngIf="view == 'closed'" class="sam sidesection grid-col-auto">
+        <button class="sam viewswitcher" (click)="setView('open')">
+          <img height="32px" src="./assets/img/view-closed.png" />
+        </button>
+      </div>
+      <div class="grid-col-fill"></div>
+    </div>
+  </div>
+</div>

@@ -11,6 +11,7 @@ import { SearchServiceModule } from './service/service.module';
 import { SamSearchComponent } from './sam-search.component';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormsModule } from '@angular/forms';
+import { SdsSubheaderModule } from '@gsa-sam/layouts';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     SamBodyModule,
     FormlyModule,
     FormsModule,
+    SdsSubheaderModule,
     SearchServiceModule.forRoot()
   ],
   exports: [
