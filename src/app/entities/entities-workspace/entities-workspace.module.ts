@@ -10,8 +10,6 @@ import { EntitiesListComponent } from './entities-list/entities-list.component';
 import { EntitiesWorkspaceRoutingModule } from './entities-workspace-routing.module';
 import { SearchListServiceModule } from '@gsa-sam/layouts';
 
-
-
 @NgModule({
   imports: [
     CommonModule,
