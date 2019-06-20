@@ -26,15 +26,15 @@ export class WorkspaceComponent implements OnInit, AfterViewInit {
       .pipe(
         filter(event => event instanceof NavigationEnd),
         map(() => {
-          let itemCode = 'id';
+          let itemCode = 'sideId';
           let child = this.route.firstChild;
           let searchedValue = null;
           if (this.route.snapshot.data && this.route.snapshot.data[itemCode]) {
             searchedValue = this.route.snapshot.data[itemCode];
           }
           while (child) {
-            if (this.route.snapshot.data && this.route.snapshot.data[itemCode]) {
-              searchedValue = this.route.snapshot.data[itemCode];
+            if (child.snapshot.data && child.snapshot.data[itemCode]) {
+              searchedValue = child.snapshot.data[itemCode];
             }
             if (child.firstChild) {
               child = child.firstChild;
@@ -47,7 +47,6 @@ export class WorkspaceComponent implements OnInit, AfterViewInit {
       )
       .subscribe((customData: any) => {
         this.sideNav.select(customData);
-        console.log(customData);
       });
   }
 

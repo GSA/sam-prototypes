@@ -34,12 +34,10 @@ export class AppComponent {
           let searchedValue = null;
           if (this.route.snapshot.data && this.route.snapshot.data[itemCode]) {
             searchedValue = this.route.snapshot.data[itemCode];
-            console.log(searchedValue+'');
           }
           while (child) {
             if (child.snapshot.data && child.snapshot.data[itemCode]) {
               searchedValue = child.snapshot.data[itemCode];
-              console.log(searchedValue+'');
             }
             if (child.firstChild) {
               child = child.firstChild;
@@ -52,7 +50,6 @@ export class AppComponent {
       )
       .subscribe((customData: any) => {
         this.header.select(customData);
-        console.log(customData);
       });
   }
 
