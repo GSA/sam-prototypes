@@ -11,78 +11,82 @@ const routes: Routes = [
 		children: [
 			{
 				path: '',
-				redirectTo: 'dashboard',
-				data: {
-				  id: "workspace"
-				}
+				redirectTo: 'dashboard'
 			},
 			{
 				path: 'dashboard',
 				loadChildren: './dashboard/dashboard.module#DashboardModule',
 				data: {
-				  id: "workspace"
+
 				}
 			},
 			{
 				path: 'contractopportunities',
 				loadChildren: './opportunities/opportunities.module#OpportunitiesModule',
 				data: {
-				  id: "workspace"
+
 				}
 			},
 			{
 				path: 'contractdata',
-				loadChildren: './contractdata/contractdata.module#ContractdataModule',
-				data: {
-				  id: "workspace"
-				}
+				loadChildren: './contractdata/contractdata.module#ContractdataModule'
 			},
 			{
 				path: 'fal',
 				loadChildren: './assistance/assistance.module#AssistanceModule',
 				data: {
-				  id: "workspace"
+
 				}
 			},
 			{
 				path: 'registrations',
 				loadChildren: './entities/entities.module#EntitiesModule',
 				data: {
-				  id: "workspace"
+
 				}
 			},
 			{
 				path: 'exclusions',
 				loadChildren: './exclusions/exclusions.module#ExclusionsModule',
 				data: {
-				  id: "workspace"
+
 				}
 			},
 			{
 				path: 'integrity',
 				loadChildren: './integrity/integrity.module#IntegrityModule',
 				data: {
-				  id: "workspace"
+
 				}
+
 			},
 			{
 				path: 'profile',
 				loadChildren: './profile/profile.module#ProfileModule',
 				data: {
-				  id: "workspace"
+
 				}
 			},
 			{
 				path: 'customerservice',
-				loadChildren: './customer-service/customer-service.module#CustomerServiceModule'
+				loadChildren: './customer-service/customer-service.module#CustomerServiceModule',
+				data: {
+
+				}
 			},
 			{
 				path: 'reset',
-				loadChildren: './reset-password/reset-password.module#ResetPasswordModule'
+				loadChildren: './reset-password/reset-password.module#ResetPasswordModule',
+				data: {
+
+				}
 			},
 			{
 				path: 'roles',
-				loadChildren: './user-roles/user-roles.module#UserRolesModule'
+				loadChildren: './user-roles/user-roles.module#UserRolesModule',
+				data: {
+
+				}
 			},
 			{
 				path: '**',

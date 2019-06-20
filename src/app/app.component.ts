@@ -20,25 +20,34 @@ export class AppComponent {
     private route: ActivatedRoute,
     private router: Router,
     public modelService: SamModelService
-  ) {}
-  setSelection() {}
+  ) { }
+  setSelection() { }
 
   ngOnInit() {
+
     this.router.events
       .pipe(
         filter(event => event instanceof NavigationEnd),
         map(() => {
+          let itemCode = 'id';
           let child = this.route.firstChild;
+          let searchedValue = null;
+          if (this.route.snapshot.data && this.route.snapshot.data[itemCode]) {
+            searchedValue = this.route.snapshot.data[itemCode];
+            console.log(searchedValue+'');
+          }
           while (child) {
+            if (child.snapshot.data && child.snapshot.data[itemCode]) {
+              searchedValue = child.snapshot.data[itemCode];
+              console.log(searchedValue+'');
+            }
             if (child.firstChild) {
               child = child.firstChild;
-            } else if (child.snapshot.data && child.snapshot.data["id"]) {
-              return child.snapshot.data["id"];
             } else {
-              return null;
+              child = null;
             }
           }
-          return null;
+          return searchedValue;
         })
       )
       .subscribe((customData: any) => {
@@ -47,7 +56,7 @@ export class AppComponent {
       });
   }
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() { }
 
-  ngOnDestroy() {}
+  ngOnDestroy() { }
 }
