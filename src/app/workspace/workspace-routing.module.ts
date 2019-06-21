@@ -24,14 +24,14 @@ const routes: Routes = [
 				path: 'contractopportunities',
 				loadChildren: './opportunities/opportunities.module#OpportunitiesModule',
 				data: {
-					sideId: 'contractopportunities'
+					sideId: 'contractOpportunites'
 				}
 			},
 			{
 				path: 'contractdata',
 				loadChildren: './contractdata/contractdata.module#ContractdataModule',
 				data: {
-					sideId: 'contractdata'
+					sideId: 'contractData'
 				}
 			},
 			{
