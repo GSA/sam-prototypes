@@ -7,8 +7,6 @@ export class EntityService implements SearchListInterface {
         let start = search.page.pageNumber * search.page.pageSize - search.page.pageSize;
         let end = start + search.page.pageSize;
         let itemList = data.entityData;
-        console.log('COUNT:');
-        console.log(itemList.length+0);
         this.sortEntityItem(itemList, search);
         return of({
             items: itemList.slice(start, end),

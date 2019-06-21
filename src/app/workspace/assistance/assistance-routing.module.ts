@@ -15,19 +15,31 @@ const routes: Routes = [
 			},
 			{
 				path: 'dashboard',
-				component: AssistanceDashboardComponent
+				component: AssistanceDashboardComponent,
+				data: {
+					sideId: 'federalAssistance'
+				}
 			},
 			{
 				path: 'assistancelist',
-				component: AssistanceComponent
+				component: AssistanceComponent,
+				data: {
+					sideId: 'assistancelist'
+				}
 			},
 			{
 				path: 'cfdanumber',
-				component: CfdanumberComponent
+				component: CfdanumberComponent,
+				data: {
+					sideId: 'cfdanumber'
+				}
 			},
 			{
 				path: 'regionallocation',
-				component: RegionallocationComponent
+				component: RegionallocationComponent,
+				data: {
+					sideId: 'regionallocation'
+				}
 			},
 			{
 				path: '**',

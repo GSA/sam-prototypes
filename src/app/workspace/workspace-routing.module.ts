@@ -11,78 +11,82 @@ const routes: Routes = [
 		children: [
 			{
 				path: '',
-				redirectTo: 'dashboard',
-				data: {
-				  id: "workspace"
-				}
+				redirectTo: 'dashboard'
 			},
 			{
 				path: 'dashboard',
 				loadChildren: './dashboard/dashboard.module#DashboardModule',
 				data: {
-				  id: "workspace"
+					sideId: ''
 				}
 			},
 			{
 				path: 'contractopportunities',
 				loadChildren: './opportunities/opportunities.module#OpportunitiesModule',
 				data: {
-				  id: "workspace"
+					sideId: 'contractopportunities'
 				}
 			},
 			{
 				path: 'contractdata',
 				loadChildren: './contractdata/contractdata.module#ContractdataModule',
 				data: {
-				  id: "workspace"
+					sideId: 'contractdata'
 				}
 			},
 			{
 				path: 'fal',
-				loadChildren: './assistance/assistance.module#AssistanceModule',
-				data: {
-				  id: "workspace"
-				}
+				loadChildren: './assistance/assistance.module#AssistanceModule'
 			},
 			{
 				path: 'registrations',
 				loadChildren: './entities/entities.module#EntitiesModule',
 				data: {
-				  id: "workspace"
+					sideId: 'registrations'
 				}
 			},
 			{
 				path: 'exclusions',
 				loadChildren: './exclusions/exclusions.module#ExclusionsModule',
 				data: {
-				  id: "workspace"
+					sideId: 'exclusions'
 				}
 			},
 			{
 				path: 'integrity',
 				loadChildren: './integrity/integrity.module#IntegrityModule',
 				data: {
-				  id: "workspace"
+					sideId: 'integrityinfo'
 				}
+
 			},
 			{
 				path: 'profile',
 				loadChildren: './profile/profile.module#ProfileModule',
 				data: {
-				  id: "workspace"
+					sideId: 'profile'
 				}
 			},
 			{
 				path: 'customerservice',
-				loadChildren: './customer-service/customer-service.module#CustomerServiceModule'
+				loadChildren: './customer-service/customer-service.module#CustomerServiceModule',
+				data: {
+					sideId: ''
+				}
 			},
 			{
 				path: 'reset',
-				loadChildren: './reset-password/reset-password.module#ResetPasswordModule'
+				loadChildren: './reset-password/reset-password.module#ResetPasswordModule',
+				data: {
+					sideId: 'reset'
+				}
 			},
 			{
 				path: 'roles',
-				loadChildren: './user-roles/user-roles.module#UserRolesModule'
+				loadChildren: './user-roles/user-roles.module#UserRolesModule',
+				data: {
+					sideId: 'roles'
+				}
 			},
 			{
 				path: '**',
