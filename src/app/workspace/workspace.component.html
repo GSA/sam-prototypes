@@ -1,26 +1,21 @@
-<!-- <div class="grid-row sam subheader">
-  <div class="grid-col-auto">
-    <h2>{{workspaceModel.title}}</h2>
-  </div>
-  <div class="grid-col-fill">
-    <form *ngIf="workspaceModel.showSearchBar" class="usa-search usa-search-small">
-      <div role="search">
-        <label class="usa-sr-only" for="search-field-small">Search</label>
-        <input class="sam search-input usa-input" id="search-field-small" type="search" name="search"
-          placeholder="{{workspaceModel.placeholderText}}">
-        <button class="sam search-button usa-button" type="submit">
-          <span class="usa-sr-only">Search</span>
-        </button>
-      </div>
-    </form>
-  </div>
-</div> -->
+<ng-container *ngIf="router.url === '/workspace/registrations'">
+  <sds-subheader>
+    <!-- =============== TITLE =============== -->
+    Entity Registrations
+
+    <!-- =============== SEARCH =============== -->
+    <sds-subheader-search (searchTerm)="log($event)"> </sds-subheader-search>
+  </sds-subheader>
+</ng-container>
 
 <sds-page>
   <sds-page-options class="sam-page__options">
     <sds-toolbar #toolbar="sdsToolbar">
       <sds-accordion multi="true">
-        <sds-side-navigation #sideNav [model]="sideNavModel"></sds-side-navigation>
+        <sds-side-navigation
+          #sideNav
+          [model]="sideNavModel"
+        ></sds-side-navigation>
       </sds-accordion>
     </sds-toolbar>
   </sds-page-options>

@@ -1,10 +1,23 @@
-import { ViewChild, Component, OnInit, Input, ChangeDetectorRef, AfterViewInit, ChangeDetectionStrategy } from '@angular/core';
-import { ActivatedRoute, Router, NavigationEnd, UrlSegment } from '@angular/router';
+import {
+  ViewChild,
+  Component,
+  OnInit,
+  Input,
+  ChangeDetectorRef,
+  AfterViewInit,
+  ChangeDetectionStrategy
+} from '@angular/core';
+import {
+  ActivatedRoute,
+  Router,
+  NavigationEnd,
+  UrlSegment
+} from '@angular/router';
 import { SamModelService } from '../model/sam-model.service';
 import { WorkspaceModelService } from './service/workspace-model.service';
 import { SideNavigationModel, NavigationMode } from '@gsa-sam/components';
 import { workspaceSideNavigationData } from './navigation/navigation.data';
-import { filter, map } from "rxjs/operators";
+import { filter, map } from 'rxjs/operators';
 @Component({
   selector: 'workspace',
   templateUrl: './workspace.component.html',
@@ -12,16 +25,16 @@ import { filter, map } from "rxjs/operators";
   changeDetection: ChangeDetectionStrategy.Default
 })
 export class WorkspaceComponent implements OnInit, AfterViewInit {
-
-  constructor(private route: ActivatedRoute,
-    private router: Router, private change: ChangeDetectorRef, public workspaceModel: WorkspaceModelService, public model: SamModelService) {
-  }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private change: ChangeDetectorRef,
+    public workspaceModel: WorkspaceModelService,
+    public model: SamModelService
+  ) {}
   @ViewChild('sideNav') sideNav;
 
-
-
   ngOnInit() {
-
     this.router.events
       .pipe(
         filter(event => event instanceof NavigationEnd),
@@ -55,10 +68,7 @@ export class WorkspaceComponent implements OnInit, AfterViewInit {
   }
   public sideNavModel: SideNavigationModel = workspaceSideNavigationData;
 
-
-
-
+  log(value) {
+    console.log(`%cLog: ${value}`, 'color: blue; font-weight: bold');
+  }
 }
-
-
-
