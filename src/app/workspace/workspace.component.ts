@@ -27,7 +27,7 @@ import { filter, map } from 'rxjs/operators';
 export class WorkspaceComponent implements OnInit, AfterViewInit {
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
+    public router: Router,
     private change: ChangeDetectorRef,
     public workspaceModel: WorkspaceModelService,
     public model: SamModelService
