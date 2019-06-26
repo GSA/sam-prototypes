@@ -9,7 +9,12 @@ import {
   SdsAccordionModule,
   SdsPageModule
 } from '@gsa-sam/components';
+import { SdsFormlyModule } from '@gsa-sam/sam-formly';
 import { SdsSubheaderModule } from '@gsa-sam/layouts';
+
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlySelectModule } from '@ngx-formly/core/select';
 @NgModule({
   imports: [
     CommonModule,
@@ -22,7 +27,12 @@ import { SdsSubheaderModule } from '@gsa-sam/layouts';
     SdsToolbarModule,
     SdsSideNavigationModule,
     SdsAccordionModule,
-    SdsSubheaderModule
+    SdsSubheaderModule,
+    SdsFormlyModule,
+    FormsModule,
+    ReactiveFormsModule,
+    FormlySelectModule,
+    FormlyModule
   ],
   declarations: [WorkspaceComponent],
   exports: [WorkspaceComponent]

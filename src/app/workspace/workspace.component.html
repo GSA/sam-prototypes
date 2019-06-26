@@ -16,7 +16,14 @@
           #sideNav
           [model]="sideNavModel"
         ></sds-side-navigation>
+       
+          <sds-accordion-item>
+              <sds-accordion-item-header> Filters </sds-accordion-item-header>
+              <formly-form [form]="form" [fields]="fields" [model]="filterModel"></formly-form>
+          </sds-accordion-item>
+   
       </sds-accordion>
+      
     </sds-toolbar>
   </sds-page-options>
   <div class="sds-page__content" [sdsToolbarExpand]="toolbar">
