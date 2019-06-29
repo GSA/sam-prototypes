@@ -5,7 +5,8 @@ import {
   Input,
   ChangeDetectorRef,
   AfterViewInit,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
+  OnChanges
 } from '@angular/core';
 import {
   ActivatedRoute,
@@ -26,7 +27,7 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['_styles.scss'],
   changeDetection: ChangeDetectionStrategy.Default
 })
-export class WorkspaceComponent implements OnInit, AfterViewInit {
+export class WorkspaceComponent implements OnInit, AfterViewInit , OnChanges {
   form = new FormGroup({});
   filterModel = {};
   fields: FormlyFieldConfig[] = [
@@ -60,7 +61,7 @@ export class WorkspaceComponent implements OnInit, AfterViewInit {
           },
         },
         {
-          key: 'uniqueEntityIdSam',
+          key: 'ueiSAM',
           type: 'input',
           templateOptions: {
             required: true,
@@ -82,7 +83,7 @@ export class WorkspaceComponent implements OnInit, AfterViewInit {
           },
         },
         {
-          key: 'uniqueEntityIdDuns',
+          key: 'ueiDUNS',
           type: 'input',
           templateOptions: {
             required: true,
@@ -97,12 +98,12 @@ export class WorkspaceComponent implements OnInit, AfterViewInit {
       ],
     },
     {
-      key: 'status',
+      key: 'registration',
       wrappers: ['accordianwrapper'],
       templateOptions: { label: 'Status' },
       fieldGroup: [
         {
-          key: 'statusCheckbox',
+          key: 'registrationStatus',
           type: 'multicheckbox',
           templateOptions: {
             options: [
@@ -128,12 +129,12 @@ export class WorkspaceComponent implements OnInit, AfterViewInit {
       ]
     },
     {
-      key: 'expirationDate',
+      key: 'expiration',
       wrappers: ['accordianwrapper'],
       templateOptions: { label: 'Expiration Date' },
       fieldGroup: [
         {
-          key: 'expirationDateOption',
+          key: 'expirationDate',
           type: 'radio',
           templateOptions: {
             options: [
@@ -177,6 +178,7 @@ export class WorkspaceComponent implements OnInit, AfterViewInit {
   @ViewChild('sideNav') sideNav;
 
   ngOnInit() {
+    this.workspaceModel.currentFilterModel.subscribe(data => this.filterModel = data);
     this.router.events
       .pipe(
         filter(event => event instanceof NavigationEnd),
@@ -207,6 +209,10 @@ export class WorkspaceComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.change.detectChanges();
+  }
+
+  ngOnChanges() {
+    this.workspaceModel.updateFilterModel(this.filterModel);
   }
   public sideNavModel: SideNavigationModel = workspaceSideNavigationData;
 

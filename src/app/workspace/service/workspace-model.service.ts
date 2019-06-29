@@ -2,7 +2,7 @@ import { Injectable, TemplateRef } from '@angular/core';
 import { WorkspaceModelModule } from './workspace-model.module';
 
 import { SamModelService } from '../../model/sam-model.service';
-
+import { BehaviorSubject } from 'rxjs'; 
 @Injectable({
   providedIn: WorkspaceModelModule
 })
@@ -16,19 +16,24 @@ export class WorkspaceModelService {
   showSearchBar: boolean;
   placeholderText: string;
   template: TemplateRef<any>;
+  filterModel: any = {};
+  private dataSource = new BehaviorSubject(this.filterModel);
+  currentFilterModel = this.dataSource.asObservable();
 
-  constructor(public model: SamModelService) { 
-  		this.page = 'dashboard';
-  		this.view = 'closed';
-  		this.title = 'Workspace Home';
-  		this.showNav = true;
-  		this.showFilters = false;
-  		this.showSearchBar = false;
-  		this.placeholderText = "Enter an id or keyword";
-      this.template = null;
+  constructor(public model: SamModelService) {
+    this.page = 'dashboard';
+    this.view = 'closed';
+    this.title = 'Workspace Home';
+    this.showNav = true;
+    this.showFilters = false;
+    this.showSearchBar = false;
+    this.placeholderText = "Enter an id or keyword";
+    this.template = null;
+    this.model.feature = 'workspace';
+  }
 
-
-      this.model.feature = 'workspace';
+  updateFilterModel(newData: any) {
+    this.dataSource.next(newData);
   }
 
   isPageInDomain(parentDomain: string) {
