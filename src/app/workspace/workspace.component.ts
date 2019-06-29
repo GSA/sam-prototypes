@@ -73,7 +73,7 @@ export class WorkspaceComponent implements OnInit, AfterViewInit {
           },
         },
         {
-          key: 'cageNcge',
+          key: 'cageNcage',
           type: 'input',
           templateOptions: {
             label: 'CAGE/NCAGE',
@@ -140,6 +140,7 @@ export class WorkspaceComponent implements OnInit, AfterViewInit {
               { label: '30 Days', value: '30' },
               { label: '60 Days', value: '60' },
               { label: '90 Days', value: '90' },
+              { label: 'None', value: '0' },
 
             ]
           },
