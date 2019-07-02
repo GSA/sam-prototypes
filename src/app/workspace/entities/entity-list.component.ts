@@ -29,5 +29,5 @@ export class EntityListComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
 }
