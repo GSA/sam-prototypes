@@ -9,7 +9,7 @@ import {
   SdsAccordionModule,
   SdsPageModule
 } from '@gsa-sam/components';
-import { SdsFormlyModule } from '@gsa-sam/sam-formly';
+import { SdsFiltersModule } from '@gsa-sam/sam-formly';
 import { SdsSubheaderModule } from '@gsa-sam/layouts';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -28,7 +28,7 @@ import { FormlySelectModule } from '@ngx-formly/core/select';
     SdsSideNavigationModule,
     SdsAccordionModule,
     SdsSubheaderModule,
-    SdsFormlyModule,
+    SdsFiltersModule,
     FormsModule,
     ReactiveFormsModule,
     FormlySelectModule,

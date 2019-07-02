@@ -16,10 +16,7 @@ export class WorkspaceModelService {
   showSearchBar: boolean;
   placeholderText: string;
   template: TemplateRef<any>;
-  filterModel: any = {};
-  private dataSource = new BehaviorSubject(this.filterModel);
-  currentFilterModel = this.dataSource.asObservable();
-
+ 
   constructor(public model: SamModelService) {
     this.page = 'dashboard';
     this.view = 'closed';
@@ -32,9 +29,7 @@ export class WorkspaceModelService {
     this.model.feature = 'workspace';
   }
 
-  updateFilterModel(newData: any) {
-    this.dataSource.next(newData);
-  }
+ 
 
   isPageInDomain(parentDomain: string) {
     if(parentDomain == 'contractinginfo') {

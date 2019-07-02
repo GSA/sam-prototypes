@@ -27,7 +27,7 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['_styles.scss'],
   changeDetection: ChangeDetectionStrategy.Default
 })
-export class WorkspaceComponent implements OnInit, AfterViewInit , OnChanges {
+export class WorkspaceComponent implements OnInit, AfterViewInit  {
   form = new FormGroup({});
   filterModel = {};
   fields: FormlyFieldConfig[] = [
@@ -178,7 +178,6 @@ export class WorkspaceComponent implements OnInit, AfterViewInit , OnChanges {
   @ViewChild('sideNav') sideNav;
 
   ngOnInit() {
-    this.workspaceModel.currentFilterModel.subscribe(data => this.filterModel = data);
     this.router.events
       .pipe(
         filter(event => event instanceof NavigationEnd),
@@ -211,9 +210,6 @@ export class WorkspaceComponent implements OnInit, AfterViewInit , OnChanges {
     this.change.detectChanges();
   }
 
-  ngOnChanges() {
-    this.workspaceModel.updateFilterModel(this.filterModel);
-  }
   public sideNavModel: SideNavigationModel = workspaceSideNavigationData;
 
   log(value) {
