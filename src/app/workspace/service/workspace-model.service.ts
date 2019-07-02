@@ -2,7 +2,6 @@ import { Injectable, TemplateRef } from '@angular/core';
 import { WorkspaceModelModule } from './workspace-model.module';
 
 import { SamModelService } from '../../model/sam-model.service';
-import { BehaviorSubject } from 'rxjs'; 
 @Injectable({
   providedIn: WorkspaceModelModule
 })

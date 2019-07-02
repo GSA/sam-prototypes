@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, ViewChild, AfterViewInit, ChangeDetectorRef, KeyValueDiffer, KeyValueDiffers, DoCheck, KeyValueChanges } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { WorkspaceComponent } from '../workspace.component';
 import { EntityService } from './entity-service/entity.service';
 import { SearchListConfiguration } from '@gsa-sam/layouts';
@@ -7,10 +7,9 @@ import { SearchListConfiguration } from '@gsa-sam/layouts';
   templateUrl: './entity-list.component.html'
   //,  styleUrls: ['./_styles.scss']
 })
-export class EntityListComponent {
-  filterModel: any = {};
-  private filterModelChange: KeyValueDiffer<string, any>;
-  constructor(public service: EntityService, private change: ChangeDetectorRef) {
+export class EntityListComponent implements OnInit {
+
+  constructor(public service: EntityService) {
   }
 
   configuration: SearchListConfiguration = {
@@ -20,8 +19,10 @@ export class EntityListComponent {
     { text: 'Title A - Z', value: 'titleA-Z' },
     { text: 'Title Z - A', value: 'titleZ-A' },
     ]
+
   };
 
 
-
+  ngOnInit() {
+  }
 }
