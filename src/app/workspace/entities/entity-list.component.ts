@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, OnChanges, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
-import {WorkspaceComponent} from '../workspace.component';
+import { Component, OnInit, Input, OnChanges, ViewChild, AfterViewInit, ChangeDetectorRef, KeyValueDiffer, KeyValueDiffers, DoCheck, KeyValueChanges } from '@angular/core';
+import { WorkspaceComponent } from '../workspace.component';
 import { EntityService } from './entity-service/entity.service';
 import { SearchListConfiguration } from '@gsa-sam/layouts';
 import { WorkspaceModelService } from '../service/workspace-model.service';
@@ -8,9 +8,12 @@ import { WorkspaceModelService } from '../service/workspace-model.service';
   templateUrl: './entity-list.component.html'
   //,  styleUrls: ['./_styles.scss']
 })
-export class EntityListComponent implements OnInit {
+export class EntityListComponent implements OnInit, OnChanges, DoCheck {
   filterModel: any = {};
-  constructor(public service: EntityService, private change: ChangeDetectorRef, public workspaceService: WorkspaceModelService) {}
+  private filterModelChange: KeyValueDiffer<string, any>;
+  constructor(public service: EntityService, private change: ChangeDetectorRef, public workspaceService: WorkspaceModelService,
+    private differs: KeyValueDiffers) {
+  }
 
   configuration: SearchListConfiguration = {
     defaultSortValue: 'expirationDateAscending', pageSize: 25,
@@ -21,10 +24,22 @@ export class EntityListComponent implements OnInit {
     ]
   };
 
-
+ngOnChanges() { }
 
   ngOnInit() {
     this.workspaceService.currentFilterModel.subscribe(data => this.filterModel = data);
+    this.filterModelChange = this.differs.find(this.filterModel).create();
+  }
+
+  filterModelChanged(changes: KeyValueChanges<string, any>) {
+    console.log( 'changes');
+  }
+
+  ngDoCheck(): void {
+    const changes = this.filterModelChange.diff(this.filterModel);
+    if (changes) {
+      this.filterModelChanged(changes);
+    }
   }
 
 }
