@@ -21,6 +21,7 @@ import { SideNavigationModel, NavigationMode } from '@gsa-sam/components';
 import { workspaceSideNavigationData } from './navigation/navigation.data';
 import { filter, map } from 'rxjs/operators';
 import { FormGroup } from '@angular/forms';
+import { BehaviorSubject } from 'rxjs';
 @Component({
   selector: 'workspace',
   templateUrl: './workspace.component.html',
@@ -167,6 +168,8 @@ export class WorkspaceComponent implements OnInit, AfterViewInit  {
       ]
     }
   ];
+  public filterChange$ = new BehaviorSubject<object>(null);
+
 
   constructor(
     private route: ActivatedRoute,
@@ -177,7 +180,11 @@ export class WorkspaceComponent implements OnInit, AfterViewInit  {
   ) {}
   @ViewChild('sideNav') sideNav;
 
+ 
+
+
   ngOnInit() {
+  
     this.router.events
       .pipe(
         filter(event => event instanceof NavigationEnd),
