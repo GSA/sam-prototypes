@@ -14,9 +14,9 @@ export class EntityService implements SearchListInterface {
         });
     }
 
-public filter(filterModel: object, msg : string) {
-    console.log( filterModel, msg, 'value changes');
-}
+
+
+
 
 
 

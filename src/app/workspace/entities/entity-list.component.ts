@@ -1,5 +1,5 @@
-import { Component, OnInit, Input} from '@angular/core';
-import { WorkspaceComponent } from '../workspace.component';
+import { Component, OnInit, Input } from '@angular/core';
+
 import { EntityService } from './entity-service/entity.service';
 import { SearchListConfiguration } from '@gsa-sam/layouts';
 @Component({
@@ -9,7 +9,10 @@ import { SearchListConfiguration } from '@gsa-sam/layouts';
 })
 export class EntityListComponent implements OnInit {
 
+
+
   constructor(public service: EntityService) {
+
   }
 
   configuration: SearchListConfiguration = {
@@ -23,6 +26,8 @@ export class EntityListComponent implements OnInit {
   };
 
 
+
   ngOnInit() {
   }
+  
 }
