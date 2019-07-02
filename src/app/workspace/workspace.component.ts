@@ -180,9 +180,6 @@ export class WorkspaceComponent implements OnInit, AfterViewInit  {
   ) {}
   @ViewChild('sideNav') sideNav;
 
- 
-
-
   ngOnInit() {
   
     this.router.events
