@@ -23,7 +23,7 @@ export class EntityListComponent implements OnInit {
     { text: 'Title Z - A', value: 'titleZ-A' },
     ]
 
-  }
+  };
 
 
 
