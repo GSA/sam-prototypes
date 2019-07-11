@@ -15,11 +15,6 @@ export class EntityService implements SearchListInterface {
     }
 
 
-
-
-
-
-
     private sortEntityItem(itemList: EntityData[], search: SearchParameters) {
         let valueA = '';
         let valueB = '';
