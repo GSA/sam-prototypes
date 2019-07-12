@@ -65,12 +65,9 @@ export class WorkspaceComponent implements OnInit, AfterViewInit  {
           key: 'ueiSAM',
           type: 'input',
           templateOptions: {
-            required: true,
             label: 'Unique Entity ID (SAM)',
             placeholder: '',
-            min: 13,
-            max: 40,
-            inputType: 'number',
+            inputType: 'text',
             inputStyle: 'error',
           },
         },
@@ -87,12 +84,9 @@ export class WorkspaceComponent implements OnInit, AfterViewInit  {
           key: 'ueiDUNS',
           type: 'input',
           templateOptions: {
-            required: true,
             label: 'Unique Entity ID (DUNS)',
             placeholder: '',
-            min: 13,
-            max: 40,
-            inputType: 'number',
+            inputType: 'text',
             inputStyle: 'error',
           },
         }

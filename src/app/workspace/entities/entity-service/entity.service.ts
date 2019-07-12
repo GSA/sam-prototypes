@@ -3,16 +3,70 @@ import { Observable, of } from 'rxjs';
 import { SearchParameters, SearchListInterface, SearchResult } from '@gsa-sam/layouts';
 import { EntityData } from './entity.model';
 export class EntityService implements SearchListInterface {
+    // getData(search: SearchParameters): Observable<SearchResult> {
+    //     let start = search.page.pageNumber * search.page.pageSize - search.page.pageSize;
+    //     let end = start + search.page.pageSize;
+    //     let itemList = data.entityData;
+    //     this.sortEntityItem(itemList, search);
+    //     return of({
+    //         items: itemList.slice(start, end),
+    //         totalItems: itemList.length
+    //     });
+    // }
+
     getData(search: SearchParameters): Observable<SearchResult> {
-        let start = search.page.pageNumber * search.page.pageSize - search.page.pageSize;
-        let end = start + search.page.pageSize;
         let itemList = data.entityData;
+        if (search.filter) {
+            let toReturn = [];
+            // toReturn = this.getFilterDataByKeyword(search.filter.searchKeyword.keyword);
+            toReturn = this.getFilterDataByEntity(search.filter.searchEntity);
+            // for (let i= 0; i < itemList.length; i++) {
+            //     const item = itemList[i];
+            //     if (item.entityRegistration.legalBusinessName.toLowerCase()
+            //     .indexOf(search.filter.searchKeyword.keyword.toLowerCase()) !== -1) {
+            //         toReturn.push(item);
+            //     }
+            // }
+            itemList = toReturn;
+        }
+        const start = search.page.pageNumber * search.page.pageSize - search.page.pageSize;
+        const end = start + search.page.pageSize;
         this.sortEntityItem(itemList, search);
         return of({
             items: itemList.slice(start, end),
             totalItems: itemList.length
         });
     }
+
+
+    public getFilterDataByEntity(filterParameters) {
+        Object.keys(filterParameters).forEach(key => filterParameters[key] === undefined ? delete filterParameters[key] : '');
+        console.log(filterParameters);
+        let filterList = [];
+        const itemList = data.entityData;
+        filterList = itemList.filter((entity) => {
+            return Object.keys(filterParameters).every((item) => {
+                if (Array.isArray(filterParameters[item])) {
+                    return filterParameters[item].indexOf(entity.entityRegistration[item]) > -1;
+                } else {
+                    return entity.entityRegistration[item].includes(filterParameters[item]);
+                }
+            });
+        });
+        console.log(filterList);
+        return filterList;
+    }
+
+    public getFilterDataByKeyword(keyword: string): any {
+        let filterList = [];
+        const itemList = data.entityData;
+        filterList = itemList.filter((entity) => {
+            return entity.entityRegistration.legalBusinessName.toLowerCase().includes(keyword.toLowerCase());
+        });
+        console.log(filterList);
+        return filterList;
+    }
+
 
 
     private sortEntityItem(itemList: EntityData[], search: SearchParameters) {

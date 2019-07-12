@@ -12577,7 +12577,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "839575255",
                 "ueiDUNS": "839575255",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GP8",
