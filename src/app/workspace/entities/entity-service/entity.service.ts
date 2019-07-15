@@ -3,30 +3,32 @@ import { Observable, of } from 'rxjs';
 import { SearchParameters, SearchListInterface, SearchResult } from '@gsa-sam/layouts';
 import { EntityData } from './entity.model';
 export class EntityService implements SearchListInterface {
-    // getData(search: SearchParameters): Observable<SearchResult> {
-    //     let start = search.page.pageNumber * search.page.pageSize - search.page.pageSize;
-    //     let end = start + search.page.pageSize;
-    //     let itemList = data.entityData;
-    //     this.sortEntityItem(itemList, search);
-    //     return of({
-    //         items: itemList.slice(start, end),
-    //         totalItems: itemList.length
-    //     });
-    // }
-
+    filterParam = {};
     getData(search: SearchParameters): Observable<SearchResult> {
         let itemList = data.entityData;
+        const searchProperty = 'legalBusinessName';
+        let toReturn = [];
         if (search.filter) {
-            let toReturn = [];
-            // toReturn = this.getFilterDataByKeyword(search.filter.searchKeyword.keyword);
-            toReturn = this.getFilterDataByEntity(search.filter.searchEntity);
-            // for (let i= 0; i < itemList.length; i++) {
-            //     const item = itemList[i];
-            //     if (item.entityRegistration.legalBusinessName.toLowerCase()
-            //     .indexOf(search.filter.searchKeyword.keyword.toLowerCase()) !== -1) {
-            //         toReturn.push(item);
-            //     }
-            // }
+            console.log(search.filter);
+            for (const i in search.filter) {
+                if (Object.keys(search.filter[i]).length > 0) {
+                    if (i === 'searchKeyword') {
+                        this.filterParam[searchProperty] = search.filter.searchKeyword.keyword;
+                    } else if (i === 'registration') {
+                        const selectedStatus = [];
+                        for (const j in search.filter[i].registrationStatus) {
+                            if (search.filter[i].registrationStatus[j]) {
+                                selectedStatus.push(j);
+                            }
+                        }
+                        this.filterParam = Object.assign(this.filterParam, { registrationStatus: selectedStatus});
+                    } else {
+                        this.filterParam = Object.assign(this.filterParam, ...search.filter[i]);
+                    }
+                }
+            }
+
+            toReturn = this.getFilterDataByEntity(this.filterParam);
             itemList = toReturn;
         }
         const start = search.page.pageNumber * search.page.pageSize - search.page.pageSize;
@@ -40,34 +42,27 @@ export class EntityService implements SearchListInterface {
 
 
     public getFilterDataByEntity(filterParameters) {
-        Object.keys(filterParameters).forEach(key => filterParameters[key] === undefined ? delete filterParameters[key] : '');
         console.log(filterParameters);
         let filterList = [];
         const itemList = data.entityData;
         filterList = itemList.filter((entity) => {
             return Object.keys(filterParameters).every((item) => {
-                if (Array.isArray(filterParameters[item])) {
-                    return filterParameters[item].indexOf(entity.entityRegistration[item]) > -1;
+                if (item === 'expirationDate') {
+                    const oneDay = 24 * 60 * 60 * 1000;
+                    const now = new Date();
+                    const expiringDate = new Date(entity.entityRegistration[item]);
+                    return expiringDate > now &&
+                    (Math.round(Math.abs((expiringDate.getTime() - now.getTime()) / oneDay)) < filterParameters[item]);
+                } else if (item === 'registrationStatus') {
+                    return (filterParameters[item].indexOf(entity.entityRegistration[item])) > -1;
                 } else {
-                    return entity.entityRegistration[item].includes(filterParameters[item]);
+                return entity.entityRegistration[item].toLowerCase().includes(filterParameters[item].toLowerCase());
                 }
             });
         });
         console.log(filterList);
         return filterList;
     }
-
-    public getFilterDataByKeyword(keyword: string): any {
-        let filterList = [];
-        const itemList = data.entityData;
-        filterList = itemList.filter((entity) => {
-            return entity.entityRegistration.legalBusinessName.toLowerCase().includes(keyword.toLowerCase());
-        });
-        console.log(filterList);
-        return filterList;
-    }
-
-
 
     private sortEntityItem(itemList: EntityData[], search: SearchParameters) {
         let valueA = '';

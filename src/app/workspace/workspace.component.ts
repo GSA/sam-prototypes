@@ -72,7 +72,7 @@ export class WorkspaceComponent implements OnInit, AfterViewInit  {
           },
         },
         {
-          key: 'cageNcage',
+          key: 'cageCode',
           type: 'input',
           templateOptions: {
             label: 'CAGE/NCAGE',
@@ -137,24 +137,6 @@ export class WorkspaceComponent implements OnInit, AfterViewInit  {
               { label: '60 Days', value: '60' },
               { label: '90 Days', value: '90' },
               { label: 'None', value: '0' },
-
-            ]
-          },
-        }
-      ]
-    },
-    {
-      key: 'addressUpdate',
-      wrappers: ['accordianwrapper'],
-      templateOptions: { label: 'Address Update' },
-      fieldGroup: [
-        {
-          key: 'addressUpdateOption',
-          type: 'radio',
-          templateOptions: {
-            options: [
-              { label: 'Update Required', value: 'adrupr' },
-              { label: 'Update Not Required', value: 'adrupn' },
 
             ]
           },
