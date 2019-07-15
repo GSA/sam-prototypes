@@ -9,7 +9,6 @@ export class EntityService implements SearchListInterface {
         const searchProperty = 'legalBusinessName';
         let toReturn = [];
         if (search.filter) {
-            console.log(search.filter);
             for (const i in search.filter) {
                 if (Object.keys(search.filter[i]).length > 0) {
                     if (i === 'searchKeyword') {
@@ -24,7 +23,7 @@ export class EntityService implements SearchListInterface {
                         if (selectedStatus.length === 0) {
                             delete this.filterParam['registrationStatus'];
                         } else {
-                        this.filterParam = Object.assign(this.filterParam, { registrationStatus: selectedStatus});
+                            this.filterParam = Object.assign(this.filterParam, { registrationStatus: selectedStatus });
                         }
                     } else {
                         this.filterParam = Object.assign(this.filterParam, ...search.filter[i]);
@@ -33,6 +32,9 @@ export class EntityService implements SearchListInterface {
             }
 
             toReturn = this.getFilterDataByEntity(this.filterParam);
+            if (toReturn.length === 0) {
+                window.scroll(0, 0);
+            }
             itemList = toReturn;
         }
         const start = search.page.pageNumber * search.page.pageSize - search.page.pageSize;
@@ -46,8 +48,6 @@ export class EntityService implements SearchListInterface {
 
 
     public getFilterDataByEntity(filterParameters) {
-        console.log(filterParameters);
-        // let filterList = [];
         let itemList = data.entityData;
         itemList = itemList.filter((entity) => {
             return Object.keys(filterParameters).every((item) => {
@@ -56,15 +56,14 @@ export class EntityService implements SearchListInterface {
                     const now = new Date();
                     const expiringDate = new Date(entity.entityRegistration[item]);
                     return expiringDate > now &&
-                    (Math.round(Math.abs((expiringDate.getTime() - now.getTime()) / oneDay)) < filterParameters[item]);
+                        (Math.round(Math.abs((expiringDate.getTime() - now.getTime()) / oneDay)) < filterParameters[item]);
                 } else if (item === 'registrationStatus') {
                     return (filterParameters[item].indexOf(entity.entityRegistration[item])) > -1;
                 } else {
-                return entity.entityRegistration[item].toLowerCase().includes(filterParameters[item].toLowerCase());
+                    return entity.entityRegistration[item].toLowerCase().includes(filterParameters[item].toLowerCase());
                 }
             });
         });
-        console.log(itemList);
         return itemList;
     }
 
