@@ -21,7 +21,11 @@ export class EntityService implements SearchListInterface {
                                 selectedStatus.push(j);
                             }
                         }
+                        if (selectedStatus.length === 0) {
+                            delete this.filterParam['registrationStatus'];
+                        } else {
                         this.filterParam = Object.assign(this.filterParam, { registrationStatus: selectedStatus});
+                        }
                     } else {
                         this.filterParam = Object.assign(this.filterParam, ...search.filter[i]);
                     }
@@ -43,11 +47,11 @@ export class EntityService implements SearchListInterface {
 
     public getFilterDataByEntity(filterParameters) {
         console.log(filterParameters);
-        let filterList = [];
-        const itemList = data.entityData;
-        filterList = itemList.filter((entity) => {
+        // let filterList = [];
+        let itemList = data.entityData;
+        itemList = itemList.filter((entity) => {
             return Object.keys(filterParameters).every((item) => {
-                if (item === 'expirationDate') {
+                if (item === 'expirationDate' && filterParameters[item] !== "0") {
                     const oneDay = 24 * 60 * 60 * 1000;
                     const now = new Date();
                     const expiringDate = new Date(entity.entityRegistration[item]);
@@ -60,8 +64,8 @@ export class EntityService implements SearchListInterface {
                 }
             });
         });
-        console.log(filterList);
-        return filterList;
+        console.log(itemList);
+        return itemList;
     }
 
     private sortEntityItem(itemList: EntityData[], search: SearchParameters) {
