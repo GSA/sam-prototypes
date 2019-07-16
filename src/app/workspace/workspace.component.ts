@@ -12,7 +12,9 @@ import {
   ActivatedRoute,
   Router,
   NavigationEnd,
-  UrlSegment
+  UrlSegment,
+  NavigationStart,
+
 } from '@angular/router';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 import { SamModelService } from '../model/sam-model.service';
@@ -28,10 +30,11 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['_styles.scss'],
   changeDetection: ChangeDetectionStrategy.Default
 })
-export class WorkspaceComponent implements OnInit, AfterViewInit  {
+export class WorkspaceComponent implements OnInit, AfterViewInit {
   form = new FormGroup({});
   filterModel = {};
-  fields: FormlyFieldConfig[] = [
+  fields: FormlyFieldConfig[] = [];
+  registrationfields: FormlyFieldConfig[] = [
     {
       key: 'searchKeyword',
       wrappers: ['accordianwrapper'],
@@ -65,17 +68,14 @@ export class WorkspaceComponent implements OnInit, AfterViewInit  {
           key: 'ueiSAM',
           type: 'input',
           templateOptions: {
-            required: true,
             label: 'Unique Entity ID (SAM)',
             placeholder: '',
-            min: 13,
-            max: 40,
-            inputType: 'number',
+            inputType: 'text',
             inputStyle: 'error',
           },
         },
         {
-          key: 'cageNcage',
+          key: 'cageCode',
           type: 'input',
           templateOptions: {
             label: 'CAGE/NCAGE',
@@ -87,12 +87,9 @@ export class WorkspaceComponent implements OnInit, AfterViewInit  {
           key: 'ueiDUNS',
           type: 'input',
           templateOptions: {
-            required: true,
             label: 'Unique Entity ID (DUNS)',
             placeholder: '',
-            min: 13,
-            max: 40,
-            inputType: 'number',
+            inputType: 'text',
             inputStyle: 'error',
           },
         }
@@ -148,24 +145,6 @@ export class WorkspaceComponent implements OnInit, AfterViewInit  {
           },
         }
       ]
-    },
-    {
-      key: 'addressUpdate',
-      wrappers: ['accordianwrapper'],
-      templateOptions: { label: 'Address Update' },
-      fieldGroup: [
-        {
-          key: 'addressUpdateOption',
-          type: 'radio',
-          templateOptions: {
-            options: [
-              { label: 'Update Required', value: 'adrupr' },
-              { label: 'Update Not Required', value: 'adrupn' },
-
-            ]
-          },
-        }
-      ]
     }
   ];
   public filterChange$ = new BehaviorSubject<object>(null);
@@ -177,11 +156,28 @@ export class WorkspaceComponent implements OnInit, AfterViewInit  {
     private change: ChangeDetectorRef,
     public workspaceModel: WorkspaceModelService,
     public model: SamModelService
-  ) {}
+  ) {
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        // Show loading indicator
+        const domain = this.router.url.split('/').pop();
+        if (domain === 'registrations') {
+          this.fields = this.registrationfields;
+        } else {
+          this.fields = [];
+        }
+      }
+    });
+
+  }
   @ViewChild('sideNav') sideNav;
 
   ngOnInit() {
-  
+    const str = this.router.url.split('/').pop();
+    if (str == 'registrations') {
+      this.fields = this.registrationfields;
+    }
     this.router.events
       .pipe(
         filter(event => event instanceof NavigationEnd),
