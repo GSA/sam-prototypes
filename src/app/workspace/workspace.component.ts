@@ -38,7 +38,7 @@ export class WorkspaceComponent implements OnInit, AfterViewInit {
     {
       key: 'searchKeyword',
       wrappers: ['accordianwrapper'],
-      templateOptions: { label: 'Search by Keyword' },
+      templateOptions: { label: 'Keyword' },
       fieldGroup: [{
         key: 'keyword',
         type: 'input',
@@ -53,13 +53,13 @@ export class WorkspaceComponent implements OnInit, AfterViewInit {
     {
       key: 'searchEntity',
       wrappers: ['accordianwrapper'],
-      templateOptions: { label: 'Search by Entity' },
+      templateOptions: { label: 'Entity' },
       fieldGroup: [
         {
           key: 'legalBusinessName',
           type: 'input',
           templateOptions: {
-            label: 'Legal Business Name',
+            label: 'Entity Name',
             placeholder: '',
             inputType: 'text',
           },
