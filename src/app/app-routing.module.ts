@@ -18,41 +18,6 @@ const routes: Routes = [
 
   },
   {
-    path: 'help',
-    loadChildren: './help/help.module#HelpModule',
-    data: {
-      id: "help"
-    }
-  },
-  {
-    path: 'contracting',
-    loadChildren: './contracting/contracting-home/contracting-home.module#ContractingHomeModule',
-    data: {
-      id: "unknown:entities-workspace"
-    }
-  },
-  {
-    path: 'entities',
-    loadChildren: './entities/entities-home/entities-home.module#EntitiesHomeModule',
-    data: {
-      id: "unknown:entities"
-    }
-  },
-  {
-    path: 'evaluation',
-    loadChildren: './performance/performance-data/performance-data.module#PerformanceDataModule',
-    data: {
-      id: "unknown:evaluation"
-    }
-  },
-  {
-    path: 'navigate',
-    loadChildren: './navigate/navigate.module#NavigateModule',
-    data: {
-      id: "unknown:navigate"
-    }
-  },
-  {
     path: 'requests',
     loadChildren: './request/request.module#RequestModule',
     data: {
@@ -75,13 +40,6 @@ const routes: Routes = [
     }
   },
   {
-    path: 'entities-workspace',
-    loadChildren: './entities/entities-workspace/entities-workspace.module#EntitiesWorkspaceModule',
-    data: {
-      id: "unknown:entities-workspace"
-    }
-  },
-  {
     path: 'databank',
     loadChildren: './databank/databank.module#DatabankModule',
     data: {
@@ -93,6 +51,13 @@ const routes: Routes = [
     loadChildren: './data-services/data-services.module#DataServicesModule',
     data: {
       id: "dataService"
+    }
+  },
+  {
+    path: 'help',
+    loadChildren: './help/help.module#HelpModule',
+    data: {
+      id: "help"
     }
   },
   {

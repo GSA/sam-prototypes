@@ -1,8 +1,7 @@
 import { Injectable, ElementRef } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
-import { ToolItem } from '../sam-ui-elements/tools';
-import { GlobalTools, SearchTools } from './tools.config';
 import { NavigationMode } from '@gsa-sam/components';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -29,7 +28,7 @@ export class SamModelService {
   },
   {
     imageClassPrefix: 'fas', imageClass: 'edit', mode: NavigationMode.INTERNAL,
-    text: 'Requests', route: '/', id: 'request'
+    text: 'Requests', route: '/requests', id: 'request'
   },
   {
     imageClassPrefix: 'fas', imageClass: 'th', imageAltText: 'Workspace Icon', mode: NavigationMode.INTERNAL,
@@ -41,9 +40,6 @@ export class SamModelService {
     { text: 'Data Services', route: '/dataservices', mode: NavigationMode.INTERNAL, id: 'dataService' },
     { text: 'Help', route: '/help', mode: NavigationMode.INTERNAL, id: 'help' }
   ];
-
-
-
 
   modelHeader = {
     secondaryLinks: this.secondaryLinks.concat([this.signOutItem]),
@@ -94,29 +90,11 @@ export class SamModelService {
     ]
   };
 
-  isMainNavigationVisible: boolean = true;
-
-
-  router: Router;
-  domain: string;
-  feature: string;
 
   /**
    * Constructor
    */
-  constructor(router: Router) {
-    // this.router = router;
-    // router.events.subscribe((event) => {
-    //   if (event instanceof NavigationStart) {
-    //     this.isMainNavigationVisible = true;
-    //   }
-    // });
-    // this.domain = 'all';
-    // this.feature = 'none';
-  }
-
-  setFeature(feature: string) {
-    this.feature = feature;
+  constructor(public router: Router) {
   }
 
   signIn(redirectUrl?: string) {
@@ -135,10 +113,6 @@ export class SamModelService {
 
   goTo(url: string) {
     this.router.navigateByUrl(url);
-  }
-
-  setMainNavigationVisible(isVisible: boolean) {
-    this.isMainNavigationVisible = isVisible;
   }
 
 }

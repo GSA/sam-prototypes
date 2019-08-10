@@ -1,2 +1,0 @@
-
-export * from './tool-item';

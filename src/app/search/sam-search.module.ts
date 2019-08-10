@@ -1,31 +1,35 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SamSearchRoutingModule } from './sam-search-routing.module';
-import { SamSidebarModule } from '../sam-ui-elements/sam-sidebar/sam-sidebar.module';
-import { SamListModule } from '../sam-ui-elements/sam-list/sam-list.module';
-import { SamSearchInputModule } from '../sam-ui-elements/sam-search-input/sam-search-input.module';
-import { SamLinkModule } from '../sam-ui-elements/sam-link/sam-link.module';
-import { SamLinkListModule } from '../sam-ui-elements/sam-link-list/sam-link-list.module';
-import { SamBodyModule } from '../sam-ui-elements/sam-body/sam-body.module';
 import { SearchServiceModule } from './service/service.module';
 import { SamSearchComponent } from './sam-search.component';
+
+import {
+  SdsSideNavigationModule,
+  SdsToolbarModule,
+  SdsAccordionModule,
+  SdsPageModule
+} from '@gsa-sam/components';
+import { SdsFiltersModule, SDSFormlyUpdateComunicationService } from '@gsa-sam/sam-formly';
+import { SdsSubheaderModule, SearchListServiceModule } from '@gsa-sam/layouts';
+
 import { FormlyModule } from '@ngx-formly/core';
 import { FormsModule } from '@angular/forms';
-import { SdsSubheaderModule } from '@gsa-sam/layouts';
 
 @NgModule({
   imports: [
     CommonModule,
     SamSearchRoutingModule,
-    SamSidebarModule,
-    SamListModule,
-    SamSearchInputModule,
-    SamLinkModule,
-    SamLinkListModule,
-    SamBodyModule,
     FormlyModule,
     FormsModule,
+    SdsSideNavigationModule,
+    SdsToolbarModule,
+    SdsAccordionModule,
+    SdsPageModule,
+    SdsSideNavigationModule,
+    SdsAccordionModule,
     SdsSubheaderModule,
+    SdsFiltersModule,
     SearchServiceModule.forRoot()
   ],
   exports: [

@@ -1,78 +1,115 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Router, NavigationStart } from '@angular/router';
+import {
+  ViewChild,
+  Component,
+  OnInit,
+  Input,
+  ChangeDetectorRef,
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  OnChanges
+} from '@angular/core';
+import {
+  ActivatedRoute,
+  Router,
+  NavigationEnd,
+  UrlSegment,
+  NavigationStart,
+
+} from '@angular/router';
+
 import { SamModelService } from '..//model/sam-model.service';
-import { FormGroup } from '@angular/forms';
+import { SamSearchService } from './service/sam-search.service';
+import { SideNavigationModel, NavigationMode } from '@gsa-sam/components';
+import { searchSideNavigationData } from './navigation/navigation.data';
+
+
 import { FormlyFieldConfig } from '@ngx-formly/core';
-import { fieldsList, modelList } from './data/formly-list';
+import { filter, map } from 'rxjs/operators';
+import { FormGroup } from '@angular/forms';
+import { BehaviorSubject } from 'rxjs';
+
+import { SearchAllFields } from './filter-config';
+
+
+
 
 @Component({
-  selector: 'sam-search',
+  selector: 'search',
   templateUrl: './sam-search.component.html',
-  styleUrls: ['./_styles.scss']
+  styleUrls: ['_styles.scss'],
+  changeDetection: ChangeDetectionStrategy.Default
 })
-export class SamSearchComponent implements OnInit {
-  public form: FormGroup;
-  public searchModel;
-  public fields: FormlyFieldConfig[];
+export class SamSearchComponent implements OnInit, AfterViewInit {
+  form = new FormGroup({});
+  filterModel = {};
+  fields: FormlyFieldConfig[] = [];
+  
+  public filterChange$ = new BehaviorSubject<object>(null);
 
-  domain: string;
-  view: string;
-  showFilters: boolean;
-  showNav: boolean;
 
-  constructor(private route: ActivatedRoute, public model: SamModelService, private router: Router) {
-    this.view = 'open';
-    this.showFilters = false;
-    this.showNav = true;
-    this.model.feature = 'search';
+  constructor(
+    private route: ActivatedRoute,
+    public router: Router,
+    private change: ChangeDetectorRef,
+    public searchModel: SamSearchService,
+    public model: SamModelService
+  ) {
 
     this.router.events.subscribe(event => {
-      if (event instanceof NavigationStart) {
+      if (event instanceof NavigationEnd) {
         // Show loading indicator
-        this.domain = this.route.snapshot.queryParamMap.get('domain');
-        const list = fieldsList.filter(x => x.domain == this.domain);
-        const listModel = modelList.filter(x => x.domain == this.domain);
-
-        this.fields = list[0].FormlyFields;
-        this.searchModel = listModel[0].model;
+        const domain = this.router.url.split('/').pop();
+        if (!domain || domain === 'all') {
+          this.fields = SearchAllFields;
+        } else {
+          this.fields = [];
+        }
       }
     });
 
   }
-
-  setView(view: string) {
-    this.view = view;
-  }
-
-  setModelDomain(domain: string) {
-    this.model.domain = domain;
-  }
-
-  isDomainIn(parentDomain: string) {
-    if (parentDomain == 'contractinginfo') {
-      return this.domain == 'contractinginfo' || this.domain == 'contractopportunities' || this.domain == 'contractdata';
-    }
-    if (parentDomain == 'entityinfo') {
-      return this.domain == 'entityinfo' || this.domain == 'registration' || this.domain == 'disasterresponse' ||
-        this.domain == 'exclusions' || this.domain == 'integrityinfo';
-    }
-    if (parentDomain == 'assistance') {
-      return this.domain == 'assistance' || this.domain == 'assistancelist';
-    }
-    if (parentDomain == 'wagedeterminations') {
-      return this.domain == 'wagedeterminations' || this.domain == 'dbawd' || this.domain == 'scawd';
-    }
-  }
+  @ViewChild('sideNav') sideNav;
 
   ngOnInit() {
-    this.domain = this.route.snapshot.queryParamMap.get('domain');
-    this.route.queryParamMap.subscribe(queryParams => {
-      this.domain = queryParams.get('domain');
-      if (!this.domain) {
-        this.domain = 'all';
-      }
-    });
+    const str = this.router.url.split('/').pop();
+    if (str == '') {
+      this.fields = SearchAllFields;
+    }
+    this.router.events
+      .pipe(
+        filter(event => event instanceof NavigationEnd),
+        map(() => {
+          let itemCode = 'sideId';
+          let child = this.route.firstChild;
+          let searchedValue = null;
+          if (this.route.snapshot.data && this.route.snapshot.data[itemCode]) {
+            searchedValue = this.route.snapshot.data[itemCode];
+          }
+          while (child) {
+            if (child.snapshot.data && child.snapshot.data[itemCode]) {
+              searchedValue = child.snapshot.data[itemCode];
+            }
+            if (child.firstChild) {
+              child = child.firstChild;
+            } else {
+              child = null;
+            }
+          }
+          return searchedValue;
+        })
+      )
+      .subscribe((customData: any) => {
+        this.sideNav.select(customData);
+      });
+
   }
+
+  ngAfterViewInit() {
+    this.change.detectChanges(); 
+    this.searchModel.showNav = true;
+  }
+
+  public sideNavModel: SideNavigationModel = searchSideNavigationData;
 
   log(value) {
     console.log(`%cLog: ${value}`, 'color: blue; font-weight: bold');
