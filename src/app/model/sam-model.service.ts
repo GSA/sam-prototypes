@@ -35,6 +35,7 @@ export class SamModelService {
     text: 'Workspace', route: '/workspace', id: 'workspace'
   }];
   navigationLinks: [
+    { text: 'Home', route: '/', mode: NavigationMode.INTERNAL, id: 'home' },
     { text: 'Search', route: '/search', mode: NavigationMode.INTERNAL, id: 'search' },
     { text: 'Databank', route: '/databank', mode: NavigationMode.INTERNAL, id: 'databank' },
     { text: 'Data Services', route: '/dataservices', mode: NavigationMode.INTERNAL, id: 'dataService' },
@@ -44,6 +45,7 @@ export class SamModelService {
   modelHeader = {
     secondaryLinks: this.secondaryLinks.concat([this.signOutItem]),
     navigationLinks: [
+      { text: 'Home', route: '/', mode: NavigationMode.INTERNAL, id: 'home' },
       { text: 'Search', route: '/search', mode: NavigationMode.INTERNAL, id: 'search' },
       { text: 'Databank', route: '/databank', mode: NavigationMode.INTERNAL, id: 'databank' },
       { text: 'Data Services', route: '/dataservices', mode: NavigationMode.INTERNAL, id: 'dataService' },
@@ -67,8 +69,10 @@ export class SamModelService {
     linkSections: [
       {
         text: 'About beta.SAM.gov', links: [
-          { text: 'Explore Our Community', mode: NavigationMode.INTERNAL, route: '/' },
-          { text: 'Release Notes', mode: NavigationMode.INTERNAL, route: '/' }
+          { text: 'About SAM.gov', mode: NavigationMode.INTERNAL, route: '/about/about-sam' },
+          { text: 'Explore Our Community', mode: NavigationMode.INTERNAL, route: '/about/community' },
+          { text: 'Release Notes', mode: NavigationMode.INTERNAL, route: '/about/release-notes' },
+          { text: 'Disclaimers', mode: NavigationMode.INTERNAL, route: '/about/disclaimers' }
         ]
       },
       {
@@ -81,10 +85,10 @@ export class SamModelService {
       },
       {
         text: 'Customer Service', links: [
-          { text: 'Learning Center', mode: NavigationMode.INTERNAL, route: '/' },
-          { text: 'Contact Federal Service Desk', mode: NavigationMode.INTERNAL, route: '/' },
-          { text: 'Resources', mode: NavigationMode.INTERNAL, route: '/' },
-          { text: 'Freedom of Information Act', mode: NavigationMode.INTERNAL, route: '/' },
+          { text: 'Help', mode: NavigationMode.INTERNAL, route: '/help' },
+          { text: 'Contact Federal Service Desk', mode: NavigationMode.INTERNAL, route: '/about/fsd' },
+          { text: 'Resources', mode: NavigationMode.INTERNAL, route: '/about/resources' },
+          { text: 'Policies', mode: NavigationMode.INTERNAL, route: '/about/policies' }
         ]
       }
     ]

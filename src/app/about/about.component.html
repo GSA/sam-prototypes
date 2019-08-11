@@ -1,0 +1,20 @@
+<ng-container>
+  <sds-subheader>
+    <!-- =============== TITLE =============== -->
+    About SAM.gov
+
+  </sds-subheader>
+</ng-container>
+
+<sds-page>
+  <sds-page-options class="sam-page__options">
+    <sds-toolbar #toolbar="sdsToolbar" [expanded]="true">
+      <sds-accordion>
+        <sds-side-navigation #sideNav [model]="sideNavModel"></sds-side-navigation>
+      </sds-accordion>
+    </sds-toolbar>
+  </sds-page-options>
+  <div class="sds-page__content" [sdsToolbarExpand]="toolbar">
+    <router-outlet></router-outlet>
+  </div>
+</sds-page>

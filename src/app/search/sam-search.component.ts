@@ -71,8 +71,8 @@ export class SamSearchComponent implements OnInit, AfterViewInit {
   @ViewChild('sideNav') sideNav;
 
   ngOnInit() {
-    const str = this.router.url.split('/').pop();
-    if (str == '') {
+    const str = this.route.snapshot.paramMap.get("domain")
+    if (!str || str == 'all') {
       this.fields = SearchAllFields;
     }
     this.router.events

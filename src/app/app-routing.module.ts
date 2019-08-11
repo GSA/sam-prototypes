@@ -6,7 +6,7 @@ const routes: Routes = [
     path: '',
     loadChildren: './home/home.module#HomeModule',
     data: {
-      id: ""
+      id: "home"
     }
   },
   {
@@ -56,6 +56,13 @@ const routes: Routes = [
   {
     path: 'help',
     loadChildren: './help/help.module#HelpModule',
+    data: {
+      id: "help"
+    }
+  },
+  {
+    path: 'about',
+    loadChildren: './about/about.module#AboutModule',
     data: {
       id: "help"
     }
