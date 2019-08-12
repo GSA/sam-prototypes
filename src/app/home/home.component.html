@@ -1,1 +1,57 @@
-<div>SAM.gov Home</div>
+<div class="grid-container" style="background-color: #F5F5F0; padding: 10px">
+  <div class="grid-row">
+    <div class="grid-col alert-title" style="background-color: white; border: solid 2px #5994F6; border-radius: 8px">
+    	<p>
+    		<a [routerLink]="['/messages']" style="color: #5994F6">Alerts</a>
+    	</p>
+    	<ul>
+    		<li>-- SAM.gov will be down for scheduled maintenance Saturday, 08/10/2019, from 8:00 AM to 1:00 PM (EDT). </li>
+    		<li>-- CAGE is currently experiencing a high volume of registrations, and is working them in the order in which they are received. When your registration is assigned to a CAGE Technician, you will be    contacted by CAGE, if necessary, for any additional information.</li>
+    	</ul>
+    </div>
+   </div>
+   <div class="grid-row" style="padding: 1em 3em; background-image: url('assets/img/home-graphic.png'); background-size: 90%; background-repeat: no-repeat; background-position: top right;">
+   	<div class="grid-col">
+	   <h2>Welcome to SAM.gov</h2>
+	   <h4>You may use this system to:</h4>
+	   <ul>
+	   	<li>Register to do business with the U.S. government</li>
+	   	<li>Search entity information including entity registrations and exclusions</li>
+	   </ul>
+	   <p>SAM.gov is also the official website for:</p>
+	   <ul>
+	   	<li><a href="">Contract Opportunities</a> (formerly fbo.gov)</li>
+	   	<li><a href="">Contract Data Reports</a> (formerly fpds.gov Reports) </li>
+	   	<li><a href="">Assistance Listings </a> (formerly cfda.gov) </li>
+	   	<li><a href="">Wage Determinations</a> (formerly wdol.gov)</li>
+	   </ul>
+	</div>
+   </div>
+   <div class="grid-row" style="margin: .75em 0;">
+   	    <div class="grid-col-5" style="padding-left: 3em;">
+   	    	<h4 style="font-size: .8em; font-weight: 300; font-style: italic; margin-bottom: .2em;">Search all of our data or select a data set to search</h4>
+   	    	<sds-subheader-search (searchTerm)="log($event)"> </sds-subheader-search>
+   	    </div>
+   	    <div class="grid-col-7" style="margin-top: 34px;" >
+   	    	<button class="usa-button" style="float: right;">Register Entity</button>
+   	    	<button class="usa-button usa-button--secondary" style="float: right;">Search Contract Opportunities</button>
+   	    </div>
+   </div>
+</div>
+<div class="grid-container">
+	<div class="grid-row">
+		<div class="grid-col-7" style="margin: 1em 2em">
+			<h2>Entity Information</h2>
+			<p>You must have an active entity registration in SAM.gov to receive a federal contract or federal assistance award (such as a grant, loan, or other assistance award).</p>
+			<ul>
+				<li><a [routerLink]="['']">Search Entity Information</a></li>
+				<li><a [routerLink]="['']">Register or Update Entity</a></li>
+				<li><a [routerLink]="['']">Check Status</a></li>
+				<li><a [routerLink]="['']">Report Exclusions</a> (Federal Users)</li>
+			</ul>
+   	    	<button class="usa-button usa-button--secondary">Learn More</button>
+		</div>
+		<div class="grid-col-5">
+		</div>
+	</div>
+</div>

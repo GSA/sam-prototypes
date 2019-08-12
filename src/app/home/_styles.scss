@@ -1,17 +1,29 @@
 
-h2.home {
-	font-size: 1.6em;
+a {
+	text-decoration: none;
+	color: #3F57A6;
 	font-weight: 600;
-	color: #717171;
 }
 
-.intro-text {
-	font-size: 1.3em;
-	font-weight: 300;
-	margin-bottom: 1.5em;
+a:visited {
+	color: #3F57A6;
 }
 
-.search-text {
-	font-size: .9em;
-	margin-bottom: .75em;
+.alert-title {
+
+    p {
+		margin: 0;
+		padding: 0px 10px;
+	}
+
+	ul {
+		font-size: .8em;
+		padding: 0 10px;
+		margin: 2px 0;
+		list-style: none;
+
+		li {
+			padding-top: 4px;
+		}
+	}
 }

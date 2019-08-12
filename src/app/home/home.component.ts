@@ -22,4 +22,8 @@ export class HomeComponent implements AfterViewInit, OnInit {
   ngAfterViewInit()
   {
   }
+
+  log(value) {
+    console.log(`%cLog: ${value}`, 'color: blue; font-weight: bold');
+  }
 }
