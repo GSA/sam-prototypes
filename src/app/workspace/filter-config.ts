@@ -3,7 +3,7 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
 export const RegistrationFields: FormlyFieldConfig[] = [
     {
       key: 'searchKeyword',
-      wrappers: ['accordianwrapper'],
+      wrappers: ['accordionwrapper'],
       templateOptions: { label: 'Keyword' },
       fieldGroup: [{
         key: 'keyword',
@@ -18,7 +18,7 @@ export const RegistrationFields: FormlyFieldConfig[] = [
 
     {
       key: 'searchEntity',
-      wrappers: ['accordianwrapper'],
+      wrappers: ['accordionwrapper'],
       templateOptions: { label: 'Entity' },
       fieldGroup: [
         {
@@ -49,21 +49,33 @@ export const RegistrationFields: FormlyFieldConfig[] = [
             inputType: 'text',
           },
         },
+
         {
           key: 'ueiDUNS',
-          type: 'input',
+          type: 'autocomplete',
           templateOptions: {
             label: 'Unique Entity ID (DUNS)',
-            placeholder: '',
-            inputType: 'text',
-            inputStyle: 'error',
+            // service: this.service,
+            // configuration: this.settings,
+            // model: this.autocompleteModel,
+            // modelChange: this.changes,
           },
         }
+        // {
+        //   key: 'ueiDUNS',
+        //   type: 'input',
+        //   templateOptions: {
+        //     label: 'Unique Entity ID (DUNS)',
+        //     placeholder: '',
+        //     inputType: 'text',
+        //     inputStyle: 'error',
+        //   },
+        // }
       ],
     },
     {
       key: 'registration',
-      wrappers: ['accordianwrapper'],
+      wrappers: ['accordionwrapper'],
       templateOptions: { label: 'Status' },
       fieldGroup: [
         {
@@ -94,7 +106,7 @@ export const RegistrationFields: FormlyFieldConfig[] = [
     },
     {
       key: 'expiration',
-      wrappers: ['accordianwrapper'],
+      wrappers: ['accordionwrapper'],
       templateOptions: { label: 'Expiration Date' },
       fieldGroup: [
         {

@@ -59,6 +59,8 @@ export class EntityService implements SearchListInterface {
                         (Math.round(Math.abs((expiringDate.getTime() - now.getTime()) / oneDay)) < filterParameters[item]);
                 } else if (item === 'registrationStatus') {
                     return (filterParameters[item].indexOf(entity.entityRegistration[item])) > -1;
+                } else if (item === 'ueiDUNS') {
+                    console.log(filterParameters[item], 'filter item');
                 } else {
                     return entity.entityRegistration[item].toLowerCase().includes(filterParameters[item].toLowerCase());
                 }
