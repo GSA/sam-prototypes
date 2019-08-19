@@ -3,6 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: 'hierarchy',
+    loadChildren: './hierarchy/hierarchy.module#HierarchyModule',
+    data: {
+      id: "home"
+    }
+  },
+  {
     path: '',
     loadChildren: './home/home.module#HomeModule',
     data: {
