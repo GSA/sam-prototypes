@@ -7,7 +7,10 @@ import { RoleAssignment } from './role-assignment';
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    UserProfile,
+    Role,
+    RoleAssignment
   ],
   exports: [
   	UserProfile,
