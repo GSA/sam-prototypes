@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, Inject } from '@angular/core';
 import { HierarchyService } from './service/hierarchy.service';
-
+import { SDSHiercarchicalServiceResult } from '@gsa-sam/components';
 import {
   SdsDialogService,
   // SdsDialogRef, 
@@ -27,7 +27,7 @@ export class HierarchyComponent implements OnInit {
     this.agencyPickerService.updateFilter(this.filter);
   }
 
-
+  public inputValue: string = '';
 
   public selectModel: SDSSelectedItemModel = new SDSSelectedItemModel();
 
@@ -50,6 +50,14 @@ export class HierarchyComponent implements OnInit {
     this.hierarchyService.filter = filter;
   }
 
+  result: any;
+  textChange() {
+    this.hierarchyService.getDataSearchTerms(this.filter, this.inputValue).subscribe(
+      (result: SDSHiercarchicalServiceResult) => {
+        this.result = result.items;
+      }
+    );
+  }
 
   advanceClick() {
     this.advanced = !this.advanced;

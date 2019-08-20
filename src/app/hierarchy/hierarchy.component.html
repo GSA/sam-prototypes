@@ -42,10 +42,19 @@
 		<agency-picker [level]="7"></agency-picker>
 	</span>
 	<span>
-		<label> Search</label> <input (ngModelChange)="textChange($event)"  [(ngModel)]="inputValue"  class="usa-input" autocomplete="off" type="text">
-
+		<label> Search</label> <input (ngModelChange)="textChange($event)" [(ngModel)]="inputValue" class="usa-input"
+			autocomplete="off" type="text">
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+			</tr>
+			<tr *ngFor="let item of result">
+				<td>{{item.id}}</td>
+				<td>{{item.name}}</td>
+			</tr>
+		</table>
 
 	</span>
 
 </div>
-

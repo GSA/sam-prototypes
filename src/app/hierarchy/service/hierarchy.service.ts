@@ -52,7 +52,7 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
     return of(returnItem);
   }
 
-  getDataSearchTerms(filterParams: any, searchValue?: string) {
+  getDataSearchTerms(filterParams: any, searchValue?: string):Observable<SDSHiercarchicalServiceResult> {
     let currentItems = 0;
     let itemIncrease = 25;
     let result: HierarchyData[] = [];
