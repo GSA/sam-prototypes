@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="grid-container grid-gap" style="padding: 2em; margin-top: 1.5em">
   <div class="grid-row">
 	<div class="grid-col-4">
@@ -25,4 +25,27 @@
   		<agency-picker [level]="7"></agency-picker>
   	</div>
   </div>
+</div> -->
+
+<!-- <sds-autocomplete [service]="autocompleteService" [(ngModel)]="selectModel" [configuration]="settings"
+	[suggestionTemplate]="temp" [selectedItemTemplate]="selecttemp"></sds-autocomplete> -->
+
+<agency-picker></agency-picker>
+<button (click)="advanceClick()">Advanced</button>
+
+<div *ngIf="advanced">
+	<span>
+		<agency-picker [level]="1"></agency-picker>
+		<agency-picker [level]="2"></agency-picker>
+		<agency-picker [level]="3"></agency-picker>
+		<agency-picker [level]="4"></agency-picker>
+		<agency-picker [level]="7"></agency-picker>
+	</span>
+	<span>
+		<label> Search</label> <input (ngModelChange)="textChange($event)"  [(ngModel)]="inputValue"  class="usa-input" autocomplete="off" type="text">
+
+
+	</span>
+
 </div>
+

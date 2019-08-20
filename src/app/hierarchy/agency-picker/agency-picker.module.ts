@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 import { SdsAutocompleteModule } from '@gsa-sam/components';
 
-import { HierarchyService } from '../service/hierarchy.service';
 
 import { AgencyPickerComponent } from './agency-picker.component';
 
@@ -15,7 +14,8 @@ import { AgencyPickerComponent } from './agency-picker.component';
     FormsModule,
     SdsAutocompleteModule
   ],
-  exports: [AgencyPickerComponent],
-  providers: [HierarchyService]
+  exports: [AgencyPickerComponent]
+
+
 })
 export class AgencyPickerModule { }
