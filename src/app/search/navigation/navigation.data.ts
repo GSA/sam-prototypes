@@ -2,7 +2,7 @@ import { SideNavigationModel, NavigationMode } from '@gsa-sam/components';
 
 export let searchSideNavigationData: SideNavigationModel = {
     navigationLinks: [
-        { id: 'searchhome', text: 'Search Home', mode: NavigationMode.INTERNAL, route: '/search' },
+        { id: 'searchhome', text: 'Search All', mode: NavigationMode.INTERNAL, route: '/search' },
         {
             id: 'contracting', text: 'Contracting', mode: NavigationMode.INTERNAL, route: '/search', children: [
                 { id: 'contractOpportunites', text: 'Contract Opportunities', mode: NavigationMode.INTERNAL, route: '/search' },

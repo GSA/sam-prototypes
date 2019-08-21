@@ -1,6 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
+import { SideNavigationModel, NavigationMode } from '@gsa-sam/components';
+
 import { SamModelService } from '../model/sam-model.service';
+import { FeedService } from './service/feed.service';
+import { MessageType } from './service/feed.model';
+import { feedNavigationData} from './navigation/navigation.data';
 
 @Component({
   selector: 'sam-feed',
@@ -11,7 +17,7 @@ export class FeedComponent implements OnInit {
 
   domain: string;
 
-  constructor(private route: ActivatedRoute, public model: SamModelService) {  
+  constructor(private route: ActivatedRoute, public service: FeedService, public model: SamModelService) {  
   }
 
   ngOnInit() {
@@ -23,6 +29,8 @@ export class FeedComponent implements OnInit {
         }
       });
   }
+
+  public sideNavModel: SideNavigationModel = feedNavigationData;
 
   log(value) {
     console.log(`%cLog: ${value}`, 'color: blue; font-weight: bold');

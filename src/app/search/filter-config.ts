@@ -3,7 +3,7 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
 export const SearchAllFields: FormlyFieldConfig[] = [
     {
       key: 'searchKeyword',
-      wrappers: ['accordianwrapper'],
+      wrappers: ['accordionwrapper'],
       templateOptions: { label: 'Keyword' },
       fieldGroup: [{
         key: 'keyword',
@@ -17,7 +17,7 @@ export const SearchAllFields: FormlyFieldConfig[] = [
     },
     {
       key: 'isActive',
-      wrappers: ['accordianwrapper'],
+      wrappers: ['accordionwrapper'],
       templateOptions: { label: 'Status' },
       fieldGroup: [
         {

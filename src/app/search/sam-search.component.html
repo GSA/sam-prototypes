@@ -10,9 +10,14 @@
 
 <sds-page>
   <sds-page-options class="sam-page__options">
-    <sds-toolbar #toolbar="sdsToolbar">
+    <sds-toolbar #toolbar="sdsToolbar" [expanded]="true">
       <sds-accordion multi="true">
-        <sds-side-navigation #sideNav [model]="sideNavModel"></sds-side-navigation>
+        <sds-accordion>
+        <sds-accordion-item [expanded]="true">
+          <sds-accordion-item-header>Show Results For</sds-accordion-item-header>
+          <sds-side-navigation #sideNav [model]="sideNavModel"></sds-side-navigation>
+        </sds-accordion-item>
+       </sds-accordion>
         <sds-filters *ngIf="fields && fields.length > 0" [form]="form" [fields]="fields" [model]="filterModel" (filterChange)="filterChange$.next($event)"></sds-filters>
       </sds-accordion>
     </sds-toolbar>
