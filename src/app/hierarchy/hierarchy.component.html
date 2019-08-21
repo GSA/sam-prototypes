@@ -48,18 +48,25 @@
 				<div class="tablet:grid-col">
 					<label> Search</label> <input (ngModelChange)="textChange($event)" [(ngModel)]="inputValue"
 						class="usa-input" autocomplete="off" type="text">
-					<div #resultsList style="height: 300px; overflow: scroll;" (scroll)="onScroll()">
-						<table>
-							<tr>
-								<th>Select</th>
-								<th>ID</th>
-								<th>Name</th>
-							</tr>
-							<tr *ngFor="let item of result">
-								<td><input type="checkbox" (change)="change($event)" [(ngModel)]="item.isChecked"> </td>
-								<td>{{item.id}}</td>
-								<td>{{item.name}}</td>
-							</tr>
+					<div>
+						<table style="width: 100%">
+							<thead style="display: block;">
+								<tr style="width: 100%">
+									<th style="width: 10%">Select</th>
+									<th style="width: 15%">ID</th>
+									<th style="width: 75%">Name</th>
+								</tr>
+							</thead>
+							<tbody #resultsList style="height: 300px; overflow: scroll; display: block;"
+								(scroll)="onScroll()">
+								<tr *ngFor="let item of result">
+									<td style="width: 10%"><input type="checkbox" (change)="change($event)"
+											[(ngModel)]="item.isChecked">
+									</td>
+									<td style="width: 15%">{{item.id}}</td>
+									<td style="width: 75%">{{item.name}}</td>
+								</tr>
+							</tbody>
 						</table>
 					</div>
 				</div>
