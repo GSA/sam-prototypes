@@ -48,18 +48,20 @@
 				<div class="tablet:grid-col">
 					<label> Search</label> <input (ngModelChange)="textChange($event)" [(ngModel)]="inputValue"
 						class="usa-input" autocomplete="off" type="text">
-					<table>
-						<tr>
-							<th>Select</th>
-							<th>ID</th>
-							<th>Name</th>
-						</tr>
-						<tr *ngFor="let item of result">
-							<td><input type="checkbox" (change)="change($event)" [(ngModel)]="item.isChecked"> </td>
-							<td>{{item.id}}</td>
-							<td>{{item.name}}</td>
-						</tr>
-					</table>
+					<div #resultsList style="height: 300px; overflow: scroll;" (scroll)="onScroll()">
+						<table>
+							<tr>
+								<th>Select</th>
+								<th>ID</th>
+								<th>Name</th>
+							</tr>
+							<tr *ngFor="let item of result">
+								<td><input type="checkbox" (change)="change($event)" [(ngModel)]="item.isChecked"> </td>
+								<td>{{item.id}}</td>
+								<td>{{item.name}}</td>
+							</tr>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Inject, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Inject, TemplateRef, ViewChild, ElementRef } from '@angular/core';
 import { HierarchyService } from './service/hierarchy.service';
 import { SDSHiercarchicalServiceResult } from '@gsa-sam/components';
 import {
@@ -26,6 +26,8 @@ export class HierarchyComponent implements OnInit {
 
   @ViewChild('picker')
   private picker: AgencyPickerComponent;
+
+  @ViewChild('resultsList') resultsListElement: ElementRef;
   ngOnInit(): void {
 
     this.agencyPickerService.updateFilter(this.filter);
@@ -74,6 +76,20 @@ export class HierarchyComponent implements OnInit {
   advanceClick() {
     this.updateResults();
     this.dialogRef = this.dialog.open(this.overlay);
+  }
+
+  onScroll() {
+
+    let scrollAreaHeight = this.resultsListElement.nativeElement.offsetHeight;
+    let scrollTopPos = this.resultsListElement.nativeElement.scrollTop;
+    let scrollAreaMaxHeight = this.resultsListElement.nativeElement.scrollHeight;
+    if ((scrollTopPos + scrollAreaHeight * 2) >= scrollAreaMaxHeight) {
+      this.hierarchyService.getDataSearchTerms(this.filter, this.result.length, this.inputValue).subscribe((result: SDSHiercarchicalServiceResult) => {
+        this.result = this.result.concat(result.items);
+      });
+    }
+
+    
   }
 
   selectClick() {
