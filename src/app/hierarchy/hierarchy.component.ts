@@ -45,6 +45,7 @@ export class HierarchyComponent implements OnInit {
       (filter) => {
         this.filter = filter;
         this.updateFilter(filter);
+        this.updateResults();
       }
     )
   }
@@ -57,26 +58,22 @@ export class HierarchyComponent implements OnInit {
 
   result: any;
   textChange() {
-    this.hierarchyService.getDataSearchTerms(this.filter, this.inputValue).subscribe(
-      (result: SDSHiercarchicalServiceResult) => {
-        this.result = result.items;
-      }
-    );
+    this.updateResults();
   }
+  private updateResults() {
+    this.hierarchyService.getDataSearchTerms(this.filter, 0, this.inputValue).subscribe((result: SDSHiercarchicalServiceResult) => {
+      this.result = result.items;
+    });
+  }
+
   change(values: any) {
     console.log(values.currentTarget.checked);
 
   }
 
   advanceClick() {
-    this.hierarchyService.getDataSearchTerms(this.filter, this.inputValue).subscribe(
-      (result: SDSHiercarchicalServiceResult) => {
-        this.result = result.items;
-      }
-    );
+    this.updateResults();
     this.dialogRef = this.dialog.open(this.overlay);
-
-
   }
 
   selectClick() {

@@ -52,12 +52,13 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
     return of(returnItem);
   }
 
-  getDataSearchTerms(filterParams: any, searchValue?: string): Observable<SDSHiercarchicalServiceResult> {
+  getDataSearchTerms(filterParams: any, currentItems: number, searchValue?: string): Observable<SDSHiercarchicalServiceResult> {
     this.filter = filterParams;
-    let currentItems = 0;
+
     let itemIncrease = 25;
     let result: HierarchyData[] = [];
-    let source = this.determineSource();
+    let source = this.determineFilteredSource();
+
     if (searchValue) {
       for (let i = 0; i < source.length; i++) {
         let item = source[i];
@@ -83,6 +84,29 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
       totalItems: totalItemCount
     };
     return of(returnItem);
+
+  }
+  private determineFilteredSource() {
+    let matchFound = false;
+    let matchedItems = [];
+    if (this.filter) {
+      for (let i = 7; i > 0 && !matchFound; i--) {
+        let tempFilter = this.filter[i];
+        if (tempFilter !== undefined) {
+          if (tempFilter.items.length > 0) {
+            for (let j = 0; j < tempFilter.items.length; j++) {
+              let item = tempFilter.items[j];
+              matchedItems = matchedItems.concat(this.findItemsDecendents(item));
+            }
+
+          }
+        }
+      }
+    }
+    if (matchedItems.length === 0) {
+      matchedItems = this.flatData;
+    }
+    return matchedItems;
 
   }
 
