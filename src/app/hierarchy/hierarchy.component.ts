@@ -1,10 +1,8 @@
-import { Component, OnInit, ChangeDetectionStrategy, Inject } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Inject, TemplateRef, ViewChild } from '@angular/core';
 import { HierarchyService } from './service/hierarchy.service';
 import { SDSHiercarchicalServiceResult } from '@gsa-sam/components';
 import {
-  SdsDialogService,
-  // SdsDialogRef, 
-  // SDS_DIALOG_DATA, 
+  SdsDialogService, SdsDialogRef, SDS_DIALOG_DATA,
   SDSAutocompletelConfiguration,
   SDSSelectedItemModel,
   SelectionMode
@@ -22,6 +20,9 @@ import { AgencyPickerService } from './service/agency-picker-service';
 })
 export class HierarchyComponent implements OnInit {
   filter = {};
+
+  @ViewChild('overlay')
+  private overlay: TemplateRef<any>;
   ngOnInit(): void {
 
     this.agencyPickerService.updateFilter(this.filter);
@@ -32,9 +33,10 @@ export class HierarchyComponent implements OnInit {
   public selectModel: SDSSelectedItemModel = new SDSSelectedItemModel();
 
 
-  advanced: boolean = false;
-
-  constructor(public agencyPickerService: AgencyPickerService, public hierarchyService: HierarchyService) {
+  dialogRef: SdsDialogRef<any, any>;
+  constructor(public dialog: SdsDialogService,
+    public agencyPickerService: AgencyPickerService,
+    public hierarchyService: HierarchyService) {
 
     this.agencyPickerService.filterUpdate.subscribe(
       (filter) => {
@@ -60,11 +62,26 @@ export class HierarchyComponent implements OnInit {
   }
   change(values: any) {
     console.log(values.currentTarget.checked);
-    
+
   }
 
   advanceClick() {
-    this.advanced = !this.advanced;
+
+    this.dialogRef = this.dialog.open(this.overlay, {
+      width: '250px',
+      hasBackdrop: true,
+
+    });
+
+
   }
 
+  selectClick() {
+    //SEND IN RESULT ()FIND RESULT
+    this.dialogRef.close();
+  }
+
+  cancelClick() {
+    this.dialogRef.close();
+  }
 }

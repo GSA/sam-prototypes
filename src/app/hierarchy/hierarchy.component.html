@@ -32,8 +32,8 @@
 
 <agency-picker></agency-picker>
 <button (click)="advanceClick()">Advanced</button>
-
-<div *ngIf="advanced">
+<ng-template #overlay>
+	<!-- <div *ngIf="advanced"> -->
 	<span>
 		<agency-picker [level]="1"></agency-picker>
 		<agency-picker [level]="2"></agency-picker>
@@ -51,12 +51,16 @@
 				<th>Name</th>
 			</tr>
 			<tr *ngFor="let item of result">
-				<td><input type="checkbox" (change)="change($event)" [(ngModel)]="item.isChecked" >  </td>
+				<td><input type="checkbox" (change)="change($event)" [(ngModel)]="item.isChecked"> </td>
 				<td>{{item.id}}</td>
 				<td>{{item.name}}</td>
 			</tr>
 		</table>
+		<button (click)="cancelClick()">Cancel</button>
+
+		<button (click)="selectClick()">Select</button>
 
 	</span>
 
-</div>
+	<!-- </div> -->
+</ng-template>

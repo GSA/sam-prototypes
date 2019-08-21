@@ -7,6 +7,7 @@ import { HierarchyComponent } from './hierarchy.component';
 import { SdsAutocompleteModule } from '@gsa-sam/components'
 import { HierarchyService } from './service/hierarchy.service';
 import { AgencyPickerService } from './service/agency-picker-service';
+import { SdsDialogModule } from '@gsa-sam/components';
 @NgModule({
   declarations: [HierarchyComponent],
   imports: [
@@ -14,7 +15,8 @@ import { AgencyPickerService } from './service/agency-picker-service';
     FormsModule,
     HierarchyRoutingModule,
     SdsAutocompleteModule,
-    AgencyPickerModule
+    AgencyPickerModule,
+    SdsDialogModule
   ],
   providers: [AgencyPickerService, HierarchyService],
   exports: [HierarchyComponent]
