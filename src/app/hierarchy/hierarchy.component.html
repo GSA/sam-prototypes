@@ -33,34 +33,41 @@
 <agency-picker></agency-picker>
 <button (click)="advanceClick()">Advanced</button>
 <ng-template #overlay>
-	<!-- <div *ngIf="advanced"> -->
-	<span>
-		<agency-picker [level]="1"></agency-picker>
-		<agency-picker [level]="2"></agency-picker>
-		<agency-picker [level]="3"></agency-picker>
-		<agency-picker [level]="4"></agency-picker>
-		<agency-picker [level]="7"></agency-picker>
-	</span>
-	<span>
-		<label> Search</label> <input (ngModelChange)="textChange($event)" [(ngModel)]="inputValue" class="usa-input"
-			autocomplete="off" type="text">
-		<table>
-			<tr>
-				<th>Select</th>
-				<th>ID</th>
-				<th>Name</th>
-			</tr>
-			<tr *ngFor="let item of result">
-				<td><input type="checkbox" (change)="change($event)" [(ngModel)]="item.isChecked"> </td>
-				<td>{{item.id}}</td>
-				<td>{{item.name}}</td>
-			</tr>
-		</table>
+
+	<strong sds-dialog-title></strong>
+	<div sds-dialog-content>
+		@gsa-sam/sam-stylesclass="grid-container">
+		<div class="grid-container">
+			<div class="grid-row">
+				<div class="tablet:grid-col">
+					<agency-picker [level]="1"></agency-picker>
+					<agency-picker [level]="2"></agency-picker>
+					<agency-picker [level]="3"></agency-picker>
+					<agency-picker [level]="4"></agency-picker>
+					<agency-picker [level]="7"></agency-picker>
+				</div>
+				<div class="tablet:grid-col">
+					<label> Search</label> <input (ngModelChange)="textChange($event)" [(ngModel)]="inputValue"
+						class="usa-input" autocomplete="off" type="text">
+					<table>
+						<tr>
+							<th>Select</th>
+							<th>ID</th>
+							<th>Name</th>
+						</tr>
+						<tr *ngFor="let item of result">
+							<td><input type="checkbox" (change)="change($event)" [(ngModel)]="item.isChecked"> </td>
+							<td>{{item.id}}</td>
+							<td>{{item.name}}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div sds-dialog-actions>
 		<button (click)="cancelClick()">Cancel</button>
 
 		<button (click)="selectClick()">Select</button>
-
-	</span>
-
-	<!-- </div> -->
+	</div>
 </ng-template>

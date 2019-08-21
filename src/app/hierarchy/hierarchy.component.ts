@@ -68,7 +68,7 @@ export class HierarchyComponent implements OnInit {
   advanceClick() {
 
     this.dialogRef = this.dialog.open(this.overlay, {
-      width: '250px',
+    //width: '500px',
       hasBackdrop: true,
 
     });
