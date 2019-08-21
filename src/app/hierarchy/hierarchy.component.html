@@ -46,10 +46,12 @@
 			autocomplete="off" type="text">
 		<table>
 			<tr>
+				<th>Select</th>
 				<th>ID</th>
 				<th>Name</th>
 			</tr>
 			<tr *ngFor="let item of result">
+				<td><input type="checkbox" (change)="change($event)" [(ngModel)]="item.isChecked" >  </td>
 				<td>{{item.id}}</td>
 				<td>{{item.name}}</td>
 			</tr>
