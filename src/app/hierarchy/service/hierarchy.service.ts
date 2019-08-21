@@ -52,7 +52,7 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
     return of(returnItem);
   }
 
-  getDataSearchTerms(filterParams: any, searchValue?: string):Observable<SDSHiercarchicalServiceResult> {
+  getDataSearchTerms(filterParams: any, searchValue?: string): Observable<SDSHiercarchicalServiceResult> {
     let currentItems = 0;
     let itemIncrease = 25;
     let result: HierarchyData[] = [];
@@ -86,13 +86,13 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
   }
 
   private determineSource() {
-
     let source: HierarchyData[];
     switch (this.level) {
       case 0:
         source = this.flatData;
         break;
       case 1:
+
         source = this.level1Items;
         break;
       case 2:
@@ -112,9 +112,66 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
       default:
         break;
     }
+    if (this.level !== 0) {
+      let children = this.findItemsFromAboveLevel();
+      if (children.length !== 0) {
+        source = children;
+      }
+    }
     return source;
+
   }
   private flatData: HierarchyData[] = [];
+
+  findItemsFromAboveLevel() {
+    let matchFound = false;
+    let matchedItems = [];
+    if (this.filter) {
+      for (let i = this.level; i > 0 && !matchFound; i--) {
+        let tempFilter = this.filter[i];
+
+        if (tempFilter !== undefined) {
+
+          if (tempFilter.items.length > 0) {
+            for (let j = 0; j < tempFilter.items.length; j++) {
+              let item = tempFilter.items[j];
+              let children = this.parentChildren[item.id];
+              let childMatches = this.findChildrenOfLevel(children);
+              matchedItems = matchedItems.concat(childMatches);
+            }
+          }
+        }
+      }
+    }
+    return matchedItems;
+  }
+
+  findChildrenOfLevel(children: HierarchyData[]) {
+    let foundChildren = [];
+    for (let i = 0; i < children.length; i++) {
+      let child = children[i];
+      let childLevel = child.level;
+      if (childLevel === 5 || childLevel === 6) {
+        childLevel = 4;
+      }
+      if (childLevel === this.level) {
+        foundChildren.push(child);
+      }
+      if (child.level > this.level) {
+        if (child.children) {
+          let childrensChildren = this.findChildrenOfLevel(child.children);
+          if (childrensChildren.length > 0) {
+            foundChildren = foundChildren.concat(childrensChildren);
+          }
+        }
+      }
+
+    }
+    return foundChildren;
+  }
+
+
+
 
   // level0: HierarchyData;
   // level1: HierarchyData[];
