@@ -28,7 +28,7 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
     if (searchValue) {
       for (let i = 0; i < source.length; i++) {
         let item = source[i];
-        if (item.name.indexOf(searchValue) !== -1 || item.id.indexOf(searchValue) !== -1) {
+        if (item.name.indexOf(searchValue.toUpperCase()) !== -1 || item.id.indexOf(searchValue) !== -1) {
           result.push(item);
         }
       }
@@ -60,7 +60,7 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
     if (searchValue) {
       for (let i = 0; i < source.length; i++) {
         let item = source[i];
-        if (item.name.indexOf(searchValue) !== -1 || item.id.indexOf(searchValue) !== -1) {
+        if (item.name.indexOf(searchValue.toUpperCase()) !== -1 || item.id.indexOf(searchValue) !== -1) {
           result.push(item);
         }
       }

@@ -9,7 +9,7 @@ import {
   // SDSAutocompleteServiceInterface, 
   // SDSHiercarchicalServiceResult 
 } from '@gsa-sam/components';
-
+import { AgencyPickerComponent } from './agency-picker/agency-picker.component';
 import { AgencyPickerService } from './service/agency-picker-service';
 @Component({
   selector: 'app-hierarchy',
@@ -23,6 +23,9 @@ export class HierarchyComponent implements OnInit {
 
   @ViewChild('overlay')
   private overlay: TemplateRef<any>;
+
+  @ViewChild('picker')
+  private picker: AgencyPickerComponent;
   ngOnInit(): void {
 
     this.agencyPickerService.updateFilter(this.filter);
@@ -67,17 +70,18 @@ export class HierarchyComponent implements OnInit {
 
   advanceClick() {
 
-    this.dialogRef = this.dialog.open(this.overlay, {
-    //width: '500px',
-      hasBackdrop: true,
-
-    });
+    this.dialogRef = this.dialog.open(this.overlay);
 
 
   }
 
   selectClick() {
-    //SEND IN RESULT ()FIND RESULT
+    for (let i = 0; i < this.result.length; i++) {
+      let item = this.result[i];
+      if (item.isChecked) {
+        this.picker.addItem(item);
+      }
+    }
     this.dialogRef.close();
   }
 

@@ -10,7 +10,8 @@ import {
     SDSSelectedItemModel,
     SelectionMode,
     SDSAutocompleteServiceInterface,
-    SDSHiercarchicalServiceResult
+    SDSHiercarchicalServiceResult,
+    SDSSelectedItemModelHelper
 } from '@gsa-sam/components';
 import { AgencyPickerService } from '../service/agency-picker-service';
 import { HierarchyService } from '../service/hierarchy.service';
@@ -49,6 +50,10 @@ export class AgencyPickerComponent implements OnInit {
     private updateFilter(filter: any) {
         this.filter = filter;
         this.service.filter = filter;
+    }
+
+    public addItem(item: any) {
+        this.selectModel.items.push(item);
     }
 
     private setupSettings(labelText: string, controlId: string) {
