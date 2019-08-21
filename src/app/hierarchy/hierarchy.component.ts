@@ -43,7 +43,7 @@ export class HierarchyComponent implements OnInit {
 
     this.agencyPickerService.filterUpdate.subscribe(
       (filter) => {
-
+        this.filter = filter;
         this.updateFilter(filter);
       }
     )
@@ -69,7 +69,11 @@ export class HierarchyComponent implements OnInit {
   }
 
   advanceClick() {
-
+    this.hierarchyService.getDataSearchTerms(this.filter, this.inputValue).subscribe(
+      (result: SDSHiercarchicalServiceResult) => {
+        this.result = result.items;
+      }
+    );
     this.dialogRef = this.dialog.open(this.overlay);
 
 

@@ -53,6 +53,7 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
   }
 
   getDataSearchTerms(filterParams: any, searchValue?: string): Observable<SDSHiercarchicalServiceResult> {
+    this.filter = filterParams;
     let currentItems = 0;
     let itemIncrease = 25;
     let result: HierarchyData[] = [];
@@ -144,6 +145,18 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
       }
     }
     return matchedItems;
+  }
+
+  findItemsDecendents(parent: HierarchyData) {
+    let decendents = [];
+    if (parent.children) {
+      for (let i = 0; i < parent.children.length; i++) {
+        let child = parent.children[i];
+        decendents.push(child);
+        decendents = decendents.concat(this.findItemsDecendents(child));
+      }
+    }
+    return decendents;
   }
 
   findChildrenOfLevel(children: HierarchyData[]) {

@@ -29,9 +29,9 @@
 
 <!-- <sds-autocomplete [service]="autocompleteService" [(ngModel)]="selectModel" [configuration]="settings"
 	[suggestionTemplate]="temp" [selectedItemTemplate]="selecttemp"></sds-autocomplete> -->
-
-<agency-picker #picker></agency-picker>
 <button (click)="advanceClick()">Advanced</button>
+<agency-picker #picker></agency-picker>
+
 <ng-template #overlay>
 
 	<strong sds-dialog-title></strong>
@@ -70,5 +70,3 @@
 		<button (click)="selectClick()">Select</button>
 	</div>
 </ng-template>
-
-
