@@ -53,7 +53,8 @@ export class AgencyPickerComponent implements OnInit {
     }
 
     public addItem(item: any) {
-        this.selectModel.items.push(item);
+        SDSSelectedItemModelHelper.addItem(item, this.settings.primaryKeyField, this.settings.selectionMode, this.selectModel.items);
+
     }
 
     private setupSettings(labelText: string, controlId: string) {
