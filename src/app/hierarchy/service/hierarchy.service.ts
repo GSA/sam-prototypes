@@ -87,10 +87,9 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
 
   }
   private determineFilteredSource() {
-    let matchFound = false;
     let matchedItems = [];
     if (this.filter) {
-      for (let i = 7; i > 0 && !matchFound; i--) {
+      for (let i = 7; i > 0 && matchedItems.length === 0; i--) {
         let tempFilter = this.filter[i];
         if (tempFilter !== undefined) {
           if (tempFilter.items.length > 0) {
@@ -149,15 +148,16 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
   private flatData: HierarchyData[] = [];
 
   findItemsFromAboveLevel() {
-    let matchFound = false;
+
     let matchedItems = [];
     if (this.filter) {
-      for (let i = this.level; i > 0 && !matchFound; i--) {
+      for (let i = this.level; i > 0 && matchedItems.length === 0; i--) {
         let tempFilter = this.filter[i];
 
         if (tempFilter !== undefined) {
 
           if (tempFilter.items.length > 0) {
+
             for (let j = 0; j < tempFilter.items.length; j++) {
               let item = tempFilter.items[j];
               let children = this.parentChildren[item.id];
