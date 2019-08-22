@@ -15,8 +15,7 @@ import {
 } from '@gsa-sam/components';
 import { AgencyPickerService } from '../service/agency-picker-service';
 import { HierarchyService } from '../service/hierarchy.service';
-
-
+import { HierarchyLabels } from './agency.display';
 
 @Component({
     selector: 'agency-picker',
@@ -36,6 +35,8 @@ export class AgencyPickerComponent implements OnInit {
      */
     @Input() level: number = 0;
 
+    @Input() defaultAgency: string[] = [];
+
     constructor(public service: HierarchyService, private agencyPickerService: AgencyPickerService) {
         this.service.level = this.level;
         this.setup();
@@ -53,7 +54,8 @@ export class AgencyPickerComponent implements OnInit {
     }
 
     public addItem(item: any) {
-        this.selectModel.items.push(item);
+        SDSSelectedItemModelHelper.addItem(item, this.settings.primaryKeyField, this.settings.selectionMode, this.selectModel.items);
+
     }
 
     private setupSettings(labelText: string, controlId: string) {
@@ -63,15 +65,13 @@ export class AgencyPickerComponent implements OnInit {
         this.settings.primaryTextField = 'id';
         this.settings.secondaryTextField = 'name';
         this.settings.selectionMode = SelectionMode.MULTIPLE;
-        this.settings.autocompletePlaceHolderText = 'Enter ID or Name';
+        this.settings.autocompletePlaceHolderText = 'Enter Code or Name';
     }
 
     ngOnInit() {
         this.service.level = this.level;
         this.setup();
     }
-
-    levelLabels: string[] = ['Federal Hierarchy', 'Dept / Ind. Agency', 'Subtier', 'Major Command', 'Sub Command', 'Sub Command', 'Sub Command', 'Office'];
 
     setup() {
 
@@ -102,7 +102,7 @@ export class AgencyPickerComponent implements OnInit {
     }
 
     getLabel(item): string {
-        return this.levelLabels[item.level];
+        return HierarchyLabels[item.level];
     }
 
     change(value) {

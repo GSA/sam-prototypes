@@ -185,6 +185,9 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
 
   findChildrenOfLevel(children: HierarchyData[]) {
     let foundChildren = [];
+    if(!children) {
+      return foundChildren;
+    }
     for (let i = 0; i < children.length; i++) {
       let child = children[i];
       let childLevel = child.level;

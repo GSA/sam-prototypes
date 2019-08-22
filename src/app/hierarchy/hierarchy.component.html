@@ -29,8 +29,30 @@
 
 <!-- <sds-autocomplete [service]="autocompleteService" [(ngModel)]="selectModel" [configuration]="settings"
 	[suggestionTemplate]="temp" [selectedItemTemplate]="selecttemp"></sds-autocomplete> -->
-<button (click)="advanceClick()">Advanced</button>
-<agency-picker #picker></agency-picker>
+
+<div class="grid-container" style="padding: 2em; margin-top:1.5em">
+	<div class="grid-row grid-gap">
+		<div class="tablet:grid-col-4">
+			<label>Federal Hierarchy</label>
+			<p>Enter your Department, Ind. Agency, Subtier, Office, or other organization.</p>
+			<div class="grid-row">
+				<div class="tablet:grid-col-fill">
+					<agency-picker #picker></agency-picker>
+				</div>
+				<div class="tablet:grid-col-auto">
+					<button class="usa-button--circle" style="margin: 8px 0px; height: 40px; width: 40px;" (click)="advanceClick()"><i class="fa fa-ellipsis-h"></i></button>
+				</div>
+			</div>
+		</div>
+		<div class="tablet:grid-col-4">
+			<agency-picker [level]="1"></agency-picker>
+			<agency-picker [level]="2"></agency-picker>
+			<agency-picker [level]="3"></agency-picker>
+			<agency-picker [level]="4"></agency-picker>
+			<agency-picker [level]="7"></agency-picker>
+		</div>
+	</div>
+</div>
 
 <ng-template #overlay>
 
@@ -46,27 +68,41 @@
 					<agency-picker [level]="7"></agency-picker>
 				</div>
 				<div class="tablet:grid-col-8">
-					<label> Search</label> <input (ngModelChange)="textChange($event)" [(ngModel)]="inputValue"
-						class="usa-input" autocomplete="off" type="text">
-					<table class="agency-table" style="height: 3em; overflow-y: scroll;">
-						<tr>
-							<th>Select</th>
-							<th>Code</th>
-							<th>Name</th>
-						</tr>
-						<tr *ngFor="let item of result">
-							<td><input type="checkbox" (change)="change($event)" [(ngModel)]="item.isChecked"> </td>
-							<td>{{item.id}}</td>
-							<td>{{item.name}}</td>
-						</tr>
-					</table>
+					<div>
+						<table class="agency-table" style="width: 100%">
+							<thead style="display: block;">
+								<tr style="width: 100%">
+									<th style="width: 10%"></th>
+									<th style="width: 10%">Code</th>
+									<th style="width: 60%">Name</th>
+									<th style="width: 20%">Level</th>
+								</tr>
+							</thead>
+							<tbody #resultsList style="height: 300px; overflow: scroll; display: block;"
+								(scroll)="onScroll()">
+								<tr *ngFor="let item of result">
+									<td style="width: 10%"><input type="checkbox" (change)="change($event)"
+											[(ngModel)]="item.isChecked">
+									</td>
+									<td style="width: 10%">{{item.id}}</td>
+									<td style="width: 60%">{{item.name}}</td>
+									<td style="width: 20%">{{getLabel(item.level)}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div sds-dialog-actions>
-		<button (click)="cancelClick()">Cancel</button>
-
-		<button (click)="selectClick()">Select</button>
+	<div sds-dialog-actions class="grid-row grid-gap">
+			<div class="grid-col-fill">
+			</div>
+			<div class="grid-col-auto">
+				<button class="usa-button usa-button--secondary" (click)="cancelClick()">Cancel</button>
+			</div>
+			<div class='grid-col-auto'>
+				<button class="usa-button" (click)="selectClick()">Select</button>
+			</div>
 	</div>
 </ng-template>

@@ -1,6 +1,6 @@
-<label [attr.for]="settings.id" style="margin-bottom: 0em; margin-top: .5em; display: inline-block;">{{settings.labelText}}</label>
+<label *ngIf="level>0" [attr.for]="settings.id" style="margin-bottom: 0em; margin-top: .5em; display: inline-block;">{{settings.labelText}}</label>
 <sds-autocomplete [service]="service" (ngModelChange)="change($event)" [(ngModel)]="selectModel"
-	[configuration]="settings" [suggestionTemplate]="temp" [selectedItemTemplate]="selecttemp"></sds-autocomplete>
+	[configuration]="settings" [suggestionTemplate]="selecttemp" [selectedItemTemplate]="selecttemp"></sds-autocomplete>
 
 <ng-template #temp let-item>
 	<div class="grid-row" style="line-height: 1.0">
@@ -10,9 +10,16 @@
 	<div style="font-size:.8em; font-style: italic; color: #999999">{{getLabel(item)}}</div>
 </ng-template>
 
+<ng-template #single let-item>
+	<span style="font-weight: 600">{{item['id']}}</span> -- <span>{{item['name']}}</span>
+</ng-template>
+
 <ng-template #selecttemp let-item>
-	<div class="grid-row" style="line-height: 1.0">
+	<div class="grid-row" style="line-height: 1.0, padding: .2em;">
 		<div class="grid-col-auto" style="font-weight: 600; font-size: .9em">{{item['id']}}</div>
 		<div class="grid-col-fill" style="font-size: .9em; padding-left: .5em">{{item['name']}}</div>
+	</div>
+	<div class="grid-row">
+		<div class="grid-col-fill" style="font-size: .9em; font-style: italic; font-weight: 300;">{{getLabel(item)}}</div>
 	</div>
 </ng-template>
