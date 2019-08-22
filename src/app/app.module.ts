@@ -14,12 +14,9 @@ import { SdsHeaderModule, SdsFooterModule } from '@gsa-sam/components';
 import { FormlyModule } from '@ngx-formly/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { sds } from '@gsa-sam/sam-styles/src/icons/';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 
-
-
-const appIcons = {
-  // App Specific Icons
- };
 
 @NgModule({
   declarations: [
@@ -50,6 +47,6 @@ export class AppModule {
     };
   }
   constructor() {
-  // library.add(sdsIcons, appIcons);
+   library.add(fas, sds);
   }
 }

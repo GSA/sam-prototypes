@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SearchResultListEntityDataItemComponent } from './search-list-item-entity.component';
@@ -7,7 +8,7 @@ import { SearchResultListEntityDataItemComponent } from './search-list-item-enti
 @NgModule({
   declarations: [SearchResultListEntityDataItemComponent],
   imports: [
-    CommonModule, FormsModule,
+    CommonModule, RouterModule, FormsModule,
 
   ], exports: [SearchResultListEntityDataItemComponent]
 })

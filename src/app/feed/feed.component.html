@@ -7,5 +7,27 @@
     <sds-subheader-search (searchTerm)="log($event)"> </sds-subheader-search>
   </sds-subheader>
 </ng-container>
+<div style="margin-top: 1.5em; margin-bottom: 1.5em;">
 <sds-page>
+  <sds-page-options class="sam-page__options">
+    <sds-toolbar class="tablet:grid-col-auto" #toolbar="sdsToolbar" [expanded]="true">
+      <sds-accordion>
+      	<sds-accordion-item [expanded]="true">
+      		<sds-accordion-item-header>Show Messages For</sds-accordion-item-header>
+        	<sds-side-navigation #sideNav [model]="sideNavModel"></sds-side-navigation>
+        </sds-accordion-item>
+       </sds-accordion>
+    </sds-toolbar>
+    <div class="sds-page__content  tablet:grid-col margin-0">
+		<search-list-layout [service]="service" [configuration]="service.configuration">
+		    <ng-template #resultContent let-item>
+	    	    <div>
+	        	    <feed-item [model]="item"></feed-item>
+	        	</div>
+	    	</ng-template>
+		</search-list-layout>
+    </div>
+  </sds-page-options>
+
 </sds-page>
+</div>

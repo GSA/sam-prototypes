@@ -1,31 +1,24 @@
 <div class="grid-container grid-gap search-result__list">
 
     <div class="grid-row search-result">
-        <h2 class="tablet:grid-col name">{{model.entityRegistration.legalBusinessName}}</h2>
+        <h2 class="tablet:grid-col name"><a [routerLink]="['/']">{{model.entityRegistration.legalBusinessName}}</a></h2>
     </div>
-
-    <div class="grid-row maxh-6 search-result">
-        <div class="alert">
-            <div class="circle margin-0">!</div>
-            <h3 class="label grid-col">Address Needs to be Updated</h3>
-        </div>
-    </div>
-
-    <div class="grid-row search-result">
-        <div class="tablet:grid-col id">
-            <div class="label-field">
-                <div class="label-green">
-                    DUNS
-                </div>
-                <div class="label-white">
-                    SAM
-                </div>
+    <div class="grid-row grid-gap search-result">
+        <div class="tablet:grid-col-auto">
+            <div class="grid-row margin-y-1">
+                <div class="tablet:grid-col"><span class="usa-tag sds-tag--info-purple">DUNS</span><span class="">Unique Entity ID:</span><span class="">{{model.entityRegistration.ueiDUNS}}</span></div>
             </div>
-            Unique Entity ID: {{model.entityRegistration.ueiDUNS}}<br>
-            Unique Entity ID: {{model.entityRegistration.ueiSAM}}<br>
-            CAGE/NCAGE: {{model.entityRegistration.cageCode}}
+            <div class="grid-row margin-y-1">
+                <div class="tablet:grid-col"><span class="usa-tag sds-tag--info-white">SAM</span><span class="">Unique Entity ID:</span><span class="">{{model.entityRegistration.ueiSAM}}</span></div>
+            </div>
+            <div class="grid-row margin-y-1">
+                <div class="tablet:grid-col"><span class="">CAGE/NCAGE:</span><span class="">{{model.entityRegistration.cageCode}}</span></div>
+            </div>
         </div>
         <div class="tablet:grid-col flex-column purpose">
+            <div class="grid-row margin-y-1">
+                <div class="tablet:grid-col"><span class="">Unique Entity ID:</span><span class="">{{model.entityRegistration.ueiSAM}}</span></div>
+            </div>
             Purpose of Registration: {{model.entityRegistration.purposeOfRegistrationDesc}}
             <div>
                 {{model.coreData.physicalAddress.address1}}
@@ -33,6 +26,7 @@
                 {{model.coreData.physicalAddress.zipCode}} {{model.coreData.physicalAddress.country}}
             </div>
         </div>
+
         <!-- buttons field-->
         <div class="tablet:grid-col button-field">
             <div class="button-content">
@@ -49,23 +43,6 @@
                 </div>
             </div>
         </div>
-        <!--options button-->
-        <div class="tablet:grid-col options">
-            <div class="entity-options__svg">
-                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 38">
-                    <defs>
-                        <style>
-                            .cls-1 {
-                                fill: #979797;
-                            }
-                        </style>
-                    </defs>
-                    <title>ActionButtonIcon</title>
-                    <path class="cls-1"
-                        d="M19,.25,19,0V.14l0,.11a18.75,18.75,0,0,0,0,37.5h0A18.75,18.75,0,0,1,19,.25ZM19,0h0Zm0,0h0V.14Zm0,0V.25h0a18.75,18.75,0,0,1,0,37.5h0A18.75,18.75,0,0,1,19,.25L19,0h0a19,19,0,0,0,0,38h0A19,19,0,0,0,19,0Zm0,.25h0a18.75,18.75,0,0,1,0,37.5h0A18.75,18.75,0,0,0,19,.25h0V0h0l0,.14Zm0,10a2,2,0,1,0-2-2A2,2,0,0,0,19,10.3ZM19,21a2,2,0,1,0-2-2A2,2,0,0,0,19,21Zm0,6.7a2,2,0,1,0,2,2A2,2,0,0,0,19,27.7Z"
-                        transform="translate(0)" />
-                </svg>
-            </div>
-        </div>
+
     </div>
 </div>
