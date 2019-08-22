@@ -102,16 +102,6 @@ export class WorkspaceComponent implements OnInit, AfterViewInit {
           model: this.autocompleteModel,
         },
       }
-      // {
-      //   key: 'ueiDUNS',
-      //   type: 'input',
-      //   templateOptions: {
-      //     label: 'Unique Entity ID (DUNS)',
-      //     placeholder: '',
-      //     inputType: 'text',
-      //     inputStyle: 'error',
-      //   },
-      // }
     ],
   },
   {
@@ -231,9 +221,9 @@ public filterChange$ = new BehaviorSubject<object>(null);
 
   autoCompleteSetup() {
     this.settings.id = 'autocomplete1';
-    this.settings.primaryKeyField = 'id';
-    this.settings.primaryTextField = 'name';
-    this.settings.secondaryTextField = 'subtext';
+    this.settings.primaryKeyField = 'ueiDUNS';
+    this.settings.primaryTextField = 'ueiDUNS';
+    
     this.settings.labelText = 'Autocomplete 1';
     this.settings.selectionMode = SelectionMode.MULTIPLE;
     this.settings.autocompletePlaceHolderText = 'Enter text';
