@@ -1,6 +1,8 @@
 <label *ngIf="level>0" [attr.for]="settings.id" style="margin-bottom: 0em; margin-top: .5em; display: inline-block;">{{settings.labelText}}</label>
-<sds-autocomplete [service]="service" (ngModelChange)="change($event)" [(ngModel)]="selectModel"
+<sds-autocomplete *ngIf="selectionMode==1" [service]="service" (ngModelChange)="change($event)" [(ngModel)]="selectModel"
 	[configuration]="settings" [suggestionTemplate]="selecttemp" [selectedItemTemplate]="selecttemp"></sds-autocomplete>
+<sds-autocomplete *ngIf="selectionMode==0" [service]="service" (ngModelChange)="change($event)" [(ngModel)]="selectModel"
+	[configuration]="settings" [suggestionTemplate]="selecttemp" [selectedItemTemplate]="single"></sds-autocomplete>
 
 <ng-template #temp let-item>
 	<div class="grid-row" style="line-height: 1.0">

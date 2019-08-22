@@ -37,6 +37,8 @@ export class AgencyPickerComponent implements OnInit {
 
     @Input() defaultAgency: string[] = [];
 
+    @Input() selectionMode: SelectionMode;
+
     constructor(public service: HierarchyService, private agencyPickerService: AgencyPickerService) {
         this.service.level = this.level;
         this.setup();
@@ -64,7 +66,7 @@ export class AgencyPickerComponent implements OnInit {
         this.settings.labelText = labelText;
         this.settings.primaryTextField = 'id';
         this.settings.secondaryTextField = 'name';
-        this.settings.selectionMode = SelectionMode.MULTIPLE;
+        this.settings.selectionMode = this.selectionMode;
         this.settings.autocompletePlaceHolderText = 'Enter Code or Name';
     }
 

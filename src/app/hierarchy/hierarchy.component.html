@@ -34,10 +34,10 @@
 	<div class="grid-row grid-gap">
 		<div class="tablet:grid-col-4">
 			<label>Federal Hierarchy</label>
-			<p>Enter your Department, Ind. Agency, Subtier, Office, or other organization.</p>
+			<p style="font-size: .9em; padding-bottom: 0;">Enter your Department, Ind. Agency, Subtier, Office, or other organization.</p>
 			<div class="grid-row">
 				<div class="tablet:grid-col-fill">
-					<agency-picker #picker></agency-picker>
+					<agency-picker #picker [selectionMode]="1"></agency-picker>
 				</div>
 				<div class="tablet:grid-col-auto">
 					<button class="usa-button--circle" style="margin: 8px 0px; height: 40px; width: 40px;" (click)="advanceClick()"><i class="fa fa-ellipsis-h"></i></button>
@@ -45,11 +45,11 @@
 			</div>
 		</div>
 		<div class="tablet:grid-col-4">
-			<agency-picker [level]="1"></agency-picker>
-			<agency-picker [level]="2"></agency-picker>
-			<agency-picker [level]="3"></agency-picker>
-			<agency-picker [level]="4"></agency-picker>
-			<agency-picker [level]="7"></agency-picker>
+			<agency-picker [level]="1" [selectionMode]="0"></agency-picker>
+			<agency-picker [level]="2" [selectionMode]="0"></agency-picker>
+			<agency-picker [level]="3" [selectionMode]="0"></agency-picker>
+			<agency-picker [level]="4" [selectionMode]="0"></agency-picker>
+			<agency-picker [level]="7" [selectionMode]="0"></agency-picker>
 		</div>
 	</div>
 </div>
@@ -61,14 +61,16 @@
 		<div class="grid-container">
 			<div class="grid-row grid-gap">
 				<div class="tablet:grid-col-4">
-					<agency-picker [level]="1"></agency-picker>
-					<agency-picker [level]="2"></agency-picker>
-					<agency-picker [level]="3"></agency-picker>
-					<agency-picker [level]="4"></agency-picker>
-					<agency-picker [level]="7"></agency-picker>
+					<p style="margin: 0"><label style="font-weight: 600; margin-top: .5em; margin-bottom: .5em; display: inline-block;">Filter By</label></p>
+					<agency-picker [level]="1" [selectionMode]="0"></agency-picker>
+					<agency-picker [level]="2" [selectionMode]="0"></agency-picker>
+					<agency-picker [level]="3" [selectionMode]="0"></agency-picker>
+					<agency-picker [level]="4" [selectionMode]="0"></agency-picker>
+					<agency-picker [level]="7" [selectionMode]="0"></agency-picker>
 				</div>
 				<div class="tablet:grid-col-8">
 					<div>
+						<label style="font-weight: 600; margin-top: .5em; margin-bottom: .5em; display: inline-block;">Selected Values</label>
 						<table class="agency-table" style="width: 100%">
 							<thead style="display: block;">
 								<tr style="width: 100%">
@@ -78,7 +80,7 @@
 									<th style="width: 20%">Level</th>
 								</tr>
 							</thead>
-							<tbody #resultsList style="height: 300px; overflow: scroll; display: block;"
+							<tbody #resultsList style="height: 350px; overflow: scroll; display: block;"
 								(scroll)="onScroll()">
 								<tr *ngFor="let item of result">
 									<td style="width: 10%"><input type="checkbox" (change)="change($event)"
