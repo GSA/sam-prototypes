@@ -1,4 +1,4 @@
-<label [attr.for]="settings.id" style="margin-bottom: .3em; display: inline-block;">{{settings.labelText}}</label>
+<label [attr.for]="settings.id" style="margin-bottom: 0em; margin-top: .5em; display: inline-block;">{{settings.labelText}}</label>
 <sds-autocomplete [service]="service" (ngModelChange)="change($event)" [(ngModel)]="selectModel"
 	[configuration]="settings" [suggestionTemplate]="temp" [selectedItemTemplate]="selecttemp"></sds-autocomplete>
 

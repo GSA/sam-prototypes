@@ -37,21 +37,21 @@
 	<strong sds-dialog-title></strong>
 	<div sds-dialog-content>
 		<div class="grid-container">
-			<div class="grid-row">
-				<div class="tablet:grid-col">
+			<div class="grid-row grid-gap">
+				<div class="tablet:grid-col-4">
 					<agency-picker [level]="1"></agency-picker>
 					<agency-picker [level]="2"></agency-picker>
 					<agency-picker [level]="3"></agency-picker>
 					<agency-picker [level]="4"></agency-picker>
 					<agency-picker [level]="7"></agency-picker>
 				</div>
-				<div class="tablet:grid-col">
+				<div class="tablet:grid-col-8">
 					<label> Search</label> <input (ngModelChange)="textChange($event)" [(ngModel)]="inputValue"
 						class="usa-input" autocomplete="off" type="text">
-					<table>
+					<table class="agency-table" style="height: 3em; overflow-y: scroll;">
 						<tr>
 							<th>Select</th>
-							<th>ID</th>
+							<th>Code</th>
 							<th>Name</th>
 						</tr>
 						<tr *ngFor="let item of result">
