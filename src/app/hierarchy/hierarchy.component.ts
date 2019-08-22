@@ -76,6 +76,8 @@ export class HierarchyComponent implements OnInit {
   }
 
   advanceClick() {
+    this.inputValue = '';
+    this.agencyPickerService.updateFilter({});
     this.updateResults();
     this.dialogRef = this.dialog.open(this.overlay);
   }
@@ -101,6 +103,7 @@ export class HierarchyComponent implements OnInit {
     for (let i = 0; i < this.result.length; i++) {
       let item = this.result[i];
       if (item.isChecked) {
+        item.isChecked = false;
         this.picker.addItem(item);
       }
     }
