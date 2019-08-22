@@ -69,7 +69,7 @@ export class HierarchyComponent implements OnInit {
   }
 
   change(values: any) {
-    console.log(values.currentTarget.checked);
+
 
   }
 
