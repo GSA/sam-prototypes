@@ -32,7 +32,7 @@
 
 <div class="grid-container" style="padding: 2em; margin-top:1.5em">
 	<div class="grid-row grid-gap">
-		<div class="tablet:grid-col-4">
+		<div class="tablet:grid-col-3">
 			<label>Federal Hierarchy</label>
 			<p style="font-size: .9em; padding-bottom: 0;">Enter your Department, Ind. Agency, Subtier, Office, or other organization.</p>
 			<div class="grid-row">
@@ -44,12 +44,29 @@
 				</div>
 			</div>
 		</div>
-		<div class="tablet:grid-col-4">
+		<div class="tablet:grid-col-1"></div>
+		<div class="tablet:grid-col-3">
 			<agency-picker [level]="1" [selectionMode]="0"></agency-picker>
 			<agency-picker [level]="2" [selectionMode]="0"></agency-picker>
 			<agency-picker [level]="3" [selectionMode]="0"></agency-picker>
 			<agency-picker [level]="4" [selectionMode]="0"></agency-picker>
 			<agency-picker [level]="7" [selectionMode]="0"></agency-picker>
+			<div class="usa-checkbox">
+                <input class="usa-checkbox__input" id="showInactive" type="checkbox" name="historical-figures-1" value="showInactive">
+                <label class="usa-checkbox__label" for="showInactive">Show Inactive</label>
+            </div>
+		</div>
+		<div class="tablet:grid-col-1"></div>
+		<div class="tablet:grid-col-3">
+			<agency-picker [level]="1" [selectionMode]="1"></agency-picker>
+			<agency-picker [level]="2" [selectionMode]="1"></agency-picker>
+			<agency-picker [level]="3" [selectionMode]="1"></agency-picker>
+			<agency-picker [level]="4" [selectionMode]="1"></agency-picker>
+			<agency-picker [level]="7" [selectionMode]="1"></agency-picker>
+			<div class="usa-checkbox">
+                <input class="usa-checkbox__input" id="showInactive" type="checkbox" name="historical-figures-1" value="showInactive">
+                <label class="usa-checkbox__label" for="showInactive">Show Inactive</label>
+            </div>
 		</div>
 	</div>
 </div>
@@ -67,6 +84,10 @@
 					<agency-picker [level]="3" [selectionMode]="0"></agency-picker>
 					<agency-picker [level]="4" [selectionMode]="0"></agency-picker>
 					<agency-picker [level]="7" [selectionMode]="0"></agency-picker>
+					<div class="usa-checkbox">
+                        <input class="usa-checkbox__input" id="showInactive" type="checkbox" name="historical-figures-1" value="showInactive">
+                        <label class="usa-checkbox__label" for="showInactive">Show Inactive</label>
+                    </div>
 				</div>
 				<div class="tablet:grid-col-8">
 					<div>
