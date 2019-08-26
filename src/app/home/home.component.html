@@ -24,7 +24,7 @@
 	   	    	<sds-subheader-search (searchTerm)="log($event)"> </sds-subheader-search>
 	   	   </div>
    		</div>
-   	    <div class="grid-row" style="margin-top: 1.5em; margin-bottom: 3em;">
+   	    <div class="grid-row" style="margin-top: 1.5em; margin-bottom: 3em; padding-left: 3em;">
    	    	<div class="grid-col-auto">
    	    		<div class="splash-button">
    	    			<span>Register Entity</span>
@@ -38,20 +38,71 @@
    </div>
 </div>
 <div class="grid-container">
-	<div class="grid-row">
-		<div class="grid-col-7" style="margin: 1em 2em">
+	<div class="grid-row" style="padding: 4em 1em">
+		<div class="grid-col-3">
+			<img src="assets/img/home-image-1.png" style="width: 250px; float: right;">
+		</div>
+		<div class="grid-col-8" style="margin: 1em 2em">
 			<h2>Entity Information</h2>
 			<p>You must have an active entity registration in SAM.gov to receive a federal contract or federal assistance award (such as a grant, loan, or other assistance award).</p>
 			<ul>
-				<li><a [routerLink]="['']">Search Entity Information</a></li>
+				<li><a [routerLink]="['']">Search</a></li>
 				<li><a [routerLink]="['']">Register or Update Entity</a></li>
 				<li><a [routerLink]="['']">Check Status</a></li>
 				<li><a [routerLink]="['']">Report Exclusions</a> (Federal Users)</li>
 			</ul>
    	    	<button class="usa-button usa-button--secondary">Learn More</button>
 		</div>
-		<div class="grid-col-5">
+
+	</div>
+</div>
+<div class="grid-container">
+	<div class="grid-row" style="padding: 0em 1em 4em 1em">
+		<div class="grid-col-8" style="margin: 1em 2em">
+			<h2>Contracting</h2>
+			<p>Get started doing business with the federal government. The federal government awards contracts to purchase or lease supplies and services (including construction). </p>
+			<div class="grid-row grid-gap">
+				<div class="grid-col-6">
+					<h4>Contract Opportunities (fbo.gov)</h4>
+					<p>Contract Opportunities is a government-wide list of notices of proposed contract actions expected to exceed $25,000.</p>				
+					<ul>
+						<li><a [routerLink]="['']">Search</a></li>
+						<li><a [routerLink]="['']">Run Reports</a></li>
+						<li><a [routerLink]="['']">Publish Opportunities</a> (Federal Users)</li>
+					</ul>
+   	    			<button class="usa-button usa-button--secondary">Learn More</button>
+				</div>
+				<div class="grid-col-6">
+					<h4>Contract Data Reports (fpds.gov Reports*)</h4>
+					<p>Contract Data is publicly available information about all unclassified contract actions over the micro-purchase threshold.</p>				
+					<ul>
+						<li><a [routerLink]="['']">Run Reports</a></li>
+					</ul>
+					<p>* FPDS.gov remains the official source for most contract data functionality.  All FPDS.gov reports, however, have been transitioned to SAM.gov.</p>
+   	    			<button class="usa-button usa-button--secondary">Learn More</button>
+				</div>
+			</div>
 		</div>
+		<div class="grid-col-3" style="padding-top: 6em;">
+			<img src="assets/img/home-image-2.png" style="width: 400px; float: left;">
+		</div>
+	</div>
+</div>
+<div class="grid-container">
+	<div class="grid-row" style="padding: 4em 1em">
+		<div class="grid-col-3">
+			<img src="assets/img/home-image-3.png" style="width: 400px; float: right;">
+		</div>
+		<div class="grid-col-8" style="margin: 1em 2em">
+			<h2>Federal Assistance</h2>
+			<p>Federal assistance programs, services, and activities directly aid organizations, individuals, or state/local/tribal governments. Sectors include education, health, public safety and public welfare - to name a few. Financial assistance is distributed in many forms, including grants, loans, direct payments, and insurance.</p>
+			<ul>
+				<li><a [routerLink]="['']">Search</a></li>
+				<li><a [routerLink]="['']">Create or Update Listings</a> (Federal Users)</li>
+			</ul>
+   	    	<button class="usa-button usa-button--secondary">Learn More</button>
+		</div>
+
 	</div>
 </div>
 <div class="grid-container">

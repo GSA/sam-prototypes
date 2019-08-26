@@ -1,13 +1,29 @@
 
 .splash-button {
 
-    background: #ffffff88;
+    background: #e3f5e188;
     padding: 1.5em 2em;
     display: inline;
     margin-right: 1em;
+    border: solid 1px #70e17b;
+    font-weight: 600;
 	
 	:hover {
 		cursor: pointer;
 	}
 
 }
+
+    a {
+    	color: #3F57A6;
+    	font-weight: 600;
+		text-decoration: none;
+
+		:hover {
+			cursor: pointer;
+		}
+
+		:visited {
+		    color: #3F57A6;
+		}
+    }
