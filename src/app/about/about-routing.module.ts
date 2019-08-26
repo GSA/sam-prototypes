@@ -20,13 +20,6 @@ const routes: Routes = [
 			}
 			},
 			{
-			path: 'resources',
-			loadChildren: './resources/resources.module#ResourcesModule',
-			data: {
-			  id: "home"
-			}
-			},
-			{
 			path: 'partners',
 			loadChildren: './partners/partners.module#PartnersModule',
 			data: {

@@ -15,6 +15,7 @@ import { FormlyModule } from '@ngx-formly/core';
 import { FormsModule } from '@angular/forms';
 
 import { FeedRoutingModule } from './feed-routing.module';
+import { FeedServiceModule } from './service/feed-service.module';
 import { FeedItemModule } from './feed-item/feed-item.module';
 import { FeedComponent } from './feed.component';
 
@@ -33,6 +34,7 @@ import { FeedComponent } from './feed.component';
     SdsFiltersModule,
     SearchListServiceModule,
     FeedRoutingModule,
+    FeedServiceModule,
     FeedItemModule
   ],
   declarations: [FeedComponent]

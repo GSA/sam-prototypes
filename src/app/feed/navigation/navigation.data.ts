@@ -6,6 +6,7 @@ export let feedNavigationData: SideNavigationModel = {
         { id: 'contracting', text: 'Contracting', route: '/messages', mode: NavigationMode.INTERNAL },
         { id: 'entityInformation', text: 'Entity Information', route: '/messages', mode: NavigationMode.INTERNAL },
         { id: 'compliance', text: 'Compliance', route: '/messages', mode: NavigationMode.INTERNAL },
+        { id: 'wageDetermination', text: 'Wage Determinations', route: './messages', mode: NavigationMode.INTERNAL },
         { id: 'admin', text: 'Administrative', route: '/messages', mode: NavigationMode.INTERNAL }
     ]
 };

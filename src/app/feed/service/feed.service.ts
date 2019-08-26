@@ -4,10 +4,11 @@ import { Messages } from './feed.data';
 import { Observable, of } from 'rxjs';
 import { SearchParameters, SearchListInterface, SearchResult, SearchListConfiguration } from '@gsa-sam/layouts';
 
+import { FeedServiceModule } from './feed-service.module';
 import { MessageData } from './feed.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: FeedServiceModule
 })
 export class FeedService implements SearchListInterface {
 

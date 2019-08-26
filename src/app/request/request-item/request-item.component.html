@@ -1,0 +1,15 @@
+    <div class="grid-row usa-link-wrapper" style="padding-top: 0; padding-bottom: 0; margin-bottom: 0; margin-top: 0; width: 100%;">
+    	<div class="grid-col-fill" style="margin-right: 2em;">
+    		<h3 class="grid-col-12 name"><a class="usa-link" [routerLink]="['/']"><strong> {{model.type}} </strong> for {{model.requestedBy}}</a></h3>
+    		<p>{{model.description}}</p>
+    	</div>
+    	<div class="grid-col-auto">
+        	<h1 class="sds-type--label-title" >Status</h1>
+        	<span class="sds-tag sds-tag--alt">{{getLabel(model.status)}}</span>
+    	</div>
+    	<div class="grid-col-auto">
+        	<h1 class="sds-type--label-title">Received Date</h1>
+        	<span class="sds-tag sds-tag--alt">{{model.date}}</span>
+    	</div>
+    </div>
+    <hr style="padding-top: 0; padding-bottom: 0; margin-bottom: .5em; margin-top: 0">

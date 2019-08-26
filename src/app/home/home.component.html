@@ -1,42 +1,40 @@
 <div class="grid-container" style="background-color: #F5F5F0; padding: 10px">
-  <div class="grid-row">
-    <div class="grid-col alert-title" style="background-color: white; border: solid 2px #5994F6; border-radius: 8px">
-    	<p>
-    		<a [routerLink]="['/messages']" style="color: #5994F6">Alerts</a>
-    	</p>
-    	<ul>
-    		<li>-- SAM.gov will be down for scheduled maintenance Saturday, 08/10/2019, from 8:00 AM to 1:00 PM (EDT). </li>
-    		<li>-- CAGE is currently experiencing a high volume of registrations, and is working them in the order in which they are received. When your registration is assigned to a CAGE Technician, you will be    contacted by CAGE, if necessary, for any additional information.</li>
-    	</ul>
-    </div>
-   </div>
    <div class="grid-row" style="padding: 1em 3em; background-image: url('assets/img/home-graphic.png'); background-size: 100%; background-repeat: no-repeat; background-position: top right;">
    	<div class="grid-col">
-	   <h2>Welcome to SAM.gov</h2>
-	   <h4>You may use this system to:</h4>
-	   <ul>
-	   	<li>Register to do business with the U.S. government</li>
-	   	<li>Search entity information including entity registrations and exclusions</li>
-	   </ul>
-	   <p>SAM.gov is also the official website for:</p>
-	   <ul style="line-height: 1.5">
-	   	<li><a href="">Contract Opportunities</a> (formerly fbo.gov)</li>
-	   	<li><a href="">Contract Data Reports</a> (formerly fpds.gov Reports) </li>
-	   	<li><a href="">Assistance Listings </a> (formerly cfda.gov) </li>
-	   	<li><a href="">Wage Determinations</a> (formerly wdol.gov)</li>
-	   </ul>
-	   <div class="grid-col-5" style="padding-left: 3em; margin-top: 2em; margin-bottom: 1.5em;">
-   	    	<h4 style="font-size: .8em; font-weight: 300; font-style: italic; margin-bottom: .2em;">Search all of our data or select a data set to search</h4>
-   	    	<sds-subheader-search (searchTerm)="log($event)"> </sds-subheader-search>
+	   <h3>SAM.gov is the official U.S. Government system for</h3>
+	   <div class="grid-row grid-gap">
+	   	   <div class="grid-col-3">
+			  <ul style="line-height: 1.5; list-style: none; padding-left: 0">
+			   	<li><a href="">Entity Registration</a></li>
+			   	<li><a href="">Exclusions</a> </li>
+			   	<li><a href="">Assistance Listings </a> (cfda.gov) </li>
+			   </ul>
+			</div>
+		    <div class="grid-col-4">
+			  <ul style="line-height: 1.5; list-style: none; padding-left: 0">
+			   	<li><a href="">Contract Opportunities</a> (fbo.gov)</li>
+			   	<li><a href="">Contract Data Reports</a> (fpds.gov Reports) </li>
+			   	<li><a href="">Wage Determinations</a> (wdol.gov)</li>
+			   </ul>
+			</div>
+		</div>
+		<div class="grid-row">
+		   <div class="grid-col-5" style="padding-left: 3em; margin-top: 2em; margin-bottom: 1.5em;">
+	   	    	<h4 style="font-size: .8em; font-weight: 300; font-style: italic; margin-bottom: .2em;">Search all of our data or select a data set to search</h4>
+	   	    	<sds-subheader-search (searchTerm)="log($event)"> </sds-subheader-search>
+	   	   </div>
+   		</div>
+   	    <div class="grid-row" style="margin-top: 1.5em; margin-bottom: 3em;">
+   	    	<div class="grid-col-auto">
+   	    		<div class="splash-button">
+   	    			<span>Register Entity</span>
+   	    		</div>
+   	    		<div class="splash-button">
+   	    			<span>Check Status</span>
+   	    		</div>
+   	    	</div>
    	    </div>
 	</div>
-   </div>
-   <div class="grid-row" style="margin: .75em 0;">
-
-   	    <div class="grid-col-7" style="margin-top: 34px;" >
-   	    	<button class="usa-button" style="float: right;">Register Entity</button>
-   	    	<button class="usa-button usa-button--secondary" style="float: right;">Search Contract Opportunities</button>
-   	    </div>
    </div>
 </div>
 <div class="grid-container">
@@ -53,6 +51,13 @@
    	    	<button class="usa-button usa-button--secondary">Learn More</button>
 		</div>
 		<div class="grid-col-5">
+		</div>
+	</div>
+</div>
+<div class="grid-container">
+	<div class="grid-row">
+		<div class="grid-col-3">
+			<a [routerLink]="[''hierarchy]">Hierarchy</a>
 		</div>
 	</div>
 </div>
