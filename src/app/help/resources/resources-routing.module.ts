@@ -27,13 +27,6 @@ const routes: Routes = [
 				}
 			},
 			{
-				path: 'assistance',
-				loadChildren: './assistance/assistance-resources.module#AssistanceResourcesModule',
-				data: {
-				  id: "help"
-				}
-			},
-			{
 				path: 'registration',
 				loadChildren: './registration/registration-resources.module#RegistrationResourcesModule',
 				data: {
