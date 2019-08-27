@@ -1,46 +1,282 @@
+<hr />
 
-    <div class="grid-row search-result">
-        <h2 class="tablet:grid-col name"><a [routerLink]="['/']">{{model.entityRegistration.legalBusinessName}}</a></h2>
+<div class="result-item-wrapper">
+
+  <!-- Item Heading -->
+  <div class="grid-row grid-gap">
+    <div class="grid-col">
+      <h2 class="margin-y-1">
+        <a class="usa-link" [routerLink]="['/']">
+          {{model.entityRegistration.legalBusinessName}}
+        </a>
+        <div class="action-menu-wrapper float-right">
+            <div class="action-menu-placeholder"><fa-icon [icon]="['fas', 'ellipsis-v']"></fa-icon></div>
+        </div>
+      </h2>
     </div>
-    <div class="grid-row grid-gap search-result">
-        <div class="tablet:grid-col-auto">
-            <div class="grid-row margin-y-1">
-                <div class="tablet:grid-col"><span class="usa-tag sds-tag--info-purple">DUNS</span><span class="">Unique Entity ID:</span><span class="">{{model.entityRegistration.ueiDUNS}}</span></div>
+  </div>
+
+  <!-- Item Data -->
+  <div class="grid-row">
+
+    <!-- 1st column -->
+    <div class="tablet:grid-col-4 grid-col-12">
+      <!-- Field Width -->
+      <div class="grid-row">
+
+        <!-- Duns Field Start -->
+        <div class="grid-col-12">
+
+          <div class="usa-form-group-horizontal">
+
+            <!-- Horizontal Config -->
+            <div class="grid-row">
+
+              <!-- Tag -->
+              <div class="grid-col-auto">
+                <div class="grid-row">
+                  <div class="grid-col-auto">
+                    <div class="usa-tag sds-tag--info-purple usa-static--tag">DUNS</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Label/Value Wrapper -->
+              <div class="grid-col">
+                <div class="grid-row">
+                  <div class="grid-col-auto">
+                    <label class="usa-static--label">Unique Entity ID:</label>
+                  </div>
+                  <div class="grid-col-fill">
+                    <p class="usa-static">{{model.entityRegistration.ueiDUNS}}</p>
+                  </div>
+                </div>
+              </div>
+
             </div>
-            <div class="grid-row margin-y-1">
-                <div class="tablet:grid-col"><span class="usa-tag sds-tag--info-white">SAM</span><span class="">Unique Entity ID:</span><span class="">{{model.entityRegistration.ueiSAM}}</span></div>
-            </div>
-            <div class="grid-row margin-y-1">
-                <div class="tablet:grid-col"><span class="">CAGE/NCAGE:</span><span class="">{{model.entityRegistration.cageCode}}</span></div>
-            </div>
-        </div>
-        <div class="tablet:grid-col flex-column purpose">
-            <div class="grid-row margin-y-1">
-                <div class="tablet:grid-col"><span class="">Unique Entity ID:</span><span class="">{{model.entityRegistration.ueiSAM}}</span></div>
-            </div>
-            Purpose of Registration: {{model.entityRegistration.purposeOfRegistrationDesc}}
-            <div>
-                {{model.coreData.physicalAddress.address1}}
-                {{model.coreData.physicalAddress.city}}, {{model.coreData.physicalAddress.state}}
-                {{model.coreData.physicalAddress.zipCode}} {{model.coreData.physicalAddress.country}}
-            </div>
+          </div>
         </div>
 
-        <!-- buttons field-->
-        <div class="tablet:grid-col button-field">
-            <div class="button-content">
-                Status
-                <div class="button bg-gray-5 border-1px height-5 width-10">
-                    <div class="entity-status__shape"></div>
-                    <h3>{{model.entityRegistration.registrationStatus}}</h3>
+        <!-- UEI Field Start -->
+        <div class="grid-col-12">
+
+          <div class="usa-form-group-horizontal">
+
+            <!-- Horizontal Config -->
+            <div class="grid-row">
+
+              <!-- Tag -->
+              <div class="grid-col-auto">
+                <div class="grid-row">
+                  <div class="grid-col-auto">
+                    <div class="usa-tag sds-tag--info-white usa-static--tag">SAM</div>
+                  </div>
                 </div>
-            </div>
-            <div class="button-content">
-                Expiration Date
-                <div class="button bg-gray-5 border-1px height-5 width-15 text-middle">
-                    <h3>{{model.entityRegistration.expirationDate}}</h3>
+              </div>
+
+              <!-- Label/Value Wrapper -->
+              <div class="grid-col">
+                <div class="grid-row">
+                  <div class="grid-col-auto">
+                    <label class="usa-static--label">Unique Entity ID:</label>
+                  </div>
+                  <div class="grid-col-fill">
+                    <p class="usa-static">{{model.entityRegistration.ueiSAM}}</p>
+                  </div>
                 </div>
+              </div>
+
             </div>
+          </div>
         </div>
+
+        <!-- Cage/NCAGE Field Start -->
+        <div class="grid-col-12">
+
+          <div class="usa-form-group-horizontal">
+
+            <!-- Horizontal Config -->
+            <div class="grid-row">
+
+              <!-- Tag -->
+              <div class="grid-col-auto">
+                <div class="grid-row">
+                  <div class="grid-col-auto">
+                    <div class="usa-static--tag display-none"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Label/Value Wrapper -->
+              <div class="grid-col">
+                <div class="grid-row">
+                  <div class="grid-col-auto">
+                    <label class="usa-static--label">CAGE/NCAGE:</label>
+                  </div>
+                  <div class="grid-col-fill">
+                    <p class="usa-static">{{model.entityRegistration.cageCode}}</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 2nd column -->
+    <div class="tablet:grid-col-4 grid-col-12">
+      <!-- Field Width -->
+      <div class="grid-row">
+
+        <!-- Purpose of Registration Field Start -->
+        <div class="grid-col-12">
+
+          <div class="usa-form-group">
+
+            <!-- Horizontal Config -->
+            <div class="grid-row">
+
+              <!-- Label/Value Wrapper -->
+              <div class="grid-col">
+                <div class="grid-row">
+                  <div class="grid-col-12">
+                    <label class="usa-static--label">Purpose of Registration:</label>
+                  </div>
+                  <div class="grid-col-fill">
+                    <p class="usa-static">{{model.entityRegistration.purposeOfRegistrationDesc}}</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Address Field Start -->
+        <div *ngIf="!model.coreData.addressUpdateAvailable" class="grid-col-12">
+
+          <div class="usa-form-group">
+
+            <!-- Horizontal Config -->
+            <div class="grid-row">
+
+              <!-- Label/Value Wrapper -->
+              <div class="grid-col">
+                <div class="grid-row">
+                  <div class="grid-col-12">
+                    <label class="usa-static--label">Address:</label>
+                  </div>
+                  <div class="grid-col-fill">
+                    <p class="usa-static">{{model.coreData.physicalAddress.address1}}</p>
+                    <p class="usa-static">{{model.coreData.physicalAddress.city}}, {{model.coreData.physicalAddress.state}} {{model.coreData.physicalAddress.zipCode}} {{model.coreData.physicalAddress.country}}</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Address Field Start -->
+        <div *ngIf="model.coreData.addressUpdateAvailable" class="grid-col-12">
+
+          <div class="usa-form-group-horizontal">
+
+            <!-- Horizontal Config -->
+            <div class="grid-row">
+
+              <!-- Label/Value Wrapper -->
+              <div class="grid-col">
+                <div class="grid-row">
+                  <div class="grid-col-fill">
+                    <div class="sds-alert margin-right-1 padding-05">
+                      <div class="warning-icon-placeholder sds-alert">
+                        <fa-icon [icon]="['sds', 'exclamation']" size="3x"></fa-icon>
+                      </div>
+                      <div class="sds-alert-content">
+                        <p class="usa-static text-italic">Address Update Available</p>
+                        <span class="usa-static">
+                          <div>{{model.coreData.physicalAddress.address1}}</div>
+                          <div>{{model.coreData.physicalAddress.city}}, {{model.coreData.physicalAddress.state}} {{model.coreData.physicalAddress.zipCode}} {{model.coreData.physicalAddress.country}}</div>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="tablet:grid-col-4 grid-col-12">
+
+      <!-- Horizontal Config -->
+      <div class="grid-row grid-gap-1">
+
+        <!-- Label/Value Wrapper -->
+        <div class="tablet:grid-col-6 grid-col-4">
+          <div class="grid-row">
+            <div class="grid-col-12">
+              <label class="usa-static--label font-sans-3xs text-light text-italic">Status</label>
+            </div>
+            <div class="grid-col-12">
+              <span class="sds-tag sds-tag--static sds-tag--outline-green">{{model.entityRegistration.registrationStatus}}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Label/Value Wrapper -->
+        <div class="tablet:grid-col-6 grid-col-4">
+          <div class="grid-row">
+            <div class="grid-col-12">
+              <label class="usa-static--label font-sans-3xs text-light text-italic">Expiration Date</label>
+            </div>
+            <div class="grid-col-12">
+              <span class="sds-tag sds-tag--static sds-tag--alt">{{model.entityRegistration.expirationDate}}</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="grid-row grid-gap-05 margin-top-2">
+        <div class="grid-col-auto">
+          <span class="sds-tag sds-tag--chip sds-tag--small">
+            TIN
+            <span class="sds-text-success">
+              <fa-icon [icon]="['fas', 'check']" size="1x"></fa-icon>
+            </span>
+          </span>
+        </div>
+        <div class="grid-col-auto">
+          <span class="sds-tag sds-tag--chip sds-tag--disabled sds-tag--small">
+            CAGE
+            <span class="sds-text-disabled">
+              <fa-icon [icon]="['fas', 'ellipsis-h']" size="1x"></fa-icon>
+            </span>
+          </span>
+        </div>
+        <div class="grid-col-auto">
+          <span class="sds-tag sds-tag--chip sds-tag--disabled sds-tag--small">
+            Notarized Letter
+            <span class="sds-text-disabled">
+              <fa-icon [icon]="['fas', 'times']" size="1x"></fa-icon>
+            </span>
+          </span>
+        </div>
+      </div>
 
     </div>
+
+  </div>
+
+</div>
+
+
