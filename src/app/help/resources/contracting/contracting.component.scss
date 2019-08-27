@@ -1,0 +1,62 @@
+
+
+h5 {
+	margin-bottom: 0;	
+}
+
+.sds-section-intro {
+	font-size: 1.2em;
+	font-weight: 300;
+}
+
+.feature {
+	border: solid 1px #162e51;
+	background-color: #eff6fb;
+	border-radius: 5px;
+}
+
+.term-list {
+	list-style: none;
+	padding-left: 0;
+
+	li {
+	   padding: 0;
+	   margin: 0 0 .5em 0;
+	   font-weight: 600;
+
+	   a {
+	   	color: #3F57A6;
+	   	text-decoration: none;
+	   }
+
+	   a:visited {
+	   	color: #3F57A6;
+	   }
+	}
+}
+
+.help-block {
+	text-align: center;
+	margin-top: 3em;
+
+	cursor: pointer;
+
+	img {
+		width: 60px;
+	}
+
+    a {
+    	color: #3F57A6;
+    	font-weight: 600;
+		text-decoration: none;
+
+		:hover {
+			cursor: pointer;
+		}
+
+		:visited {
+		    color: #3F57A6;
+		}
+    }
+
+}

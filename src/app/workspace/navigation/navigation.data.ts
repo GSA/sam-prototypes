@@ -46,10 +46,6 @@ export let workspaceSideNavigationData: SideNavigationModel = {
             route: '/workspace/compliance/dashboard', text: 'Compliance'
             , children: [
                 {
-                    id: 'pastperformance', mode: NavigationMode.INTERNAL,
-                    route: '/workspace/compliance/pastperformance', text: 'Past Performance'
-                },
-                {
                     id: 'ffatasubaward', mode: NavigationMode.INTERNAL,
                     route: '/workspace/ffatasubaward', text: 'FFATA Sub-Awards'
                 },
@@ -66,6 +62,10 @@ export let workspaceSideNavigationData: SideNavigationModel = {
                     route: '/workspace/scr', text: 'Service Contract Reports'
                 }
             ]
+        },
+        {
+            id: 'pastperformance', mode: NavigationMode.INTERNAL,
+            route: '/workspace/compliance/pastperformance', text: 'Past Performance'
         },
         {
             id: 'federalHierarchy', route: '/workspace', mode: NavigationMode.INTERNAL,

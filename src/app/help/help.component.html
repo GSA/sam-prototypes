@@ -2,8 +2,12 @@
   <!-- =============== TITLE =============== -->
   Help
 
+  <div class="sds-subheader-tab"><a [routerLink]="['getstarted']">Get Started</a></div>
+  <div class="sds-subheader-tab"><a [routerLink]="['library']">Library</a></div>
+
   <!-- =============== SEARCH =============== -->
   <sds-subheader-search (searchTerm)="log($event)"> </sds-subheader-search>
 </sds-subheader>
-<sds-page>
-</sds-page>
+<div style="margin-top: 1.5em; margin-bottom: 1.5em;">
+  <router-outlet></router-outlet>
+</div>

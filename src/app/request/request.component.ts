@@ -1,6 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
+import { SideNavigationModel, NavigationMode } from '@gsa-sam/components';
+
 import { SamModelService } from '../model/sam-model.service';
+import { RequestService } from './service/request.service';
+import { requestNavigationData} from './navigation/navigation.data';
 
 @Component({
   selector: 'sam-request',
@@ -11,7 +16,7 @@ export class RequestComponent implements OnInit {
 
   domain: string;
 
-  constructor(private route: ActivatedRoute, public model: SamModelService) {  
+  constructor(private route: ActivatedRoute, public service: RequestService, public model: SamModelService) {  
   }
 
   ngOnInit() {
@@ -23,6 +28,8 @@ export class RequestComponent implements OnInit {
         }
       });
   }
+
+  public sideNavModel: SideNavigationModel = requestNavigationData;
 
   log(value) {
     console.log(`%cLog: ${value}`, 'color: blue; font-weight: bold');
