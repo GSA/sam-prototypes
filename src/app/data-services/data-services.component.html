@@ -5,3 +5,18 @@
   <!-- =============== SEARCH =============== -->
   <sds-subheader-search (searchTerm)="log($event)"> </sds-subheader-search>
 </sds-subheader>
+
+<div class="grid-container margin-bottom-205">
+  <h3>Dialog examples</h3>
+  <button
+    class="margin-right-1"
+    (click)="
+      openAlert('Wrong Password', 'Warning Message here', 'error', 'small')
+    "
+  >
+    Alert
+  </button>
+  <button (click)="openOfficial()">
+    Policy
+  </button>
+</div>
