@@ -60,11 +60,11 @@ export class EntityService implements SearchListInterface {
                 } else if (item === 'registrationStatus') {
                     return (filterParameters[item].indexOf(entity.entityRegistration[item])) > -1;
                 } else if (item === 'ueiDUNS') {
-                    const results = [];
-                    if (filterParameters[item].items.length > 1) {
-
-                    } else {
-                        return (filterParameters[item].items[0].id.indexOf(entity.entityRegistration[item])) > -1;
+                    const filterItems = filterParameters[item].items;
+                    if (filterItems.length > 1) {
+                        filterItems.forEach(element => {
+                            return (filterParameters[item].element.ueiDUNS.indexOf(entity.entityRegistration[item])) > -1;
+                        });
                     }
                 } else {
                     return entity.entityRegistration[item].toLowerCase().includes(filterParameters[item].toLowerCase());
