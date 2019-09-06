@@ -223,7 +223,8 @@ public filterChange$ = new BehaviorSubject<object>(null);
     this.settings.id = 'autocomplete1';
     this.settings.primaryKeyField = 'ueiDUNS';
     this.settings.primaryTextField = 'ueiDUNS';
-    
+    // this.settings.primaryKeyField = 'entityRegistration.ueiDUNS';
+    // this.settings.primaryTextField = 'ueiDUNS';
     this.settings.labelText = 'Autocomplete 1';
     this.settings.selectionMode = SelectionMode.MULTIPLE;
     this.settings.autocompletePlaceHolderText = 'Enter text';

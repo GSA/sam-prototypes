@@ -13,13 +13,12 @@ export class AutocompleteSampleDataService implements SDSAutocompleteServiceInte
     private loadedData;
     constructor() {
         const data = SampleAutocompleteData;
-        for (let i = 0; i < data.length; i++) {
-
-            let item = data[i];
-            let results = data.filter(it => it.parentId === item.id);
-            item['childCount'] = results.length;
-        }
-        this.loadedData = data;
+        let results = data.map(u => u.entityRegistration);
+       let items = results.filter((obj,pos,arr) =>{
+            return arr.map(mapobj => mapobj['ueiDUNS']).indexOf(obj['ueiDUNS']) === pos
+        });
+        this.loadedData = items
+       
     }
 
     getDataByText(currentItems: number, searchValue?: string): Observable<SDSHiercarchicalServiceResult> {
@@ -29,8 +28,8 @@ export class AutocompleteSampleDataService implements SDSAutocompleteServiceInte
 
         if (searchValue) {
             itemsOb = data.pipe(map(items => items.filter(itm =>
-                (itm.name.indexOf(searchValue) !== -1 ||
-                    itm.subtext.indexOf(searchValue) !== -1
+                (itm.ueiDUNS.indexOf(searchValue) !== -1 ||
+                    itm.ueiDUNS.indexOf(searchValue) !== -1
                 ))));
         } else {
             itemsOb = data;
@@ -41,7 +40,8 @@ export class AutocompleteSampleDataService implements SDSAutocompleteServiceInte
             (result) => {
                 items = result;
             }
-        );
+        );  
+
         let totalItemCount = items.length;
 
         let maxSectionPosition = currentItems + itemIncrease;
