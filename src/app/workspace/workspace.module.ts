@@ -15,6 +15,7 @@ import { SdsSubheaderModule, SearchListServiceModule } from '@gsa-sam/layouts';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlySelectModule } from '@ngx-formly/core/select';
+import { AutocompleteSampleDataService } from './entities/entity-service/autocomplete-sample.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -36,7 +37,7 @@ import { FormlySelectModule } from '@ngx-formly/core/select';
     FormlyModule
   ],
   declarations: [WorkspaceComponent],
-  providers: [SDSFormlyUpdateComunicationService],
+  providers: [SDSFormlyUpdateComunicationService, AutocompleteSampleDataService],
   exports: [WorkspaceComponent]
 })
 export class WorkspaceModule {}
