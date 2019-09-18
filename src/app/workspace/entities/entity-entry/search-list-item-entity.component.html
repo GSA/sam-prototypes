@@ -1,6 +1,6 @@
-<hr />
 
-<div class="result-item-wrapper">
+
+<div class="result-item-wrapper border-top-1px border-base-light margin-top-4">
 
   <!-- Item Heading -->
   <div class="grid-row grid-gap">
@@ -10,7 +10,7 @@
           {{model.entityRegistration.legalBusinessName}}
         </a>
         <div class="action-menu-wrapper float-right">
-            <div class="action-menu-placeholder"><fa-icon [icon]="['fas', 'ellipsis-v']"></fa-icon></div>
+            <div class="action-menu-placeholder font-sans-xs" style="height:30px; width:30px; font-size:14;"><fa-icon [icon]="['fas', 'ellipsis-v']"></fa-icon></div>
         </div>
       </h2>
     </div>
@@ -45,10 +45,10 @@
               <div class="grid-col">
                 <div class="grid-row">
                   <div class="grid-col-auto">
-                    <label class="usa-static--label">Unique Entity ID:</label>
+                    <label class="usa-static--label font-sans-xs">Unique Entity ID:</label>
                   </div>
                   <div class="grid-col-fill">
-                    <p class="usa-static">{{model.entityRegistration.ueiDUNS}}</p>
+                    <p class="usa-static font-sans-xs">{{model.entityRegistration.ueiDUNS}}</p>
                   </div>
                 </div>
               </div>
@@ -78,10 +78,10 @@
               <div class="grid-col">
                 <div class="grid-row">
                   <div class="grid-col-auto">
-                    <label class="usa-static--label">Unique Entity ID:</label>
+                    <label class="usa-static--label font-sans-xs">Unique Entity ID:</label>
                   </div>
                   <div class="grid-col-fill">
-                    <p class="usa-static">{{model.entityRegistration.ueiSAM}}</p>
+                    <p class="usa-static font-sans-xs">{{model.entityRegistration.ueiSAM}}</p>
                   </div>
                 </div>
               </div>
@@ -102,7 +102,7 @@
               <div class="grid-col-auto">
                 <div class="grid-row">
                   <div class="grid-col-auto">
-                    <div class="usa-static--tag display-none"></div>
+                    <div class="usa-static--tag display-none font-sans-xs"></div>
                   </div>
                 </div>
               </div>
@@ -111,10 +111,10 @@
               <div class="grid-col">
                 <div class="grid-row">
                   <div class="grid-col-auto">
-                    <label class="usa-static--label">CAGE/NCAGE:</label>
+                    <label class="usa-static--label font-sans-xs">CAGE/NCAGE:</label>
                   </div>
                   <div class="grid-col-fill">
-                    <p class="usa-static">{{model.entityRegistration.cageCode}}</p>
+                    <p class="usa-static font-sans-xs">{{model.entityRegistration.cageCode}}</p>
                   </div>
                 </div>
               </div>
@@ -143,10 +143,10 @@
               <div class="grid-col">
                 <div class="grid-row">
                   <div class="grid-col-12">
-                    <label class="usa-static--label">Purpose of Registration:</label>
+                    <label class="usa-static--label font-sans-xs">Purpose of Registration:</label>
                   </div>
                   <div class="grid-col-fill">
-                    <p class="usa-static">{{model.entityRegistration.purposeOfRegistrationDesc}}</p>
+                    <p class="usa-static font-sans-xs">{{model.entityRegistration.purposeOfRegistrationDesc}}</p>
                   </div>
                 </div>
               </div>
@@ -167,11 +167,11 @@
               <div class="grid-col">
                 <div class="grid-row">
                   <div class="grid-col-12">
-                    <label class="usa-static--label">Address:</label>
+                    <label class="usa-static--label font-sans-xs">Physical Address:</label>
                   </div>
                   <div class="grid-col-fill">
-                    <p class="usa-static">{{model.coreData.physicalAddress.address1}}</p>
-                    <p class="usa-static">{{model.coreData.physicalAddress.city}}, {{model.coreData.physicalAddress.state}} {{model.coreData.physicalAddress.zipCode}} {{model.coreData.physicalAddress.country}}</p>
+                    <p class="usa-static font-sans-xs">{{model.coreData.physicalAddress.address1}}</p>
+                    <p class="usa-static font-sans-xs">{{model.coreData.physicalAddress.city}}, {{model.coreData.physicalAddress.state}} {{model.coreData.physicalAddress.zipCode}} {{model.coreData.physicalAddress.country}}</p>
                   </div>
                 </div>
               </div>
@@ -197,10 +197,10 @@
                         <fa-icon [icon]="['sds', 'exclamation']" size="3x"></fa-icon>
                       </div>
                       <div class="sds-alert-content">
-                        <p class="usa-static text-italic">Address Update Available</p>
+                        <p class="usa-static text-italic font-sans-xs">Address Update Available</p>
                         <span class="usa-static">
-                          <div>{{model.coreData.physicalAddress.address1}}</div>
-                          <div>{{model.coreData.physicalAddress.city}}, {{model.coreData.physicalAddress.state}} {{model.coreData.physicalAddress.zipCode}} {{model.coreData.physicalAddress.country}}</div>
+                          <div class="font-sans-xs">{{model.coreData.physicalAddress.address1}}</div>
+                          <div class="font-sans-xs">{{model.coreData.physicalAddress.city}}, {{model.coreData.physicalAddress.state}} {{model.coreData.physicalAddress.zipCode}} {{model.coreData.physicalAddress.country}}</div>
                         </span>
                       </div>
                     </div>
@@ -224,7 +224,7 @@
         <div class="tablet:grid-col-6 grid-col-4">
           <div class="grid-row">
             <div class="grid-col-12">
-              <label class="usa-static--label font-sans-3xs text-light text-italic">Status</label>
+              <label class="usa-static--label font-sans-xs text-light text-italic">Status</label>
             </div>
             <div class="grid-col-12">
               <span class="sds-tag sds-tag--static sds-tag--outline-green">{{model.entityRegistration.registrationStatus}}</span>
@@ -236,7 +236,7 @@
         <div class="tablet:grid-col-6 grid-col-4">
           <div class="grid-row">
             <div class="grid-col-12">
-              <label class="usa-static--label font-sans-3xs text-light text-italic">Expiration Date</label>
+              <label class="usa-static--label font-sans-xs text-light text-italic">Expiration Date</label>
             </div>
             <div class="grid-col-12">
               <span class="sds-tag sds-tag--static sds-tag--alt">{{model.entityRegistration.expirationDate}}</span>
@@ -256,7 +256,7 @@
           </span>
         </div>
         <div class="grid-col-auto">
-          <span class="sds-tag sds-tag--chip sds-tag--disabled sds-tag--small">
+          <span class="sds-tag sds-tag--chip sds-tag--small bg-<!-- WARNING:  -->">
             CAGE
             <span class="sds-text-disabled">
               <fa-icon [icon]="['fas', 'ellipsis-h']" size="1x"></fa-icon>
@@ -278,5 +278,3 @@
   </div>
 
 </div>
-
-

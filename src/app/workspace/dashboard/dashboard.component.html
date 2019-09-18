@@ -4,11 +4,13 @@
     <!-- Contract Opportunities Card -->
     <div class="sds-card">
       <div class="sds-card__header">
-        <a class="sds-card__header-title">
-          Contract Opportunities
-          <span class="sds-card__header-title-counter tablet:display-none">(15)</span>
-        </a>
-        <button class="usa-button usa-button--outline">Create Opportunities</button>
+        <h2><a class="usa-link">Contract Opportunities</a></h2>
+        <span class="sds-card__header-mobile">
+          (8)
+        </span>
+        <div class="sds-card__header-actions">
+          <button class="usa-button usa-button--outline">Create Opportunity</button>
+        </div>
       </div>
       <div class="sds-card__content tablet:display-block">
         <div class="sds-statistics">
@@ -35,11 +37,13 @@
     <!-- Assistance Listing Card -->
     <div class="sds-card">
       <div class="sds-card__header">
-        <a class="sds-card__header-title">
-          Assistance Listings
-          <span class="sds-card__header-title-counter tablet:display-none">(15)</span>
-        </a>
-        <button class="usa-button usa-button--outline">Create Listing</button>
+        <h2><a class="usa-link">Assistance Listing</a></h2>
+        <span class="sds-card__header-mobile">
+          (8)
+        </span>
+        <div class="sds-card__header-actions">
+          <button class="usa-button usa-button--outline">Create Listing</button>
+        </div>
       </div>
       <div class="sds-card__content tablet:display-block">
         <div class="sds-statistics">
@@ -85,11 +89,13 @@
     <!-- Collective Bargaining Agreements Card -->
     <div class="sds-card">
       <div class="sds-card__header">
-        <a class="sds-card__header-title">
-          Assistance Listings
-          <span class="sds-card__header-title-counter tablet:display-none">(15)</span>
-        </a>
-        <button class="usa-button usa-button--outline">Create CBA</button>
+        <h2><a class="usa-link">Collective Bargaining Agreements</a></h2>
+        <span class="sds-card__header-mobile">
+          (8)
+        </span>
+        <div class="sds-card__header-actions">
+          <button class="usa-button usa-button--outline">Create CBA</button>
+        </div>
       </div>
       <div class="grid-row">
         <ul>
@@ -105,10 +111,10 @@
     <!-- User Directory Card -->
     <div class="sds-card">
       <div class="sds-card__header">
-        <a class="sds-card__header-title">
-          User Directory
-          <span class="sds-card__header-title-counter tablet:display-none">(15)</span>
-        </a>
+        <h2><a class="usa-link">User Directoy</a></h2>
+        <span class="sds-card__header-mobile">
+          (8)
+        </span>
         <div class="sds-card__header-actions">
           <button class="usa-button usa-button--outline">Role Definitions</button>
           <button class="usa-button usa-button--outline">Bulk Update</button>
@@ -116,21 +122,24 @@
       </div>
       <div class="sds-card__content tablet:display-block">
         <div class="grid-row padding-left-4 flex-no-wrap">
-          <div class="grid-col">
+          <div class="grid-col-fill">
             <!-- Search  -->
-            <label for="input-type-text">
-              Who are you looking for?
-            </label>
+            <label class="usa-label margin-0" for="options">Who are you looking for?</label>
             <div class="sds-search">
-              <select>
-                <option value="all users">All Users</option>
-                <option value="option 2">Option 2</option>
-                <option value="option 3">Option 3</option>
-              </select>
-              <input id="input-type-text" name="input-type-text" type="text" />
-              <button>
-                <i class="fa fa-search fa-lg"></i>
-              </button>
+              <form class="usa-search usa-search--small">
+                <select class="usa-select" name="options" id="options">
+                  <option value="value">Select</option>
+                  <option value="value1">Option A</option>
+                  <option value="value2">Option B</option>
+                  <option value="value3">Option C</option>
+                </select>
+                <div role="search" class="search">
+                  <input class="usa-input" id="search-field-small" type="search" name="search">
+                  <button class="usa-button" type="submit">
+                    <span class="usa-sr-only">Search</span>
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
           <div class="grid-col-auto">
@@ -149,11 +158,10 @@
     <!-- System Accounts Card -->
     <div class="sds-card">
       <div class="sds-card__header">
-        <a class="sds-card__header-title">
-          System Accounts
-          <span class="sds-card__header-title-counter tablet:display-none">(15)</span>
-        </a>
-        <button class="usa-button usa-button--outline">Request Account</button>
+        <h2><a class="usa-link">Systems Accounts</a></h2>
+        <span class="sds-card__header-mobile">
+          (8)
+        </span>
       </div>
       <div class="sds-card__content tablet:display-block">
         <div class="sds-statistics">
@@ -185,26 +193,26 @@
     <!-- Content Management Card -->
     <div class="sds-card">
       <div class="sds-card__header">
-        <a class="sds-card__header-title">
-          System Accounts
-          <span class="sds-card__header-title-counter tablet:display-none">(15)</span>
-        </a>
+        <h2><a class="usa-link">Content Management</a></h2>
+        <span class="sds-card__header-mobile">
+          (8)
+        </span>
       </div>
       <div class="sds-card__content tablet:display-block">
-        <div class="icon-links">
-          <a>
+        <div class="display-flex flex-direction-row flex-justify padding-x-4">
+          <a class="text-center" style="color:#3F57A6;">
             <i class="fa fa-book fa-3x"></i>
             <div class="label">Glossary</div>
           </a>
-          <a>
+          <a class="text-center" style="color:#3F57A6;">
             <i class="fa fa-question fa-3x"></i>
             <div class="label">FAQs</div>
           </a>
-          <a>
+          <a class="text-center" style="color:#3F57A6;">
             <i class="fa fa-video fa-3x"></i>
             <div class="label">Videos</div>
           </a>
-          <a>
+          <a class="text-center" style="color:#3F57A6;">
             <i class="fa fa-file-alt fa-3x"></i>
             <div class="label">Release Notes</div>
           </a>
@@ -215,59 +223,70 @@
     <!-- Federal Hierarchy Card -->
     <div class="sds-card">
       <div class="sds-card__header">
-        <a class="sds-card__header-title">
-          Federal Hierarchy
-          <span class="sds-card__header-title-counter tablet:display-none">(15)</span>
-        </a>
+        <h2><a class="usa-link">Federal Hierarchy</a></h2>
+        <span class="sds-card__header-mobile">
+          (8)
+        </span>
       </div>
       <div class="sds-card__content tablet:display-block">
         <div class="grid-row margin-x-2">
           <div class="grid-col">
             <!-- Search  -->
-            <label for="input-type-text">
-              Which Organization are you looking for?
-            </label>
+            <label class="usa-label margin-0" for="options">What Organization are you looking for?</label>
             <div class="sds-search">
-              <input id="input-type-text" name="input-type-text" type="text" />
-              <button>
-                <i class="fa fa-search fa-lg"></i>
+              <form class="usa-search usa-search--small">
+                <div role="search" class="search width-full">
+                  <input class="usa-input" id="search-field-small" type="search" name="search">
+                  <button class="usa-button" type="submit">
+                    <span class="usa-sr-only">Search</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      <!-- KPI -->
+      <div class="grid-row margin-top-2 flex-justify">
+        <div class="grid-col-auto">
+          <div class="text-center">
+            Events in the <strong>Last 90 Days</strong>
+          </div>
+          <div class="margin-x-2 display-flex">
+            <div class="sds-statistics--alt">
+              <button class="statistic-alt">
+                <div class="value">18</div>
+                <div class="label">Statistic Label</div>
+              </button>
+            </div>
+            <div class="sds-statistics--alt">
+              <button class="statistic-alt">
+                <div class="value">45</div>
+                <div class="label">Statistic Label</div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="grid-col-auto">
+          <div class="text-center">
+            Events in the <strong>Next 90 Days</strong>
+          </div>
+          <div class="margin-x-2 display-flex">
+            <div class="sds-statistics--alt">
+              <button class="statistic-alt">
+                <div class="value">18</div>
+                <div class="label">Statistic Label</div>
+              </button>
+            </div>
+            <div class="sds-statistics--alt">
+              <button class="statistic-alt">
+                <div class="value">45</div>
+                <div class="label">Statistic Label</div>
               </button>
             </div>
           </div>
         </div>
       </div>
-      <!-- KPI -->
-      <div class="grid-row margin-2">
-        <div class="grid-col margin-x-1 kpi">
-          <div class="text-center">
-            Events in the <strong>Last 90 Days</strong>
-          </div>
-          <div class="sds-statistics compact bg-base-lightest flex-justify-center">
-            <a class="kpi-statistic">
-              <div class="value">2051</div>
-              <div class="label">Organizations<br />Started</div>
-            </a>
-            <a class="kpi-statistic">
-              <div class="value">109</div>
-              <div class="label">Organizations<br />Expired</div>
-            </a>
-          </div>
-        </div>
-        <div class="grid-col margin-x-1">
-          <div class="text-center">
-            Events in the <strong>Next 90 Days</strong>
-          </div>
-          <div class="sds-statistics compact bg-base-lightest flex-justify-center">
-            <a class="kpi-statistic">
-              <div class="value">30</div>
-              <div class="label">Organizations<br />Started</div>
-            </a>
-            <a class="kpi-statistic">
-              <div class="value">969</div>
-              <div class="label">Organizations<br />Expired</div>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -275,10 +294,10 @@
     <!-- Activity Address Code Card -->
     <div class="sds-card">
       <div class="sds-card__header">
-        <a class="sds-card__header-title">
-          Activity Address Code (AACs)
-          <span class="sds-card__header-title-counter tablet:display-none">(15)</span>
-        </a>
+        <h2><a class="usa-link">Activity Address Code (AACs)</a></h2>
+        <span class="sds-card__header-mobile">
+          (8)
+        </span>
       </div>
       <div class="sds-card__content display-block btn-update">
         <button class="usa-button">Upload AAC</button>
@@ -288,15 +307,14 @@
   </div>
 
   <!-- SIDE NAVIGATION -->
-  <div class="tablet:grid-col bg-white sds-side-panel">
+  <div class="tablet:grid-col bg-white padding-x-2">
     <!-- PROFILE -->
-    <h3 class="sds-heading margin-0">
-      <a class="text-semibold" href="">Profile</a>
+    <h3>
+        <a class="usa-link" href="javascript:void(0);">Profile</a>
     </h3>
-
     <div class="display-block">
       <div class="display-flex flex-align-start flex-wrap margin-top-2">
-        <div class="bg-base-lightest profile-update">
+        <div class="bg-base-lightest margin-right-2">
           <i class="fa fa-user fa-fw fa-3x text-gray-30" aria-hidden="true"></i>
         </div>
 
@@ -316,8 +334,8 @@
 
     <!-- PENDING REQUESTS -->
     <div class="display-flex flex-justify flex-align-center">
-      <h3 class="sds-heading">
-        <a class="sds-semibold" href="">Pending Requests</a>
+      <h3>
+          <a class="usa-link" href="javascript:void(0);">Pending Requests</a>
       </h3>
       <span class="sds-circular red label tablet:display-none">5</span>
     </div>
@@ -381,13 +399,13 @@
     </div>
 
     <!-- NOTIFICATIONS -->
-    <h3 class="sds-heading">
-      <a class="text-semibold" href="">Notifications</a>
+    <h3>
+        <a class="usa-link" href="javascript:void(0);">Notifications</a>
     </h3>
     <div class="sds-feed display-flex">
       <div class="event">
         <div class="label">
-          <i class="fa fa-newspaper fa-2x fa-fw"></i>
+          <i class="fa fa-newspaper fa-2x fa-fw" style="color:#3F57A6;"></i>
         </div>
         <div class="content">
           <div class="summary">
@@ -401,7 +419,7 @@
     <div class="sds-feed display-flex">
       <div class="event">
         <div class="label">
-          <i class="fa fa-newspaper fa-2x fa-fw"></i>
+          <i class="fa fa-newspaper fa-2x fa-fw" style="color:#3F57A6;"></i>
         </div>
         <div class="content">
           <div class="summary">
@@ -440,10 +458,9 @@
 
 
     <!-- ADD NEW ROLE -->
-    <h3 class="sds-heading">
-      <a class="sds-semibold">Add A New Role</a>
+    <h3>
+        <a class="usa-link" href="javascript:void(0);">Add New Role</a>
     </h3>
-
     <div>
       <p>
         Select one of the options below to request a new role. If you need a
@@ -462,11 +479,9 @@
           A contracting specialist contributes to contract opportunities.
         </p>
       </form>
-      <input type="checkbox" name="checkrole" value="verified" />
-      <label for="verified" class="font-sans-3xs display-inline-block padding-right-1">
-        I verify I have a business need for this role.
-      </label>
-      <button class="usa-button usa-button--outline flex-align-center margin-top-1">Request Role</button>
+      <input type="checkbox" name="checkrole" value="verified" class="margin-top-1"/>
+      <label for="verified" class="font-sans-3xs display-inline-block padding-x-05">I verify I have a business need for this role.</label>
+      <button class="usa-button usa-button--outline flex-align-center margin-auto">Request Role</button>
     </div>
   </div>
 </div>
