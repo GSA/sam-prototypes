@@ -49,16 +49,28 @@ export const RegistrationFields: FormlyFieldConfig[] = [
             inputType: 'text',
           },
         },
+
         {
           key: 'ueiDUNS',
-          type: 'input',
+          type: 'autocomplete',
           templateOptions: {
             label: 'Unique Entity ID (DUNS)',
-            placeholder: '',
-            inputType: 'text',
-            inputStyle: 'error',
+            // service: this.service,
+            // configuration: this.settings,
+            // model: this.autocompleteModel,
+            // modelChange: this.changes,
           },
         }
+        // {
+        //   key: 'ueiDUNS',
+        //   type: 'input',
+        //   templateOptions: {
+        //     label: 'Unique Entity ID (DUNS)',
+        //     placeholder: '',
+        //     inputType: 'text',
+        //     inputStyle: 'error',
+        //   },
+        // }
       ],
     },
     {
