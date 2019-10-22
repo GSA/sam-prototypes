@@ -27,7 +27,7 @@
     "@gsa-sam/components": "^0.5.6",
     "@gsa-sam/layouts": "^0.5.6",
     "@gsa-sam/sam-formly": "^0.5.6",
-    "@gsa-sam/sam-styles": "^0.0.36",
+    "@gsa-sam/sam-styles": "^0.0.37",
     "@ngrx/effects": "^7.4.0",
     "@ngrx/entity": "^7.4.0",
     "@ngrx/router-store": "^7.4.0",
