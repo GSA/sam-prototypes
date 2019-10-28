@@ -2,3 +2,18 @@
   background: url(/assets/img/homepage-cover.jpg) right;
   background-size: cover;
 }
+
+@media only screen and (max-width: 600px) {
+  .mobile {
+    margin-left: 60px;
+  }
+
+  .text-white {
+    display: none;
+  }
+
+  .fa-check-circle {
+    margin-left: 10px !important;
+    margin-right: 15px !important;
+  }
+}
