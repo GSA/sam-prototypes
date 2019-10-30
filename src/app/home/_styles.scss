@@ -1,15 +1,13 @@
 .homepage-cover{
-  background: url(/assets/img/homepage-cover.jpg) right;
+  background: url(/assets/img/homepage-cover.jpg) center bottom;
   background-size: cover;
 }
 
 @media only screen and (max-width: 600px) {
-  .mobile {
-    margin-left: 60px;
-  }
-
-  .text-white {
-    display: none;
+  .homepage-title {
+    font-size: 1.2rem;
+    margin: 20px;
+    text-align: center;
   }
 
   .fa-check-circle {
