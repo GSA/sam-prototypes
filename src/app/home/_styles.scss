@@ -1,4 +1,17 @@
 .homepage-cover{
-  background: url(/assets/img/homepage-cover.jpg) right;
+  background: url(/assets/img/homepage-cover.jpg) center bottom;
   background-size: cover;
+}
+
+@media only screen and (max-width: 600px) {
+  .homepage-title {
+    font-size: 1.2rem;
+    margin: 20px;
+    text-align: center;
+  }
+
+  .fa-check-circle {
+    margin-left: 10px !important;
+    margin-right: 15px !important;
+  }
 }
