@@ -1,6 +1,19 @@
 .homepage-cover{
-  background: url(/assets/img/homepage-cover.jpg) center bottom;
+  // background: url(/assets/img/homepage-cover.jpg) center bottom;
+  background: url(/assets/img/Slice.png) center bottom;
   background-size: cover;
+
+  @media only screen and (max-width: 600px) {
+    background: url(/assets/img/Slice.png) 73% 50%;
+    background-size: cover;
+  }
+}
+
+.icon-buttons {
+  margin: auto;
+}
+.sds-button.sds-button--icon {
+  margin: 15px !important;
 }
 
 @media only screen and (max-width: 600px) {
@@ -10,8 +23,7 @@
     text-align: center;
   }
 
-  .fa-check-circle {
-    margin-left: 10px !important;
-    margin-right: 15px !important;
+  .sds-span {
+    display: none;
   }
 }
