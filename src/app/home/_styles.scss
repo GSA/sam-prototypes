@@ -2,6 +2,11 @@
   // background: url(/assets/img/homepage-cover.jpg) center bottom;
   background: url(/assets/img/Slice.png) center bottom;
   background-size: cover;
+
+  @media only screen and (max-width: 600px) {
+    background: url(/assets/img/Slice.png) 73% 50%;
+    background-size: cover;
+  }
 }
 
 .icon-buttons {
@@ -16,5 +21,9 @@
     font-size: 1.2rem;
     margin: 20px;
     text-align: center;
+  }
+
+  .sds-span {
+    display: none;
   }
 }
