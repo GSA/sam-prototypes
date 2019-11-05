@@ -1,10 +1,10 @@
 .homepage-cover{
   // background: url(/assets/img/homepage-cover.jpg) center bottom;
-  background: url(/assets/img/Slice.png) center bottom;
+  background: url(/assets/img/homepage-cover.jpg) center bottom;
   background-size: cover;
 
   @media only screen and (max-width: 600px) {
-    background: url(/assets/img/Slice.png) 73% 50%;
+    background: url(/assets/img/SAM_Mobile_Background.jpg) 100% 40%;
     background-size: cover;
   }
 }
