@@ -17,6 +17,13 @@ const routes: Routes = [
     }
   },
   {
+    path: 'landing',
+    loadChildren: './landing/landing.module#LandingModule',
+    data: {
+      id: "home"
+    }
+  },
+  {
     path: 'workspace',
     loadChildren: './workspace/workspace.module#WorkspaceModule',
     data: {
@@ -72,6 +79,13 @@ const routes: Routes = [
     loadChildren: './about/about.module#AboutModule',
     data: {
       id: "help"
+    }
+  },
+  {
+    path: 'system-account',
+    loadChildren: './system-accounts/system-accounts.module#SystemAccountsModule',
+    data: {
+      id: "workspace"
     }
   },
   {
