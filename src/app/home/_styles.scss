@@ -1,29 +1,50 @@
-.homepage-cover{
+.homepage-cover {
   // background: url(/assets/img/homepage-cover.jpg) center bottom;
-  background: url(/assets/img/home-graphic-2.png) center bottom;
+  background: url("/assets/img/home-graphic-2.png") center bottom;
   background-size: cover;
-
-  @media only screen and (max-width: 600px) {
-    background: url(/assets/img/SAM_Mobile_Background.jpg) 100% 40%;
-    background-size: cover;
-  }
 }
 
 .icon-buttons {
   margin: auto;
 }
+
 .sds-button.sds-button--icon {
   margin: 15px !important;
 }
 
+.sds-search {
+  margin-top: 0 !important;
+}
+
 @media only screen and (max-width: 600px) {
+  .homepage-cover {
+    background: url("/assets/img/SAM_Mobile_Background.jpg") 100% 40%;
+    background-size: cover;
+  }
+
   .homepage-title {
     font-size: 1.2rem;
     margin: 20px;
     text-align: center;
   }
 
-  .sds-span {
+  .search-container {
+    width: 550px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .sds-search--label {
+    color: black;
+    background-color: white;
+    margin-bottom: 0;
+    width: 426px;
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .tile-text > span{
     display: none;
   }
 }
