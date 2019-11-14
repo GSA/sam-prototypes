@@ -15,6 +15,18 @@
 .sds-search {
   margin-top: 0 !important;
 }
+.sds-search--label {
+  color: black;
+  margin-bottom: 0;
+  padding: 10px;
+}
+
+.search-bg {
+  background: rgba(white, 0.7);
+  padding: 8px;
+  max-width: 670px;
+  min-width: fit-content;
+}
 
 @media only screen and (max-width: 600px) {
   .homepage-cover {
@@ -35,16 +47,23 @@
   }
 
   .sds-search--label {
-    color: black;
-    background-color: white;
-    margin-bottom: 0;
     width: 426px;
-    padding: 10px;
+    background-color: white;
+    color: black;
+  }
+
+  .usa-search.usa-search--small.usa-search--inverse {
+    background: none !important;
+    padding: 0 !important;
   }
 }
 
 @media only screen and (max-width: 700px) {
   .tile-text > span{
     display: none;
+  }
+
+  .tiles {
+    text-align: center;
   }
 }
