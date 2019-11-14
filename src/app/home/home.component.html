@@ -6,46 +6,60 @@
           <div class="tablet:grid-col-10 mobile:grid-col-fill padding-x-4">
             <h2 class="text-base-dark homepage-title mobile-lg:margin-y-4 margin-bottom-0">SAM.gov is the official U.S. Government system for</h2>
             <div class="tiles">
-            <div class="sds-tile">
-              <a href="#" class="sds-tile__content sds-tile--outline">
-                <i class="sds-tile__icon sds fa-building text-primary-dark"></i>
-                <div class="sds-tile__title">Entity Registration</div>
-              </a>
-            </div>
-            <div class="sds-tile">
-              <a href="#" class="sds-tile__content sds-tile--outline">
-                <i class="sds-tile__icon sds fa-photo text-ink"></i>
-                <div class="sds-tile__title">Exclusions</div>
-              </a>
-            </div>
-            <div class="sds-tile">
-              <a href="#" class="sds-tile__content sds-tile--outline">
-                <i class="sds-tile__icon sds fa-open-doors text-gold"></i>
-                <div class="sds-tile__title">Contract Opportunities</div>
-                <div class="sds-tile__details">(fbo.gov)</div>
-              </a>
-            </div>
-            <div class="sds-tile">
-              <a href="#" class="sds-tile__content sds-tile--outline">
-                <i class="sds-tile__icon sds fa-photo text-ink"></i>
-                <div class="sds-tile__title">Contract Data Reports</div>
-                <div class="sds-tile__details">(fdps.gov)</div>
-              </a>
-            </div>
-            <div class="sds-tile">
-              <a href="#" class="sds-tile__content sds-tile--outline">
-                <i class="sds-tile__icon sds fa-photo text-ink"></i>
-                <div class="sds-tile__title">Assistance Listings</div>
-                <div class="sds-tile__details">(cfda.gov)</div>
-              </a>
-            </div>
-            <div class="sds-tile">
-              <a href="#" class="sds-tile__content sds-tile--outline">
-                <i class="sds-tile__icon sds fa-photo text-ink"></i>
-                <div class="sds-tile__title">Wage Determinations</div>
-                <div class="sds-tile__details">(wdol.gov)</div>
-              </a>
-            </div>
+              <div class="sds-tile">
+                <a [routerLink]="['landing/entity']" class="sds-tile__content sds-tile--outline">
+                  <i class="sds-tile__icon sds fa-building text-primary-dark"></i>
+                  <div class="sds-tile__title">Entity Information</div>
+                  <div class="sds-tile__details">Entity Registrations and Exclusions</div>
+                </a>
+              </div>
+              <div class="sds-tile">
+                <a [routerLink]="['landing/opportunities']" class="sds-tile__content sds-tile--outline">
+                  <i class="sds-tile__icon sds fa-photo text-ink"></i>
+                  <div class="sds-tile__title">Exclusions</div>
+                </a>
+              </div>
+              <div class="sds-tile">
+                <a [routerLink]="['landing/opportunities']" class="sds-tile__content sds-tile--outline">
+                  <i class="sds-tile__icon sds fa-open-doors text-gold"></i>
+                  <div class="sds-tile__title">Entity Compliance</div>
+                  <div class="sds-tile__details">SCR and Bio-Preferred Reporting</div>
+                </a>
+              </div>
+              <div class="sds-tile">
+                <a href="#" class="sds-tile__content sds-tile--outline">
+                  <i class="sds-tile__icon sds fa-photo text-ink"></i>
+                  <div class="sds-tile__title">Contract Data Reports</div>
+                  <div class="sds-tile__details">(fdps.gov)</div>
+                </a>
+              </div>
+              <div class="sds-tile">
+                <a href="#" class="sds-tile__content sds-tile--outline">
+                  <i class="sds-tile__icon sds fa-photo text-ink"></i>
+                  <div class="sds-tile__title">Assistance Listings</div>
+                  <div class="sds-tile__details">(cfda.gov)</div>
+                </a>
+              </div>
+              <div class="sds-tile">
+                <a [routerLink]="['landing/wages']" class="sds-tile__content sds-tile--outline">
+                  <i class="sds-tile__icon sds fa-photo text-ink"></i>
+                  <div class="sds-tile__title">Wage Determinations</div>
+                  <div class="sds-tile__details">(wdol.gov)</div>
+                </a>
+              </div>
+              <div class="sds-tile">
+                <a [routerLink]="['landing/assistance']" class="sds-tile__content sds-tile--outline">
+                  <i class="sds-tile__icon sds fa-photo text-ink"></i>
+                  <div class="sds-tile__title">Assistance Listings</div>
+                  <div class="sds-tile__details">(cfda.gov)</div>
+                </a>
+              </div>
+              <div class="sds-tile">
+                <a [routerLink]="['landing/hierarchy']" class="sds-tile__content sds-tile--outline">
+                  <i class="sds-tile__icon sds fa-photo text-ink"></i>
+                  <div class="sds-tile__title">Federal Hierarchy</div>
+                </a>
+              </div>
             </div>
             <div class="grid-row margin-2 tile-text">
               <span>Click on one of the above links to learn about what you can do.</span>
