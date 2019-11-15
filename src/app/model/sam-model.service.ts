@@ -24,7 +24,7 @@ export class SamModelService {
     };
 
   secondaryLinks = [{
-    imageClassPrefix: 'fas', imageClass: 'comment', text: 'Messages', route: '/messages', mode: NavigationMode.INTERNAL, id: 'messages'
+    imageClassPrefix: 'fas', imageClass: 'comment', text: 'Notifications', route: '/messages', mode: NavigationMode.INTERNAL, id: 'messages'
   },
   {
     imageClassPrefix: 'fas', imageClass: 'edit', mode: NavigationMode.INTERNAL,
