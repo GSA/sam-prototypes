@@ -33,7 +33,6 @@
           <sds-accordion-item-header>Show Results For</sds-accordion-item-header>
           <sds-side-navigation #sideNav [model]="sideNavModel"></sds-side-navigation>
         </sds-accordion-item>
-        <sds-filters *ngIf="fields && fields.length > 0" [form]="form" [fields]="fields" [model]="filterModel" (filterChange)="filterChange$.next($event)"></sds-filters>
       </sds-accordion>
     </sds-toolbar>
     <div class="sds-page__content tablet:grid-col margin-0">
