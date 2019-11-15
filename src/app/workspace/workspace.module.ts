@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { WorkspaceRoutingModule } from './workspace-routing.module';
 import { WorkspaceComponent } from './workspace.component';
 import { WorkspaceModelModule } from './service/workspace-model.module';
+
 import {
   SdsSideNavigationModule,
   SdsToolbarModule,
   SdsAccordionModule,
-  SdsPageModule
+  SdsPageModule,
+  SdsSearchModule
 } from '@gsa-sam/components';
 import { SdsFiltersModule, SDSFormlyUpdateComunicationService } from '@gsa-sam/sam-formly';
 import { SdsSubheaderModule, SearchListServiceModule } from '@gsa-sam/layouts';
@@ -19,12 +23,14 @@ import { AutocompleteSampleDataService } from './entities/entity-service/autocom
 @NgModule({
   imports: [
     CommonModule,
+    FontAwesomeModule,
     WorkspaceRoutingModule,
     SdsSideNavigationModule,
     SdsToolbarModule,
     SdsAccordionModule,
     WorkspaceModelModule.forRoot(),
     SdsPageModule,
+    SdsSearchModule,
     SdsToolbarModule,
     SdsSideNavigationModule,
     SdsAccordionModule,

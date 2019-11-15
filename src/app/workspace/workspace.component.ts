@@ -39,6 +39,13 @@ export class WorkspaceComponent implements OnInit, AfterViewInit {
   filterModel = {};
   fields: FormlyFieldConfig[] = [];
 
+  public subheader = {
+    buttons: [],
+    actions: [
+      { id: 'DownloadBtn', icon: 'bars', text: 'Download' }
+    ]
+  };
+
   public settings = new SDSAutocompletelConfiguration();
   public autocompleteModel = new SDSSelectedItemModel();
 

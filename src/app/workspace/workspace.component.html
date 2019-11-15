@@ -1,12 +1,30 @@
-<ng-container *ngIf="router.url != '/workspace'">
-  <sds-subheader>
-    <!-- =============== TITLE =============== -->
-      {{workspaceModel.title}}
+<sds-subheader>
+  <!-- =============== BACK BUTTON =============== -->
+  <button class="sds-button sds-button--circular">
+    <fa-icon [icon]="['fas', 'chevron-left']" [fixedWidth]="true"></fa-icon>
+  </button>
 
-    <!-- =============== SEARCH =============== -->
-    <sds-subheader-search (searchTerm)="log($event)"> </sds-subheader-search>
-  </sds-subheader>
-</ng-container>
+  <!-- =============== TITLE =============== -->
+  <h1 class="font-heading-md text-semibold tablet-lg:width-mobile">
+    {{workspaceModel.title}}
+  </h1>
+
+  <!-- =============== SEARCH =============== -->
+  <sds-search
+    (term)="log($event)"
+    parentSelector=".grid-row"
+    placeholder="Entity an ID, name, or keyword"
+    inputClass="width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block"
+  >
+  </sds-search>
+
+  <!-- =============== ACTIONS BUTTONS =============== -->
+  <sds-subheader-actions
+    [model]="subheader"
+    (clicks)="log($event)">
+  </sds-subheader-actions>
+</sds-subheader>
+
 
 <div style="margin-top: 1.5em; margin-bottom: 1.5em;">
 <sds-page>

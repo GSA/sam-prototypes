@@ -1,3 +1,7 @@
-<p>
-  system-accounts-workspace works!
-</p>
+  <sds-search-result-list [model]="items">
+      <ng-template #resultContent let-item>
+          <div>
+              <search-result-list-sample-data2 [model]="item"></search-result-list-sample-data2>
+          </div>
+      </ng-template>
+  </sds-search-result-list>
