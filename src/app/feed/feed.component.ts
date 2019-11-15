@@ -17,6 +17,13 @@ export class FeedComponent implements OnInit {
 
   domain: string;
 
+  public subheader = {
+    buttons: [],
+    actions: [
+      { id: 'DownloadBtn', icon: 'bars', text: 'Download' }
+    ]
+  };
+
   constructor(private route: ActivatedRoute, public service: FeedService, public model: SamModelService) {  
   }
 

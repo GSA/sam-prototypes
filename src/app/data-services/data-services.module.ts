@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { DataServicesRoutingModule } from './data-services-routing.module';
 import {
@@ -8,14 +9,16 @@ import {
   OfficialComponent
 } from './data-services.component';
 import { SdsSubheaderModule } from '@gsa-sam/layouts';
-import { SdsDialogModule } from '@gsa-sam/components';
+import { SdsDialogModule, SdsSearchModule } from '@gsa-sam/components';
 
 @NgModule({
   imports: [
     CommonModule,
+    FontAwesomeModule,
     DataServicesRoutingModule,
     SdsSubheaderModule,
-    SdsDialogModule
+    SdsDialogModule,
+    SdsSearchModule
   ],
   declarations: [DataServicesComponent, AlertComponent, OfficialComponent],
   exports: [DataServicesComponent],

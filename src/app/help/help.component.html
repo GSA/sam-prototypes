@@ -1,13 +1,49 @@
 <sds-subheader>
-  <!-- =============== TITLE =============== -->
-  Help
+  <!-- =============== BACK BUTTON =============== -->
+  <button class="sds-button sds-button--circular">
+    <fa-icon [icon]="['fas', 'chevron-left']" [fixedWidth]="true"></fa-icon>
+  </button>
 
-  <div class="sds-subheader-tab"><a [routerLink]="['getstarted']">Get Started</a></div>
-  <div class="sds-subheader-tab"><a [routerLink]="['library']">Library</a></div>
+  <!-- =============== TITLE =============== -->
+  <h1 class="font-heading-md text-semibold tablet-lg:width-mobile">
+    Help
+  </h1>
 
   <!-- =============== SEARCH =============== -->
-  <sds-subheader-search (searchTerm)="log($event)"> </sds-subheader-search>
+  <sds-search
+    (term)="log($event)"
+    parentSelector=".grid-row"
+    placeholder="Entity an ID, name, or keyword"
+    inputClass="width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block"
+  >
+  </sds-search>
+
+  <!-- =============== ACTIONS BUTTONS =============== -->
+  <sds-subheader-actions
+    [model]="subheader"
+    (clicks)="log($event)">
+  </sds-subheader-actions>
 </sds-subheader>
-<div style="margin-top: 1.5em; margin-bottom: 1.5em;">
-  <router-outlet></router-outlet>
-</div>
+
+<sds-page>
+  <sds-page-options class="sam-page__options">
+    <sds-toolbar class="tablet:grid-col-auto" #toolbar="sdsToolbar" [expanded]="true">
+      <sds-accordion>
+        <sds-accordion-item [expanded]="true">
+          <sds-accordion-item-header>Show Results For</sds-accordion-item-header>
+          <sds-side-navigation #sideNav [model]="sideNavModel"></sds-side-navigation>
+        </sds-accordion-item>
+        <sds-filters *ngIf="fields && fields.length > 0" [form]="form" [fields]="fields" [model]="filterModel" (filterChange)="filterChange$.next($event)"></sds-filters>
+      </sds-accordion>
+    </sds-toolbar>
+    <div class="sds-page__content tablet:grid-col margin-0">
+      <search-list-layout [service]="service" [configuration]="service.configuration">
+          <ng-template #resultContent let-item>
+              <div>
+                  <help-item [model]="item"></help-item>
+              </div>
+          </ng-template>
+      </search-list-layout>
+    </div>
+  </sds-page-options>
+</sds-page>

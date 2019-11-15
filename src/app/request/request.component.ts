@@ -16,6 +16,13 @@ export class RequestComponent implements OnInit {
 
   domain: string;
 
+  public subheader = {
+    buttons: [],
+    actions: [
+      { id: 'DownloadBtn', icon: 'bars', text: 'Download' }
+    ]
+  };
+
   constructor(private route: ActivatedRoute, public service: RequestService, public model: SamModelService) {  
   }
 

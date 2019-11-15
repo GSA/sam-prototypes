@@ -31,8 +31,6 @@ import { BehaviorSubject } from 'rxjs';
 import { SearchAllFields } from './filter-config';
 
 
-
-
 @Component({
   selector: 'search',
   templateUrl: './sam-search.component.html',
@@ -46,6 +44,14 @@ export class SamSearchComponent implements OnInit, AfterViewInit {
   
   public filterChange$ = new BehaviorSubject<object>(null);
 
+  public subheader = {
+    buttons: [],
+    actions: [
+      { id: 'DownloadBtn', icon: 'bars', text: 'Download' },
+      { id: 'FollowBtn', icon: 'bars', text: 'Follow' },
+      { id: 'ShareBtn', icon: 'bars', text: 'Share' }
+    ]
+  };
 
   constructor(
     private route: ActivatedRoute,
