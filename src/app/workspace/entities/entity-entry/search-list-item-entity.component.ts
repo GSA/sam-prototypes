@@ -11,4 +11,17 @@ export class SearchResultListEntityDataItemComponent {
 
   @Input() model: EntityData;
 
+  menu = {
+    trigger: 'primary',
+    actions: [
+      { id: 'ViewBtn', icon: 'bars', text: 'View' },
+      { id: 'UpdateBtn', icon: 'bars', text: 'Update' },
+      { id: 'DeactivateBtn', icon: 'bars', text: 'Deactivate' }
+    ]
+  };
+
+  log(value) {
+    console.log(`%cLog: ${value} clicked in result item ${this.model.entityRegistration.legalBusinessName}`, 'color: blue; font-weight: bold');
+  }
+
 }

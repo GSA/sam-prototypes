@@ -28,6 +28,8 @@ import { FormGroup } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 import { AutocompleteSampleDataService } from './entities/entity-service/autocomplete-sample.service';
 
+import { FilterConfigurations } from './filters.config';
+
 @Component({
   selector: 'workspace',
   templateUrl: './workspace.component.html',
@@ -36,6 +38,7 @@ import { AutocompleteSampleDataService } from './entities/entity-service/autocom
 })
 export class WorkspaceComponent implements OnInit, AfterViewInit {
   form = new FormGroup({});
+  filterConfigurations = FilterConfigurations;
   filterModel = {};
   fields: FormlyFieldConfig[] = [];
 
@@ -48,121 +51,6 @@ export class WorkspaceComponent implements OnInit, AfterViewInit {
 
   public settings = new SDSAutocompletelConfiguration();
   public autocompleteModel = new SDSSelectedItemModel();
-
-  public registrationFields: FormlyFieldConfig[] = [
-  {
-    key: 'searchKeyword',
-    wrappers: ['accordionwrapper'],
-    templateOptions: { label: 'Keyword' },
-    fieldGroup: [{
-      key: 'keyword',
-      type: 'input',
-      templateOptions: {
-        type: 'text',
-        label: 'Keyword',
-      },
-
-    }]
-  },
-
-  {
-    key: 'searchEntity',
-    wrappers: ['accordionwrapper'],
-    templateOptions: { label: 'Entity' },
-    fieldGroup: [
-      {
-        key: 'legalBusinessName',
-        type: 'input',
-        templateOptions: {
-          label: 'Entity Name',
-          placeholder: '',
-          inputType: 'text',
-        },
-      },
-      {
-        key: 'ueiSAM',
-        type: 'input',
-        templateOptions: {
-          label: 'Unique Entity ID (SAM)',
-          placeholder: '',
-          inputType: 'text',
-          inputStyle: 'error',
-        },
-      },
-      {
-        key: 'cageCode',
-        type: 'input',
-        templateOptions: {
-          label: 'CAGE/NCAGE',
-          placeholder: '',
-          inputType: 'text',
-        },
-      },
-
-      {
-        key: 'ueiDUNS',
-        type: 'autocomplete',
-        templateOptions: {
-          label: 'Unique Entity ID (DUNS)',
-          service: this.autocompleteSampleDataService,
-          configuration: this.settings,
-          model: this.autocompleteModel,
-        },
-      }
-    ],
-  },
-  {
-    key: 'registration',
-    wrappers: ['accordionwrapper'],
-    templateOptions: { label: 'Status' },
-    fieldGroup: [
-      {
-        key: 'registrationStatus',
-        type: 'multicheckbox',
-        templateOptions: {
-          options: [
-            {
-              key: 'Active',
-              value: 'Active'
-            },
-            {
-              key: 'Draft',
-              value: 'Draft'
-            },
-            {
-              key: 'Expired',
-              value: 'Expired'
-            },
-            {
-              key: 'InProgress',
-              value: 'In Progress'
-            }
-          ]
-        },
-      }
-    ]
-  },
-  {
-    key: 'expiration',
-    wrappers: ['accordionwrapper'],
-    templateOptions: { label: 'Expiration Date' },
-    fieldGroup: [
-      {
-        key: 'expirationDate',
-        type: 'radio',
-        templateOptions: {
-          options: [
-            { label: '30 Days', value: '30' },
-            { label: '60 Days', value: '60' },
-            { label: '90 Days', value: '90' },
-            { label: 'None', value: '0' },
-
-          ]
-        },
-      }
-    ]
-  }
-];
 
 
 public filterChange$ = new BehaviorSubject<object>(null);
@@ -180,23 +68,16 @@ public filterChange$ = new BehaviorSubject<object>(null);
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         // Show loading indicator
-        const domain = this.router.url.split('/').pop();
-        if (domain === 'registrations') {
-          this.fields = this.registrationFields;
-        } else {
-          this.fields = [];
-        }
+        this.setFilters();
       }
     });
-
   }
   @ViewChild('sideNav') sideNav;
 
   ngOnInit() {
-    const str = this.router.url.split('/').pop();
-    if (str == 'registrations') {
-      this.fields = this.registrationFields;
-    }
+
+    this.setFilters();
+
     this.router.events
       .pipe(
         filter(event => event instanceof NavigationEnd),
@@ -224,6 +105,19 @@ public filterChange$ = new BehaviorSubject<object>(null);
         this.sideNav.select(customData);
       });
 
+  }
+
+  setFilters() {
+
+    let domain = this.router.url.split('/').pop();
+    if(domain !== null) {
+      let config = this.filterConfigurations.get(domain);
+      if (config) {
+        this.fields = config;
+        return;
+      }
+    }
+    this.fields = [];
   }
 
   autoCompleteSetup() {

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { WorkspaceModelModule } from '../service/workspace-model.module';
 import { EntityListComponent } from './entity-list.component';
 import { EntitiesRoutingModule } from './entities-routing.module';
 import { EntityService } from './entity-service/entity.service';

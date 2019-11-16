@@ -3,7 +3,7 @@ export let data = {
     "entityData": [
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "694860796",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "547FF",
@@ -405,7 +405,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "081213133",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84FE4",
@@ -417,7 +417,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-03-16",
                 "activationDate": "2018-06-27",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -781,7 +781,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "080108829",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GM7",
@@ -793,7 +793,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-05-05",
                 "activationDate": "2018-07-08",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -1181,7 +1181,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "839575255",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GP8",
@@ -1193,7 +1193,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-08-12",
                 "activationDate": "2018-07-07",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -1561,7 +1561,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "079566522",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GQ3",
@@ -1573,7 +1573,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-07-26",
                 "activationDate": "2018-07-10",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -1969,7 +1969,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "012189626",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GR0",
@@ -1981,7 +1981,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-11-02",
                 "activationDate": "2018-07-02",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -2357,7 +2357,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "081268353",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GS3",
@@ -2369,7 +2369,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-09-21",
                 "activationDate": "2018-07-06",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -3067,7 +3067,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "081263049",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GV3",
@@ -3079,7 +3079,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-06-17",
                 "activationDate": "2018-07-07",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -3439,7 +3439,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "965740371",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GX4",
@@ -3451,7 +3451,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-09-30",
                 "activationDate": "2018-06-30",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -3819,7 +3819,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "081265723",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GY2",
@@ -3831,7 +3831,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-12-20",
                 "activationDate": "2018-06-27",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -4195,7 +4195,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "010592190",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GY5",
@@ -4207,7 +4207,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2019-04-22",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-06-03",
                 "activationDate": "2018-06-28",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -4567,7 +4567,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "042774684",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84H06",
@@ -4579,7 +4579,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2019-04-22",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-06-09",
                 "activationDate": "2018-06-27",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -4943,7 +4943,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "031830785",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84H28",
@@ -4955,7 +4955,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-02-26",
                 "activationDate": "2018-07-05",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -5373,7 +5373,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "080903030",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84H31",
@@ -5385,7 +5385,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-02-12",
                 "activationDate": "2018-07-09",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -5745,7 +5745,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "080110041",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84H33",
@@ -5757,7 +5757,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-01-16",
                 "activationDate": "2018-07-03",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -6133,7 +6133,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "080216343",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84H48",
@@ -6145,7 +6145,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-09-21",
                 "activationDate": "2018-07-10",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -6509,7 +6509,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "079097129",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84H52",
@@ -6521,7 +6521,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-07-18",
                 "activationDate": "2018-07-07",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -6887,7 +6887,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "078830505",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84H63",
@@ -6899,7 +6899,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-08-01",
                 "activationDate": "2018-07-08",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -7479,7 +7479,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "034586037",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84H88",
@@ -7491,7 +7491,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-12-09",
                 "activationDate": "2018-06-27",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -7855,7 +7855,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "028528116",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84H95",
@@ -7867,7 +7867,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-04-10",
                 "activationDate": "2018-07-10",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -8243,7 +8243,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "043657468",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84HB2",
@@ -8255,7 +8255,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-03-31",
                 "activationDate": "2018-07-06",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -8675,7 +8675,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "081264877",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84HF9",
@@ -8687,7 +8687,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-10-26",
                 "activationDate": "2018-07-10",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -9071,7 +9071,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "081254459",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84HH9",
@@ -9083,7 +9083,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-01-22",
                 "activationDate": "2018-06-27",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -9451,7 +9451,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "071912311",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84HJ5",
@@ -9463,7 +9463,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-11-08",
                 "activationDate": "2018-06-27",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -9827,7 +9827,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "080152671",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84HJ8",
@@ -9839,7 +9839,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-12-16",
                 "activationDate": "2018-07-11",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -10199,7 +10199,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "957314235",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84BN9",
@@ -10211,7 +10211,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-02-19",
                 "activationDate": "2018-07-07",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -10571,7 +10571,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "081257042",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84BY5",
@@ -10583,7 +10583,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-06-29",
                 "activationDate": "2018-07-08",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -10943,7 +10943,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "681683755",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "008RR",
@@ -10955,7 +10955,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-05-12",
                 "activationDate": "2018-06-26",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -11319,7 +11319,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "274304695",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "FBC75",
@@ -11331,7 +11331,7 @@ export let data = {
                 "registrationStatus": "Active",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-03-12",
                 "activationDate": "2018-07-11",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -11713,7 +11713,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "081016075",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84A22",
@@ -11725,7 +11725,7 @@ export let data = {
                 "registrationStatus": "Draft",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-09-20",
                 "activationDate": "2018-07-11",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -12189,7 +12189,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "081266209",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GN8",
@@ -12201,7 +12201,7 @@ export let data = {
                 "registrationStatus": "",
                 "registrationDate": "2018-06-20",
                 "lastUpdateDate": "2018-09-08",
-                "expirationDate": "2019-06-20",
+                "expirationDate": "2019-08-23",
                 "activationDate": "2018-07-06",
                 "noPublicDisplayFlag": "Currently Not Available",
                 "exclusionStatusFlag": null,
@@ -12957,7 +12957,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "033810189",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GP9",
@@ -13329,7 +13329,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "079566522",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GQ3",
@@ -13737,7 +13737,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "081177067",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GQ6",
@@ -14113,7 +14113,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "831360917",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GT6",
@@ -14489,7 +14489,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "123897295",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GV7",
@@ -14861,7 +14861,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "081250200",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GW0",
@@ -15241,7 +15241,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "014482047",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GW8",
@@ -15629,7 +15629,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "965740371",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GX4",
@@ -16009,7 +16009,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "965740371",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GX4",
@@ -16389,7 +16389,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "081246380",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GY6",
@@ -16761,7 +16761,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "042774684",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84H06",
@@ -17137,7 +17137,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "036035552",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84H09",
@@ -17525,7 +17525,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "883146771",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84H20",
@@ -17933,7 +17933,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "078371233",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84H67",
@@ -18313,7 +18313,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "081221968",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84HD1",
@@ -18689,7 +18689,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "080152671",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84HJ8",
@@ -19061,7 +19061,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "080674473",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84HT4",
@@ -19485,7 +19485,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "681683755",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "008RR",
@@ -19861,7 +19861,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "694207821",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "535FF",
@@ -20263,7 +20263,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "081213133",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84FE4",
@@ -20639,7 +20639,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "030963192",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GK7",
@@ -21057,7 +21057,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "080830055",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GQ4",
@@ -21433,7 +21433,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "878534895",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GS1",
@@ -21813,7 +21813,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "080946482",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GS2",
@@ -22281,7 +22281,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "007185148",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GS7",
@@ -22653,7 +22653,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "081262860",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GS9",
@@ -23029,7 +23029,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "081263049",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GV3",
@@ -23401,7 +23401,7 @@ export let data = {
         },
         {
             "entityRegistration": {
-                "ueiSAM": "Currently Not Available",
+                "ueiSAM": "(blank)",
                 "ueiDUNS": "010592190",
                 "entityEFTIndicator": "Currently Not Available",
                 "cageCode": "84GY5",
