@@ -39,6 +39,20 @@ const routes: Routes = [
     }
   },
   {
+    path: 'news',
+    loadChildren: './news/news.module#NewsModule',
+    data: {
+      id: "home"
+    }
+  },
+  {
+    path: 'alerts',
+    loadChildren: './alerts/alerts.module#AlertsModule',
+    data: {
+      id: "home"
+    }
+  },
+  {
     path: 'messages',
     loadChildren: './feed/feed.module#FeedModule',
     data: {

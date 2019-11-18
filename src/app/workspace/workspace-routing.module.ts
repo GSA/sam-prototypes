@@ -21,7 +21,7 @@ const routes: Routes = [
 				}
 			},
 			{
-				path: 'contractopportunities',
+				path: 'opportunities',
 				loadChildren: './opportunities/opportunities.module#OpportunitiesModule',
 				data: {
 					sideId: 'contractOpportunites'
@@ -57,6 +57,14 @@ const routes: Routes = [
 				loadChildren: './integrity/integrity.module#IntegrityModule',
 				data: {
 					sideId: 'integrityinfo'
+				}
+
+			},
+			{
+				path: 'system-accounts',
+				loadChildren: './system-accounts-workspace/system-accounts-workspace.module#SystemAccountsWorkspaceModule',
+				data: {
+					sideId: 'system-accounts'
 				}
 
 			},

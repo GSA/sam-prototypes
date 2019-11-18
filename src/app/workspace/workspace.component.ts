@@ -20,7 +20,7 @@ import { SDSAutocompletelConfiguration, SDSSelectedItemModel, SelectionMode } fr
 import { FormlyFieldConfig } from '@ngx-formly/core';
 import { SamModelService } from '../model/sam-model.service';
 import { WorkspaceModelService } from './service/workspace-model.service';
-import { SideNavigationModel, NavigationMode } from '@gsa-sam/components';
+import { SideNavigationModel, NavigationMode, INavigationLink } from '@gsa-sam/components';
 import { workspaceSideNavigationData } from './navigation/navigation.data';
 // import { RegistrationFields } from './filter-config';
 import { filter, map } from 'rxjs/operators';
@@ -28,7 +28,8 @@ import { FormGroup } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 import { AutocompleteSampleDataService } from './entities/entity-service/autocomplete-sample.service';
 
-import { FilterConfigurations } from './filters.config';
+import { WorkspaceConfigurations } from './config/workspace-config.data';
+import { WorkspaceConfig } from './config/workspace-config.model';
 
 @Component({
   selector: 'workspace',
@@ -38,9 +39,10 @@ import { FilterConfigurations } from './filters.config';
 })
 export class WorkspaceComponent implements OnInit, AfterViewInit {
   form = new FormGroup({});
-  filterConfigurations = FilterConfigurations;
+  workspaceConfigurations: Map<string, WorkspaceConfig> = WorkspaceConfigurations;
   filterModel = {};
   fields: FormlyFieldConfig[] = [];
+  title: string = 'Workspace';
 
   public subheader = {
     buttons: [],
@@ -111,12 +113,14 @@ public filterChange$ = new BehaviorSubject<object>(null);
 
     let domain = this.router.url.split('/').pop();
     if(domain !== null) {
-      let config = this.filterConfigurations.get(domain);
+      let config = this.workspaceConfigurations.get(domain);
       if (config) {
-        this.fields = config;
+        this.fields = config.filters;
+        this.title = config.title;
         return;
       }
     }
+    this.title = 'Workspace';
     this.fields = [];
   }
 

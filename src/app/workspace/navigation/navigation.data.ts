@@ -5,8 +5,7 @@ export let workspaceSideNavigationData: SideNavigationModel = {
         { id: 'workspacehome', text: 'Workspace Home', mode: NavigationMode.INTERNAL, route: '/workspace' },
         {
             id: 'contracting', text: 'Contracting', mode: NavigationMode.INTERNAL, route: '/workspace', children: [
-                { id: 'contractOpportunityForecasts', text: 'Contract Opportunity Forecasts', mode: NavigationMode.INTERNAL, route: '/workspace/contractopportunities' },
-                { id: 'contractOpportunites', text: 'Contract Opportunities', mode: NavigationMode.INTERNAL, route: '/workspace/contractopportunities' },
+                { id: 'opportunites', text: 'Contract Opportunities', mode: NavigationMode.INTERNAL, route: '/workspace/opportunities' },
                 { id: 'contractData', text: 'Contract Data', mode: NavigationMode.INTERNAL, route: '/workspace/contractdata' }
             ]
         }, {
@@ -81,8 +80,8 @@ export let workspaceSideNavigationData: SideNavigationModel = {
                 }
                 ,
                 {
-                    id: 'systemusers', mode: NavigationMode.INTERNAL,
-                    route: '/workspace/admin/systemusers', text: 'System Accounts'
+                    id: 'system-accounts', mode: NavigationMode.INTERNAL,
+                    route: '/workspace/system-accounts', text: 'System Accounts'
                 }
             ]
         },

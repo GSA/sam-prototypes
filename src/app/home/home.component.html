@@ -8,7 +8,7 @@
             <div class="tiles">
               <div class="sds-tile">
                 <a [routerLink]="['landing/entity']" class="sds-tile__content sds-tile--outline">
-                  <i class="sds-tile__icon sds fa-building text-primary-dark"></i>
+                  <i class="sds-tile__icon sds fa-photo text-primary-dark"></i>
                   <div class="sds-tile__title">Entity Information</div>
                   <div class="sds-tile__details">Entity Registrations and Exclusions</div>
                 </a>
@@ -16,12 +16,20 @@
               <div class="sds-tile">
                 <a [routerLink]="['landing/opportunities']" class="sds-tile__content sds-tile--outline">
                   <i class="sds-tile__icon sds fa-photo text-ink"></i>
-                  <div class="sds-tile__title">Exclusions</div>
+                  <div class="sds-tile__title">Contract Opportunities</div>
+                  <div class="sds-tile__details">(was fbo.gov)</div>
                 </a>
               </div>
               <div class="sds-tile">
                 <a [routerLink]="['landing/opportunities']" class="sds-tile__content sds-tile--outline">
-                  <i class="sds-tile__icon sds fa-open-doors text-gold"></i>
+                  <i class="sds-tile__icon sds fa-photo text-ink"></i>
+                  <div class="sds-tile__title">Contract Data Reports</div>
+                  <div class="sds-tile__details">(was fpds.gov reports)</div>
+                </a>
+              </div>
+              <div class="sds-tile">
+                <a [routerLink]="['landing/opportunities']" class="sds-tile__content sds-tile--outline">
+                  <i class="sds-tile__icon sds fa-photo text-gold"></i>
                   <div class="sds-tile__title">Entity Compliance</div>
                   <div class="sds-tile__details">SCR and Bio-Preferred Reporting</div>
                 </a>
@@ -29,15 +37,8 @@
               <div class="sds-tile">
                 <a href="#" class="sds-tile__content sds-tile--outline">
                   <i class="sds-tile__icon sds fa-photo text-ink"></i>
-                  <div class="sds-tile__title">Contract Data Reports</div>
-                  <div class="sds-tile__details">(fdps.gov)</div>
-                </a>
-              </div>
-              <div class="sds-tile">
-                <a href="#" class="sds-tile__content sds-tile--outline">
-                  <i class="sds-tile__icon sds fa-photo text-ink"></i>
                   <div class="sds-tile__title">Assistance Listings</div>
-                  <div class="sds-tile__details">(cfda.gov)</div>
+                  <div class="sds-tile__details">(was cfda.gov)</div>
                 </a>
               </div>
               <div class="sds-tile">
@@ -45,13 +46,6 @@
                   <i class="sds-tile__icon sds fa-photo text-ink"></i>
                   <div class="sds-tile__title">Wage Determinations</div>
                   <div class="sds-tile__details">(wdol.gov)</div>
-                </a>
-              </div>
-              <div class="sds-tile">
-                <a [routerLink]="['landing/assistance']" class="sds-tile__content sds-tile--outline">
-                  <i class="sds-tile__icon sds fa-photo text-ink"></i>
-                  <div class="sds-tile__title">Assistance Listings</div>
-                  <div class="sds-tile__details">(cfda.gov)</div>
                 </a>
               </div>
               <div class="sds-tile">
@@ -83,7 +77,7 @@
         <div class="grid-container search-container">
           <div class="margin-x-2 padding-y-4">
             <div class="grid-row margin-x-auto">
-              <div class="tablet:grid-col-fill mobile:margin-top-2">
+              <div class="tablet:grid-col-fill mobile:margin-top-2" style="padding-top: 1em">
                 <div class="search-bg">
                 <div>Already know what you are looking for?</div>
                 <div class="sds-search">

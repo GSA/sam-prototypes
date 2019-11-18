@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { EntityService } from './entity-service/entity.service';
-import { WorkspaceModelService } from '../service/workspace-model.service';
 import { SearchListConfiguration } from '@gsa-sam/layouts';
 @Component({
   selector: 'entity-workspace',
@@ -12,8 +11,8 @@ export class EntityListComponent implements OnInit {
 
 
 
-  constructor(public service: EntityService, public workspaceModel: WorkspaceModelService) {
-    workspaceModel.title = "Entity Registration";
+  constructor(public service: EntityService) {
+
   }
 
   configuration: SearchListConfiguration = {
