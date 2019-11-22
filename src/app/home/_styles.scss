@@ -29,6 +29,9 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .search-bg {
+    width: 365px;
+  }
   .homepage-cover {
     background: url("/assets/img/SAM_Mobile_Background.jpg") 100% 40%;
     background-size: cover;
