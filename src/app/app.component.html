@@ -3,7 +3,35 @@
       This Website is a prototype intended to support usability testing only.
   </div>
 </div>
+<div class="sds-alert--header usa-grid">
+    <div class="grid-row">
+        <div class="tablet:grid-col-auto">
+            <i class="sds-alert--header__icon sds fa-exclamation-triangle"></i>
+        </div>
 
+        <div class="tablet:grid-col-fill margin-right-4">
+            <div class="sds-alert--header__content grid-row ">
+                <div class="tablet:grid-col-fill display-block">
+                    <div class="sds-alert--header__label">
+                        Alert dras ut turpis sed nulla sodales malesuada.
+                    </div>
+                    <a class="sds-alert--header__link">
+            Show Details
+          </a>
+                    <span class="sds-alert--header__date">
+            00/00/00
+          </span>
+                </div>
+                <button class="sds-button--circle display-block tablet:grid-col-1"><i class="fa fa-times"></i></button>
+            </div>
+            
+        </div>
+
+        <div class="tablet:grid-col-auto padding-y-2">
+            <button class="usa-button usa-button--secondary" (click)="navigateTo('alerts')">See All Alerts</button>
+        </div>
+    </div>
+</div>
 <sds-header #header [model]="modelService.modelHeader"></sds-header>
 <router-outlet></router-outlet>
 <sds-footer [model]="modelService.modelFooter"></sds-footer>

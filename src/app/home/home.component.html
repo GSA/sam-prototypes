@@ -129,17 +129,26 @@
       <div class="grid-row">
         <div class="desktop:grid-col-7" style="height: 480px; background-image: url('assets/img/home-video.png'); background-size: cover; background-repeat: no-repeat; background-position: left;">
         </div>
-        <div class="desktop:grid-col-5 padding-x-7" style="background-color: #eff6fb;">
-          <h1 class="font-sans-xl">What's New at SAM.gov?</h1>
-          <h2>Frequently Asked Questions</h2>
-          <ul class="usa-list usa-list--unstyled text-secondary-dark text-bold">
-            <li class="margin-y-105">Do I need a user account?</li>
-            <li class="margin-y-105">What's the difference between signing up and registering?</li>
-            <li class="margin-y-105">What if I already have a login.gov account?</li>
-            <li class="margin-y-105">what do I need to register my entity?</li>
-            <li class="margin-y-105">More FAQs</li>
-          </ul>
-          <button class="usa-button usa-button--secondary margin-y-4">Learn More</button>
+        <div class="desktop:grid-col-5 padding-x-7 usa-link-wrapper" style="background-color: #eff6fb;">
+          <h3 class="font-sans-xl"><a class="usa-link" [routerLink]="['news']">What's New at SAM.gov?</a></h3>
+          <div class="sds-feed">
+             <div *ngFor="let news of newsList" class="event margin-0">
+                  <div class="content">
+                      <div class="summary">
+                          <div class="date">{{news.publishDate | date}}</div>
+                          <a class="action">{{news.title}}</a>
+                      </div>
+                      <div class="meta">
+                          <em>{{news.shortDescription}}</em>
+                      </div>
+                  </div>
+              </div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-col-fill"></div>
+          <div class="grid-auto">
+            <a class="usa-link" [routerLink]="['news']">More News</a>
+          </div>
         </div>
       </div>
     </div>

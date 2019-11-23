@@ -1,0 +1,32 @@
+  <div class="grid-row grid-gap">
+    <div class="grid-col-fill">
+      <h3 class="font-sans-xs margin-y-0">
+        <a class="usa-link" [routerLink]="['/']">
+          {{model.title}}
+        </a>
+      </h3>
+      <p  class="sds-static">
+        {{model.shortDescription}}
+      </p>
+    </div>
+    <div class="grid-col-auto">
+
+      <!-- Horizontal Config -->
+      <div class="grid-row grid-gap-05">
+
+        <!-- Key/Value Wrapper -->
+        <div class="tablet:grid-col grid-col">
+          <div class="grid-row">
+            <div class="grid-col-12">
+              <div class="sds-static--label font-sans-3xs text-light text-italic">Publish Date</div>
+            </div>
+            <div class="grid-col-12">
+              <span class="sds-tag sds-tag--block sds-tag--alt border--hairline">{{ model.publishDate | date }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+

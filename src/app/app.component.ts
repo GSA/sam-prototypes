@@ -55,5 +55,9 @@ export class AppComponent {
 
   ngAfterViewInit() { }
 
+  navigateTo(route: string) {
+    this.router.navigateByUrl(route);
+  }
+
   ngOnDestroy() { }
 }
