@@ -29,10 +29,11 @@
   <sds-page-options class="sam-page__options">
     <sds-toolbar class="tablet:grid-col-auto" #toolbar="sdsToolbar" [expanded]="true">
       <sds-accordion>
-        <sds-accordion-item [expanded]="true">
+        <sds-accordion-item [expanded]="false">
           <sds-accordion-item-header>Show Results For</sds-accordion-item-header>
           <sds-side-navigation #sideNav [model]="sideNavModel"></sds-side-navigation>
         </sds-accordion-item>
+        <sds-filters [form]="form" [fields]="fields" [model]="filterModel" (filterChange)="filterChange$.next($event)"></sds-filters>
       </sds-accordion>
     </sds-toolbar>
     <div class="sds-page__content tablet:grid-col margin-0">

@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 
-import { HelpData, HelpType, VideoData, FAQData, TermData, FeatureData } from '../service/help.model';
+import { HelpService } from '../service/help.service';
+import { HelpData, HelpType } from '../service/help.model';
 
 @Component({
   selector: 'help-item',
@@ -12,7 +13,7 @@ export class HelpItemComponent implements OnInit {
 
   @Input() model: HelpData
 
-  constructor() { }
+  constructor(public service: HelpService) { }
 
   ngOnInit() {
   }

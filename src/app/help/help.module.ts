@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlySelectModule } from '@ngx-formly/core/select';
 
-import { SdsFiltersModule } from '@gsa-sam/sam-formly';
 import { SdsSubheaderModule, SearchListServiceModule  } from '@gsa-sam/layouts';  
 
 import {
@@ -13,25 +15,24 @@ import {
   	SdsPageModule,
   	SdsSearchModule
   } from '@gsa-sam/components';
+import { SdsFiltersModule, SDSFormlyUpdateComunicationService } from '@gsa-sam/sam-formly';
 
 import { HelpRoutingModule } from './help-routing.module';
 import { HelpComponent } from './help.component';
 import { HelpItemModule } from './help-item/help-item.module';
 import { HelpServiceModule } from './service/service.module';
 
-import { FormlyModule } from '@ngx-formly/core';
-import { FormsModule } from '@angular/forms';
-
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     FontAwesomeModule,
+    ReactiveFormsModule,
     FormlyModule,
-    FormsModule,
+    FormlySelectModule,
     SdsFiltersModule, 
     SdsSubheaderModule,
-	SdsSideNavigationModule,
+	  SdsSideNavigationModule,
   	SdsToolbarModule,
   	SdsAccordionModule,
   	SdsPageModule,

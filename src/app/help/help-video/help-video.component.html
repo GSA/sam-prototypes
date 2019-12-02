@@ -1,0 +1,61 @@
+<sds-subheader>
+  <!-- =============== BACK BUTTON =============== -->
+  <button class="sds-button sds-button--circular">
+    <fa-icon [icon]="['fas', 'chevron-left']" [fixedWidth]="true"></fa-icon>
+  </button>
+
+  <!-- =============== TITLE =============== -->
+  <h1 class="font-heading-md text-semibold tablet-lg:width-mobile">
+    Help Video
+  </h1>
+
+  <!-- =============== ACTIONS BUTTONS =============== -->
+  <sds-subheader-actions
+    [model]="subheader"
+    (clicks)="log($event)">
+  </sds-subheader-actions>
+</sds-subheader>
+<sds-page>
+  <sds-page-options class="sam-page__options">
+  	<div class="sds-page__content tablet:grid-col-fill margin-3" style="padding-left: 4em; min-height: 500px">
+  	  <div class="grid-row grid-gap">
+	    <div class="grid-col-fill">
+	      <h2>
+	          {{model.title}}
+		  </h2>
+		</div>
+	    <div class="grid-col-auto">
+	         <div class="grid-row">
+	            <div class="grid-col-12">
+	              <div class="sds-static--label font-sans-3xs text-light text-italic">Published</div>
+	            </div>
+	            <div class="grid-col-12">
+	              <span class="sds-tag sds-tag--block sds-tag--alt border--hairline">{{model.modifiedDate | date}}</span>
+	            </div>
+	          </div>
+	    </div>
+	  </div>
+	  <div class="grid-row" *ngIf="isVideo()">
+	  	<div class="grid-col-5">
+    		<img src="/assets/img/video-placeholder.png">
+    	</div>
+	  </div>
+	 <div class="grid-row">
+	  <div class="grid-col-7" [innerHTML]='model.fullDescription'></div>
+	 </div>
+	<div class="grid-row">
+		<div class="grid-col-12">
+		<h3> Related Help</h3>
+		<ul>
+			<li *ngFor="let link of model.relatedHelp">
+				<a class="usa-link" [routerLink]="'/help/' + link.id">{{link.title}}</a>
+			</li>
+		</ul>
+	</div>
+	</div>
+    </div>
+</sds-page-options>
+</sds-page>
+
+
+

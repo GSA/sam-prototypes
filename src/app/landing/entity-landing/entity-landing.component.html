@@ -1,3 +1,178 @@
-<p>
-  entity-landing works!
-</p>
+<div>
+  <div class="grid-container padding-0">
+    <div class="grid-row homepage-cover">
+      <div class="grid-col">
+        <div class="grid-row">
+          <div class="tablet:grid-col-10 mobile:grid-col-fill padding-4">
+            <h2 class="text-base-dark homepage-title">Entity Information</h2>
+            <div class="grid-row grid-gap">
+            	<div class="grid-col">
+            		<img src="/assets/img/video-placeholder.png">
+            	</div>
+            	<div class="grid-col">
+            		<div class="grid-row">
+	            		<h3>What is an Entity</h3>
+	            		<p>Anyone who applies or proposes to receive a federal contracting or assistance award from the federal government must be registered as an entity in SAM.gov.  Entities include businesses including small businesses and sole proprieterships; state, local, and tribal governments; universities and hospitals; foreign businesses; and federal agencies who participate in intragovernmental transactions.</p>
+	            	</div>
+	            	<div class="grid-row">
+	            		<div class="grid-col">
+		            		<ul style="list-style-type: none; padding-left: 0; margin-left: 0;">
+		            			<li><a class="usa-link" [routerLink]="['/search']"><i class="fas fa-search" style="margin-right: .5em"></i>Search Entity Registrations</a></li>
+		            			<li><a class="usa-link" [routerLink]="['/search']"><i class="fas fa-search" style="margin-right: .5em"></i>Search Exclusions</a></li>
+		            			<li><a class="usa-link" [routerLink]="['/search']"><i class="fas fa-search" style="margin-right: .5em"></i>Search All Entity Information</a></li>
+		            		</ul>
+	            		</div>
+	            		<div class="tablet:grid-col-auto display-flex icon-buttons">
+		                <button class="sds-button sds-button--icon margin-top-0">
+		                  <span class="fa-stack fa-2x">
+		                    <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-2x"></i>
+		                    <i class="sds fa-folder fa-stack-1x text-base fa-3x"></i>
+		                  </span>
+		                  <span class="sds-button--icon__title">Register Entity</span>
+		                </button>
+
+		                <button class="sds-button sds-button--icon margin-top-0">
+		                  <span class="fa-stack fa-2x">
+		                    <i class="sds fa-pentagon fa-stack-2x text-primary-lighter fa-2x"></i>
+		                    <i class="sds fa-check-circle fa-stack-1x text-base fa-3x"></i>
+		                  </span>
+		                  <span class="sds-button--icon__title">Check Status</span>
+		                </button>
+		              </div>
+            		</div>
+            	</div>
+            </div>
+          </div>
+          <div class="tablet:grid-col">
+            <div class="sds-official-tag">
+              <div class="sds-official-tag__outline">
+                <i class="sds fa-star sds-official-tag__blue"></i>
+                <div class="sds-official-tag__red">Official U.S. Government</div>
+                <div class="sds-official-tag__grey">Website</div>
+                <i class="sds fa-flag fa-2x sds-official-tag__grey margin-y-1"></i>
+                <div class="sds-official-tag__blue">100%</div>
+                <div class="sds-official-tag__grey">Free</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-container padding-0"style="background-color: #eff6fb; padding: 1em">
+      <div class="grid-row">
+      	<h3>Registering Your Entity</h3>
+      </div>  
+      <div class="grid-row margin-top-4 padding-y-4">
+        <div class="tablet:grid-col display-flex flex-column flex-align-center">
+	      	<div class="sds-tile">
+	            <a [routerLink]="['/help/0000403']" class="sds-tile__content sds-tile--outline">
+	              <div class="sds-tile__title">Who Registers in SAM.gov?</div>
+	              <div class="sds-tile__details">Learn about the different types of registration and who needs them</div>
+	            </a>
+	        </div>
+    	</div>
+        <div class="tablet:grid-col display-flex flex-column flex-align-center">
+	        <div class="sds-tile">
+	            <a [routerLink]="['/help/0000401']" class="sds-tile__content sds-tile--outline">
+	              <div class="sds-tile__title">Before You Start Entity Registration</div>
+	              <div class="sds-tile__details">Learn what you need to know before registering</div>
+	            </a>
+	        </div>
+	    </div>
+        <div class="tablet:grid-col display-flex flex-column flex-align-center">
+	        <div class="sds-tile">
+	            <a [routerLink]="['/help/0000402']" class="sds-tile__content sds-tile--outline">
+	              <div class="sds-tile__title">Updating Your Entity Registration</div>
+	              <div class="sds-tile__details">Learn how to keep your registration up-to-date and why it's important</div>
+	            </a>
+	        </div>  
+	    </div>
+        <div class="tablet:grid-col display-flex flex-column flex-align-center">    
+	        <div class="sds-tile">
+	            <a [routerLink]="['/help/0000401']" class="sds-tile__content sds-tile--outline">
+	              <div class="sds-tile__title">Who Needs A User Account</div>
+	              <div class="sds-tile__details">Learn the benefits of signing up for a user account to see if you need one</div>
+	            </a>
+	        </div>
+      	</div>
+        <div class="tablet:grid-col display-flex flex-column flex-align-center">    
+	        <div class="sds-tile">
+	            <a [routerLink]="['/help/0000401']" class="sds-tile__content sds-tile--outline">
+	              <div class="sds-tile__title">Entity Registration Roles</div>
+	              <div class="sds-tile__details">Learn about the roles for entity registration and how to get a role</div>
+	            </a>
+	        </div>
+      	</div>
+  	  </div>
+    </div>
+
+    <div class="grid-container" style="background-color: #f1f1f1; padding: 2.5em;">
+    	<div class="grid-row grid-gap">
+    		<div class="grid-col">
+    			<h3>I am a federal contracting officer/specialist</h3>
+        		<ul>
+        			<li><a class="usa-link" [routerLink]="['/']">Accessing entity information as a federal contracting officer/specialist</a></li>
+        			<li><a class="usa-link" [routerLink]="['/']">Using entity information during source selection</a></li>
+        			<li><a class="usa-link" [routerLink]="['/']">Using entity information for market research</a></li>
+        		</ul>
+    		</div>
+    		<div class="grid-col">
+    			<h3>I am a federal exclusions official</h3>
+        		<ul>
+        			<li><a class="usa-link" [routerLink]="['/']">Roles for Exclusions Officials</a></li>
+        			<li><a class="usa-link" [routerLink]="['/']">Managing exclusions</a></li>
+        		</ul>
+    		</div>
+    		<div class="grid-col">
+    			<h3>Signing up as a federal user</h3>
+        		<p>Federal users will typically need a user account at login.gov and one or more roles assigned by their agency. <a class="usa-link" [routerLink]="['/help/0000002']">Learn More</a></p>
+    		</div>
+    	</div>
+    </div>
+
+    <div class="grid-container">
+      <div class="grid-row margin-x-auto  margin-top-4 padding-y-4">
+        <div class="tablet:grid-col display-flex flex-column flex-align-center">
+          <div class="sds-tile">
+            <a href="/help" class="sds-tile__content">
+              <span class="sds-tile__icon fa-stack fa-2x">
+                <i class="sds fa-leaf fa-stack-2x text-yellow fa-1x"></i>
+                <i class="sds fa-pen-paper fa-stack-1x text-base fa-2x"></i>
+              </span>
+              <div>
+                <div class="sds-tile__title">Videos</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="tablet:grid-col display-flex flex-column flex-align-center">
+          <div class="sds-tile">
+            <a href="/help" class="sds-tile__content">
+              <span class="sds-tile__icon fa-stack fa-2x">
+                <i class="sds fa-circle fa-stack-2x text-accent-cool-light fa-1x"></i>
+                <i class="sds fa-federal-building fa-stack-1x text-base fa-2x"></i>
+              </span>
+              <div>
+                <div class="sds-tile__title">FAQs</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="tablet:grid-col display-flex flex-column flex-align-center">
+          <div class="sds-tile">
+            <a href="/help" class="sds-tile__content">
+              <span class="sds-tile__icon fa-stack fa-2x">
+                <i class="sds fa-pentagon fa-stack-2x text-primary-lighter fa-1x"></i>
+                <i class="sds fa-check-circle fa-stack-1x text-base fa-2x"></i>
+              </span>
+              <div>
+                <div class="sds-tile__title">Glossary</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

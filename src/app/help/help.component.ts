@@ -1,10 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { SamModelService } from '../model/sam-model.service';
-import { HelpData, HelpType, VideoData, FAQData, TermData, FeatureData } from './service/help.model';
+import { BehaviorSubject } from 'rxjs';
+import { FormlyFieldConfig } from '@ngx-formly/core';
+import { FormGroup } from '@angular/forms';
+
+import { HelpData, HelpType } from './service/help.model';
 import { HelpService } from './service/help.service';
 import { SideNavigationModel, NavigationMode } from '@gsa-sam/components';
 import { helpNavigationData} from './navigation/navigation.data';
+import { helpFilters } from './filters.config';
 
 @Component({
   selector: 'sam-help',
@@ -15,16 +19,19 @@ export class HelpComponent implements OnInit {
 
   public sideNavModel: SideNavigationModel = helpNavigationData;
 
+  form = new FormGroup({});
+  filterModel = {};
+  fields: FormlyFieldConfig[] = helpFilters;
+  public filterChange$ = new BehaviorSubject<object>(null);  
+
   public subheader = {
     buttons: [],
     actions: [
-      { id: 'DownloadBtn', icon: 'bars', text: 'Download' },
-      { id: 'FollowBtn', icon: 'bars', text: 'Follow' },
-      { id: 'ShareBtn', icon: 'bars', text: 'Share' }
+      { id: 'DownloadBtn', icon: 'bars', text: 'Download' }
     ]
   };
 
-  constructor(public service: HelpService, public model: SamModelService) {  
+  constructor(public service: HelpService) {  
   }
 
   ngOnInit() {}

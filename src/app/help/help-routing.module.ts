@@ -6,7 +6,12 @@ const routes: Routes = [
 	{
 		path: '',
 		component: HelpComponent
+	},
+	{
+		path: ':id',
+		loadChildren: './help-video/help-video.module#HelpVideoModule' 
 	}
+
 ];
 
 @NgModule({

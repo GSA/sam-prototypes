@@ -96,8 +96,8 @@ const routes: Routes = [
     }
   },
   {
-    path: 'system-account',
-    loadChildren: './system-accounts/system-accounts.module#SystemAccountsModule',
+    path: 'system-account/:id',
+    loadChildren: './system-account/system-account.module#SystemAccountModule',
     data: {
       id: "workspace"
     }

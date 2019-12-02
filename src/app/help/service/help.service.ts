@@ -4,8 +4,8 @@ import { Observable, of } from 'rxjs';
 import { SearchParameters, SearchListInterface, SearchResult, SearchListConfiguration } from '@gsa-sam/layouts';
 
 import { HelpServiceModule } from './service.module';
-import { HelpData, VideoData, FAQData, TermData, FeatureData, HelpType } from './help.model';
-import { Videos, Terms, FAQs, Features } from './help.data';
+import { HelpData, HelpType } from './help.model';
+import { HelpList } from './help.data';
 
 @Injectable({
   providedIn: HelpServiceModule
@@ -22,19 +22,15 @@ export class HelpService {
     help: HelpData[] = [];
 
     constructor() {
-    	for(let data of Videos) {
-    		this.help.push(data);
-    	}
-    	for(let data of Terms) {
-    		this.help.push(data);
-    	}
-    	for(let data of FAQs) {
-    		this.help.push(data);
-    	}
-    	for(let data of Features) {
-    		this.help.push(data);
-    	}
+    	this.help = HelpList;
+    }
 
+    getById(id: string): HelpData {
+        for(let data of this.help) {
+            if(id == data.id) {
+              return data;
+            }
+        }
     }
 
     getData(search: SearchParameters): Observable<SearchResult> {

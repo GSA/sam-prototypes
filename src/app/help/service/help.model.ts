@@ -6,27 +6,18 @@ export enum HelpType {
     Feature
 }
 
+export interface HelpLink {
+    id: string;
+    title: string;
+}
+
 export interface HelpData {
     id: string;
     type: HelpType;
     title: string;
+    videoUrl: string;
     shortDescription: string;
     fullDescription: string;
     modifiedDate: string;
-}
-
-export interface VideoData extends HelpData {
-    
-}
-
-export interface FAQData extends HelpData {
-    
-}
-
-export interface TermData extends HelpData {
-    
-}
-
-export interface FeatureData extends HelpData {
-    
+    relatedHelp: HelpLink[];
 }
