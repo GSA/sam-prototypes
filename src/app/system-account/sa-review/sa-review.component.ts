@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SystemAccountDataService } from '../system-account-data/system-account-data.service';
-import { SystemAccountData, SystemPermission } from '../system-account-data/system-account.model';
+import { SystemAccountData, SystemPermission, SystemVersion } from '../system-account-data/system-account.model';
 
 @Component({
   selector: 'app-sa-review',
@@ -12,6 +12,8 @@ import { SystemAccountData, SystemPermission } from '../system-account-data/syst
 export class SaReviewComponent implements OnInit {
 
   model: SystemAccountData;
+  draft: SystemVersion;
+  version: SystemVersion;
 
   constructor(public service: SystemAccountDataService, private route: ActivatedRoute) { 
   }
@@ -31,6 +33,8 @@ export class SaReviewComponent implements OnInit {
 
   ngOnInit() {
     this.model = this.service.getCurrentAccount();
+    this.draft = this.service.getCurrentDraft();
+    this.version = this.model.versions[0];
   }
 
 }

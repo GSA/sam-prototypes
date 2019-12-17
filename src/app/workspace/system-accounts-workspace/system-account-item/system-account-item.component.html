@@ -2,7 +2,7 @@
     <div class="grid-col">
       <h3 class="font-sans-xs margin-y-0">
         <a class="usa-link" [routerLink]="['/system-account/' + model.id]">
-          {{model.info.accountName}}
+          {{model.versions[0].info.accountName}}
         </a>
         <div class="action-menu float-right">
           <sds-actions-menu [model]="menu" (clicks)="log($event)"></sds-actions-menu>
@@ -13,7 +13,7 @@
   <div class="grid-row grid-gap">
     <div class="grid-col-fill">
       <p  class="sds-static">
-        {{model.info.systemDescription}}
+        {{model.versions[0].info.systemDescription}}
       </p>
     </div>
     <div class="tablet:grid-col-4 grid-col-12">

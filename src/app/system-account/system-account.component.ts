@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SideNavigationModel, NavigationMode, INavigationLink } from '@gsa-sam/components';
 import { SystemAccountDataService } from './system-account-data/system-account-data.service';
-import { SystemAccountData } from './system-account-data/system-account.model';
+import { SystemAccountData, SystemVersion } from './system-account-data/system-account.model';
 
 import { systemAccountsSideNavigationData } from './navigation.data';
 
@@ -16,6 +16,8 @@ export class SystemAccountComponent implements OnInit {
 
   sideNavModel: SideNavigationModel = systemAccountsSideNavigationData;
   model: SystemAccountData;
+  version: SystemVersion;
+  draft: SystemVersion;
 
   public subheader = {
     buttons: [
@@ -33,6 +35,10 @@ export class SystemAccountComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
     	this.model = this.service.getAccount(params.get('id'));
+      this.version = this.model.versions[0];
+      if(this.version.version == 'Draft') {
+          this.draft = this.version;
+      }
     	this.service.setCurrentAccount(this.model);
     });
   }

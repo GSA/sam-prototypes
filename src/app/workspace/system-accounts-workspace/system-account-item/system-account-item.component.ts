@@ -25,7 +25,7 @@ export class SystemAccountItemComponent implements OnInit {
   }
 
   log(value) {
-    console.log(`%cLog: ${value} clicked in result item ${this.model.info.accountName}`, 'color: blue; font-weight: bold');
+    console.log(`%cLog: ${value} clicked in result item ${this.model.versions[0].info.accountName}`, 'color: blue; font-weight: bold');
   }
 
 

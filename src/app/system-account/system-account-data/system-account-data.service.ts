@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { SearchParameters, SearchListInterface, SearchResult, SearchListConfiguration } from '@gsa-sam/layouts';
 
 import { SystemAccountDataModule } from './system-account-data.module';
-import { SystemAccountData } from './system-account.model';
+import { SystemAccountData, SystemVersion } from './system-account.model';
 import { SystemAccountList } from './system-account.data';
 
 @Injectable({
@@ -22,8 +22,10 @@ export class SystemAccountDataService {
 
 	systemAccounts: SystemAccountData[] = SystemAccountList;
 	currentAccount: SystemAccountData;
+    currentVersion: SystemVersion;
 
   constructor() { 
+      this.setCurrentAccount(this.systemAccounts[0]);
   }
 
     getAccount(id: string) {
@@ -35,11 +37,20 @@ export class SystemAccountDataService {
         return null;
     }
 
-    setCurrentAccount(account: SystemAccountData) {
-        this.currentAccount = account;
+    getCurrentDraft() : SystemVersion {
+        return this.currentVersion;
     }
 
-    getCurrentAccount() {
+    setCurrentVersion(version: SystemVersion) {
+        this.currentVersion = version;
+    }
+
+    setCurrentAccount(account: SystemAccountData) {
+        this.currentAccount = account;
+        this.currentVersion = this.currentAccount.versions[0];
+    }
+
+    getCurrentAccount() : SystemAccountData {
         return this.currentAccount;
     }
 
@@ -67,14 +78,14 @@ export class SystemAccountDataService {
                 case 'accountNameAscending':
                     lessValueExpress = -1;
                     moreValueExpress = 1;
-                    valueA = a.info.accountName;
-                    valueB = b.info.accountName;
+                    valueA = a.versions[0].info.accountName;
+                    valueB = b.versions[0].info.accountName;
                     break;
                 case 'accountNameDescending':
                     lessValueExpress = 1;
                     moreValueExpress = -1;
-                    valueA = a.info.accountName;
-                    valueB = b.info.accountName;
+                    valueA = a.versions[0].info.accountName;
+                    valueB = b.versions[0].info.accountName;
                     break;
                 default:
                     break;

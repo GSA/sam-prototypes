@@ -1,5 +1,4 @@
 
-
 export interface SystemInfo {
     accountName: string;
     systemDescription: string;
@@ -41,14 +40,19 @@ export interface SystemAuth {
     authDate: string;
 }
 
-export interface SystemAccountData {
-    status: string,
-    id: string,
-    activeDate: string,
-    expiresDate: string,
+export interface SystemVersion {
+    version: string;
     info: SystemInfo;
     organization: SystemOrganization;
     permissions: SystemPermissions;
     security: SystemSecurity;
     auth: SystemAuth;
+}
+
+export interface SystemAccountData {
+    status: string;
+    id: string;
+    activeDate: string;
+    expiresDate: string;
+    versions: SystemVersion[];
 }

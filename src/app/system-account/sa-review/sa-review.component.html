@@ -3,15 +3,15 @@
 <table style="width: 100%; table-layout: fixed; word-wrap: break-word;" valign="top">
 	<tr>
 		<td class="sds-static--label" max-width="20%">System Account Name</td>
-		<td class="sds-static" width="80%">{{model.info.accountName}}</td>
+		<td class="sds-static" width="80%">{{draft.info.accountName}}</td>
 	</tr>
 	<tr>
 		<td>Interfacing System Name and Version</td>
-		<td class="sds-static">{{model.info.systemNameAndVersion}}</td>
+		<td class="sds-static">{{draft.info.systemNameAndVersion}}</td>
 	</tr>
 	<tr>
 		<td class="sds-static--label">System Description</td>
-		<td class="sds-static">{{model.info.systemDescription}}</td>
+		<td class="sds-static">{{draft.info.systemDescription}}</td>
 	</tr>
 </table>
 
@@ -20,13 +20,13 @@
 <table style="width: 100%">
 	<tr>
 		<td class="sds-static--label" width="20%">Organization</td>
-		<td class="sds-static" width="80%">{{model.organization.organizationName}}</td>
+		<td class="sds-static" width="80%">{{draft.organization.organizationName}}</td>
 	</tr>
 	<tr>
 		<td class="sds-static--label">System Administrators</td>
 		<td class="sds-static">
 			<ul style="list-style-type: none; padding: 0; margin-bottom: 0; margin-top: .3em;">
-				<li *ngFor="let admin of model.organization.administrators">
+				<li *ngFor="let admin of draft.organization.administrators">
 					{{admin}}
 				</li>	
 			</ul>
@@ -36,7 +36,7 @@
 		<td class="sds-static--label">System Managers</td>
 		<td class="sds-static">
 			<ul style="list-style-type: none; padding: 0; margin-bottom: 0; margin-top: .3em;">
-				<li *ngFor="let manager of model.organization.managers">
+				<li *ngFor="let manager of draft.organization.managers">
 					{{manager}}
 				</li>	
 			</ul>
@@ -47,13 +47,13 @@
 <hr style="border-top: 9px solid #e6e6e2">
 <h3><i class="fas fa-square" style="color: #2672de; margin-right: .5em"></i>Permissions</h3>
 <table style="width: 100%">
-	<tr *ngFor="let domain of model.permissions.domains">
+	<tr *ngFor="let domain of draft.permissions.domains">
 		<td class="sds-static--label" width="20%">{{domain.domainName}}</td>
 		<td class="sds-static">{{formatPermissions(domain.permissions)}}</td>
 	</tr>
 	<tr>
 		<td class="sds-static--label" width="20%">Over FIPS 199 Categorization</td>
-		<td class="sds-static" width="80%">{{model.permissions.overallFIPSLevel}}</td>
+		<td class="sds-static" width="80%">{{draft.permissions.overallFIPSLevel}}</td>
 	</tr>
 </table>
 
@@ -62,25 +62,25 @@
 <table style="width: 100%">
 	<tr>
 		<td class="sds-static--label" width="20%">IP Address</td>
-		<td class="sds-static" width="80%">{{model.security.ipAddress}}</td>
+		<td class="sds-static" width="80%">{{draft.security.ipAddress}}</td>
 	</tr>
 	<tr>
 		<td class="sds-static--label">Type of Connection</td>
-		<td class="sds-static">{{model.security.connectionType}}</td>
+		<td class="sds-static">{{draft.security.connectionType}}</td>
 	</tr>
 	<tr>
 		<td class="sds-static--label">Physical Location</td>
-		<td class="sds-static">{{model.security.physicalLocation}}</td>
+		<td class="sds-static">{{draft.security.physicalLocation}}</td>
 	</tr>
 	<tr>
 		<td class="sds-static--label">SecurityOfficial</td>
 		<td class="sds-static">
 			<ul style="list-style-type: none; padding-left: 0; padding-top: 0; margin-top: .3em;">
 				<li>
-					{{model.security.officialName}}
+					{{draft.security.officialName}}
 				</li>	
 				<li>
-					{{model.security.officialEmail}}
+					{{draft.security.officialEmail}}
 				</li>
 			</ul>
 		</td>
@@ -96,10 +96,10 @@
 <table style="width: 100%">
 	<tr>
 		<td class="sds-static--label" width="20%">Authorizing Official</td>
-		<td class="sds-static" width="80%">{{model.auth.officialName}}</td>
+		<td class="sds-static" width="80%">{{draft.auth.officialName}}</td>
 	</tr>
 	<tr>
 		<td class="sds-static--label">Authorization Date</td>
-		<td class="sds-static">{{model.auth.authDate | date}}</td>
+		<td class="sds-static">{{draft.auth.authDate | date}}</td>
 	</tr>
 </table>
