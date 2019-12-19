@@ -62,7 +62,8 @@
 		            </div>
 		            <div class="grid-col-12">
 		              <span *ngIf="model.status == 'Active'" class="sds-tag sds-tag--block sds-tag--outline-green border--hairline">{{model.status}}</span>
-		              <span *ngIf="model.status == 'Inactive'" class="sds-tag sds-tag--block sds-tag--outline-red border--hairline">{{model.status}}</span>
+					  <span *ngIf="model.status == 'Inactive'" class="sds-tag sds-tag--block sds-tag--outline-red border--hairline">{{model.status}}</span>
+					  <span *ngIf="model.status == 'Draft'" class="sds-tag sds-tag--block sds-tag sds-tag--outline-light-blue border--hairline">{{model.status}}</span>
 		            </div>
 	          </div>
 	        </div>
