@@ -16,17 +16,53 @@ export class SystemAccountComponent implements OnInit {
     navigationLinks: [
       {
         id: 'edit', text: 'Account Details', mode: NavigationMode.INTERNAL, route: 'review', children: [
-          { id: 'info', text: 'System Information', mode: NavigationMode.INTERNAL, route: 'info' },
-          { id: 'organization', text: 'Organization', mode: NavigationMode.INTERNAL, route: 'organization' },
-          { id: 'permissions', text: 'Permissions', mode: NavigationMode.INTERNAL, route: 'permissions' },
-          { id: 'security', text: 'Security', mode: NavigationMode.INTERNAL, route: 'security' },
-          { id: 'authorization', text: 'Authorization', mode: NavigationMode.INTERNAL, route: 'auth' }
+          {
+            id: 'info',
+            // showFunction:this.isDraft.bind(this),
+            text: 'System Information', mode: NavigationMode.INTERNAL, route: 'info'
+          },
+          {
+            id: 'organization',
+            // showFunction:this.isDraft.bind(this),
+            text: 'Organization',
+            // showFunction:this.isDraft.bind(this),
+            mode: NavigationMode.INTERNAL, route: 'organization'
+          },
+          {
+            id: 'permissions',
+            // showFunction:this.isDraft.bind(this),
+            text: 'Permissions', mode: NavigationMode.INTERNAL, route: 'permissions'
+          },
+          {
+            id: 'security',
+            // showFunction:this.isDraft.bind(this),
+            text: 'Security', mode: NavigationMode.INTERNAL, route: 'security'
+          },
+          {
+            id: 'authorization',
+            // showFunction:this.isDraft.bind(this),
+            text: 'Authorization', mode: NavigationMode.INTERNAL, route: 'auth'
+          }
         ]
       },
-      { id: 'reset-password', text: 'Reset Password', mode: NavigationMode.INTERNAL, route: 'system-password' },
-      { id: 'history', text: 'History', mode: NavigationMode.INTERNAL, route: 'history' }
+      {
+        id: 'reset-password',
+        // showFunction:this.isDraft.bind(this),
+        text: 'Reset Password',
+        // showFunction:this.isNotDraft.bind(this),
+        mode: NavigationMode.INTERNAL, route: 'system-password'
+      },
+      {
+        id: 'history',
+        // showFunction:this.isNotDraft.bind(this),
+        text: 'History', mode: NavigationMode.INTERNAL, route: 'history'
+      }
     ]
   };
+
+
+
+
   model: SystemAccountData;
 
   public subheader = {
@@ -47,6 +83,15 @@ export class SystemAccountComponent implements OnInit {
       this.model = this.service.getAccount(params.get('id'));
       this.service.setCurrentAccount(this.model);
     });
+  }
+
+
+  isDraft() {
+    return this.model.status === 'Draft';
+  }
+
+  isNotDraft() {
+    return !this.isDraft;
   }
 
   log(value) {
