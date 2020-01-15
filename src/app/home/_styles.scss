@@ -1,38 +1,9 @@
 .homepage-cover {
-  // background: url(/assets/img/homepage-cover.jpg) center bottom;
-  background: url("/assets/img/home-graphic-2.png") center bottom;
+  background: url("/assets/img/home-graphic-2.png") center bottom no-repeat;
   background-size: cover;
 }
 
-.icon-buttons {
-  margin: auto;
-}
-
-.sds-button.sds-button--icon {
-  margin: 15px !important;
-}
-
-.sds-search {
-  margin-top: 0 !important;
-}
-.sds-search--label {
-  color: black;
-  margin-bottom: 0;
-  padding: 10px;
-}
-
-.search-bg {
-  background: rgba(white, 0.7);
-  padding: 8px;
-  max-width: 670px;
-  min-width: fit-content;
-}
-
 @media only screen and (max-width: 600px) {
-  .search-bg {
-    width: 365px;
-    margin: 0 auto 20px auto;
-  }
   .homepage-cover {
     background: url("/assets/img/SAM_Mobile_Background.jpg") 100% 40%;
     background-size: cover;
@@ -44,30 +15,8 @@
     text-align: center;
   }
 
-  .search-container {
-    width: 550px;
-    display: block;
-    margin: 0 auto;
-  }
-
-  .sds-search--label {
-    width: 426px;
-    background-color: white;
-    color: black;
-  }
-
   .usa-search.usa-search--small.usa-search--inverse {
     background: none !important;
     padding: 0 !important;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  .tile-text > span{
-    display: none;
-  }
-
-  .tiles {
-    text-align: center;
   }
 }
