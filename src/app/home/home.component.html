@@ -92,7 +92,7 @@
         </div>
         <!-- homepage get started and search -->
         <div class="grid-row padding-4">
-          <div class="grid-col display-flex flex-column outline-btn">
+          <div class="grid-col display-flex flex-column maxw-mobile-lg margin-x-4 outline-btn">
             <h2 class="text-white text-normal"> New to SAM.gov?</h2>
             <div class="sds-button--outline">
               <button class="sds-button sds-button--icon text-center">
@@ -131,7 +131,7 @@
     <!-- homepage video and news list-->
     <div class="grid-row">
 
-      <div class="tablet-lg:grid-col-5 margin-2 display-flex flex-column border-solid border-base-light border-width-1px">
+      <div class="tablet-lg:grid-col-5 margin-2 display-flex flex-column border-solid border-base-light border-width-1px news">
         <div class="padding-2" style="background-color: #eff6fb;">
           <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">What's new at SAM.gov?</a></h3>
         </div>
@@ -148,7 +148,7 @@
             </div>
           </div>
         </div>
-        <div class="padding-2 text-right">
+        <div class="padding-2 text-right more-news-link">
           <a class="usa-link" [routerLink]="['news']">More News</a>
         </div>
 
@@ -182,19 +182,19 @@
           <div class="grid-col-fill">
             <h3 class="margin-x-4 margin-top-0">Frequently Asked Questions</h3>
             <div class="questions padding-x-2 display-flex flex-column">
-              <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
+              <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
                 <i class="sds fa-search text-base fa-2x margin-x-2"></i>
                 <span>Do I need a user account?</span>
               </a>
-              <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
+              <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
                 <i class="sds fa-search text-base fa-2x margin-x-2"></i>
                 <span>What's the difference between signing up and registering?</span>
               </a>
-              <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
+              <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
                 <i class="sds fa-search text-base fa-2x margin-x-2"></i>
                 <span>What is I already have a login.gov account?</span>
               </a>
-              <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
+              <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
                 <i class="sds fa-search text-base fa-2x margin-x-2"></i>
                 <span>What do I need to register my entity?</span>
               </a>

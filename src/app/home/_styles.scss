@@ -48,7 +48,24 @@
     margin-left: 8%;
   }
 }
+
+.news {
+  position: relative;
+
+  .more-news-link {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+
 // DELETE THIS AFTER SAM-STYLES IS UPDATED
+.sds-seal__content {
+    .sds-seal__official {
+      color: 	#b51d09;
+    }
+  }
 @media only screen and (max-width: 880px) {
 
   .sds-seal {
@@ -121,3 +138,7 @@
 .sds-tile--lg.mobile-details.sds-button.sds-button--icon {
   width: auto;
 }
+
+.sds-search select {
+    width: 25%;
+  }
