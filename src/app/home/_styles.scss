@@ -1,12 +1,26 @@
+.homepage > * {
+  @media only screen and (max-width: 880px) {
+  margin: auto;
+  }
+}
+
 .homepage-cover {
   background: url("/assets/img/home-graphic-2.png") center bottom no-repeat;
   background-size: cover;
 }
-
+@media only screen and (max-width: 1175px) and (min-width: 600px) {
+  .homepage-cover {
+    background: url("/assets/img/home-tablet-background.jpg") no-repeat;
+    background-size: cover;
+    background-position: -930px 70px;
+      background-color: #d9ebff;
+  }
+}
 @media only screen and (max-width: 600px) {
   .homepage-cover {
-    background: url("/assets/img/SAM_Mobile_Background.jpg") 100% 40%;
+    background: url("/assets/img/home-phone-background.jpg") no-repeat;
     background-size: cover;
+    background-position: -80px 0px;
   }
 
   .homepage-title {
@@ -19,4 +33,91 @@
     background: none !important;
     padding: 0 !important;
   }
+
+  .outline-btn > .sds-button--outline{
+    align-self: center;
+  }
+  .sds-search {
+    align-self: center;
+  }
+}
+
+@media only screen and (min-width: 600px){
+  .ouline-btn {
+    margin-right: 8%;
+    margin-left: 8%;
+  }
+}
+// DELETE THIS AFTER SAM-STYLES IS UPDATED
+@media only screen and (max-width: 880px) {
+
+  .sds-seal {
+    display: none;
+  }
+}
+@media only screen and (min-width: 880px){
+  .sds-tile {
+    float: left;
+  }
+  .sds-tile:nth-child(3n+1) {
+    clear: left;
+  }
+}
+
+.sds-tile--lg {
+  .mobile-details {
+    .sds-button.sds-button--icon {
+      color: #3f57a6 !important;
+    }
+  }
+    @media only screen and (max-width: 1175px) {
+      width: 90% !important;
+
+      .sds-tile__content {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+
+        .sds-tile__icon {
+          margin: auto 15px !important;
+          width: auto !important;
+        }
+
+        .mobile-details {
+          display: flex !important;
+          justify-content: center !important;
+          flex-wrap: wrap !important;
+
+          .sds-button--icon {
+            margin: auto 10px 10px 10px !important;
+          }
+        }
+      }
+    }
+
+}
+
+.sds-tile__title {
+  color: #3f57a6 !important;
+}
+
+@media only screen and (max-width: 1070px) {
+  .tiles {
+    justify-content: center;
+  }
+  .tiles > * {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 600px) {
+.sds-tile__content.sds-tile--outline {
+  margin: 5px auto !important;
+}
+}
+
+.sds-tile--lg.mobile-details.sds-button.sds-button--icon {
+  width: auto;
 }

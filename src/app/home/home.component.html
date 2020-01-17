@@ -5,9 +5,9 @@
         <!-- homepage title and seal -->
         <div class="grid-row padding-y-3">
           <div class="grid-col-fill padding-x-4">
-            <h2 class="text-base-dark homepage-title mobile-lg:margin-y-4 margin-bottom-0">SAM.gov is the official U.S. government system for:</h2>
+            <h2 class="text-base-dark homepage-title margin-bottom-0">SAM.gov is the official U.S. government system for:</h2>
           </div>
-          <div class="tablet:grid-col">
+          <div class="grid-col-auto">
             <div class="sds-seal">
               <i class="sds fa-flag fa-2x sds-seal__grey margin-y-1 text-secondary"></i>
               <div class="sds-seal__content">
@@ -18,9 +18,8 @@
           </div>
         </div>
         <!-- homepage tiles -->
-        <div class="grid-row">
-          <div class="tablet-lg:grid-col-auto padding-left-4">
-            <div class="sds-tile sds-tile--lg">
+        <div class="grid-row padding-x-4 tiles">
+            <div class="grid-col-auto sds-tile sds-tile--lg">
               <a [routerLink]="['landing/entity']" class="sds-tile__content sds-tile--outline">
                 <div class="grid-row flex-justify-center">
                   <i class="sds-tile__icon sds fa-building text-secondary-dark"></i>
@@ -47,10 +46,7 @@
                 </div>
               </a>
             </div>
-
-          </div>
-          <div class="tablet:grid-col-fill mobile:grid-col-fill padding-right-4">
-
+          <div class="grid-col-fill padding-x-2">
             <div class="sds-tile">
               <a [routerLink]="['landing/opportunities']" class="sds-tile__content sds-tile--outline">
                 <i class="sds-tile__icon sds fa-photo text-ink"></i>
@@ -92,12 +88,11 @@
                 <div class="sds-tile__title">Federal Hierarchy</div>
               </a>
             </div>
-
           </div>
         </div>
         <!-- homepage get started and search -->
         <div class="grid-row padding-4">
-          <div class="tablet:grid-col-5 tablet:padding-x-9">
+          <div class="grid-col display-flex flex-column outline-btn">
             <h2 class="text-white text-normal"> New to SAM.gov?</h2>
             <div class="sds-button--outline">
               <button class="sds-button sds-button--icon text-center">
@@ -111,7 +106,7 @@
           </div>
           <div class="grid-col-fill display-flex flex-column">
             <h2 class="text-white text-normal"> Already know what you want to find?</h2>
-            <div class="sds-search margin-top-0">
+            <div class="sds-search margin-top-05">
               <form class="usa-search usa-search--small usa-search--inverse">
                 <label class="usa-sr-only" for="inverse-search-options">Select Here</label>
                 <select class="usa-select usa-select--inverse" name="options" id="inverse-search-options">
@@ -138,7 +133,7 @@
 
       <div class="tablet-lg:grid-col-5 margin-2 display-flex flex-column border-solid border-base-light border-width-1px">
         <div class="padding-2" style="background-color: #eff6fb;">
-          <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">What's New at SAM.gov?</a></h3>
+          <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">What's new at SAM.gov?</a></h3>
         </div>
         <div class="sds-feed padding-2">
           <div *ngFor="let news of newsList" class="event margin-0">
@@ -159,17 +154,22 @@
 
       </div>
 
-      <!-- <div class="desktop:grid-col-7" style="height: 480px; background-image: url('assets/img/home-video.png'); background-size: cover; background-repeat: no-repeat; background-position: left;"> -->
       <div class="tablet-lg:grid-col-fill margin-2 border-solid border-base-light border-width-1px">
         <div class="padding-2" style="background-color: #eff6fb;">
           <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">Have questions about SAM.gov?</a></h3>
         </div>
         <div class="grid-row">
-          <div class="grid-col-fill">
-            <ul class="padding-x-2" style="list-style-type:none;">
-              <li class="margin-y-2"><a class="usa-link text-bold" [routerLink]="['news']"><i class="sds fa-book text-base fa-2x margin-x-2"></i> Videos on SAM.gov</a></li>
-              <li class="margin-y-2"><a class="usa-link text-bold"[routerLink]="['news']"><i class="sds fa-book text-base fa-2x margin-x-2"></i> Glossary Terms</a></li>
-            </ul>
+          <div class="grid-col-fill display-flex flex-column">
+            <div class="padding-x-2 display-flex flex-column">
+              <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
+                <i class="sds fa-book text-base fa-2x margin-x-2"></i>
+                <span>Videso on SAM.gov</span>
+              </a>
+              <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
+                <i class="sds fa-book text-base fa-2x margin-x-2"></i>
+                <span>Glossary Terms</span>
+              </a>
+            </div>
           </div>
           <!-- paste video code here -->
           <div class="grid-col padding-top-2 text-center">
@@ -181,12 +181,24 @@
         <div class="grid-row">
           <div class="grid-col-fill">
             <h3 class="margin-x-4 margin-top-0">Frequently Asked Questions</h3>
-            <ul class="padding-x-2"  style="list-style-type:none;">
-              <li class="margin-y-2"><a class="usa-link text-bold" [routerLink]="['news']"><i class="sds fa-search text-base fa-2x margin-x-2"></i> Do I need a user account?</a></li>
-              <li class="margin-y-2"><a class="usa-link text-bold"[routerLink]="['news']"><i class="sds fa-search text-base fa-2x margin-x-2"></i>What's the difference between signing up and registering?</a></li>
-              <li class="margin-y-2"><a class="usa-link text-bold" [routerLink]="['news']"><i class="sds fa-search text-base fa-2x margin-x-2"></i>What is I already have a login.gov account?</a></li>
-              <li class="margin-y-2"><a class="usa-link text-bold"[routerLink]="['news']"><i class="sds fa-search text-base fa-2x margin-x-2"></i>What do I need to register my entity?</a></li>
-            </ul>
+            <div class="questions padding-x-2 display-flex flex-column">
+              <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
+                <i class="sds fa-search text-base fa-2x margin-x-2"></i>
+                <span>Do I need a user account?</span>
+              </a>
+              <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
+                <i class="sds fa-search text-base fa-2x margin-x-2"></i>
+                <span>What's the difference between signing up and registering?</span>
+              </a>
+              <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
+                <i class="sds fa-search text-base fa-2x margin-x-2"></i>
+                <span>What is I already have a login.gov account?</span>
+              </a>
+              <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
+                <i class="sds fa-search text-base fa-2x margin-x-2"></i>
+                <span>What do I need to register my entity?</span>
+              </a>
+            </div>
             <div class="padding-2 text-right">
               <a class="usa-link" [routerLink]="['news']">More FAQs</a>
             </div>
