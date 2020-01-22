@@ -3,8 +3,8 @@
     <div class="grid-row homepage-cover">
       <div class="grid-col">
         <!-- homepage title and seal -->
-        <div class="grid-row padding-y-3">
-          <div class="grid-col-fill padding-x-4">
+        <div class="grid-row tablet:padding-y-3">
+          <div class="grid-col-fill tablet:padding-x-4">
             <h2 class="text-base-dark homepage-title margin-bottom-0">SAM.gov is the official U.S. government system for:</h2>
           </div>
           <div class="grid-col-auto">
@@ -18,8 +18,9 @@
           </div>
         </div>
         <!-- homepage tiles -->
-        <div class="grid-row padding-x-4 tiles">
-            <div class="grid-col-auto sds-tile sds-tile--lg">
+        <div class="grid-row padding-x-4">
+          <div class="desktop-lg:grid-col-4">
+              <div class="sds-tile sds-tile--lg">
               <a [routerLink]="['landing/entity']" class="sds-tile__content sds-tile--outline">
                 <div class="grid-row flex-justify-center">
                   <i class="sds-tile__icon sds fa-building text-secondary-dark"></i>
@@ -45,8 +46,9 @@
                   </button>
                 </div>
               </a>
-            </div>
-          <div class="grid-col-fill padding-x-2">
+              </div>
+          </div>
+          <div class="desktop-lg:grid-col-fill tiles padding-x-2">
             <div class="sds-tile">
               <a [routerLink]="['landing/opportunities']" class="sds-tile__content sds-tile--outline">
                 <i class="sds-tile__icon sds fa-photo text-ink"></i>
@@ -92,7 +94,7 @@
         </div>
         <!-- homepage get started and search -->
         <div class="grid-row padding-4">
-          <div class="grid-col display-flex flex-column maxw-mobile-lg margin-x-4 outline-btn">
+          <div class="tablet-lg:grid-col display-flex flex-column maxw-mobile-lg tablet:margin-x-4 outline-btn">
             <h2 class="text-white text-normal"> New to SAM.gov?</h2>
             <div class="sds-button--outline">
               <button class="sds-button sds-button--icon text-center">
@@ -104,7 +106,7 @@
               </button>
             </div>
           </div>
-          <div class="grid-col-fill display-flex flex-column">
+          <div class="tablet-lg:grid-col display-flex flex-column">
             <h2 class="text-white text-normal"> Already know what you want to find?</h2>
             <div class="sds-search margin-top-05">
               <form class="usa-search usa-search--small usa-search--inverse">
@@ -162,7 +164,7 @@
           <div class="grid-col-fill display-flex flex-column">
             <div class="padding-x-2 display-flex flex-column">
               <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
-                <i class="sds fa-book text-base fa-2x margin-x-2"></i>
+                <i class="sds fa-video-square text-base fa-2x margin-x-2"></i>
                 <span>Videso on SAM.gov</span>
               </a>
               <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
@@ -183,19 +185,19 @@
             <h3 class="margin-x-4 margin-top-0">Frequently Asked Questions</h3>
             <div class="questions padding-x-2 display-flex flex-column">
               <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
-                <i class="sds fa-search text-base fa-2x margin-x-2"></i>
+                <i class="sds fa-question text-base fa-2x margin-x-2"></i>
                 <span>Do I need a user account?</span>
               </a>
               <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
-                <i class="sds fa-search text-base fa-2x margin-x-2"></i>
+                <i class="sds fa-question text-base fa-2x margin-x-2"></i>
                 <span>What's the difference between signing up and registering?</span>
               </a>
               <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
-                <i class="sds fa-search text-base fa-2x margin-x-2"></i>
+                <i class="sds fa-question text-base fa-2x margin-x-2"></i>
                 <span>What is I already have a login.gov account?</span>
               </a>
               <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
-                <i class="sds fa-search text-base fa-2x margin-x-2"></i>
+                <i class="sds fa-question text-base fa-2x margin-x-2"></i>
                 <span>What do I need to register my entity?</span>
               </a>
             </div>
