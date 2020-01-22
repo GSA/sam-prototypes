@@ -1,26 +1,24 @@
 .grid-container {
   padding: 0 !important;
 }
-
-.homepage > * {
-  @media only screen and (max-width: 880px) {
-    margin: auto;
-  }
+.home-top {
+  background: url("/assets/img/home-top.png") no-repeat;
+  background-size: 100%;
+  background-position: center bottom;
+  background-color: #d9ebff;
 }
-
-.homepage-cover {
-  background: url("/assets/img/home-graphic-2.png") no-repeat;
-  background-size: cover;
-  background-position: -80px 0;
+.home-bottom {
+  background: url("/assets/img/home-base.png") no-repeat;
+  background-size: 100%;
+  background-position: center top;
+  background-color: #8d8563;
 }
+// .homepage-cover {
+//   background: url("/assets/img/home-graphic-2.png") no-repeat;
+//   background-size: cover;
+//   background-position: -80px 0;
+// }
 @media only screen and (max-width: 600px) {
-  .homepage-cover {
-    background: url("/assets/img/home-phone-background.jpg") no-repeat;
-    background-size: cover;
-    background-position: -20px 250px;
-    background-color: #d9ebff;
-  }
-
   .homepage-title {
     font-size: 1.2rem;
     margin: 20px;
@@ -39,21 +37,28 @@
   .sds-search {
     align-self: center;
   }
-}
-@media only screen and (max-width: 1200px) and (min-width: 600px) {
-  .homepage-cover {
-    background: url("/assets/img/home-tablet-background.jpg") no-repeat;
-    background-size: 100%;
-    background-position: center bottom;
-    //background-position: -650px 50px;
-    background-size: cover;
-    background-color: #d9ebff;
+  .home-video {
+    display: flex;
+    flex-direction: column-reverse;
+    .video-code {
+      height:270px !important;
+      width: 400px !important;
+    }
   }
 }
 @media only screen and (min-width: 600px) {
   .ouline-btn {
     margin-right: 8%;
     margin-left: 8%;
+  }
+  .news {
+    position: relative;
+
+    .more-news-link {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
   }
 }
 @media only screen and (min-width: 880px) {
@@ -73,20 +78,19 @@
 
     .sds-tile {
       flex: 0 1 25%;
+      display: flex;
+      justify-content: center;
     }
   }
 }
-
-.news {
-  position: relative;
-
-  .more-news-link {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-  }
+.home-text, .search-text {
+  color: white;
+  border-radius: 5px;
+  width: max-content;
+  background: rgba(141, 133, 99, 0.5);
+  padding: 5px;
+  box-shadow: 1px 1px 15px 1px #8d8563;
 }
-
 .sds-search {
   @media only screen and (max-width: 600px){
     padding: 8px;
@@ -96,10 +100,8 @@
     width: 25%;
   }
 }
-
 .sds-tile--lg {
-  width: 90% !important;
-
+  width: 80%;
   .sds-tile__content {
     width: 100% !important;
     display: flex !important;

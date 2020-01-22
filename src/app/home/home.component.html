@@ -1,26 +1,26 @@
-<div class="homepage">
-  <div class="grid-container ">
-    <div class="grid-row homepage-cover">
-      <div class="grid-col">
-        <!-- homepage title and seal -->
-        <div class="grid-row tablet:padding-y-3">
-          <div class="grid-col-fill tablet:padding-x-4">
-            <h2 class="text-base-dark homepage-title margin-bottom-0">SAM.gov is the official U.S. government system for:</h2>
-          </div>
-          <div class="grid-col-auto">
-            <div class="sds-seal">
-              <i class="sds fa-flag fa-2x sds-seal__grey margin-y-1 text-secondary"></i>
-              <div class="sds-seal__content">
-                <div class="sds-seal__official">Official U.S. Government Website</div>
-                <div class="sds-seal__free">100% Free</div>
-              </div>
+<div class="grid-container ">
+  <!-- title/tiles/search section -->
+  <div class="grid-row">
+    <div class="grid-col">
+      <!-- homepage title and seal -->
+      <div class="grid-row tablet:padding-y-3 home-top">
+        <div class="grid-col-fill tablet:padding-x-4">
+          <h2 class="text-base-dark homepage-title margin-left-4 margin-bottom-0">SAM.gov is the official U.S. government system for:</h2>
+        </div>
+        <div class="grid-col-auto">
+          <div class="sds-seal">
+            <i class="sds fa-flag fa-2x sds-seal__grey margin-y-1 text-secondary"></i>
+            <div class="sds-seal__content">
+              <div class="sds-seal__official">Official U.S. Government Website</div>
+              <div class="sds-seal__free">100% Free</div>
             </div>
           </div>
         </div>
+        <!-- </div> -->
         <!-- homepage tiles -->
         <div class="grid-row padding-x-4">
-          <div class="desktop-lg:grid-col-4">
-              <div class="sds-tile sds-tile--lg">
+          <div class="desktop-lg:grid-col-4 display-flex flex-justify-center">
+            <div class="sds-tile sds-tile--lg">
               <a [routerLink]="['landing/entity']" class="sds-tile__content sds-tile--outline">
                 <div class="grid-row flex-justify-center">
                   <i class="sds-tile__icon sds fa-building text-secondary-dark"></i>
@@ -46,7 +46,7 @@
                   </button>
                 </div>
               </a>
-              </div>
+            </div>
           </div>
           <div class="desktop-lg:grid-col-fill tiles padding-x-2">
             <div class="sds-tile">
@@ -92,122 +92,121 @@
             </div>
           </div>
         </div>
-        <!-- homepage get started and search -->
-        <div class="grid-row padding-4">
-          <div class="tablet-lg:grid-col display-flex flex-column maxw-mobile-lg tablet:margin-x-4 outline-btn">
-            <h2 class="text-white text-normal"> New to SAM.gov?</h2>
-            <div class="sds-button--outline">
-              <button class="sds-button sds-button--icon text-center">
-                <span class="fa-stack fa-2x">
-                  <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
-                  <i class="sds fa-folder fa-stack-1x text-base fa-2x"></i>
-                </span>
-                <span class="sds-button--icon__title">Help Me Get Started</span>
-              </button>
-            </div>
+      </div>
+      <!-- homepage get started and search -->
+      <div class="grid-row padding-x-4 padding-bottom-4 home-bottom">
+        <div class="tablet-lg:grid-col-4 display-flex flex-column maxw-mobile-lg mobile-lg:margin-left-4 outline-btn">
+          <h2 class="home-text margin-y-05 text-normal"> New to SAM.gov?</h2>
+          <div class="sds-button--outline">
+            <button class="sds-button sds-button--icon text-center">
+              <span class="fa-stack fa-2x">
+                <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
+                <i class="sds fa-folder fa-stack-1x text-base fa-2x"></i>
+              </span>
+              <span class="sds-button--icon__title">Help Me Get Started</span>
+            </button>
           </div>
-          <div class="tablet-lg:grid-col display-flex flex-column">
-            <h2 class="text-white text-normal"> Already know what you want to find?</h2>
-            <div class="sds-search margin-top-05">
-              <form class="usa-search usa-search--small usa-search--inverse">
-                <label class="usa-sr-only" for="inverse-search-options">Select Here</label>
-                <select class="usa-select usa-select--inverse" name="options" id="inverse-search-options">
-                  <option value="value">Select... </option>
-                  <option value="value1">Option A</option>
-                  <option value="value2">Option B</option>
-                  <option value="value3">Option C</option>
-                </select>
-                <div role="search" class="width-full">
-                  <label class="usa-sr-only" for="inverse-search-dropdown">Search Here</label>
-                  <input class="usa-input" id="inverse-search-dropdown" type="search" name="search" placeholder="Search Here">
-                  <button class="usa-button" type="submit">
-                    <span class="usa-sr-only">Search</span>
-                  </button>
-                </div>
-              </form>
-            </div>
+        </div>
+        <div class="tablet-lg:grid-col-fill display-flex flex-column mobile-lg:margin-left-4 desktop:margin-left-0">
+          <h2 class="search-text margin-y-05 text-normal"> Already know what you want to find?</h2>
+          <div class="sds-search margin-top-05">
+            <form class="usa-search usa-search--small usa-search--inverse">
+              <label class="usa-sr-only" for="inverse-search-options">Select Here</label>
+              <select class="usa-select usa-select--inverse" name="options" id="inverse-search-options">
+                <option value="value">Select... </option>
+                <option value="value1">Option A</option>
+                <option value="value2">Option B</option>
+                <option value="value3">Option C</option>
+              </select>
+              <div role="search" class="width-full">
+                <label class="usa-sr-only" for="inverse-search-dropdown">Search Here</label>
+                <input class="usa-input" id="inverse-search-dropdown" type="search" name="search" placeholder="Search Here">
+                <button class="usa-button" type="submit">
+                  <span class="usa-sr-only">Search</span>
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
-    <!-- homepage video and news list-->
-    <div class="grid-row">
-
-      <div class="tablet-lg:grid-col-5 margin-2 display-flex flex-column border-solid border-base-light border-width-1px news">
-        <div class="padding-2" style="background-color: #eff6fb;">
-          <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">What's new at SAM.gov?</a></h3>
-        </div>
-        <div class="sds-feed padding-2">
-          <div *ngFor="let news of newsList" class="event margin-0">
-            <div class="content">
-              <div class="summary">
-                <div class="date">{{news.publishDate | date}}</div>
-                <a class="action">{{news.title}}</a>
-              </div>
-              <div class="meta">
-                <em>{{news.shortDescription}}</em>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="padding-2 text-right more-news-link">
-          <a class="usa-link" [routerLink]="['news']">More News</a>
-        </div>
-
+  </div>
+  <!-- homepage video and news list section-->
+  <div class="grid-row">
+    <!-- news list -->
+    <div class="tablet-lg:grid-col-5 desktop:margin-y-2 desktop:margin-left-2 margin-2 display-flex flex-column border-solid border-base-light border-width-1px news">
+      <div class="padding-2" style="background-color: #eff6fb;">
+        <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">What's new at SAM.gov?</a></h3>
       </div>
-
-      <div class="tablet-lg:grid-col-fill margin-2 border-solid border-base-light border-width-1px">
-        <div class="padding-2" style="background-color: #eff6fb;">
-          <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">Have questions about SAM.gov?</a></h3>
-        </div>
-        <div class="grid-row">
-          <div class="grid-col-fill display-flex flex-column">
-            <div class="padding-x-2 display-flex flex-column">
-              <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
-                <i class="sds fa-video-square text-base fa-2x margin-x-2"></i>
-                <span>Videso on SAM.gov</span>
-              </a>
-              <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
-                <i class="sds fa-book text-base fa-2x margin-x-2"></i>
-                <span>Glossary Terms</span>
-              </a>
+      <div class="sds-feed padding-2">
+        <div *ngFor="let news of newsList" class="event margin-0">
+          <div class="content">
+            <div class="summary">
+              <div class="date">{{news.publishDate | date}}</div>
+              <a class="action">{{news.title}}</a>
             </div>
-          </div>
-          <!-- paste video code here -->
-          <div class="grid-col padding-top-2 text-center">
-            <div style="height: 120px; width: 200px; margin: auto; background-image: url('assets/img/home-video.png'); background-size: cover; background-repeat: no-repeat; background-position: center;">
-            </div>
-            <span class="text-semibold text-base">Watch our welcome video</span>
-          </div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-col-fill">
-            <h3 class="margin-x-4 margin-top-0">Frequently Asked Questions</h3>
-            <div class="questions padding-x-2 display-flex flex-column">
-              <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
-                <i class="sds fa-question text-base fa-2x margin-x-2"></i>
-                <span>Do I need a user account?</span>
-              </a>
-              <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
-                <i class="sds fa-question text-base fa-2x margin-x-2"></i>
-                <span>What's the difference between signing up and registering?</span>
-              </a>
-              <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
-                <i class="sds fa-question text-base fa-2x margin-x-2"></i>
-                <span>What is I already have a login.gov account?</span>
-              </a>
-              <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
-                <i class="sds fa-question text-base fa-2x margin-x-2"></i>
-                <span>What do I need to register my entity?</span>
-              </a>
-            </div>
-            <div class="padding-2 text-right">
-              <a class="usa-link" [routerLink]="['news']">More FAQs</a>
+            <div class="meta">
+              <em>{{news.shortDescription}}</em>
             </div>
           </div>
         </div>
       </div>
+      <div class="padding-2 text-right more-news-link">
+        <a class="usa-link" [routerLink]="['news']">More News</a>
+      </div>
 
+    </div>
+    <!-- homepage video and freq. q's -->
+    <div class="tablet-lg:grid-col-fill desktop:margin-y-2 desktop:margin-right-2 margin-2 border-solid border-base-light border-width-1px">
+      <div class="padding-2" style="background-color: #eff6fb;">
+        <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">Have questions about SAM.gov?</a></h3>
+      </div>
+      <div class="grid-row home-video">
+        <div class="grid-col-fill display-flex flex-column">
+          <div class="padding-x-2 display-flex flex-column">
+            <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
+              <i class="sds fa-video-square text-base fa-2x margin-x-2"></i>
+              <span>Videso on SAM.gov</span>
+            </a>
+            <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
+              <i class="sds fa-book text-base fa-2x margin-x-2"></i>
+              <span>Glossary Terms</span>
+            </a>
+          </div>
+        </div>
+        <!-- paste video code here -->
+        <div class="grid-col padding-top-2 text-center">
+          <div class="video-code" style="height: 120px; width: 200px; margin: auto; background-image: url('assets/img/home-video.png'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+          </div>
+          <span class="text-semibold text-base">Watch our welcome video</span>
+        </div>
+      </div>
+      <div class="grid-row">
+        <div class="grid-col-fill">
+          <h3 class="margin-x-4 margin-top-0">Frequently Asked Questions</h3>
+          <div class="questions padding-x-2 display-flex flex-column">
+            <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
+              <i class="sds fa-question text-base fa-2x margin-x-2"></i>
+              <span>Do I need a user account?</span>
+            </a>
+            <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
+              <i class="sds fa-question text-base fa-2x margin-x-2"></i>
+              <span>What's the difference between signing up and registering?</span>
+            </a>
+            <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
+              <i class="sds fa-question text-base fa-2x margin-x-2"></i>
+              <span>What is I already have a login.gov account?</span>
+            </a>
+            <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
+              <i class="sds fa-question text-base fa-2x margin-x-2"></i>
+              <span>What do I need to register my entity?</span>
+            </a>
+          </div>
+          <div class="padding-2 text-right">
+            <a class="usa-link" [routerLink]="['news']">More FAQs</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
