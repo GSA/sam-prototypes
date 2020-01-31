@@ -16,35 +16,32 @@
   background-color: #8d8563;
 }
 
-.homepage-title{
+.homepage-title {
   font-size: 28px;
   font-weight: 600;
   margin: auto auto 0 32px;
 }
+
 .home-text,
 .search-text {
   color: white;
   border-radius: 5px;
-  width: max-content;
+  max-width: max-content;
   background: rgba(141, 133, 99, 0.5);
   padding: 5px;
   box-shadow: 1px 1px 15px 1px #8d8563;
 }
 
-.sds-search {
-  @media only screen and (max-width: 600px) {
-    padding: 8px;
-    background-color: white;
-  }
+.sds-search > select {
+  width: 25%;
+}
 
-  select {
-    width: 25%;
-  }
+.sds-seal {
+  box-shadow: -5px 5px 1px 2px white, -5px -5px 1px 2px white, 5px 5px 1px 2px white, 5px -5px 1px 2px white;
+  border-right: 0 !important;
 }
 
 .sds-tile--lg {
-  width: 80%;
-
   .sds-tile__content {
     width: 100% !important;
     display: flex !important;
@@ -63,7 +60,6 @@
 
       .sds-button--icon {
         margin: auto 10px 10px 10px !important;
-        min-width: unset;
       }
     }
   }
@@ -73,10 +69,12 @@
     background-size: 100%;
     background-position: center bottom;
   }
+
   .home-bottom {
     background-size: 100%;
     background-position: center top;
   }
+
   .homepage-title {
     font-size: 1.2rem;
     margin: 20px;
@@ -88,8 +86,17 @@
     padding: 0 !important;
   }
 
-  .outline-btn > .sds-button--outline {
-    align-self: center;
+  .sds-search {
+    padding: 8px;
+    background-color: white;
+  }
+
+  .outline-btn {
+    flex-direction: column !important;
+
+    .sds-button--outline {
+      align-self: center;
+    }
   }
 
   .sds-search {
@@ -102,11 +109,23 @@
 
     .video-code {
       height: 270px !important;
-      width: 400px !important;
+      width: 100% !important;
     }
+  }
+
+  .sds-tile__icon {
+    width: 40px;
+  }
+
+  .sds-tile__content,
+  .sds-tile__content.sds-tile--outline {
+    width: 300px !important;
   }
 }
 @media only screen and (min-width: 600px) {
+  .sds-tile--lg {
+    width: 80%;
+  }
   .ouline-btn {
     margin-right: 8%;
     margin-left: 8%;
@@ -114,12 +133,12 @@
 
   .news {
     position: relative;
-
-    .more-news-link {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-    }
+  }
+}
+@media only screen and (max-width: 880px) {
+  .outline-btn {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 @media only screen and (min-width: 880px) {
@@ -129,6 +148,10 @@
 
   .sds-tile:nth-child(3n+1) {
     clear: left;
+  }
+
+  .outline-btn {
+    flex-direction: column;
   }
 }
 @media only screen and (max-width: 1200px) {
