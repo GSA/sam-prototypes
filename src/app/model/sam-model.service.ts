@@ -1,6 +1,7 @@
 import { Injectable, ElementRef } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import { NavigationMode } from '@gsa-sam/components';
+import { LocationStrategy } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -53,7 +54,7 @@ export class SamModelService {
     ],
     home: {
       text: 'Home',
-      logo: '/assets/img/logo-sam.svg',
+      logo: this.locationStrategy.getBaseHref() + 'assets/img/logo-sam.svg',
       route: '/',
       id: 'home',
       mode: NavigationMode.INTERNAL,
@@ -63,7 +64,7 @@ export class SamModelService {
   modelFooter = {
     footerLogo: {
       text: 'General Services Administration',
-      imageSourcePath: '/assets/img/logo-gsa.svg',
+      imageSourcePath: this.locationStrategy.getBaseHref() + 'assets/img/logo-gsa.svg',
       imageAltText: 'GSA Logo'
     },
     linkSections: [
@@ -98,7 +99,7 @@ export class SamModelService {
   /**
    * Constructor
    */
-  constructor(public router: Router) {
+  constructor(public router: Router, private locationStrategy: LocationStrategy) {
   }
 
   signIn(redirectUrl?: string) {
