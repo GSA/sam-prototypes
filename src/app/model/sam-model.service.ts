@@ -8,7 +8,7 @@ import { NavigationMode } from '@gsa-sam/components';
 export class SamModelService {
 
   /**
-   * Sign in 
+   * Sign in
    */
   isSignedIn: boolean = false;
 
@@ -53,17 +53,17 @@ export class SamModelService {
     ],
     home: {
       text: 'Home',
+      logo: '/assets/img/logo-sam.svg',
       route: '/',
-      imageSourcePath: '/assets/img/sam-r9-logo-color.png',
-      imageAltText: 'Beta Sam Logo', mode: NavigationMode.INTERNAL,
-      id: 'home'
+      id: 'home',
+      mode: NavigationMode.INTERNAL,
     }
   };
 
   modelFooter = {
     footerLogo: {
       text: 'General Services Administration',
-      imageSourcePath: 'assets/sam-styles/img/logo-gsa.svg',
+      imageSourcePath: '/assets/img/logo-gsa.svg',
       imageAltText: 'GSA Logo'
     },
     linkSections: [
