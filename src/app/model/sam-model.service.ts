@@ -15,24 +15,26 @@ export class SamModelService {
 
   signInItem =
     {
-      imageClassPrefix: 'fas', imageClass: 'sign-out-alt', mode: NavigationMode.INTERNAL,
+      imageClassPrefix: 'sds', imageClass: 'log-out', mode: NavigationMode.INTERNAL,
       text: 'Sign In', route: '/', id: 'signin'
     };
   signOutItem =
     {
-      imageClassPrefix: 'fas', imageClass: 'sign-out-alt', mode: NavigationMode.INTERNAL,
+      imageClassPrefix: 'sds', imageClass: 'log-out', mode: NavigationMode.INTERNAL,
       text: 'Sign Out', route: '/', id: 'signOut'
     };
 
   secondaryLinks = [{
-    imageClassPrefix: 'fas', imageClass: 'comment', text: 'Notifications', route: '/messages', mode: NavigationMode.INTERNAL, id: 'messages'
+    imageClassPrefix: 'sds', imageClass: 'request', mode: NavigationMode.INTERNAL,
+    text: 'Requests', route: '/requests', id: 'request', hasCounter: true,
+    selected: true
   },
   {
-    imageClassPrefix: 'fas', imageClass: 'edit', mode: NavigationMode.INTERNAL,
-    text: 'Requests', route: '/requests', id: 'request'
+    imageClassPrefix: 'sds', imageClass: 'messages', text: 'Notifications', route: '/messages', mode: NavigationMode.INTERNAL,
+    id: 'messages'
   },
   {
-    imageClassPrefix: 'fas', imageClass: 'th', imageAltText: 'Workspace Icon', mode: NavigationMode.INTERNAL,
+    imageClassPrefix: 'sds', imageClass: 'workspace', imageAltText: 'Workspace Icon', mode: NavigationMode.INTERNAL,
     text: 'Workspace', route: '/workspace', id: 'workspace'
   }];
   navigationLinks: [
