@@ -1,3 +1,145 @@
-<p>
-  wages-landing works!
-</p>
+<div class="grid-container">
+  <div class="grid-row">
+    <h1 class="text-base-darker">Wage Determinations</h1>
+    <p>A wage determination (WD) is a listing of wage rates and fringe benefit rates for each labor category of workers which the U.S. department of labor has determined to be prevailing in a given area</p>
+  </div>
+  <div class="grid-row">
+    <div class="tablet:grid-col-3">
+      <img src="/assets/img/home-page-feature.jpg" alt="placeholder" class="height-full">
+    </div>
+    <div class="tablet:grid-col">
+      <div class="tablet-lg:grid-col-fill desktop:margin-y-2 desktop:margin-right-2 margin-2 border-solid border-base-light border-width-1px">
+        <div class="padding-2" style="background-color: #eff6fb;">
+          <h2 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">Help me find a wage determination</a></h2>
+        </div>
+        <div class="grid-row text-base-dark">
+          <div class="grid-col padding-2">
+            <h3>I know the WD number</h3>
+            <p>Search by WD number:</p>
+            <div class="sds-search grid-row margin-top-6">
+              <form class="usa-search usa-search--small">
+                <div role="search" class="search">
+                  <label class="usa-sr-only" for="search-input">DBA or SCA Identifier</label>
+                  <input class="usa-input" id="search-input" type="search" name="search" placeholder="DBA or SCA Identifier">
+                  <button class="usa-button" type="submit">
+                    <span class="usa-sr-only">Search</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="grid-col padding-2">
+            <h3>I do not know the WD number</h3>
+            <p>Select the category you're looking for:</p>
+            <div class="grid-row flex-no-wrap">
+              <div class="sds-card margin-1 text-base">
+                <h4>DBA <i class="sds-tile__icon sds fa-building text-base"></i></h4>
+                <span>Public Building/Works</span>
+                <p>Wage rates for laborers and mechanics</p>
+              </div>
+              <div class="sds-card margin-1 text-base">
+                <h4>DBA <i class="sds-tile__icon sds fa-building text-base"></i></h4>
+                <span>Public Building/Works</span>
+                <p>Wage rates for laborers and mechanics</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="grid-row padding-4" style="background-color: #F8FAFC;">
+    <div class="tablet:grid-col text-base-dark">
+      <h2>Learn About Wage Determinations</h2>
+      <p>
+        Wage determinations fall under two categories: Davis-Bacon Act (DBA) WDs and Service Contract Act (SCA) WDs. The DBA applies to contracts involving the construction, alteration, and/or repair (including painting or decorating) of public buildings or public works. The Service Contract Act (SCA) applies to federal and Disctric of Columbia contracts that provide services. It establishes standards for wage rates and safety and health protections for employees performing work on covered contracts.
+      </p>
+      <div class="display-flex flex-justify-center">
+        <button class="usa-button usa-button--secondary margin-y-4">Learn More</button>
+      </div>
+    </div>
+    <div class="tablet:grid-col-4 padding-2">
+      <img src="/assets/img/hero-image-1.jpg" alt="placeholder">
+    </div>
+  </div>
+  <div class="grid-row" style="background-color: #F8FAFC;">
+    <!-- DBA Links -->
+    <div class="grid-col padding-x-2 display-flex flex-column text-base-dark">
+      <h2 class="margin-0">The Davis-Bacon Act (DBA)</h2>
+      <p class="margin-0">Construction and Public Building/Works Contracts</p>
+        <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
+          <i class="sds fa-question text-base margin-x-2"></i>
+          <span>Do I need a user account?</span>
+        </a>
+        <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
+          <i class="sds fa-question text-base margin-x-2"></i>
+          <span>What's the difference between signing up and registering?</span>
+        </a>
+    </div>
+    <!-- SCA Links -->
+    <div class="grid-col padding-x-2 display-flex flex-column text-base-dark">
+      <h2 class="margin-0">The Service Contract Act (SCA)</h2>
+      <p class="margin-0">Federal and Disctric of Columbia Service Contracts</p>
+        <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
+          <i class="sds fa-question text-base margin-x-2"></i>
+          <span>Do I need a user account?</span>
+        </a>
+        <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
+          <i class="sds fa-question text-base margin-x-2"></i>
+          <span>What's the difference between signing up and registering?</span>
+        </a>
+    </div>
+    <!-- Resource Links -->
+    <div class="grid-col padding-x-2 display-flex flex-column text-base-dark">
+      <h2 class="margin-0">Resources</h2>
+        <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
+          <i class="sds fa-question text-base margin-x-2"></i>
+          <span>Do I need a user account?</span>
+        </a>
+        <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
+          <i class="sds fa-question text-base margin-x-2"></i>
+          <span>What's the difference between signing up and registering?</span>
+        </a>
+        <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
+          <i class="sds fa-question text-base margin-x-2"></i>
+          <span>What's the difference between signing up and registering?</span>
+        </a>
+    </div>
+  </div>
+  <div class="grid-row flex-justify padding-4">
+    <div class="sds-tile">
+      <a href="#" class="sds-tile__content">
+        <span class="sds-tile__icon fa-stack fa-3x">
+          <i class="sds fa-leaf fa-stack-2x fa-2x" style="color:#fef0c8;"></i>
+          <i class="sds fa-video-square fa-stack-1x text-base fa-2x"></i>
+        </span>
+        <div>
+          <div class="sds-tile__title">Videos</div>
+        </div>
+      </a>
+    </div>
+    <div class="sds-tile">
+      <a href="#" class="sds-tile__content">
+        <span class="sds-tile__icon fa-stack fa-3x">
+          <i class="sds fa-leaf fa-stack-2x fa-2x" style="color:#EDE3FF;"></i>
+          <i class="sds fa-question fa-stack-1x text-base fa-2x"></i>
+        </span>
+        <div>
+          <div class="sds-tile__title">FAQs</div>
+        </div>
+      </a>
+    </div>
+    <div class="sds-tile">
+      <a href="#" class="sds-tile__content">
+        <span class="sds-tile__icon fa-stack fa-3x">
+          <i class="sds fa-leaf fa-stack-2x fa-2x" style="color:#D5FBF3;"></i>
+          <i class="sds fa-book fa-stack-1x text-base fa-2x"></i>
+        </span>
+        <div>
+          <div class="sds-tile__title">Glossary</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
