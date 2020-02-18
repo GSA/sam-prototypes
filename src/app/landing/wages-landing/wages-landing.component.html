@@ -1,3 +1,143 @@
-<p>
-  wages-landing works!
-</p>
+<div class="grid-container">
+  <div class="grid-row">
+    <h1 class="text-base-dark font-sans-xl margin-bottom-1">Wage Determinations</h1>
+    <p class="text-base-dark font-sans-md">A wage determination (WD) is a listing of wage rates and fringe benefit rates for each labor category of workers which the U.S. department of labor has determined to be prevailing in a given area</p>
+  </div>
+  <div class="grid-row">
+    <div class="wage-pic tablet-lg:grid-col-3 grid-row">
+    </div>
+    <div class="tablet-lg:grid-col grid-row">
+      <div class="tablet-lg:grid-col-fill desktop:margin-y-2 desktop:margin-right-2 margin-2 border-solid border-base-light border-width-1px">
+        <div class="padding-2" style="background-color: #eff6fb;">
+          <h2 class="font-sans-lg margin-0"><a class="text-base-dark font-sans-lg text-no-underline" [routerLink]="['news']">Help me find a wage determination</a></h2>
+        </div>
+        <div class="grid-row text-base-dark">
+          <div class="grid-row flex-column tablet-lg:grid-col padding-x-4 tablet-lg:padding-bottom-2 text-base-dark margin-auto">
+            <h3 class="font-sans-lg text-semibold line-height-sans-5 margin-0">I know the WD number</h3>
+            <p class="font-sans-md line-height-sans-5 margin-0">Search by WD number:</p>
+            <div class="sds-search grid-row tablet-lg:margin-top-6 margin-0">
+              <form class="usa-search usa-search--small">
+                <div role="search" class="search width-full height-5">
+                  <label class="usa-sr-only" for="search-input">DBA or SCA Identifier</label>
+                  <input class="usa-input width-full" id="search-input" type="search" name="search" placeholder="DBA or SCA Identifier">
+                  <button class="usa-button" type="submit">
+                    <span class="usa-sr-only">Search</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="grid-row flex-column tablet-lg:grid-col padding-x-4 tablet-lg:padding-bottom-2 text-base-dark margin-auto">
+            <h3 class="text-base-dark font-sans-lg text-semibold">I do not know the WD number</h3>
+            <p class="font-sans-md">Select the category you're looking for:</p>
+            <div class="grid-row flex-no-wrap">
+              <div class="sds-card sds-card--sm grid-col text-base">
+                <h4 class="font-sans-lg">DBA <i class="sds-tile__icon sds fa-ship fa-2x"></i></h4>
+                <span>Public Building/Works</span>
+                <p>Wage rates for laborers and mechanics</p>
+              </div>
+              <div class="sds-card sds-card--sm grid-col text-base">
+                <h4 class="font-sans-lg">SCA <i class="sds-tile__icon sds fa-users fa-2x"></i></h4>
+                <span>Service Contracts</span>
+                <p>Wage rates for service employees</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="grid-row padding-4" style="background-color: #F8FAFC;">
+    <div class="tablet:grid-col text-base-dark">
+      <h2>Learn About Wage Determinations</h2>
+      <p class="font-sans-md text-base-dark">
+        Wage determinations fall under two categories: Davis-Bacon Act (DBA) WDs and Service Contract Act (SCA) WDs. The DBA applies to contracts involving the construction, alteration, and/or repair (including painting or decorating) of public buildings or public works. The Service Contract Act (SCA) applies to federal and Disctric of Columbia contracts that provide services. It establishes standards for wage rates and safety and health protections for employees performing work on covered contracts.
+      </p>
+      <div class="display-flex flex-justify-center">
+        <button class="usa-button usa-button--secondary margin-y-4">Learn More</button>
+      </div>
+    </div>
+    <div class="tablet:grid-col-4 padding-2">
+      <img src="/assets/img/hero-image-1.jpg" alt="placeholder">
+    </div>
+  </div>
+  <div class="grid-row" style="background-color: #F8FAFC;">
+    <!-- DBA Links -->
+    <div class="tablet:grid-col padding-x-2 display-flex flex-column text-base-dark">
+      <h2 class="margin-0 font-sans-lg">The Davis-Bacon Act (DBA)</h2>
+      <p class="margin-y-1 font-sans-md">Construction and Public Building/Works Contracts</p>
+        <a class="usa-link text-semibold margin-y-1 display-inline text-baseline" [routerLink]="['news']">
+          <i class="sds fa-question text-base margin-right-1"></i>
+          <span>DBA Conformances</span>
+        </a>
+        <a class="usa-link text-semibold margin-y-1 display-inline text-baseline" [routerLink]="['news']">
+          <i class="sds fa-question text-base margin-right-1"></i>
+          <span>DBA Agnecy Memos</span>
+        </a>
+    </div>
+    <!-- SCA Links -->
+    <div class="tablet:grid-col padding-x-2 display-flex flex-column text-base-dark">
+      <h2 class="margin-0 font-sans-lg">The Service Contract Act (SCA)</h2>
+      <p class="margin-y-1 font-sans-md">Federal and Disctric of Columbia Service Contracts</p>
+        <a class="usa-link text-semibold margin-y-1 display-inline text-baseline" [routerLink]="['news']">
+          <i class="sds fa-question text-base margin-right-1"></i>
+          <span>SCA Conformances</span>
+        </a>
+        <a class="usa-link text-semibold margin-y-1 display-inline text-baseline" [routerLink]="['news']">
+          <i class="sds fa-question text-base margin-right-1"></i>
+          <span>SCA Agency Memos</span>
+        </a>
+    </div>
+    <!-- Resource Links -->
+    <div class="tablet:grid-col padding-x-2 display-flex flex-column text-base-dark">
+      <h2 class="margin-0 font-sans-lg">Resources</h2>
+        <a class="usa-link text-semibold margin-y-1 display-inline text-baseline" [routerLink]="['news']">
+          <i class="sds fa-question text-base margin-right-1"></i>
+          <span>Labor Advisors</span>
+        </a>
+        <a class="usa-link text-semibold margin-y-1 display-inline text-baseline" [routerLink]="['news']">
+          <i class="sds fa-question text-base margin-right-1"></i>
+          <span>All Agency Memos</span>
+        </a>
+        <a class="usa-link text-semibold margin-y-1 display-inline text-baseline" [routerLink]="['news']">
+          <i class="sds fa-question text-base margin-right-1"></i>
+          <span>Labor Cross Index</span>
+        </a>
+    </div>
+  </div>
+  <!-- sds tile links -->
+  <div class="grid-row flex-justify tablet:padding-4 flex-no-wrap">
+    <div class="sds-tile grid-col">
+      <a href="#" class="sds-tile__content width-5">
+        <span class="sds-tile__icon fa-stack fa-3x">
+          <i class="sds fa-leaf fa-stack-2x fa-2x" style="color:#fef0c8;"></i>
+          <i class="sds fa-video-square fa-stack-1x text-base fa-2x"></i>
+        </span>
+        <div class="sds-tile__title">Videos</div>
+      </a>
+    </div>
+    <div class="sds-tile grid-col">
+      <a href="#" class="sds-tile__content">
+        <span class="sds-tile__icon fa-stack fa-3x">
+          <i class="sds fa-leaf fa-stack-2x fa-2x" style="color:#EDE3FF;"></i>
+          <i class="sds fa-question fa-stack-1x text-base fa-2x"></i>
+        </span>
+        <div>
+          <div class="sds-tile__title">FAQs</div>
+        </div>
+      </a>
+    </div>
+    <div class="sds-tile grid-col">
+      <a href="#" class="sds-tile__content">
+        <span class="sds-tile__icon fa-stack fa-3x">
+          <i class="sds fa-leaf fa-stack-2x fa-2x" style="color:#D5FBF3;"></i>
+          <i class="sds fa-book fa-stack-1x text-base fa-2x"></i>
+        </span>
+        <div>
+          <div class="sds-tile__title">Glossary</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

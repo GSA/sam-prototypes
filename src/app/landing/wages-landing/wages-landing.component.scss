@@ -1,0 +1,39 @@
+.wage-pic {
+  background: url("/assets/img/home-image-3.png") no-repeat center;
+  background-size: 100%;
+
+  @media only screen and (max-width: 880px){
+    background: url("/assets/img/home-page-feature.jpg") no-repeat center;
+    background-size: 75%;
+    height: 240px;
+  }
+}
+
+.sds-card.sds-card--sm {
+  margin: 8px;
+  padding: 16px;
+  // width: 100px;
+  // height: min-content;
+
+  h4 {
+    margin:8px auto;
+    text-align: justify;
+    width: 100%;
+  }
+
+  span {
+    font-weight: 600;
+  }
+  p {
+    margin: 8px auto;
+  }
+}
+
+@media only screen and (max-width: 800px){
+    .sds-tile__content{
+      width: 85px !important;
+    }
+    .sds-tile__icon svg{
+      width: 50px !important;
+    }
+}
