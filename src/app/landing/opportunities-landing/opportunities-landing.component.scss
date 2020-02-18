@@ -1,0 +1,44 @@
+.contract-opportunities {
+  background: url("/assets/img/contract-opps.png") no-repeat center;
+  background-size: cover;
+  padding-bottom: 35px;
+  // height: 400px;
+}
+
+.sds-search {
+  .search {
+    width: 100%;
+  }
+
+  .usa-search.usa-search--small {
+    input {
+      height: 65px !important;
+      width: 100% !important;
+      max-width: 40rem !important;
+      -webkit-box-shadow: 3px 3px 3px 3px #ccc;
+      -moz-box-shadow: 3px 3px 3px 3px #ccc;
+      box-shadow: 3px 3px 3px 3px #ccc;
+    }
+
+    button {
+      height: 65px !important;
+      width: 65px !important;
+    }
+  }
+}
+.contract-opps{
+.usa-accordion__heading{
+  margin-top: 0;
+.usa-accordion__button.usa-accordion__block {
+  border: solid 1px gray;
+  color: black;
+  font-size: 24px;
+}
+button.usa-accordion__block[aria-expanded=true] {
+  background-color: white !important;
+  border: none;
+  color: black;
+  font-size: 24px;
+}
+}
+}
