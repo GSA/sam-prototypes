@@ -1,0 +1,50 @@
+  <div class="grid-row grid-gap">
+    <div class="grid-col-9">
+      <h3>
+        <a class="usa-link" [routerLink]="['/']">
+          {{model.title}}
+        </a>
+      </h3>
+      <div class="grid-row grid-gap">
+      	<div class="grid-col-4">
+			<div class="sds-static--label">Unique Entity ID (DUNS)</div>
+	        <div class="sds-static">{{model.dunsNumber ? model.dunsNumber : '(blank)'}}</div>
+      	</div>
+      	<div class="grid-col-8">
+			<div class="sds-static--label">CAGE Code</div>
+	        <div class="sds-static">{{model.cageCode ? model.cageCode : '(blank)'}}</div>
+      	</div>
+      </div>
+      <div class="grid-row grid-gap">
+      	<div class="grid-col-12">
+			<div class="sds-static--label">Address</div>
+	        <div class="sds-static">{{model.address.streetAddress}}, {{model.address.city}}, {{model.address.state}} {{model.address.zip}} {{model.address.country}}</div>
+      	</div>
+      </div>
+    </div>
+    <div class="grid-col-3">
+    	  <div class="grid-row">
+            <div class="grid-col-12">
+              <span class="sds-tag sds-tag--block sds-tag--alt border--hairline">Exclusion</span>
+            </div>
+          </div>
+          <div class="grid-row">
+	          <div class="grid-col-12">
+	            <div class="sds-static--label">Classification</div>
+	            <div class="sds-static">{{model.classification.code}}</div>
+	          </div>
+          </div>
+          <div class="grid-row">
+	          <div class="grid-col-12">
+	            <div class="sds-static--label">Activation Date</div>
+	            <div class="sds-static">{{model.activationDate | date}}</div>
+	          </div>
+          </div>
+          <div class="grid-row">
+	          <div class="grid-col-12">
+	            <div class="sds-static--label">Termination Date</div>
+	            <div class="sds-static">{{model.terminationDate ? (model.terminationDate | date) : 'Indefinite'}}</div>
+	          </div>
+          </div>
+    </div>
+  </div>

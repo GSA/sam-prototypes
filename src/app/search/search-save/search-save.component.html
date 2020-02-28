@@ -1,0 +1,50 @@
+<sds-subheader>
+  <!-- =============== BACK BUTTON =============== -->
+  <button class="sds-button sds-button--circular">
+    <fa-icon [icon]="['fas', 'chevron-left']" [fixedWidth]="true"></fa-icon>
+  </button>
+
+  <!-- =============== TITLE =============== -->
+  <h1 class="font-heading-md text-semibold tablet-lg:width-mobile">
+    Saved Search
+  </h1>
+
+  <!-- =============== SEARCH =============== -->
+  <sds-search
+    (term)="newSearch($event)"
+    parentSelector=".grid-row"
+    placeholder="Enter an ID, name, or keyword"
+    inputClass="width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block"
+  >
+  </sds-search>
+
+</sds-subheader>
+
+<div style="margin-top: 1.5em; margin-bottom: 1.5em;">
+<sds-page>
+  <sds-page-options class="sam-page__options">
+    <sds-toolbar class="tablet:grid-col-auto" #toolbar="sdsToolbar" [expanded]="true">
+      <sds-accordion>
+        <sds-accordion-item [expanded]="false">
+          <sds-accordion-item-header>Show Results For</sds-accordion-item-header>
+          <sds-side-navigation #sideNav [model]="navigationModel"></sds-side-navigation>
+        </sds-accordion-item>
+        <sds-accordion-item [expanded]="true">
+        	<sds-accordion-item-header>Filter By</sds-accordion-item-header>
+          <sds-filters *ngIf="fields && fields.length > 0" [form]="form" [fields]="fields" [model]="filterModel" (filterChange)="filterChange$.next($event)">
+          </sds-filters>
+        </sds-accordion-item>
+      </sds-accordion>
+    </sds-toolbar>
+  <div class="sds-page__content tablet:grid-col-fill margin-0">
+     <search-list-layout #resultList [service]="service" [configuration]="listModel">
+          <ng-template #resultContent let-item>
+              <div>
+              	  <search-save-result [model]="item"></search-save-result>
+              </div>
+          </ng-template>
+      </search-list-layout>
+  </div> 
+  </sds-page-options>
+</sds-page>
+</div>

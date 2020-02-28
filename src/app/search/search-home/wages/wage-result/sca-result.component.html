@@ -1,0 +1,57 @@
+  <div class="grid-row grid-gap">
+    <div class="grid-col-9">
+      <h3>
+        <a class="usa-link" [routerLink]="['/']">
+          {{model.title}}
+        </a>
+      </h3>
+      <div class="grid-row">
+      	<div class="grid-col-12">
+			<div class="sds-static--label">State</div>
+	        <div class="sds-static"></div>
+      	</div>
+      </div>
+      <div class="grid-row">
+      	<div class="grid-col-12">
+			<div class="sds-static--label">Counties</div>
+	        <div class="sds-static">
+	             
+             </div>
+      	</div>
+      </div>
+    </div>
+    <div class="grid-col-3">
+    	  <div class="grid-row">
+            <div class="grid-col-12">
+              <span class="sds-tag sds-tag--block sds-tag--alt border--hairline">SCA Wage Determination</span>
+            </div>
+          </div>
+          <div class="grid-row">
+	          <div class="grid-col-12">
+	            <div class="sds-static--label">Revision Number</div>
+	            <div class="sds-static">
+	            	{{model.revisionNumber}}
+	            </div>
+	          </div>
+          </div>
+          <div class="grid-row">
+	          <div class="grid-col-12">
+	            <div class="sds-static--label">Service</div>
+	            <div class="sds-static">
+                    <span *ngFor="let service of model.services; let isLast=last">
+                		{{ service?.value }}{{ isLast ? '' : ', ' }}
+              		</span>
+            		<span *ngIf="model.services == null">
+                		Standard (Area-Wide) Wage Determination
+              		</span>         	
+	            </div>
+	          </div>
+          </div>
+          <div class="grid-row">
+            <div class="grid-col-12">
+              <div class="sds-static--label">{{ model.revisionNumber>1 ? 'Last Revised Date' : 'Published Date' }}</div>
+              <div class="sds-static">{{model.publishDate | date}}</div>
+            </div>
+          </div>
+  </div>
+</div>

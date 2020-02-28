@@ -1,0 +1,22 @@
+<h2>{{data.title}}</h2>
+<form class="usa-form">
+    <fieldset class="usa-fieldset">
+        <legend class="usa-sr-only">Historical figures 1</legend>
+        <ul class="usa-list--unstyled">
+            <li *ngFor="let filter of data.content; index as i">
+                <div class="usa-checkbox">
+                    <input class="usa-checkbox__input" id="{{filter.key}}" type="checkbox" name="{{filter.key}}" value="{{filter.key}}" checked="true">
+                    <label class="usa-checkbox__label" for="{{filter.key}}">{{filter.templateOptions.label}}</label>
+                </div>
+                <ul class="margin-left-4 usa-list--unstyled">
+	                <li *ngFor="let subfilter of filter.fieldGroup">
+	                    <div *ngIf="!(subfilter.templateOptions && subfilter.templateOptions.hideLabel)" class="usa-checkbox">
+	                    <input class="usa-checkbox__input" id="{{subfilter.key}}" type="checkbox" name="{{subfilter.key}}" value="{{subfilter.key}}" checked="true">
+	                    <label class="usa-checkbox__label" for="{{subfilter.key}}">{{subfilter.templateOptions.label}}</label>
+	                    </div>
+	                </li>
+	            </ul>
+            </li>
+        </ul>
+    </fieldset>
+</form>

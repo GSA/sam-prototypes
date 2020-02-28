@@ -1,0 +1,56 @@
+  <div class="grid-row grid-gap">
+    <div class="grid-col-9">
+      <h3>
+        <a class="usa-link" [routerLink]="['/']">
+          {{model.title}}
+        </a>
+      </h3>
+      <div class="grid-row">
+      	<div class="grid-col-12">
+			<div class="sds-static--label">State</div>
+	        <div class="sds-static">{{model.location.state.name}}</div>
+      	</div>
+      </div>
+      <div class="grid-row">
+      	<div class="grid-col-12">
+			<div class="sds-static--label">Counties</div>
+	        <div class="sds-static">
+	             <span *ngFor="let county of model.location.state.counties; last as isLast;">
+	             	{{county.value + (!isLast ? ', ' : '')}}
+	             </span>
+             </div>
+      	</div>
+      </div>
+    </div>
+    <div class="grid-col-3">
+    	  <div class="grid-row">
+            <div class="grid-col-12">
+              <span class="sds-tag sds-tag--block sds-tag--alt border--hairline">DBA Wage Determination</span>
+            </div>
+          </div>
+          <div class="grid-row">
+	          <div class="grid-col-12">
+	            <div class="sds-static--label">Modification</div>
+	            <div class="sds-static">
+	            	{{model.revisionNumber}}
+	            </div>
+	          </div>
+          </div>
+          <div class="grid-row">
+	          <div class="grid-col-12">
+	            <div class="sds-static--label">Construction Types</div>
+	            <div class="sds-static">
+	            	<span *ngFor="let type of model.constructionTypes; last as isLast;">
+	             		{{type + (!isLast ? ', ' : '')}}
+	             	</span>	            	
+	            </div>
+	          </div>
+          </div>
+          <div class="grid-row">
+            <div class="grid-col-12">
+              <div class="sds-static--label">Last Revised Date</div>
+              <div class="sds-static">{{model.publishDate | date}}</div>
+            </div>
+          </div>
+    </div>
+  </div>
