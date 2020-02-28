@@ -25,19 +25,3 @@
     }
   }
 }
-
-.contract-opps {
-  .usa-accordion__heading {
-    .usa-accordion__button.usa-accordion__block {
-      padding-right: 50px;
-      color: black;
-      font-size: 1.25rem;
-    }
-
-    button.usa-accordion__block[aria-expanded=true] {
-      background-color: white !important;
-      border: none;
-      color: black;
-    }
-  }
-}
