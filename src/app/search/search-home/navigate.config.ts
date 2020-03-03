@@ -4,7 +4,7 @@ export let navigationConfig: SideNavigationModel = {
     navigationLinks: [
         { id: 'all', text: 'All Domains', mode: NavigationMode.INTERNAL, route: '/search' },
         { id: 'opportunites', text: 'Contract Opportunities', mode: NavigationMode.INTERNAL, route: '/search', queryParams: { 'index' : 'opportunities'}},
-        { id: 'contractData', text: 'Contract Data', mode: NavigationMode.INTERNAL, route: '/search' },
+        { id: 'contractData', text: 'Contract Data', mode: NavigationMode.INTERNAL, route: '/search', queryParams: { 'index' : 'contractdata'}},
         {
             id: 'federalAssistance', text: 'Federal Assistance', mode: NavigationMode.INTERNAL, route: '/search', children: [
 

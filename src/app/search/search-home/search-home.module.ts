@@ -26,11 +26,14 @@ import { OpportunityResultModule } from './opportunity/opportunity-result/opport
 import { AssistanceResultModule } from './assistance/assistance-result/assistance-result.module';
 import { EntityResultModule } from './entity-info/entity-result/entity-result.module';
 import { WageResultModule } from './wages/wage-result/wage-result.module';
+import { ContractDataResultModule } from './contract-data/contract-data-result/contract-data-result.module';
 
 import { AdvancedFiltersModule } from './advanced-filters/advanced-filters.module';
 import { AllDomainFiltersModule } from './all-domain-filters/all-domain-filters.module';
 import { OpportunityFilterServiceModule } from './opportunity/opportunity-filter-service/opportunity-filter-service.module';
 import { AssistanceFiltersModule } from './assistance/assistance-filters/assistance-filters.module';
+import { EntityFilterServiceModule } from './entity-info/entity-filter-service/entity-filter-service.module';
+import { ContractDataFiltersModule } from './contract-data/contract-data-filters/contract-data-filters.module';
 
 @NgModule({
   declarations: [SearchHomeComponent],
@@ -58,10 +61,13 @@ import { AssistanceFiltersModule } from './assistance/assistance-filters/assista
     AssistanceResultModule,
     EntityResultModule,
     WageResultModule,
+    ContractDataResultModule,
     AdvancedFiltersModule,
     AllDomainFiltersModule,
     OpportunityFilterServiceModule,
-    AssistanceFiltersModule
+    AssistanceFiltersModule,
+    EntityFilterServiceModule,
+    ContractDataFiltersModule
   ],
   providers: [SDSFormlyUpdateComunicationService]
 })

@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-contract-data-result',
+  selector: 'contract-data-result',
   templateUrl: './contract-data-result.component.html',
   styleUrls: ['./contract-data-result.component.scss']
 })
 export class ContractDataResultComponent implements OnInit {
+
+  @Input() model: any;
 
   constructor() { }
 

@@ -35,6 +35,11 @@ import { AdvancedFiltersComponent } from './advanced-filters/advanced-filters.co
 import { AllDomainFiltersService } from './all-domain-filters/all-domain-filters.service';
 import { OpportunityFilterService } from './opportunity/opportunity-filter-service/opportunity-filter.service';
 import { AssistanceFiltersService } from './assistance/assistance-filters/assistance-filters.service';
+import { RegistrationFilterService } from './entity-info/entity-filter-service/registration-filter.service';
+import { EntityinfoFilterService } from './entity-info/entity-filter-service/entityinfo-filter.service';
+import { DisasterFilterService } from './entity-info/entity-filter-service/disaster-filter.service';
+import { ExclusionFilterService } from './entity-info/entity-filter-service/exclusion-filter.service';
+import { ContractDataFiltersService } from './contract-data/contract-data-filters/contract-data-filters.service';
 
 @Component({
   selector: 'app-search-home',
@@ -70,39 +75,43 @@ export class SearchHomeComponent implements OnInit {
     public dialog: SdsDialogService,
     private allDomainFiltersService: AllDomainFiltersService,
     private opportunityFilterService: OpportunityFilterService,
-    private assistanceFiltersService: AssistanceFiltersService) { 
+    private assistanceFiltersService: AssistanceFiltersService,
+    private registrationFilterService: RegistrationFilterService,
+    private entityinfoFilterService: EntityinfoFilterService,
+    private disasterFilterService: DisasterFilterService,
+    private exclusionFilterService: ExclusionFilterService,
+    private contractDataFilterService:  ContractDataFiltersService) { 
 
   }
 
-  ngOnInit() {
-      let domain = this.route.snapshot.queryParamMap.get('index');
-      if(domain) {
-        this.listModel = listConfigMap.get(domain);
-      } else {
-        this.listModel = listConfigMap.get('all');
-      }
+  ngOnInit() {    
+    let domain = this.route.snapshot.queryParamMap.get('index');
+    this.listModel = listConfigMap.get(domain ? domain : 'all');
   }
 
-  ngAfterViewInit() {
-  	this.change.detectChanges();
+  ngAfterViewInit() {      
+
+    this.change.detectChanges();
+    let domain = this.route.snapshot.queryParamMap.get('index');
+    this.setDomain(domain);
   	this.route.queryParams.subscribe(
       data => {
+        this.listModel = listConfigMap.get(domain ? domain : 'all');
         this.setDomain(typeof data['index'] === "string" ? decodeURI(data['index']) : 'all');
       });
   }
 
   setDomain(domain: string) {
-    if(domain != this.service.domain) {
-        let model = {};
-        this.listModel = listConfigMap.get(domain);
-        let filterService = this.filterServiceMap.get(domain);
-        if(filterService) {
-            this.fields = filterService.filters;
-            model = filterService.model;
-        }
-        this.service.domain = domain;
-        this.resultList.updateFilter(model);
-    }
+      let filterService = this.filterServiceMap.get(domain ? domain : 'all');
+      if(filterService) {
+          this.fields = filterService.filters;
+          this.filterModel = filterService.model;
+      } else {
+          this.fields = [];
+          this.filterModel = {};
+      }
+      this.service.setDomain(domain ? domain : 'all');
+      this.resultList.updateFilter(this.filterModel);
   }
 
   subheaderActionClicked(event) {
@@ -110,7 +119,7 @@ export class SearchHomeComponent implements OnInit {
   }
 
   setIndex(index: string) {
-      this.service.domain = index;
+      this.service.setDomain(index);
       this.listModel = listConfigMap.get(index);
   }
 
@@ -148,7 +157,12 @@ export class SearchHomeComponent implements OnInit {
   public filterServiceMap = new Map([
       ['all', this.allDomainFiltersService],
       ['opportunities', this.opportunityFilterService],
-      ['assistancelist', this.assistanceFiltersService]
+      ['assistancelist', this.assistanceFiltersService],
+      ['registrations', this.registrationFilterService],
+      ['entityinfo', this.entityinfoFilterService],
+      ['disasterresponse', this.disasterFilterService],
+      ['exclusions', this.exclusionFilterService],
+      ['contractdata', this.contractDataFilterService]
   ]);
 
 }

@@ -2,12 +2,13 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
 
 import { assistanceListConfig } from './assistance/assistance-result/assistance.config';
 import { opportunitiesListConfig } from './opportunity/opportunity-result/opportunity.config';
+import { contractDataListConfig } from './contract-data/contract-data.config';
+
 import {
   entityInfoListConfig,
   registrationListConfig,
   exclusionListConfig,
   entityInfoFilters,
-  registrationFilters,
   disasterResponseFilters,
   exclusionFilters
 } from './entity-info/entity-result/entities.config';
@@ -35,6 +36,7 @@ export let listConfigMap = new Map([
   ['exclusions', exclusionListConfig],
   ['assistancelist', assistanceListConfig],
   ['opportunities', opportunitiesListConfig],
+  ['contractdata', contractDataListConfig],
   ['wdid', wageListConfig],
   ['dba', wageListConfig],
   ['sca', wageListConfig]
@@ -42,7 +44,6 @@ export let listConfigMap = new Map([
 
 export let filterConfigMap = new Map([
   ['entityinfo', entityInfoFilters],
-  ['registrations', registrationFilters],
   ['disasterresponse', disasterResponseFilters],
   ['exclusions', exclusionFilters],
   ['wdid', wdidFilters],

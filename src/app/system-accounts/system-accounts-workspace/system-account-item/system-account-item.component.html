@@ -1,0 +1,54 @@
+<div class="grid-row grid-gap">
+    <div class="grid-col-9">
+      <h3 class="font-sans-xs margin-y-0">
+        <a class="usa-link" [routerLink]="['/']">
+          {{model.accountName}}
+        </a>
+      </h3>
+      <p *ngIf="model.systemDescription && model.systemDescription.length > 0">
+      			{{model.systemDescription.replace(no_html, '')}}
+      </p>
+      <div class="grid-row grid-gap">
+      	<div *ngIf="model.organization" class="grid-col-6">
+			<div class="sds-static--label">Organization</div>
+	        <div class="sds-static">{{model.organization.organizationName}}</div>
+      	</div>
+		<div *ngIf="model.domains" class="grid-col-6">
+			<div class="sds-static--label">Domains</div>
+	        <div class="sds-static">{{model.domains.join(', ')}}</div>
+      	</div>
+      </div>
+    </div>
+    <div class="grid-col-3">
+      <div class="grid-row grid-gap-05">
+
+        <!-- Key/Value Wrapper -->
+        <div class="tablet:grid-col-5 grid-col-3">
+          <div class="grid-row">
+            <div class="grid-col-12">
+              <div class="sds-static--label font-sans-3xs text-light text-italic">Status</div>
+            </div>
+            <div class="grid-col-12">
+              <span *ngIf="model.status == 'Active'" class="sds-tag sds-tag--block sds-tag--outline-green border--hairline">{{model.status}}</span>
+              <span *ngIf="model.status == 'Inactive'" class="sds-tag sds-tag--block sds-tag--outline-red border--hairline">{{model.status}}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key/Value Wrapper -->
+        <div class="tablet:grid-col-5 grid-col-3">
+          <div class="grid-row">
+            <div class="grid-col-12">
+              <div class="sds-static--label font-sans-3xs text-light text-italic">Expiration Date</div>
+            </div>
+            <div class="grid-col-12">
+              <span class="sds-tag sds-tag--block sds-tag--alt border--hairline">{{model.expiresDate | date }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="action-menu grid-col-2">
+          <sds-actions-menu [model]="menu" (clicks)="log($event)"></sds-actions-menu>
+        </div>
+      </div>
+    </div>
+  </div>

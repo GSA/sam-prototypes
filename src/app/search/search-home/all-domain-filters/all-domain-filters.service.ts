@@ -27,16 +27,6 @@ export class AllDomainFiltersService implements SearchFiltersWrapperService {
 	        label: 'Keyword',
 	        labelClass:'usa-sr-only'
 	      }
-	  },  
-	  {
-	      key: 'title',
-	      wrappers: ['filterwrapper'],
-	      type: 'input',
-	      templateOptions: {
-	        type: 'text',
-	        label: 'Title',
-	        labelClass:'usa-sr-only'
-	      }
 	  },
 	  {
 	    key: 'statusWrapper',

@@ -16,14 +16,15 @@ export let registrationListConfig: SearchListConfiguration = {
   defaultSortValue: "relevanceDescending",
   pageSize: 25,
   sortList:
-    [
-      { text: "Relevance", value: "relevanceDescending" },
-      { text: "Expiration Date", value: "dateDescending" },
-      { text: "Entity Name (A - Z)", value: "nameAscending" },
-      { text: "Entity Name (Z - A)", value: "nameDescending" },
-      { text: "Unique Entity ID (Low - High)", value: "ueiAscending" },
-      { text: "Unique Entity ID (High - Low)", value: "ueiDescending" }
-    ]
+      [
+        { text: "Relevance", value: "relevanceDescending" },
+        { text: "Expiration Date (Earliest)", value: "dateDescending" },
+        { text: "Expiration Date (Latest)", value: "dateAscending" },
+        { text: "Entity Name (A - Z)", value: "nameAscending" },
+        { text: "Entity Name (Z - A)", value: "nameDescending" },
+        { text: "Unique Entity ID (Low - High)", value: "ueiAscending" },
+        { text: "Unique Entity ID (High - Low)", value: "ueiDescending" }
+      ]
 };
 
 export let exclusionListConfig: SearchListConfiguration = {
@@ -92,85 +93,6 @@ export let entityInfoFilters: FormlyFieldConfig[] = [
         }
       ],
     }
-];
-
-export let registrationFilters: FormlyFieldConfig[] = [
-  {
-    key: 'keyword',
-    wrappers: ['filterwrapper'],
-    templateOptions: { label: 'Keyword' },
-    type: 'input'
-  },
-  {
-      key: 'searchEntity',
-      wrappers: ['accordionwrapper'],
-      templateOptions: { label: 'Entity' },
-      fieldGroup: [
-        {
-        	key: 'legalBusinessName',
-        	type: 'input',
-        	templateOptions: {
-        		type: 'text',
-        		label: 'Entity Name',
-        	}
-        },
-        {
-          key: 'uniqueEntityIdDuns',
-          type: 'input',
-          templateOptions: {
-            tagText: 'DUNS',
-            tagClass: 'sds-tag--info-purple',
-            label: 'Unique Entity ID',
-            placeholder: '',
-            min: 13,
-            max: 40,
-            inputType: 'number',
-            inputStyle: 'error',
-          }
-        },
-        {
-          key: 'uniqueEntityIdSam',
-          type: 'input',
-          templateOptions: {
-            tagText: 'SAM',
-            label: 'Unique Entity ID',
-            placeholder: '',
-            inputType: 'text',
-          }
-        },
-        {
-        	key: 'cageCode',
-        	type: 'input',
-        	templateOptions: {
-        		type: 'text',
-        		label: 'CAGE / NCAGE',
-        	}
-        }
-      ],
-    },
-  {
-    key: 'status',
-    wrappers: ['accordionwrapper'],
-    templateOptions: { label: 'Status' },
-    fieldGroup: [
-      {
-        key: 'registrationStatus',
-        type: 'multicheckbox',
-        templateOptions: {
-          options: [
-            {
-              key: 'Active',
-              value: 'Active'
-            },
-            {
-              key: 'Inactive',
-              value: 'Inactive'
-            }
-          ]
-        }
-      }
-    ]
-  }
 ];
 
 export let disasterResponseFilters: FormlyFieldConfig[] = [

@@ -9,7 +9,6 @@ import { SamModelService } from './model/sam-model.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { PublicWorkspaceComponent } from './workspace/public-workspace.component';
 import { SdsHeaderModule, SdsFooterModule } from '@gsa-sam/components';
 import { FormlyModule } from '@ngx-formly/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -20,8 +19,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PublicWorkspaceComponent
+    AppComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -37,7 +35,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [PublicWorkspaceComponent]
+  exports: []
 })
 export class AppModule {
   static forRoot(): ModuleWithProviders {

@@ -6,7 +6,8 @@ export let listConfigMap = new Map([
           sortList:
             [
               { text: "Relevance", value: "relevanceDescending" },
-              { text: "Published Date", value: "dateDescending" }
+              { text: "Response Date (Latest)", value: "dateDescending" },
+              { text: "Response Date (Earliest)", value: "dateAscending" }
             ]
         }
     ],
@@ -32,7 +33,8 @@ export let listConfigMap = new Map([
           sortList:
             [
               { text: "Relevance", value: "relevanceDescending" },
-              { text: "Expiration Date", value: "dateDescending" },
+              { text: "Expiration Date (Newest)", value: "dateDescending" },
+              { text: "Expiration Date (Oldest)", value: "dateAscending" },
               { text: "Entity Name (A - Z)", value: "nameAscending" },
               { text: "Entity Name (Z - A)", value: "nameDescending" },
               { text: "Unique Entity ID (Low - High)", value: "ueiAscending" },

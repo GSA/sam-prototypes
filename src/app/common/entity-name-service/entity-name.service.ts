@@ -27,6 +27,9 @@ let entityNames = [
     { 'name': 'Villa de Lucian' }
 ];
 
+@Injectable({
+  providedIn: EntityNameServiceModule
+})
 export class EntityNameService implements SDSAutocompleteServiceInterface {
 	
    	public model: SDSSelectedItemModel = new SDSSelectedItemModel();

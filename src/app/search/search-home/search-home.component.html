@@ -31,7 +31,7 @@
     <sds-toolbar class="tablet:grid-col-auto" #toolbar="sdsToolbar" [expanded]="true">
       <sds-accordion>
         <sds-accordion-item [expanded]="false">
-          <sds-accordion-item-header>Show Results For</sds-accordion-item-header>
+          <sds-accordion-item-header>Select Domain</sds-accordion-item-header>
           <sds-side-navigation #sideNav [model]="navigationModel"></sds-side-navigation>
         </sds-accordion-item>
         <sds-accordion-item [expanded]="true">
@@ -55,6 +55,7 @@
                   <exclusion-result *ngIf="item._type == 'exclusion'" [model]="item"></exclusion-result>
                   <dba-result *ngIf="item._type == 'wdDBRA'" [model]="item"></dba-result>
                   <sca-result *ngIf="item._type == 'wdSCA'" [model]="item"></sca-result>
+                  <contract-data-result *ngIf="item._type == 'award'" [model]="item"></contract-data-result>
               </div>
           </ng-template>
       </search-list-layout>

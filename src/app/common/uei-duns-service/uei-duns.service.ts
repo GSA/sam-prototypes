@@ -27,6 +27,9 @@ let dunsNumbers = [
     { 'uei': '123456890' }
 ];
 
+@Injectable({
+  providedIn: UeiDunsServiceModule
+})
 export class UeiDunsService implements SDSAutocompleteServiceInterface {
 	
    	public model: SDSSelectedItemModel = new SDSSelectedItemModel();
