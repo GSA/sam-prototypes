@@ -73,7 +73,11 @@ export class SystemAccountsWorkspaceComponent implements OnInit {
   }
 
   newAccount(event) {
+  	console.log(`%cLog: Creating new account`, 'color: blue; font-weight: bold');
+  }
 
+  newSearch(event) {
+  	console.log(`%cLog: Searching accounts`, 'color: blue; font-weight: bold');
   }
 
 }
