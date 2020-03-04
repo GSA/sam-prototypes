@@ -2,9 +2,9 @@
   <!-- header & search bar -->
   <div class="grid-row header-background tablet-lg:padding-x-9">
     <div class="grid-col-fill margin-x-2 text-base">
-      <h1 class="font-sans-xl margin-top-3">Contract Opportunities</h1>
-      <p class="font-sans-md">This site is the official source of contracting opportunities from the federal government. Anyone interested in doing business with the government can use this system to research active opportunities.</p>
-      <h2 class="font-sans-lg margin-top-4 text-ink text-normal">Search Contract Opportunities</h2>
+      <h1 class="font-sans-xl margin-top-3">Assistance Listings</h1>
+      <p class="font-sans-md">Assistance listings are detailed public descriptions of federal programs that provide grants, loans, scholarships, insurance, and other types of assistance awards. You may browse assistance listings across all government agencies to form a “big picture” of potential funding options.</p>
+      <h2 class="font-sans-lg margin-top-4 text-ink text-normal">Search Assistance Listings</h2>
       <div class="sds-search">
         <form class="usa-search usa-search--small">
           <div role="search" class="search">
@@ -22,14 +22,15 @@
   <div class="grid-row contract-opps tablet-lg:padding-x-9">
 
     <div class="usa-accordion tablet-lg:margin-4 margin-y-2">
+      <!-- How to find assistance listings -->
       <h3 class="usa-accordion__heading sds-accordion__heading">
         <button class="usa-accordion__button usa-accordion__block border-top border-base-light" aria-expanded="false" aria-controls="a1">
-          How to find opportunities to do business with the government
+          How to find assistance listings to do business with the government
         </button>
       </h3>
       <div id="a1" class="usa-accordion__content usa-prose" hidden>
         <!-- Get started links -->
-        <h4 class="text-ink text-semibold font-sans-md">Get started searching contract opportunities</h4>
+        <h4 class="text-ink text-semibold font-sans-md">Get started searching assistance listings</h4>
         <div class="padding-x-2 display-flex flex-column">
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
@@ -37,27 +38,31 @@
           </a>
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Follow contract opportunities</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
             <span>Save my searches</span>
           </a>
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Use the interested vendors list</span>
+            <span>What is the relationship between assistance listings and grants.gov?</span>
           </a>
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Quick start quide for contractors</span>
+            <span>Am I eligible for assistance awards?</span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            <span>What type of assistance are available?</span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            <span>Public Quick Start Guide</span>
           </a>
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-video-square text-base-dark margin-right-1"></i>
-            <span>Video - Use contract opportunities to do business with the government</span>
+            <span>Video - Assistance listings functionality, formerly known as CFDA.gov</span>
           </a>
         </div>
         <!-- additional filters links -->
-        <h4 class="text-ink text-semibold font-sans-md">Use additional filters to find contract opportunities</h4>
+        <h4 class="text-ink text-semibold font-sans-md">Use filters to find assistancen listings</h4>
         <div class="padding-x-2 display-flex flex-column">
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
@@ -65,78 +70,67 @@
           </a>
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Understanding notice types</span>
+            <span>Search by CFDA number</span>
           </a>
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Set-Asides for small businesses</span>
+            <span>Search by location</span>
           </a>
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Using NAICS codes</span>
+            <span>Search by assistance type</span>
           </a>
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Using PSC codes</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Search by place of performance</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Vendor collaboration opportunities</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Small business events</span>
+            <span>Search by eligibility</span>
           </a>
         </div>
       </div>
+      <!-- federal employee working on assistance listing -->
       <h3 class="usa-accordion__heading sds-accordion__heading">
         <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="a2">
-          I am a federal employee working on contract opportunities
+          I am a federal employee working on assistance listings
         </button>
       </h3>
       <div id="a2" class="usa-accordion__content usa-prose" hidden>
-        <!-- specialist/officer links -->
-        <h4 class="text-ink text-semibold font-sans-md">As a Contracting Officer or Contracting Specialist, you may:</h4>
+        <!-- smanage listings links -->
+        <h4 class="text-ink text-semibold font-sans-md">Manage your assistance listings</h4>
         <div class="padding-x-2 display-flex flex-column">
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Create and post contract opportunities</span>
+            <span>Meet your annual update requirements</span>
           </a>
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Manage attachments and the interested vendor list</span>
+            <span>Create and post assistance listings</span>
           </a>
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Deactive or reactivate a contract opportunity</span>
+            <span>Give your listing a new title</span>
           </a>
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Approve or reject role requests</span>
+            <span>ASsign your listing a new CFDA number</span>
           </a>
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Use a system account</span>
+            <span>Manage your regional locations</span>
+          </a>
+        </div>
+        <!-- admin links -->
+        <h4 class="text-ink text-semibold font-sans-md">Manage your assistance listings</h4>
+        <div class="padding-x-2 display-flex flex-column">
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            <span>Manage users and roles</span>
           </a>
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Quick start guide for role management</span>
+            <span>Quick Start Guide for Role Management</span>
           </a>
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-video-square text-base-dark margin-right-1"></i>
-            <span>Video - Role management</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Quick start guide for system accounts</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-video-square text-base-dark margin-right-1"></i>
-            <span>Video - System accounts</span>
+            <span>Video - role management</span>
           </a>
         </div>
       </div>
