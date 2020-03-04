@@ -1,24 +1,44 @@
-.wage-pic {
-  background: url("/assets/img/home-image-3.png") no-repeat center;
-  background-size: 100%;
+.header-background {
+  background: url("/assets/img/contract-opps.png") no-repeat right bottom;
+  background-size: cover;
+  padding-bottom: 35px;
+}
 
-  @media only screen and (max-width: 880px){
-    background: url("/assets/img/home-page-feature.jpg") no-repeat center;
-    background-size: 75%;
-    height: 240px;
+.sds-search {
+  .search {
+    width: 100%;
+  }
+
+  .usa-search.usa-search--small {
+    input {
+      height: 65px !important;
+      width: 100% !important;
+      max-width: 40rem !important;
+      -webkit-box-shadow: 3px 3px 3px 3px #ccc;
+      -moz-box-shadow: 3px 3px 3px 3px #ccc;
+      box-shadow: 3px 3px 3px 3px #ccc;
+    }
+
+    button {
+      height: 65px !important;
+      width: 65px !important;
+    }
   }
 }
 
 .sds-card.sds-card--sm {
   margin: 8px;
   padding: 16px;
-  // width: 100px;
-  // height: min-content;
+  max-width: 215px;
 
   h4 {
     margin:8px auto;
     text-align: justify;
     width: 100%;
+
+    .sds-tile__icon{
+      margin: auto;
+    }
   }
 
   span {
@@ -36,4 +56,8 @@
     .sds-tile__icon svg{
       width: 50px !important;
     }
+}
+
+.usa-prose > p {
+  max-width: unset;
 }
