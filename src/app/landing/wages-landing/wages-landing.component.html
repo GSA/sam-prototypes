@@ -15,11 +15,11 @@
         <div class="grid-row flex-column desktop:grid-col-6 padding-x-4 desktop:padding-bottom-2 text-base-dark margin-auto">
           <h3 class="font-sans-lg text-semibold line-height-sans-5 margin-0">I know the WD number</h3>
           <p class="font-sans-md line-height-sans-5 margin-0">Search by WD number:</p>
-          <div class="sds-search grid-row tablet-lg:margin-top-6 margin-bottom-6">
+          <div class="sds-search--big maxw-tablet grid-row tablet-lg:margin-top-6 margin-bottom-6">
             <form class="usa-search usa-search--small">
-              <div role="search" class="search width-full height-5">
-                <label class="usa-sr-only" for="search-input">DBA or SCA Identifier</label>
-                <input class="usa-input width-full" id="search-input" type="search" name="search" placeholder="DBA or SCA Identifier">
+              <div role="search" class="search">
+                <label class="usa-sr-only" for="search-input">Search Here</label>
+                <input class="usa-input" id="search-input" type="search" name="search" placeholder="Search Here">
                 <button class="usa-button" type="submit">
                   <span class="usa-sr-only">Search</span>
                 </button>
@@ -50,7 +50,7 @@
   <!-- accordion and links -->
   <div class="grid-row contract-opps tablet-lg:padding-x-9">
 
-    <div class="usa-accordion tablet-lg:margin-4 margin-y-2">
+    <div class="usa-accordion usa-accordion--bordered tablet-lg:margin-4 margin-y-2">
       <h3 class="usa-accordion__heading sds-accordion__heading">
         <button class="usa-accordion__button usa-accordion__block border-top border-base-light" aria-expanded="false" aria-controls="a1">
           How to find wage determinations
@@ -118,7 +118,9 @@
       </h3>
       <div id="a2" class="usa-accordion__content usa-prose" hidden>
         <!-- specialist/officer links -->
-        <p class="text-base">Wage determinations fall under two categories: Davis-Bacon Act (DBA) WDs and Service Contract Act (SCA) WDs. The DBA applies to contracts involving the construction, alteration, and/or repair (including painting or decorating) of public buildings or public works. The Service Contract Act (SCA) applies to federal and District of Columbia contracts that provide services. It establishes standards for wage rates and safety and health protections for employees performing work on covered contracts.</p>
+        <p class="text-base">Wage determinations fall under two categories: Davis-Bacon Act (DBA) WDs and Service Contract Act (SCA) WDs. The DBA applies to contracts involving the construction, alteration, and/or repair (including painting or
+          decorating) of public buildings or public works. The Service Contract Act (SCA) applies to federal and District of Columbia contracts that provide services. It establishes standards for wage rates and safety and health protections for
+          employees performing work on covered contracts.</p>
         <div class="padding-x-2 display-flex flex-column">
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
