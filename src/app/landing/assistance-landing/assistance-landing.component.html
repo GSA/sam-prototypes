@@ -3,13 +3,14 @@
   <div class="grid-row header-background tablet-lg:padding-x-9">
     <div class="grid-col-fill margin-x-2 text-base">
       <h1 class="font-sans-xl margin-top-3">Assistance Listings</h1>
-      <p class="font-sans-md">Assistance listings are detailed public descriptions of federal programs that provide grants, loans, scholarships, insurance, and other types of assistance awards. You may browse assistance listings across all government agencies to form a “big picture” of potential funding options.</p>
+      <p class="font-sans-md">Assistance listings are detailed public descriptions of federal programs that provide grants, loans, scholarships, insurance, and other types of assistance awards. You may browse assistance listings across all government
+        agencies to form a “big picture” of potential funding options.</p>
       <h2 class="font-sans-lg margin-top-4 text-ink text-normal">Search Assistance Listings</h2>
-      <div class="sds-search">
+      <div class="sds-search--big maxw-tablet">
         <form class="usa-search usa-search--small">
           <div role="search" class="search">
             <label class="usa-sr-only" for="search-input">Search Here</label>
-            <input class="usa-input" id="search-input" type="search" name="search" placeholder="Enter a notice ID or keywords">
+            <input class="usa-input" id="search-input" type="search" name="search" placeholder="Search Here">
             <button class="usa-button" type="submit">
               <span class="usa-sr-only">Search</span>
             </button>
@@ -21,7 +22,7 @@
   <!-- accordion & links -->
   <div class="grid-row contract-opps tablet-lg:padding-x-9">
 
-    <div class="usa-accordion tablet-lg:margin-4 margin-y-2">
+    <div class="usa-accordion usa-accordion--bordered tablet-lg:margin-4 margin-y-2">
       <!-- How to find assistance listings -->
       <h3 class="usa-accordion__heading sds-accordion__heading">
         <button class="usa-accordion__button usa-accordion__block border-top border-base-light" aria-expanded="false" aria-controls="a1">
@@ -32,31 +33,31 @@
         <!-- Get started links -->
         <h4 class="text-ink text-semibold font-sans-md">Get started searching assistance listings</h4>
         <div class="padding-x-2 display-flex flex-column">
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             <span>Use the search feature on SAM.gov</span>
           </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             <span>Save my searches</span>
           </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             <span>What is the relationship between assistance listings and grants.gov?</span>
           </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             <span>Am I eligible for assistance awards?</span>
           </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             <span>What type of assistance are available?</span>
           </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             <span>Public Quick Start Guide</span>
           </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-video-square text-base-dark margin-right-1"></i>
             <span>Video - Assistance listings functionality, formerly known as CFDA.gov</span>
           </a>
@@ -64,23 +65,23 @@
         <!-- additional filters links -->
         <h4 class="text-ink text-semibold font-sans-md">Use filters to find assistancen listings</h4>
         <div class="padding-x-2 display-flex flex-column">
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             <span>Changing search filters</span>
           </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             <span>Search by CFDA number</span>
           </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             <span>Search by location</span>
           </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             <span>Search by assistance type</span>
           </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             <span>Search by eligibility</span>
           </a>
@@ -96,23 +97,23 @@
         <!-- smanage listings links -->
         <h4 class="text-ink text-semibold font-sans-md">Manage your assistance listings</h4>
         <div class="padding-x-2 display-flex flex-column">
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             <span>Meet your annual update requirements</span>
           </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             <span>Create and post assistance listings</span>
           </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             <span>Give your listing a new title</span>
           </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             <span>ASsign your listing a new CFDA number</span>
           </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             <span>Manage your regional locations</span>
           </a>
@@ -120,15 +121,15 @@
         <!-- admin links -->
         <h4 class="text-ink text-semibold font-sans-md">Manage your assistance listings</h4>
         <div class="padding-x-2 display-flex flex-column">
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             <span>Manage users and roles</span>
           </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             <span>Quick Start Guide for Role Management</span>
           </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-video-square text-base-dark margin-right-1"></i>
             <span>Video - role management</span>
           </a>
@@ -140,118 +141,125 @@
   <!-- reports/data & external resources -->
   <div class="grid-row">
     <!-- reports and data section -->
-    <div class="tablet:grid-col tablet:margin-4 margin-y-2 padding-bottom-2 display-flex flex-column border-solid border-base-light border-width-1px">
-      <div class="padding-2" style="background-color: #eff6fb;">
-        <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">Reports and Data</a></h3>
+    <div class="sds-card tablet:grid-col">
+      <div class="sds-card__header">
+        <h3><a [routerLink]="['news']">Reports and Data</a></h3>
       </div>
       <!-- run report links -->
-      <h4 class="text-ink text-semibold font-sans-md padding-x-2 margin-bottom-1">Run a report</h4>
-      <div class="display-flex flex-column padding-x-2">
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-file text-base-dark margin-right-1"></i>
-          <span>How to run a databank report</span>
-        </a>
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-new-note text-base-dark margin-right-1"></i>
-          <span>Go to databank reports</span>
-        </a>
-      </div>
-      <!-- connect to data services links -->
-      <h4 class="text-ink text-semibold font-sans-md padding-x-2 margin-bottom-1">Connect to Data Services</h4>
-      <div class="display-flex flex-column padding-x-2">
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-file text-base-dark margin-right-1"></i>
-          <span>Quick start guide for data services</span>
-        </a>
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-file text-base-dark margin-right-1"></i>
-          <span>How to use assistance listing APIs</span>
-        </a>
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-file-chart-line text-base-dark margin-right-1"></i>
-          <span>Go to assistance listing APIs</span>
-        </a>
-      </div>
-      <!-- connect to data services links  -->
-      <h4 class="text-ink text-semibold font-sans-md padding-x-2 margin-bottom-1">Connect to Data Services</h4>
-      <div class="display-flex flex-column padding-x-2">
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-file text-base-dark margin-right-1"></i>
-          <span>How to download all assistance listings</span>
-        </a>
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-download fa-rotate-270 text-base-dark margin-right-1"></i>
-          <span>Go to file extractions</span>
-        </a>
+      <div class="sds-card__body">
+        <h4 class="sds-card__title">Run a report</h4>
+        <div class="sds-card__links">
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            How to run a databank report
+          </a>
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-new-note text-base-dark margin-right-1"></i>
+            Go to databank reports
+          </a>
+        </div>
+        <!-- connect to data services links -->
+        <h4 class="sds-card__title">Connect to Data Services</h4>
+        <div class=" sds-card__links">
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            Quick start guide for data services
+          </a>
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            How to use assistance listing APIs
+          </a>
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-file-chart-line text-base-dark margin-right-1"></i>
+            Go to assistance listing APIs
+          </a>
+        </div>
+        <!-- connect to data services links  -->
+        <h4 class="sds-card__title">Connect to Data Services</h4>
+        <div class=" sds-card__links">
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            How to download all assistance listings
+          </a>
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-download fa-rotate-270 text-base-dark margin-right-1"></i>
+            Go to file extractions
+          </a>
+        </div>
       </div>
     </div>
     <!-- external resources section-->
-    <div class="tablet:grid-col tablet:margin-4 margin-y-2 padding-bottom-2 display-flex flex-column border-solid border-base-light border-width-1px">
-      <div class="padding-2" style="background-color: #eff6fb;">
-        <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">External Resources</a></h3>
+    <div class="sds-card tablet:grid-col">
+      <div class="sds-card__header">
+        <h3><a [routerLink]="['news']">External Resources</a></h3>
       </div>
       <!-- contract opportunity report links -->
-      <p class="font-sans-md text-base padding-x-2">
-        Connect to one of our partner sites to review policy, learn about the grants lifecycle, and find information about eligibility for different types of rederal assistance.
-      </p>
-      <div class="display-flex flex-column padding-x-2">
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-file text-base-dark margin-right-1"></i>
-          <span>Chief Financial Officers Council Grants Training</span>
-        </a>
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-file text-base-dark margin-right-1"></i>
-          <span>Grants.gov Learning Center</span>
-        </a>
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-file text-base-dark margin-right-1"></i>
-          <span>Benefits.gov Benefit Finder</span>
-        </a>
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-file text-base-dark margin-right-1"></i>
-          <span>USA.gov Government Benefits, Grants, and Loans</span>
-        </a>
+      <div class="sds-card__body">
+        <p class="font-sans-md text-base padding-x-2">
+          Connect to one of our partner sites to review policy, learn about the grants lifecycle, and find information about eligibility for different types of rederal assistance.
+        </p>
+        <div class="sds-card__links">
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            Chief Financial Officers Council Grants Training
+          </a>
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            Grants.gov Learning Center
+          </a>
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            Benefits.gov Benefit Finder
+          </a>
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            USA.gov Government Benefits, Grants, and Loans
+          </a>
+        </div>
       </div>
     </div>
   </div>
   <!-- do I need an account -->
   <div class="grid-row">
-    <div class="tablet:grid-col-fill tablet:margin-4 margin-y-2 padding-bottom-2 display-flex flex-column border-solid border-base-light border-width-1px">
-      <div class="padding-2" style="background-color: #eff6fb;">
-        <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">Do I need a user account?</a></h3>
+    <div class="sds-card">
+      <div class="sds-card__header">
+        <h3><a [routerLink]="['news']">Do I need a user account?</a></h3>
       </div>
-      <div class="grid-row">
-        <div class="tablet:grid-col-fill padding-2 text-base font-sans-md">
-          <p class="margin-0">
-            Many users may find that they do not need a user account to search for and view assistance listings. With a Login.gov account, you can sign in to multiple government websites, including SAM.gov, with the same username and password.  With a user account you may
-          </p>
-          <ul class="margin-top-05 margin-bottom-4">
-            <li>Saved searches</li>
-          </ul>
-          <p class="margin-0">
-            <b>For federal users:</b> federal users who maintain assistance listings for their agency or office are the only users who definitely need a user account. You will need one to access additional capabilities available on SAM.
-          </p>
+      <div class="sds-card__body">
+        <div class="grid-row">
+          <div class="tablet:grid-col-fill padding-2 text-base font-sans-md">
+            <p class="margin-0">
+              Many users may find that they do not need a user account to search for and view assistance listings. With a Login.gov account, you can sign in to multiple government websites, including SAM.gov, with the same username and password. With
+              a
+              user account you may
+            </p>
+            <ul class="margin-top-05 margin-bottom-4">
+              <li>Saved searches</li>
+            </ul>
+            <p class="margin-0">
+              <b>For federal users:</b> federal users who maintain assistance listings for their agency or office are the only users who definitely need a user account. You will need one to access additional capabilities available on SAM.
+            </p>
+          </div>
+          <div class="tablet:grid-col-3 padding-2">
+            <!-- paste video code here -->
+            <img src="assets/img/home-video.png" style="height:150px; width:100%;">
+            <span class="font-sans-3xs text-base">Video on how to create a login.gov account</span>
+          </div>
         </div>
-        <div class="tablet:grid-col-3 padding-2">
-          <!-- paste video code here -->
-          <img src="assets/img/home-video.png" style="height:150px; width:100%;">
-          <span class="font-sans-3xs text-base">Video on how to create a login.gov account</span>
+        <div class="sds-card__links">
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            Quick start guide for creating a login.gov account
+          </a>
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-book text-base-dark margin-right-1"></i>
+            Glossary terms
+          </a>
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-question text-base-dark margin-right-1"></i>
+            Frequently asked quesions
+          </a>
         </div>
-      </div>
-
-      <div class="display-flex flex-column padding-x-2">
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-file text-base-dark margin-right-1"></i>
-          <span>Quick start guide for creating a login.gov account</span>
-        </a>
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-book text-base-dark margin-right-1"></i>
-          <span>Glossary terms</span>
-        </a>
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-question text-base-dark margin-right-1"></i>
-          <span>Frequently asked quesions</span>
-        </a>
       </div>
     </div>
   </div>
