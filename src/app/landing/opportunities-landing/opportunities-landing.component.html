@@ -1,15 +1,15 @@
 <div class="grid-container">
   <!-- header & search bar -->
-  <div class="grid-row contract-opportunities tablet-lg:padding-x-9">
+  <div class="grid-row header-background tablet-lg:padding-x-9">
     <div class="grid-col-fill margin-x-2 text-base">
       <h1 class="font-sans-xl margin-top-3">Contract Opportunities</h1>
       <p class="font-sans-md">This site is the official source of contracting opportunities from the federal government. Anyone interested in doing business with the government can use this system to research active opportunities.</p>
       <h2 class="font-sans-lg margin-top-4 text-ink text-normal">Search Contract Opportunities</h2>
-      <div class="sds-search">
+      <div class="sds-search--big maxw-tablet">
         <form class="usa-search usa-search--small">
           <div role="search" class="search">
             <label class="usa-sr-only" for="search-input">Search Here</label>
-            <input class="usa-input" id="search-input" type="search" name="search" placeholder="Enter a notice ID or keywords">
+            <input class="usa-input" id="search-input" type="search" name="search" placeholder="Search Here">
             <button class="usa-button" type="submit">
               <span class="usa-sr-only">Search</span>
             </button>
@@ -21,7 +21,7 @@
   <!-- accordion & links -->
   <div class="grid-row contract-opps tablet-lg:padding-x-9">
 
-    <div class="usa-accordion tablet-lg:margin-4 margin-y-2">
+    <div class="usa-accordion usa-accordion--bordered tablet-lg:margin-4 margin-y-2">
       <h3 class="usa-accordion__heading sds-accordion__heading">
         <button class="usa-accordion__button usa-accordion__block border-top border-base-light" aria-expanded="false" aria-controls="a1">
           How to find opportunities to do business with the government
@@ -146,7 +146,7 @@
   <!-- reports/data & user account sections -->
   <div class="grid-row">
     <!-- reports and data -->
-      <div class="tablet:grid-col-5 tablet:margin-2 margin-y-2 padding-bottom-2 display-flex flex-column border-solid border-base-light border-width-1px">
+      <div class="tablet:grid-col-5 tablet:margin-4 margin-y-2 padding-bottom-2 display-flex flex-column border-solid border-base-light border-width-1px">
         <div class="padding-2" style="background-color: #eff6fb;">
           <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">Reports and Data</a></h3>
         </div>
@@ -193,7 +193,7 @@
 
       </div>
     <!-- do I need a user account -->
-      <div class="tablet:grid-col-fill tablet:margin-2 margin-y-2 padding-bottom-2 display-flex flex-column border-solid border-base-light border-width-1px">
+      <div class="tablet:grid-col-fill tablet:margin-4 margin-y-2 padding-bottom-2 display-flex flex-column border-solid border-base-light border-width-1px">
         <div class="padding-2" style="background-color: #eff6fb;">
           <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">Do I need a user account?</a></h3>
         </div>

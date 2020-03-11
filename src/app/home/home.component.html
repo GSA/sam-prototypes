@@ -48,6 +48,7 @@
             </div>
           </div>
           <div class="desktop-lg:grid-col-fill tiles padding-x-2">
+            <!-- contract opportunities tile -->
             <div class="sds-tile">
               <a [routerLink]="['landing/opportunities']" class="sds-tile__content sds-tile--outline">
                 <i class="sds-tile__icon sds fa-open-doors text-base"></i>
@@ -55,6 +56,7 @@
                 <div class="sds-tile__details">(was fbo.gov)</div>
               </a>
             </div>
+            <!-- contract datat reports tile-->
             <div class="sds-tile">
               <a [routerLink]="['landing/opportunities']" class="sds-tile__content sds-tile--outline">
                 <i class="sds-tile__icon sds fa-file-chart-line text-base"></i>
@@ -62,19 +64,22 @@
                 <div class="sds-tile__details">(only reports from FPDS)</div>
               </a>
             </div>
+            <!-- entity compliance tile-->
             <div class="sds-tile">
-              <a [routerLink]="['landing/opportunities']" class="sds-tile__content sds-tile--outline">
+              <a [routerLink]="['landing/compliance']" class="sds-tile__content sds-tile--outline">
                 <i class="sds-tile__icon sds fa-new-version text-base"></i>
                 <div class="sds-tile__title">Entity Compliance</div>
               </a>
             </div>
+            <!-- assistance listing tile -->
             <div class="sds-tile">
-              <a href="#" class="sds-tile__content sds-tile--outline">
+              <a [routerLink]="['landing/assistance']" class="sds-tile__content sds-tile--outline">
                 <i class="sds-tile__icon sds fa-tag text-base"></i>
                 <div class="sds-tile__title">Assistance Listings</div>
                 <div class="sds-tile__details">(was cfda.gov)</div>
               </a>
             </div>
+            <!-- wage determinations tile -->
             <div class="sds-tile">
               <a [routerLink]="['landing/wages']" class="sds-tile__content sds-tile--outline">
                 <i class="sds-tile__icon sds fa-invoice text-base"></i>
@@ -82,6 +87,7 @@
                 <div class="sds-tile__details">(was wdol.gov)</div>
               </a>
             </div>
+            <!-- federal hierarchy tile -->
             <div class="sds-tile">
               <a [routerLink]="['landing/hierarchy']" class="sds-tile__content sds-tile--outline">
                 <i class="sds-tile__icon sds fa-users text-base"></i>
