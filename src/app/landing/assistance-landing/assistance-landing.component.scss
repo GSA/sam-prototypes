@@ -2,26 +2,21 @@
   background: url("/assets/img/contract-opps.png") no-repeat right bottom;
   background-size: cover;
   padding-bottom: 35px;
+
+  @media only screen and (max-width: 500px){
+    background: url("/assets/img/contract-opps.png") no-repeat 90% 100%;
+  }
 }
 
-.sds-search {
-  .search {
-    width: 100%;
+.sds-card__header {
+  h2, h3, a {
+    margin: 0 6px !important;
+    font-weight: 600 !important;
   }
+}
 
-  .usa-search.usa-search--small {
-    input {
-      height: 65px !important;
-      width: 100% !important;
-      max-width: 40rem !important;
-      -webkit-box-shadow: 3px 3px 3px 3px #ccc;
-      -moz-box-shadow: 3px 3px 3px 3px #ccc;
-      box-shadow: 3px 3px 3px 3px #ccc;
-    }
-
-    button {
-      height: 65px !important;
-      width: 65px !important;
-    }
-  }
+.usa-accordion__heading.sds-accordion__heading button.usa-accordion__block[aria-expanded=true] {
+  border-top: 0.25rem solid #f9f9f7;
+  border-left: 0.25rem solid #f9f9f7;
+  border-right: 0.25rem solid #f9f9f7;
 }
