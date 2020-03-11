@@ -1,0 +1,25 @@
+<div class="grid-row">
+	<h4><a [routerLink]="['/help']" class="usa-link"><i class="sds fa-caret-left fa-2x"></i>&nbsp;&nbsp;Back to Search Results</a></h4>
+</div>
+<div class="grid-row">
+	<div class="grid-col" style="min-height: 35rem; margin-bottom: 2rem">
+		<h2>{{model.title}}</h2>
+		<p>Latest Update: <b>{{ model.lastModifiedDate | date }}</b></p>
+		<p>{{model.description}}
+	</div>
+</div>
+<div class="grid-row grid-gap">
+	<div class="grid-col-fill">
+	</div>
+	<div class="grid-col-auto">
+		<button class="sds-button--circle usa-button--secondary" (click)="previous()"><i class="sds fa-caret-left fa-2x"></i></button>
+	</div>
+	<div class="grid-col-auto">
+		<button [routerLink]="['/help']" class="sds-button--circle usa-button--secondary"><i class="sds fa-times fa-2x"></i></button>
+	</div>
+	<div>
+		<button class="sds-button--circle" (click)="next()"><i class="sds fa-caret-right fa-2x"></i></button>
+	</div>
+	<div class="grid-col-fill">
+	</div>
+</div>

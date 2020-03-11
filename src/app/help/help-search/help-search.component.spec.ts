@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HelpTermComponent } from './help-term.component';
+import { HelpSearchComponent } from './help-search.component';
 
-describe('HelpTermComponent', () => {
-  let component: HelpTermComponent;
-  let fixture: ComponentFixture<HelpTermComponent>;
+describe('HelpSearchComponent', () => {
+  let component: HelpSearchComponent;
+  let fixture: ComponentFixture<HelpSearchComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HelpTermComponent ]
+      declarations: [ HelpSearchComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HelpTermComponent);
+    fixture = TestBed.createComponent(HelpSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -5,11 +5,17 @@ import { HelpComponent } from './help.component';
 const routes: Routes = [
 	{
 		path: '',
-		component: HelpComponent
-	},
-	{
-		path: ':id',
-		loadChildren: './help-video/help-video.module#HelpVideoModule' 
+		component: HelpComponent,
+		children: [
+			{
+				path: '',
+				loadChildren: './help-search/help-search.module#HelpSearchModule'
+			},
+			{
+				path: ':id',
+				loadChildren: './help-page/help-page.module#HelpPageModule'
+			}
+		]
 	}
 
 ];

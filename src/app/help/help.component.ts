@@ -5,10 +5,10 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
 import { FormGroup } from '@angular/forms';
 
 import { HelpData, HelpType } from './service/help.model';
-import { HelpService } from './service/help.service';
 import { SideNavigationModel, NavigationMode } from '@gsa-sam/components';
 import { helpNavigationData} from './navigation/navigation.data';
 import { helpFilters } from './filters.config';
+import { HelpFiltersService } from './help-filters/help-filters.service';
 
 @Component({
   selector: 'sam-help',
@@ -31,7 +31,7 @@ export class HelpComponent implements OnInit {
     ]
   };
 
-  constructor(public service: HelpService) {  
+  constructor(public filtersService: HelpFiltersService) {  
   }
 
   ngOnInit() {}

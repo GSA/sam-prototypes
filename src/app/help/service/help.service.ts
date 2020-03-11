@@ -3,68 +3,48 @@ import { Observable, of } from 'rxjs';
 
 import { SearchParameters, SearchListInterface, SearchResult, SearchListConfiguration } from '@gsa-sam/layouts';
 
-import { HelpServiceModule } from './service.module';
 import { HelpData, HelpType } from './help.model';
 import { HelpList } from './help.data';
 
-@Injectable({
-  providedIn: HelpServiceModule
-})
-export class HelpService {
+import { helpItemData } from './help-items.data';
 
-	configuration: SearchListConfiguration = {
-	    defaultSortValue: 'titleAscending', pageSize: 25,
-	    sortList: 
-	    	[{ text: 'Title Ascending', value: 'titleAscending' },
-	    	 { text: 'Title Descending', value: 'titleDescending' }]
-	};
-
-    help: HelpData[] = [];
+class FakeWebService {
+    help: any;
 
     constructor() {
-    	this.help = HelpList;
+        this.help = helpItemData;
     }
 
-    getById(id: string): HelpData {
-        for(let data of this.help) {
-            if(id == data.id) {
-              return data;
-            }
-        }
-    }
-
-    getData(search: SearchParameters): Observable<SearchResult> {
-        let itemList = this.help;
-        const searchProperty = 'title';
-        let toReturn = [];
+    getData(search: SearchParameters): SearchResult {
+        let itemList = this.help.contentDataList;
 
         const start = search.page.pageNumber * search.page.pageSize - search.page.pageSize;
         const end = start + search.page.pageSize;
-        this.sortEntityItem(itemList, search);
-        return of({
+        this.sortHelpItem(itemList, search);
+        return {
             items: itemList.slice(start, end),
-            totalItems: itemList.length
-        });
+            totalItems: this.help.contentDataList.length
+        };
     }
 
-    private sortEntityItem(itemList: HelpData[], search: SearchParameters) {
-        let valueA = '';
-        let valueB = '';
+    private sortHelpItem(itemList: any, search: SearchParameters) {
+        let valueA = null;
+        let valueB = null;
         let lessValueExpress = -1;
         let moreValueExpress = 1;
         itemList.sort((a, b) => {
             switch (search.sortField) {
-                case 'titleAscending':
+                case 'relevance':
                     lessValueExpress = -1;
                     moreValueExpress = 1;
                     valueA = a.title;
                     valueB = b.title;
                     break;
-                case 'titleDescending':
+                case 'latest':
                     lessValueExpress = 1;
                     moreValueExpress = -1;
-                    valueA = a.title;
-                    valueB = b.title;
+                    valueA = new Date(a.lastModifiedDate);
+                    valueB = new Date(b.lastModifiedDate);
                     break;
                 default:
                     break;
@@ -80,4 +60,47 @@ export class HelpService {
             }
         });
     }
+
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class HelpService {
+
+    currentItems: any[];
+
+	configuration: SearchListConfiguration = {
+	    defaultSortValue: 'relevance', pageSize: 25,
+	    sortList: 
+	    	[{ text: 'Relevance', value: 'relevance' },
+	    	 { text: 'Latest Update', value: 'latest' }]
+	};
+
+    service: FakeWebService;
+
+    constructor() {
+        this.service = new FakeWebService;
+    }
+
+    getById(id: string): Observable<any> {
+        let result: any = null;
+        this.currentItems.forEach((data, index) => {
+            if(id == data.contentId) {
+                result = {
+                    "item": data,
+                    "previousId": (index > 0) ? this.currentItems[index-1] : null,
+                    "nextId": (index < this.currentItems.length-1) ? this.currentItems[index+1] : null
+                };
+            }
+        });
+        return of(result);
+    }
+
+    getData(search: SearchParameters): Observable<SearchResult> {
+        let result: SearchResult = this.service.getData(search);
+        this.currentItems = result.items;
+        return of(result);
+    }
+
 }

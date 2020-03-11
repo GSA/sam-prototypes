@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { SamModelService } from './model/sam-model.service';
+import { HelpService } from './help/service/help.service';
+import { HelpFiltersService } from './help/help-filters/help-filters.service'; 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -41,7 +43,7 @@ export class AppModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: AppModule,
-      providers: [SamModelService]
+      providers: [SamModelService, HelpService, HelpFiltersService]
     };
   }
   constructor() {
