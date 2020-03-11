@@ -1,18 +1,17 @@
 <div class="grid-container">
-  <div class="grid-row">
-    <h1 class="text-base-dark font-sans-xl margin-bottom-1">Wage Determinations</h1>
+  <div class="grid-row tablet:padding-x-9">
+    <h1 class="text-base font-sans-xl margin-bottom-1">Wage Determinations</h1>
     <p class="text-base-dark font-sans-md">A wage determination (WD) is a listing of wage rates and fringe benefit rates for each labor category of workers which the U.S. department of labor has determined to be prevailing in a given area</p>
   </div>
-
   <!-- header row and small cards -->
   <div class="grid-row header-background tablet:padding-x-6">
-    <div class="tablet-lg:grid-col-fill desktop:margin-y-2 desktop:margin-right-2 margin-2 border-solid border-base-light border-width-1px bg-white">
-      <div class="padding-2" style="background-color: #eff6fb;">
+    <div class="sds-card tablet-lg:grid-col-fill">
+      <div class="sds-card__header">
         <h2 class="font-sans-lg margin-0"><a class="text-base-dark font-sans-lg text-no-underline" [routerLink]="['news']">Help me find a wage determination</a></h2>
       </div>
-      <div class="grid-row padding-bottom-3 desktop-lg:padding-bottom-0 text-base-dark">
+      <div class="grid-row margin-top-1 mobile:margin-x-auto">
         <!-- search section -->
-        <div class="grid-row flex-column desktop:grid-col-6 padding-x-4 desktop:padding-bottom-2 text-base-dark margin-auto">
+        <div class="grid-row flex-column desktop-lg:grid-col-6 padding-x-4 desktop:padding-bottom-2 text-base-dark margin-auto">
           <h3 class="font-sans-lg text-semibold line-height-sans-5 margin-0">I know the WD number</h3>
           <p class="font-sans-md line-height-sans-5 margin-0">Search by WD number:</p>
           <div class="sds-search--big maxw-tablet grid-row tablet-lg:margin-top-6 margin-bottom-6">
@@ -28,17 +27,17 @@
           </div>
         </div>
         <!-- small cards -->
-        <div class="grid-row flex-column desktop:grid-col-6 padding-x-4 desktop:padding-bottom-2 text-base-dark margin-auto">
-          <h3 class="text-base-dark font-sans-lg text-semibold margin-y-05">I do not know the WD number</h3>
-          <p class="font-sans-md">Select the category you're looking for:</p>
-          <div class="grid-row">
-            <div class="sds-card sds-card--sm grid-col text-base-dark margin-y-1">
-              <h4 class="display-flex flex-justify font-sans-lg">DBA <i class="sds-tile__icon sds fa-ship fa-2x text-base"></i></h4>
+        <div class="grid-row flex-column desktop-lg:grid-col-6 desktop:padding-bottom-2 text-base-dark margin-auto">
+          <h3 class="text-base-dark font-sans-lg text-semibold margin-y-05 padding-x-4">I do not know the WD number</h3>
+          <p class="font-sans-md padding-x-4">Select the category you're looking for:</p>
+          <div class="grid-row flex-justify-center tablet:padding-x-4 flex-no-wrap">
+            <div class="sds-card sds-card--tile">
+              <h4 class="sds-card--tile__title">DBA <i class="sds-tile__icon sds fa-ship fa-2x text-base"></i></h4>
               <span>Public Building/Works</span>
               <p>Wage rates for laborers and mechanics</p>
             </div>
-            <div class="sds-card sds-card--sm grid-col text-base-dark">
-              <h4 class="display-flex flex-justify font-sans-lg">SCA <i class="sds-tile__icon sds fa-users fa-2x text-base"></i></h4>
+            <div class="sds-card sds-card--tile">
+              <h4 class="sds-card--tile__title">SCA <i class="sds-tile__icon sds fa-users fa-2x text-base"></i></h4>
               <span>Service Contracts</span>
               <p>Wage rates for service employees</p>
             </div>
@@ -48,7 +47,7 @@
     </div>
   </div>
   <!-- accordion and links -->
-  <div class="grid-row contract-opps tablet-lg:padding-x-9">
+  <div class="grid-row tablet-lg:padding-x-9">
 
     <div class="usa-accordion usa-accordion--bordered tablet-lg:margin-4 margin-y-2">
       <h3 class="usa-accordion__heading sds-accordion__heading">
@@ -231,86 +230,90 @@
   <!-- additional resources / do I need an account? -->
   <div class="grid-row">
     <!-- additional resources -->
-    <div class="tablet:grid-col-5 tablet:margin-4 margin-y-2 padding-bottom-2 display-flex flex-column border-solid border-base-light border-width-1px">
-      <div class="padding-2" style="background-color: #eff6fb;">
-        <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">Additional Resources</a></h3>
+    <div class="tablet-lg:grid-col sds-card">
+      <div class="sds-card__header">
+        <h3><a [routerLink]="['news']">Additional Resources</a></h3>
       </div>
-      <!-- DBA links -->
-      <h4 class="text-ink text-semibold font-sans-md padding-x-2 margin-bottom-1">The Davis-Bacon Act (DBA)</h4>
-      <div class="display-flex flex-column padding-x-2">
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-file text-base-dark margin-right-1"></i>
-          <span>DBA Conformances</span>
-        </a>
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-file text-base-dark margin-right-1"></i>
-          <span>DBA Agency Memos</span>
-        </a>
+      <div class="sds-card__body">
+        <!-- DBA links -->
+        <h4 class="sds-card__title">The Davis-Bacon Act (DBA)</h4>
+        <div class="sds-card__links">
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            DBA Conformances
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            DBA Agency Memos
+          </a>
+        </div>
+        <!-- SCA Links -->
+        <h4 class="sds-card__title">The Service Contract Act (SCA)</h4>
+        <div class="sds-card__links">
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            SCA Conformaces
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            SCA Agency Memos
+          </a>
+        </div>
+        <!-- General Links -->
+        <h4 class="sds-card__title">General</h4>
+        <div class="sds-card__links">
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            Labor Advisors
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            All Agency Memos
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            Labor Cross Index
+          </a>
+        </div>
       </div>
-      <!-- SCA Links -->
-      <h4 class="text-ink text-semibold font-sans-md padding-x-2 margin-bottom-1">The Service Contract Act (SCA)</h4>
-      <div class="display-flex flex-column padding-x-2">
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-file text-base-dark margin-right-1"></i>
-          <span>SCA Conformaces</span>
-        </a>
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-file text-base-dark margin-right-1"></i>
-          <span>SCA Agency Memos</span>
-        </a>
-      </div>
-      <!-- General Links -->
-      <h4 class="text-ink text-semibold font-sans-md padding-x-2 margin-bottom-1">General</h4>
-      <div class="display-flex flex-column padding-x-2">
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-file text-base-dark margin-right-1"></i>
-          <span>Labor Advisors</span>
-        </a>
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-file text-base-dark margin-right-1"></i>
-          <span>All Agency Memos</span>
-        </a>
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-file text-base-dark margin-right-1"></i>
-          <span>Labor Cross Index</span>
-        </a>
-      </div>
-
     </div>
+
     <!-- do I need a user account -->
-    <div class="tablet:grid-col-fill tablet:margin-4 margin-y-2 padding-bottom-2 display-flex flex-column border-solid border-base-light border-width-1px">
-      <div class="padding-2" style="background-color: #eff6fb;">
-        <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">Do I need a user account?</a></h3>
+    <div class="tablet-lg:grid-col sds-card">
+      <div class="sds-card__header">
+        <h3><a [routerLink]="['news']">Do I need a user account?</a></h3>
       </div>
-      <div class="grid-row">
-        <div class="grid-col padding-2 text-base">
-          <p class="margin-0">While you don’t need a user account to view wage determinations, you will need one to access additional capabilities available on SAM. With a Login.gov account, you can sign in to multiple government websites,
-            including SAM.gov, with the same username and password. With a user account you may</p>
-          <ul class="margin-top-05">
-            <li>Saved searches</li>
-            <li>Follow changes and opportunities</li>
-            <li>Join interested vendor lists</li>
-          </ul>
+      <div class="sds-card__body">
+        <div class="grid-row">
+          <div class="tablet:grid-col padding-2">
+            <p class="margin-0">While you don’t need a user account to view wage determinations, you will need one to access additional capabilities available on SAM. With a Login.gov account, you can sign in to multiple government websites,
+              including SAM.gov, with the same username and password. With a user account you may</p>
+            <ul class="margin-top-05 text-ink">
+              <li>Saved searches</li>
+              <li>Follow changes and opportunities</li>
+              <li>Join interested vendor lists</li>
+            </ul>
+          </div>
+          <div class="tablet:grid-col-5 padding-2">
+            <!-- paste video code here -->
+            <img src="assets/img/home-video.png" style="height:200px;" class="display-block margin-auto text-center">
+            <div class="display-block text-center font-sans-3xs text-base">Video on how to create a login.gov account</div>
+          </div>
         </div>
-        <div class="grid-col-5 padding-2">
-          <!-- paste video code here -->
-          <img src="assets/img/home-video.png" style="height:200px;">
-          <span class="font-sans-3xs text-base">Video on how to create a login.gov account</span>
+        <div class="sds-card__links">
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            Quick start guide for creating a login.gov account
+          </a>
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-book text-base-dark margin-right-1"></i>
+            lossary terms
+          </a>
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-question text-base-dark margin-right-1"></i>
+            Frequently asked quesions
+          </a>
         </div>
-      </div>
-      <div class="display-flex flex-column padding-x-2">
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-file text-base-dark margin-right-1"></i>
-          <span>Quick start guide for creating a login.gov account</span>
-        </a>
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-book text-base-dark margin-right-1"></i>
-          <span>Glossary terms</span>
-        </a>
-        <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-          <i class="sds fa-question text-base-dark margin-right-1"></i>
-          <span>Frequently asked quesions</span>
-        </a>
       </div>
     </div>
   </div>
