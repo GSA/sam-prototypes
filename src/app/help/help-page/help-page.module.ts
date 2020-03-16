@@ -9,7 +9,7 @@ import { HelpPageComponent } from './help-page.component';
   imports: [
     CommonModule,
     HelpPageRoutingModule,
-    FontAwesomeModule,
+    FontAwesomeModule
   ],
   exports: [HelpPageComponent]
 })
