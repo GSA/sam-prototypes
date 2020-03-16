@@ -15,16 +15,44 @@ class FakeWebService {
         this.help = helpItemData;
     }
 
-    getData(search: SearchParameters): SearchResult {
+    getById(id: string) {
+        for(let i=0; i<this.help.contentDataList.length; i++) {
+           if(id == this.help.contentDataList[i].contentId) {
+            return this.help.contentDataList[i];
+           }
+        }
+    }
+
+    filterByType(result, types) {
+        if(types.video && result.type == 3) return true;
+        if(types.faq && result.type == 2) return true;
+        if(types.term && result.type == 1) return true;
+        return false;
+    }
+
+    getData(search: SearchParameters): Observable<SearchResult> {
         let itemList = this.help.contentDataList;
+
+        if(search.filter && search.filter.type) {
+            itemList = this.help.contentDataList.filter(element => this.filterByType(element, search.filter.type));
+        }
+
+        for(let i=0; i<itemList.length; i++) {
+            if(i > 0) {
+                itemList[i].previousId = itemList[i-1].contentId;
+            }
+            if(i < itemList.length-1) {
+                itemList[i].nextId = itemList[i+1].contentId;
+            }
+        }
 
         const start = search.page.pageNumber * search.page.pageSize - search.page.pageSize;
         const end = start + search.page.pageSize;
         this.sortHelpItem(itemList, search);
-        return {
+        return of({
             items: itemList.slice(start, end),
-            totalItems: this.help.contentDataList.length
-        };
+            totalItems: itemList.length
+        });
     }
 
     private sortHelpItem(itemList: any, search: SearchParameters) {
@@ -69,6 +97,7 @@ class FakeWebService {
 export class HelpService {
 
     currentItems: any[];
+    lastSearchParams: SearchParameters;
 
 	configuration: SearchListConfiguration = {
 	    defaultSortValue: 'relevance', pageSize: 25,
@@ -80,27 +109,39 @@ export class HelpService {
     service: FakeWebService;
 
     constructor() {
-        this.service = new FakeWebService;
+        this.service = new FakeWebService();
     }
 
     getById(id: string): Observable<any> {
-        let result: any = null;
-        this.currentItems.forEach((data, index) => {
-            if(id == data.contentId) {
-                result = {
-                    "item": data,
-                    "previousId": (index > 0) ? this.currentItems[index-1] : null,
-                    "nextId": (index < this.currentItems.length-1) ? this.currentItems[index+1] : null
-                };
-            }
-        });
-        return of(result);
+        if(this.currentItems) {
+            for(let i = 0; i< this.currentItems.length; i++) {
+                if(id == this.currentItems[i].contentId) {
+                    return of({
+                        item: this.currentItems[i],
+                        previousId: (i > 0) ? this.currentItems[i-1].contentId : null,
+                        nextId: (i < this.currentItems.length-1) ? this.currentItems[i+1].contentId : null
+                    });
+                }
+            };
+        } else {
+            return of({
+                item: this.service.getById(id),
+                previousId: null,
+                nextId: null
+            });
+        }
+        return of(null);
     }
 
     getData(search: SearchParameters): Observable<SearchResult> {
-        let result: SearchResult = this.service.getData(search);
-        this.currentItems = result.items;
-        return of(result);
+        this.lastSearchParams = search;
+        let items = this.service.getData(search);
+        items.subscribe( result => this.currentItems = result.items);
+        return items;
+    }
+
+    getItems() {
+
     }
 
 }

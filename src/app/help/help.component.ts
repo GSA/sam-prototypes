@@ -20,7 +20,6 @@ export class HelpComponent implements OnInit {
   public sideNavModel: SideNavigationModel = helpNavigationData;
 
   form = new FormGroup({});
-  filterModel = {};
   fields: FormlyFieldConfig[] = helpFilters;
   public filterChange$ = new BehaviorSubject<object>(null);  
 
@@ -35,6 +34,13 @@ export class HelpComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  newSearch(searchTerm) {
+    if(this.filtersService) {
+        this.filtersService.model = {};
+        this.filtersService.model["keyword"] = searchTerm;
+    }
+  }
 
   log(value) {
     console.log(`%cLog: ${value}`, 'color: blue; font-weight: bold');

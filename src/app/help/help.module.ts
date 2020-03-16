@@ -5,7 +5,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlySelectModule } from '@ngx-formly/core/select';
-
 import { SdsSubheaderModule  } from '@gsa-sam/layouts';  
 
 import {
@@ -40,6 +39,7 @@ import { HelpServiceModule } from './service/service.module';
     HelpRoutingModule
   ],
   declarations: [HelpComponent],
-  exports: []
+  exports: [],
+  providers: [SDSFormlyUpdateComunicationService]
 })
 export class HelpModule { }

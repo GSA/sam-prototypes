@@ -12,7 +12,7 @@ import { HelpService } from '../service/help.service';
 })
 export class HelpPageComponent implements OnInit {
 
-  public model: Observable<any>;
+  public model;
   public id: string;
 
   constructor(public service: HelpService, public route: ActivatedRoute) { }
