@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HelpService } from './help.service';
+import { HelpFiltersService } from './help-filters.service';
 
 @NgModule({
   declarations: [],
@@ -8,11 +8,12 @@ import { HelpService } from './help.service';
     CommonModule
   ]
 })
-export class HelpServiceModule { 
+export class HelpFiltersModule { 
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: HelpServiceModule,
-      providers: [ HelpService ]
+      ngModule: HelpFiltersModule,
+      providers: [ HelpFiltersService ]
     };
   }
+
 }

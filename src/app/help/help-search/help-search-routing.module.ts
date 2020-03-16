@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HelpFeatureComponent } from './help-feature.component';
+import { HelpSearchComponent } from './help-search.component';
 
 const routes: Routes = [
 	{
 		path: '',
-		component: HelpFeatureComponent
+		component: HelpSearchComponent
 	}
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class HelpFeatureRoutingModule { }
+export class HelpSearchRoutingModule { }
