@@ -1,15 +1,15 @@
-<div class="grid-container">
-  <div class="grid-row tablet:padding-x-9">
+<div class="grid-container padding-0">
+  <div class="grid-row tablet:padding-x-9 padding-x-2">
     <h1 class="text-base font-sans-xl margin-bottom-1">Wage Determinations</h1>
-    <p class="text-base-dark font-sans-md">A wage determination (WD) is a listing of wage rates and fringe benefit rates for each labor category of workers which the U.S. department of labor has determined to be prevailing in a given area</p>
+    <p class="text-base-dark font-sans-md line-height-sans-5">A wage determination (WD) is a listing of wage rates and fringe benefit rates for each labor category of workers which the U.S. department of labor has determined to be prevailing in a given area</p>
   </div>
   <!-- header row and small cards -->
-  <div class="grid-row header-background tablet:padding-x-6">
+  <div class="grid-row header-background tablet:padding-x-6 margin-bottom-3">
     <div class="sds-card tablet-lg:grid-col-fill">
       <div class="sds-card__header">
         <h2><a [routerLink]="['news']">Help me find a wage determination</a></h2>
       </div>
-      <div class="grid-row margin-top-1 mobile:margin-x-auto">
+      <div class="grid-row margin-top-105 mobile:margin-x-auto">
         <!-- search section -->
         <div class="grid-row flex-column desktop-lg:grid-col-6 padding-x-4 desktop:padding-bottom-2 text-base-dark margin-auto">
           <h3 class="font-sans-lg text-semibold line-height-sans-5 margin-0">I know the WD number</h3>
@@ -30,14 +30,14 @@
         <div class="grid-row flex-column desktop-lg:grid-col-6 desktop:padding-bottom-2 text-base-dark margin-auto">
           <h3 class="text-base-dark font-sans-lg text-semibold margin-y-05 padding-x-4">I do not know the WD number</h3>
           <p class="font-sans-md padding-x-4">Select the category you're looking for:</p>
-          <div class="grid-row flex-justify-center tablet:padding-x-4 flex-no-wrap">
+          <div class="grid-row flex-justify-center desktop:flex-justify tablet:padding-x-4 flex-no-wrap">
             <div class="sds-card sds-card--tile">
-              <h4 class="sds-card--tile__title">DBA <i class="sds-tile__icon sds fa-ship fa-2x text-base"></i></h4>
+              <h4 class="sds-card--tile__title">DBA <i class="sds-card--tile__icon sds fa-ship fa-2x"></i></h4>
               <span>Public Building/Works</span>
               <p>Wage rates for laborers and mechanics</p>
             </div>
             <div class="sds-card sds-card--tile">
-              <h4 class="sds-card--tile__title">SCA <i class="sds-tile__icon sds fa-users fa-2x text-base"></i></h4>
+              <h4 class="sds-card--tile__title">SCA <i class="sds-card--tile__icon sds fa-users fa-2x"></i></h4>
               <span>Service Contracts</span>
               <p>Wage rates for service employees</p>
             </div>
@@ -47,9 +47,8 @@
     </div>
   </div>
   <!-- accordion and links -->
-  <div class="grid-row desktop:padding-x-9">
-
-    <div class="usa-accordion usa-accordion--bordered desktop:margin-4 margin-2">
+  <div class="grid-row desktop:padding-x-9 tablet:margin-y-3">
+    <div class="sds-accordion usa-accordion usa-accordion--bordered desktop:margin-x-4 margin-2">
       <h3 class="usa-accordion__heading sds-accordion__heading">
         <button class="usa-accordion__button usa-accordion__block border-top border-base-light" aria-expanded="false" aria-controls="a1">
           How to find wage determinations
@@ -286,11 +285,11 @@
       <div class="sds-card__body">
         <div class="grid-row">
           <div class="tablet:grid-col padding-2">
-            <p class="margin-0">While you don’t need a user account to view wage determinations, you will need one to access additional capabilities available on SAM. With a Login.gov account, you can sign in to multiple government websites,
+            <p class="margin-0 line-height-sans-5">While you don’t need a user account to view wage determinations, you will need one to access additional capabilities available on SAM. With a Login.gov account, you can sign in to multiple government websites,
               including SAM.gov, with the same username and password. With a user account you may</p>
             <ul class="margin-top-05 text-ink">
               <li>Saved searches</li>
-              <li>Follow changes and opportunities</li>
+              <li>Follow changes to wage determinations</li>
               <li>Join interested vendor lists</li>
             </ul>
           </div>
