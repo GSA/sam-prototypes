@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { HelpPageRoutingModule } from './help-page-routing.module';
 import { HelpPageComponent } from './help-page.component';
 
@@ -8,8 +8,7 @@ import { HelpPageComponent } from './help-page.component';
   declarations: [HelpPageComponent],
   imports: [
     CommonModule,
-    HelpPageRoutingModule,
-    FontAwesomeModule
+    HelpPageRoutingModule
   ],
   exports: [HelpPageComponent]
 })
