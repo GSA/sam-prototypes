@@ -7,29 +7,6 @@
   }
 }
 
-.sds-card__header {
-  a,
-  h2,
-  h3 {
-    margin: 0 6px !important;
-    font-weight: 600 !important;
-  }
-}
-
-.usa-accordion__heading.sds-accordion__heading button.usa-accordion__block[aria-expanded=true] {
-  border-top: 0.25rem solid #f9f9f7;
-  border-left: 0.25rem solid #f9f9f7;
-  border-right: 0.25rem solid #f9f9f7;
-}
-
-.usa-prose > p {
-  max-width: unset;
-}
-
-.sds-tile__icon {
-  margin: auto;
-}
-
 .sds-card.sds-card--tile {
   @media only screen and (max-width: 500px) {
     margin: auto 4px;
