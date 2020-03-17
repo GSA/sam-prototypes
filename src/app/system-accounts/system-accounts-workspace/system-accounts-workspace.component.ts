@@ -25,9 +25,8 @@ import { FormGroup } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 
 import { workspaceSideNavigationData } from '../../common/workspace/navigation.data';
-import { SystemAccountsFiltersService } from './system-accounts-filters.service';
+import { SystemAccountsFiltersService } from './system-accounts-filters/system-accounts-filters.service';
 import { SystemAccountsService } from './system-accounts-service/system-accounts.service';
-import { systemAccountsListConfig } from './list.config';
 
 @Component({
   selector: 'app-system-accounts-workspace',
@@ -40,13 +39,10 @@ export class SystemAccountsWorkspaceComponent implements OnInit {
   @ViewChild('resultList') resultList;
 
   form = new FormGroup({});
-  filterConfig = new SystemAccountsFiltersService();
 
   showFilters: boolean = true;
 
   public filterChange$ = new BehaviorSubject<object>(null);
-
-  listModel = systemAccountsListConfig;
 
   subheader = {
     actions: [
@@ -57,7 +53,8 @@ export class SystemAccountsWorkspaceComponent implements OnInit {
   navigationModel = workspaceSideNavigationData;
 
 
-  constructor(private change: ChangeDetectorRef, public service: SystemAccountsService) { 
+  constructor(private change: ChangeDetectorRef, public service: SystemAccountsService,
+      public filterService: SystemAccountsFiltersService) { 
   	console.log(`%cLog: Loading System Accounts Workspace`, 'color: blue; font-weight: bold');
   }
 

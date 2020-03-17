@@ -1,42 +1,30 @@
 import { Injectable } from '@angular/core';
 import { FormlyFieldConfig } from '@ngx-formly/core';
+import { SystemAccountsFiltersModule } from './system-accounts-filters.module';
 
-import { 
-  SearchFiltersWrapperService 
-} from '../../common/public-apis';
-
-export class SystemAccountsFiltersService implements SearchFiltersWrapperService {
-
-  constructor() { }
+@Injectable({
+  providedIn: SystemAccountsFiltersModule
+})
+export class SystemAccountsFiltersService {
 
   public model = {};
 
-  public filters: FormlyFieldConfig[] =
-	[{
-	    key: 'searchKeyword',
+  public filters: FormlyFieldConfig[] = [
+     {
+	    key: 'keyword',
 	    wrappers: ['filterwrapper'],
-	    templateOptions: { label: 'Keyword' },
-	    fieldGroup: [{
-	      key: 'keyword',
-	      type: 'input',
-	      templateOptions: {
-	        inputType: 'text',
-	        label: 'Keyword',
-	        hideLabel: true
-	      },
-
-	    }]
+	    type: 'input',
+	    templateOptions: { 
+	      label: 'Keyword',
+	    }
 	  },
 	  {
-	    key: 'account',
+	    key: 'accountStatus',
 	    wrappers: ['accordionwrapper'],
-	    templateOptions: { label: 'Status' },
-	    fieldGroup: [
-	      {
-	        key: 'accountStatus',
-	        type: 'multicheckbox',
-	        templateOptions: {
-	          options: [
+	    type: 'multicheckbox',
+	    templateOptions: { 
+	        label: 'Status',
+	        options: [
 	            {
 	              key: 'Draft',
 	              value: 'Draft'
@@ -57,10 +45,8 @@ export class SystemAccountsFiltersService implements SearchFiltersWrapperService
 	              key: 'Inactive',
 	              value: 'Inactive'
 	            }
-	          ]
-	        },
+	          ] 
 	      }
-	    ]
 	  },
 	  {
 	      key: 'expiration',
@@ -75,5 +61,5 @@ export class SystemAccountsFiltersService implements SearchFiltersWrapperService
 	        ]
 	      }
 	   }
-	]
+	];
 }

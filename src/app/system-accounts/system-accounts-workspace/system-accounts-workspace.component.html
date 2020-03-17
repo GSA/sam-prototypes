@@ -37,14 +37,14 @@
         </sds-accordion-item>
         <sds-accordion-item [expanded]="true">
           <sds-accordion-item-header>Filter By</sds-accordion-item-header>
-          <sds-filters *ngIf="filterConfig.filters && filterConfig.filters.length > 0" [form]="form" [fields]="filterConfig.filters" [model]="filterConfig.model" 
+          <sds-filters [form]="form" [fields]="filterService.filters" [model]="filterService.model" 
           		(filterChange)="filterChange$.next($event)">
           </sds-filters>
         </sds-accordion-item>
       </sds-accordion>
     </sds-toolbar>
   <div class="sds-page__content tablet:grid-col-fill margin-0">
-  	     <search-list-layout #resultList [service]="service" [configuration]="listModel">
+  	     <search-list-layout #resultList [service]="service" [configuration]="service.model">
           <ng-template #resultContent let-item>
               <div>
               	  <system-account-item [model]="item"></system-account-item>
