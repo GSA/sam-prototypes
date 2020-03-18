@@ -7,20 +7,18 @@ import { FormGroup } from '@angular/forms';
 import { HelpData, HelpType } from './service/help.model';
 import { SideNavigationModel, NavigationMode } from '@gsa-sam/components';
 import { helpNavigationData} from './navigation/navigation.data';
-import { helpFilters } from './filters.config';
 import { HelpFiltersService } from './help-filters/help-filters.service';
+import { HelpService } from './service/help.service';
 
 @Component({
   selector: 'sam-help',
-  templateUrl: './help.component.html',
-  styleUrls: ['./_styles.scss']
+  templateUrl: './help.component.html'
 })
 export class HelpComponent implements OnInit {
 
   public sideNavModel: SideNavigationModel = helpNavigationData;
 
   form = new FormGroup({});
-  fields: FormlyFieldConfig[] = helpFilters;
   public filterChange$ = new BehaviorSubject<object>(null);  
 
   public subheader = {
@@ -30,10 +28,12 @@ export class HelpComponent implements OnInit {
     ]
   };
 
-  constructor(public filtersService: HelpFiltersService) {  
+  constructor(public filtersService: HelpFiltersService, public service: HelpService) {  
+
   }
 
   ngOnInit() {}
+
 
   newSearch(searchTerm) {
     if(this.filtersService) {

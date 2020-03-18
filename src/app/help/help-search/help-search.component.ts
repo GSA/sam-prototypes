@@ -1,18 +1,21 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, AfterViewInit } from '@angular/core';
 
 import { HelpService } from '../service/help.service';
 
 @Component({
   selector: 'app-help-search',
   templateUrl: './help-search.component.html',
-  styleUrls: ['./help-search.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./help-search.component.scss']
 })
-export class HelpSearchComponent implements OnInit {
+export class HelpSearchComponent implements OnInit, AfterViewInit {
 
-  constructor(public service: HelpService) { }
+  constructor(private change: ChangeDetectorRef, public service: HelpService) { }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit() {      
+    this.change.detectChanges();
   }
 
 }

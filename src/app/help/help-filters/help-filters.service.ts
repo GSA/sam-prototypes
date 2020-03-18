@@ -15,8 +15,8 @@ class FakeAutocompleteService implements SDSAutocompleteServiceInterface {
 
    	constructor() {
 		this.settings.id = 'keyword';
-		this.settings.primaryKeyField = '';
-		this.settings.primaryTextField = '';
+		this.settings.primaryKeyField = 'value';
+		this.settings.primaryTextField = 'value';
 		this.settings.secondaryTextField = null;
 		this.settings.labelText = 'Keyword';
 		this.settings.selectionMode = SelectionMode.MULTIPLE;

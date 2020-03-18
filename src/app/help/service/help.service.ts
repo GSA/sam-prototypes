@@ -23,6 +23,16 @@ class FakeWebService {
         }
     }
 
+    filterByKeyword(result, keyword) {
+        for(let i=0; i<keyword.items.length; i++) {
+            if(result.title.toLowerCase().includes(keyword.items[0].value.toLowerCase()) ||
+                result.description.toLowerCase().includes(keyword.items[0].value.toLowerCase())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     filterByType(result, types) {
         if(types.video && result.type == 3) return true;
         if(types.faq && result.type == 2) return true;
@@ -30,11 +40,25 @@ class FakeWebService {
         return false;
     }
 
+    filter(result, filters) {
+        if(filters.type) {
+          if(!this.filterByType(result, filters.type)) {
+            return false;
+          }
+        }
+        if(filters.keyword) {
+          if(!this.filterByKeyword(result, filters.keyword)) {
+              return false;
+          }
+        }
+        return true;
+    }
+
     getData(search: SearchParameters): Observable<SearchResult> {
         let itemList = this.help.contentDataList;
 
-        if(search.filter && search.filter.type) {
-            itemList = this.help.contentDataList.filter(element => this.filterByType(element, search.filter.type));
+        if(search.filter) {
+            itemList = this.help.contentDataList.filter(element => this.filter(element, search.filter));
         }
 
         for(let i=0; i<itemList.length; i++) {
@@ -106,10 +130,13 @@ export class HelpService {
 	    	 { text: 'Latest Update', value: 'latest' }]
 	};
 
+    private help;
+
     service: FakeWebService;
 
     constructor() {
         this.service = new FakeWebService();
+        this.help = helpItemData;
     }
 
     getById(id: string): Observable<any> {
@@ -133,15 +160,20 @@ export class HelpService {
         return of(null);
     }
 
+    filterByType(result, types) {
+        if(types.video && result.type == 3) return true;
+        if(types.faq && result.type == 2) return true;
+        if(types.term && result.type == 1) return true;
+        return false;
+    }
+
     getData(search: SearchParameters): Observable<SearchResult> {
+
         this.lastSearchParams = search;
         let items = this.service.getData(search);
         items.subscribe( result => this.currentItems = result.items);
         return items;
     }
 
-    getItems() {
-
-    }
 
 }
