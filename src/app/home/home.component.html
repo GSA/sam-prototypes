@@ -2,12 +2,13 @@
   <!-- title/tiles/search section -->
   <div class="grid-row width-full">
     <div class="grid-col">
+      <div class="home-top">
       <!-- homepage title and seal -->
-      <div class="grid-row tablet:padding-y-2 home-top">
-        <div class="grid-col-fill tablet:padding-x-4">
+      <div class="grid-row flex-no-wrap tablet:padding-y-2">
+        <div class="grid-col-9 tablet:padding-x-4">
           <h1 class="text-base-dark homepage-title">SAM.gov is the official U.S. government system for:</h1>
         </div>
-        <div class="grid-col-auto">
+        <div class="grid-col margin-right-0 padding-right-0 width-full">
           <div class="sds-seal border-right-0">
             <i class="sds fa-flag fa-2x sds-seal__grey margin-y-1 text-secondary"></i>
             <div class="sds-seal__content">
@@ -16,19 +17,20 @@
             </div>
           </div>
         </div>
+        </div>
         <!-- homepage tiles -->
         <div class="grid-row padding-x-4 width-full">
           <div class="desktop-lg:grid-col-4 display-flex flex-justify-center">
             <div class="sds-tile sds-tile--lg">
               <a [routerLink]="['landing/entity']" class="sds-tile__content sds-tile--outline">
-                <div class="grid-row flex-justify-center margin-top-1">
+                <div class="grid-row flex-justify-center margin-top-1 width-full">
                   <i class="sds-tile__icon sds fa-building text-base"></i>
                   <div class="sds-tile__title">Entity Registration</div>
                 </div>
-                <div class="sds-tile__details grid-row padding-y-2">
+                <div class="sds-tile__details grid-row padding-y-2 width-full">
                   Register your entity to get started doing business with the federal government.
                 </div>
-                <div class="mobile-details padding-y-2">
+                <div class="mobile-details padding-y-2 width-full">
                   <button class="sds-button sds-button--icon">
                     <span class="fa-stack fa-2x">
                       <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
@@ -96,7 +98,7 @@
             </div>
           </div>
         </div>
-      </div>
+        </div>
       <!-- homepage get started and search -->
       <div class="grid-row padding-x-4 padding-bottom-4 home-bottom">
         <div class="tablet-lg:grid-col-4 display-flex flex-column maxw-mobile-lg mobile-lg:margin-left-4 outline-btn">
@@ -111,7 +113,7 @@
             </button>
           </div>
         </div>
-        <div class="tablet-lg:grid-col-fill display-flex flex-column mobile-lg:margin-left-4 desktop:margin-left-0">
+        <div class="tablet-lg:grid-col-7 display-flex flex-column mobile-lg:margin-left-4 desktop:margin-left-0">
           <h2 class="search-text margin-y-05 text-normal"> Already know what you want to find?</h2>
           <div class="sds-search margin-top-05">
             <form class="usa-search usa-search--small usa-search--inverse">
@@ -164,7 +166,7 @@
 
     </div>
     <!-- homepage video and freq. q's -->
-    <div class="tablet-lg:grid-col-fill desktop:margin-y-2 desktop:margin-right-2 margin-2 border-solid border-base-light border-width-1px">
+    <div class="tablet-lg:grid-col-6 desktop:margin-y-2 desktop:margin-right-2 margin-2 border-solid border-base-light border-width-1px">
       <div class="padding-2" style="background-color: #eff6fb;">
         <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">Have questions about SAM.gov?</a></h3>
       </div>
