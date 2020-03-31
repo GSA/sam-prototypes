@@ -1,25 +1,55 @@
-<div class="grid-row">
-	<h4><a [routerLink]="['/help']" class="usa-link"><i class="fa fa-caret-left fa-2x"></i>&nbsp;&nbsp;Back to Search Results</a></h4>
+<div class="usa-prose">
+	<div class="display-flex flex-row flex-align-center">
+		<a class="usa-link" [routerLink]="['/help']"><i class="fa fa-angle-left fa-2x margin-right-1"></i>
+            <span style="line-height: 2em;">Back to Search Results</span></a>
+	</div>
+	<p style="line-height: 2em;"><a class="usa-link" [routerLink]="['/help']">
+       <i class="fa fa-angle-left fa-2x margin-right-1"></i>
+            Back to Search Results</a>
+     </p>
+
+	<div class="grid-row">
+		<div class="grid-col-fill usa-prose margin-right-1">
+            <div class="grid-row">
+                <div class="grid-col-auto">
+                    <div class="margin-right-2 margin-y-3">
+                        <i class="sds fa-book fa-2x"></i>
+                    </div>
+                </div>
+                <div class="grid-col-fill">
+                    <h2>{{model.title}}</h2>
+                    <div class="display-properties">Latest Update:
+                        <b>{{ model.lastModifiedDate | date }}</b>
+                    </div>
+                </div>
+
+            </div>
+            <!--grid-row top-->
+            <div class="grid-row">
+                <div class="grid-col-auto">
+                    <div class="desktop:margin-left-6">
+                    	<p>{{model.description}}</p>
+                    </div>
+                </div>
+            </div>
+       </div>
+	</div>
+	  <div class="sds-button-row sds-button-row--circles">
+	    <div class="sds-button-col sds-button-col--left">
+	      <button id="back" class="sds-button--circle usa-button--secondary sds-button--lg"><i class="fa fa-angle-left"></i></button>
+	      <label for="back">Go to How many CFDA Numbers Does My Agency Have?</label>
+	    </div>
+	    <div class="sds-button-col">
+	      <button id="cancel" class="sds-button--circle usa-button--secondary sds-button--lg"><i class="fa fa-times"></i></button>
+	      <label for="cancel">Cancel</label>
+	    </div>
+	    <div class="sds-button-col">
+	      <button id="help" class="sds-button--circle usa-button--secondary sds-button--lg"><i class="fa fa-question"></i></button>
+	      <label for="help">Help</label>
+	    </div>
+	    <div class="sds-button-col sds-button-col--right">
+	      <button id="forward" class="sds-button--circle usa-button--secondary sds-button--lg"><i class="fa fa-angle-right"></i></button>
+	      <label for="forward">Go to What is an Assistance Listing?</label>
+	    </div>
 </div>
-<div class="grid-row">
-	<div class="grid-col" style="min-height: 20rem; margin-bottom: 2rem">
-		<h2>{{model.title}}</h2>
-		<p>Latest Update: <b>{{ model.lastModifiedDate | date }}</b></p>
-		<p>{{model.description}}
-	</div>
-</div>
-<div class="grid-row grid-gap">
-	<div class="grid-col-fill">
-	</div>
-	<div class="grid-col-auto">
-		<button class="sds-button--circle usa-button--secondary" (click)="previous()"><i class="fa fa-caret-left fa-2x"></i></button>
-	</div>
-	<div class="grid-col-auto">
-		<button [routerLink]="['/help']" class="sds-button--circle usa-button--secondary"><i class="fa fa-times fa-2x"></i></button>
-	</div>
-	<div>
-		<button class="sds-button--circle" (click)="next()"><i class="fa fa-caret-right fa-2x"></i></button>
-	</div>
-	<div class="grid-col-fill">
-	</div>
-</div>
+
