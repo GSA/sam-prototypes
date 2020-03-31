@@ -1,15 +1,15 @@
-<div class="grid-container">
+<div class="grid-container padding-0">
   <!-- header & search bar -->
-  <div class="grid-row contract-opportunities padding-x-9">
-    <div class="grid-col-fill margin-x-2 text-base">
-      <h1 class="font-sans-xl margin-top-3">Contract Opportunities</h1>
-      <p class="font-sans-md">This site is the official source of contracting opportunities from the federal government. Anyone interested in doing business with the government can use this system to research active opportunities.</p>
-      <h2 class="font-sans-lg margin-top-4 text-ink text-normal">Search Contract Opportunities</h2>
-      <div class="sds-search">
+  <div class="grid-row header-background desktop:padding-x-9 tablet:margin-bottom-3">
+    <div class="grid-col-fill margin-x-2 tablet-lg:margin-x-4 text-base">
+      <h1 class="font-sans-lg margin-top-3">Contract Opportunities</h1>
+      <p class="font-sans-md text-ink">This site is the official source of contracting opportunities from the federal government. Anyone interested in doing business with the government can use this system to research active opportunities.</p>
+      <h2 class="font-sans-lg margin-top-4 text-ink text-semibold">Search Contract Opportunities</h2>
+      <div class="sds-search--big maxw-tablet">
         <form class="usa-search usa-search--small">
           <div role="search" class="search">
             <label class="usa-sr-only" for="search-input">Search Here</label>
-            <input class="usa-input" id="search-input" type="search" name="search" placeholder="Enter a notice ID or keywords">
+            <input class="usa-input" id="search-input" type="search" name="search" placeholder="Search Here">
             <button class="usa-button" type="submit">
               <span class="usa-sr-only">Search</span>
             </button>
@@ -19,15 +19,15 @@
     </div>
   </div>
   <!-- accordion & links -->
-  <div class="grid-row contract-opps padding-x-9">
+  <div class="grid-row desktop:padding-x-4 tablet:margin-y-3">
 
-    <div class="usa-accordion margin-4">
-      <h3 class="usa-accordion__heading">
-        <button class="usa-accordion__button usa-accordion__block" aria-expanded="true" aria-controls="a1">
+    <div class="sds-accordion usa-accordion usa-accordion--bordered desktop:margin-x-9 tablet-lg:margin-2 margin-2">
+      <h3 class="usa-accordion__heading sds-accordion__heading">
+        <button class="usa-accordion__button usa-accordion__block border-top border-base-light" aria-expanded="false" aria-controls="a1">
           How to find opportunities to do business with the government
         </button>
       </h3>
-      <div id="a1" class="usa-accordion__content usa-prose">
+      <div id="a1" class="usa-accordion__content usa-prose" hidden>
         <!-- Get started links -->
         <h4 class="text-ink text-semibold font-sans-md">Get started searching contract opportunities</h4>
         <div class="padding-x-2 display-flex flex-column">
@@ -93,12 +93,12 @@
           </a>
         </div>
       </div>
-      <h3 class="usa-accordion__heading">
-        <button class="usa-accordion__button usa-accordion__block" aria-expanded="true" aria-controls="a2">
+      <h3 class="usa-accordion__heading sds-accordion__heading">
+        <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="a2">
           I am a federal employee working on contract opportunities
         </button>
       </h3>
-      <div id="a2" class="usa-accordion__content usa-prose">
+      <div id="a2" class="usa-accordion__content usa-prose" hidden>
         <!-- specialist/officer links -->
         <h4 class="text-ink text-semibold font-sans-md">As a Contracting Officer or Contracting Specialist, you may:</h4>
         <div class="padding-x-2 display-flex flex-column">
@@ -146,86 +146,90 @@
   <!-- reports/data & user account sections -->
   <div class="grid-row">
     <!-- reports and data -->
-      <div class="tablet:grid-col margin-2 padding-bottom-2 display-flex flex-column border-solid border-base-light border-width-1px">
-        <div class="padding-2" style="background-color: #eff6fb;">
-          <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">Reports and Data</a></h3>
-        </div>
+    <div class="tablet:grid-col sds-card">
+      <div class="sds-card__header">
+        <h3><a [routerLink]="['news']">Reports and Data</a></h3>
+      </div>
+      <div class="sds-card__body">
         <!-- contract opportunity report links -->
-        <h4 class="text-ink text-semibold font-sans-md padding-x-2 margin-bottom-1">Contract Opportunity Reports</h4>
-        <div class="display-flex flex-column padding-x-2">
+        <h4 class="sds-card__title">Contract Opportunity Reports</h4>
+        <div class="sds-card__links">
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>How to run a databank report</span>
+            How to run a databank report
           </a>
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-new-note text-base-dark margin-right-1"></i>
-            <span>Go to databank reports</span>
+            Go to databank reports
           </a>
         </div>
         <!-- contract opportunity data links -->
-        <h4 class="text-ink text-semibold font-sans-md padding-x-2 margin-bottom-1">Contract Opportunity Reports</h4>
-        <div class="display-flex flex-column padding-x-2">
+        <h4 class="sds-card__title">Contract Opportunity Reports</h4>
+        <div class="sds-card__links">
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Quick start guide for data services</span>
+            Quick start guide for data services
           </a>
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>How to use contract opportunities APIs</span>
+            How to use contract opportunities APIs
           </a>
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-file-chart-line text-base-dark margin-right-1"></i>
-            <span>Go to contract opportunities APIs</span>
+            Go to contract opportunities APIs
           </a>
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>How to use file extractions</span>
+            How to use file extractions
           </a>
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-download fa-rotate-270 text-base-dark margin-right-1"></i>
-            <span>Go to file extractions</span>
+            Go to file extractions
           </a>
           <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
             <i class="sds fa-flag text-base-dark margin-right-1"></i>
-            <span>Buy American Act Data</span>
+            Buy American Act Data
           </a>
         </div>
-
       </div>
+    </div>
     <!-- do I need a user account -->
-      <div class="tablet:grid-col margin-2 padding-bottom-2 display-flex flex-column border-solid border-base-light border-width-1px">
-        <div class="padding-2" style="background-color: #eff6fb;">
-          <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">Do I need a user account?</a></h3>
+    <div class="tablet:grid-col sds-card">
+      <div class="sds-card__header">
+        <h3><a [routerLink]="['news']">Do I need a user account?</a></h3>
+      </div>
+      <div class="grid-row">
+        <div class="tablet:grid-col padding-2 padding-bottom-0 text-base">
+          <p class="margin-0 line-height-sans-5">While you don’t need a user account to view contract opportunities, you will need one to access additional capabilities available on SAM. With a Login.gov account, you can sign in to multiple government websites,
+            including SAM.gov, with the same username and password. With a user account you may</p>
+          <ul class="margin-top-05">
+            <li>Saved searches</li>
+            <li>Follow changes and opportunities</li>
+            <li>Join interested vendor lists</li>
+          </ul>
         </div>
-        <div class="grid-row">
-          <div class="grid-col padding-2 text-base">
-        <p class="margin-0">While you don’t need a user account to view contract opportunities, you will need one to access additional capabilities available on SAM. With a Login.gov account, you can sign in to multiple government websites, including SAM.gov, with the same username and password.  With a user account you may</p>
-        <ul class="margin-top-05">
-          <li>Saved searches</li>
-          <li>Follow changes and opportunities</li>
-          <li>Join interested vendor lists</li>
-        </ul>
-        </div>
-        <div class="grid-col-5 padding-2">
+        <div class="tablet:grid-col-5 padding-2">
           <!-- paste video code here -->
-          <img src="assets/img/home-video.png" style="height:200px;">
-          <span class="font-sans-3xs text-base">Video on how to create a login.gov account</span>
+          <img src="assets/img/home-video.png" style="width:100%;" class="text-center">
+          <div class="font-sans-3xs text-base text-center">Video on how to create a login.gov account</div>
         </div>
-        </div>
-        <div class="display-flex flex-column padding-x-2">
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+      </div>
+      <div class="sds-card__body padding-top-0">
+        <div class="sds-card__links">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Quick start guide for creating a login.gov account</span>
+            Quick start guide for creating a login.gov account
           </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-book text-base-dark margin-right-1"></i>
-            <span>Glossary terms</span>
+            Glossary terms
           </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+          <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-question text-base-dark margin-right-1"></i>
-            <span>Frequently asked quesions</span>
+            Frequently asked quesions
           </a>
         </div>
       </div>
+    </div>
   </div>
 </div>

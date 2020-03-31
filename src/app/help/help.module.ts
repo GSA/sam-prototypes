@@ -5,21 +5,19 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlySelectModule } from '@ngx-formly/core/select';
-
-import { SdsSubheaderModule, SearchListServiceModule  } from '@gsa-sam/layouts';  
+import { SdsSubheaderModule  } from '@gsa-sam/layouts';  
 
 import {
 	SdsSideNavigationModule,
   	SdsToolbarModule,
   	SdsAccordionModule,
   	SdsPageModule,
-  	SdsSearchModule
+    SdsSearchModule
   } from '@gsa-sam/components';
 import { SdsFiltersModule, SDSFormlyUpdateComunicationService } from '@gsa-sam/sam-formly';
 
 import { HelpRoutingModule } from './help-routing.module';
 import { HelpComponent } from './help.component';
-import { HelpItemModule } from './help-item/help-item.module';
 import { HelpServiceModule } from './service/service.module';
 
 @NgModule({
@@ -36,13 +34,12 @@ import { HelpServiceModule } from './service/service.module';
   	SdsToolbarModule,
   	SdsAccordionModule,
   	SdsPageModule,
-  	SearchListServiceModule,
-  	SdsSearchModule,
-  	HelpItemModule,
+    SdsSearchModule,
   	HelpServiceModule,
     HelpRoutingModule
   ],
   declarations: [HelpComponent],
-  exports: []
+  exports: [],
+  providers: [SDSFormlyUpdateComunicationService]
 })
 export class HelpModule { }

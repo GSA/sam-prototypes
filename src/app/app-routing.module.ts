@@ -69,7 +69,7 @@ const routes: Routes = [
   {
     path: 'search',
 
-    loadChildren: './search/sam-search.module#SamSearchModule',
+    loadChildren: './search/search-home/search-home.module#SearchHomeModule',
     data: {
       id: "search"
     }
@@ -100,13 +100,6 @@ const routes: Routes = [
     loadChildren: './about/about.module#AboutModule',
     data: {
       id: "help"
-    }
-  },
-  {
-    path: 'system-account/:id',
-    loadChildren: './system-account/system-account.module#SystemAccountModule',
-    data: {
-      id: "workspace"
     }
   },
   {

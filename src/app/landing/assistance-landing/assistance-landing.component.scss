@@ -1,0 +1,9 @@
+.header-background {
+  background: url("/assets/img/contract-opps.png") no-repeat right bottom;
+  background-size: cover;
+  padding-bottom: 35px;
+
+  @media only screen and (max-width: 500px){
+    background: url("/assets/img/contract-opps.png") no-repeat 90% 100%;
+  }
+}

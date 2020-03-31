@@ -1,5 +1,4 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { WorkspaceModelService } from '../service/workspace-model.service';
 
 @Component({
   selector: 'app-opportunities',
@@ -9,13 +8,7 @@ import { WorkspaceModelService } from '../service/workspace-model.service';
 })
 export class OpportunitiesComponent implements OnInit {
 
-  constructor(public workspaceModel: WorkspaceModelService) {
-  	this.workspaceModel.title = "Contract Opportunities";
-  	this.workspaceModel.page = 'contractopportunities';
-  	this.workspaceModel.view = 'open';
-  	this.workspaceModel.showNav = false;
-  	this.workspaceModel.showFilters = true;
-    this.workspaceModel.template = null;
+  constructor() {
   }
 
   ngOnInit() {

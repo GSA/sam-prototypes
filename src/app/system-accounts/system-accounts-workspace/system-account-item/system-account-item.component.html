@@ -1,0 +1,40 @@
+<div class="grid-row flex-align-start">
+    <div class="tablet:grid-col-fill">
+      <h3 class="font-sans-xs margin-y-0">
+        <a class="usa-link" [routerLink]="['/']">
+          {{model.accountName}}
+        </a>
+      </h3>
+      <p *ngIf="model.systemDescription && model.systemDescription.length > 0">
+      			{{model.systemDescription.replace(no_html, '')}}
+      </p>
+      <div class="grid-row grid-gap">
+      	<div *ngIf="model.organization" class="grid-col-6">
+			<div class="sds-static--label">Organization</div>
+	        <div class="sds-static">{{model.organization.organizationName}}</div>
+      </div>
+		<div *ngIf="model.domains" class="grid-col-6">
+			<div class="sds-static--label">Domains</div>
+	        <div class="sds-static">{{model.domains.join(', ')}}</div>
+      	</div>
+      </div>
+    </div>
+    <div class="tablet:grid-col-auto">
+      <span class="sds-type--label-title">Status</span>
+      <span *ngIf="model.status == 'Active'" class="sds-tag sds-tag--outline">
+        <i class="sds-status sds-status--sm sds-status--green"></i>Active
+      </span>
+      <span *ngIf="model.status == 'Inactive'" class="sds-tag sds-tag--outline">
+        <i class="sds-status sds-status--sm sds-status--red"></i>Inactive
+      </span>
+    </div>
+    <div class="grid-col-auto">
+        <span class="sds-type--label-title">Expiration Date</span>
+        <span class="sds-tag sds-tag--outline flex-justify-center">{{model.expiresDate | date }}</span>
+    </div>
+    
+    <div class="action-menu grid-col-auto margin-top-1">
+      <sds-actions-menu [model]="menu" (clicks)="log($event)"></sds-actions-menu>
+    </div>
+  </div>
+

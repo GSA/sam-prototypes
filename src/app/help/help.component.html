@@ -11,7 +11,7 @@
 
   <!-- =============== SEARCH =============== -->
   <sds-search
-    (term)="log($event)"
+    (term)="newSearch($event)"
     parentSelector=".grid-row"
     placeholder="Entity an ID, name, or keyword"
     inputClass="width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block"
@@ -30,20 +30,17 @@
     <sds-toolbar class="tablet:grid-col-auto" #toolbar="sdsToolbar" [expanded]="true">
       <sds-accordion>
         <sds-accordion-item [expanded]="false">
-          <sds-accordion-item-header>Show Results For</sds-accordion-item-header>
+          <sds-accordion-item-header>Select Domain</sds-accordion-item-header>
           <sds-side-navigation #sideNav [model]="sideNavModel"></sds-side-navigation>
         </sds-accordion-item>
-        <sds-filters [form]="form" [fields]="fields" [model]="filterModel" (filterChange)="filterChange$.next($event)"></sds-filters>
+        <sds-accordion-item [expanded]="true">
+          <sds-accordion-item-header>Filter By</sds-accordion-item-header>
+          <sds-filters [form]="form" [fields]="filtersService.config" [model]="filtersService.model" (filterChange)="filterChange$.next($event)"></sds-filters>
+        </sds-accordion-item>
       </sds-accordion>
     </sds-toolbar>
     <div class="sds-page__content tablet:grid-col margin-0">
-      <search-list-layout [service]="service" [configuration]="service.configuration">
-          <ng-template #resultContent let-item>
-              <div>
-                  <help-item [model]="item"></help-item>
-              </div>
-          </ng-template>
-      </search-list-layout>
+      <router-outlet></router-outlet>
     </div>
   </sds-page-options>
 </sds-page>

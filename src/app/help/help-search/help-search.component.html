@@ -1,0 +1,7 @@
+  <search-list-layout [service]="service" [configuration]="service.configuration">
+      <ng-template #resultContent let-item>
+          <div>
+              <help-item [model]="item"></help-item>
+          </div>
+      </ng-template>
+  </search-list-layout>
