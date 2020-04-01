@@ -56,7 +56,7 @@ export class SamModelService {
     ],
     home: {
       text: 'Home',
-      logo: this.locationStrategy.getBaseHref() + 'assets/img/logo-sam.svg',
+      logo: this.locationStrategy.getBaseHref() + 'assets/img/beta_samgov_horizontal.svg',
       route: '/',
       id: 'home',
       mode: NavigationMode.INTERNAL,

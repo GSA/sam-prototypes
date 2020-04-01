@@ -19,17 +19,16 @@
         </div>
         </div>
         <!-- homepage tiles -->
-        <div class="grid-row padding-x-4 padding-bottom-4 width-full">
+        <div class="grid-row padding-x-4 width-full">
           <div class="desktop-lg:grid-col-4 display-flex flex-justify-center">
             <div class="sds-tile sds-tile--lg">
               <a [routerLink]="['landing/entity']" class="sds-tile__content sds-tile--outline">
                 <div class="grid-row flex-justify-center margin-top-1 width-full">
                   <i class="sds-tile__icon sds fa-building text-base"></i>
-                  <div class="sds-tile__title">Contract Opportunities</div>
+                  <div class="sds-tile__title">Entity Registration</div>
                 </div>
-                <div class="sds-tile__details grid-row text-left padding-y-2 width-full">
-                  This site is the official source of contracting opportunities from the federal government. Anyone
-                  interested in doing business with the government can use this system to research active opportunities.
+                <div class="sds-tile__details grid-row padding-y-2 width-full">
+                  Register your entity to get started doing business with the federal government.
                 </div>
                 <div class="mobile-details padding-y-2 width-full">
                   <button class="sds-button sds-button--icon">
@@ -37,54 +36,64 @@
                       <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
                       <i class="sds fa-folder fa-stack-1x text-base fa-2x"></i>
                     </span>
-                    <span class="sds-button--icon__title">Search Opportunities</span>
+                    <span class="sds-button--icon__title">Register Entity</span>
+                  </button>
+                  <button class="sds-button sds-button--icon">
+                    <span class="fa-stack fa-2x">
+                      <i class="sds fa-pentagon fa-stack-2x text-primary-lighter fa-1x"></i>
+                      <i class="sds fa-check-circle fa-stack-1x text-base fa-2x"></i>
+                    </span>
+                    <span class="sds-button--icon__title">Check Status</span>
                   </button>
                 </div>
-                <div class="padding-x-2 padding-bottom-2 text-right learn-more-link">
-                  <div class="usa-link">Learn More</div>
-                </div>
-
               </a>
             </div>
           </div>
           <div class="desktop-lg:grid-col-fill tiles padding-x-2">
-
+            <!-- contract opportunities tile -->
+            <div class="sds-tile">
+              <a [routerLink]="['landing/opportunities']" class="sds-tile__content sds-tile--outline">
+                <i class="sds-tile__icon sds fa-open-doors text-base"></i>
+                <div class="sds-tile__title">Contract Opportunities</div>
+                <div class="sds-tile__details">(was fbo.gov)</div>
+              </a>
+            </div>
+            <!-- contract datat reports tile-->
             <div class="sds-tile">
               <a [routerLink]="['landing/opportunities']" class="sds-tile__content sds-tile--outline">
                 <i class="sds-tile__icon sds fa-file-chart-line text-base"></i>
-                <div class="sds-tile__text">
-                  <div class="sds-tile__title">Contract Data Reports</div>
-                  <div class="sds-tile__details">(was fpds.gov reports)</div>
-                </div>
+                <div class="sds-tile__title">Contract Data</div>
+                <div class="sds-tile__details">(only reports from FPDS)</div>
+              </a>
+            </div>
+            <!-- entity compliance tile-->
+            <div class="sds-tile">
+              <a [routerLink]="['landing/compliance']" class="sds-tile__content sds-tile--outline">
+                <i class="sds-tile__icon sds fa-new-version text-base"></i>
+                <div class="sds-tile__title">Entity Compliance</div>
               </a>
             </div>
             <!-- assistance listing tile -->
             <div class="sds-tile">
               <a [routerLink]="['landing/assistance']" class="sds-tile__content sds-tile--outline">
                 <i class="sds-tile__icon sds fa-tag text-base"></i>
-                <div class="sds-tile__text">
-                  <div class="sds-tile__title">Assistance Listings</div>
-                  <div class="sds-tile__details">(was cfda.gov)</div>
-                </div>
+                <div class="sds-tile__title">Assistance Listings</div>
+                <div class="sds-tile__details">(was cfda.gov)</div>
               </a>
             </div>
             <!-- wage determinations tile -->
             <div class="sds-tile">
               <a [routerLink]="['landing/wages']" class="sds-tile__content sds-tile--outline">
                 <i class="sds-tile__icon sds fa-invoice text-base"></i>
-                <div class="sds-tile__text">
-                  <div class="sds-tile__title">Wage Determinations</div>
-                  <div class="sds-tile__details">(wdol.gov)</div>
-                </div>
+                <div class="sds-tile__title">Wage Determinations</div>
+                <div class="sds-tile__details">(was wdol.gov)</div>
               </a>
             </div>
             <!-- federal hierarchy tile -->
             <div class="sds-tile">
               <a [routerLink]="['landing/hierarchy']" class="sds-tile__content sds-tile--outline">
                 <i class="sds-tile__icon sds fa-users text-base"></i>
-                <div class="sds-tile__text">
-                  <div class="sds-tile__title">Federal Hierarchy</div>
-                </div>
+                <div class="sds-tile__title">Federal Hierarchy</div>
               </a>
             </div>
           </div>
@@ -93,7 +102,7 @@
       <!-- homepage get started and search -->
       <div class="grid-row padding-x-4 padding-bottom-4 home-bottom">
         <div class="tablet-lg:grid-col-4 display-flex flex-column maxw-mobile-lg mobile-lg:margin-left-4 outline-btn">
-          <h2 class="home-text margin-y-05 text-normal"> New to beta.SAM.gov?</h2>
+          <h2 class="home-text margin-y-05 text-normal"> New to SAM.gov?</h2>
           <div class="sds-button--outline">
             <button class="sds-button sds-button--icon text-center">
               <span class="fa-stack fa-2x">
@@ -136,7 +145,7 @@
     <!-- news list -->
     <div class="tablet-lg:grid-col-5 desktop:margin-y-2 desktop:margin-left-2 margin-2 display-flex flex-column border-solid border-base-light border-width-1px news">
       <div class="padding-2" style="background-color: #eff6fb;">
-        <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">What's new at beta.SAM.gov?</a></h3>
+        <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">What's new at SAM.gov?</a></h3>
       </div>
       <div class="sds-feed padding-2">
         <div *ngFor="let news of newsList" class="event margin-0">
@@ -159,14 +168,14 @@
     <!-- homepage video and freq. q's -->
     <div class="tablet-lg:grid-col-6 desktop:margin-y-2 desktop:margin-right-2 margin-2 border-solid border-base-light border-width-1px">
       <div class="padding-2" style="background-color: #eff6fb;">
-        <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">Have questions about beta.SAM.gov?</a></h3>
+        <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">Have questions about SAM.gov?</a></h3>
       </div>
       <div class="grid-row home-video">
         <div class="grid-col-fill display-flex flex-column">
           <div class="padding-x-2 display-flex flex-column">
             <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
               <i class="sds fa-video-square text-base fa-2x margin-x-2"></i>
-              <span>Videos on beta.SAM.gov</span>
+              <span>Videso on SAM.gov</span>
             </a>
             <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
               <i class="sds fa-book text-base fa-2x margin-x-2"></i>

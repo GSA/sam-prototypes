@@ -24,6 +24,13 @@ const routes: Routes = [
     }
   },
   {
+    path: 'alt',
+    loadChildren: './home-alt/home-alt.module#HomeAltModule',
+    data: {
+      id: "homealt"
+    }
+  },
+  {
     path: 'workspace',
     loadChildren: './workspace/workspace.module#WorkspaceModule',
     data: {

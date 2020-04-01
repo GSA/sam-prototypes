@@ -2,34 +2,6 @@
   padding: 0 !important;
 }
 
-.grid-row {
-  display: -webkit-box;
-  display: -ms-flexbox!important;
-  display: flex;
-}
-
-.grid-col-auto {
-  -ms-flex: 0 0 auto!important;
-  //-webkit-box-flex: 1!important;
-  //-ms-flex: 1 0 0px!important;
-  //flex: 1 0 0!important;
-  width: auto!important;
-  max-width: 100%!important;
-}
-.grid-col-fill {
-  //-webkit-box-flex: 1!important;
-  -ms-flex: 1 0 0px!important;
-  // flex: 1 0 0!important;
-  // -webkit-box-flex: 0!important;
-  // -ms-flex: 0 0 auto!important;
-  // flex: 0 0 auto!important;
-  // -webkit-box-flex: 1!important;
-  // -ms-flex: 1 0 0px!important;
-  // flex: 1 0 0!important;
-  width: auto!important;
-  max-width: 100%!important;
-}
-
 .home-top {
   background: url("/assets/img/Slice 1.png") no-repeat;
   background-size: 100%;
@@ -42,14 +14,6 @@
   background-size: 100%;
   background-position: right top;
   background-color: #8d8563;
-
-  .outline-btn {
-    flex-direction: column !important;
-    .sds-button--outline {
-      align-self: center;
-      display: table;
-    }
-  }
 }
 
 .homepage-title {
@@ -78,7 +42,6 @@
 }
 
 .sds-tile--lg {
-  overflow: hidden;
   .sds-tile__content {
     width: 100% !important;
     display: flex !important;
@@ -98,10 +61,6 @@
       .sds-button--icon {
         margin: auto 10px 10px 10px !important;
       }
-    }
-    .learn-more-link {
-      min-width: 100%;
-      font-weight: 600;
     }
   }
 }
@@ -130,6 +89,14 @@
   .sds-search {
     padding: 8px;
     background-color: white;
+  }
+
+  .outline-btn {
+    flex-direction: column !important;
+
+    .sds-button--outline {
+      align-self: center;
+    }
   }
 
   .sds-search {
@@ -179,7 +146,7 @@
     float: left;
   }
 
-  .sds-tile:nth-child(2n + 1) {
+  .sds-tile:nth-child(3n+1) {
     clear: left;
   }
 
@@ -188,39 +155,15 @@
   }
 }
 @media only screen and (max-width: 1200px) {
-  .sds-tile__content {
-    display: flex;
-    flex-direction: row;
-    text-align: left;
-    align-items: center;
-
-  }
   .tiles {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
     .sds-tile {
-      flex: 0 1 40%;
+      flex: 0 1 25%;
       display: flex;
       justify-content: center;
     }
   }
-}
-@media only screen and (max-width: 1200px) {
-  .tiles .sds-tile__content.sds-tile--outline {
-    // height: 80px;
-    width: 100%;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .tiles .sds-tile__content.sds-tile--outline {
-    height: auto;
-  }
-  .sds-tile__text {
-    padding: 0.4em 0px;
-  }
-}
-.sds-tile__text {
-  flex-basis: 75%;
 }
