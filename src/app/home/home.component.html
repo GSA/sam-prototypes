@@ -27,7 +27,7 @@
                   <i class="sds-tile__icon sds fa-building text-base"></i>
                   <div class="sds-tile__title">Contract Opportunities</div>
                 </div>
-                <div class="sds-tile__details grid-row text-left padding-y-2">
+                <div class="sds-tile__details grid-row text-left padding-y-2 width-full">
                   This site is the official source of contracting opportunities from the federal government. Anyone
                   interested in doing business with the government can use this system to research active opportunities.
                 </div>
@@ -120,8 +120,7 @@
               </select>
               <div role="search" class="width-full">
                 <label class="usa-sr-only" for="inverse-search-dropdown">Search Here</label>
-                <input class="usa-input" id="inverse-search-dropdown" type="search" name="search"
-                  placeholder="Search Here">
+                <input class="usa-input" id="inverse-search-dropdown" type="search" name="search" placeholder="Search Here">
                 <button class="usa-button" type="submit">
                   <span class="usa-sr-only">Search</span>
                 </button>
@@ -135,11 +134,9 @@
   <!-- homepage video and news list section-->
   <div class="grid-row width-full">
     <!-- news list -->
-    <div
-      class="tablet-lg:grid-col-5 desktop:margin-y-2 desktop:margin-left-2 margin-2 display-flex flex-column border-solid border-base-light border-width-1px news">
+    <div class="tablet-lg:grid-col-5 desktop:margin-y-2 desktop:margin-left-2 margin-2 display-flex flex-column border-solid border-base-light border-width-1px news">
       <div class="padding-2" style="background-color: #eff6fb;">
-        <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">What's
-            new at beta.SAM.gov?</a></h3>
+        <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">What's new at beta.SAM.gov?</a></h3>
       </div>
       <div class="sds-feed padding-2">
         <div *ngFor="let news of newsList" class="event margin-0">
@@ -160,11 +157,9 @@
 
     </div>
     <!-- homepage video and freq. q's -->
-    <div
-      class="tablet-lg:grid-col-fill desktop:margin-y-2 desktop:margin-right-2 margin-2 border-solid border-base-light border-width-1px">
+    <div class="tablet-lg:grid-col-6 desktop:margin-y-2 desktop:margin-right-2 margin-2 border-solid border-base-light border-width-1px">
       <div class="padding-2" style="background-color: #eff6fb;">
-        <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">Have
-            questions about beta.SAM.gov?</a></h3>
+        <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">Have questions about beta.SAM.gov?</a></h3>
       </div>
       <div class="grid-row home-video">
         <div class="grid-col-fill display-flex flex-column">
@@ -181,8 +176,7 @@
         </div>
         <!-- paste video code here -->
         <div class="grid-col padding-top-2 text-center">
-          <div class="video-code"
-            style="height: 120px; width: 200px; margin: auto; background-image: url('assets/img/home-video.png'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+          <div class="video-code" style="height: 120px; width: 200px; margin: auto; background-image: url('assets/img/home-video.png'); background-size: cover; background-repeat: no-repeat; background-position: center;">
           </div>
           <span class="text-semibold text-base">Watch our welcome video</span>
         </div>
