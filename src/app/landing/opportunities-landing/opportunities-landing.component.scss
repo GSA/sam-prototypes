@@ -1,3 +1,5 @@
+/* autoprefixer grid: autoplace */
+
 .header-background {
   background: url("/assets/img/contract-opps.png") no-repeat right bottom;
   background-size: cover;
@@ -5,5 +7,15 @@
 
   @media only screen and (max-width: 500px){
     background: url("/assets/img/contract-opps.png") no-repeat 90% 100%;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .tablet\:grid-col {
+    -webkit-box-flex: 1 !important;
+    -ms-flex: 1 0 0px !important;
+    flex: 1 0 0 !important;
+    width: auto !important;
+    max-width: 100% !important;
   }
 }

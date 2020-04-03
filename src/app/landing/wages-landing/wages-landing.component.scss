@@ -12,3 +12,13 @@
     margin: auto 4px;
   }
 }
+
+.tablet:grid-col,
+.tablet:grid-col-auto,
+.tablet:grid-col-fill {
+  -webkit-box-flex: 1 !important;
+  -ms-flex: 1 0 0 !important;
+  flex: 1 0 0 !important;
+  width: auto !important;
+  max-width: 100% !important;
+}

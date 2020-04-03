@@ -144,9 +144,10 @@
 
   </div>
   <!-- reports/data & user account sections -->
-  <div class="grid-row">
+  <div class="grid-container">
+  <div class="grid-row flex-justify-center">
     <!-- reports and data -->
-    <div class="tablet:grid-col sds-card">
+    <div class="tablet:grid-col sds-card" style="flex: 1 0 0px; -ms-flex: 1 0 0px;">
       <div class="sds-card__header">
         <h3><a [routerLink]="['news']">Reports and Data</a></h3>
       </div>
@@ -194,24 +195,26 @@
       </div>
     </div>
     <!-- do I need a user account -->
-    <div class="tablet:grid-col sds-card">
+    <div class="tablet:grid-col sds-card" style="flex: 1 0 0px; -ms-flex: 1 0 0px;">
       <div class="sds-card__header">
         <h3><a [routerLink]="['news']">Do I need a user account?</a></h3>
       </div>
-      <div class="grid-row">
-        <div class="tablet:grid-col padding-2 padding-bottom-0 text-base">
-          <p class="margin-0 line-height-sans-5">While you don’t need a user account to view contract opportunities, you will need one to access additional capabilities available on SAM. With a Login.gov account, you can sign in to multiple government websites,
-            including SAM.gov, with the same username and password. With a user account you may</p>
-          <ul class="margin-top-05">
-            <li>Saved searches</li>
-            <li>Follow changes and opportunities</li>
-            <li>Join interested vendor lists</li>
-          </ul>
-        </div>
-        <div class="tablet:grid-col-5 padding-2">
-          <!-- paste video code here -->
-          <img src="assets/img/home-video.png" style="width:100%;" class="text-center">
-          <div class="font-sans-3xs text-base text-center">Video on how to create a login.gov account</div>
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="tablet:grid-col padding-2 padding-bottom-0 text-base">
+            <p class="margin-0 line-height-sans-5">While you don’t need a user account to view contract opportunities, you will need one to access additional capabilities available on SAM. With a Login.gov account, you can sign in to multiple government websites,
+              including SAM.gov, with the same username and password. With a user account you may</p>
+            <ul class="margin-top-05">
+              <li>Saved searches</li>
+              <li>Follow changes and opportunities</li>
+              <li>Join interested vendor lists</li>
+            </ul>
+          </div>
+          <div class="tablet:grid-col-5 padding-2">
+            <!-- paste video code here -->
+            <img src="assets/img/home-video.png" style="width:100%;" class="text-center">
+            <div class="font-sans-3xs text-base text-center">Video on how to create a login.gov account</div>
+          </div>
         </div>
       </div>
       <div class="sds-card__body padding-top-0">
@@ -231,5 +234,6 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>
