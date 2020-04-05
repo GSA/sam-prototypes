@@ -2,6 +2,34 @@
   padding: 0 !important;
 }
 
+.grid-row {
+  display: -webkit-box;
+  display: -ms-flexbox!important;
+  display: flex;
+}
+
+.grid-col-auto {
+  -ms-flex: 0 0 auto!important;
+  //-webkit-box-flex: 1!important;
+  //-ms-flex: 1 0 0px!important;
+  //flex: 1 0 0!important;
+  width: auto!important;
+  max-width: 100%!important;
+}
+.grid-col-fill {
+  //-webkit-box-flex: 1!important;
+  -ms-flex: 1 0 0px!important;
+  // flex: 1 0 0!important;
+  // -webkit-box-flex: 0!important;
+  // -ms-flex: 0 0 auto!important;
+  // flex: 0 0 auto!important;
+  // -webkit-box-flex: 1!important;
+  // -ms-flex: 1 0 0px!important;
+  // flex: 1 0 0!important;
+  width: auto!important;
+  max-width: 100%!important;
+}
+
 .home-top {
   background: url("/assets/img/Slice 1.png") no-repeat;
   background-size: 100%;
@@ -14,6 +42,14 @@
   background-size: 100%;
   background-position: right top;
   background-color: #8d8563;
+
+  .outline-btn {
+    flex-direction: column !important;
+    .sds-button--outline {
+      align-self: center;
+      display: table;
+    }
+  }
 }
 
 .homepage-title {
@@ -42,6 +78,7 @@
 }
 
 .sds-tile--lg {
+  overflow: hidden;
   .sds-tile__content {
     width: 100% !important;
     display: flex !important;
@@ -89,14 +126,6 @@
   .sds-search {
     padding: 8px;
     background-color: white;
-  }
-
-  .outline-btn {
-    flex-direction: column !important;
-
-    .sds-button--outline {
-      align-self: center;
-    }
   }
 
   .sds-search {
