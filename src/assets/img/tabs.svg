@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="792px" height="620px" viewBox="0 0 792 620" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>Before you get started</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="760" height="588" rx="30"></rect>
+        <filter x="-3.3%" y="-3.9%" width="106.6%" height="108.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.105741914 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-3">
+            <stop stop-color="#E3F5E1" offset="0%"></stop>
+            <stop stop-color="#70E17B" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-109.4%" y="-109.4%" width="318.8%" height="318.8%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.05 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-109.4%" y="-109.4%" width="318.8%" height="318.8%" filterUnits="objectBoundingBox" id="filter-5">
+            <feOffset dx="0" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.05 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-109.4%" y="-109.4%" width="318.8%" height="318.8%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="0" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.05 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-109.4%" y="-109.4%" width="318.8%" height="318.8%" filterUnits="objectBoundingBox" id="filter-7">
+            <feOffset dx="0" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.05 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-8" x="0" y="0" width="696" height="328" rx="10"></rect>
+        <filter x="-0.6%" y="-1.2%" width="101.1%" height="102.4%" filterUnits="objectBoundingBox" id="filter-9">
+            <feGaussianBlur stdDeviation="3.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.117647059   0 0 0 0 0.294117647   0 0 0 0 0.776470588  0 0 0 0.15 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <polygon id="path-10" points="6.875e-05 0 22 0 22 21.9999312 6.875e-05 21.9999312"></polygon>
+        <filter x="-109.4%" y="-109.4%" width="318.8%" height="318.8%" filterUnits="objectBoundingBox" id="filter-12">
+            <feOffset dx="0" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.05 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Entity-Registration-Home" transform="translate(-128.000000, -286.000000)">
+            <g id="Tiles" transform="translate(144.000000, 300.000000)">
+                <g id="Before-you-get-started">
+                    <g id="Rectangle-Copy" opacity="0.8">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use stroke="#FFFFFF" stroke-width="3" fill="#EFF6FB" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <g id="Group-12" transform="translate(32.000000, 32.000000)" fill="#454540" font-family="Helvetica" font-weight="normal">
+                        <text id="Before-You-Get-Start" font-size="20" line-spacing="28">
+                            <tspan x="0" y="19">Before You Get Started</tspan>
+                        </text>
+                        <text id="Before-you-start-you" font-size="16" line-spacing="20" letter-spacing="0.15">
+                            <tspan x="0" y="51">Before you start your registration, there are a few steps you must complete first. Review these </tspan>
+                            <tspan x="0" y="71">steps to help ensure you set aside enough time to complete your registration.</tspan>
+                        </text>
+                    </g>
+                    <g id="step-process" transform="translate(32.000000, 132.000000)">
+                        <path d="M7,0 L657.065352,0 C659.040319,-9.62860648e-14 660.923389,0.834284732 662.250245,2.29714038 L692.380192,35.5153424 C694.439226,37.7854229 694.456456,41.2423951 692.420153,43.5328874 L662.092552,77.6462377 C660.761763,79.1431472 658.853494,79.9982843 656.850564,79.995287 L6.98952489,79.0228051 C3.12762612,79.017026 6.69019566e-15,75.8847161 0,72.022813 L0,7 C-4.73447626e-16,3.13400675 3.13400675,7.10171439e-16 7,0 Z" id="Rectangle" fill="url(#linearGradient-3)"></path>
+                        <g id="Group-4-Copy" transform="translate(312.000000, 0.000000)" stroke="#F3F8FC" stroke-linecap="square">
+                            <line x1="36" y1="40" x2="0.166666667" y2="79.7560976" id="Line"></line>
+                            <line x1="36" y1="40" x2="0.166666667" y2="0.75" id="Line-Copy"></line>
+                        </g>
+                        <g id="Group-4-Copy-3" transform="translate(486.000000, 0.000000)" stroke="#F3F8FC" stroke-linecap="square">
+                            <path d="M36,40 L0.166666667,79.7560976 M36,40 L0.166666667,0.75" id="Combined-Shape"></path>
+                        </g>
+                        <g id="Group-4-Copy-2" transform="translate(138.000000, 0.000000)" stroke="#F3F8FC" stroke-linecap="square">
+                            <line x1="36" y1="40" x2="0.166666667" y2="79.7560976" id="Line"></line>
+                            <line x1="36" y1="40" x2="0.166666667" y2="0.75" id="Line-Copy"></line>
+                        </g>
+                        <g id="Group-2-Copy-10" filter="url(#filter-4)" transform="translate(8.000000, 24.000000)">
+                            <circle id="Oval" stroke="#112F4E" fill="#FFFFFF" cx="16" cy="16" r="15.5"></circle>
+                            <text id="1" font-family="Helvetica" font-size="15.6" font-weight="normal" line-spacing="21.6" letter-spacing="-0.120000002" fill="#112F4E">
+                                <tspan x="12" y="20">1</tspan>
+                            </text>
+                        </g>
+                        <g id="Group-2-Copy-11" filter="url(#filter-5)" transform="translate(182.000000, 24.000000)">
+                            <circle id="Oval" stroke="#112F4E" fill="#FFFFFF" cx="16" cy="16" r="15.5"></circle>
+                            <text id="2" font-family="Helvetica" font-size="15.6" font-weight="normal" line-spacing="21.6" letter-spacing="-0.120000002" fill="#112F4E">
+                                <tspan x="12" y="20">2</tspan>
+                            </text>
+                        </g>
+                        <g id="Group-2-Copy-12" filter="url(#filter-6)" transform="translate(356.000000, 24.000000)">
+                            <circle id="Oval" stroke="#112F4E" fill="#FFFFFF" cx="16" cy="16" r="15.5"></circle>
+                            <text id="3" font-family="Helvetica" font-size="15.6" font-weight="normal" line-spacing="21.6" letter-spacing="-0.120000002" fill="#112F4E">
+                                <tspan x="12" y="20">3</tspan>
+                            </text>
+                        </g>
+                        <g id="Group-2-Copy-13" filter="url(#filter-7)" transform="translate(530.000000, 24.000000)">
+                            <circle id="Oval" stroke="#112F4E" fill="#FFFFFF" cx="16" cy="16" r="15.5"></circle>
+                            <text id="4" font-family="Helvetica" font-size="15.6" font-weight="normal" line-spacing="21.6" letter-spacing="-0.120000002" fill="#112F4E">
+                                <tspan x="12" y="20">4</tspan>
+                            </text>
+                        </g>
+                        <text id="Get-a-Login.gov-Acco" font-family="Helvetica" font-size="14" font-weight="normal" fill="#112F4E">
+                            <tspan x="48" y="38">Get a Login.gov </tspan>
+                            <tspan x="48" y="55">Account</tspan>
+                        </text>
+                        <text id="Request-a-DUNS-Numbe" font-family="Helvetica" font-size="14" font-weight="normal" fill="#112F4E">
+                            <tspan x="222" y="36">Request a </tspan>
+                            <tspan x="222" y="53">DUNS </tspan>
+                            <tspan x="222" y="70">Number</tspan>
+                        </text>
+                        <text id="Prepare-Documentatio" font-family="Helvetica" font-size="14" font-weight="normal" fill="#112F4E">
+                            <tspan x="396" y="36">Prepare </tspan>
+                            <tspan x="396" y="53">Documentatio</tspan>
+                            <tspan x="396" y="70">n</tspan>
+                        </text>
+                        <text id="Review-Requirements" font-family="Helvetica" font-size="14" font-weight="normal" fill="#112F4E">
+                            <tspan x="570" y="36">Review </tspan>
+                            <tspan x="570" y="53">Requirements</tspan>
+                        </text>
+                    </g>
+                    <g id="text-box" transform="translate(32.000000, 228.000000)">
+                        <g id="Rectangle">
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-8"></use>
+                            <use fill="black" fill-opacity="1" filter="url(#filter-9)" xlink:href="#path-8"></use>
+                            <rect stroke="#C9C9C9" stroke-width="1" stroke-linejoin="square" x="0.5" y="0.5" width="695" height="327" rx="10"></rect>
+                        </g>
+                        <g id="bottom-buttons" transform="translate(259.000000, 268.000000)">
+                            <g id="Group-8">
+                                <ellipse id="Oval-Copy-3" fill="#EFF6FB" cx="22.5" cy="22" rx="22.5" ry="22"></ellipse>
+                                <g id="Left-Chevron" transform="translate(18.900000, 14.367347)" stroke="#112F4E" stroke-linecap="round" stroke-linejoin="round">
+                                    <g id="Group-6">
+                                        <line x1="-0.255069654" y1="1.39285714" x2="7.15921606" y2="6.70714286" id="Line-6" stroke-width="1.08" transform="translate(3.452073, 4.050000) rotate(94.398705) translate(-3.452073, -4.050000) "></line>
+                                        <line x1="7.15921606" y1="8.59262164" x2="-0.255069654" y2="13.9069074" id="Line-6" stroke-width="1.08" transform="translate(3.452073, 11.249764) rotate(-94.398705) translate(-3.452073, -11.249764) "></line>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="Group-8-Copy" transform="translate(155.500000, 22.000000) rotate(-180.000000) translate(-155.500000, -22.000000) translate(133.000000, 0.000000)">
+                                <ellipse id="Oval-Copy-3" fill="#EFF6FB" cx="22.5" cy="22" rx="22.5" ry="22"></ellipse>
+                                <g id="Left-Chevron" transform="translate(18.900000, 14.367347)" stroke="#112F4E" stroke-linecap="round" stroke-linejoin="round">
+                                    <g id="Group-6">
+                                        <line x1="-0.255069654" y1="1.39285714" x2="7.15921606" y2="6.70714286" id="Line-6" stroke-width="1.08" transform="translate(3.452073, 4.050000) rotate(94.398705) translate(-3.452073, -4.050000) "></line>
+                                        <line x1="7.15921606" y1="8.59262164" x2="-0.255069654" y2="13.9069074" id="Line-6" stroke-width="1.08" transform="translate(3.452073, 11.249764) rotate(-94.398705) translate(-3.452073, -11.249764) "></line>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="Group-4" transform="translate(61.000000, 18.000000)">
+                                <circle id="Oval" fill="#757575" cx="4" cy="4" r="4"></circle>
+                                <circle id="Oval-Copy" fill="#C9C9C9" cx="20" cy="4" r="4"></circle>
+                                <circle id="Oval-Copy-2" fill="#C9C9C9" cx="36" cy="4" r="4"></circle>
+                                <circle id="Oval-Copy-3" fill="#C9C9C9" cx="52" cy="4" r="4"></circle>
+                            </g>
+                        </g>
+                        <g id="quick-start-guide" transform="translate(16.000000, 200.000000)">
+                            <text id="Quick-Start-Guide-fo" font-family="Helvetica" font-size="16" font-weight="normal" line-spacing="20" fill="#3F57A6">
+                                <tspan x="36" y="15">Quick Start Guide for creating a login.gov account</tspan>
+                            </text>
+                            <g id="Group-10">
+                                <g id="Group-3">
+                                    <mask id="mask-11" fill="white">
+                                        <use xlink:href="#path-10"></use>
+                                    </mask>
+                                    <g id="Clip-2"></g>
+                                    <path d="M16.2862563,20.3183062 L16.2862563,16.2868062 L20.3184438,16.2868062 L16.2862563,20.3183062 Z M0.98525625,0.98511875 L21.0148813,0.98511875 L21.0148813,15.3016188 L15.7933188,15.3016188 C15.5224438,15.3016188 15.3010688,15.5216188 15.3010688,15.7938688 L15.3010688,21.0154313 L0.98525625,21.0154313 L0.98525625,0.98511875 Z M21.9677563,15.9540562 C21.9821938,15.9121187 21.9911312,15.8688062 21.9938813,15.8241188 C21.9945688,15.8138062 22.0000688,15.8048688 22.0000688,15.7938687 L22.0000688,0.49218125 C22.0000688,0.22061875 21.7793813,-6.875e-05 21.5078187,-6.875e-05 L0.49231875,-6.875e-05 C0.22075625,-6.875e-05 6.875e-05,0.22061875 6.875e-05,0.49218125 L6.875e-05,21.5069937 C6.875e-05,21.7792437 0.22075625,21.9999312 0.49231875,21.9999312 L15.7933188,21.9999312 C15.8586313,21.9999312 15.9232563,21.9868687 15.9830688,21.9621187 C16.0415063,21.9373687 16.0930688,21.9023062 16.1370688,21.8589937 C16.1384438,21.8576187 16.1405063,21.8569312 16.1418813,21.8555562 L21.8556938,16.1424312 L21.8563813,16.1417437 C21.8969437,16.0998062 21.9271938,16.0516812 21.9505688,16.0008062 C21.9581313,15.9856812 21.9622562,15.9698687 21.9677563,15.9540562 L21.9677563,15.9540562 Z" id="Fill-1" stroke="#919191" stroke-width="0.5" fill="#919191" mask="url(#mask-11)"></path>
+                                </g>
+                                <path d="M7.26075625,9.02625625 L14.7386938,9.02625625 C15.0102563,9.02625625 15.2316313,8.80556875 15.2316313,8.53331875 C15.2316313,8.26175625 15.0102563,8.04038125 14.7386938,8.04038125 L7.26075625,8.04038125 C6.98850625,8.04038125 6.76850625,8.26175625 6.76850625,8.53331875 C6.76850625,8.80556875 6.98850625,9.02625625 7.26075625,9.02625625" id="Fill-4" stroke="#919191" stroke-width="0.5" fill="#919191"></path>
+                                <path d="M14.7386938,10.3422 L7.26075625,10.3422 C6.98919375,10.3422 6.76850625,10.5622 6.76850625,10.83445 C6.76850625,11.1060125 6.98919375,11.3273875 7.26075625,11.3273875 L14.7386938,11.3273875 C15.0109438,11.3273875 15.2316313,11.1060125 15.2316313,10.83445 C15.2316313,10.5622 15.0109438,10.3422 14.7386938,10.3422" id="Fill-6" stroke="#919191" stroke-width="0.5" fill="#919191"></path>
+                                <path d="M12.2753813,12.6429875 L7.26075625,12.6429875 C6.98919375,12.6429875 6.76850625,12.863675 6.76850625,13.135925 C6.76850625,13.4074875 6.98919375,13.628175 7.26075625,13.628175 L12.2753813,13.628175 C12.5476313,13.628175 12.7683188,13.4074875 12.7683188,13.135925 C12.7683188,12.863675 12.5476313,12.6429875 12.2753813,12.6429875" id="Fill-8" stroke="#919191" stroke-width="0.5" fill="#919191"></path>
+                            </g>
+                        </g>
+                        <g id="login.gov" transform="translate(52.000000, 232.000000)" fill="#3F57A6">
+                            <text id="Go-to-Login.gov" font-family="Helvetica" font-size="16" font-weight="normal" line-spacing="20">
+                                <tspan x="0" y="15">Go to Login.gov</tspan>
+                            </text>
+                            <path d="M120.4375,12.25 L119.8125,12.25 C119.639911,12.25 119.5,12.389911 119.5,12.5625 L119.5,14.75 L113.25,14.75 L113.25,8.5 L116.0625,8.5 C116.235089,8.5 116.375,8.36008898 116.375,8.1875 L116.375,7.5625 C116.375,7.38991102 116.235089,7.25 116.0625,7.25 L112.9375,7.25 C112.419733,7.25 112,7.66973305 112,8.1875 L112,15.0625 C112,15.580267 112.419733,16 112.9375,16 L119.8125,16 C120.330267,16 120.75,15.580267 120.75,15.0625 L120.75,12.5625 C120.75,12.389911 120.610089,12.25 120.4375,12.25 Z M121.53125,6 L119.03125,6 C118.613867,6 118.405273,6.50605469 118.699219,6.80078125 L119.39707,7.49863281 L114.636719,12.2572266 C114.548459,12.3451806 114.498849,12.4646556 114.498849,12.5892578 C114.498849,12.7138601 114.548459,12.8333351 114.636719,12.9212891 L115.079492,13.3632813 C115.167446,13.4515412 115.286921,13.5011509 115.411523,13.5011509 C115.536126,13.5011509 115.655601,13.4515412 115.743555,13.3632813 L120.501563,8.60390625 L121.199219,9.30078125 C121.492188,9.59375 122,9.38867188 122,8.96875 L122,6.46875 C122,6.20986652 121.790133,6 121.53125,6 Z" id="Shape" fill-rule="nonzero"></path>
+                        </g>
+                        <text id="Login.gov-is-a-servi" font-family="Helvetica" font-size="16" font-weight="normal" line-spacing="20" letter-spacing="0.15" fill="#454540">
+                            <tspan x="16" y="79">Login.gov is a service that provides secure and private online access to government </tspan>
+                            <tspan x="16" y="99">programs, such as federal benefits, services, and applications. With a login.gov account, </tspan>
+                            <tspan x="16" y="119">you can sign in to multiple government websites (including SAM.gov) with the same </tspan>
+                            <tspan x="16" y="139">username and password.</tspan>
+                            <tspan x="16" y="159"></tspan>
+                            <tspan x="16" y="179">A login.gov account is required to register your entity in SAM. Once you complete the </tspan>
+                            <tspan x="16" y="199">login.gov authentication, return to SAM.gov to begin the registration process.</tspan>
+                        </text>
+                        <text id="Get-a-Login.gov-acco" font-family="Helvetica" font-size="16" font-weight="normal" line-spacing="20" fill="#454540">
+                            <tspan x="56" y="37">Get a Login.gov </tspan>
+                            <tspan x="56" y="57">account</tspan>
+                        </text>
+                        <g id="number" filter="url(#filter-12)" transform="translate(16.000000, 16.000000)">
+                            <circle id="Oval" stroke="#112F4E" fill="#FFFFFF" cx="16" cy="16" r="15.5"></circle>
+                            <text id="1" font-family="Helvetica" font-size="15.6" font-weight="normal" line-spacing="21.6" letter-spacing="-0.120000002" fill="#112F4E">
+                                <tspan x="12" y="20">1</tspan>
+                            </text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
