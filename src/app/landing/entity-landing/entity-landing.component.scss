@@ -1,109 +1,170 @@
-.homepage-cover {
-  // background: url(/assets/img/homepage-cover.jpg) center bottom;
-  background: url("/assets/img/landing-splash-image.png") center bottom;
-  background-size: cover;
+/* autoprefixer grid: autoplace */
+
+.grid-col-fill {
+  flex: 1 0 0 !important;
+  width: auto;
+  max-width: 100%;
 }
 
-.icon-buttons {
+.sds-pages {
+  h1 {
+    font-family: Source Sans Pro Web,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #757575;
+    margin: 15px 0;
+    @media only screen and (max-width: 880px) {
+      font-weight: 600;
+      font-size: 36px;
+    }
+  }
+
+  h2 {
+    font-family: Source Sans Pro Web,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    @media only screen and (max-width: 880px) {
+      font-weight: 700;
+      font-size: 28px;
+    }
+  }
+}
+
+.sds-section {
+  // USE FOR CARD/TILES/ETC...
+  display: block;
+  padding: 2.5rem 3rem;
+}
+
+.sds-hero {
+  // USE FOR INTRO SECTION ON EACH LANDING PAGE
+  display: block;
+  padding: 0 0 64px 144px;
+  background: url("/assets/img/contract-opps.png") no-repeat right bottom;
+  background-size: 100%;
+  @media only screen and (max-width: 880px) {
+    background: url("/assets/img/contract-opps.png") no-repeat 90% 100%;
+    padding: 0 24px 0 24px;
+  }
+}
+
+.sds-section--sm {
+  // USE FOR INTRO/ACCORDIONS/HEADING/ETC...
+  display: block;
+  padding: 64px 144px;
+}
+// outline tile section
+// ----------------------
+
+.sds-tile.sds-tile--section {
+  width: 100%;
+  height: auto;
   margin: auto;
-}
+  display: block;
 
-.sds-button.sds-button--icon {
-  margin: 15px !important;
-}
+  .sds-tile__content.sds-tile--outline {
+    margin-top: 15px !important;
+    width: auto;
+    height: 100%;
+    text-align: left;
+    border: solid 2px white;
+    padding: 22px 38px;
+    background: rgba(240, 245, 249, 0.8);
+    text-decoration: none !important;
+    border-radius: 2rem;
+    @media only screen and (max-width: 600px) {
+      display: flex;
+      flex-direction: row;
+      padding: 0 16px;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
 
-.sds-search {
-  margin-top: 0 !important;
-}
-.sds-search--label {
-  color: black;
-  margin-bottom: 0;
-  padding: 10px;
-}
+    .sds-tile__title {
+      color: #454540;
+      font-size: 24px;
+      margin-top: 0;
+    }
 
-.search-bg {
-  background: rgba(white, 0.7);
-  padding: 8px;
-  max-width: 670px;
-  min-width: fit-content;
-}
+    .mobile-details {
+      .sds-card__links {
+        display: flex;
+        flex-direction: column;
+        font-weight: 600;
+        font-size: 16px;
 
-@media only screen and (max-width: 600px) {
-  .search-bg {
-    width: 365px;
-    margin: 0 auto 20px auto;
+        a {
+          padding: 16px 0 0;
+          vertical-align: middle;
+
+          svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
   }
-  .homepage-cover {
-    background: url("/assets/img/SAM_Mobile_Background.jpg") 100% 40%;
-    background-size: cover;
+  @media only screen and (min-width: 880px) {
+    padding-right:64px;
   }
+}
+// tile with a list
+// ----------------------
 
-  .homepage-title {
-    font-size: 1.2rem;
-    margin: 20px;
-    text-align: center;
+.sds-tile.list {
+  text-align: justify;
+  margin-bottom: 2rem;
+
+  .sds-tile__content {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    text-decoration: none;
+    //width: 400px;
+    height: auto;
+    font-size: 18px;
+    margin: auto;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 5px;
+      color: black;
+      margin: 0;
+
+      li {
+        margin-bottom: 5px;
+      }
+    }
   }
-
-  .search-container {
-    width: 550px;
+  @media only screen and (max-width: 880px) {
     display: block;
-    margin: 0 auto;
-  }
-
-  .sds-search--label {
-    width: 426px;
-    background-color: white;
-    color: black;
-  }
-
-  .usa-search.usa-search--small.usa-search--inverse {
-    background: none !important;
-    padding: 0 !important;
   }
 }
 
-@media only screen and (max-width: 700px) {
-  .tile-text > span{
-    display: none;
+.sds-button--outline {
+  @media only screen and (max-width: 880px) {
+    width: 100%;
   }
 
-  .tiles {
-    text-align: center;
+  .sds-button.sds-button--icon {
+    @media only screen and (max-width: 880px) {
+      width: 100%;
+    }
   }
 }
 
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-}
-
-/* Style the buttons that are used to open the tab content */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
+//component placeholder
+@media only screen and (max-width: 880px) {
+  .tabs {
+    width: 100%;
+    display: block;
+  }
 }
