@@ -1,20 +1,15 @@
 <div class="grid-container padding-0">
   <!-- header & search bar -->
   <div class="grid-row header-background desktop:padding-x-9 tablet:margin-bottom-3">
-    <div class="grid-col-fill margin-x-2 tablet-lg:margin-x-4 text-base">
+    <div class="grid-col-12 margin-x-2 tablet-lg:margin-x-4 text-base">
       <h1 class="font-sans-lg margin-top-3">Contract Opportunities</h1>
       <p class="font-sans-md text-ink">This site is the official source of contracting opportunities from the federal government. Anyone interested in doing business with the government can use this system to research active opportunities.</p>
       <h2 class="font-sans-lg margin-top-4 text-ink text-semibold">Search Contract Opportunities</h2>
       <div class="sds-search--big maxw-tablet">
-        <form class="usa-search usa-search--small">
-          <div role="search" class="search">
-            <label class="usa-sr-only" for="search-input">Search Here</label>
-            <input class="usa-input" id="search-input" type="search" name="search" placeholder="Search Here">
-            <button class="usa-button" type="submit">
-              <span class="usa-sr-only">Search</span>
-            </button>
-          </div>
-        </form>
+          <sds-search placeholder="Enter a solicitation ID or keyword" 
+            (term)="search($event)" 
+            parentSelector=".grid-row">
+          </sds-search>
       </div>
     </div>
   </div>

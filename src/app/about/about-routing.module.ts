@@ -13,13 +13,6 @@ const routes: Routes = [
 				redirectTo: 'about-sam'
 			},
 			{
-			path: 'disclaimers',
-			loadChildren: './disclaimers/disclaimers.module#DisclaimersModule',
-			data: {
-			  id: "home"
-			}
-			},
-			{
 			path: 'partners',
 			loadChildren: './partners/partners.module#PartnersModule',
 			data: {
@@ -53,15 +46,22 @@ const routes: Routes = [
 			data: {
 			  id: "home"
 			}
-			},
-			{
-			path: 'policies',
-			loadChildren: './policies/policies.module#PoliciesModule',
-			data: {
-			  id: "home"
-			}
 			}
   	  ]
+  },
+  {
+	path: 'policies',
+	loadChildren: './policies/policies.module#PoliciesModule',
+	data: {
+	  id: "home"
+	}
+  },
+  {
+	path: 'contact',
+	loadChildren: './contact/contact.module#ContactModule',
+	data: {
+	  id: "home"
+	}
   }
 ];
 

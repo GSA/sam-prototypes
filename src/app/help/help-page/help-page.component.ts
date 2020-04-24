@@ -15,6 +15,13 @@ export class HelpPageComponent implements OnInit {
   public model;
   public id: string;
 
+  public subheader = {
+    buttons: [],
+    actions: [
+      { id: 'DownloadBtn', icon: 'bars', text: 'Download' }
+    ]
+  };
+
   constructor(public service: HelpService, public route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -26,6 +33,14 @@ export class HelpPageComponent implements OnInit {
         });
       }
     });
+  }
+
+  newSearch(searchTerm) {
+
+  }
+
+  log(value) {
+    console.log(`%cLog: ${value}`, 'color: blue; font-weight: bold');
   }
 
   previous() {

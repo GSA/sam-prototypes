@@ -3,8 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
 	{
-		path: 'entity',
-		loadChildren: './entity-landing/entity-landing.module#EntityLandingModule',
+		path: 'entity-registration',
+		loadChildren: './entity-registration-landing/entity-registration-landing.module#EntityRegistrationLandingModule',
+	    data: {
+	      id: "home"
+	    }
+	},
+	{
+		path: 'entity-information',
+		loadChildren: './entity-information-landing/entity-information-landing.module#EntityInformationLandingModule',
 	    data: {
 	      id: "home"
 	    }

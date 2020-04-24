@@ -1,3 +1,23 @@
-<p>
-  policies works!
-</p>
+<ng-container>
+  <sds-subheader>
+    <!-- =============== TITLE =============== -->
+    <h1>Policies</h1>
+
+  </sds-subheader>
+</ng-container>
+
+<sds-page>
+  <sds-page-options class="sam-page__options">
+    <sds-toolbar class="tablet:grid-col-auto" #toolbar="sdsToolbar" [expanded]="true">
+      <sds-accordion>
+        <sds-accordion-item [expanded]="true">
+          <sds-accordion-item-header>Show</sds-accordion-item-header>
+          <sds-side-navigation #sideNav [model]="sideNavModel"></sds-side-navigation>
+        </sds-accordion-item>
+       </sds-accordion>
+    </sds-toolbar>
+    <div class="sds-page__content tablet:grid-col margin-0">
+      <router-outlet></router-outlet>
+    </div>
+  </sds-page-options>
+</sds-page>

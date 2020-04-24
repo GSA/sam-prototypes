@@ -6,7 +6,37 @@ import { PoliciesComponent } from './policies.component';
 const routes: Routes = [
 	{
 		path: '',
-		component: PoliciesComponent
+		component: PoliciesComponent,
+		children: [
+			{
+				path: 'privacy',
+				loadChildren: './privacy-policy/privacy-policy.module#PrivacyPolicyModule',
+				data: {
+				  id: "home"
+				}
+			},
+			{
+				path: 'disclaimers',
+				loadChildren: './disclaimers/disclaimers.module#DisclaimersModule',
+				data: {
+				  id: "home"
+				}
+			},	
+			{
+				path: 'accessibility',
+				loadChildren: './accessibility/accessibility.module#AccessibilityModule',
+				data: {
+				  id: "home"
+				}
+			},	
+			{
+				path: 'logo',
+				loadChildren: './logo-policy/logo-policy.module#LogoPolicyModule',
+				data: {
+				  id: "home"
+				}
+			}
+		]
 	}
 ];
 

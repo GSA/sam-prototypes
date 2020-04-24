@@ -57,6 +57,7 @@ class FakeWebService {
     getData(search: SearchParameters): Observable<SearchResult> {
         let itemList = this.help.contentDataList;
 
+        /* Filter */
         if(search.filter) {
             itemList = this.help.contentDataList.filter(element => this.filter(element, search.filter));
         }
@@ -70,9 +71,12 @@ class FakeWebService {
             }
         }
 
+        /* Sort */
+        this.sortHelpItem(itemList, search);
+
+        /* Return slice */
         const start = search.page.pageNumber * search.page.pageSize - search.page.pageSize;
         const end = start + search.page.pageSize;
-        this.sortHelpItem(itemList, search);
         return of({
             items: itemList.slice(start, end),
             totalItems: itemList.length

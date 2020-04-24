@@ -17,7 +17,7 @@ const routes: Routes = [
     }
   },
   {
-    path: 'landing',
+    path: 'home',
     loadChildren: './landing/landing.module#LandingModule',
     data: {
       id: "home"
