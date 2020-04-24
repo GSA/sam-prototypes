@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ComplianceLandingComponent } from './compliance-landing.component';
+import { RegistrationLandingComponent } from './registration-landing.component';
 
 const routes: Routes = [
 	{
 		path: '',
-		component: ComplianceLandingComponent
+		component: RegistrationLandingComponent
 	}
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ComplianceLandingRoutingModule { }
+export class RegistrationLandingRoutingModule { }
