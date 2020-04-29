@@ -6,7 +6,7 @@
         </a>
       </h3>
       <h5 style="margin-top: .5rem; margin-bottom: .5rem;">Modification: {{model.identifiers[0].modificationNumber}}</h5>
-      
+
       <div class="grid-row grid-gap">
       	<div *ngIf="model.purchaser.contractingOrganizationHierarchy.length > 0" class="grid-col-4">
 			<div class="sds-static--label">Department/Ind. Agency</div>
@@ -25,7 +25,7 @@
     <div class="grid-col-3">
     	  <div class="grid-row">
             <div class="grid-col-12">
-              <span class="sds-tag sds-tag--block sds-tag--alt border--hairline">Contract Data</span>
+              <span class="sds-tag sds-tag--outline">Contract Data</span>
             </div>
           </div>
           <div class="grid-row">
@@ -39,7 +39,7 @@
 	            <div class="sds-static--label">Award Type</div>
 	            <div class="sds-static">({{model.awardType.value}})</div>
 	          </div>
-          </div>          
+          </div>
           <div class="grid-row">
 	          <div class="grid-col-12">
 	            <div class="sds-static--label">Referenced IDV</div>
