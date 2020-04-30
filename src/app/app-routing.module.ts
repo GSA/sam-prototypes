@@ -35,7 +35,7 @@ const routes: Routes = [
     path: 'requests',
     loadChildren: './request/request.module#RequestModule',
     data: {
-      id: "request"
+      id: "requests"
     }
   },
   {
@@ -78,7 +78,7 @@ const routes: Routes = [
     path: 'dataservices',
     loadChildren: './data-services/data-services.module#DataServicesModule',
     data: {
-      id: "dataService"
+      id: "dataservices"
     }
   },
   {
