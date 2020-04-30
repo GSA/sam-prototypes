@@ -23,7 +23,7 @@ export class AppComponent {
   public constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private locationStrategy: LocationStrategy,
+    public locationStrategy: LocationStrategy,
     public modelService: SamModelService
   ) { }
   setSelection() { }
