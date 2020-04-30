@@ -18,7 +18,7 @@ import {
 } from '@angular/router';
 
 import { FormlyFieldConfig } from '@ngx-formly/core';
-
+import { CdkAccordionItem } from "@angular/cdk/accordion";
 import { SideNavigationModel, NavigationMode, INavigationLink, SdsDialogService, SDS_DIALOG_DATA } from '@gsa-sam/components';
 import { SearchListConfiguration } from '@gsa-sam/layouts';
 
@@ -40,6 +40,7 @@ import { EntityinfoFilterService } from './entity-info/entity-filter-service/ent
 import { DisasterFilterService } from './entity-info/entity-filter-service/disaster-filter.service';
 import { ExclusionFilterService } from './entity-info/entity-filter-service/exclusion-filter.service';
 import { ContractDataFiltersService } from './contract-data/contract-data-filters/contract-data-filters.service';
+import { ScaFilterService } from './wages/sca-filter-service/sca-filter.service';
 
 @Component({
   selector: 'app-search-home',
@@ -54,8 +55,26 @@ export class SearchHomeComponent implements OnInit {
   filterModel = {};
   fields: FormlyFieldConfig[] = [];
 
+  domainLabelMap: Map<string, string> = new Map<string, string>([
+    ['opportunities', 'Contract Opportunities'],
+    ['contractdata', 'Contract Data'],
+    ['assistancelist', 'Assistance Listings'],
+    ['registrations', 'Entity Registrations'],
+    ['disasterresponse', 'Disaster Response Registry'],
+    ['exclusions', 'Exclusions'],
+    ['wdid', 'Wage Determinations by ID'],
+    ['dba', 'Construction WDs (DBA)'],
+    ['sca', 'Service WDs (SCA)']
+  ]);
+
   showFilters: boolean = true;
   domainLabel: string = "All";
+  domainExpanded: boolean = false;
+  filtersExpanded: boolean = true;
+  @ViewChild('domainAccordion')
+    domainAccordion: CdkAccordionItem;
+  @ViewChild('filtersAccordion')
+    filtersAccordion: CdkAccordionItem;
 
   public filterChange$ = new BehaviorSubject<object>(null);
 
@@ -81,7 +100,8 @@ export class SearchHomeComponent implements OnInit {
     private entityinfoFilterService: EntityinfoFilterService,
     private disasterFilterService: DisasterFilterService,
     private exclusionFilterService: ExclusionFilterService,
-    private contractDataFilterService:  ContractDataFiltersService) { 
+    private contractDataFilterService:  ContractDataFiltersService,
+    private scaFilterService: ScaFilterService) { 
 
   }
 
@@ -110,6 +130,14 @@ export class SearchHomeComponent implements OnInit {
       } else {
           this.fields = [];
           this.filterModel = {};
+      }
+      let label = this.domainLabelMap.get(domain);
+      this.domainLabel = label ? label : 'All Domains';
+      if(this.domainAccordion.expanded) {
+        this.domainAccordion.toggle();
+      }
+      if(!this.filtersAccordion.expanded) {
+        this.filtersAccordion.toggle();
       }
       this.service.setDomain(domain ? domain : 'all');
       this.resultList.updateFilter(this.filterModel);
@@ -163,7 +191,8 @@ export class SearchHomeComponent implements OnInit {
       ['entityinfo', this.entityinfoFilterService],
       ['disasterresponse', this.disasterFilterService],
       ['exclusions', this.exclusionFilterService],
-      ['contractdata', this.contractDataFilterService]
+      ['contractdata', this.contractDataFilterService],
+      ['sca', this.scaFilterService]
   ]);
 
 }

@@ -96,6 +96,13 @@ const routes: Routes = [
     }
   },
   {
+    path: 'entity-registration',
+    loadChildren: './entity-registration/entity-registration.module#EntityRegistrationModule',
+    data: {
+      id: "help"
+    }
+  },
+  {
     path: '*',
     redirectTo: '/',
     pathMatch: 'full',
