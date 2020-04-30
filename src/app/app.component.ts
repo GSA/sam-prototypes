@@ -7,6 +7,7 @@ import {
 } from "@angular/router";
 import { SamModelService } from "./model/sam-model.service";
 import { filter, map } from "rxjs/operators";
+import { LocationStrategy } from '@angular/common';
 
 @Component({
   selector: "app-root",
@@ -22,6 +23,7 @@ export class AppComponent {
   public constructor(
     private route: ActivatedRoute,
     private router: Router,
+    private locationStrategy: LocationStrategy,
     public modelService: SamModelService
   ) { }
   setSelection() { }

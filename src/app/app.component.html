@@ -17,7 +17,7 @@
       <div class="usa-logo" id="extended-mega-logo">
         <em class="usa-logo__text">  
             <a [routerLink]="['/']" title="Home" aria-label="Home">
-                <img class="sds-header__logo" src="/assets/img/logo-sam.svg" alt="SAM.gov home" />
+                <img class="sds-header__logo" [src]="locationStrategy.getBaseHref() + 'assets/img/logo-sam.svg'" alt="SAM.gov home" />
             </a>
         </em>
       </div>
@@ -227,7 +227,7 @@
       <div class="grid-row grid-gap">
         <div class="usa-footer__logo grid-row mobile-lg:grid-col-4 mobile-lg:grid-gap-2">
           <div class="mobile-lg:grid-col-auto">
-            <img class="usa-footer__logo-img" src="/assets/img/gsa-logo.png" alt="">
+            <img class="usa-footer__logo-img" [src]="locationStrategy.getBaseHref() + 'assets/img/gsa-logo.png'" alt="">
           </div>
           <div class="mobile-lg:grid-col-auto">
             <h3 class="usa-footer__logo-heading">General Services Administration</h3>
