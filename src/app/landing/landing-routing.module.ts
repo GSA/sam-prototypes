@@ -22,28 +22,28 @@ const routes: Routes = [
 	    data: {
 	      id: "home"
 	    }
-	},	
+	},
 	{
 		path: 'hierarchy',
 		loadChildren: './hierarchy-landing/hierarchy-landing.module#HierarchyLandingModule',
 	    data: {
 	      id: "home"
 	    }
-	},	
+	},
 	{
 		path: 'assistance',
 		loadChildren: './assistance-landing/assistance-landing.module#AssistanceLandingModule',
 	    data: {
 	      id: "home"
 	    }
-	},	
+	},
 	{
-		path: 'compliance',
-		loadChildren: './compliance-landing/compliance-landing.module#ComplianceLandingModule',
+		path: 'registration',
+		loadChildren: './registration-landing/registration-landing.module#RegistrationLandingModule',
 	    data: {
 	      id: "home"
 	    }
-	},	
+	},
 	{
 		path: 'wages',
 		loadChildren: './wages-landing/wages-landing.module#WagesLandingModule',

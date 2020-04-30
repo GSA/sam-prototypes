@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { A11yModule } from '@angular/cdk/a11y';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -29,6 +30,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
     FormsModule,
     HttpClientModule,
     RouterModule,
+    A11yModule,
     AppRoutingModule,
     SdsHeaderModule,
     SdsFooterModule,

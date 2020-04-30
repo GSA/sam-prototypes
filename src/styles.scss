@@ -26,3 +26,201 @@ $theme-font-role-alt: 'sans';
 @import '~@gsa-sam/sam-styles/src/stylesheets/sam.scss';
 
 /* autoprefixer grid: autoplace */
+
+.usa-footer__primary-section {
+	background-color: #F9F9F7;
+	padding-bottom: 1rem;
+
+	a {
+		font-weight: 500;
+		color: #3F57A6;
+	}
+
+	a:visited {
+		color: #3F57A6;
+	}
+}
+
+.usa-footer__secondary-section {
+	background-color: #F5F5F0;
+}
+
+@mixin adjust-responsive-site-margins {
+  margin-left: -(units($theme-site-margins-mobile-width));
+  margin-right: -(units($theme-site-margins-mobile-width));
+  padding-left: (units($theme-site-margins-mobile-width));
+  padding-right: (units($theme-site-margins-mobile-width));
+  @include at-media($theme-site-margins-breakpoint) {
+  	margin-left: -(units($theme-site-margins-width));
+  	margin-right: -(units($theme-site-margins-width));
+  	padding-left: (units($theme-site-margins-width));
+  	padding-right: (units($theme-site-margins-width));
+  }
+}
+
+.n-sds-page {
+   @include u-padding-bottom(8);
+   @include u-minh('viewport');
+}
+
+.n-sds-page--background-accent {
+	@include u-bg('accent-cool-lighter');
+}
+
+.n-sds-page--background {
+	@include u-bg('white');
+}
+
+.n-sds-hero {
+  @include u-height('full');
+  background: url("/assets/img/landing-splash-image.png") no-repeat right bottom;
+  background-size: cover;
+  @include u-padding-bottom(4);
+  @include adjust-responsive-site-margins;
+}
+
+@mixin sds-accordion-button-styles {
+    @include u-font('sans', 'sm');
+    @include u-padding-right(6);
+    color: color('ink');
+    background-color: color('accent-cool-lighter');
+}
+
+@mixin sds-accordion-button-unopened-styles {
+    background-color: color('base-lightest');
+}
+
+.usa-accordion {
+
+  + .usa-accordion,
+  + .usa-accordion--bordered {
+    margin-top: units(0);
+  }
+
+  .usa-accordion__heading {
+    margin-top: units(0);
+    border-width: 0px 1px 1px 1px;
+    @include u-border('base-light');
+
+    &:first-child {
+      @include u-border-top(1px);
+    }
+
+    .usa-accordion__button {
+      @include sds-accordion-button-styles;
+
+      &:hover {
+        background-color: color('accent-cool-light');
+      }
+    }
+
+    .usa-accordion__button[aria-expanded=false] {
+      @include sds-accordion-button-unopened-styles;
+    }
+  }
+
+  .usa-accordion__content {
+    border-width: 0px 1px 1px 1px;
+    @include u-border('base-light');
+
+    p {
+      max-width: unset;
+    }
+  }
+
+}
+
+.sds-accordion__heading-bordered {
+	@include u-border('base-light', 'solid', '1px');
+
+	h2, h3, h4 {
+		@include u-margin-y(0);	
+	}
+}
+
+i.n-sds-circle-secondary {
+	@include u-border('base-light', 'solid', '1px');
+	background-color: color('primary-lighter');
+	display: inline-block;
+	border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    vertical-align: middle;
+}
+
+.n-sds-card {
+	@include u-padding(0);
+	@include u-margin-x(0);
+	@include u-margin-bottom(4);
+	@include u-radius('md');
+	@include u-bg('white');
+
+
+.n-sds-card__heading {
+
+  @include u-margin(0);
+  @include u-padding-y(0);
+  @include u-padding-x(2);
+
+  h1, h2, h3, h4, h5, h6 {
+      @include u-text('base-dark');
+      @include u-padding-top(2);
+  }
+
+  a {
+      @include u-padding-y(1);
+  }
+
+}
+
+.n-sds-card__heading--base {
+  @include u-bg('base-lighter');
+}
+
+.n-sds-card__heading--accent {
+  @include u-bg('accent-cool-lighter');
+}
+
+.n-sds-card__heading--feature {
+  @include u-bg('secondary-dark');
+  @include u-color('white');
+
+  h1, h2, h3, h4, h5, h6 {
+      @include u-text('white');
+  }
+}
+
+.n-sds-card__content {
+  @include u-padding-x(2);
+  @include u-padding-bottom(2);
+}
+
+.n-sds-card__side-heading {
+    @include u-padding(2);
+    @include u-border-right('base-light', 'solid', '1px');
+}
+
+.n-sds-card__ul {
+    list-style: none;
+    @include u-margin-y(0);
+    @include u-width('full');
+
+    li {
+      @include u-padding(1);
+      @include u-border-top('base-light', 'solid', '1px');       
+    }
+}
+}
+
+.n-sds-card--bordered {
+@include u-border('base-light', 'solid', '1px');
+}
+
+.n-sds-card--shadowed {
+box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+

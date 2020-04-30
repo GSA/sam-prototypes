@@ -24,19 +24,25 @@ export class SamModelService {
       text: 'Sign Out', route: '/', id: 'signOut'
     };
 
-  secondaryLinks = [{
-    imageClassPrefix: 'sds', imageClass: 'request', mode: NavigationMode.INTERNAL,
-    text: 'Requests', route: '/requests', id: 'request', hasCounter: true,
-    selected: true
-  },
-  {
-    imageClassPrefix: 'sds', imageClass: 'messages', text: 'Notifications', route: '/messages', mode: NavigationMode.INTERNAL,
-    id: 'messages'
-  },
-  {
-    imageClassPrefix: 'sds', imageClass: 'workspace', imageAltText: 'Workspace Icon', mode: NavigationMode.INTERNAL,
-    text: 'Workspace', route: '/workspace', id: 'workspace'
-  }];
+  secondaryLinksSignedOut = [{
+      imageClassPrefix: 'sds', imageClass: 'log-out', mode: NavigationMode.INTERNAL,
+      text: 'Sign Out', route: '/', id: 'signOut' 
+  }]
+
+  secondaryLinksSignedIn = [{
+      imageClassPrefix: 'sds', imageClass: 'request', mode: NavigationMode.INTERNAL,
+      text: 'Requests', route: '/requests', id: 'request', hasCounter: true,
+      selected: true
+      },
+      {
+        imageClassPrefix: 'sds', imageClass: 'messages', text: 'Notifications', route: '/messages', mode: NavigationMode.INTERNAL,
+        id: 'messages'
+      },
+      {
+        imageClassPrefix: 'sds', imageClass: 'workspace', imageAltText: 'Workspace Icon', mode: NavigationMode.INTERNAL,
+        text: 'Workspace', route: '/workspace', id: 'workspace'
+      }];
+
   navigationLinks: [
     { text: 'Home', route: '/', mode: NavigationMode.INTERNAL, id: 'home' },
     { text: 'Search', route: '/search', mode: NavigationMode.INTERNAL, id: 'search' },
@@ -46,12 +52,12 @@ export class SamModelService {
   ];
 
   modelHeader = {
-    secondaryLinks: this.secondaryLinks.concat([this.signOutItem]),
+    secondaryLinks: this.secondaryLinksSignedIn.concat([this.signOutItem]),
     navigationLinks: [
       { text: 'Home', id: 'home', children: [
           { text: 'Home Page', mode: NavigationMode.INTERNAL, route: '/' },
           { text: 'Entity Information', mode: NavigationMode.INTERNAL, route: '/home/entity-information' },
-          { text: 'Entity Registration', mode: NavigationMode.INTERNAL, route: '/home/entity-registration' },
+          { text: 'Entity Registration', mode: NavigationMode.INTERNAL, route: '/home/registration' },
           { text: 'Contract Opportunities', mode: NavigationMode.INTERNAL, route: '/home/opportunities' },
           { text: 'Contract Data', mode: NavigationMode.INTERNAL, route: '/home/entity-registration' },
           { text: 'Entity Compliance', mode: NavigationMode.INTERNAL, route: '/home/compliance' },
@@ -125,14 +131,14 @@ export class SamModelService {
   signIn(redirectUrl?: string) {
     this.isSignedIn = true;
     if (redirectUrl) {
-      this.router.navigateByUrl(redirectUrl);
+      this.router.navigateByUrl('/workspace');
     }
   }
 
   signOut(redirectUrl?: string) {
     this.isSignedIn = false;
     if (redirectUrl) {
-      this.router.navigateByUrl(redirectUrl);
+      this.router.navigateByUrl('/home');
     }
   }
 

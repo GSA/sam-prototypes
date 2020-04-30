@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ComplianceLandingComponent } from './compliance-landing.component';
+import { DownloadsComponent } from './downloads.component';
 
-describe('ComplianceLandingComponent', () => {
-  let component: ComplianceLandingComponent;
-  let fixture: ComponentFixture<ComplianceLandingComponent>;
+describe('DownloadsComponent', () => {
+  let component: DownloadsComponent;
+  let fixture: ComponentFixture<DownloadsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ComplianceLandingComponent ]
+      declarations: [ DownloadsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ComplianceLandingComponent);
+    fixture = TestBed.createComponent(DownloadsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

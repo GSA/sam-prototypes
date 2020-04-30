@@ -55,6 +55,7 @@ export class SearchHomeComponent implements OnInit {
   fields: FormlyFieldConfig[] = [];
 
   showFilters: boolean = true;
+  domainLabel: string = "All";
 
   public filterChange$ = new BehaviorSubject<object>(null);
 

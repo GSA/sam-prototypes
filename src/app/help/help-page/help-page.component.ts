@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -14,6 +15,7 @@ export class HelpPageComponent implements OnInit {
 
   public model;
   public id: string;
+  public isSearchResult: boolean;
 
   public subheader = {
     buttons: [],
@@ -22,7 +24,7 @@ export class HelpPageComponent implements OnInit {
     ]
   };
 
-  constructor(public service: HelpService, public route: ActivatedRoute) { }
+  constructor(public service: HelpService, public route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -33,6 +35,13 @@ export class HelpPageComponent implements OnInit {
         });
       }
     });
+    this.route.queryParams.subscribe(params => {
+	    this.isSearchResult = params['isSearchResult'];
+	});
+  }
+
+  goBack() {
+  	this.location.back();
   }
 
   newSearch(searchTerm) {

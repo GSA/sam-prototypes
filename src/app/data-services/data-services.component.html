@@ -24,18 +24,64 @@
     (clicks)="log($event)">
   </sds-subheader-actions>
 </sds-subheader>
-
-<div class="grid-container margin-bottom-205">
-  <h3>Dialog examples</h3>
-  <button
-    class="margin-right-1"
-    (click)="
-      openAlert('Wrong Password', 'Warning Message here', 'error', 'small')
-    "
-  >
-    Alert
-  </button>
-  <button (click)="openOfficial()">
-    Policy
-  </button>
-</div>
+<main>
+  <div class="n-sds-page">
+    <div class="grid-container">
+      <section>
+        <div class="n-sds-hero">
+          <div class="grid-row">
+            <div class="tablet:grid-col-fill">
+              <h1>Data Services</h1>
+              <p class="usa-prose usa-intro">This site is the official source of contracting opportunities from the federal government. Anyone interested in doing business with the government can use this system to research active opportunities.</p>
+            </div>
+            <div class="sds-seal margin-top-4 tablet:grid-col-auto">
+                <i class="sds fa-flag fa-2x text-secondary"></i>
+                <div class="sds-seal__content">Official U.S. Government Website<span>100% Free</span></div>
+            </div>
+          </div>
+          <div class="grid-row">
+            <div class="grid-col-12 tablet-lg:grid-col-8">
+              <div class="n-sds-card">
+                <div class="n-sds-card__heading">
+                  <h2 class="font-sans-lg margin-top-4 text-ink text-semibold">Downloads</h2>
+                  <p class="usa-prose">Enter a filename or description to search for a downloadable file.</p>
+                </div>
+                <div class="n-sds-card__content">
+                  <div class="usa-search--big maxw-tablet">
+                    <sds-search placeholder="Enter a solicitation ID or keyword" 
+                      (term)="search($event)" 
+                      inputClass="usa-search--big"
+                      parentSelector=".grid-row">
+                    </sds-search>
+                  </div>
+                  <div class="grid-row">
+                    <div class="tablet-lg:grid-col-6">
+                      <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['downloads']">
+                        <i class="sds fa-angle-right n-sds-circle-secondary text-base-dark margin-right-1"></i>
+                        <span>Entity Information</span>
+                      </a>
+                      <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['downloads']">
+                        <i class="sds fa-angle-right n-sds-circle-secondary text-base-dark margin-right-1"></i>
+                        <span>Assistance Listings</span>
+                      </a>
+                    </div>
+                    <div class="tablet-lg:grid-col-6">
+                      <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['downloads']">
+                        <i class="sds fa-angle-right n-sds-circle-secondary text-base-dark margin-right-1"></i>
+                        <span>Contract Opportunities</span>
+                      </a>
+                      <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['downloads']">
+                        <i class="sds fa-angle-right n-sds-circle-secondary text-base-dark margin-right-1"></i>
+                        <span>Contract Data</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>

@@ -6,6 +6,10 @@ const routes: Routes = [
 	{
 		path: '',
 		component: DataServicesComponent
+	},
+	{
+		path: 'downloads',
+		loadChildren: './downloads/downloads.module#DownloadsModule'
 	}
 ];
 

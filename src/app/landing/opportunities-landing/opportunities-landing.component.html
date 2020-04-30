@@ -1,143 +1,157 @@
-<div class="grid-container padding-0">
-  <!-- header & search bar -->
-  <div class="grid-row header-background desktop:padding-x-9 tablet:margin-bottom-3">
-    <div class="grid-col-12 margin-x-2 tablet-lg:margin-x-4 text-base">
-      <h1 class="font-sans-lg margin-top-3">Contract Opportunities</h1>
-      <p class="font-sans-md text-ink">This site is the official source of contracting opportunities from the federal government. Anyone interested in doing business with the government can use this system to research active opportunities.</p>
-      <h2 class="font-sans-lg margin-top-4 text-ink text-semibold">Search Contract Opportunities</h2>
-      <div class="sds-search--big maxw-tablet">
-          <sds-search placeholder="Enter a solicitation ID or keyword" 
-            (term)="search($event)" 
-            parentSelector=".grid-row">
-          </sds-search>
-      </div>
-    </div>
-  </div>
-  <!-- accordion & links -->
-  <div class="grid-row desktop:padding-x-4 tablet:margin-y-3">
+<main>
+  <div class="n-sds-page">
+      <div class="grid-container">
+      <!-- HERO SECTION -->
+      <section>
+        <div class="n-sds-hero">
+          <div class="grid-row">
+            <div class="tablet:grid-col-fill">
+              <h1>Contract Opportunities</h1>
+              <p class="usa-prose usa-intro">This site is the official source of contracting opportunities from the federal government. Anyone interested in doing business with the government can use this system to research active opportunities.</p>
+            </div>
+            <div class="sds-seal margin-top-4 tablet:grid-col-auto">
+                <i class="sds fa-flag fa-2x text-secondary"></i>
+                <div class="sds-seal__content">Official U.S. Government Website<span>100% Free</span></div>
+            </div>
+          </div>
+          <h2 class="font-sans-lg margin-top-4 text-ink text-semibold">Search Contract Opportunities</h2>
+          <div class="usa-search--big maxw-tablet">
+            <sds-search placeholder="Enter a solicitation ID or keyword" 
+              (term)="search($event)" 
+              inputClass="usa-search--big"
+              parentSelector=".grid-row">
+            </sds-search>
+          </div>
+        </div>
+      </section>
 
-    <div class="sds-accordion usa-accordion usa-accordion--bordered desktop:margin-x-9 tablet-lg:margin-2 margin-2">
-      <h3 class="usa-accordion__heading sds-accordion__heading">
-        <button class="usa-accordion__button usa-accordion__block border-top border-base-light" aria-expanded="false" aria-controls="a1">
-          How to find opportunities to do business with the government
-        </button>
-      </h3>
-      <div id="a1" class="usa-accordion__content usa-prose" hidden>
-        <!-- Get started links -->
-        <h4 class="text-ink text-semibold font-sans-md">Get started searching contract opportunities</h4>
-        <div class="padding-x-2 display-flex flex-column">
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Use the search feature on SAM.gov</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Follow contract opportunities</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Save my searches</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Use the interested vendors list</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Quick start quide for contractors</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-video-square text-base-dark margin-right-1"></i>
-            <span>Video - Use contract opportunities to do business with the government</span>
-          </a>
-        </div>
-        <!-- additional filters links -->
-        <h4 class="text-ink text-semibold font-sans-md">Use additional filters to find contract opportunities</h4>
-        <div class="padding-x-2 display-flex flex-column">
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Changing search filters</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Understanding notice types</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Set-Asides for small businesses</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Using NAICS codes</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Using PSC codes</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Search by place of performance</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Vendor collaboration opportunities</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Small business events</span>
-          </a>
+      <!-- accordion & links -->
+      <div class="grid-row">
+        <div class="tablet:grid-col-10 tablet:grid-offset-1">
+          <div class="usa-accordion usa-accordion--bordered" aria-multiselectable="true">
+            <h3 class="usa-accordion__heading sds-accordion__heading-bordered">
+              <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="a1">How to find opportunities to do business with the government
+              </button>
+            </h3>
+            <div id="a1" class="usa-accordion__content usa-prose" hidden>
+            
+                <!-- Get started links -->
+                <h4>Get started searching contract opportunities</h4>
+                <div class="padding-x-2 display-flex flex-column">
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Use the search feature on SAM.gov</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Follow contract opportunities</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Save my searches</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Use the interested vendors list</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Quick start quide for contractors</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-video-square text-base-dark margin-right-1"></i>
+                  <span>Video - Use contract opportunities to do business with the government</span>
+                </a>
+              </div>
+        
+              <!-- additional filters links -->
+              <h4>Use additional filters to find contract opportunities</h4>
+              <div class="padding-x-2 display-flex flex-column">
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Changing search filters</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Understanding notice types</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Set-Asides for small businesses</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Using NAICS codes</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Using PSC codes</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Search by place of performance</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Vendor collaboration opportunities</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Small business events</span>
+                </a>
+              </div>
+            </div>
+            <h3 class="usa-accordion__heading sds-accordion__heading-bordered">
+              <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="a2">
+                I am a federal employee working on contract opportunities
+              </button>
+            </h3>
+            <div id="a2" class="usa-accordion__content usa-prose" hidden>
+              <!-- specialist/officer links -->
+              <h4 class="text-ink text-semibold font-sans-md">As a Contracting Officer or Contracting Specialist, you may:</h4>
+              <div class="padding-x-2 display-flex flex-column">
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Create and post contract opportunities</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Manage attachments and the interested vendor list</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Deactive or reactivate a contract opportunity</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Approve or reject role requests</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Use a system account</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Quick start guide for role management</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-video-square text-base-dark margin-right-1"></i>
+                  <span>Video - Role management</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Quick start guide for system accounts</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+                  <i class="sds fa-video-square text-base-dark margin-right-1"></i>
+                  <span>Video - System accounts</span>
+                </a>
+              </div>
+            </div>
         </div>
       </div>
-      <h3 class="usa-accordion__heading sds-accordion__heading">
-        <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="a2">
-          I am a federal employee working on contract opportunities
-        </button>
-      </h3>
-      <div id="a2" class="usa-accordion__content usa-prose" hidden>
-        <!-- specialist/officer links -->
-        <h4 class="text-ink text-semibold font-sans-md">As a Contracting Officer or Contracting Specialist, you may:</h4>
-        <div class="padding-x-2 display-flex flex-column">
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Create and post contract opportunities</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Manage attachments and the interested vendor list</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Deactive or reactivate a contract opportunity</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Approve or reject role requests</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Use a system account</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Quick start guide for role management</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-video-square text-base-dark margin-right-1"></i>
-            <span>Video - Role management</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Quick start guide for system accounts</span>
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-video-square text-base-dark margin-right-1"></i>
-            <span>Video - System accounts</span>
-          </a>
-        </div>
-      </div>
-    </div>
-
   </div>
+
   <!-- reports/data & user account sections -->
   <div class="grid-row">
     <!-- reports and data -->
@@ -228,3 +242,5 @@
     </div>
   </div>
 </div>
+</div>
+</main>

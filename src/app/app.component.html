@@ -1,40 +1,241 @@
 <div class="bg-black padding-05">
   <div class="grid-container text-base-light font-sans-3xs">
-      This Website is a prototype intended to support usability testing only.
-  </div>
-</div>
-
-<!-- sds header alert work in progress -->
-<!-- <div class="sds-alert--header usa-grid">
-    <div class="grid-row">
-        <div class="tablet:grid-col-auto">
-            <i class="sds-alert--header__icon sds fa-exclamation-triangle"></i>
-        </div>
-
-        <div class="tablet:grid-col-fill margin-right-4">
-            <div class="sds-alert--header__content grid-row ">
-                <div class="tablet:grid-col-fill display-block">
-                    <div class="sds-alert--header__label">
-                        Alert dras ut turpis sed nulla sodales malesuada.
-                    </div>
-                    <a class="sds-alert--header__link">
-            Show Details
-          </a>
-                    <span class="sds-alert--header__date">
-            00/00/00
-          </span>
-                </div>
-                <button class="sds-button--circle display-block tablet:grid-col-1"><i class="fa fa-times"></i></button>
-            </div>
-
-        </div>
-
-        <div class="tablet:grid-col-auto padding-y-2">
-            <button class="usa-button usa-button--secondary" (click)="navigateTo('alerts')">See All Alerts</button>
+      <div class="grid-row">
+        <div class="grid-fill">
+             This Website is a prototype intended to support usability testing only.
         </div>
     </div>
-</div> -->
+  </div>
+</div>
+<div
+  class="usa-overlay"
+  [class.is-visible]="mobileNavActive"
+  (click)="closeMobileNav()">      
+</div>
+<header class="usa-header usa-header--extended">
+    <div class="usa-navbar">
+      <div class="usa-logo" id="extended-mega-logo">
+        <em class="usa-logo__text">  
+            <a [routerLink]="['/']" title="Home" aria-label="Home">
+                <img class="sds-header__logo" src="/assets/img/logo-sam.svg" alt="SAM.gov home" />
+            </a>
+        </em>
+      </div>
+      <button #usaNavOpen class="usa-menu-btn" (click)="openMobileNav()">
+      <fa-layers [fixedWidth]="true" size="3x">
+        <fa-icon
+          [icon]="['fas', 'square']"
+          [classes]="['text-primary']"
+        ></fa-icon>
+        <fa-icon
+          [icon]="['sds', 'bars']"
+          [classes]="['icon-bars']"
+          transform="shrink-6"
+        ></fa-icon>
+        <fa-layers-counter
+          *ngIf="signedIn"
+          [classes]="['icon-layers-counter']"
+        ></fa-layers-counter>
+      </fa-layers>
+      <span class="usa-sr-only">Menu</span>
+    </button>
+  </div>
+  <nav
+    aria-label="Primary navigation"
+    class="usa-nav"
+    (keydown.esc)="closeMobileNav()"
+    (animationend)="navAnimationEnd()"
+    [class.is-visible]="mobileNavActive"
+    [cdkTrapFocus]="mobileNavActive"
+  >
+    <div class="usa-nav__inner">
+        <button #usaNavClose class="usa-nav__close" (click)="closeMobileNav()">
+            <fa-layers [fixedWidth]="true" size="lg">
+              <fa-icon
+                [icon]="['fas', 'circle']"
+                [inverse]="true"
+                transform="grow-2"
+              ></fa-icon>
+              <fa-icon [icon]="['fas', 'times']" transform="shrink-6"></fa-icon>
+            </fa-layers>
+            <span class="usa-sr-only">Close</span>
+        </button>
+        <ul class="usa-nav__primary usa-accordion"><li class="usa-nav__primary-item">
+    <button class="usa-accordion__button usa-nav__link"  [class.usa-current]="sectionId == 'home'" aria-expanded="false" aria-controls="extended-mega-nav-section-one"><span>Home</span></button>
+    <div id="extended-mega-nav-section-one" class="usa-nav__submenu usa-megamenu"><div class="grid-row grid-gap-4"><div class="usa-col">
+             <ul class="usa-nav__submenu-list"><li class="usa-nav__submenu-item">
+                    <a href="#">Home</a>
+                  </li><li class="usa-nav__submenu-item">
+                    <a href="#">New to SAM.gov</a>
+                  </li><li class="usa-nav__submenu-item">
+                    <a href="#">Register Entity</a>
+                  </li><li class="usa-nav__submenu-item">
+                    <a href="#">Check Entity Status</a>
+                  </li></ul>
+            </div><div class="usa-col">
+             <ul class="usa-nav__submenu-list"><li class="usa-nav__submenu-item">
+                    <a href="#">Entity Information</a>
+                  </li><li class="usa-nav__submenu-item">
+                    <a href="#">Entity Compliance</a>
+                  </li><li class="usa-nav__submenu-item">
+                    <a href="#">Agency Exclusions POCs</a>
+                  </li></ul>
+            </div><div class="usa-col">
+              <ul class="usa-nav__submenu-list"><li class="usa-nav__submenu-item">
+                    <a href="#">Contract Opportunities</a>
+                  </li><li class="usa-nav__submenu-item">
+                    <a href="#">Contract Data</a>
+                  </li><li class="usa-nav__submenu-item">
+                    <a href="#">Assistance Listings</a>
+                  </li><li class="usa-nav__submenu-item">
+                    <a href="#">Federal Hierarchy</a>
+                  </li></ul>
+            </div><div class="usa-col">
+              <ul class="usa-nav__submenu-list"><li class="usa-nav__submenu-item">
+                    <a href="#">Wage Determinations</a>
+                  </li><li class="usa-nav__submenu-item">
+                    <a href="#">Navigation link</a>
+                  </li><li class="usa-nav__submenu-item">
+                    <a href="#">Navigation link</a>
+                  </li></ul>
+            </div></div></div></li><li class="usa-nav__primary-item">
+    <a class="usa-nav__link" [class.usa-current]="sectionId == 'search'" [routerLink]="['/search']"><span>Search</span></a>
+    </li><li class="usa-nav__primary-item">
+    <a class="usa-nav__link" [class.usa-current]="sectionId == 'databank'" [routerLink]="['/databank']"><span>Databank</span></a>
+    </li><li class="usa-nav__primary-item">
+    <a class="usa-nav__link" [class.usa-current]="sectionId == 'dataservices'" [routerLink]="['/dataservices']"><span>Data Services</span></a>
+    </li><li class="usa-nav__primary-item">
+    <a class="usa-nav__link" [class.usa-current]="sectionId == 'help'" [routerLink]="['/help']"><span>Help</span></a>
+    </li></ul>
+    <div class="usa-nav__secondary">
+  <ul class="usa-nav__secondary-links"><li *ngIf="signedIn" class="usa-nav__secondary-item"> 
+        <a
+            [attr.id]="requests"
+            [routerLink]="['/requests']"
+            [attr.class]="sectionId == 'requests' ? 'usa-current' : ''"
+          >
+         <fa-layers [fixedWidth]="true">
+            <fa-icon [icon]="['sds', 'request']"></fa-icon>
+            <fa-layers-counter 
+              [classes]="['icon-layers-counter']"
+            ></fa-layers-counter>
+          </fa-layers>
+          <span class="sds-nav__secondary-item-text">Requests</span></a>
+    </li><li *ngIf="signedIn" class="usa-nav__secondary-item"> 
+        <a
+            [attr.id]="messages"
+            [routerLink]="['/messages']"
+            [attr.class]="sectionId == 'messages' ? 'usa-current' : ''"
+          >
+         <fa-layers [fixedWidth]="true">
+            <fa-icon [icon]="['sds', 'messages']"></fa-icon>
+          </fa-layers>
+          <span class="sds-nav__secondary-item-text">Notifications</span></a>
+    </li><li *ngIf="signedIn" class="usa-nav__secondary-item"> 
+        <a
+            [attr.id]="workspace"
+            [routerLink]="['/workspace']"
+            [attr.class]="sectionId == 'workspace' ? 'usa-current' : ''"
+          >
+         <fa-layers [fixedWidth]="true">
+            <fa-icon [icon]="['sds', 'workspace']"></fa-icon>
+          </fa-layers>
+          <span class="sds-nav__secondary-item-text">Workspace</span></a>
+    </li><li *ngIf="!signedIn" class="usa-nav__secondary-item"> 
+        <a
+            [attr.id]="signIn"
+            href="javascript:void(0)"
+            (click)="signIn()"
+          >
+         <fa-layers [fixedWidth]="true">
+            <fa-icon [icon]="['sds', 'log-in']"></fa-icon>
+          </fa-layers>
+          <span class="sds-nav__secondary-item-text">Sign In</span></a>
+    </li><li *ngIf="signedIn" class="usa-nav__secondary-item"> 
+        <a
+            [attr.id]="signOut"
+            href="javascript:void(0)"
+            (click)="signOut()"
+          >
+         <fa-layers [fixedWidth]="true">
+            <fa-icon [icon]="['sds', 'log-out']"></fa-icon>
+          </fa-layers>
+          <span class="sds-nav__secondary-item-text">Sign Out</span></a>
+    </li></ul>
+</div>
+</div>
+  </nav>
+</header>
+<main id="main-content"></main>
 
-<sds-header #header [model]="modelService.modelHeader"></sds-header>
 <router-outlet></router-outlet>
-<sds-footer [model]="modelService.modelFooter"></sds-footer>
+<div class="usa-footer__primary-section">
+    <div class="grid-container">
+          <nav class="usa-footer__nav" aria-label="Footer navigation">
+            <div class="grid-row grid-gap-4">
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+                  <h4 class="usa-footer__primary-link">About This Site</h4>
+                  <ul class="usa-list usa-list--unstyled">
+                    <li class="usa-footer__secondary-link"><a class="usa-link" href="/about/about-sam">About Us</a></li>
+                    <li class="usa-footer__secondary-link"><a class="usa-link" href="/about/release-notes">Release Notes</a></li>
+                    <li class="usa-footer__secondary-link"><a class="usa-link" href="/alerts">Alerts</a></li>
+                    <li class="usa-footer__secondary-link"><a class="usa-link" href="/news">News</a></li>
+                  </ul>
+                </section>
+              </div>              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+                  <h4 class="usa-footer__primary-link">Our Partners</h4>
+                  <ul class="usa-list usa-list--unstyled">
+                    <li class="usa-footer__secondary-link"><a class="usa-link" href="https://acquisition.gov">Acquisition.gov</a></li>
+                    <li class="usa-footer__secondary-link"><a class="usa-link" href="https://usaspending.gov">USASpending.gov</a></li>
+                    <li class="usa-footer__secondary-link"><a class="usa-link" href="https://grants.gov">Grants.gov</a></li>
+                    <li class="usa-footer__secondary-link"><a class="usa-link" href="/about/partners">More Partners</a></li>
+                  </ul>
+                </section>
+              </div>
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+                  <h4 class="usa-footer__primary-link">Policies</h4>
+                  <ul class="usa-list usa-list--unstyled">
+                    <li class="usa-footer__secondary-link"><a class="usa-link" href="/about/policies/privacy">Privacy Policy</a></li>
+                    <li class="usa-footer__secondary-link"><a class="usa-link" href="/about/policies/disclaimers">Disclaimers</a></li>
+                    <li class="usa-footer__secondary-link"><a class="usa-link" href="">Freedom of Information Act</a></li>
+                    <li class="usa-footer__secondary-link"><a class="usa-link" href="/about/policies/accessibility">Accessibility</a></li>
+                  </ul>
+                </section>
+              </div>
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+                  <h4 class="usa-footer__primary-link">Customer Service</h4>
+                  <ul class="usa-list usa-list--unstyled">
+                    <li class="usa-footer__secondary-link"><a class="usa-link" href="/help">Help</a></li>
+                    <li class="usa-footer__secondary-link"><a class="usa-link" href="https://fsd.gov">Federal Service Desk</a></li>
+                    <li class="usa-footer__secondary-link"><a class="usa-link" href="">Our Community</a></li>
+                    <li class="usa-footer__secondary-link"><a class="usa-link" href="/about/resources">External Resources</a></li>
+                    <li class="usa-footer__secondary-link"><a class="usa-link" href="/about/contact">Contact</a></li>
+                  </ul>
+                </section>
+              </div>
+            </div>
+          </nav>
+    </div>
+  </div>
+  <div class="usa-footer__secondary-section">
+    <div class="grid-container">
+      <div class="grid-row grid-gap">
+        <div class="usa-footer__logo grid-row mobile-lg:grid-col-4 mobile-lg:grid-gap-2">
+          <div class="mobile-lg:grid-col-auto">
+            <img class="usa-footer__logo-img" src="/assets/img/gsa-logo.png" alt="">
+          </div>
+          <div class="mobile-lg:grid-col-auto">
+            <h3 class="usa-footer__logo-heading">General Services Administration</h3>
+          </div>
+        </div>
+        <div class="mobile-lg:grid-col-8">
+            <p>This is a U.S. General Services Administration Federal Government computer system that is "FOR OFFICIAL USE ONLY." This system is subject to monitoring. Individuals found performing unauthorized activities are subject to disciplinary action including criminal prosecution.</p>
+        </div>
+      </div>
+    </div>
+  </div>
