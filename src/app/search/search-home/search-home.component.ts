@@ -52,7 +52,7 @@ export class SearchHomeComponent implements OnInit {
   @ViewChild('resultList') resultList;
 
   form = new FormGroup({});
-  filterModel = {};
+  filterModel;
   fields: FormlyFieldConfig[] = [];
 
   domainLabelMap: Map<string, string> = new Map<string, string>([
@@ -68,7 +68,7 @@ export class SearchHomeComponent implements OnInit {
   ]);
 
   showFilters: boolean = true;
-  domainLabel: string = "All";
+  domainLabel: string;
   domainExpanded: boolean = false;
   filtersExpanded: boolean = true;
   @ViewChild('domainAccordion')
@@ -108,18 +108,21 @@ export class SearchHomeComponent implements OnInit {
   ngOnInit() {    
     let domain = this.route.snapshot.queryParamMap.get('index');
     this.listModel = listConfigMap.get(domain ? domain : 'all');
+    let label = this.domainLabelMap.get(domain);
+    this.domainLabel = label ? label : 'All Domains';
+    this.setDomain(domain);
+    this.route.queryParams.subscribe(
+      data => {
+        this.listModel = listConfigMap.get(domain ? domain : 'all');
+        this.setDomain(typeof data['index'] === "string" ? decodeURI(data['index']) : 'all');
+
+      });
   }
 
   ngAfterViewInit() {      
 
     this.change.detectChanges();
-    let domain = this.route.snapshot.queryParamMap.get('index');
-    this.setDomain(domain);
-  	this.route.queryParams.subscribe(
-      data => {
-        this.listModel = listConfigMap.get(domain ? domain : 'all');
-        this.setDomain(typeof data['index'] === "string" ? decodeURI(data['index']) : 'all');
-      });
+    this.resultList.updateFilter(this.filterModel);
   }
 
   setDomain(domain: string) {
@@ -133,14 +136,10 @@ export class SearchHomeComponent implements OnInit {
       }
       let label = this.domainLabelMap.get(domain);
       this.domainLabel = label ? label : 'All Domains';
-      if(this.domainAccordion.expanded) {
-        this.domainAccordion.toggle();
-      }
       if(!this.filtersAccordion.expanded) {
         this.filtersAccordion.toggle();
       }
       this.service.setDomain(domain ? domain : 'all');
-      this.resultList.updateFilter(this.filterModel);
   }
 
   subheaderActionClicked(event) {

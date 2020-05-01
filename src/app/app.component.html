@@ -61,39 +61,39 @@
             <span class="usa-sr-only">Close</span>
         </button>
         <ul class="usa-nav__primary usa-accordion"><li class="usa-nav__primary-item">
-    <button class="usa-accordion__button usa-nav__link"  [class.usa-current]="sectionId == 'home'" aria-expanded="false" aria-controls="extended-mega-nav-section-one"><span>Home</span></button>
+    <button class="usa-accordion__button usa-nav__link n-sds-nav-button"  [class.usa-current]="sectionId == 'home'" aria-expanded="false" aria-controls="extended-mega-nav-section-one"><span>Home</span></button>
     <div id="extended-mega-nav-section-one" class="usa-nav__submenu usa-megamenu"><div class="grid-row grid-gap-4"><div class="usa-col">
              <ul class="usa-nav__submenu-list"><li class="usa-nav__submenu-item">
-                    <a href="#">Home</a>
+                    <a [routerLink]="['/']">Home</a>
                   </li><li class="usa-nav__submenu-item">
                     <a href="#">New to SAM.gov</a>
                   </li><li class="usa-nav__submenu-item">
-                    <a href="#">Register Entity</a>
+                    <a [routerLink]="['/home/registration']">Entity Registration</a>
                   </li><li class="usa-nav__submenu-item">
                     <a href="#">Check Entity Status</a>
                   </li></ul>
             </div><div class="usa-col">
              <ul class="usa-nav__submenu-list"><li class="usa-nav__submenu-item">
-                    <a href="#">Entity Information</a>
+                    <a [routerLink]="['/home/opportunities']">Entity Information</a>
                   </li><li class="usa-nav__submenu-item">
-                    <a href="#">Entity Compliance</a>
+                    <a [routerLink]="['/home/opportunities']">Entity Compliance</a>
                   </li><li class="usa-nav__submenu-item">
-                    <a href="#">Agency Exclusions POCs</a>
+                    <a [routerLink]="['/home/opportunities']">Agency Exclusions POCs</a>
                   </li></ul>
             </div><div class="usa-col">
               <ul class="usa-nav__submenu-list"><li class="usa-nav__submenu-item">
-                    <a href="#">Contract Opportunities</a>
+                    <a [routerLink]="['/home/opportunities']">Contract Opportunities</a>
                   </li><li class="usa-nav__submenu-item">
-                    <a href="#">Contract Data</a>
+                    <a [routerLink]="['/home/opportunities']">Contract Data</a>
                   </li><li class="usa-nav__submenu-item">
-                    <a href="#">Assistance Listings</a>
+                    <a [routerLink]="['/home/assistance']">Assistance Listings</a>
                   </li><li class="usa-nav__submenu-item">
-                    <a href="#">Federal Hierarchy</a>
+                    <a [routerLink]="['/home/opportunities']">Federal Hierarchy</a>
                   </li></ul>
             </div><div class="usa-col">
               <ul class="usa-nav__submenu-list"><li class="usa-nav__submenu-item">
-                    <a href="#">Wage Determinations</a>
-                  </li><li class="usa-nav__submenu-item">
+                    <a [routerLink]="['/home/wages']">Wage Determinations</a>
+                  </li><li class="wages">
                     <a href="#">Navigation link</a>
                   </li><li class="usa-nav__submenu-item">
                     <a href="#">Navigation link</a>

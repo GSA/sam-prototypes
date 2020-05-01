@@ -14,7 +14,7 @@ import { contractData } from './contract-data.data';
 })
 export class SearchService {
 
-    private domain: string;
+    public domain: string;
     private data: any[];
 
     private getPage(data: any[], page: number, pageSize: number): any[] {

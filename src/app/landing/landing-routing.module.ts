@@ -17,6 +17,13 @@ const routes: Routes = [
 	    }
 	},
 	{
+		path: 'check-status',
+		loadChildren: './status-tracker/status-tracker.module#StatusTrackerModule',
+	    data: {
+	      id: "home"
+	    }
+	},
+	{
 		path: 'opportunities',
 		loadChildren: './opportunities-landing/opportunities-landing.module#OpportunitiesLandingModule',
 	    data: {

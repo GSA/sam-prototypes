@@ -27,6 +27,11 @@ $theme-font-role-alt: 'sans';
 
 /* autoprefixer grid: autoplace */
 
+
+.wrapper-body {
+  @include u-margin-top(2);
+}
+
 .usa-footer__primary-section {
 	background-color: #F9F9F7;
 	padding-bottom: 1rem;
@@ -56,6 +61,10 @@ $theme-font-role-alt: 'sans';
   	padding-left: (units($theme-site-margins-width));
   	padding-right: (units($theme-site-margins-width));
   }
+}
+.usa-megamenu, .usa-megamenu.usa-nav__submenu,  .usa-megamenu.usa-nav__submenu::before,
+.usa-megamenu.usa-nav__submenu::after, .usa-nav__primary button[aria-expanded="true"] {
+	background-color: #3F57A6;
 }
 
 .n-sds-page {

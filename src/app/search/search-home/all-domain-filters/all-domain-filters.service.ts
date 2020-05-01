@@ -30,7 +30,7 @@ export class AllDomainFiltersService implements SearchFiltersWrapperService {
 	  },
 	  {
 	    key: 'statusWrapper',
-	    wrappers: ['accordionwrapper'],
+	    wrappers: ['filterwrapper'],
 	    templateOptions: { label: 'Status' },
 	    fieldGroup: [
 	      {
