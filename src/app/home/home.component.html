@@ -31,7 +31,11 @@
                 <div class="sds-tile__details grid-row padding-y-2 width-full">
                   Register your entity to get started doing business with the federal government.
                 </div>
+                  
                 <div class="mobile-details padding-y-2 width-full">
+                  <a class="sds-button sds-button--icon" routerLink="/home/registration">
+                    <span>Before You Register</span>
+                  </a>
                   <a class="sds-button sds-button--icon" [routerLink]="['/entity-registration/register']">
                     <span class="fa-stack fa-2x">
                       <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
@@ -45,9 +49,6 @@
                       <i class="sds fa-check-circle fa-stack-1x text-base fa-2x"></i>
                     </span>
                     <span class="sds-button--icon__title">Check Status</span>
-                  </button>
-                  <button class="usa-button usa-button--outline" routerLink="/home/registration">
-                    <span>Before You Register</span>
                   </button>
                 </div>
               </div>
