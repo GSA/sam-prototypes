@@ -59,9 +59,11 @@ export class SearchHomeComponent implements OnInit {
     ['opportunities', 'Contract Opportunities'],
     ['contractdata', 'Contract Data'],
     ['assistancelist', 'Assistance Listings'],
+    ['entityinfo', 'Entity Information'],
     ['registrations', 'Entity Registrations'],
     ['disasterresponse', 'Disaster Response Registry'],
     ['exclusions', 'Exclusions'],
+    ['hierarchy', 'Federal Hierarchy'],
     ['wdid', 'Wage Determinations by ID'],
     ['dba', 'Construction WDs (DBA)'],
     ['sca', 'Service WDs (SCA)']
@@ -77,15 +79,6 @@ export class SearchHomeComponent implements OnInit {
     filtersAccordion: CdkAccordionItem;
 
   public filterChange$ = new BehaviorSubject<object>(null);
-
-  public subheaderActions = {
-    buttons: [],
-    actions: [
-      { id: 'downloadAction', icon: 'bars', text: 'Download' },
-      { id: 'saveAction', icon: 'bars', text: 'Save' },
-      { id: 'saveAsAction', icon: 'bars', text: 'Save As' }
-    ]
-  };
 
   constructor(
     public service: SearchService,
@@ -111,18 +104,22 @@ export class SearchHomeComponent implements OnInit {
     let label = this.domainLabelMap.get(domain);
     this.domainLabel = label ? label : 'All Domains';
     this.setDomain(domain);
-    this.route.queryParams.subscribe(
-      data => {
-        this.listModel = listConfigMap.get(domain ? domain : 'all');
-        this.setDomain(typeof data['index'] === "string" ? decodeURI(data['index']) : 'all');
-
-      });
   }
 
   ngAfterViewInit() {      
-
+    this.route.queryParams.subscribe(
+      data => {
+        let domain = typeof data['index'] === "string" ? decodeURI(data['index']) : 'all'
+        this.listModel = listConfigMap.get(domain ? domain : 'all');
+        this.setDomain(domain);
+        if(this.resultList) {
+          this.resultList.updateFilter(this.filterModel);
+        }
+      });
     this.change.detectChanges();
-    this.resultList.updateFilter(this.filterModel);
+    if(this.resultList) {
+        this.resultList.updateFilter(this.filterModel);
+    }
   }
 
   setDomain(domain: string) {

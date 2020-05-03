@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-const routes: Routes = [];
+import { DatabankReportsComponent } from './databank-reports.component';
+ 
+const routes: Routes = [
+	{
+		path: '',
+		component: DatabankReportsComponent
+	}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

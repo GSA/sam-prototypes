@@ -62,7 +62,7 @@ const routes: Routes = [
   {
     path: 'search',
 
-    loadChildren: './search/search-home/search-home.module#SearchHomeModule',
+    loadChildren: './search/search.module#SearchModule',
     data: {
       id: "search"
     }

@@ -5,11 +5,11 @@
     <div class="grid-col">
       <div class="home-top">
       <!-- homepage title and seal -->
-      <div class="grid-row flex-no-wrap tablet:padding-y-2">
-        <div class="grid-col-9 tablet:padding-x-4">
+      <div class="grid-row flex-no-wrap">
+        <div class="grid-col-9 tablet:padding-x-4 tablet:padding-top-8">
           <h1 class="text-base-dark homepage-title">SAM.gov is the official U.S. government system for:</h1>
         </div>
-        <div class="grid-col margin-right-0 padding-right-0 width-full">
+        <div class="grid-col margin-right-0 padding-right-0 tablet:padding-top-4 width-full">
           <div class="sds-seal border-right-0">
             <i class="sds fa-flag fa-2x sds-seal__grey margin-y-1 text-secondary"></i>
             <div class="sds-seal__content">
@@ -33,10 +33,7 @@
                 </div>
                   
                 <div class="mobile-details padding-y-2 width-full">
-                  <a class="sds-button sds-button--icon" routerLink="/home/registration">
-                    <span>Before You Register</span>
-                  </a>
-                  <a class="sds-button sds-button--icon" [routerLink]="['/entity-registration/register']">
+                  <a class="sds-button sds-button--icon" [routerLink]="['/home/registration']">
                     <span class="fa-stack fa-2x">
                       <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
                       <i class="sds fa-folder fa-stack-1x text-base fa-2x"></i>
@@ -50,6 +47,13 @@
                     </span>
                     <span class="sds-button--icon__title">Check Status</span>
                   </button>
+                  <a class="sds-button sds-button--icon" routerLink="/home/entity-information">                    
+                    <span class="fa-stack fa-2x">
+                      <i class="sds fa-pentagon fa-stack-2x text-accent-warm-light fa-1x"></i>
+                      <i class="sds fa-search fa-stack-1x text-base fa-2x"></i>
+                    </span>
+                    <span>Search Entities and Exclusions</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -73,9 +77,9 @@
             </div>
             <!-- entity compliance tile-->
             <div class="sds-tile">
-              <a [routerLink]="['home/registration']" class="sds-tile__content sds-tile--outline">
+              <a [routerLink]="['home/entity-compliance']" class="sds-tile__content sds-tile--outline">
                 <i class="sds-tile__icon sds fa-new-version text-base"></i>
-                <div class="sds-tile__title">Entity Registration</div>
+                <div class="sds-tile__title">Entity Compliance</div>
               </a>
             </div>
             <!-- assistance listing tile -->
@@ -107,25 +111,25 @@
       <!-- homepage get started and search -->
       <div class="grid-row padding-x-4 padding-bottom-4 home-bottom">
         <div class="tablet-lg:grid-col-4 display-flex flex-column maxw-mobile-lg mobile-lg:margin-left-4 outline-btn">
-          <h2 class="home-text margin-y-05 text-normal"> New to SAM.gov?</h2>
+          <h2 class="home-text margin-y-05 text-normal">New to SAM.gov?</h2>
           <div class="sds-button--outline">
             <button class="sds-button sds-button--icon text-center">
               <span class="fa-stack fa-2x">
                 <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
                 <i class="sds fa-folder fa-stack-1x text-base fa-2x"></i>
               </span>
-              <span class="sds-button--icon__title">Help Me Get Started</span>
+              <span class="sds-button--icon__title"><a class="usa-link" [routerLink]="['/home/new-to-sam']">Help Me Get Started</a></span>
             </button>
           </div>
         </div>
         <div class="tablet-lg:grid-col-7 display-flex flex-column mobile-lg:margin-left-4 desktop:margin-left-0">
           <h2 class="search-text margin-y-05 text-normal"> Already know what you want to find?</h2>
           <div class="sds-search margin-top-05">
-            <form class="usa-search usa-search--small usa-search--inverse">
+            <form class="usa-search usa-search--small usa-search--inverse" action="/search">
               <label class="usa-sr-only" for="inverse-search-options">Select Here</label>
-              <select class="usa-select usa-select--inverse" name="options" id="inverse-search-options">
+              <select class="usa-select usa-select--inverse" name="index" id="search-options">
                 <option value="all">Select... </option>
-                <option value="assistance">Assistance Listings</option>
+                <option value="assistancelist">Assistance Listings</option>
                 <option value="opportunities">Contract Opportunities</option>
                 <option value="contractdata">Contract Data</option>
                 <option value="entityinfo">Entity Information</option>
@@ -134,7 +138,7 @@
               </select>
               <div role="search" class="width-full">
                 <label class="usa-sr-only" for="inverse-search-dropdown">Search Here</label>
-                <input class="usa-input" id="inverse-search-dropdown" type="search" name="search" placeholder="Search Here">
+                <input class="usa-input" id="search-input" type="search" name="keyword" placeholder="Search Here">
                 <button class="usa-button" type="submit">
                   <span class="usa-sr-only">Search</span>
                 </button>

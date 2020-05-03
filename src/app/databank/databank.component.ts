@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { SamModelService } from '../model/sam-model.service';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'sam-databank',
@@ -10,6 +11,7 @@ import { SamModelService } from '../model/sam-model.service';
 export class DatabankComponent implements OnInit {
 
     domain: string;
+    page: string;
 
     public subheader = {
         buttons: [],
@@ -18,7 +20,7 @@ export class DatabankComponent implements OnInit {
         ]
   };
 
-  constructor(private route: ActivatedRoute, public model: SamModelService) { 
+  constructor(private route: ActivatedRoute, private router: Router, public model: SamModelService) { 
   }
 
   ngOnInit() {
@@ -29,6 +31,17 @@ export class DatabankComponent implements OnInit {
           this.domain = 'all';
         }
       });
+      this.router.events.pipe(
+        filter(event => event instanceof NavigationEnd),
+        map(() => {
+          this.page = this.router.url.split('/').pop();
+        })
+      );
+  }
+
+  selectPage(page) {
+      let path = (page == 'databank') ? "" : '/' + page;
+      this.router.navigateByUrl('/databank' + path);
   }
 
   log(value) {

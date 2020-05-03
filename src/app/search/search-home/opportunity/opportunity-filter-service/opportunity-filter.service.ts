@@ -5,6 +5,8 @@ import {
   AwardIdvTypeService, 
   NaicsService,
   DateRangeService,
+  PscService,
+  HierarchyService,
   SearchFiltersWrapperService 
 } from '../../../../common/public-apis';
 
@@ -24,7 +26,10 @@ inactiveService.settings.id = 'inactive-date';
 })
 export class OpportunityFilterService implements SearchFiltersWrapperService {
 
-  constructor(public awardIdvTypeService: AwardIdvTypeService, public naicsService: NaicsService) { }
+  constructor(public awardIdvTypeService: AwardIdvTypeService, 
+  		public naicsService: NaicsService, 
+  		public pscService: PscService,
+  		public hierarchyService: HierarchyService) { }
 
   public model = {};
 
@@ -55,9 +60,12 @@ export class OpportunityFilterService implements SearchFiltersWrapperService {
 	    templateOptions: { label: 'Federal Organizations' },
 	    fieldGroup: [{
 	      key: 'hierarchyOrganization',
-	      type: 'input',
+	      type: 'autocomplete',
 	      templateOptions: {
-	        hideLabel: true
+	        hideLabel: true,
+	        service: this.hierarchyService,
+	        configuration: this.hierarchyService.settings,
+	        model: this.hierarchyService.model
 	      }
 	    }]
 	  },
@@ -139,10 +147,13 @@ export class OpportunityFilterService implements SearchFiltersWrapperService {
 	      }
 	    },{
 	      key: 'pscCode',
-	      type: 'input',
+	      type: 'autocomplete',
 	      wrappers: ['filterwrapper'],
 	      templateOptions: {
-	        label: 'Product Service Code'
+	        label: 'Product Service Code',
+	        service: this.pscService,
+	        configuration: this.pscService.settings,
+	        model: this.pscService.model
 	      }
 	    }]
 	  },

@@ -57,7 +57,22 @@ const routes: Routes = [
 	    data: {
 	      id: "home"
 	    }
+	},
+	{
+		path: 'new-to-sam',
+		loadChildren: './new-to-sam/new-to-sam.module#NewToSamModule',
+	    data: {
+	      id: "home"
+	    }
+	},
+	{
+		path: 'entity-compliance',
+		loadChildren: './entity-compliance/entity-compliance.module#EntityComplianceModule',
+	    data: {
+	      id: "home"
+	    }
 	}
+
 ];
 
 @NgModule({

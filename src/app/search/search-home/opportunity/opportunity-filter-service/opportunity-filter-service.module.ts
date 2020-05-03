@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AwardIdvTypeService, NaicsService, DateRangeService } from '../../../../common/public-apis';
+import { AwardIdvTypeService, NaicsService, PscService, HierarchyService, DateRangeService } from '../../../../common/public-apis';
 
 @NgModule({
   declarations: [],
@@ -10,6 +10,8 @@ import { AwardIdvTypeService, NaicsService, DateRangeService } from '../../../..
   providers: [
   	AwardIdvTypeService,
   	NaicsService,
+  	PscService,
+  	HierarchyService,
   	DateRangeService
   ]
 })

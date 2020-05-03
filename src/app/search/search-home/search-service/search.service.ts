@@ -38,7 +38,8 @@ export class SearchService {
                 break;      
             }
             case 'opportunities': {
-                this.data = opportunitiesData._embedded.results;  
+                this.data = opportunitiesData;  
+                this.setType(this.data, "opportunity");
                 break;     
             }
             case 'registrations': {
@@ -81,7 +82,20 @@ export class SearchService {
     }
 
     private getAllData() {
-        return assistanceData._embedded.results.concat(opportunitiesData._embedded.results).concat(registrationData._embedded.results).concat(exclusionData._embedded.results);
+        return assistanceData._embedded.results.concat(opportunitiesData).concat(registrationData._embedded.results).concat(exclusionData._embedded.results);
+    }
+
+    hasNoFilters(filter) {
+        Object.entries(filter).forEach(([key, value]) => {
+                if(typeof value == "object") {
+                  if(!this.hasNoFilters(value)) {
+                    return false;
+                  }
+                } else {
+                  return false;
+                }
+        });
+        return true;
     }
 
 
@@ -97,8 +111,13 @@ export class SearchService {
             return of({
                 items: [],
                 totalItems: 0
-            })
+            });
         }
+    }
+
+    private filterOpportunity(item: any, search: SearchParameters) {
+         let naics = search.filter.serviceClassificationsWrapper.naicsCode;
+
     }
 
     private sortItems(itemList: any[], search: SearchParameters) {
@@ -180,9 +199,9 @@ export class SearchService {
             case 'relevanceDescending':
                 return [a._rScore, b._rScore];
             case 'dateDescending':
-                return [new Date(a.responseDate), new Date(b.responseDate)];
+                return [new Date(a.response_date), new Date(b.response_date)];
             case 'dateAscending':
-                return [new Date(b.responseDate), new Date(a.responseDate)];
+                return [new Date(b.response_date), new Date(a.response_date)];
             default:
                 return [a._rScore, b._rScore];
          }
@@ -210,6 +229,12 @@ export class SearchService {
     private setRelevance(data) {
         for(let i = 0; i < data.length; i++) {
             data[i]._rScore = Math.random();
+        }
+    }
+
+    private setType(data: any, type: string) {
+        for(let i=0; i<data.length; i++) {
+            data[i]._type = type;
         }
     }
 

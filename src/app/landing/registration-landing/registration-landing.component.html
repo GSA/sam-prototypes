@@ -38,7 +38,7 @@
             <div href="#" class="sds-tile--outline">
               <h3 class="sds-tile__title">Ready to Register?</h3>
               <div class="sds-tile__details">
-                <button class="usa-button ">Register Entity</button>
+                <button class="usa-button" [routerLink]="['/entity-registration/register']">Register Entity</button>
                 <div class="sds-links">
                   <a><i class="sds fa-angle-circle fa-rotate-180"></i> Update Registration</a>
                   <a><i class="sds fa-angle-circle fa-rotate-180"></i> Check Status</a>
@@ -76,7 +76,7 @@
             <p>Entity registration typically takes between a few hours to 2 days to become active.</p>
 
             <div class="sds-links">
-              <a class="usa-link"><i class="sds fa-question"></i>Check Registration Check</a>
+              <a class="usa-link" [routerLink]="['/home/check-status']"><i class="sds fa-question"></i>Check Registration Check</a>
             </div>
 
             <span class="sds-callout__title">Federal Service Desk</span>
@@ -90,8 +90,8 @@
               <a class="usa-link"><i class="sds fa-new-note"></i>Call</a>
             </div>
 
-            <span class="sds-callout__title">Procurement Technical Assistance Centers (PTACS)</span>
-            <p>An official recourse for government contracting assistance. Find your local PTAC to get free help completing for SAM registration.</p>
+            <span class="sds-callout__title"><a class="usa-link" href="https://www.aptac-us.org/">Procurement Technical Assistance Centers (PTACS)</a></span>
+            <p>An official resource for government contracting assistance. Find your local PTAC to get free help with your SAM registration and other government contracting issues. Visit <a class="usa-link" href="https://www.aptac-us.org/" target="_blank">aptac-us.org</a>.</p>
           </div>
         </div>
       </div>

@@ -27,6 +27,13 @@ $theme-font-role-alt: 'sans';
 
 /* autoprefixer grid: autoplace */
 
+.usa-select {
+  @include u-margin-y(0);
+  @include u-border('base-light');
+  @include u-font('sans', 'md');
+  @include u-text('semibold');
+  @include u-text('base-dark');
+}
 
 .usa-intro {
   @include u-font('sans', 'md');

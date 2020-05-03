@@ -66,7 +66,7 @@
              <ul class="usa-nav__submenu-list"><li class="usa-nav__submenu-item">
                     <a [routerLink]="['/']">Home</a>
                   </li><li class="usa-nav__submenu-item">
-                    <a href="#">New to SAM.gov</a>
+                    <a [routerLink]="['/home/new-to-sam']">New to SAM.gov</a>
                   </li><li class="usa-nav__submenu-item">
                     <a [routerLink]="['/home/registration']">Entity Registration</a>
                   </li><li class="usa-nav__submenu-item">
@@ -76,7 +76,7 @@
              <ul class="usa-nav__submenu-list"><li class="usa-nav__submenu-item">
                     <a [routerLink]="['/home/opportunities']">Entity Information</a>
                   </li><li class="usa-nav__submenu-item">
-                    <a [routerLink]="['/home/opportunities']">Entity Compliance</a>
+                    <a [routerLink]="['home/entity-compliance']">Entity Compliance</a>
                   </li><li class="usa-nav__submenu-item">
                     <a [routerLink]="['/home/opportunities']">Agency Exclusions POCs</a>
                   </li></ul>
@@ -99,7 +99,7 @@
                     <a href="#">Navigation link</a>
                   </li></ul>
             </div></div></div></li><li class="usa-nav__primary-item">
-    <a class="usa-nav__link" [class.usa-current]="sectionId == 'search'" [routerLink]="['/search']"><span>Search</span></a>
+    <a class="usa-nav__link" [class.usa-current]="sectionId == 'search'" [routerLink]="['/search/results']"><span>Search</span></a>
     </li><li class="usa-nav__primary-item">
     <a class="usa-nav__link" [class.usa-current]="sectionId == 'databank'" [routerLink]="['/databank']"><span>Databank</span></a>
     </li><li class="usa-nav__primary-item">
