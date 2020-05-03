@@ -2,7 +2,7 @@ import { SideNavigationModel, NavigationMode } from '@gsa-sam/components';
 
 export let navigationConfig: SideNavigationModel = {
     navigationLinks: [
-        { id: 'all', text: 'All Domains', mode: NavigationMode.INTERNAL, route: '/search' },
+        { id: 'all', text: 'All Domains', mode: NavigationMode.INTERNAL, route: '/search/results' },
         { id: 'opportunites', text: 'Contract Opportunities', mode: NavigationMode.INTERNAL, route: '/search/results', queryParams: { 'index' : 'opportunities'}},
         { id: 'contractData', text: 'Contract Data', mode: NavigationMode.INTERNAL, route: '/search/results', queryParams: { 'index' : 'contractdata'}},
         {

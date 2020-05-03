@@ -15,7 +15,7 @@ export class OpportunitiesLandingComponent implements OnInit {
   }
 
   search(searchTerm) {
-     this.router.navigate(['/search'], { queryParams: { index: 'opportunities', keyword: searchTerm } });
+     this.router.navigate(['/search/results'], { queryParams: { index: 'opportunities', keyword: searchTerm } });
   }
 
 }
