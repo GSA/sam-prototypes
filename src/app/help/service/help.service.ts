@@ -34,6 +34,7 @@ class FakeWebService {
     }
 
     filterByType(result, types) {
+        if(types.article && result.type == 4) return true;
         if(types.video && result.type == 3) return true;
         if(types.faq && result.type == 2) return true;
         if(types.term && result.type == 1) return true;
@@ -165,6 +166,7 @@ export class HelpService {
     }
 
     filterByType(result, types) {
+        if(types.article && result.type == 4) return true;
         if(types.video && result.type == 3) return true;
         if(types.faq && result.type == 2) return true;
         if(types.term && result.type == 1) return true;

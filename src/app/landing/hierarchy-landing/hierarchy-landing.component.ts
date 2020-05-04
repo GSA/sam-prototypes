@@ -13,4 +13,8 @@ export class HierarchyLandingComponent implements OnInit {
   ngOnInit() {
   }
 
+  search(term) {
+  
+  }
+
 }

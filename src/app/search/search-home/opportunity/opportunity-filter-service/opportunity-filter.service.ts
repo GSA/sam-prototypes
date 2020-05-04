@@ -29,6 +29,7 @@ export class OpportunityFilterService implements SearchFiltersWrapperService {
   constructor(public awardIdvTypeService: AwardIdvTypeService, 
   		public naicsService: NaicsService, 
   		public pscService: PscService,
+  		public dateRangeService: DateRangeService,
   		public hierarchyService: HierarchyService) { }
 
   public model = {};
@@ -53,6 +54,21 @@ export class OpportunityFilterService implements SearchFiltersWrapperService {
 	        label: 'Title',
 	        labelClass:'usa-sr-only'
 	      }
+	  },
+	  {
+	  	key: 'dateWrapper',
+	  	wrappers: ['accordionwrapper'],
+	  	templateOptions: { label: 'Date '},
+	  	fieldGroup: [{
+	  		key: 'dateOffersDue',
+	  		type: 'autocomplete',
+	  		templateOptions: {
+	  		  label: 'Date Current Offers Due',
+	  		  service: this.dateRangeService,
+	  		  configuration: this.dateRangeService.settings,
+	  		  model: this.dateRangeService.model
+	  		}
+	  	}]
 	  },
 	  {
 	    key: 'hierarchyWrapper',

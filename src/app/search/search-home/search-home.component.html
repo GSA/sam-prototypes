@@ -35,17 +35,6 @@
      <search-list-layout #resultList [service]="service" [configuration]="listModel">
           <ng-template #resultContent let-item>
               <div>
-                  <div *ngIf="item._type == 'emptyFilters'">
-                      <div class="grid-row border-1px border-base-lighter bg-base-lightest">
-                      <div class="grid-col-auto text-center text-base margin-4">
-                        <fa-icon [icon]="['sds', 'search']" [classes]="['search']" size="7x"></fa-icon>
-                      </div>
-                      <div class="grid-col-fill display-flex flex-column padding-y-1">
-                        <h1 class="margin-bottom-105 text-semibold">Enter your search criteria</h1>
-                        <p class="margin-y-0 font-sans-lg">Enter an id, keyword, or other search criteria to start your search.</p>
-                      </div>
-                    </div>
-                  </div>
               	  <assistance-result *ngIf="item._type == 'assistanceListing'" [model]="item"></assistance-result>
                   <opportunity-result *ngIf="item._type == 'opportunity'" [model]="item"></opportunity-result>
                   <entity-result *ngIf="item._type == 'entity'" [model]="item"></entity-result>

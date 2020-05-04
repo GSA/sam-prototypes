@@ -1,8 +1,9 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy, ChangeDetectorRef, AfterViewInit } from '@angular/core';
-
+import { Component, OnInit, Input, ChangeDetectionStrategy, ChangeDetectorRef, AfterViewInit, ViewChild } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 import { FormGroup } from '@angular/forms';
+import { CdkAccordionItem } from "@angular/cdk/accordion";
 
 import { SideNavigationModel, NavigationMode } from '@gsa-sam/components';
 import { helpNavigationData} from './navigation/navigation.data';
@@ -16,6 +17,19 @@ import { HelpService } from './service/help.service';
 })
 export class HelpComponent implements OnInit, AfterViewInit {
 
+  domainLabelMap: Map<string, string> = new Map<string, string>([
+    ['opportunities', 'Contract Opportunities'],
+    ['contractdata', 'Contract Data'],
+    ['assistancelist', 'Assistance Listings'],
+    ['entityinfo', 'Entity Information'],
+    ['hierarchy', 'Federal Hierarchy'],
+    ['wages', 'Wage Determinations']
+  ]);
+
+  domainLabel: string;
+  @ViewChild('filtersAccordion')
+    filtersAccordion: CdkAccordionItem;
+
   public sideNavModel: SideNavigationModel = helpNavigationData;
 
   form = new FormGroup({});
@@ -28,13 +42,32 @@ export class HelpComponent implements OnInit, AfterViewInit {
     ]
   };
 
-  constructor(private change: ChangeDetectorRef, public service: HelpService, public filtersService: HelpFiltersService) { }
+  constructor(
+    private change: ChangeDetectorRef, 
+    private route: ActivatedRoute,
+    public router: Router,
+    public service: HelpService, 
+    public filtersService: HelpFiltersService) { }
 
   ngOnInit() {
   }
 
-  ngAfterViewInit() {      
+  ngAfterViewInit() {
+    this.route.queryParams.subscribe(
+      data => {
+        let domain = typeof data['index'] === "string" ? decodeURI(data['index']) : 'all'
+        this.setDomain(domain);
+      }
+    );
     this.change.detectChanges();
+  }
+
+  setDomain(domain: string) {
+      let label = this.domainLabelMap.get(domain);
+      this.domainLabel = label ? label : 'All Domains';
+      if(this.filtersAccordion && !this.filtersAccordion.expanded) {
+        this.filtersAccordion.toggle();
+      }
   }
 
   newSearch(searchTerm) {

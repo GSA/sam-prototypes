@@ -42,35 +42,22 @@
 			      <div class="grid-row">
 			        <div class="grid-col-auto">
 			          <div class="width-6 margin-y-3">
-			            <i class="sds fa-book fa-2x"></i>
+				        <i *ngIf="model.type == 1" class="sds fa-book fa-2x"></i>
+				        <i *ngIf="model.type == 2" class="sds fa-question fa-2x"></i>
+				        <i *ngIf="model.type == 3" class="sds fa-video-square fa-2x"></i>
+				        <i *ngIf="model.type == 4" class="sds fa-pen-paper fa-2x"></i>
 			          </div>
 			        </div>
 			        <div class="grid-col-fill">
 			          <h1>{{model.title}}</h1>
 			          <div class="sds-field">
 			            <div class="sds-field__name">Latest Update:</div>
-			            <div class="sds-field__value">model.lastModifiedDate | date</div>
+			            <div class="sds-field__value">{{model.lastModifiedDate | date}}</div>
 			          </div>
 			        </div>
 			      </div>
-		            <p>
-		              Wage Determinations OnLine.gov (WDOL.gov) is retired and no longer available to access for wage determination information. As of now, beta.SAM.gov is the official source for wage determination data. Everything you used to do in WDOL.gov, can now be done in beta.SAM.gov.
-		            </p>
-		            <p>
-		              In beta.SAM.gov, the WDOL functionality falls under the category (what we call ‘domain’) Wage Determinations. In order to use the “Follow” button on beta.SAM.gov to “watch” specific wage determinations, you must log in. When we migrated over the functions of WDOL, we made significant improvements, including:
-		            </p>
-		            <ul>
-		              <li>The Integrated Award Environment Digest 2019</li>
-		              <li>
-		                Offering the ability to search data by number, keyword, or location for exact and immediate results
-		              </li>
-		              <li>
-		                Providing easy to use search filters to quickly find the right wage determination
-		              </li>
-		            </ul>
-		            <p>
-		              For more information about the overall evolution of beta.SAM.gov, stay tuned to IAE’s Interact section or visit GSA.gov/IAE.
-		            </p>
+		          <div [innerHTML]="model.description">
+		          </div>
 		      <nav>
 		        <div class="sds-button-row">
 		          <div *ngIf="isSearchResult" class="sds-button-col sds-button-col--left">

@@ -13,4 +13,8 @@ export class EntityComplianceComponent implements OnInit {
   ngOnInit() {
   }
 
+  search(term) {
+  
+  }
+
 }

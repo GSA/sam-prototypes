@@ -17,6 +17,10 @@ export class SearchService {
     public domain: string;
     private data: any[];
 
+    constructor() {
+        this.setType(opportunitiesData, "opportunity");
+    }
+
     private getPage(data: any[], page: number, pageSize: number): any[] {
         let startIndex: number = page * pageSize;
         let endIndex = startIndex + (pageSize);
@@ -39,7 +43,6 @@ export class SearchService {
             }
             case 'opportunities': {
                 this.data = opportunitiesData;  
-                this.setType(this.data, "opportunity");
                 break;     
             }
             case 'registrations': {
@@ -84,20 +87,6 @@ export class SearchService {
     private getAllData() {
         return assistanceData._embedded.results.concat(opportunitiesData).concat(registrationData._embedded.results).concat(exclusionData._embedded.results);
     }
-
-    hasNoFilters(filter) {
-        Object.entries(filter).forEach(([key, value]) => {
-                if(typeof value == "object") {
-                  if(!this.hasNoFilters(value)) {
-                    return false;
-                  }
-                } else {
-                  return false;
-                }
-        });
-        return true;
-    }
-
 
     getData(search: SearchParameters): Observable<SearchResult> {
 
