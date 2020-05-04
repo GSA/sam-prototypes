@@ -3,7 +3,7 @@
   <section class="sds-hero">
     <div class="grid-row margin-right-neg-2">
       <div class="tablet:grid-col-fill">
-        <h1 class="text-base margin-bottom-0">Before You Get Started</h1>
+        <h1 class="text-base margin-bottom-0">Entity Registration</h1>
           <h2>What is an Entity?</h2>
        <p class="usa-intro">In SAM, your company/business/organization is referred to as an “Entity.” You register your entity to do 
               business with the U.S. Federal government by completing the registration process in SAM.  SAM is the official free, government operated website – there is NO charge to register or maintain your entity registration record in SAM.</p>
@@ -40,8 +40,8 @@
               <div class="sds-tile__details">
                 <button class="usa-button" [routerLink]="['/entity-registration/register']">Register Entity</button>
                 <div class="sds-links">
-                  <a><i class="sds fa-angle-circle fa-rotate-180"></i> Update Registration</a>
-                  <a><i class="sds fa-angle-circle fa-rotate-180"></i> Check Status</a>
+                  <a class="usa-link" [routerLink]="['/entity-registration/register']"><i class="sds fa-angle-circle fa-rotate-180"></i> Update Registration</a>
+                  <a class="usa-link" [routerLink]="['/home/check-status']"><i class="sds fa-angle-circle fa-rotate-180"></i> Check Status</a>
                 </div>
               </div>
             </div>
@@ -49,12 +49,12 @@
 
           <div class="sds-tile sds-tile--block">
             <div href="#" class="sds-tile--outline">
-              <h3 class="sds-tile__title">Ready to Register?</h3>
+              <h3 class="sds-tile__title">I'm Already Registered</h3>
               <div class="sds-tile__details">
                 <div class="sds-links">
-                  <a><i class="sds fa-new-note"></i> Managing your entity registration</a>
-                  <a><i class="sds fa-new-note"></i> Managing users and roles (non-federal users)</a>
-                  <a><i class="sds fa-new-note"></i> Managing users and roles (federal users)</a>
+                  <a><i class="sds fa-new-note"></i> Manage your entity registration</a>
+                  <a><i class="sds fa-new-note"></i> Manage users and roles (non-federal users)</a>
+                  <a><i class="sds fa-new-note"></i> Manage users and roles (federal users)</a>
                 </div>
               </div>
             </div>
@@ -137,7 +137,7 @@
     </div>
   </section>
 <!-- ENTITY INFORMATION ICON LINKS -->
-  <section class="content-row--lg">
+  <section class="content-row--lg" hidden>
     <h6 class="font-sans-lg text-secondary-dark text-normal margin-y-1 margin-left-2">Entity Information</h6>
     <p class="margin-left-2">Go to our entity information page to find more features and information about entities including the following.</p>
     <div class="grid-row  ">

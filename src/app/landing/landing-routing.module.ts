@@ -17,6 +17,13 @@ const routes: Routes = [
 	    }
 	},
 	{
+		path: 'contract-data',
+		loadChildren: './contract-data-landing/contract-data-landing.module#ContractDataLandingModule',
+	    data: {
+	      id: "home"
+	    }
+	},
+	{
 		path: 'check-status',
 		loadChildren: './status-tracker/status-tracker.module#StatusTrackerModule',
 	    data: {

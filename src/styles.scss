@@ -27,6 +27,14 @@ $theme-font-role-alt: 'sans';
 
 /* autoprefixer grid: autoplace */
 
+.sds-tag {
+  width: 100% !important;
+}
+
+.sds-accordion__trigger {
+  @include u-margin-top(1);
+}
+
 .usa-select {
   @include u-margin-y(0);
   @include u-border('base-light');
@@ -185,6 +193,7 @@ i.n-sds-circle-secondary {
 	@include u-margin-bottom(4);
 	@include u-radius('md');
 	@include u-bg('white');
+  @include u-height('full');
 
 
 .n-sds-card__heading {
@@ -195,7 +204,7 @@ i.n-sds-circle-secondary {
 
   h1, h2, h3, h4, h5, h6 {
       @include u-text('base-dark');
-      @include u-padding-top(2);
+      @include u-padding-y(2);
   }
 
   a {
@@ -224,6 +233,7 @@ i.n-sds-circle-secondary {
 .n-sds-card__content {
   @include u-padding-x(2);
   @include u-padding-bottom(2);
+  @include u-height('full');
 }
 
 .n-sds-card__side-heading {

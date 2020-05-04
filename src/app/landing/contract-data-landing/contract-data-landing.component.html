@@ -1,0 +1,228 @@
+<main>
+  <div class="n-sds-page">
+    <div class="grid-container">
+      <section aria-label="Contract Data">
+          <div class="n-sds-hero usa-prose">
+            <div class="grid-row grid-gap-md">
+              <div class="grid-col-fill">
+                <h1>Contract Data</h1>
+                <p class="usa-intro">Contract data is detailed post-solicitation and award information on contracts that have an estimated value of $3,500 or more.</p> 
+              </div>
+              <div class="grid-col-auto">
+                <div class="sds-seal margin-top-4">
+                  <i class="sds fa-flag fa-2x margin-y-1 text-secondary"></i>
+                  <div class="sds-seal__content">Official U.S. Government Website <span>100% Free</span>
+                  </div>
+                </div>
+              </div>
+            </div>   
+            <div class="grid-row">
+              <div class="grid-col-12 tablet-lg:grid-col-8 desktop:grid-col-6">
+                <form class="usa-search usa-search--big" role="search">
+                  <label class="usa-sr-only" for="search-field-big">Search</label>
+                  <input class="usa-input" id="search-field-big" type="search" name="search" placeholder="Enter a Solicitation ID or Keyword" autocomplete="off">
+                  <button class="usa-button" type="submit">
+                      <span class="usa-sr-only">Search</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+        </div>
+      </section>
+  <section aria-label="Contract Data Search and Reports">
+    <div class="grid-row">
+      <div class="grid-col-12 tablet-lg:grid-col-10 tablet-lg:grid-offset-1">
+        <div class="usa-accordion usa-accordion--bordered" aria-multiselectable="true">
+          <section aria-label="How to search contract data">
+            <h2 class="usa-accordion__heading">
+              <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="contract-data-search">
+                How to search contract data
+              </button>
+            </h2>
+            <div id="contract-data-search" class="usa-accordion__content usa-prose" hidden>
+              <!-- Get started links -->
+              <h3 class="text-ink text-semibold font-sans-md">Get started searching contract data</h3>
+              <div class="padding-x-2 display-flex flex-column">
+                <a class="usa-link" [routerLink]="['help']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Use the search feature on SAM.gov</span>
+                </a>
+                <a class="usa-link" [routerLink]="['help']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Save my searches</span>
+                </a>
+                <a class="usa-link" [routerLink]="['help']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Public Quick Start Guide</span>
+                </a>
+                <a class="usa-link" [routerLink]="['help']">
+                  <i class="sds fa-video-square text-base-dark margin-right-1"></i>
+                  <span>Video - Searching Contract Data</span>
+                </a>
+              </div>
+              <!-- additional filters links -->
+              <h3 class="text-ink text-semibold font-sans-md">Use filters to find contract data</h3>
+              <div class="padding-x-2 display-flex flex-column">
+                <a class="usa-link" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Changing search filters</span>
+                </a>
+                <a class="usa-link" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Search by federal agency</span>
+                </a>
+                <a class="usa-link" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Search by awardee</span>
+                </a>
+                <a class="usa-link" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Search by contract type</span>
+                </a>
+                <a class="usa-link" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>More search filters</span>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <section aria-label="How to run contract data reports">
+            <h2 class="usa-accordion__heading">
+              <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="contract-data-reports">
+                How to run contract data reports
+              </button>
+            </h2>
+            <div id="contract-data-reports" class="usa-accordion__content usa-prose" hidden>
+              <!-- smanage listings links -->
+              <h3 class="text-ink text-semibold font-sans-md">Manage your assistance listings</h3>
+              <div class="padding-x-2 display-flex flex-column">
+                <a class="usa-link" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Meet your annual update requirements</span>
+                </a>
+                <a class="usa-link" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Create and post assistance listings</span>
+                </a>
+                <a class="usa-link" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Give your listing a new title</span>
+                </a>
+                <a class="usa-link" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Assign your listing a new CFDA number</span>
+                </a>
+                <a class="usa-link" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Manage your regional locations</span>
+                </a>
+              </div>
+              <!-- admin links -->
+              <h3 class="text-ink text-semibold font-sans-md">Manage your assistance listings</h3>
+              <div class="padding-x-2 display-flex flex-column">
+                <a class="usa-link" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Manage users and roles</span>
+                </a>
+                <a class="usa-link" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Quick Start Guide for Role Management</span>
+                </a>
+                <a class="usa-link" [routerLink]="['news']">
+                  <i class="sds fa-video-square text-base-dark margin-right-1"></i>
+                  <span>Video - role management</span>
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="grid-row grid-gap-md margin-top-4">
+    <div class="grid-col-12 tablet-lg:grid-col-5 margin-bottom-2">
+      <section aria-label="Data extracts and APIs">
+        <div class="n-sds-card n-sds-card--bordered">
+          <div class="n-sds-card__heading n-sds-card__heading--accent">
+          	<h2>Data Extracts and APIs</h2>
+          </div>
+          <div class="n-sds-card__content">
+          	<h3>Connect to Data Services</h3>
+            <p><a class="usa-link" [routerLink]="['news']">
+              <i class="sds fa-file text-base-dark margin-right-1"></i>
+              <span>Quick Start Guide for Data Services</span>
+            </a></p>
+            <p><a class="usa-link" [routerLink]="['news']">
+              <i class="sds fa-file text-base-dark margin-right-1"></i>
+              <span>How to use contract data APIs</span>
+            </a></p>
+            <p><a class="usa-link" [routerLink]="['news']">
+              <i class="sds fa-video-square text-base-dark margin-right-1"></i>
+              <span>Video - How to access data extracts and use APIs</span>
+            </a></p>
+            <p><a class="usa-link" [routerLink]="['news']">
+              <i class="sds fa-check-circle text-base-dark margin-right-1"></i>
+              <span>Go to contract data APIs</span>
+            </a></p>
+            <h3>Downloads and File Extracts</h3>
+            <p><a class="usa-link" [routerLink]="['news']">
+              <i class="sds fa-file text-base-dark margin-right-1"></i>
+              <span>How to download all contract data</span>
+            </a></p>
+            <p><a class="usa-link" [routerLink]="['news']">
+              <i class="sds fa-check-circle text-base-dark margin-right-1"></i>
+              <span>Go to Downloads and Extracts</span>
+            </a></p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="grid-col-12 tablet-lg:grid-col-7 margin-bottom-2">
+      <section aria-label="More about contract data">
+        <div class="n-sds-card n-sds-card--bordered">
+          <div class="n-sds-card__heading n-sds-card__heading--accent">
+          	<h2>More about Contract Data</h2>
+          </div>
+            <div class="n-sds-card__content">
+              <h3>Static Reports</h3>
+              <p>Static Reports have been prepared on a fiscal year basis for the public and aggregate data across the Federal Government. The following reports are available for download.</p>
+              <p><a class="usa-link" [routerLink]="['news']">
+                <i class="sds fa-file-chart-line text-base-dark margin-right-1"></i>
+                <span>National Interest Action / Other Reports</span>
+              </a></p>
+              <p><a class="usa-link" [routerLink]="['news']">
+                <i class="sds fa-file-chart-line text-base-dark margin-right-1"></i>
+                <span>Small Business Goaling Reports</span>
+              </a></p>
+              <p><a class="usa-link" [routerLink]="['news']">
+                <i class="sds fa-file-chart-line text-base-dark margin-right-1"></i>
+                <span>Top 100 Contractors Reports</span>
+              </a></p>
+              <p><a class="usa-link" [routerLink]="['news']">
+                <i class="sds fa-file-chart-line text-base-dark margin-right-1"></i>
+                <span>Federal Procurement Reports</span>
+              </a></p>
+        	  <h3>Help</h3>
+               <p><a class="usa-link" [routerLink]="['news']">
+                <i class="sds fa-question-circle text-base-dark margin-right-1"></i>
+                <span>FAQs</span>
+              </a></p>
+              <p><a class="usa-link" [routerLink]="['news']">
+                <i class="sds fa-book text-base-dark margin-right-1"></i>
+                <span>Glossary</span>
+              </a></p>
+              <p><a class="usa-link" [routerLink]="['news']">
+                <i class="sds fa-video-square text-base-dark margin-right-1"></i>
+                <span>Videos</span>
+              </a></p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+</main>

@@ -1,3 +1,57 @@
-<p>
-  hierarchy-result works!
-</p>
+  <div class="grid-row grid-gap">
+    <div class="grid-col-9">
+      <h3 class="font-sans-xs margin-y-0">
+        <a class="usa-link" [routerLink]="['/']">
+          {{model.Title}}
+        </a>
+      </h3>
+      <h4 style="margin-top: .5rem; margin-bottom: .5rem;">Notice ID: {{model.notice_id}}</h4>
+      <p style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: 16px; font-size: 15px; max-height: 32px; margin-bottom: 1rem;">{{model.Description.replace(no_html, '')}}</p>
+      <div class="grid-row grid-gap">
+      	<div *ngIf="model.dept_name" class="grid-col-4">
+			<div class="sds-static--label">Department/Ind. Agency</div>
+	        <div class="sds-static">{{model.dept_name}}</div>
+      	</div>
+		<div *ngIf="model.subtier_name" class="grid-col-4">
+			<div class="sds-static--label">Subtier</div>
+	        <div class="sds-static">{{model.subtier_name}}</div>
+      	</div>
+      	<div *ngIf="model.contracting_office" class="grid-col-4">
+			<div class="sds-static--label">Office</div>
+	        <div class="sds-static">{{model.contracting_office}}</div>
+      	</div>
+      </div>
+    </div>
+    <div class="grid-col-3">
+    	  <div class="grid-row">
+            <div class="grid-col-12">
+              <span class="sds-tag sds-tag--outline">Contract Opportunity</span>
+            </div>
+          </div>
+          <div class="grid-row">
+	          <div class="grid-col-12">
+	            <div class="sds-static--label">Current Date Offers Due</div>
+	            <div class="sds-static">{{model.response_date | date }}</div>
+	          </div>
+          </div>
+          <div class="grid-row">
+	          <div class="grid-col-12">
+	            <div class="sds-static--label">Type</div>
+	            <div class="sds-static">{{model.opportunity_type}}</div>
+	          </div>
+          </div>
+          <div class="grid-row">
+	          <div class="grid-col-12">
+	            <div class="sds-static--label">Last Updated Date</div>
+	            <div class="sds-static">{{model.modified_date | date }}</div>
+	          </div>
+          </div>
+          <div class="grid-row">
+	          <div class="grid-col-12">
+	            <div class="sds-static--label">Last Published Date</div>
+	            <div class="sds-static">{{model.published_date | date }}</div>
+	          </div>
+          </div>
+    </div>
+  </div>
+

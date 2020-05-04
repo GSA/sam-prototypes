@@ -9,17 +9,17 @@
               <h1>Contract Opportunities</h1>
               <p class="usa-prose usa-intro">This site is the official source of contracting opportunities from the federal government. Anyone interested in doing business with the government can use this system to research active opportunities.</p>
             </div>
-            <div class="sds-seal margin-top-4 tablet:grid-col-auto">
+            <div class="sds-seal margin-top-4 margin-right-neg-3 tablet:grid-col-auto">
                 <i class="sds fa-flag fa-2x text-secondary"></i>
                 <div class="sds-seal__content">Official U.S. Government Website<span>100% Free</span></div>
             </div>
           </div>
           <h2 class="font-sans-lg margin-top-4 text-ink text-semibold">Search Contract Opportunities</h2>
-          <div class="usa-search--big maxw-tablet">
+          <div class="maxw-tablet">
             <sds-search placeholder="Enter a solicitation ID or keyword" 
               (term)="search($event)" 
-              inputClass="usa-search--big"
-              parentSelector=".grid-row">
+              placeholderText="Enter a notice ID or keyword"
+              inputClass="sds-search--big">
             </sds-search>
           </div>
         </div>
@@ -153,7 +153,7 @@
   </div>
 
   <!-- reports/data & user account sections -->
-  <div class="grid-row">
+  <div class="grid-row margin-top-8">
     <!-- reports and data -->
     <div class="tablet:grid-col sds-card">
       <div class="sds-card__header">

@@ -6,7 +6,7 @@ export let navigationConfig: SideNavigationModel = {
         { id: 'opportunites', text: 'Contract Opportunities', mode: NavigationMode.INTERNAL, route: '/search/results', queryParams: { 'index' : 'opportunities'}},
         { id: 'contractData', text: 'Contract Data', mode: NavigationMode.INTERNAL, route: '/search/results', queryParams: { 'index' : 'contractdata'}},
         {
-            id: 'federalAssistance', text: 'Federal Assistance', mode: NavigationMode.INTERNAL, route: '/search/results', children: [
+            id: 'federalAssistance', text: 'Federal Assistance', mode: NavigationMode.INTERNAL, route: '/search/results', queryParams: { 'index' : 'assistancelist'}, children: [
 
                 {
                     id: 'assistancelist', mode: NavigationMode.INTERNAL,
@@ -14,7 +14,7 @@ export let navigationConfig: SideNavigationModel = {
                 },
                 {
                     id: 'regionallocation', mode: NavigationMode.INTERNAL,
-                    route: '/search/results', text: 'Regional Locations'
+                    route: '/search/results', queryParams: { 'index' : 'assistancelist'}, text: 'Regional Locations'
                 }
             ]
         },
