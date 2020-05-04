@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import {
   SdsSearchModule
@@ -13,6 +14,7 @@ import { OpportunitiesLandingComponent } from './opportunities-landing.component
   imports: [
     CommonModule,
     SdsSearchModule,
+    RouterModule,
     OpportunitiesLandingRoutingModule
   ],
   exports: [OpportunitiesLandingComponent]
