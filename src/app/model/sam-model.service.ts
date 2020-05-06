@@ -24,19 +24,25 @@ export class SamModelService {
       text: 'Sign Out', route: '/', id: 'signOut'
     };
 
-  secondaryLinks = [{
-    imageClassPrefix: 'sds', imageClass: 'request', mode: NavigationMode.INTERNAL,
-    text: 'Requests', route: '/requests', id: 'request', hasCounter: true,
-    selected: true
-  },
-  {
-    imageClassPrefix: 'sds', imageClass: 'messages', text: 'Notifications', route: '/messages', mode: NavigationMode.INTERNAL,
-    id: 'messages'
-  },
-  {
-    imageClassPrefix: 'sds', imageClass: 'workspace', imageAltText: 'Workspace Icon', mode: NavigationMode.INTERNAL,
-    text: 'Workspace', route: '/workspace', id: 'workspace'
-  }];
+  secondaryLinksSignedOut = [{
+      imageClassPrefix: 'sds', imageClass: 'log-out', mode: NavigationMode.INTERNAL,
+      text: 'Sign Out', route: '/', id: 'signOut' 
+  }]
+
+  secondaryLinksSignedIn = [{
+      imageClassPrefix: 'sds', imageClass: 'request', mode: NavigationMode.INTERNAL,
+      text: 'Requests', route: '/requests', id: 'request', hasCounter: true,
+      selected: true
+      },
+      {
+        imageClassPrefix: 'sds', imageClass: 'messages', text: 'Notifications', route: '/messages', mode: NavigationMode.INTERNAL,
+        id: 'messages'
+      },
+      {
+        imageClassPrefix: 'sds', imageClass: 'workspace', imageAltText: 'Workspace Icon', mode: NavigationMode.INTERNAL,
+        text: 'Workspace', route: '/workspace', id: 'workspace'
+      }];
+
   navigationLinks: [
     { text: 'Home', route: '/', mode: NavigationMode.INTERNAL, id: 'home' },
     { text: 'Search', route: '/search', mode: NavigationMode.INTERNAL, id: 'search' },
@@ -46,9 +52,18 @@ export class SamModelService {
   ];
 
   modelHeader = {
-    secondaryLinks: this.secondaryLinks.concat([this.signOutItem]),
+    secondaryLinks: this.secondaryLinksSignedIn.concat([this.signOutItem]),
     navigationLinks: [
-      { text: 'Home', route: '/', mode: NavigationMode.INTERNAL, id: 'home' },
+      { text: 'Home', id: 'home', children: [
+          { text: 'Home Page', mode: NavigationMode.INTERNAL, route: '/' },
+          { text: 'Entity Information', mode: NavigationMode.INTERNAL, route: '/home/entity-information' },
+          { text: 'Entity Registration', mode: NavigationMode.INTERNAL, route: '/home/registration' },
+          { text: 'Contract Opportunities', mode: NavigationMode.INTERNAL, route: '/home/opportunities' },
+          { text: 'Contract Data', mode: NavigationMode.INTERNAL, route: '/home/entity-registration' },
+          { text: 'Entity Compliance', mode: NavigationMode.INTERNAL, route: '/home/compliance' },
+          { text: 'Federal Hierarchy', mode: NavigationMode.INTERNAL, route: '/home/hierarchy' },
+          { text: 'Assistance Listings', mode: NavigationMode.INTERNAL, route: '/home/assistance' }
+      ] },
       { text: 'Search', route: '/search', mode: NavigationMode.INTERNAL, id: 'search' },
       { text: 'Databank', route: '/databank', mode: NavigationMode.INTERNAL, id: 'databank' },
       { text: 'Data Services', route: '/dataservices', mode: NavigationMode.INTERNAL, id: 'dataService' },
@@ -72,26 +87,35 @@ export class SamModelService {
     linkSections: [
       {
         text: 'About beta.SAM.gov', links: [
-          { text: 'About SAM.gov', mode: NavigationMode.INTERNAL, route: '/about/about-sam' },
-          { text: 'Explore Our Community', mode: NavigationMode.INTERNAL, route: '/about/community' },
+          { text: 'About This Website', mode: NavigationMode.INTERNAL, route: '/about/about-sam' },
           { text: 'Release Notes', mode: NavigationMode.INTERNAL, route: '/about/release-notes' },
-          { text: 'Disclaimers', mode: NavigationMode.INTERNAL, route: '/about/disclaimers' }
+          { text: 'Alerts', mode: NavigationMode.INTERNAL, route: '/alerts' },
+          { text: 'News', mode: NavigationMode.INTERNAL, route: '/news' }
         ]
       },
       {
         text: 'Our Partners', links: [
-          { text: 'Aquisition.gov', mode: NavigationMode.INTERNAL, route: '/' },
-          { text: 'USASpending.gov', mode: NavigationMode.INTERNAL, route: '/' },
-          { text: 'Grants.gov', mode: NavigationMode.INTERNAL, route: '/' },
-          { text: 'More Partners', mode: NavigationMode.INTERNAL, route: '/' },
+          { text: 'Aquisition.gov', mode: NavigationMode.EXTERNAL, route: '/' },
+          { text: 'USASpending.gov', mode: NavigationMode.EXTERNAL, route: '/' },
+          { text: 'Grants.gov', mode: NavigationMode.EXTERNAL, route: '/' },
+          { text: 'More Partners', mode: NavigationMode.EXTERNAL, route: '/' }
+        ]
+      },
+      {
+        text: 'Policies', links: [
+          { text: 'Privacy Policy', mode: NavigationMode.INTERNAL, route: '/about/policies/privacy' },
+          { text: 'Disclaimers', mode: NavigationMode.INTERNAL, route: '/about/policies/disclaimers' },
+          { text: 'Freedom of Information Act', mode: NavigationMode.EXTERNAL, route: '' },
+          { text: 'Accessibility', mode: NavigationMode.INTERNAL, route: '/about/policies/accessibility' }
         ]
       },
       {
         text: 'Customer Service', links: [
           { text: 'Help', mode: NavigationMode.INTERNAL, route: '/help' },
-          { text: 'Contact Federal Service Desk', mode: NavigationMode.INTERNAL, route: '/about/fsd' },
-          { text: 'Resources', mode: NavigationMode.INTERNAL, route: '/about/resources' },
-          { text: 'Policies', mode: NavigationMode.INTERNAL, route: '/about/policies' }
+          { text: 'Federal Service Desk', mode: NavigationMode.EXTERNAL, route: 'fsd.gov' },
+          { text: 'Our Community', mode: NavigationMode.EXTERNAL, route: '/about/fsd' },
+          { text: 'External Resources', mode: NavigationMode.INTERNAL, route: '/about/resources' },
+          { text: 'Contact', mode: NavigationMode.INTERNAL, route: '/about/contact' }
         ]
       }
     ]
@@ -107,14 +131,14 @@ export class SamModelService {
   signIn(redirectUrl?: string) {
     this.isSignedIn = true;
     if (redirectUrl) {
-      this.router.navigateByUrl(redirectUrl);
+      this.router.navigateByUrl('/workspace');
     }
   }
 
   signOut(redirectUrl?: string) {
     this.isSignedIn = false;
     if (redirectUrl) {
-      this.router.navigateByUrl(redirectUrl);
+      this.router.navigateByUrl('/home');
     }
   }
 

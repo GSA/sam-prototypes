@@ -34,6 +34,7 @@ import { OpportunityFilterServiceModule } from './opportunity/opportunity-filter
 import { AssistanceFiltersModule } from './assistance/assistance-filters/assistance-filters.module';
 import { EntityFilterServiceModule } from './entity-info/entity-filter-service/entity-filter-service.module';
 import { ContractDataFiltersModule } from './contract-data/contract-data-filters/contract-data-filters.module';
+import { ScaFilterServiceModule } from './wages/sca-filter-service/sca-filter-service.module';
 
 @NgModule({
   declarations: [SearchHomeComponent],
@@ -67,7 +68,8 @@ import { ContractDataFiltersModule } from './contract-data/contract-data-filters
     OpportunityFilterServiceModule,
     AssistanceFiltersModule,
     EntityFilterServiceModule,
-    ContractDataFiltersModule
+    ContractDataFiltersModule,
+    ScaFilterServiceModule
   ],
   providers: [SDSFormlyUpdateComunicationService]
 })

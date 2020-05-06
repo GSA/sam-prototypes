@@ -17,7 +17,7 @@ const routes: Routes = [
     }
   },
   {
-    path: 'landing',
+    path: 'home',
     loadChildren: './landing/landing.module#LandingModule',
     data: {
       id: "home"
@@ -35,7 +35,7 @@ const routes: Routes = [
     path: 'requests',
     loadChildren: './request/request.module#RequestModule',
     data: {
-      id: "request"
+      id: "requests"
     }
   },
   {
@@ -62,7 +62,7 @@ const routes: Routes = [
   {
     path: 'search',
 
-    loadChildren: './search/search-home/search-home.module#SearchHomeModule',
+    loadChildren: './search/search.module#SearchModule',
     data: {
       id: "search"
     }
@@ -78,7 +78,7 @@ const routes: Routes = [
     path: 'dataservices',
     loadChildren: './data-services/data-services.module#DataServicesModule',
     data: {
-      id: "dataService"
+      id: "dataservices"
     }
   },
   {
@@ -96,6 +96,13 @@ const routes: Routes = [
     }
   },
   {
+    path: 'entity-registration',
+    loadChildren: './entity-registration/entity-registration.module#EntityRegistrationModule',
+    data: {
+      id: "help"
+    }
+  },
+  {
     path: '*',
     redirectTo: '/',
     pathMatch: 'full',
@@ -106,7 +113,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled',
+      anchorScrolling: 'enabled'
+    })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

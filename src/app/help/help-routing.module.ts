@@ -5,19 +5,12 @@ import { HelpComponent } from './help.component';
 const routes: Routes = [
 	{
 		path: '',
-		component: HelpComponent,
-		children: [
-			{
-				path: '',
-				loadChildren: './help-search/help-search.module#HelpSearchModule'
-			},
-			{
-				path: ':id',
-				loadChildren: './help-page/help-page.module#HelpPageModule'
-			}
-		]
+	    component: HelpComponent
+	},
+	{
+		path: ':id',
+			loadChildren: './help-page/help-page.module#HelpPageModule'
 	}
-
 ];
 
 @NgModule({

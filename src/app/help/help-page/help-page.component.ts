@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -14,8 +15,16 @@ export class HelpPageComponent implements OnInit {
 
   public model;
   public id: string;
+  public isSearchResult: boolean;
 
-  constructor(public service: HelpService, public route: ActivatedRoute) { }
+  public subheader = {
+    buttons: [],
+    actions: [
+      { id: 'DownloadBtn', icon: 'bars', text: 'Download' }
+    ]
+  };
+
+  constructor(public service: HelpService, public route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -26,6 +35,21 @@ export class HelpPageComponent implements OnInit {
         });
       }
     });
+    this.route.queryParams.subscribe(params => {
+	    this.isSearchResult = params['isSearchResult'];
+	});
+  }
+
+  goBack() {
+  	this.location.back();
+  }
+
+  newSearch(searchTerm) {
+
+  }
+
+  log(value) {
+    console.log(`%cLog: ${value}`, 'color: blue; font-weight: bold');
   }
 
   previous() {

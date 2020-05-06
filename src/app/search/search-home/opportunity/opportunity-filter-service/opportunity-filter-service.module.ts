@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AwardIdvTypeService } from '../../../../common/public-apis';
+import { AwardIdvTypeService, NaicsService, PscService, HierarchyService, DateRangeService } from '../../../../common/public-apis';
 
 @NgModule({
   declarations: [],
@@ -8,7 +8,11 @@ import { AwardIdvTypeService } from '../../../../common/public-apis';
     CommonModule
   ],
   providers: [
-  	AwardIdvTypeService
+  	AwardIdvTypeService,
+  	NaicsService,
+  	PscService,
+  	HierarchyService,
+  	DateRangeService
   ]
 })
 export class OpportunityFilterServiceModule { }

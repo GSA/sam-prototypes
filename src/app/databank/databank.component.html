@@ -5,9 +5,12 @@
   </button>
 
   <!-- =============== TITLE =============== -->
-  <h1 class="font-heading-md text-semibold tablet-lg:width-mobile">
-    Databank
-  </h1>
+    <select class="usa-select" id="section" (change)="selectPage($event.target.value)">
+      <option value="databank" [selected]="!page || page == 'databank'"><h1>Databank Home</h1></option>
+      <option value="databank-search" [selected]="page == 'databank-search'"><h1>Databank Reports</h1></option>
+      <option value="databank-schedule" [selected]="page == 'databank-schedule'"><h1>Scheduled Reports</h1></option>
+      <option value="databank-history" [selected]="page == 'databank-history'"><h1>Reports History</h1></option>
+    </select>
 
   <!-- =============== SEARCH =============== -->
   <sds-search
@@ -24,6 +27,6 @@
     (clicks)="log($event)">
   </sds-subheader-actions>
 </sds-subheader>
-
-<sds-page>
-</sds-page>
+<router-outlet>
+  
+</router-outlet>

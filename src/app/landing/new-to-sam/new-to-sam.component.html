@@ -1,0 +1,41 @@
+<div class="n-sds-page">
+	<div class="grid-container">
+		<h1>New to SAM.gov</h1>
+		<div class="grid-row">
+			<div class="tablet:grid-col-4">
+			<form class="usa-form">
+			    <h2><label class="usa-label" for="options" class="margin-bottom-1" style="display: block;">I am a...</label></h2>
+			    <select class="usa-select margin-bottom-2" name="options" id="options">
+			    <option value>- Select -</option>
+			    <option value="value1">Federal User</option>
+			    <option value="value2">Non Federal User</option>
+			    <option value="value3">International User</option>
+			  </select>
+			  <fieldset class="usa-fieldset">
+                    <legend class="margin-bottom-1"><h2>I am interested in...</h2></legend>
+                    <div class="usa-checkbox">
+                        <input class="usa-checkbox__input" id="truth" type="checkbox" name="historical-figures-1" value="truth" checked="checked">
+                        <label class="usa-checkbox__label" for="truth">Federal Acquisition</label>
+                    </div>
+                    <p>Federal acquisition is lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <div class="usa-checkbox">
+                        <input class="usa-checkbox__input" id="douglass" type="checkbox" name="historical-figures-1" value="douglass">
+                        <label class="usa-checkbox__label" for="douglass">Federal Assistance</label>
+                    </div>
+                    <p>Federal assistance is lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </fieldset>
+			</form>
+		</div>
+		<div class="tablet:grid-col-8">
+			  <div *ngFor="let row of selectedTopics" class="grid-row grid-gap-2 margin-y-2">
+			  	 <div *ngFor="let topic of row" class="tablet:grid-col-3">
+			  	 	<button class="sds-topic-button n-sds-card--bordered n-sds-card--shadowed">
+			  	 		<p class="sds-topic--domain">{{topic.domain}}</p>
+			  	 		<p class="sds-topic--title"><a class="usa-link">{{topic.title}}</a></p>
+			  	 	</button>
+			  	 </div>
+			  </div>
+		</div>
+	</div>
+  </div>
+</div>

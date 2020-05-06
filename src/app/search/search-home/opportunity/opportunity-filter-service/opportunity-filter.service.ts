@@ -3,17 +3,34 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
 
 import { 
   AwardIdvTypeService, 
+  NaicsService,
+  DateRangeService,
+  PscService,
+  HierarchyService,
   SearchFiltersWrapperService 
 } from '../../../../common/public-apis';
 
 import { OpportunityFilterServiceModule } from './opportunity-filter-service.module';
+
+let offersDueService = new DateRangeService();
+offersDueService.settings.id = 'offers-due-date';
+let publishService = new DateRangeService();
+publishService.settings.id = 'publish-date';
+let updateService = new DateRangeService();
+updateService.settings.id = 'update-date';
+let inactiveService = new DateRangeService();
+inactiveService.settings.id = 'inactive-date';
 
 @Injectable({
   providedIn: OpportunityFilterServiceModule
 })
 export class OpportunityFilterService implements SearchFiltersWrapperService {
 
-  constructor(public awardIdvTypeService: AwardIdvTypeService) { }
+  constructor(public awardIdvTypeService: AwardIdvTypeService, 
+  		public naicsService: NaicsService, 
+  		public pscService: PscService,
+  		public dateRangeService: DateRangeService,
+  		public hierarchyService: HierarchyService) { }
 
   public model = {};
 
@@ -39,39 +56,19 @@ export class OpportunityFilterService implements SearchFiltersWrapperService {
 	      }
 	  },
 	  {
-	    key: 'dateWrapper',
-	    wrappers: ['accordionwrapper'],
-	    templateOptions: { label: 'Date' },
-	    fieldGroup: [
-	        {
-	          key: 'responseDate',
-	          type: 'daterangepicker',
-	          templateOptions: {
-	            label: 'Current Date Offers Due'
-	          }
-	        },
-	        {
-	          key: 'publishDate',
-	          type: 'daterangepicker',
-	          templateOptions: {
-	            label: 'Publish Date'
-	          }
-	        },
-	        {
-	          key: 'updateDate',
-	          type: 'daterangepicker',
-	          templateOptions: {
-	            label: 'Last Modified Date'
-	          }
-	        },
-	        {
-	          key: 'inactiveDate',
-	          type: 'daterangepicker',
-	          templateOptions: {
-	            label: 'Inactive Date'
-	          }
-	        }    
-	     ]
+	  	key: 'dateWrapper',
+	  	wrappers: ['accordionwrapper'],
+	  	templateOptions: { label: 'Date '},
+	  	fieldGroup: [{
+	  		key: 'dateOffersDue',
+	  		type: 'autocomplete',
+	  		templateOptions: {
+	  		  label: 'Date Current Offers Due',
+	  		  service: this.dateRangeService,
+	  		  configuration: this.dateRangeService.settings,
+	  		  model: this.dateRangeService.model
+	  		}
+	  	}]
 	  },
 	  {
 	    key: 'hierarchyWrapper',
@@ -79,9 +76,12 @@ export class OpportunityFilterService implements SearchFiltersWrapperService {
 	    templateOptions: { label: 'Federal Organizations' },
 	    fieldGroup: [{
 	      key: 'hierarchyOrganization',
-	      type: 'input',
+	      type: 'autocomplete',
 	      templateOptions: {
-	        hideLabel: true
+	        hideLabel: true,
+	        service: this.hierarchyService,
+	        configuration: this.hierarchyService.settings,
+	        model: this.hierarchyService.model
 	      }
 	    }]
 	  },
@@ -153,15 +153,23 @@ export class OpportunityFilterService implements SearchFiltersWrapperService {
 	    templateOptions: { label: 'NAICS and Product Service Codes' },
 	    fieldGroup: [{
 	      key: 'naicsCode',
-	      type: 'input',
+	      type: 'autocomplete',
+	      wrappers: ['filterwrapper'],
 	      templateOptions: {
-	        label: 'NAICS Code'
+	        label: 'NAICS Code',
+	        service: this.naicsService,
+	        configuration: this.naicsService.settings,
+	        model: this.naicsService.model
 	      }
 	    },{
 	      key: 'pscCode',
-	      type: 'input',
+	      type: 'autocomplete',
+	      wrappers: ['filterwrapper'],
 	      templateOptions: {
-	        label: 'Product Service Code'
+	        label: 'Product Service Code',
+	        service: this.pscService,
+	        configuration: this.pscService.settings,
+	        model: this.pscService.model
 	      }
 	    }]
 	  },

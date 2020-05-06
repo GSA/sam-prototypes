@@ -18,7 +18,7 @@ import {
 } from '@angular/router';
 
 import { FormlyFieldConfig } from '@ngx-formly/core';
-
+import { CdkAccordionItem } from "@angular/cdk/accordion";
 import { SideNavigationModel, NavigationMode, INavigationLink, SdsDialogService, SDS_DIALOG_DATA } from '@gsa-sam/components';
 import { SearchListConfiguration } from '@gsa-sam/layouts';
 
@@ -40,6 +40,7 @@ import { EntityinfoFilterService } from './entity-info/entity-filter-service/ent
 import { DisasterFilterService } from './entity-info/entity-filter-service/disaster-filter.service';
 import { ExclusionFilterService } from './entity-info/entity-filter-service/exclusion-filter.service';
 import { ContractDataFiltersService } from './contract-data/contract-data-filters/contract-data-filters.service';
+import { ScaFilterService } from './wages/sca-filter-service/sca-filter.service';
 
 @Component({
   selector: 'app-search-home',
@@ -51,21 +52,33 @@ export class SearchHomeComponent implements OnInit {
   @ViewChild('resultList') resultList;
 
   form = new FormGroup({});
-  filterModel = {};
+  filterModel;
   fields: FormlyFieldConfig[] = [];
 
+  domainLabelMap: Map<string, string> = new Map<string, string>([
+    ['opportunities', 'Contract Opportunities'],
+    ['contractdata', 'Contract Data'],
+    ['assistancelist', 'Assistance Listings'],
+    ['entityinfo', 'Entity Information'],
+    ['registrations', 'Entity Registrations'],
+    ['disasterresponse', 'Disaster Response Registry'],
+    ['exclusions', 'Exclusions'],
+    ['hierarchy', 'Federal Hierarchy'],
+    ['wdid', 'Wage Determinations by ID'],
+    ['dba', 'Construction WDs (DBA)'],
+    ['sca', 'Service WDs (SCA)']
+  ]);
+
   showFilters: boolean = true;
+  domainLabel: string;
+  domainExpanded: boolean = false;
+  filtersExpanded: boolean = true;
+  @ViewChild('domainAccordion')
+    domainAccordion: CdkAccordionItem;
+  @ViewChild('filtersAccordion')
+    filtersAccordion: CdkAccordionItem;
 
   public filterChange$ = new BehaviorSubject<object>(null);
-
-  public subheaderActions = {
-    buttons: [],
-    actions: [
-      { id: 'downloadAction', icon: 'bars', text: 'Download' },
-      { id: 'saveAction', icon: 'bars', text: 'Save' },
-      { id: 'saveAsAction', icon: 'bars', text: 'Save As' }
-    ]
-  };
 
   constructor(
     public service: SearchService,
@@ -80,25 +93,33 @@ export class SearchHomeComponent implements OnInit {
     private entityinfoFilterService: EntityinfoFilterService,
     private disasterFilterService: DisasterFilterService,
     private exclusionFilterService: ExclusionFilterService,
-    private contractDataFilterService:  ContractDataFiltersService) { 
+    private contractDataFilterService:  ContractDataFiltersService,
+    private scaFilterService: ScaFilterService) { 
 
   }
 
   ngOnInit() {    
     let domain = this.route.snapshot.queryParamMap.get('index');
     this.listModel = listConfigMap.get(domain ? domain : 'all');
+    let label = this.domainLabelMap.get(domain);
+    this.domainLabel = label ? label : 'All Domains';
+    this.setDomain(domain);
   }
 
   ngAfterViewInit() {      
-
-    this.change.detectChanges();
-    let domain = this.route.snapshot.queryParamMap.get('index');
-    this.setDomain(domain);
-  	this.route.queryParams.subscribe(
+    this.route.queryParams.subscribe(
       data => {
+        let domain = typeof data['index'] === "string" ? decodeURI(data['index']) : 'all'
         this.listModel = listConfigMap.get(domain ? domain : 'all');
-        this.setDomain(typeof data['index'] === "string" ? decodeURI(data['index']) : 'all');
+        this.setDomain(domain);
+        if(this.resultList) {
+          this.resultList.updateFilter(this.filterModel);
+        }
       });
+    this.change.detectChanges();
+    if(this.resultList) {
+        this.resultList.updateFilter(this.filterModel);
+    }
   }
 
   setDomain(domain: string) {
@@ -110,8 +131,12 @@ export class SearchHomeComponent implements OnInit {
           this.fields = [];
           this.filterModel = {};
       }
+      let label = this.domainLabelMap.get(domain);
+      this.domainLabel = label ? label : 'All Domains';
+      if(!this.filtersAccordion.expanded) {
+        this.filtersAccordion.toggle();
+      }
       this.service.setDomain(domain ? domain : 'all');
-      this.resultList.updateFilter(this.filterModel);
   }
 
   subheaderActionClicked(event) {
@@ -162,7 +187,8 @@ export class SearchHomeComponent implements OnInit {
       ['entityinfo', this.entityinfoFilterService],
       ['disasterresponse', this.disasterFilterService],
       ['exclusions', this.exclusionFilterService],
-      ['contractdata', this.contractDataFilterService]
+      ['contractdata', this.contractDataFilterService],
+      ['sca', this.scaFilterService]
   ]);
 
 }

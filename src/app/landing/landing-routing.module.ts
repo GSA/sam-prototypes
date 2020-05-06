@@ -3,8 +3,29 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
 	{
-		path: 'entity',
-		loadChildren: './entity-landing/entity-landing.module#EntityLandingModule',
+		path: 'entity-registration',
+		loadChildren: './entity-registration-landing/entity-registration-landing.module#EntityRegistrationLandingModule',
+	    data: {
+	      id: "home"
+	    }
+	},
+	{
+		path: 'entity-information',
+		loadChildren: './entity-information-landing/entity-information-landing.module#EntityInformationLandingModule',
+	    data: {
+	      id: "home"
+	    }
+	},
+	{
+		path: 'contract-data',
+		loadChildren: './contract-data-landing/contract-data-landing.module#ContractDataLandingModule',
+	    data: {
+	      id: "home"
+	    }
+	},
+	{
+		path: 'check-status',
+		loadChildren: './status-tracker/status-tracker.module#StatusTrackerModule',
 	    data: {
 	      id: "home"
 	    }
@@ -15,35 +36,50 @@ const routes: Routes = [
 	    data: {
 	      id: "home"
 	    }
-	},	
+	},
 	{
 		path: 'hierarchy',
 		loadChildren: './hierarchy-landing/hierarchy-landing.module#HierarchyLandingModule',
 	    data: {
 	      id: "home"
 	    }
-	},	
+	},
 	{
 		path: 'assistance',
 		loadChildren: './assistance-landing/assistance-landing.module#AssistanceLandingModule',
 	    data: {
 	      id: "home"
 	    }
-	},	
+	},
 	{
-		path: 'compliance',
-		loadChildren: './compliance-landing/compliance-landing.module#ComplianceLandingModule',
+		path: 'registration',
+		loadChildren: './registration-landing/registration-landing.module#RegistrationLandingModule',
 	    data: {
 	      id: "home"
 	    }
-	},	
+	},
 	{
 		path: 'wages',
 		loadChildren: './wages-landing/wages-landing.module#WagesLandingModule',
 	    data: {
 	      id: "home"
 	    }
+	},
+	{
+		path: 'new-to-sam',
+		loadChildren: './new-to-sam/new-to-sam.module#NewToSamModule',
+	    data: {
+	      id: "home"
+	    }
+	},
+	{
+		path: 'entity-compliance',
+		loadChildren: './entity-compliance/entity-compliance.module#EntityComplianceModule',
+	    data: {
+	      id: "home"
+	    }
 	}
+
 ];
 
 @NgModule({

@@ -34,6 +34,7 @@ class FakeWebService {
     }
 
     filterByType(result, types) {
+        if(types.article && result.type == 4) return true;
         if(types.video && result.type == 3) return true;
         if(types.faq && result.type == 2) return true;
         if(types.term && result.type == 1) return true;
@@ -57,6 +58,7 @@ class FakeWebService {
     getData(search: SearchParameters): Observable<SearchResult> {
         let itemList = this.help.contentDataList;
 
+        /* Filter */
         if(search.filter) {
             itemList = this.help.contentDataList.filter(element => this.filter(element, search.filter));
         }
@@ -70,9 +72,12 @@ class FakeWebService {
             }
         }
 
+        /* Sort */
+        this.sortHelpItem(itemList, search);
+
+        /* Return slice */
         const start = search.page.pageNumber * search.page.pageSize - search.page.pageSize;
         const end = start + search.page.pageSize;
-        this.sortHelpItem(itemList, search);
         return of({
             items: itemList.slice(start, end),
             totalItems: itemList.length
@@ -161,6 +166,7 @@ export class HelpService {
     }
 
     filterByType(result, types) {
+        if(types.article && result.type == 4) return true;
         if(types.video && result.type == 3) return true;
         if(types.faq && result.type == 2) return true;
         if(types.term && result.type == 1) return true;

@@ -1,14 +1,15 @@
+
 <div class="grid-container ">
   <!-- title/tiles/search section -->
   <div class="grid-row width-full">
     <div class="grid-col">
       <div class="home-top">
       <!-- homepage title and seal -->
-      <div class="grid-row flex-no-wrap tablet:padding-y-2">
-        <div class="grid-col-9 tablet:padding-x-4">
+      <div class="grid-row flex-no-wrap">
+        <div class="grid-col-9 tablet:padding-x-4 tablet:padding-top-8">
           <h1 class="text-base-dark homepage-title">SAM.gov is the official U.S. government system for:</h1>
         </div>
-        <div class="grid-col margin-right-0 padding-right-0 width-full">
+        <div class="grid-col margin-right-0 padding-right-0 tablet:padding-top-4 width-full">
           <div class="sds-seal border-right-0">
             <i class="sds fa-flag fa-2x sds-seal__grey margin-y-1 text-secondary"></i>
             <div class="sds-seal__content">
@@ -22,37 +23,45 @@
         <div class="grid-row padding-x-4 width-full">
           <div class="desktop-lg:grid-col-4 display-flex flex-justify-center">
             <div class="sds-tile sds-tile--lg">
-              <a [routerLink]="['landing/entity']" class="sds-tile__content sds-tile--outline">
+              <div class="sds-tile__content sds-tile--outline">
                 <div class="grid-row flex-justify-center margin-top-1 width-full">
                   <i class="sds-tile__icon sds fa-building text-base"></i>
-                  <div class="sds-tile__title">Entity Registration</div>
+                  <div class="sds-tile__title"><a class="usa-link" routerLink="/home/entity-information">Entity Information</a></div>
                 </div>
                 <div class="sds-tile__details grid-row padding-y-2 width-full">
                   Register your entity to get started doing business with the federal government.
                 </div>
+                  
                 <div class="mobile-details padding-y-2 width-full">
-                  <button class="sds-button sds-button--icon">
+                  <a class="sds-button sds-button--icon" [routerLink]="['/home/registration']">
                     <span class="fa-stack fa-2x">
                       <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
                       <i class="sds fa-folder fa-stack-1x text-base fa-2x"></i>
                     </span>
                     <span class="sds-button--icon__title">Register Entity</span>
-                  </button>
-                  <button class="sds-button sds-button--icon">
+                  </a>
+                  <button class="sds-button sds-button--icon" routerLink="/home/check-status">
                     <span class="fa-stack fa-2x">
                       <i class="sds fa-pentagon fa-stack-2x text-primary-lighter fa-1x"></i>
                       <i class="sds fa-check-circle fa-stack-1x text-base fa-2x"></i>
                     </span>
                     <span class="sds-button--icon__title">Check Status</span>
                   </button>
+                  <a class="sds-button sds-button--icon" routerLink="/home/entity-information">                    
+                    <span class="fa-stack fa-2x">
+                      <i class="sds fa-pentagon fa-stack-2x text-accent-warm-light fa-1x"></i>
+                      <i class="sds fa-search fa-stack-1x text-base fa-2x"></i>
+                    </span>
+                    <span>Search Entities and Exclusions</span>
+                  </a>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
           <div class="desktop-lg:grid-col-fill tiles padding-x-2">
             <!-- contract opportunities tile -->
             <div class="sds-tile">
-              <a [routerLink]="['landing/opportunities']" class="sds-tile__content sds-tile--outline">
+              <a [routerLink]="['home/opportunities']" class="sds-tile__content sds-tile--outline">
                 <i class="sds-tile__icon sds fa-open-doors text-base"></i>
                 <div class="sds-tile__title">Contract Opportunities</div>
                 <div class="sds-tile__details">(was fbo.gov)</div>
@@ -60,22 +69,23 @@
             </div>
             <!-- contract datat reports tile-->
             <div class="sds-tile">
-              <a [routerLink]="['landing/opportunities']" class="sds-tile__content sds-tile--outline">
+              <a [routerLink]="['home/contract-data']" class="sds-tile__content sds-tile--outline">
                 <i class="sds-tile__icon sds fa-file-chart-line text-base"></i>
                 <div class="sds-tile__title">Contract Data</div>
-                <div class="sds-tile__details">(only reports from FPDS)</div>
+                <div class="sds-tile__details">(Reports ONLY from FPDS)</div>
               </a>
             </div>
             <!-- entity compliance tile-->
             <div class="sds-tile">
-              <a [routerLink]="['landing/compliance']" class="sds-tile__content sds-tile--outline">
+              <a [routerLink]="['home/entity-compliance']" class="sds-tile__content sds-tile--outline">
                 <i class="sds-tile__icon sds fa-new-version text-base"></i>
                 <div class="sds-tile__title">Entity Compliance</div>
+                <div class="sds-tile__details">SCR and Biopreferred Reports</div>
               </a>
             </div>
             <!-- assistance listing tile -->
             <div class="sds-tile">
-              <a [routerLink]="['landing/assistance']" class="sds-tile__content sds-tile--outline">
+              <a [routerLink]="['home/assistance']" class="sds-tile__content sds-tile--outline">
                 <i class="sds-tile__icon sds fa-tag text-base"></i>
                 <div class="sds-tile__title">Assistance Listings</div>
                 <div class="sds-tile__details">(was cfda.gov)</div>
@@ -83,7 +93,7 @@
             </div>
             <!-- wage determinations tile -->
             <div class="sds-tile">
-              <a [routerLink]="['landing/wages']" class="sds-tile__content sds-tile--outline">
+              <a [routerLink]="['home/wages']" class="sds-tile__content sds-tile--outline">
                 <i class="sds-tile__icon sds fa-invoice text-base"></i>
                 <div class="sds-tile__title">Wage Determinations</div>
                 <div class="sds-tile__details">(was wdol.gov)</div>
@@ -91,9 +101,10 @@
             </div>
             <!-- federal hierarchy tile -->
             <div class="sds-tile">
-              <a [routerLink]="['landing/hierarchy']" class="sds-tile__content sds-tile--outline">
+              <a [routerLink]="['home/hierarchy']" class="sds-tile__content sds-tile--outline">
                 <i class="sds-tile__icon sds fa-users text-base"></i>
                 <div class="sds-tile__title">Federal Hierarchy</div>
+                <div class="sds-tile__details">Departments, Subtiers, and more</div>
               </a>
             </div>
           </div>
@@ -102,25 +113,25 @@
       <!-- homepage get started and search -->
       <div class="grid-row padding-x-4 padding-bottom-4 home-bottom">
         <div class="tablet-lg:grid-col-4 display-flex flex-column maxw-mobile-lg mobile-lg:margin-left-4 outline-btn">
-          <h2 class="home-text margin-y-05 text-normal"> New to SAM.gov?</h2>
+          <h2 class="home-text margin-y-05 text-normal">New to SAM.gov?</h2>
           <div class="sds-button--outline">
             <button class="sds-button sds-button--icon text-center">
               <span class="fa-stack fa-2x">
                 <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
                 <i class="sds fa-folder fa-stack-1x text-base fa-2x"></i>
               </span>
-              <span class="sds-button--icon__title">Help Me Get Started</span>
+              <span class="sds-button--icon__title"><a class="usa-link" [routerLink]="['/home/new-to-sam']">Help Me Get Started</a></span>
             </button>
           </div>
         </div>
         <div class="tablet-lg:grid-col-7 display-flex flex-column mobile-lg:margin-left-4 desktop:margin-left-0">
           <h2 class="search-text margin-y-05 text-normal"> Already know what you want to find?</h2>
           <div class="sds-search margin-top-05">
-            <form class="usa-search usa-search--small usa-search--inverse">
+            <form class="usa-search usa-search--small usa-search--inverse" action="/search/results">
               <label class="usa-sr-only" for="inverse-search-options">Select Here</label>
-              <select class="usa-select usa-select--inverse" name="options" id="inverse-search-options">
+              <select class="usa-select usa-select--inverse" name="index" id="search-options">
                 <option value="all">Select... </option>
-                <option value="assistance">Assistance Listings</option>
+                <option value="assistancelist">Assistance Listings</option>
                 <option value="opportunities">Contract Opportunities</option>
                 <option value="contractdata">Contract Data</option>
                 <option value="entityinfo">Entity Information</option>
@@ -129,7 +140,7 @@
               </select>
               <div role="search" class="width-full">
                 <label class="usa-sr-only" for="inverse-search-dropdown">Search Here</label>
-                <input class="usa-input" id="inverse-search-dropdown" type="search" name="search" placeholder="Search Here">
+                <input class="usa-input" id="search-input" type="search" name="keyword" placeholder="Search Here">
                 <button class="usa-button" type="submit">
                   <span class="usa-sr-only">Search</span>
                 </button>
@@ -175,7 +186,7 @@
           <div class="padding-x-2 display-flex flex-column">
             <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
               <i class="sds fa-video-square text-base fa-2x margin-x-2"></i>
-              <span>Videso on SAM.gov</span>
+              <span>Videos</span>
             </a>
             <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
               <i class="sds fa-book text-base fa-2x margin-x-2"></i>

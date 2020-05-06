@@ -1,0 +1,151 @@
+<div class="n-sds-page">
+	<div class="grid-container padding-top-4">
+		<h2>Check Entity Registration Status</h2>
+		<div class="grid-row grip-gap-4 padding-top-4">	      
+			<div class="grid-col-12 tablet-lg:grid-col-8 padding-x-4">
+				<p class="usa-intro">You can quickly check an entity's registration status in SAM by entering a DUNS Number or
+				CAGE Code. The SAM Status Tracker will show you the current status of that entity's most
+				recent record, as well as tell you what steps are left to complete based on why they are
+				registering.</p>
+
+				<p>The SAM Status Tracker only returns the registration status for publicly-searchable registration
+				records. If you are a Federal government user, please log into SAM and use the Search Records
+				link in the main navigation menu to view registrations or data that are not publicly available.</p>
+		      <form [formGroup]="form" (ngSubmit)="submit()">
+		        <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+		      </form>
+		      <div class="display-flex flex-column flex-align-end padding-bottom-8">
+		      	<button class="usa-button usa-button--primary" (click)="submit()">Search</button>
+		      </div>
+		    </div>
+	    <div class="grid-col-12 tablet-lg:grid-col-4">
+	    	<div class="n-sds-card n-sds-card--bordered">
+	    		<div class="n-sds-card__heading n-sds-card__heading--base">
+	    			<h2>More About</h2>
+	    		</div>
+	    		<div class="usa-accordion">
+				  <h3 class="usa-accordion__heading">
+			        <button class="usa-accordion__button"
+			          aria-expanded="false"
+			          aria-controls="a1">
+			          Getting Started With Registration
+			        </button>
+			      </h3>
+			      <div id="a1" class="usa-accordion__content usa-prose" hidden>
+			        <p>You must have an active registration in SAM to do business with the federal government. If you already started your registration, check your status by entering your DUNS number or CAGE code in the SAM status tracker.</p>
+					<p>To learn more about registering, check out the <a class="usa-link" [routerLink]="['/home/registration']">Entity Registration Home</a>.</p>
+
+			      </div>
+			  
+			      <!-- Use the accurate heading level to maintain the document outline -->
+			      <h3 class="usa-accordion__heading">
+			        <button class="usa-accordion__button"
+			          aria-expanded="false"
+			          aria-controls="a2">
+			          Entity Status Guide
+			        </button>
+			      </h3>
+			      <div id="a2" class="usa-accordion__content usa-prose" hidden>
+			        <p>Once you start a registration, you can save your information and come back at any time to continue working on it.</p>
+			        <h4>Draft</h4>
+						<p>Your registration will remain in draft status until you complete the Core Data section. While in dra" status, you will not be able to check your registration status in the status tracker.</p>
+						<h4>Work in Progress</h4>
+						<p>Once you have completed all of the Core Data, or are updating a current registration, you entity registration enters the work in progress stage.</p>
+						<h4>Submitted</h4>
+						<p>Once you enter all of the information required, review it and submit it, your registration enters the submitted status. While the average overall processing time is up to three business days, it may take up to ten business days. You will be notified by e-mail when all reviews are complete.</p>
+						<h4>Active</h4>
+						<p>Once your entity registration is sucessfully process, it enters the active status. It will remain active for 365 days from the date you submitted it for processing, unless it is deactivated by your Entity Administrator.</p>
+						<h4>Expired</h4>
+						<p>Your entity registration will reach the expired status if it is not updated within 365 days from the date you submitted it for processing.</p>
+			      </div>
+			  
+			      <!-- Use the accurate heading level to maintain the document outline -->
+			      <h3 class="usa-accordion__heading">
+			        <button class="usa-accordion__button"
+			          aria-expanded="false"
+			          aria-controls="a3">
+			          Status Tracker Guide
+			        </button>
+			      </h3>
+			      <div id="a3" class="usa-accordion__content usa-prose" hidden>
+			        <h4>Completed</h4>
+					<p>The step has been completed sucessfully.</p>
+					<p>Steps Applicable: Core Data, Assertions, Reps & Certs, POCs, Submit, Processing, Active</p>
+					<h4>Not Required</h4>
+					<p>The step is not required for your entity registration.</p>
+					<p>Steps Applicable: Assertions, Reps & Certs</p>
+					<h4>Rejected</h4>
+					<p>Your registration information was either inaccurate, or has failed TIN validation or CAGE validation.</p>
+					<p>Steps Applicable: Core Data, Active</p>
+					<h4>In Progress</h4>
+					<p>A step in the registration process is being worked on.</p>
+					<p>Steps Applicable: Core Data, Assertions, Reps & Certs, POCs, Submit, Processing, Active</p>
+					<h4>Processing</h4>
+					<p>Your entity registration is being processed at this stage, this may take anywhere from 1-10 business days.</p>
+					<p>Steps Applicable: POCs, Submit, Processing</p>
+			      </div>
+			  
+			      <!-- Use the accurate heading level to maintain the document outline -->
+			      <h3 class="usa-accordion__heading">
+			        <button class="usa-accordion__button"
+			          aria-expanded="false"
+			          aria-controls="a4">
+			          What if my entity fails TIN Validation?
+			        </button>
+			      </h3>
+			      <div id="a4" class="usa-accordion__content usa-prose" hidden>
+			        <p>If your entity fails TIN Validation, and you are uncertain about your correct TIN or Taxpayer Name in IRS records, we suggest that you compare the information you entered in SAM with the Taxpayer Name and TIN information on one of the following documents from the IRS:</p>
+			        <ul>
+			        	<li>The original notice you received from the IRS assigning you your EIN (Employer Identification Number).</li>
+						<li>Your most recent federal tax return for the business activity.</li>
+						<li>Any other recently received notice for the business activity.</li>
+					</ul>
+					<p>If your TIN is a Social Security Number (SSN), compare the name and number with the information on your actual social security card.</p>
+					<p>If you are having problems with TIN mismatches in SAM concerning your Employer Identification Number, please contact the IRS at 1-800-829-4933.</p>
+					<p>If you are having problems with TIN mismatches in SAM concerning your Social Security Number, please contact the Social Security Administration at 1-800-772-1213 for additional information and assistance.</p>
+			      </div>
+			  
+			      <!-- Use the accurate heading level to maintain the document outline -->
+			      <h3 class="usa-accordion__heading">
+			        <button class="usa-accordion__button"
+			          aria-expanded="false"
+			          aria-controls="a5">
+			          What if my entity fails CAGE Validation?
+			        </button>
+			      </h3>
+			      <div id="a5" class="usa-accordion__content usa-prose" hidden>
+			        <p>SAM will send you an email with your entity's CAGE Code validation failure reason. For more information, contact the Commercial and Government Entity (CAGE) Code Program at:</p>
+
+					<p>Toll Free: 1-877-352-2255</p>
+					<p>Commercial/FTS: 1-269-961-7766</p>
+					<p>DSN: 661-7766</p>
+					<p>Email: dlacontactcenter@dla.mil</p>
+					<p>Note: CAGE Codes for entities located outside the United States and its territories are called NCAGE Codes.r additional information and assistance.</p>
+
+			      </div>
+			      <h3 class="usa-accordion__heading">
+			        <button class="usa-accordion__button"
+			          aria-expanded="false"
+			          aria-controls="a6">
+			          More Help
+			        </button>
+			      </h3>
+			      <div id="a6" class="usa-accordion__content usa-prose" hidden> 
+					<p>Find the full SAM User Guide, Quick Start Guides helpful hints and more on the SAM help tab.</p>
+					<p>For technical issues, please visit the <a href="https://fsd.gov" target="_blank" class="usa-link">Federal Service Desk</a>.</p>
+					<p>Hours of Operation: Monday - Friday 8 a.m. to 8 p.m. ET </p>
+					<p>Available Services:</p>
+					<ul>
+						<li>Live Chat</li>
+						<li>Web Form Call</li>
+					</ul>
+			      </div>
+			  </div>
+	    	 </div>
+	     </div>
+	  </div>
+  	</div>
+</div>
+
+
+

@@ -1,25 +1,89 @@
-<div class="grid-row">
-	<h4><a [routerLink]="['/help']" class="usa-link"><i class="fa fa-caret-left fa-2x"></i>&nbsp;&nbsp;Back to Search Results</a></h4>
-</div>
-<div class="grid-row">
-	<div class="grid-col" style="min-height: 20rem; margin-bottom: 2rem">
-		<h2>{{model.title}}</h2>
-		<p>Latest Update: <b>{{ model.lastModifiedDate | date }}</b></p>
-		<p>{{model.description}}
-	</div>
-</div>
-<div class="grid-row grid-gap">
-	<div class="grid-col-fill">
-	</div>
-	<div class="grid-col-auto">
-		<button class="sds-button--circle usa-button--secondary" (click)="previous()"><i class="fa fa-caret-left fa-2x"></i></button>
-	</div>
-	<div class="grid-col-auto">
-		<button [routerLink]="['/help']" class="sds-button--circle usa-button--secondary"><i class="fa fa-times fa-2x"></i></button>
-	</div>
-	<div>
-		<button class="sds-button--circle" (click)="next()"><i class="fa fa-caret-right fa-2x"></i></button>
-	</div>
-	<div class="grid-col-fill">
-	</div>
-</div>
+<sds-subheader>
+  <!-- =============== BACK BUTTON =============== -->
+  <button role="link" class="sds-button sds-button--circular" (click)="goBack();">
+    <fa-icon [icon]="['fas', 'chevron-left']" [fixedWidth]="true"></fa-icon>
+  </button>
+
+  <!-- =============== TITLE =============== -->
+  <h1 class="font-heading-md text-semibold tablet-lg:width-mobile">
+    Help
+  </h1>
+
+  <!-- =============== SEARCH =============== -->
+  <sds-search
+    (term)="newSearch($event)"
+    parentSelector=".grid-row"
+    placeholder="Entity an ID, name, or keyword"
+    inputClass="width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block"
+  >
+  </sds-search>
+
+  <!-- =============== ACTIONS BUTTONS =============== -->
+  <sds-subheader-actions
+    [model]="subheader"
+    (clicks)="log($event)">
+  </sds-subheader-actions>
+</sds-subheader>
+<main>
+	<sds-page>
+		<div class="grid-container usa-prose u-measure-5">
+			<div class="grid-row">
+				<div class="tablet-lg:grid-col-8 tablet-lg:grid-offset-2">
+			      <div *ngIf="isSearchResult" class="grid-row">
+			        <div class="grid-col-12">
+			          <a class="usa-link sds-icon-link sds-icon-link--left" (click)="goBack();" href="javascript:void(0);">
+			            <i class="fa fa-angle-left fa-2x"></i>
+			            Back to search results
+			          </a>
+			        </div>
+			      </div>
+
+			      <!-- title and date -->
+			      <div class="grid-row">
+			        <div class="grid-col-auto">
+			          <div class="width-6 margin-y-3">
+				        <i *ngIf="model.type == 1" class="sds fa-book fa-2x"></i>
+				        <i *ngIf="model.type == 2" class="sds fa-question fa-2x"></i>
+				        <i *ngIf="model.type == 3" class="sds fa-video-square fa-2x"></i>
+				        <i *ngIf="model.type == 4" class="sds fa-pen-paper fa-2x"></i>
+			          </div>
+			        </div>
+			        <div class="grid-col-fill">
+			          <h1>{{model.title}}</h1>
+			          <div class="sds-field">
+			            <div class="sds-field__name">Latest Update:</div>
+			            <div class="sds-field__value">{{model.lastModifiedDate | date}}</div>
+			          </div>
+			        </div>
+			      </div>
+		          <div [innerHTML]="model.description">
+		          </div>
+		      <nav>
+		        <div class="sds-button-row">
+		          <div *ngIf="isSearchResult" class="sds-button-col sds-button-col--left">
+		            <button role="link" class="sds-button sds-button--circular" aria-label="previous" aria-labelledby="previous">
+		              <i class="sds fa-angle-left fa-fw" data-fa-transform="grow-5"></i>
+		            </button>
+		            <span id="previous">How many CFDA Number Can My Agency Have?</span>
+		          </div>
+		          <div class="sds-button-col">
+		            <button role="link" class="sds-button sds-button--circular" (click)="goBack();" aria-label="close" aria-labelledby="close">
+		              <i class="fa fa-times fa-fw" data-fa-transform="grow-5"></i>
+		            </button>
+		            <span id="close">Close</span>
+		          </div>
+		          <div *ngIf="isSearchResult" class="sds-button-col sds-button-col--right" aria-label="next button">
+		            <button role="link" class="sds-button sds-button--circular" aria-label="next" aria-labelledby="next">
+		              <i class="sds fa-angle-right fa-fw" data-fa-transform="grow-5"></i>
+		            </button>
+		            <span id="next">What is an Assistance Listing?</span>
+		          </div>
+		        </div>
+		      </nav>
+		  </div>
+		</div>
+	  </div>
+  </sds-page>
+</main>
+
+

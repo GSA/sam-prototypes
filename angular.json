@@ -30,6 +30,7 @@
             ],
             "styles": [
               "node_modules/@gsa-sam/sam-styles/src/stylesheets/sam.scss",
+              "src/material.theme.scss",
               "src/styles.scss"
             ],
             "scripts": [

@@ -2,15 +2,18 @@ import { SideNavigationModel, NavigationMode } from '@gsa-sam/components';
 
 export let aboutSideNavigationData: SideNavigationModel = {
     navigationLinks: [
-        { id: 'aboutsam', text: 'About SAM.gov', mode: NavigationMode.INTERNAL, route: '/about/about-sam' },
-        { id: 'fsd', text: 'Federal Service Desk', mode: NavigationMode.INTERNAL, route: '/about/fsd' },
-        { id: 'community', text: 'Community', mode: NavigationMode.INTERNAL, route: '/about/community' },
+        { id: 'about', text: 'About This Site', mode: NavigationMode.INTERNAL, route: '/about/about-sam' },
+        { id: 'contact', text: 'Contact', mode: NavigationMode.INTERNAL, route: '/about/contact' },
         { id: 'partners', text: 'Partners', mode: NavigationMode.INTERNAL, route: '/about/partners' },
-        { id: 'release-notes', text: 'Release Notes', mode: NavigationMode.INTERNAL, route: '/about/release-notes' },
-        { id: 'policies', text: 'Policies', mode: NavigationMode.INTERNAL, route: '/about/policies' },
-        { id: 'disclaimers', text: 'Disclaimers', mode: NavigationMode.INTERNAL, route: '/about/disclaimers' }
+        { id: 'partners', text: 'External Resources', mode: NavigationMode.INTERNAL, route: '/about/external-resources' },
+        { id: 'policies', text: 'Policies', route: '/about/policies/privacy', mode: NavigationMode.INTERNAL, children: [
+        	{ id: 'privacy', text: 'Privacy Policy', mode: NavigationMode.INTERNAL, route: '/about/policies/privacy' },
+        	{ id: 'disclaimers', text: 'Disclaimers', mode: NavigationMode.INTERNAL, route: '/about/policies/disclaimers' },
+        	{ id: 'accessibility', text: 'Accessibility', mode: NavigationMode.INTERNAL, route: '/about/policies/accessibility' },
+        	{ id: 'logo', text: 'Logo Policy', mode: NavigationMode.INTERNAL, route: '/about/policies/logo' }
+        ] },
+       	{ id: 'release-notes', text: 'Release Notes', mode: NavigationMode.INTERNAL, route: '/about/release-notes' },
+       	{ id: 'alerts', text: 'Alerts', mode: NavigationMode.INTERNAL, route: '/about/alerts' },
+       	{ id: 'news', text: 'News', mode: NavigationMode.INTERNAL, route: '/about/news' }
     ]
 };
-
-
-

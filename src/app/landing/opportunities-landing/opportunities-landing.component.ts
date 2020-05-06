@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-opportunities-landing',
@@ -8,9 +9,13 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class OpportunitiesLandingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  search(searchTerm) {
+     this.router.navigate(['/search/results'], { queryParams: { index: 'opportunities', keyword: searchTerm } });
   }
 
 }
