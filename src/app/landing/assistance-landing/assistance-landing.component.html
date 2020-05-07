@@ -6,17 +6,13 @@
       <p class="font-sans-md text-ink">Assistance listings are detailed public descriptions of federal programs that provide grants, loans, scholarships, insurance, and other types of assistance awards. You may browse assistance listings across all government
         agencies to form a “big picture” of potential funding options.</p>
       <h2 class="font-sans-lg margin-top-4 text-ink text-normal">Search Assistance Listings</h2>
-      <div class="sds-search--big maxw-tablet">
-        <form class="usa-search usa-search--small">
-          <div role="search" class="search">
-            <label class="usa-sr-only" for="search-input">Search Here</label>
-            <input class="usa-input" id="search-input" type="search" name="search" placeholder="Search Here">
-            <button class="usa-button" type="submit">
-              <span class="usa-sr-only">Search</span>
-            </button>
+          <div class="maxw-tablet">
+            <sds-search placeholder="Enter a CFDA number or keyword" 
+              (term)="search($event)" 
+              placeholderText="Enter a CFDA Number or keyword"
+              inputClass="sds-search--big">
+            </sds-search>
           </div>
-        </form>
-      </div>
     </div>
   </div>
   <!-- accordion & links -->

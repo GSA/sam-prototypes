@@ -20,6 +20,31 @@ export class SearchResultListEntityDataItemComponent {
     ]
   };
 
+  wipMenu = {
+    trigger: 'primary',
+    actions: [
+      { id: 'ViewBtn', icon: 'bars', text: 'View' },
+      { id: 'submitBtn', icon: 'bars', text: 'Submit' },
+      { id: 'DeactivateBtn', icon: 'bars', text: 'Cancel' }
+    ]
+  };
+
+  dualMenu = {
+    trigger: 'primary',
+    actions: [
+      { id: 'ViewBtn', icon: 'bars', text: 'View' },
+      { id: 'DeactivateBtn', icon: 'bars', text: 'Deactivate' }
+    ]
+  };
+
+  submittedMenu = {
+    trigger: 'primary',
+    actions: [
+      { id: 'ViewBtn', icon: 'bars', text: 'View' },
+      { id: 'CancelBtn', icon: 'bars', text: 'Cancel' }
+    ]
+  };
+
   log(value) {
     console.log(`%cLog: ${value} clicked in result item ${this.model.entityRegistration.legalBusinessName}`, 'color: blue; font-weight: bold');
   }
