@@ -5,35 +5,39 @@
     <!-- Contract Opportunities Card -->
     <div class="sds-card">
       <div class="sds-card__header">
-        <h2><a class="usa-link">Contract Opportunities</a></h2>
-        <div class="sds-card__header-actions">
-          <button class="usa-button usa-button--outline">Create Opportunity</button>
+        <div class="grid-row grid-gap-md">
+          <div class="grid-col-fill">
+            <h2 class="padding-top-1"><a [routerLink]="['registrations']" class="usa-link" style="text-decoration: none;">Entity Registrations</a></h2>
+          </div>
+          <div class="grid-col-auto">
+            <button class="usa-button usa-button--outline" [routerLink]="['/entity-registration/register']">Register Entity</button>
+          </div>
         </div>
       </div>
-      <div class="sds-card__content tablet:display-block">
+      <div class="sds-card__content tablet:display-block padding-4">
         <div class="sds-statistics">
-          <a class="green statistic">
+          <a class="usa-link" [routerLink]="['registrations']" class="green statistic" style="text-decoration: none;">
             <div class="value"><span class="circular">15</span></div>
             <div class="label">Active</div>
           </a>
-          <a class="blue statistic">
+          <a class="usa-link" [routerLink]="['registrations']" class="orange statistic" style="text-decoration: none;">
             <div class="value"><span class="circular">0</span></div>
             <div class="label">Draft</div>
           </a>
-          <a class="red statistic">
+          <a class="usa-link" [routerLink]="['registrations']" class="red statistic" style="text-decoration: none;">
             <div class="value"><span class="circular">1</span></div>
-            <div class="label">Rejected</div>
+            <div class="label">Work in Progress</div>
           </a>
-          <a class="orange statistic">
+          <a class="usa-link" [routerLink]="['registrations']" class="blue statistic" style="text-decoration: none;">
             <div class="value"><span class="circular">2</span></div>
-            <div class="label">Overdue</div>
+            <div class="label">Submitted</div>
           </a>
         </div>
       </div>
     </div>
 
     <!-- Assistance Listing Card -->
-    <div class="sds-card">
+    <div class="sds-card" *ngIf="false">
       <div class="sds-card__header">
         <h2><a class="usa-link">Assistance Listing</a></h2>
         <div class="sds-card__header-actions">
@@ -82,7 +86,7 @@
     </div>
 
     <!-- Collective Bargaining Agreements Card -->
-    <div class="sds-card">
+    <div class="sds-card" *ngIf="false">
       <div class="sds-card__header">
         <h2><a class="usa-link">Collective Bargaining Agreements</a></h2>
         <div class="sds-card__header-actions">
@@ -101,16 +105,16 @@
     </div>
 
     <!-- User Directory Card -->
-    <div class="sds-card">
+    <div class="sds-card margin-top-4" >
       <div class="sds-card__header">
-        <h2><a class="usa-link">User Directoy</a></h2>
-        <div class="sds-card__header-actions">
+        <h2><a class="usa-link">User Directory</a></h2>
+        <div class="sds-card__header-actions" *ngIf="false">
           <button class="usa-button usa-button--outline">Role Definitions</button>
           <button class="usa-button usa-button--outline">Bulk Update</button>
         </div>
       </div>
       <div class="sds-card__content tablet:display-block">
-        <div class="grid-row padding-left-4 flex-no-wrap">
+        <div class="grid-row padding-left-4 padding-y-4 flex-no-wrap">
           <div class="grid-col-fill">
             <!-- Search  -->
             <label class="usa-label margin-0" for="options">Who are you looking for?</label>
@@ -131,21 +135,12 @@
               </form>
             </div>
           </div>
-          <div class="grid-col-auto">
-            <!-- Pending -->
-            <div class="sds-statistics margin-x-1">
-              <a class="grey statistic">
-                <div class="value"><span class="circular">15</span></div>
-                <div class="label">Pending</div>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </div>
 
     <!-- System Accounts Card -->
-    <div class="sds-card">
+    <div class="sds-card" *ngIf="false">
       <div class="sds-card__header">
         <h2><a [routerLink]="['/workspace/system-accounts']" class="usa-link">Systems Accounts</a></h2>
       </div>
@@ -177,7 +172,7 @@
 
 
     <!-- Content Management Card -->
-    <div class="sds-card">
+    <div class="sds-card" *ngIf="false">
       <div class="sds-card__header">
         <h2><a class="usa-link">Content Management</a></h2>
       </div>
@@ -204,7 +199,7 @@
     </div>
 
     <!-- Federal Hierarchy Card -->
-    <div class="sds-card">
+    <div class="sds-card" *ngIf="false">
       <div class="sds-card__header">
         <h2><a class="usa-link">Federal Hierarchy</a></h2>
       </div>
@@ -272,7 +267,7 @@
 
 
     <!-- Activity Address Code Card -->
-    <div class="sds-card">
+    <div class="sds-card" *ngIf="false">
       <div class="sds-card__header">
         <h2><a class="usa-link">Activity Address Code (AACs)</a></h2>
       </div>
@@ -297,9 +292,9 @@
 
         <div>
           <div>Firstname Lastname</div>
-          <div class="margin-bottom-2">Firstname.lastname.cfda@hhs.gov</div>
-          <a class="display-block m_T-2x" href="">HEALTH AND HUMAN SERVICES</a>
-          <em>Department</em>
+          <div class="margin-bottom-2">firstname.lastname@company.com</div>
+          <a class="display-block m_T-2x" href="" *ngIf="false">HEALTH AND HUMAN SERVICES</a>
+          <em *ngIf="false">Department</em>
         </div>
       </div>
 

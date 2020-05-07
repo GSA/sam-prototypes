@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import {Router} from '@angular/router';
-import { SamModelService } from '../model/sam-model.service';
+import {NgForm} from '@angular/forms';
 
 import { NewsData } from '../news/news-data/news.model';
 import { NewsList } from '../news/news-data/news.data';
@@ -12,28 +12,27 @@ import { NewsList } from '../news/news-data/news.data';
 })
 export class HomeComponent implements AfterViewInit, OnInit {
 
+  @ViewChild('selectOptions') selectOptions;
+
   newsList: NewsData[] = NewsList.sort(this.sortNews).slice(0, 3);
 
-  constructor(private router: Router, public model: SamModelService) {
+
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
-  }
-
-  sortNews(a: NewsData, b: NewsData) {
-      return(a.publishDate < b.publishDate) ? 1 : -1;
-  }
-
-  navigateTo(route: string) {
-  	this.router.navigateByUrl(route);
   }
 
   ngAfterViewInit()
   {
   }
 
-  select() {
-  
+  sortNews(a: NewsData, b: NewsData) {
+      return(a.publishDate < b.publishDate) ? 1 : -1;
+  }
+
+  onSubmit() {
+     this.router.navigate(['/search/results'], { queryParams: { index: this.selectOptions.selected } });
   }
 
   log(value) {
