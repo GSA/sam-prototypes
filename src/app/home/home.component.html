@@ -31,7 +31,7 @@
                 <div class="sds-tile__details grid-row padding-y-2 width-full">
                   Register your entity to get started doing business with the federal government.
                 </div>
-                  
+
                 <div class="mobile-details padding-y-2 width-full">
                   <a class="sds-button sds-button--icon" [routerLink]="['/home/registration']">
                     <span class="fa-stack fa-2x">
@@ -47,7 +47,7 @@
                     </span>
                     <span class="sds-button--icon__title">Check Status</span>
                   </button>
-                  <a class="sds-button sds-button--icon" routerLink="/home/entity-information">                    
+                  <a class="sds-button sds-button--icon" routerLink="/home/entity-information">
                     <span class="fa-stack fa-2x">
                       <i class="sds fa-pentagon fa-stack-2x text-accent-warm-light fa-1x"></i>
                       <i class="sds fa-search fa-stack-1x text-base fa-2x"></i>
@@ -126,9 +126,9 @@
         </div>
         <div class="tablet-lg:grid-col-7 display-flex flex-column mobile-lg:margin-left-4 desktop:margin-left-0">
           <h2 class="search-text margin-y-05 text-normal"> Already know what you want to find?</h2>
-          <div class="sds-search margin-top-05">
-            <form class="usa-search usa-search--small usa-search--inverse" action="/search/results">
-              <label class="usa-sr-only" for="inverse-search-options">Select Here</label>
+
+            <form class="usa-form usa-search usa-search--small sds-inverse" role="search">
+              <label class="usa-sr-only" for="options">Dropdown label</label>
               <select class="usa-select usa-select--inverse" name="index" id="search-options">
                 <option value="all">Select... </option>
                 <option value="assistancelist">Assistance Listings</option>
@@ -138,15 +138,15 @@
                 <option value="hierarchy">Federal Hierarchy</option>
                 <option value="wages">Wage Determinations</option>
               </select>
-              <div role="search" class="width-full">
-                <label class="usa-sr-only" for="inverse-search-dropdown">Search Here</label>
-                <input class="usa-input" id="search-input" type="search" name="keyword" placeholder="Search Here">
+              <div class="sds-inverse__search">
+                <label class="usa-sr-only" for="search-field-small">Search</label>
+                <input class="usa-input" id="search-field-small" type="search" name="search" placeholder="Search Here">
                 <button class="usa-button" type="submit">
                   <span class="usa-sr-only">Search</span>
                 </button>
               </div>
             </form>
-          </div>
+
         </div>
       </div>
     </div>
