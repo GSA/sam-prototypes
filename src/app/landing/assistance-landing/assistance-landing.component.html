@@ -1,20 +1,49 @@
 <div class="grid-container padding-0">
   <!-- header & search bar -->
-  <div class="grid-row header-background desktop:padding-x-9 tablet:margin-bottom-3">
-    <div class="grid-col-fill desktop:margin-x-9 margin-x-2 text-base">
-      <h1 class="font-sans-xl margin-top-3">Assistance Listings</h1>
-      <p class="font-sans-md text-ink">Assistance listings are detailed public descriptions of federal programs that provide grants, loans, scholarships, insurance, and other types of assistance awards. You may browse assistance listings across all government
-        agencies to form a “big picture” of potential funding options.</p>
-      <h2 class="font-sans-lg margin-top-4 text-ink text-normal">Search Assistance Listings</h2>
-          <div class="maxw-tablet">
-            <sds-search placeholder="Enter a CFDA number or keyword" 
-              (term)="search($event)" 
-              placeholderText="Enter a CFDA Number or keyword"
-              inputClass="sds-search--big">
-            </sds-search>
+
+    <section>
+      <div class="n-sds-hero">
+        <div class="grid-row">
+          <div class="tablet:grid-col-fill">
+            <h1>Assistance Listings</h1>
+            <p class="font-sans-md text-ink">Assistance listings are detailed public descriptions of federal programs that provide grants, loans, scholarships, insurance, and other types of assistance awards. You may browse assistance listings across all government agencies to form a “big picture” of potential funding options.</p>
           </div>
+          <div class="sds-seal margin-top-4 margin-right-neg-3 tablet:grid-col-auto">
+              <i class="sds fa-flag fa-2x text-secondary"></i>
+              <div class="sds-seal__content">Official U.S. Government Website<span>100% Free</span></div>
+          </div>
+        </div>
+        <div class="grid-row margin-top-4">
+          <div class="tablet:grid-col-7">
+            <h2 class="font-sans-lg text-ink text-semibold">Search Assistance Listings</h2>
+            <div class="maxw-tablet">
+              <sds-search placeholder="Enter a CFDA number or keyword" 
+                (term)="search($event)" 
+                placeholderText="Enter a CFDA Number or keyword"
+                inputClass="sds-search--big">
+              </sds-search>
+            </div>
+        </div>
+       <div class="desktop:grid-col-5 grid-row">            
+        <aside>
+                <h3 class="text-bold">Visit our Partner Site</h3>
+                <p class="measure-2"> Grants.gov provides a centralized location for grant seekers to find and apply for federal funding opportunities.</p>
+                <div class="sds-button--outline">
+                  <form action="https://grants.gov" target="_blank">
+                    <button class="sds-button sds-button--icon text-center">
+                        <span class="fa-stack fa-2x">
+                            <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
+                            <i class="sds fa-video-circle fa-stack-1x text-base fa-2x"></i>
+                        </span>
+                        <span class="usa-link">Visit Grants.gov</span>
+                    </button>
+                  </form>
+                </div>
+            </aside>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
   <!-- accordion & links -->
   <div class="grid-row desktop:padding-x-4 tablet:margin-y-3">
 
@@ -91,7 +120,7 @@
       </h3>
       <div id="a2" class="usa-accordion__content usa-prose" hidden>
         <!-- smanage listings links -->
-        <h4 class="text-ink text-semibold font-sans-md">Manage your assistance listings</h4>
+        <h4 class="text-ink text-semibold font-sans-md">Learn about managing assistance listings</h4>
         <div class="padding-x-2 display-flex flex-column">
           <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
@@ -113,9 +142,9 @@
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             <span>Manage your regional locations</span>
           </a>
-        </div>
+        </div> 
         <!-- admin links -->
-        <h4 class="text-ink text-semibold font-sans-md">Manage your assistance listings</h4>
+        <h4 class="text-ink text-semibold font-sans-md">Learn about managing users and roles</h4>
         <div class="padding-x-2 display-flex flex-column">
           <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
@@ -130,6 +159,16 @@
             <span>Video - role management</span>
           </a>
         </div>
+        <h4 class="text-bold">Get Started</h4>
+        <div class="sds-button--outline">
+            <button (click)="model.signIn('/workspace')" class="sds-button sds-button--icon text-center">
+                <span class="fa-stack fa-2x">
+                    <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
+                    <i class="sds fa-video-circle fa-stack-1x text-base fa-2x"></i>
+                </span>
+                <span class="usa-link">Sign In To Manage Listings</span>
+            </button>
+        </div> 
       </div>
     </div>
 
@@ -195,19 +234,19 @@
           Connect to one of our partner sites to review policy, learn about the grants lifecycle, and find information about eligibility for different types of rederal assistance.
         </p>
         <div class="sds-card__links">
-          <a class="usa-link" [routerLink]="['news']">
+          <a class="usa-link" href="https://cfo.gov/grants/training/" target="_blank">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             Chief Financial Officers Council Grants Training
           </a>
-          <a class="usa-link" [routerLink]="['news']">
+          <a class="usa-link" href="https://www.grants.gov/web/grants/learn-grants.html" target="_blank">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             Grants.gov Learning Center
           </a>
-          <a class="usa-link" [routerLink]="['news']">
+          <a class="usa-link" href="https://benefits.gov" target="_blank">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             Benefits.gov Benefit Finder
           </a>
-          <a class="usa-link" [routerLink]="['news']">
+          <a class="usa-link" href="https://www.usa.gov/grants" target="_blank">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             USA.gov Government Benefits, Grants, and Loans
           </a>

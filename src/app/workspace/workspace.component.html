@@ -2,7 +2,7 @@
 <h1>Workspace</h1>
 <div class="grid-row tier-one">
   <div class="tablet:grid-col-7 margin-right-2">
-    <!-- Contract Opportunities Card -->
+    <!-- Entity Information Card -->
     <div class="sds-card">
       <div class="sds-card__header">
         <div class="grid-row grid-gap-md">
@@ -41,11 +41,15 @@
     </div>
 
     <!-- Assistance Listing Card -->
-    <div class="sds-card" *ngIf="false">
+    <div class="sds-card">      
       <div class="sds-card__header">
-        <h2><a class="usa-link">Assistance Listing</a></h2>
-        <div class="sds-card__header-actions">
-          <button class="usa-button usa-button--outline">Create Listing</button>
+        <div class="grid-row grid-gap-md">
+          <div class="grid-col-fill">
+            <h2 class="padding-top-1"><a [routerLink]="['registrations']" class="usa-link" style="text-decoration: none;">Assistance Listings</a></h2>
+          </div>
+          <div class="grid-col-auto">
+            <button class="usa-button usa-button--outline" [routerLink]="['/entity-registration/register']">Create Listing</button>
+          </div>
         </div>
       </div>
       <div class="sds-card__content tablet:display-block">
@@ -307,9 +311,9 @@
           <i class="fas fa-download fa-2x text-secondary margin-x-auto"></i>
           <span>Downloads</span>
         </button>
-        <button class="border-gray-30 border-1px radius-md bg-white padding-1 display-flex flex-column margin-x-2 flex-justify-center" style="width: 100px;">
+        <button [routerLink]="['/search/saved-search']" class="border-gray-30 border-1px radius-md bg-white padding-1 display-flex flex-column margin-x-2 flex-justify-center" style="width: 100px;">
           <i class="fas fa-plus-square fa-2x text-secondary margin-x-auto"></i>
-          <span>My Searches</span>
+          <span>Saved Searches</span>
         </button>
         <button class="border-gray-30 border-1px radius-md bg-white padding-1 display-flex flex-column margin-x-2 flex-justify-center" style="width: 100px;">
           <i class="fas fa-binoculars fa-2x text-secondary margin-x-auto"></i>
