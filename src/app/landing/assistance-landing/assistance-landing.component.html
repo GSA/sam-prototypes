@@ -115,60 +115,32 @@
       <!-- federal employee working on assistance listing -->
       <h3 class="usa-accordion__heading sds-accordion__heading">
         <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="a2">
-          I am a federal employee working on assistance listings
+          Do I need a user account
         </button>
       </h3>
       <div id="a2" class="usa-accordion__content usa-prose" hidden>
-        <!-- smanage listings links -->
-        <h4 class="text-ink text-semibold font-sans-md">Learn about managing assistance listings</h4>
-        <div class="padding-x-2 display-flex flex-column">
-          <a class="usa-link" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Meet your annual update requirements</span>
-          </a>
-          <a class="usa-link" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Create and post assistance listings</span>
-          </a>
-          <a class="usa-link" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Give your listing a new title</span>
-          </a>
-          <a class="usa-link" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>ASsign your listing a new CFDA number</span>
-          </a>
-          <a class="usa-link" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Manage your regional locations</span>
-          </a>
-        </div> 
-        <!-- admin links -->
-        <h4 class="text-ink text-semibold font-sans-md">Learn about managing users and roles</h4>
-        <div class="padding-x-2 display-flex flex-column">
-          <a class="usa-link" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Manage users and roles</span>
-          </a>
-          <a class="usa-link" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            <span>Quick Start Guide for Role Management</span>
-          </a>
-          <a class="usa-link" [routerLink]="['news']">
-            <i class="sds fa-video-square text-base-dark margin-right-1"></i>
-            <span>Video - role management</span>
-          </a>
-        </div>
-        <h4 class="text-bold">Get Started</h4>
-        <div class="sds-button--outline">
-            <button (click)="model.signIn('/workspace')" class="sds-button sds-button--icon text-center">
-                <span class="fa-stack fa-2x">
-                    <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
-                    <i class="sds fa-video-circle fa-stack-1x text-base fa-2x"></i>
-                </span>
-                <span class="usa-link">Sign In To Manage Listings</span>
+            <p class="margin-0">
+              Many users may find that they do not need a user account to search for and view assistance listings. With a Login.gov account, you can sign in to multiple government websites, including SAM.gov, with the same username and password. With
+              a
+              user account you may
+            </p>
+            <ul class="margin-top-05 margin-bottom-4 text-ink">
+              <li>Save searches</li>
+              <li>Follow assistance listings</li>
+            </ul>
+            <p class="margin-0 text-ink">
+              <b>For federal users:</b> federal users who maintain assistance listings for their agency or office will need a user account to access additional capabilities available on SAM.
+            </p>
+            <div class="padding-x-2 display-flex flex-column">
+            <a class="usa-link" [routerLink]="['news']">
+              <i class="sds fa-file text-base-dark margin-right-1"></i>
+              <span>Quick start guide for creating a login.gov account</span>
+            </a>
+            <button class="usa-link sds-button sds-button-outline sds-button--icon width-card margin-y-3"  (click)="model.signIn('/workspace')" >
+              <i class="sds fa-check-circle text-base-dark margin-right-1"></i>
+              <span>Sign Up</span>
             </button>
-        </div> 
+          </div>
       </div>
     </div>
 
@@ -226,7 +198,7 @@
     <!-- external resources section-->
     <div class="sds-card tablet:grid-col">
       <div class="sds-card__header">
-        <h3><a [routerLink]="['news']">External Resources</a></h3>
+        <h3><a [routerLink]="['news']">More about Assistance Listings</a></h3>
       </div>
       <!-- contract opportunity report links -->
       <div class="sds-card__body">
@@ -234,6 +206,21 @@
           Connect to one of our partner sites to review policy, learn about the grants lifecycle, and find information about eligibility for different types of rederal assistance.
         </p>
         <div class="sds-card__links">
+          <h4>Assistance Listings Help</h4>
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            Quick start guide for creating a login.gov account
+          </a>
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-book text-base-dark margin-right-1"></i>
+            Glossary terms
+          </a>
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-question text-base-dark margin-right-1"></i>
+            Frequently asked quesions
+          </a>
+          </div>
+          <h4>External Resources</h4>
           <a class="usa-link" href="https://cfo.gov/grants/training/" target="_blank">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
             Chief Financial Officers Council Grants Training
@@ -253,47 +240,75 @@
         </div>
       </div>
     </div>
-  </div>
   <!-- do I need an account -->
   <div class="grid-row desktop:padding-x-4 tablet:margin-top-4">
     <div class="sds-card">
       <div class="sds-card__header">
-        <h3><a [routerLink]="['news']">Do I need a user account?</a></h3>
+        <h3><a [routerLink]="['news']">Federal Users</a></h3>
       </div>
       <div class="sds-card__body">
         <div class="grid-row">
-          <div class="tablet:grid-col-fill padding-2 text-ink font-sans-md">
-            <p class="margin-0">
-              Many users may find that they do not need a user account to search for and view assistance listings. With a Login.gov account, you can sign in to multiple government websites, including SAM.gov, with the same username and password. With
-              a
-              user account you may
-            </p>
-            <ul class="margin-top-05 margin-bottom-4 text-ink">
-              <li>Saved searches</li>
-            </ul>
-            <p class="margin-0 text-ink">
-              <b>For federal users:</b> federal users who maintain assistance listings for their agency or office are the only users who definitely need a user account. You will need one to access additional capabilities available on SAM.
-            </p>
+          <div class="tablet:grid-col-6 padding-2 text-ink font-sans-md">
+            <!-- smanage listings links -->
+            <h4 class="text-ink text-semibold font-sans-md">Learn about managing assistance listings</h4>
+            <div class="padding-x-2 display-flex flex-column">
+                <div class="sds-card__links">
+                  <a class="usa-link" [routerLink]="['news']">
+                    <i class="sds fa-file text-base-dark margin-right-1"></i>
+                    <span>Meet your annual update requirements</span>
+                  </a>
+                  <a class="usa-link" [routerLink]="['news']">
+                    <i class="sds fa-file text-base-dark margin-right-1"></i>
+                    <span>Create and post assistance listings</span>
+                  </a>
+                  <a class="usa-link" [routerLink]="['news']">
+                    <i class="sds fa-file text-base-dark margin-right-1"></i>
+                    <span>Give your listing a new title</span>
+                  </a>
+                  <a class="usa-link" [routerLink]="['news']">
+                    <i class="sds fa-file text-base-dark margin-right-1"></i>
+                    <span>Assign your listing a new CFDA number</span>
+                  </a>
+                  <a class="usa-link" [routerLink]="['news']">
+                    <i class="sds fa-file text-base-dark margin-right-1"></i>
+                    <span>Manage your regional locations</span>
+                  </a>
+              </div>
+            </div> 
+            <!-- admin links -->
+            <h4 class="text-ink text-semibold font-sans-md">Learn about managing users and roles</h4>
+            <div class="padding-x-2 display-flex flex-column">
+             <div class="sds-card__links">
+                <a class="usa-link" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Manage users and roles</span>
+                </a>
+                <a class="usa-link" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Quick Start Guide for Role Management</span>
+                </a>
+                <a class="usa-link" [routerLink]="['news']">
+                  <i class="sds fa-video-square text-base-dark margin-right-1"></i>
+                  <span>Role management video</span>
+                </a>
+            </div>
+            </div>
           </div>
-          <div class="tablet:grid-col-3 padding-2">
-            <!-- paste video code here -->
+          <div class="tablet:grid-col-4 padding-2 text-ink font-sans-md">
+            <h4 class="text-bold">Sign In and Get Started</h4>
+            <p class="font-body-2xs">Click to get started.  If you do not already have a user account at login.gov, you will be able to be given an options to create one.</p> 
+            <div class="sds-button--outline margin-bottom-8">
+                <button (click)="model.signIn('/workspace')" class="sds-button sds-button--icon text-center">
+                    <span class="fa-stack fa-2x">
+                        <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
+                        <i class="sds fa-video-circle fa-stack-1x text-base fa-2x"></i>
+                    </span>
+                    <span class="usa-link">Sign In To Manage Listings</span>
+                </button>
+            </div>
             <img src="assets/img/home-video.png" style="width:100%;" class="text-center">
-            <div class="font-sans-3xs text-base text-center">Video on how to create a login.gov account</div>
+            <div class="font-sans-3xs text-base text-center">Video - Manage your federal users and roles</div>
           </div>
-        </div>
-        <div class="sds-card__links">
-          <a class="usa-link" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            Quick start guide for creating a login.gov account
-          </a>
-          <a class="usa-link" [routerLink]="['news']">
-            <i class="sds fa-book text-base-dark margin-right-1"></i>
-            Glossary terms
-          </a>
-          <a class="usa-link" [routerLink]="['news']">
-            <i class="sds fa-question text-base-dark margin-right-1"></i>
-            Frequently asked quesions
-          </a>
         </div>
       </div>
     </div>
