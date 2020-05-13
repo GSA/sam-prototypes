@@ -31,7 +31,7 @@
                 <div class="sds-tile__details grid-row padding-y-2 width-full">
                   Register your entity to get started doing business with the federal government.
                 </div>
-                  
+
                 <div class="mobile-details padding-y-2 width-full">
                   <a class="sds-button sds-button--icon" [routerLink]="['/home/registration']">
                     <span class="fa-stack fa-2x">
@@ -47,7 +47,7 @@
                     </span>
                     <span class="sds-button--icon__title">Check Status</span>
                   </button>
-                  <a class="sds-button sds-button--icon" routerLink="/home/entity-information">                    
+                  <a class="sds-button sds-button--icon" routerLink="/home/entity-information">
                     <span class="fa-stack fa-2x">
                       <i class="sds fa-pentagon fa-stack-2x text-accent-warm-light fa-1x"></i>
                       <i class="sds fa-search fa-stack-1x text-base fa-2x"></i>
@@ -127,9 +127,9 @@
         <div class="tablet-lg:grid-col-7 display-flex flex-column mobile-lg:margin-left-4 desktop:margin-left-0">
           <h2 class="search-text margin-y-05 text-normal"> Already know what you want to find?</h2>
           <div class="sds-search margin-top-05">
-            <form class="usa-search usa-search--small usa-search--inverse" #searchForm action="search/results">
-              <label class="usa-sr-only" for="searchOptions">Select Here</label>
-              <select class="usa-select usa-select--inverse" name="index" #searchOptions>
+            <form class="usa-form usa-search usa-search--small sds-inverse" role="search">
+              <label class="usa-sr-only" for="options">Dropdown label</label>
+              <select class="usa-select" name="options" id="options">
                 <option value="all">Select... </option>
                 <option value="assistancelist">Assistance Listings</option>
                 <option value="opportunities">Contract Opportunities</option>
@@ -138,9 +138,9 @@
                 <option value="hierarchy">Federal Hierarchy</option>
                 <option value="wages">Wage Determinations</option>
               </select>
-              <div role="search" class="width-full">
-                <label class="usa-sr-only" for="inverse-search-dropdown">Search Here</label>
-                <input class="usa-input" id="search-input" #searchTerm type="search" name="keyword" placeholder="Search Here">
+              <div class="sds-inverse__search">
+                <label class="usa-sr-only" for="search-field-small">Search</label>
+                <input class="usa-input" id="search-field-small" type="search" name="search" placeholder="Search Here">
                 <button class="usa-button" type="submit">
                   <span class="usa-sr-only">Search</span>
                 </button>
@@ -152,21 +152,24 @@
     </div>
   </div>
   <!-- homepage video and news list section-->
-  <div class="grid-row width-full">
+  <div class="grid-row width-full flex-nowrap">
     <!-- news list -->
-    <div class="tablet-lg:grid-col-5 desktop:margin-y-2 desktop:margin-left-2 margin-2 display-flex flex-column border-solid border-base-light border-width-1px news">
-      <div class="padding-2" style="background-color: #eff6fb;">
-        <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">What's new at SAM.gov?</a></h3>
+    <!-- <div class="tablet:grid-col margin-1"> -->
+    <div class="sds-card sds-card--shadowed sds-card--bordered tablet:grid-col margin-1">
+      <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+        <a [routerLink]="['news']" class="sds-card__link"><h2 class="sds-card__title">What's New at SAM.Gov?</h2></a>
       </div>
-      <div class="sds-feed padding-2">
-        <div *ngFor="let news of newsList" class="event margin-0">
-          <div class="content">
-            <div class="summary">
-              <div class="date">{{news.publishDate | date}}</div>
-              <a class="action">{{news.title}}</a>
-            </div>
-            <div class="meta">
-              <em>{{news.shortDescription}}</em>
+      <div class="sds-card__content">
+        <div class="sds-feed">
+          <div *ngFor="let news of newsList" class="event margin-0">
+            <div class="content">
+              <div class="summary">
+                <div class="date">{{news.publishDate | date}}</div>
+                <a class="action">{{news.title}}</a>
+              </div>
+              <div class="meta">
+                <em>{{news.shortDescription}}</em>
+              </div>
             </div>
           </div>
         </div>
@@ -174,25 +177,33 @@
       <div class="padding-2 text-right more-news-link">
         <a class="usa-link" [routerLink]="['news']">More News</a>
       </div>
-
     </div>
+    <!-- </div> -->
     <!-- homepage video and freq. q's -->
-    <div class="tablet-lg:grid-col-6 desktop:margin-y-2 desktop:margin-right-2 margin-2 border-solid border-base-light border-width-1px">
-      <div class="padding-2" style="background-color: #eff6fb;">
-        <h3 class="font-sans-lg margin-0"><a class="text-base-darker text-no-underline" [routerLink]="['news']">Have questions about SAM.gov?</a></h3>
+    <!-- <div class="tablet:grid-col margin-1"> -->
+    <div class="sds-card sds-card--shadowed sds-card--bordered tablet:grid-col margin-1">
+      <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+        <a [routerLink]="['news']" class="sds-card__link"><h2 class="sds-card__title">Have Questions About SAM.Gov?</h2></a>
       </div>
-      <div class="grid-row home-video">
-        <div class="grid-col-fill display-flex flex-column">
-          <div class="padding-x-2 display-flex flex-column">
-            <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
-              <i class="sds fa-video-square text-base fa-2x margin-x-2"></i>
-              <span>Videos</span>
-            </a>
-            <a class="usa-link text-bold margin-y-2 display-flex flex-row" [routerLink]="['news']">
-              <i class="sds fa-book text-base fa-2x margin-x-2"></i>
-              <span>Glossary Terms</span>
-            </a>
-          </div>
+      <div class="sds-card__content">
+      <div class="grid-row">
+        <div class="grid-col">
+          <ul class="sds-list sds-list--unstyled sds-list--flex">
+            <li>
+              <i class="sds fa-video-square fa-2x "></i>
+              <span class="sr-only"></span>
+              <a class="usa-link" href=" ">
+                Videos
+              </a>
+            </li>
+            <li>
+              <i class="sds fa-book fa-2x "></i>
+              <span class="sr-only"></span>
+              <a class="usa-link" href=" ">
+                Glossary Terms
+              </a>
+            </li>
+          </ul>
         </div>
         <!-- paste video code here -->
         <div class="grid-col padding-top-2 text-center">
@@ -201,32 +212,39 @@
           <span class="text-semibold text-base">Watch our welcome video</span>
         </div>
       </div>
-      <div class="grid-row">
-        <div class="grid-col-fill">
-          <h3 class="margin-x-4 margin-top-0">Frequently Asked Questions</h3>
-          <div class="questions padding-x-2 display-flex flex-column">
-            <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
-              <i class="sds fa-question text-base fa-2x margin-x-2"></i>
-              <span>Do I need a user account?</span>
-            </a>
-            <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
-              <i class="sds fa-question text-base fa-2x margin-x-2"></i>
-              <span>What's the difference between signing up and registering?</span>
-            </a>
-            <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
-              <i class="sds fa-question text-base fa-2x margin-x-2"></i>
-              <span>What is I already have a login.gov account?</span>
-            </a>
-            <a class="usa-link text-bold margin-y-1 display-flex flex-row" [routerLink]="['news']">
-              <i class="sds fa-question text-base fa-2x margin-x-2"></i>
-              <span>What do I need to register my entity?</span>
-            </a>
-          </div>
-          <div class="padding-2 text-right">
-            <a class="usa-link" [routerLink]="['news']">More FAQs</a>
-          </div>
-        </div>
-      </div>
+      <span>Frequently Asked Questions</span>
+      <ul class="sds-list sds-list--unstyled sds-list--flex">
+        <li>
+          <i class="sds fa-question-circle"></i>
+          <span class="sr-only"></span>
+          <a class="usa-link" href=" ">
+            Do I need a user account?
+          </a>
+        </li>
+        <li>
+          <i class="sds fa-question-circle"></i>
+          <span class="sr-only"></span>
+          <a class="usa-link" href=" ">
+            What's the difference between signing up and registering?
+          </a>
+        </li>
+        <li>
+          <i class="sds fa-question-circle fa-2x "></i>
+          <span class="sr-only"></span>
+          <a class="usa-link" href=" ">
+            What is I already have a login.gov account?
+          </a>
+        </li>
+        <li>
+          <i class="sds fa-question-circle fa-2x "></i>
+          <span class="sr-only"></span>
+          <a class="usa-link" href=" ">
+            What do I need to register my entity?
+          </a>
+        </li>
+      </ul>
     </div>
+    </div>
+    <!-- </div> -->
   </div>
 </div>

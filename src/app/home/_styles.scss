@@ -1,42 +1,27 @@
 .grid-container {
   padding: 0 !important;
 }
-
 .grid-row {
   display: -webkit-box;
   display: -ms-flexbox!important;
   display: flex;
 }
-
 .grid-col-auto {
   -ms-flex: 0 0 auto!important;
-  //-webkit-box-flex: 1!important;
-  //-ms-flex: 1 0 0px!important;
-  //flex: 1 0 0!important;
   width: auto!important;
   max-width: 100%!important;
 }
 .grid-col-fill {
-  //-webkit-box-flex: 1!important;
   -ms-flex: 1 0 0px!important;
-  // flex: 1 0 0!important;
-  // -webkit-box-flex: 0!important;
-  // -ms-flex: 0 0 auto!important;
-  // flex: 0 0 auto!important;
-  // -webkit-box-flex: 1!important;
-  // -ms-flex: 1 0 0px!important;
-  // flex: 1 0 0!important;
   width: auto!important;
   max-width: 100%!important;
 }
-
 .home-top {
   background: url("/assets/img/Slice 1.png") no-repeat;
   background-size: 100%;
   background-position: right bottom;
   background-color: #d9ebff;
 }
-
 .home-bottom {
   background: url("/assets/img/Slice 2.png") no-repeat;
   background-size: 100%;
@@ -51,13 +36,11 @@
     }
   }
 }
-
 .homepage-title {
   font-size: 28px;
   font-weight: 600;
   margin: auto auto 0 32px;
 }
-
 .home-text,
 .search-text {
   color: white;
@@ -67,16 +50,6 @@
   padding: 5px;
   box-shadow: 1px 1px 15px 1px #8d8563;
 }
-
-.sds-search > select {
-  width: 25%;
-}
-
-.sds-seal {
-  box-shadow: -5px 5px 1px 2px white, -5px -5px 1px 2px white, 5px 5px 1px 2px white, 5px -5px 1px 2px white;
-  border-right: 0 !important;
-}
-
 .sds-tile--lg {
   overflow: hidden;
   .sds-tile__content {
@@ -121,11 +94,6 @@
   .usa-search.usa-search--small.usa-search--inverse {
     background: none !important;
     padding: 0 !important;
-  }
-
-  .sds-search {
-    padding: 8px;
-    background-color: white;
   }
 
   .sds-search {
