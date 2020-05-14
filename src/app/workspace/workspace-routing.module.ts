@@ -16,6 +16,14 @@ const routes: Routes = [
 		}
 	},
 	{
+		path: 'assistancelist',
+		loadChildren: './assistancelist/assistancelist.module#AssistancelistModule',
+		data: {
+			sideId: 'assistancelist'
+		}
+
+	},
+	{
 		path: 'system-accounts',
 		loadChildren: '../system-accounts/system-accounts.module#SystemAccountsModule',
 		data: {

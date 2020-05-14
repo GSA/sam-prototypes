@@ -13,7 +13,7 @@ export let workspaceSideNavigationData: SideNavigationModel = {
 
                 {
                     id: 'assistancelist', mode: NavigationMode.INTERNAL,
-                    route: '/workspace/fal/assistancelist', text: 'Assistance Listings'
+                    route: '/workspace/assistancelist', text: 'Assistance Listings'
                 },
                 {
                     id: 'cfdanumber', mode: NavigationMode.INTERNAL,
