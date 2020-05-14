@@ -25,4 +25,8 @@ export class AssistancelistItemComponent implements OnInit {
 
   ngOnInit() {}
 
+   log(value) {
+    console.log(`%cLog: ${value} clicked`, 'color: blue; font-weight: bold');
+  }
+
 }
