@@ -24,6 +24,13 @@ const routes: Routes = [
 
 	},
 	{
+		path: 'opportunities',
+		loadChildren: './opportunities/opportunities.module#OpportunitiesModule',
+		data: {
+			sideId: 'opportunities'
+		}
+	},
+	{
 		path: 'system-accounts',
 		loadChildren: '../system-accounts/system-accounts.module#SystemAccountsModule',
 		data: {
