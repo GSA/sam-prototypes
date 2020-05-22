@@ -109,7 +109,7 @@ export class SearchHomeComponent implements OnInit {
   ngAfterViewInit() {      
     this.route.queryParams.subscribe(
       data => {
-        let domain = typeof data['index'] === "string" ? decodeURI(data['index']) : 'all'
+        let domain = typeof data['index'] === "string" ? decodeURI(data['index']) : 'all';
         this.listModel = listConfigMap.get(domain ? domain : 'all');
         this.setDomain(domain);
         if(this.resultList) {

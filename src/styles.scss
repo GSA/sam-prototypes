@@ -28,7 +28,15 @@ $theme-font-role-alt: 'sans';
 /* autoprefixer grid: autoplace */
 
 
-
+.sds-inset {
+  @include u-radius(1);
+  @include u-bg('base-lightest');
+  @include u-border('base-light');
+  @include u-border(1px);
+  @include u-padding(1);
+  @include u-margin-left(2);
+  @include u-margin-top(1);
+}
 
 .sds-tag {
   width: 100% !important;
@@ -251,7 +259,7 @@ i.n-sds-circle-secondary {
 
     li {
       @include u-padding(1);
-      @include u-border-top('base-light', 'solid', '1px');       
+      @include u-border-top('base-light', 'solid', '1px');
     }
 }
 }
@@ -312,3 +320,24 @@ box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1);
     @include u-border(2px);
 }
 
+
+//sam added
+.grid-container {
+  padding: 0 !important;
+}
+.grid-row {
+  display: -webkit-box;
+  display: -ms-flexbox!important;
+  display: flex;
+}
+
+.grid-col-auto {
+  -ms-flex: 0 0 auto!important;
+  width: auto!important;
+  max-width: 100%!important;
+}
+.grid-col-fill {
+  -ms-flex: 1 0 0px!important;
+  width: auto!important;
+  max-width: 100%!important;
+}

@@ -5,13 +5,18 @@ import { EntityListComponent } from './entity-list.component';
 import { EntitiesRoutingModule } from './entities-routing.module';
 import { EntityService } from './entity-service/entity.service';
 import { SearchResultListEntityDataItemModule } from './entity-entry/search-list-item-entity.module';
-import { SearchListServiceModule } from '@gsa-sam/layouts';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import {
-  SdsPageModule,
+  SdsSideNavigationModule,
   SdsToolbarModule,
-  SdsAccordionModule
+  SdsAccordionModule,
+  SdsPageModule,
+  SdsSearchModule
 } from '@gsa-sam/components';
-import { SdsFiltersModule } from '@gsa-sam/sam-formly';
+import { SdsFiltersModule, SDSFormlyUpdateComunicationService } from '@gsa-sam/sam-formly';
+import { SdsSubheaderModule, SearchListServiceModule } from '@gsa-sam/layouts';
 import { FormlyModule } from '@ngx-formly/core';
 
 @NgModule({
@@ -21,7 +26,13 @@ import { FormlyModule } from '@ngx-formly/core';
     ReactiveFormsModule,
     SearchResultListEntityDataItemModule,
     SdsPageModule,
-    SdsToolbarModule, SdsAccordionModule, SdsFiltersModule,
+    SdsToolbarModule, 
+    SdsAccordionModule, 
+    SdsFiltersModule,
+    SdsSideNavigationModule,
+    SdsSearchModule,
+    SdsSubheaderModule,
+    FontAwesomeModule,
     FormlyModule.forRoot(),
     EntitiesRoutingModule, SearchListServiceModule
   ],

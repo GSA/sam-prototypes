@@ -33,7 +33,7 @@
           transform="shrink-6"
         ></fa-icon>
         <fa-layers-counter
-          *ngIf="signedIn"
+          *ngIf="model.signedIn"
           [classes]="['icon-layers-counter']"
         ></fa-layers-counter>
       </fa-layers>
@@ -104,7 +104,7 @@
     <a class="usa-nav__link" [class.usa-current]="sectionId == 'help'" [routerLink]="['/help']"><span>Help</span></a>
     </li></ul>
     <div class="usa-nav__secondary">
-  <ul class="usa-nav__secondary-links"><li *ngIf="signedIn" class="usa-nav__secondary-item"> 
+  <ul class="usa-nav__secondary-links"><li *ngIf="model.signedIn" class="usa-nav__secondary-item"> 
         <a
             [attr.id]="requests"
             [routerLink]="['/requests']"
@@ -117,7 +117,7 @@
             ></fa-layers-counter>
           </fa-layers>
           <span class="sds-nav__secondary-item-text">Requests</span></a>
-    </li><li *ngIf="signedIn" class="usa-nav__secondary-item"> 
+    </li><li *ngIf="model.signedIn" class="usa-nav__secondary-item"> 
         <a
             [attr.id]="messages"
             [routerLink]="['/messages']"
@@ -127,7 +127,7 @@
             <fa-icon [icon]="['sds', 'messages']"></fa-icon>
           </fa-layers>
           <span class="sds-nav__secondary-item-text">Notifications</span></a>
-    </li><li *ngIf="signedIn" class="usa-nav__secondary-item"> 
+    </li><li *ngIf="model.signedIn" class="usa-nav__secondary-item"> 
         <a
             [attr.id]="workspace"
             [routerLink]="['/workspace']"
@@ -137,21 +137,21 @@
             <fa-icon [icon]="['sds', 'workspace']"></fa-icon>
           </fa-layers>
           <span class="sds-nav__secondary-item-text">Workspace</span></a>
-    </li><li *ngIf="!signedIn" class="usa-nav__secondary-item"> 
+    </li><li *ngIf="!model.signedIn" class="usa-nav__secondary-item"> 
         <a
             [attr.id]="signIn"
             href="javascript:void(0)"
-            (click)="signIn()"
+            (click)="model.signIn()"
           >
          <fa-layers [fixedWidth]="true">
             <fa-icon [icon]="['sds', 'log-in']"></fa-icon>
           </fa-layers>
           <span class="sds-nav__secondary-item-text">Sign In</span></a>
-    </li><li *ngIf="signedIn" class="usa-nav__secondary-item"> 
+    </li><li *ngIf="model.signedIn" class="usa-nav__secondary-item"> 
         <a
             [attr.id]="signOut"
             href="javascript:void(0)"
-            (click)="signOut()"
+            (click)="model.signOut()"
           >
          <fa-layers [fixedWidth]="true">
             <fa-icon [icon]="['sds', 'log-out']"></fa-icon>

@@ -1,3 +1,4 @@
+import { Observable, of } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 
@@ -11,6 +12,8 @@ import {
 } from '../../../../common/public-apis';
 
 import { OpportunityFilterServiceModule } from './opportunity-filter-service.module';
+
+import { FakeAutocompleteService } from '../../fake-autocomplete.service';
 
 let offersDueService = new DateRangeService();
 offersDueService.settings.id = 'offers-due-date';
@@ -34,16 +37,19 @@ export class OpportunityFilterService implements SearchFiltersWrapperService {
 
   public model = {};
 
+  keywordService: FakeAutocompleteService = new FakeAutocompleteService();
+
   public filters: FormlyFieldConfig[] = [
 	  {
-	      key: 'keyword',
-	      wrappers: ['filterwrapper'],
-	      type: 'input',
-	      templateOptions: {
-	        type: 'text',
-	        label: 'Keyword',
-	        labelClass:'usa-sr-only'
-	      }
+		    key: 'keyword',
+		    wrappers: ['filterwrapper'],
+		    type: 'autocomplete',
+		    templateOptions: {
+		        label: 'Keyword',
+		        service: this.keywordService,
+		        configuration: this.keywordService.settings,
+		        model: this.keywordService.model
+		    }
 	  },  
 	  {
 	      key: 'title',
