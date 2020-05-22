@@ -5,7 +5,7 @@
   </button>
 
   <!-- TITLE -->
-  <h1 class="font-heading-md text-semibold tablet-lg:width-mobile">Contract Opportunities</h1>
+  <h1 class="font-heading-md text-semibold tablet-lg:width-mobile">Assistance Listings</h1>
 
   <!-- SEARCH (OPTIONAL) -->
   <sds-search
@@ -47,12 +47,11 @@
 	<search-list-layout [service]="service" [configuration]="configuration">
 	    <ng-template #resultContent let-item>
 	        <div>
-	            <opportunities-ws-item [model]="item"></opportunities-ws-item>
+	            <assistancelist-item [model]="item"></assistancelist-item>
 	        </div>
 	    </ng-template>
 	</search-list-layout>
   </div> 
   </sds-page-options>
 </sds-page>
-
 

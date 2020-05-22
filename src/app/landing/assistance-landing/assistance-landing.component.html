@@ -7,11 +7,19 @@
           <div class="tablet:grid-col-fill">
             <h1>Assistance Listings</h1>
             <p class="font-sans-md text-ink">Assistance listings are detailed public descriptions of federal programs that provide grants, loans, scholarships, insurance, and other types of assistance awards. You may browse assistance listings across all government agencies to form a “big picture” of potential funding options.</p>
+<<<<<<< HEAD
           </div>
           <div class="sds-seal margin-top-4 margin-right-neg-3 tablet:grid-col-auto">
               <i class="sds fa-flag fa-2x text-secondary"></i>
               <div class="sds-seal__content">Official U.S. Government Website<span>100% Free</span></div>
           </div>
+=======
+          </div>
+          <div class="sds-seal margin-top-4 margin-right-neg-3 tablet:grid-col-auto">
+              <i class="sds fa-flag fa-2x text-secondary"></i>
+              <div class="sds-seal__content">Official U.S. Government Website<span>100% Free</span></div>
+          </div>
+>>>>>>> 7409fecea3551c444d36a0a197c3604a8aa42a39
         </div>
         <div class="grid-row margin-top-4">
           <div class="tablet:grid-col-7">
@@ -161,7 +169,7 @@
             How to run a databank report
           </a>
           <a class="usa-link" [routerLink]="['news']">
-            <i class="sds fa-new-note text-base-dark margin-right-1"></i>
+            <i class="fa fa-play-circle text-base-dark margin-right-1"></i>
             Go to databank reports
           </a>
         </div>
@@ -177,20 +185,39 @@
             How to use assistance listing APIs
           </a>
           <a class="usa-link" [routerLink]="['news']">
-            <i class="sds fa-file-chart-line text-base-dark margin-right-1"></i>
+            <i class="fa fa-play-circle text-base-dark margin-right-1"></i>
             Go to assistance listing APIs
           </a>
         </div>
         <!-- connect to data services links  -->
-        <h4 class="sds-card__title">Connect to Data Services</h4>
+        <h4 class="sds-card__title">Downloads</h4>
         <div class=" sds-card__links">
+          <form class="margin-y-2">
+            <div class="grid-row grid-gap">
+              <div class="grid-col-fill">
+                <select class="usa-select">
+                      <option value="2019">2019 Print Catalog</option>
+                      <option value="2018">2018 Print Catalog</option>
+                      <option value="2017">2017 Print Catalog</option>
+                      <option value="2016">2016 Print Catalog</option>
+                      <option value="2015">2015 Print Catalog</option>
+                      <option value="2014">2014 Print Catalog</option>
+                      <option value="2013">2013 Print Catalog</option>
+                      <option value="2012">2012 Print Catalog</option>
+                      <option value="2011">2011 Print Catalog</option>
+                      <option value="2010">2010 Print Catalog</option>
+                      <option value="2009">2009 Print Catalog</option>
+                      <option value="2008">2008 Print Catalog</option>
+                </select>
+                </div>
+                <div class="grid-col-auto">
+                 <button class="usa-button usa-button--outline">Download</button>
+               </div>
+            </div>
+          </form>
           <a class="usa-link" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            How to download all assistance listings
-          </a>
-          <a class="usa-link" [routerLink]="['news']">
-            <i class="sds fa-download fa-rotate-270 text-base-dark margin-right-1"></i>
-            Go to file extractions
+            <i class="fa fa-play-circle fa-rotate-270 text-base-dark margin-right-1"></i>
+            Go to CSV File Extracts
           </a>
         </div>
       </div>
@@ -202,9 +229,6 @@
       </div>
       <!-- contract opportunity report links -->
       <div class="sds-card__body">
-        <p class="font-sans-md text-base padding-x-2">
-          Connect to one of our partner sites to review policy, learn about the grants lifecycle, and find information about eligibility for different types of rederal assistance.
-        </p>
         <div class="sds-card__links">
           <h4>Assistance Listings Help</h4>
           <a class="usa-link" [routerLink]="['news']">
@@ -214,6 +238,7 @@
           <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-book text-base-dark margin-right-1"></i>
             Glossary terms
+<<<<<<< HEAD
           </a>
           <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-question text-base-dark margin-right-1"></i>
@@ -235,8 +260,36 @@
           </a>
           <a class="usa-link" href="https://www.usa.gov/grants" target="_blank">
             <i class="sds fa-file text-base-dark margin-right-1"></i>
+=======
+          </a>
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-question text-base-dark margin-right-1"></i>
+            Frequently asked quesions
+          </a>
+          </div>
+        <div class="sds-card__links">
+          <h4>External Resources</h4>        
+          <p class="font-sans-xs text-base-dark measure-3 padding-x-2">
+          Connect to one of our partner sites to review policy, learn about the grants lifecycle, and find information about eligibility for different types of rederal assistance.
+        </p>
+          <a class="usa-link" href="https://cfo.gov/grants/training/" target="_blank">
+            <i class="fa fa-link text-base-dark margin-right-1"></i>
+            Chief Financial Officers Council Grants Training
+          </a>
+          <a class="usa-link" href="https://www.grants.gov/web/grants/learn-grants.html" target="_blank">
+            <i class="fa fa-link  text-base-dark margin-right-1"></i>
+            Grants.gov Learning Center
+          </a>
+          <a class="usa-link" href="https://benefits.gov" target="_blank">
+            <i class="fa fa-link  text-base-dark margin-right-1"></i>
+            Benefits.gov Benefit Finder
+          </a>
+          <a class="usa-link" href="https://www.usa.gov/grants" target="_blank">
+            <i class="fa fa-link  text-base-dark margin-right-1"></i>
+>>>>>>> 7409fecea3551c444d36a0a197c3604a8aa42a39
             USA.gov Government Benefits, Grants, and Loans
           </a>
+        </div>
         </div>
       </div>
     </div>

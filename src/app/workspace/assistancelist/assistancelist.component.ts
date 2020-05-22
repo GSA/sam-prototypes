@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewChild, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 
-import { OpportunitiesService } from './service/opportunities.service';
+import { AssistancelistService } from './service/assistancelist.service';
 import { SearchListConfiguration } from '@gsa-sam/layouts';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 
@@ -8,17 +8,17 @@ import { filter, map } from 'rxjs/operators';
 import { FormGroup } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 
-import { opportunitiesFilters } from './filter.config';
+import { assistanceFilters } from './filter.config';
 
 import { workspaceSideNavigationData } from '../../common/workspace/navigation.data';
 
 @Component({
-  selector: 'app-opportunities',
-  templateUrl: './opportunities.component.html',
-  styleUrls: ['./opportunities.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Default
+  selector: 'assistancelist',
+  templateUrl: './assistancelist.component.html',
+  styleUrls: ['./assistancelist.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class OpportunitiesComponent implements OnInit {
+export class AssistancelistComponent implements OnInit {
 
   subheader = {
     actions: [
@@ -34,22 +34,20 @@ export class OpportunitiesComponent implements OnInit {
 
   model = {};
 
-  filters = opportunitiesFilters;
+  filters = assistanceFilters;
 
   showFilters: boolean = true;
 
   public filterChange$ = new BehaviorSubject<object>(null);
 
-  constructor(public service: OpportunitiesService, private change: ChangeDetectorRef) {
+  constructor(public service: AssistancelistService, private change: ChangeDetectorRef) {
 
   }
 
   configuration: SearchListConfiguration = {
-    defaultSortValue: 'modifiedAscending', pageSize: 25,
-    sortList: [{ text: 'Last Modified (Newest)', value: 'modifiedAscending' },
-    { text: 'Last Modified (Oldest)', value: 'modifiedDescending' },
-    { text: 'Solicitation ID (Low - High)', value: 'isAscending' },
-    { text: 'Solicitation ID (High - Low)', value: 'isDescending' },
+    defaultSortValue: 'cfdaAscending', pageSize: 25,
+    sortList: [{ text: 'CFDA Number (Low - High)', value: 'cfdaAscending' },
+    { text: 'CFDA Number (High - Low)', value: 'cfdaDescending' },
     { text: 'Title A - Z', value: 'titleA-Z' },
     { text: 'Title Z - A', value: 'titleZ-A' },
     ]

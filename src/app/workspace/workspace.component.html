@@ -2,6 +2,84 @@
 <h1>Workspace</h1>
 <div class="grid-row tier-one">
   <div class="tablet:grid-col-7 margin-right-2">
+<<<<<<< HEAD
+    <!-- Entity Information Card -->
+    <div class="sds-card">
+      <div class="sds-card__header">
+        <div class="grid-row grid-gap-md">
+          <div class="grid-col-fill">
+            <h2 class="padding-top-1"><a [routerLink]="['registrations']" class="usa-link" style="text-decoration: none;">Entity Registrations</a></h2>
+          </div>
+          <div class="grid-col-auto">
+            <button class="usa-button usa-button--outline" [routerLink]="['/entity-registration/register']">Register Entity</button>
+=======
+
+    <!-- Contract Opportunities Card -->
+    <div class="sds-card">
+      <div class="sds-card__header">        
+        <div class="grid-row grid-gap-md">
+          <div class="grid-col-fill">
+            <h2><a class="usa-link" [routerLink]="['opportunities']">Contract Opportunities</a></h2>
+          </div>
+          <div class="grid-col-auto">
+            <button class="usa-button usa-button--outline">Create Opportunity</button>
+>>>>>>> 7409fecea3551c444d36a0a197c3604a8aa42a39
+          </div>
+        </div>
+      </div>
+      <div class="sds-card__content tablet:display-block padding-4">
+        <div class="sds-statistics">
+<<<<<<< HEAD
+          <a class="usa-link" [routerLink]="['registrations']" class="green statistic" style="text-decoration: none;">
+            <div class="value"><span class="circular">15</span></div>
+            <div class="label">Active</div>
+          </a>
+          <a class="usa-link" [routerLink]="['registrations']" class="grey statistic" style="text-decoration: none;">
+            <div class="value"><span class="circular">0</span></div>
+            <div class="label">Draft</div>
+          </a>
+          <a class="usa-link" [routerLink]="['registrations']" class="blue statistic" style="text-decoration: none;">
+=======
+          <a class="usa-link" [routerLink]="['opportunities']" class="green statistic" style="text-decoration: none;">
+            <div class="value"><span class="circular">15</span></div>
+            <div class="label">Active</div>
+          </a>
+          <a class="usa-link" [routerLink]="['opportunities']" class="blue statistic" style="text-decoration: none;">
+            <div class="value"><span class="circular">0</span></div>
+            <div class="label">Draft</div>
+          </a>
+          <a class="usa-link" [routerLink]="['opportunities']" class="red statistic" style="text-decoration: none;">
+>>>>>>> 7409fecea3551c444d36a0a197c3604a8aa42a39
+            <div class="value"><span class="circular">1</span></div>
+            <div class="label">Work in Progress</div>
+          </a>
+<<<<<<< HEAD
+          <a class="usa-link" [routerLink]="['registrations']" class="yellow statistic" style="text-decoration: none;">
+=======
+          <a class="usa-link" [routerLink]="['opportunities']" class="orange statistic" style="text-decoration: none;">
+>>>>>>> 7409fecea3551c444d36a0a197c3604a8aa42a39
+            <div class="value"><span class="circular">2</span></div>
+            <div class="label">Submitted</div>
+          </a>
+          <a class="usa-link" [routerLink]="['registrations']" class="red statistic" style="text-decoration: none;">
+            <div class="value"><span class="circular">2</span></div>
+            <div class="label">Expired</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+<<<<<<< HEAD
+    <!-- Assistance Listing Card -->
+    <div class="sds-card">      
+      <div class="sds-card__header">
+        <div class="grid-row grid-gap-md">
+          <div class="grid-col-fill">
+            <h2 class="padding-top-1"><a [routerLink]="['registrations']" class="usa-link" style="text-decoration: none;">Assistance Listings</a></h2>
+          </div>
+          <div class="grid-col-auto">
+            <button class="usa-button usa-button--outline" [routerLink]="['/entity-registration/register']">Create Listing</button>
+=======
     <!-- Entity Information Card -->
     <div class="sds-card">
       <div class="sds-card__header">
@@ -40,15 +118,17 @@
       </div>
     </div>
 
+
     <!-- Assistance Listing Card -->
-    <div class="sds-card">      
+    <div class="sds-card" *ngIf="false">      
       <div class="sds-card__header">
         <div class="grid-row grid-gap-md">
           <div class="grid-col-fill">
-            <h2 class="padding-top-1"><a [routerLink]="['registrations']" class="usa-link" style="text-decoration: none;">Assistance Listings</a></h2>
+            <h2 class="padding-top-1"><a [routerLink]="['assistancelist']" class="usa-link" style="text-decoration: none;">Assistance Listings</a></h2>
           </div>
           <div class="grid-col-auto">
-            <button class="usa-button usa-button--outline" [routerLink]="['/entity-registration/register']">Create Listing</button>
+            <button class="usa-button usa-button--outline" [routerLink]="['/']">Create Listing</button>
+>>>>>>> 7409fecea3551c444d36a0a197c3604a8aa42a39
           </div>
         </div>
       </div>
@@ -96,9 +176,15 @@
     <!-- Collective Bargaining Agreements Card -->
     <div class="sds-card" *ngIf="false">
       <div class="sds-card__header">
-        <h2><a class="usa-link">Collective Bargaining Agreements</a></h2>
-        <div class="sds-card__header-actions">
-          <button class="usa-button usa-button--outline">Create CBA</button>
+        <div class="grid-row grid-gap-md">
+          <div class="grid-col-fill">
+            <h2><a class="usa-link">Collective Bargaining Agreements</a></h2>
+          </div>
+          <div class="grid-col-fill">
+            <div class="sds-card__header-actions">
+              <button class="usa-button usa-button--outline">Create CBA</button>
+            </div>
+          </div>
         </div>
       </div>
       <div class="grid-row">

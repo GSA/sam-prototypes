@@ -322,6 +322,20 @@ box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1);
 
 
 //sam added
+// sds cards
+.sds-card.sds-card--shadowed.sds-card--bordered > .sds-card__content {
+  span {
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+.sds-list {
+  margin-bottom: 30px;
+  li {
+    margin-top: 16px;
+  }
+}
+
 .grid-container {
   padding: 0 !important;
 }
