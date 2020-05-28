@@ -10,12 +10,12 @@
 <div
   class="usa-overlay"
   [class.is-visible]="mobileNavActive"
-  (click)="closeMobileNav()">      
+  (click)="closeMobileNav()">
 </div>
 <header class="usa-header usa-header--extended">
     <div class="usa-navbar">
       <div class="usa-logo" id="extended-mega-logo">
-        <em class="usa-logo__text">  
+        <em class="usa-logo__text">
             <a [routerLink]="['/']" title="Home" aria-label="Home">
                 <img class="sds-header__logo" [src]="locationStrategy.getBaseHref() + 'assets/img/logo-sam.svg'" alt="SAM.gov home" />
             </a>
@@ -104,7 +104,7 @@
     <a class="usa-nav__link" [class.usa-current]="sectionId == 'help'" [routerLink]="['/help']"><span>Help</span></a>
     </li></ul>
     <div class="usa-nav__secondary">
-  <ul class="usa-nav__secondary-links"><li *ngIf="model.signedIn" class="usa-nav__secondary-item"> 
+  <ul class="usa-nav__secondary-links"><li *ngIf="model.signedIn" class="usa-nav__secondary-item">
         <a
             [attr.id]="requests"
             [routerLink]="['/requests']"
@@ -112,12 +112,12 @@
           >
          <fa-layers [fixedWidth]="true">
             <fa-icon [icon]="['sds', 'request']"></fa-icon>
-            <fa-layers-counter 
+            <fa-layers-counter
               [classes]="['icon-layers-counter']"
             ></fa-layers-counter>
           </fa-layers>
           <span class="sds-nav__secondary-item-text">Requests</span></a>
-    </li><li *ngIf="model.signedIn" class="usa-nav__secondary-item"> 
+    </li><li *ngIf="model.signedIn" class="usa-nav__secondary-item">
         <a
             [attr.id]="messages"
             [routerLink]="['/messages']"
@@ -127,7 +127,7 @@
             <fa-icon [icon]="['sds', 'messages']"></fa-icon>
           </fa-layers>
           <span class="sds-nav__secondary-item-text">Notifications</span></a>
-    </li><li *ngIf="model.signedIn" class="usa-nav__secondary-item"> 
+    </li><li *ngIf="model.signedIn" class="usa-nav__secondary-item">
         <a
             [attr.id]="workspace"
             [routerLink]="['/workspace']"
@@ -137,7 +137,7 @@
             <fa-icon [icon]="['sds', 'workspace']"></fa-icon>
           </fa-layers>
           <span class="sds-nav__secondary-item-text">Workspace</span></a>
-    </li><li *ngIf="!model.signedIn" class="usa-nav__secondary-item"> 
+    </li><li *ngIf="!model.signedIn" class="usa-nav__secondary-item">
         <a
             [attr.id]="signIn"
             href="javascript:void(0)"
@@ -147,7 +147,7 @@
             <fa-icon [icon]="['sds', 'log-in']"></fa-icon>
           </fa-layers>
           <span class="sds-nav__secondary-item-text">Sign In</span></a>
-    </li><li *ngIf="model.signedIn" class="usa-nav__secondary-item"> 
+    </li><li *ngIf="model.signedIn" class="usa-nav__secondary-item">
         <a
             [attr.id]="signOut"
             href="javascript:void(0)"
@@ -180,7 +180,7 @@
                     <li class="usa-footer__secondary-link"><a class="usa-link" [routerLink]="['/news']">News</a></li>
                   </ul>
                 </section>
-              </div>              
+              </div>
               <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
                 <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
                   <h4 class="usa-footer__primary-link">Our Partners</h4>

@@ -1,45 +1,44 @@
 <div class="grid-container padding-0">
   <!-- header & search bar -->
 
-    <section>
-      <div class="n-sds-hero">
-        <div class="grid-row">
-          <div class="tablet:grid-col-fill">
-            <h1>Assistance Listings</h1>
-            <p class="font-sans-md text-ink">Assistance listings are detailed public descriptions of federal programs that provide grants, loans, scholarships, insurance, and other types of assistance awards. You may browse assistance listings across all government agencies to form a “big picture” of potential funding options.</p>
-          </div>
-          <div class="sds-seal margin-top-4 margin-right-neg-3 tablet:grid-col-auto">
-              <i class="sds fa-flag fa-2x text-secondary"></i>
-              <div class="sds-seal__content">Official U.S. Government Website<span>100% Free</span></div>
+  <section>
+    <div class="n-sds-hero">
+      <div class="grid-row">
+        <div class="tablet:grid-col-fill">
+          <h1>Assistance Listings</h1>
+          <p class="font-sans-md text-ink">Assistance listings are detailed public descriptions of federal programs that provide grants, loans, scholarships, insurance, and other types of assistance awards. You may browse assistance listings across
+            all government agencies to form a “big picture” of potential funding options.</p>
+        </div>
+        <div class="sds-seal margin-top-4 margin-right-neg-3 tablet:grid-col-auto">
+          <i class="sds fa-flag fa-2x text-secondary"></i>
+          <div class="sds-seal__content">Official U.S. Government Website<span>100% Free</span></div>
+        </div>
+
+      </div>
+      <div class="grid-row margin-top-4">
+        <div class="tablet:grid-col-7">
+          <h2 class="font-sans-lg text-ink text-semibold">Search Assistance Listings</h2>
+          <div class="maxw-tablet">
+            <sds-search placeholder="Enter a CFDA number or keyword" (term)="search($event)" placeholderText="Enter a CFDA Number or keyword" inputClass="sds-search--big">
+            </sds-search>
           </div>
         </div>
-        <div class="grid-row margin-top-4">
-          <div class="tablet:grid-col-7">
-            <h2 class="font-sans-lg text-ink text-semibold">Search Assistance Listings</h2>
-            <div class="maxw-tablet">
-              <sds-search placeholder="Enter a CFDA number or keyword" 
-                (term)="search($event)" 
-                placeholderText="Enter a CFDA Number or keyword"
-                inputClass="sds-search--big">
-              </sds-search>
+        <div class="desktop:grid-col-5 grid-row">
+          <aside>
+            <h3 class="text-bold">Visit our Partner Site</h3>
+            <p class="measure-2"> Grants.gov provides a centralized location for grant seekers to find and apply for federal funding opportunities.</p>
+            <div class="sds-button--outline">
+              <form action="https://grants.gov" target="_blank">
+                <button class="sds-button sds-button--icon text-center">
+                  <span class="fa-stack fa-2x">
+                    <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
+                    <i class="sds fa-video-circle fa-stack-1x text-base fa-2x"></i>
+                  </span>
+                  <span class="usa-link">Visit Grants.gov</span>
+                </button>
+              </form>
             </div>
-        </div>
-       <div class="desktop:grid-col-5 grid-row">            
-        <aside>
-                <h3 class="text-bold">Visit our Partner Site</h3>
-                <p class="measure-2"> Grants.gov provides a centralized location for grant seekers to find and apply for federal funding opportunities.</p>
-                <div class="sds-button--outline">
-                  <form action="https://grants.gov" target="_blank">
-                    <button class="sds-button sds-button--icon text-center">
-                        <span class="fa-stack fa-2x">
-                            <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
-                            <i class="sds fa-video-circle fa-stack-1x text-base fa-2x"></i>
-                        </span>
-                        <span class="usa-link">Visit Grants.gov</span>
-                    </button>
-                  </form>
-                </div>
-            </aside>
+          </aside>
         </div>
       </div>
     </div>
@@ -119,28 +118,28 @@
         </button>
       </h3>
       <div id="a2" class="usa-accordion__content usa-prose" hidden>
-            <p class="margin-0">
-              Many users may find that they do not need a user account to search for and view assistance listings. With a Login.gov account, you can sign in to multiple government websites, including SAM.gov, with the same username and password. With
-              a
-              user account you may
-            </p>
-            <ul class="margin-top-05 margin-bottom-4 text-ink">
-              <li>Save searches</li>
-              <li>Follow assistance listings</li>
-            </ul>
-            <p class="margin-0 text-ink">
-              <b>For federal users:</b> federal users who maintain assistance listings for their agency or office will need a user account to access additional capabilities available on SAM.
-            </p>
-            <div class="padding-x-2 display-flex flex-column">
-            <a class="usa-link" [routerLink]="['news']">
-              <i class="sds fa-file text-base-dark margin-right-1"></i>
-              <span>Quick start guide for creating a login.gov account</span>
-            </a>
-            <button class="usa-link sds-button sds-button-outline sds-button--icon width-card margin-y-3"  (click)="model.signIn('/workspace')" >
-              <i class="sds fa-check-circle text-base-dark margin-right-1"></i>
-              <span>Sign Up</span>
-            </button>
-          </div>
+        <p class="margin-0">
+          Many users may find that they do not need a user account to search for and view assistance listings. With a Login.gov account, you can sign in to multiple government websites, including SAM.gov, with the same username and password. With
+          a
+          user account you may
+        </p>
+        <ul class="margin-top-05 margin-bottom-4 text-ink">
+          <li>Save searches</li>
+          <li>Follow assistance listings</li>
+        </ul>
+        <p class="margin-0 text-ink">
+          <b>For federal users:</b> federal users who maintain assistance listings for their agency or office will need a user account to access additional capabilities available on SAM.
+        </p>
+        <div class="padding-x-2 display-flex flex-column">
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            <span>Quick start guide for creating a login.gov account</span>
+          </a>
+          <button class="usa-link sds-button sds-button-outline sds-button--icon width-card margin-y-3" (click)="model.signIn('/workspace')">
+            <i class="sds fa-check-circle text-base-dark margin-right-1"></i>
+            <span>Sign Up</span>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -188,23 +187,23 @@
             <div class="grid-row grid-gap">
               <div class="grid-col-fill">
                 <select class="usa-select">
-                      <option value="2019">2019 Print Catalog</option>
-                      <option value="2018">2018 Print Catalog</option>
-                      <option value="2017">2017 Print Catalog</option>
-                      <option value="2016">2016 Print Catalog</option>
-                      <option value="2015">2015 Print Catalog</option>
-                      <option value="2014">2014 Print Catalog</option>
-                      <option value="2013">2013 Print Catalog</option>
-                      <option value="2012">2012 Print Catalog</option>
-                      <option value="2011">2011 Print Catalog</option>
-                      <option value="2010">2010 Print Catalog</option>
-                      <option value="2009">2009 Print Catalog</option>
-                      <option value="2008">2008 Print Catalog</option>
+                  <option value="2019">2019 Print Catalog</option>
+                  <option value="2018">2018 Print Catalog</option>
+                  <option value="2017">2017 Print Catalog</option>
+                  <option value="2016">2016 Print Catalog</option>
+                  <option value="2015">2015 Print Catalog</option>
+                  <option value="2014">2014 Print Catalog</option>
+                  <option value="2013">2013 Print Catalog</option>
+                  <option value="2012">2012 Print Catalog</option>
+                  <option value="2011">2011 Print Catalog</option>
+                  <option value="2010">2010 Print Catalog</option>
+                  <option value="2009">2009 Print Catalog</option>
+                  <option value="2008">2008 Print Catalog</option>
                 </select>
-                </div>
-                <div class="grid-col-auto">
-                 <button class="usa-button usa-button--outline">Download</button>
-               </div>
+              </div>
+              <div class="grid-col-auto">
+                <button class="usa-button usa-button--outline">Download</button>
+              </div>
             </div>
           </form>
           <a class="usa-link" [routerLink]="['news']">
@@ -230,37 +229,32 @@
           <a class="usa-link" [routerLink]="['news']">
             <i class="sds fa-book text-base-dark margin-right-1"></i>
             Glossary terms
-          </a>
-          <a class="usa-link" [routerLink]="['news']">
-            <i class="sds fa-question text-base-dark margin-right-1"></i>
-            Frequently asked quesions
-          </a>
-          </div>
-        <div class="sds-card__links">
-          <h4>External Resources</h4>        
-          <p class="font-sans-xs text-base-dark measure-3 padding-x-2">
-          Connect to one of our partner sites to review policy, learn about the grants lifecycle, and find information about eligibility for different types of rederal assistance.
-        </p>
-          <a class="usa-link" href="https://cfo.gov/grants/training/" target="_blank">
-            <i class="fa fa-link text-base-dark margin-right-1"></i>
-            Chief Financial Officers Council Grants Training
-          </a>
-          <a class="usa-link" href="https://www.grants.gov/web/grants/learn-grants.html" target="_blank">
-            <i class="fa fa-link  text-base-dark margin-right-1"></i>
-            Grants.gov Learning Center
-          </a>
-          <a class="usa-link" href="https://benefits.gov" target="_blank">
-            <i class="fa fa-link  text-base-dark margin-right-1"></i>
-            Benefits.gov Benefit Finder
-          </a>
-          <a class="usa-link" href="https://www.usa.gov/grants" target="_blank">
-            <i class="fa fa-link  text-base-dark margin-right-1"></i>
-            USA.gov Government Benefits, Grants, and Loans
+           </a>
+           <a class="usa-link" [routerLink]="['news']">
+              <i class="sds fa-question text-base-dark margin-right-1"></i>
+              Frequently asked quesions
           </a>
         </div>
-        </div>
+        <h4>External Resources</h4>
+        <a class="usa-link" href="https://cfo.gov/grants/training/" target="_blank">
+          <i class="sds fa-file text-base-dark margin-right-1"></i>
+          Chief Financial Officers Council Grants Training
+        </a>
+        <a class="usa-link" href="https://www.grants.gov/web/grants/learn-grants.html" target="_blank">
+          <i class="sds fa-file text-base-dark margin-right-1"></i>
+          Grants.gov Learning Center
+        </a>
+        <a class="usa-link" href="https://benefits.gov" target="_blank">
+          <i class="sds fa-file text-base-dark margin-right-1"></i>
+          Benefits.gov Benefit Finder
+        </a>
+        <a class="usa-link" href="https://www.usa.gov/grants" target="_blank">
+          <i class="sds fa-file text-base-dark margin-right-1"></i>
+          USA.gov Government Benefits, Grants, and Loans
+        </a>
       </div>
     </div>
+  </div>
   <!-- do I need an account -->
   <div class="grid-row desktop:padding-x-4 tablet:margin-top-4">
     <div class="sds-card">
@@ -273,33 +267,33 @@
             <!-- smanage listings links -->
             <h4 class="text-ink text-semibold font-sans-md">Learn about managing assistance listings</h4>
             <div class="padding-x-2 display-flex flex-column">
-                <div class="sds-card__links">
-                  <a class="usa-link" [routerLink]="['news']">
-                    <i class="sds fa-file text-base-dark margin-right-1"></i>
-                    <span>Meet your annual update requirements</span>
-                  </a>
-                  <a class="usa-link" [routerLink]="['news']">
-                    <i class="sds fa-file text-base-dark margin-right-1"></i>
-                    <span>Create and post assistance listings</span>
-                  </a>
-                  <a class="usa-link" [routerLink]="['news']">
-                    <i class="sds fa-file text-base-dark margin-right-1"></i>
-                    <span>Give your listing a new title</span>
-                  </a>
-                  <a class="usa-link" [routerLink]="['news']">
-                    <i class="sds fa-file text-base-dark margin-right-1"></i>
-                    <span>Assign your listing a new CFDA number</span>
-                  </a>
-                  <a class="usa-link" [routerLink]="['news']">
-                    <i class="sds fa-file text-base-dark margin-right-1"></i>
-                    <span>Manage your regional locations</span>
-                  </a>
+              <div class="sds-card__links">
+                <a class="usa-link" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Meet your annual update requirements</span>
+                </a>
+                <a class="usa-link" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Create and post assistance listings</span>
+                </a>
+                <a class="usa-link" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Give your listing a new title</span>
+                </a>
+                <a class="usa-link" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Assign your listing a new CFDA number</span>
+                </a>
+                <a class="usa-link" [routerLink]="['news']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Manage your regional locations</span>
+                </a>
               </div>
-            </div> 
+            </div>
             <!-- admin links -->
             <h4 class="text-ink text-semibold font-sans-md">Learn about managing users and roles</h4>
             <div class="padding-x-2 display-flex flex-column">
-             <div class="sds-card__links">
+              <div class="sds-card__links">
                 <a class="usa-link" [routerLink]="['news']">
                   <i class="sds fa-file text-base-dark margin-right-1"></i>
                   <span>Manage users and roles</span>
@@ -312,20 +306,20 @@
                   <i class="sds fa-video-square text-base-dark margin-right-1"></i>
                   <span>Role management video</span>
                 </a>
-            </div>
+              </div>
             </div>
           </div>
           <div class="tablet:grid-col-4 padding-2 text-ink font-sans-md">
             <h4 class="text-bold">Sign In and Get Started</h4>
-            <p class="font-body-2xs">Click to get started.  If you do not already have a user account at login.gov, you will be able to be given an options to create one.</p> 
+            <p class="font-body-2xs">Click to get started. If you do not already have a user account at login.gov, you will be able to be given an options to create one.</p>
             <div class="sds-button--outline margin-bottom-8">
-                <button (click)="model.signIn('/workspace')" class="sds-button sds-button--icon text-center">
-                    <span class="fa-stack fa-2x">
-                        <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
-                        <i class="sds fa-video-circle fa-stack-1x text-base fa-2x"></i>
-                    </span>
-                    <span class="usa-link">Sign In To Manage Listings</span>
-                </button>
+              <button (click)="model.signIn('/workspace')" class="sds-button sds-button--icon text-center">
+                <span class="fa-stack fa-2x">
+                  <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
+                  <i class="sds fa-video-circle fa-stack-1x text-base fa-2x"></i>
+                </span>
+                <span class="usa-link">Sign In To Manage Listings</span>
+              </button>
             </div>
             <img src="assets/img/home-video.png" style="width:100%;" class="text-center">
             <div class="font-sans-3xs text-base text-center">Video - Manage your federal users and roles</div>
@@ -334,4 +328,3 @@
       </div>
     </div>
   </div>
-</div>
