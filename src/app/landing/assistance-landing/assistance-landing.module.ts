@@ -6,6 +6,7 @@ import {
   SdsSearchModule
 } from '@gsa-sam/components';
 
+
 import { AssistanceLandingRoutingModule } from './assistance-landing-routing.module';
 import { AssistanceLandingComponent } from './assistance-landing.component';
 
@@ -13,8 +14,8 @@ import { AssistanceLandingComponent } from './assistance-landing.component';
   declarations: [AssistanceLandingComponent],
   imports: [
     CommonModule,
-    SdsSearchModule,
     RouterModule,
+    SdsSearchModule,
     AssistanceLandingRoutingModule
   ],
   exports: [AssistanceLandingComponent]

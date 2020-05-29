@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
+import { SamModelService } from '../../model/sam-model.service';
 
 @Component({
   selector: 'app-assistance-landing',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AssistanceLandingComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public model: SamModelService) { }
 
   ngOnInit() {
   }

@@ -11,7 +11,8 @@ export class SamModelService {
   /**
    * Sign in
    */
-  isSignedIn: boolean = false;
+  
+  signedIn: boolean = false;
 
   signInItem =
     {
@@ -129,16 +130,18 @@ export class SamModelService {
   }
 
   signIn(redirectUrl?: string) {
-    this.isSignedIn = true;
+    this.signedIn = true;
     if (redirectUrl) {
       this.router.navigateByUrl('/workspace');
     }
   }
 
   signOut(redirectUrl?: string) {
-    this.isSignedIn = false;
-    if (redirectUrl) {
-      this.router.navigateByUrl('/home');
+    this.signedIn = false;
+    if (!redirectUrl) {
+      this.router.navigateByUrl('/');
+    } else {
+      this.router.navigateByUrl(redirectUrl);
     }
   }
 

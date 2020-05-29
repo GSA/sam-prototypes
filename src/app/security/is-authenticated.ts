@@ -11,9 +11,9 @@ export class IsAuthenticated implements CanActivate {
   }
  
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    if(!this.model.isSignedIn) {
+    if(!this.model.signedIn) {
     	this.router.navigate(['/']);
     }
-    return this.model.isSignedIn;
+    return this.model.signedIn;
   }
 }

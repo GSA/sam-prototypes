@@ -1,377 +1,319 @@
-<main>
-  <div class="n-sds-page">
-    <div class="grid-container">
-      <!-- sds hero  -->
-      <section>
-        <div class="n-sds-hero">
-          <div class="grid-row">
-            <div class="tablet:grid-col-10 tablet:grid-offset-1">
-              <h1 class="text-base font-sans-xl margin-bottom-1">Wage Determinations</h1>
-              <p class="text-base-dark font-sans-md line-height-sans-5">A wage determination (WD) is a listing of wage rates and fringe benefit rates for each labor category of workers which the U.S. department of labor has determined to be
-                prevailing in a given area</p>
-            </div>
-          </div>
-          <!-- header row and small cards -->
-          <div class="grid-row">
-            <div class="sds-card sds-card--shadowed sds-card--bordered tablet:grid-col-10 tablet:grid-offset-1">
-              <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-                <a [routerLink]="['news']" class="sds-card__link">
-                  <h2 class="sds-card__title">Do I need a user account</h2>
-                </a>
-              </div>
-              <div class="sds-card__content">
-                <div class="grid-row">
-                  <!-- search section -->
-                  <div class="grid-row flex-column desktop-lg:grid-col-6 padding-x-4 desktop:padding-bottom-2 text-base-dark margin-auto">
-                    <h3 class="font-sans-lg text-semibold line-height-sans-5 margin-0">I know the WD number</h3>
-                    <p class="font-sans-md line-height-sans-5 margin-y-2">Search by WD number:</p>
-                    <form class="usa-search usa-search--big" role="search">
-                      <label class="usa-sr-only" for="search-field-big">Search</label>
-                      <input class="usa-input" id="search-field-big" type="search" name="search" placeholder="DBA or SCA Indentifier">
-                      <button class="usa-button" type="submit">
-                        <span class="usa-sr-only">Search</span>
-                      </button>
-                    </form>
-                  </div>
-                  <!-- small cards -->
-                  <div class="grid-row flex-column desktop-lg:grid-col-6 desktop:padding-bottom-2 text-base-dark margin-auto">
-                    <h3 class="text-base-dark font-sans-lg text-semibold margin-y-05 padding-x-4">I do not know the WD number</h3>
-                    <p class="font-sans-md padding-x-4">Select the category you're looking for:</p>
-                    <div class="grid-row tablet:padding-x-4 flex-no-wrap">
-                      <div class="grid-col sds-card sds-card--shadowed margin-x-1">
-
-                        <div class="sds-card__header sds-card__header--center">
-                          <div class="sds-card__icon"><i class="sds fa-ship fa-2x" aria-hidden="true" title="ship"></i>
-                            <span class="sr-only">SHIP</span>
-                          </div>
-                          <h2 class="sds-card__title">DBA</h2>
-                        </div>
-                        <div class="sds-card__content">
-                          <span>Public Buildings/Works</span>
-                          <p>Wage rates for laborers and mechanics</p>
-                        </div>
-                      </div>
-                      <div class="grid-col sds-card sds-card--shadowed margin-x-1">
-                        <div class="sds-card__header sds-card__header--center">
-                          <div class="sds-card__icon"><i class="sds fa-users fa-2x" aria-hidden="true" title="users"></i>
-                            <span class="sr-only">users</span>
-                          </div>
-                          <h2 class="sds-card__title">SCA</h2>
-                        </div>
-                        <div class="sds-card__content">
-                          <span>Service Contracts</span>
-                          <p>Wage rates for service employees</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- accordion and links -->
-      <div class="grid-row padding-y-4">
-        <div class="tablet:grid-col-10 tablet:grid-offset-1">
-          <div class="sds-accordion usa-accordion" aria-multiselectable="true">
-            <h3 class="usa-accordion__heading sds-accordion__heading">
-              <button class="usa-accordion__button usa-accordion__block border-top border-base-light" aria-expanded="false" aria-controls="a1">
-                How to find wage determinations
-              </button>
-            </h3>
-            <div id="a1" class="usa-accordion__content usa-prose" hidden>
-
-              <!-- Get started links -->
-              <h4 class="text-ink text-semibold font-sans-md">Get started searching wage determinations</h4>
-              <div class="padding-x-2 display-flex flex-column">
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Use the search feature on SAM.gov</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Follow wage determinations</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Save my searches</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Wage Determinations Quick Start Guide</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-video-square text-base-dark margin-right-1"></i>
-                  <span>Video - Finding Wage Determinations</span>
-                </a>
-              </div>
-              <!-- additional filters links -->
-              <h4 class="text-ink text-semibold font-sans-md">Use additional filters to find wage determinations</h4>
-              <div class="padding-x-2 display-flex flex-column">
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Changing search filters</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Understanding wage determination types</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Identifying my location</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Understanding DBA construction types</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Previously performed services for SCA contracts</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Finding wage determinations by published or revised date</span>
-                </a>
-              </div>
-            </div>
-            <h3 class="usa-accordion__heading sds-accordion__heading">
-              <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="a2">
-                Learn about wage determinations
-              </button>
-            </h3>
-            <div id="a2" class="usa-accordion__content usa-prose" hidden>
-              <!-- specialist/officer links -->
-              <p class="text-base">Wage determinations fall under two categories: Davis-Bacon Act (DBA) WDs and Service Contract Act (SCA) WDs. The DBA applies to contracts involving the construction, alteration, and/or repair (including painting or
-                decorating) of public buildings or public works. The Service Contract Act (SCA) applies to federal and District of Columbia contracts that provide services. It establishes standards for wage rates and safety and health protections for
-                employees performing work on covered contracts.</p>
-              <div class="padding-x-2 display-flex flex-column">
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Information about wage determinations</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-question text-base-dark margin-right-1"></i>
-                  <span>How does the Department of Labor categorize wage determinations for SCA and DBA contracts</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-question text-base-dark margin-right-1"></i>
-                  <span>How are fringe benefits required to be paid to the contractor for a SCA or DBA covered contract?</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-question text-base-dark margin-right-1"></i>
-                  <span>As an agency contracting officer, who do I contact for more information regarding labor standards for DBA and/or the SCA contract actions? </span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-question text-base-dark margin-right-1"></i>
-                  <span>What guidelines apply when the appropriate WD is not incorporated in an SCA or DBA covered contract? </span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-question text-base-dark margin-right-1"></i>
-                  <span>When is an SF308 submitted? </span>
-                </a>
-              </div>
-              <!-- conformance requests links -->
-              <h4 class="text-ink text-semibold font-sans-md">Conformance Requests</h4>
-              <div class="padding-x-2 display-flex flex-column">
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>How can I submit a conformance request when a necessary job classification is not listed on the applicable wage determination after a contract has been awarded?</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-question text-base-dark margin-right-1"></i>
-                  <span>When filing an SF-1444 Conformance request, how does the analyst make a determination as to how a "reasonable relationship" is defined?</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-question text-base-dark margin-right-1"></i>
-                  <span>What is the process used for submitting, reviewing and approving a conformance request?</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-question text-base-dark margin-right-1"></i>
-                  <span>Is there an appeal process if I receive a conformance request decision and I disagree?</span>
-                </a>
-              </div>
-              <!-- Davis-Bacon Act (DBA) links -->
-              <h4 class="text-ink text-semibold font-sans-md">Davis-Bacon Act (DBA) wage determinations</h4>
-              <div class="padding-x-2 display-flex flex-column">
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Learn about the Davis-Bacon Act (DBA) and Davis-Bacon Related Acts (DBRA) </span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-question text-base-dark margin-right-1"></i>
-                  <span>How do I locate the DOL DBA Analyst?</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-question text-base-dark margin-right-1"></i>
-                  <span>What are the requirements for a DBA/DBRA contract?</span>
-                </a>
-              </div>
-
-              <!-- service Contract Act (SCA)links -->
-              <h4 class="text-ink text-semibold font-sans-md">Service Contract Act (SCA) wage determinations</h4>
-              <div class="padding-x-2 display-flex flex-column">
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Learn about the Service Contract Act (SCA)</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>What are the responsibilities of the contracting agency when accessing SCA Wage Determinations? </span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-question text-base-dark margin-right-1"></i>
-                  <span>How does a government user submit an e-98 notification request for an SCA WD in beta.SAM.gov?</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-question text-base-dark margin-right-1"></i>
-                  <span>What geographical areas apply to SCA covered contracts? </span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-question text-base-dark margin-right-1"></i>
-                  <span>Is there a nationwide SCA WD for the services my contract requires? </span>
-                </a>
-              </div>
-
-              <!-- Collective Bargaining Agreement (CBAs) links -->
-              <h4 class="text-ink text-semibold font-sans-md">Collective Bargaining Agreement (CBAs)</h4>
-              <div class="padding-x-2 display-flex flex-column">
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-question text-base-dark margin-right-1"></i>
-                  <span>Why does the SCA WD include questions about existing Collective Bargaining Agreement (CBAs)? </span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-question text-base-dark margin-right-1"></i>
-                  <span>What is a Collective Bargaining Agreement (CBA) and who is responsible for posting the CBA Wage Determination on beta.SAM.gov? </span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-                  <i class="sds fa-question text-base-dark margin-right-1"></i>
-                  <span>How do I locate and complete the form to request a Collective Bargaining Agreement (CBA) Wage Determination? </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+<div class="grid-container padding-0">
+  <div class="grid-row tablet:padding-x-9 padding-x-2">
+    <h1 class="text-base font-sans-xl margin-bottom-1">Wage Determinations</h1>
+    <p class="text-base-dark font-sans-md line-height-sans-5">A wage determination (WD) is a listing of wage rates and fringe benefit rates for each labor category of workers which the U.S. department of labor has determined to be prevailing in a given area</p>
+  </div>
+  <!-- header row and small cards -->
+  <div class="grid-row header-background tablet:padding-x-6 margin-bottom-3">
+    <div class="sds-card tablet-lg:grid-col-fill">
+      <div class="sds-card__header">
+        <h2><a [routerLink]="['news']">Help me find a wage determination</a></h2>
       </div>
-      <!-- reports/data & user account sections -->
-      <div class="grid-row">
-        <!-- reports and data -->
-        <div class="tablet:grid-col sds-card sds-card--shadowed sds-card--bordered margin-1">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <h2 class="sds-card__title">Contract Opportunities</h2>
-          </div>
-          <div class="sds-card__content">
-            <span>The Davis-Bacon Act (DBA)</span>
-            <ul class="sds-list sds-list--unstyled sds-list--flex">
-              <li>
-                <i class="sds fa-new-note "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  DBA Conformaces
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-new-note "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  DBA Agency Memos
-                </a>
-              </li>
-            </ul>
-            <span>The Service Contract Act (SCA)</span>
-            <ul class="sds-list sds-list--unstyled sds-list--flex">
-              <li>
-                <i class="sds fa-new-note "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  SCA Conformaces
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-new-note "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  SCA Agency Memos
-                </a>
-              </li>
-            </ul>
-            <span>General</span>
-            <ul class="sds-list sds-list--unstyled sds-list--flex">
-              <li>
-                <i class="sds fa-new-note "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Labor Advisors
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-new-note "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  All Agency Memos
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-new-note "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Labor Cross Index™
-                </a>
-              </li>
-            </ul>
+      <div class="grid-row margin-top-105 mobile:margin-x-auto">
+        <!-- search section -->
+        <div class="grid-row flex-column desktop-lg:grid-col-6 padding-x-4 desktop:padding-bottom-2 text-base-dark margin-auto">
+          <h3 class="font-sans-lg text-semibold line-height-sans-5 margin-0">I know the WD number</h3>
+          <p class="font-sans-md line-height-sans-5 margin-0">Search by WD number:</p>
+          <div class="sds-search--big grid-row tablet-lg:margin-top-6 margin-bottom-6">
+            <form class="usa-search usa-search--small">
+              <div role="search" class="search">
+                <label class="usa-sr-only" for="search-input">Search Here</label>
+                <input class="usa-input" id="search-input" type="search" name="search" placeholder="Search Here">
+                <button class="usa-button" type="submit">
+                  <span class="usa-sr-only">Search</span>
+                </button>
+              </div>
+            </form>
           </div>
         </div>
-        <!-- do I need a user account -->
-        <div class="tablet:grid-col sds-card sds-card--shadowed sds-card--bordered margin-1">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">Do I need a user account?</h2>
-            </a>
-          </div>
-          <div class="sds-card__content">
-            <div class="grid-row">
-              <div class="tablet:grid-col padding-bottom-0 text-base">
-                <p class="margin-0 line-height-sans-5">While you don’t need a user account to view contract opportunities, you will need one to access additional capabilities available on SAM. With a Login.gov account, you can sign in to multiple
-                  government websites,
-                  including SAM.gov, with the same username and password. With a user account you may</p>
-                <ul class="margin-top-05">
-                  <li>Saved searches</li>
-                  <li>Follow changes and opportunities</li>
-                  <li>Join interested vendor lists</li>
-                </ul>
-              </div>
-              <div class="tablet:grid-col-5 padding-2">
-                <!-- paste video code here -->
-                <img src="assets/img/home-video.png" style="width:100%;" class="text-center">
-                <div class="font-sans-3xs text-base text-center">Video on how to create a login.gov account</div>
-              </div>
+        <!-- small cards -->
+        <div class="grid-row flex-column desktop-lg:grid-col-6 desktop:padding-bottom-2 text-base-dark margin-auto">
+          <h3 class="text-base-dark font-sans-lg text-semibold margin-y-05 padding-x-4">I do not know the WD number</h3>
+          <p class="font-sans-md padding-x-4">Select the category you're looking for:</p>
+          <div class="grid-row flex-justify-center desktop:flex-justify tablet:padding-x-4 flex-no-wrap">
+            <div class="sds-card sds-card--tile">
+              <h4 class="sds-card--tile__title">DBA <i class="sds-card--tile__icon sds fa-ship fa-2x"></i></h4>
+              <span>Public Building/Works</span>
+              <p>Wage rates for laborers and mechanics</p>
             </div>
-            <ul class="sds-list sds-list--unstyled sds-list--flex">
-              <li>
-                <i class="sds fa-new-note "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Quick start guide for creating a login.gov account
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-book "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Glossary Terms
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-question-circle "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Frequently Asked Questions
-                </a>
-              </li>
-            </ul>
+            <div class="sds-card sds-card--tile">
+              <h4 class="sds-card--tile__title">SCA <i class="sds-card--tile__icon sds fa-users fa-2x"></i></h4>
+              <span>Service Contracts</span>
+              <p>Wage rates for service employees</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</main>
+  <!-- accordion and links -->
+  <div class="grid-row desktop:padding-x-9 tablet:margin-y-3">
+    <div class="sds-accordion usa-accordion usa-accordion--bordered desktop:margin-x-4 margin-2">
+      <h3 class="usa-accordion__heading sds-accordion__heading">
+        <button class="usa-accordion__button usa-accordion__block border-top border-base-light" aria-expanded="false" aria-controls="a1">
+          How to find wage determinations
+        </button>
+      </h3>
+      <div id="a1" class="usa-accordion__content usa-prose" hidden>
+
+        <!-- Get started links -->
+        <h4 class="text-ink text-semibold font-sans-md">Get started searching wage determinations</h4>
+        <div class="padding-x-2 display-flex flex-column">
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            <span>Use the search feature on SAM.gov</span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            <span>Follow wage determinations</span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            <span>Save my searches</span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            <span>Wage Determinations Quick Start Guide</span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-video-square text-base-dark margin-right-1"></i>
+            <span>Video - Finding Wage Determinations</span>
+          </a>
+        </div>
+        <!-- additional filters links -->
+        <h4 class="text-ink text-semibold font-sans-md">Use additional filters to find wage determinations</h4>
+        <div class="padding-x-2 display-flex flex-column">
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            <span>Changing search filters</span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            <span>Understanding wage determination types</span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            <span>Identifying my location</span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            <span>Understanding DBA construction types</span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            <span>Previously performed services for SCA contracts</span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            <span>Finding wage determinations by published or revised date</span>
+          </a>
+        </div>
+      </div>
+      <h3 class="usa-accordion__heading sds-accordion__heading">
+        <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="a2">
+          Learn about wage determinations
+        </button>
+      </h3>
+      <div id="a2" class="usa-accordion__content usa-prose" hidden>
+        <!-- specialist/officer links -->
+        <p class="text-base">Wage determinations fall under two categories: Davis-Bacon Act (DBA) WDs and Service Contract Act (SCA) WDs. The DBA applies to contracts involving the construction, alteration, and/or repair (including painting or
+          decorating) of public buildings or public works. The Service Contract Act (SCA) applies to federal and District of Columbia contracts that provide services. It establishes standards for wage rates and safety and health protections for
+          employees performing work on covered contracts.</p>
+        <div class="padding-x-2 display-flex flex-column">
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            <span>Information about wage determinations</span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-question text-base-dark margin-right-1"></i>
+            <span>How does the Department of Labor categorize wage determinations for SCA and DBA contracts</span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-question text-base-dark margin-right-1"></i>
+            <span>How are fringe benefits required to be paid to the contractor for a SCA or DBA covered contract?</span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-question text-base-dark margin-right-1"></i>
+            <span>As an agency contracting officer, who do I contact for more information regarding labor standards for DBA and/or the SCA contract actions? </span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-question text-base-dark margin-right-1"></i>
+            <span>What guidelines apply when the appropriate WD is not incorporated in an SCA or DBA covered contract? </span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-question text-base-dark margin-right-1"></i>
+            <span>When is an SF308 submitted? </span>
+          </a>
+        </div>
+        <!-- conformance requests links -->
+        <h4 class="text-ink text-semibold font-sans-md">Conformance Requests</h4>
+        <div class="padding-x-2 display-flex flex-column">
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            <span>How can I submit a conformance request when a necessary job classification is not listed on the applicable wage determination after a contract has been awarded?</span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-question text-base-dark margin-right-1"></i>
+            <span>When filing an SF-1444 Conformance request, how does the analyst make a determination as to how a "reasonable relationship" is defined?</span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-question text-base-dark margin-right-1"></i>
+            <span>What is the process used for submitting, reviewing and approving a conformance request?</span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-question text-base-dark margin-right-1"></i>
+            <span>Is there an appeal process if I receive a conformance request decision and I disagree?</span>
+          </a>
+        </div>
+        <!-- Davis-Bacon Act (DBA) links -->
+        <h4 class="text-ink text-semibold font-sans-md">Davis-Bacon Act (DBA) wage determinations</h4>
+        <div class="padding-x-2 display-flex flex-column">
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            <span>Learn about the Davis-Bacon Act (DBA) and Davis-Bacon Related Acts (DBRA) </span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-question text-base-dark margin-right-1"></i>
+            <span>How do I locate the DOL DBA Analyst?</span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-question text-base-dark margin-right-1"></i>
+            <span>What are the requirements for a DBA/DBRA contract?</span>
+          </a>
+        </div>
+
+        <!-- service Contract Act (SCA)links -->
+        <h4 class="text-ink text-semibold font-sans-md">Service Contract Act (SCA) wage determinations</h4>
+        <div class="padding-x-2 display-flex flex-column">
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            <span>Learn about the Service Contract Act (SCA)</span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            <span>What are the responsibilities of the contracting agency when accessing SCA Wage Determinations? </span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-question text-base-dark margin-right-1"></i>
+            <span>How does a government user submit an e-98 notification request for an SCA WD in beta.SAM.gov?</span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-question text-base-dark margin-right-1"></i>
+            <span>What geographical areas apply to SCA covered contracts? </span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-question text-base-dark margin-right-1"></i>
+            <span>Is there a nationwide SCA WD for the services my contract requires? </span>
+          </a>
+        </div>
+
+        <!-- Collective Bargaining Agreement (CBAs) links -->
+        <h4 class="text-ink text-semibold font-sans-md">Collective Bargaining Agreement (CBAs)</h4>
+        <div class="padding-x-2 display-flex flex-column">
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-question text-base-dark margin-right-1"></i>
+            <span>Why does the SCA WD include questions about existing Collective Bargaining Agreement (CBAs)? </span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-question text-base-dark margin-right-1"></i>
+            <span>What is a Collective Bargaining Agreement (CBA) and who is responsible for posting the CBA Wage Determination on beta.SAM.gov? </span>
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-question text-base-dark margin-right-1"></i>
+            <span>How do I locate and complete the form to request a Collective Bargaining Agreement (CBA) Wage Determination? </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- additional resources / do I need an account? -->
+  <div class="grid-row">
+    <!-- additional resources -->
+    <div class="tablet-lg:grid-col sds-card">
+      <div class="sds-card__header">
+        <h3><a [routerLink]="['news']">Additional Resources</a></h3>
+      </div>
+      <div class="sds-card__body">
+        <!-- DBA links -->
+        <h4 class="sds-card__title">The Davis-Bacon Act (DBA)</h4>
+        <div class="sds-card__links">
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            DBA Conformances
+          </a>
+          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            DBA Agency Memos
+          </a>
+        </div>
+        <!-- SCA Links -->
+        <h4 class="sds-card__title">The Service Contract Act (SCA)</h4>
+        <div class="sds-card__links">
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            SCA Conformaces
+          </a>
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            SCA Agency Memos
+          </a>
+        </div>
+        <!-- General Links -->
+        <h4 class="sds-card__title">General</h4>
+        <div class="sds-card__links">
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            Labor Advisors
+          </a>
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            All Agency Memos
+          </a>
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            Labor Cross Index
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- do I need a user account -->
+    <div class="tablet-lg:grid-col sds-card">
+      <div class="sds-card__header">
+        <h3><a [routerLink]="['news']">Do I need a user account?</a></h3>
+      </div>
+      <div class="sds-card__body">
+        <div class="grid-row">
+          <div class="tablet:grid-col padding-2">
+            <p class="margin-0 line-height-sans-5">While you don’t need a user account to view wage determinations, you will need one to access additional capabilities available on SAM. With a Login.gov account, you can sign in to multiple government websites,
+              including SAM.gov, with the same username and password. With a user account you may</p>
+            <ul class="margin-top-05 text-ink">
+              <li>Saved searches</li>
+              <li>Follow changes to wage determinations</li>
+              <li>Join interested vendor lists</li>
+            </ul>
+          </div>
+          <div class="tablet:grid-col-5 padding-2">
+            <!-- paste video code here -->
+            <img src="assets/img/home-video.png" style="width:100%;" class="display-block margin-auto text-center">
+            <div class="display-block text-center font-sans-3xs text-base">Video on how to create a login.gov account</div>
+          </div>
+        </div>
+        <div class="sds-card__links">
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-file text-base-dark margin-right-1"></i>
+            Quick start guide for creating a login.gov account
+          </a>
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-book text-base-dark margin-right-1"></i>
+            lossary terms
+          </a>
+          <a class="usa-link" [routerLink]="['news']">
+            <i class="sds fa-question text-base-dark margin-right-1"></i>
+            Frequently asked quesions
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

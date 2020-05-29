@@ -1,0 +1,48 @@
+<div class="grid-row grid-gap-1">
+	<div class="grid-col-fill">
+      <h3 class="font-sans-xs margin-y-0">
+        <a class="usa-link" [routerLink]="['/']">
+          {{model.programNumber}} &nbsp;&nbsp; {{model.title}}
+        </a>
+    </h3>
+    <p class="font-body-2xs"><i>Last Modified: <b>{{model.modifiedDate | date}}</b></i></p>
+      <div class="grid-row">
+		<div *ngIf="model.organizationHierarchy && model.organizationHierarchy.length == 2" class='grid-col-12'>
+			<div class="sds-static--label">Subtier</div>
+	        <div class="sds-static">{{model.organizationHierarchy[1].name}}</div>
+      	</div>
+		<div *ngIf="model.organizationHierarchy && model.organizationHierarchy.length > 2" class="grid-col-12">
+			<div class="sds-static--label">Office</div>
+	        <div class="sds-static">{{model.organizationHierarchy[2].name}}</div>
+      	</div>
+      </div>
+	</div>
+            <!-- Key/Value Wrapper -->
+    <div class="grid-col-auto">
+      <div class="grid-row">
+        <div class="grid-col-12">
+          <div class="sds-static--label font-sans-3xs text-light text-italic">Status</div>
+        </div>
+        <div class="grid-col-12">
+          <span class="sds-tag sds-tag--outline">
+            <i class="sds-status sds-status--sm sds-status--green"></i>Active</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key/Value Wrapper -->
+    <div class="grid-col-auto">
+      <div class="grid-row">
+        <div class="grid-col-12">
+          <div class="sds-static--label font-sans-3xs text-light text-italic">Publish Date</div>
+        </div>
+        <div class="grid-col-12">
+          <span class="sds-tag sds-tag--outline">{{model.publishDate | date }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="action-menu grid-col-auto margin-top-2">
+      <sds-actions-menu [model]="menu" (clicks)="log($event)"></sds-actions-menu>
+    </div>
+  </div>
+ 

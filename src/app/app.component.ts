@@ -16,7 +16,6 @@ import { LocationStrategy } from '@angular/common';
 export class AppComponent {
   title = "sam-gov";
   sectionId: string = "home";
-  signedIn: boolean = false;
 
   @ViewChild("header") header;
 
@@ -24,7 +23,7 @@ export class AppComponent {
     private route: ActivatedRoute,
     private router: Router,
     public locationStrategy: LocationStrategy,
-    public modelService: SamModelService
+    public model: SamModelService
   ) { }
   setSelection() { }
 
@@ -65,20 +64,6 @@ export class AppComponent {
   }
 
   ngAfterViewInit() { }
-
-  signIn() {
-    this.signedIn = true;
-    this.navigateTo('/workspace');
-  }
-
-  signOut() {
-    this.signedIn = false;
-    this.navigateTo('/');
-  }
-
-  navigateTo(route: string) {
-    this.router.navigateByUrl(route);
-  }
 
   @ViewChild('usaNavOpen') openNavBtn: ElementRef;
   @ViewChild('usaNavClose') closeNavBtn: ElementRef;

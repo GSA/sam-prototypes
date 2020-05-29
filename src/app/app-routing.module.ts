@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { IsAuthenticated } from './security/is-authenticated';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
   {
     path: 'workspace',
     loadChildren: './workspace/workspace.module#WorkspaceModule',
+    canActivate: [IsAuthenticated], 
     data: {
       id: "workspace"
     }
