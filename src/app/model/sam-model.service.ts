@@ -115,7 +115,7 @@ export class SamModelService {
           { text: 'Help', mode: NavigationMode.INTERNAL, route: '/help' },
           { text: 'Federal Service Desk', mode: NavigationMode.EXTERNAL, route: 'fsd.gov' },
           { text: 'Our Community', mode: NavigationMode.EXTERNAL, route: '/about/fsd' },
-          { text: 'External Resources', mode: NavigationMode.INTERNAL, route: '/about/resources' },
+          { text: 'External Resources', mode: NavigationMode.INTERNAL, route: '/about/external-resources' },
           { text: 'Contact', mode: NavigationMode.INTERNAL, route: '/about/contact' }
         ]
       }

@@ -23,13 +23,13 @@ import { HierarchyLabels } from './agency-picker/agency.display';
 export class HierarchyComponent implements OnInit {
   filter = {};
 
-  @ViewChild('overlay')
+  @ViewChild('overlay', { static: true })
   private overlay: TemplateRef<any>;
 
-  @ViewChild('picker')
+  @ViewChild('picker', { static: true })
   private picker: AgencyPickerComponent;
 
-  @ViewChild('resultsList') resultsListElement: ElementRef;
+  @ViewChild('resultsList', { static: true }) resultsListElement: ElementRef;
   ngOnInit(): void {
 
     this.agencyPickerService.updateFilter(this.filter);

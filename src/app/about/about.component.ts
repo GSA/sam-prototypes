@@ -38,7 +38,7 @@ export class AboutComponent implements OnInit {
   ) {
 
   }
-  @ViewChild('sideNav') sideNav;
+  @ViewChild('sideNav', {static: true}) sideNav;
 
   ngOnInit() {
     this.router.events

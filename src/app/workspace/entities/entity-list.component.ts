@@ -27,7 +27,7 @@ export class EntityListComponent implements OnInit {
 
   navigationModel = workspaceSideNavigationData;
 
-  @ViewChild('resultList') resultList;
+  @ViewChild('resultList', { static: true }) resultList;
 
   form = new FormGroup({});
 

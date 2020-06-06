@@ -36,7 +36,7 @@ import { SystemAccountsService } from './system-accounts-service/system-accounts
 })
 export class SystemAccountsWorkspaceComponent implements OnInit {
 
-  @ViewChild('resultList') resultList;
+  @ViewChild('resultList', { static: true }) resultList;
 
   form = new FormGroup({});
 

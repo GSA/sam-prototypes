@@ -49,7 +49,7 @@ import { ScaFilterService } from './wages/sca-filter-service/sca-filter.service'
 })
 export class SearchHomeComponent implements OnInit {
   
-  @ViewChild('resultList') resultList;
+  @ViewChild('resultList', { static: true }) resultList;
 
   form = new FormGroup({});
   filterModel;
@@ -73,9 +73,9 @@ export class SearchHomeComponent implements OnInit {
   domainLabel: string;
   domainExpanded: boolean = false;
   filtersExpanded: boolean = true;
-  @ViewChild('domainAccordion')
+  @ViewChild('domainAccordion', { static: true })
     domainAccordion: CdkAccordionItem;
-  @ViewChild('filtersAccordion')
+  @ViewChild('filtersAccordion', { static: true })
     filtersAccordion: CdkAccordionItem;
 
   public filterChange$ = new BehaviorSubject<object>(null);

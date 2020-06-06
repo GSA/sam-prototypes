@@ -34,7 +34,7 @@ export class PoliciesComponent implements OnInit {
   ) {
 
   }
-  @ViewChild('sideNav') sideNav;
+  @ViewChild('sideNav', {static: true}) sideNav;
 
   ngOnInit() {
     this.router.events

@@ -41,6 +41,10 @@ const routes: Routes = [
 			}
 			},
 			{
+				path: 'external-resources',
+				loadChildren: './external-resources/external-resources.module#ExternalResourcesModule',
+			},
+			{
 			path: 'community',
 			loadChildren: './community/community.module#CommunityModule',
 			data: {

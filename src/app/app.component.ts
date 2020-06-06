@@ -17,7 +17,7 @@ export class AppComponent {
   title = "sam-gov";
   sectionId: string = "home";
 
-  @ViewChild("header") header;
+  @ViewChild("header", {static: true}) header;
 
   public constructor(
     private route: ActivatedRoute,
@@ -65,8 +65,8 @@ export class AppComponent {
 
   ngAfterViewInit() { }
 
-  @ViewChild('usaNavOpen') openNavBtn: ElementRef;
-  @ViewChild('usaNavClose') closeNavBtn: ElementRef;
+  @ViewChild('usaNavOpen', {static: true}) openNavBtn: ElementRef;
+  @ViewChild('usaNavClose', {static: true}) closeNavBtn: ElementRef;
   mobileNavActive = false;
 
 

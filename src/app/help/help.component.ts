@@ -27,7 +27,7 @@ export class HelpComponent implements OnInit, AfterViewInit {
   ]);
 
   domainLabel: string;
-  @ViewChild('filtersAccordion')
+  @ViewChild('filtersAccordion', { static: true })
     filtersAccordion: CdkAccordionItem;
 
   public sideNavModel: SideNavigationModel = helpNavigationData;

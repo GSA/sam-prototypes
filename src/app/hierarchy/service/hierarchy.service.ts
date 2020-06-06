@@ -7,7 +7,6 @@ import { SDSAutocompleteServiceInterface } from '@gsa-sam/components';
 import { AgencyPickerModule } from '../agency-picker/agency-picker.module';
 import { HierarchyData } from './hierarchy-data';
 import { TheFederalHierarchy } from './fh.data';
-import { SwitchView } from '@angular/common/src/directives/ng_switch';
 
 @Injectable()
 export class HierarchyService implements SDSAutocompleteServiceInterface {

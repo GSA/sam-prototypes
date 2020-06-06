@@ -46,9 +46,9 @@ export class DatabankSearchComponent implements OnInit {
   filtersExpanded: boolean = true;
   domain: string;
 
-  @ViewChild('domainAccordion')
+  @ViewChild('domainAccordion', { static: true })
     domainAccordion: CdkAccordionItem;
-  @ViewChild('filtersAccordion')
+  @ViewChild('filtersAccordion', { static: true })
     filtersAccordion: CdkAccordionItem;
 
   public filterChange$ = new BehaviorSubject<object>(null);

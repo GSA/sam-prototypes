@@ -12,7 +12,7 @@ import { NewsList } from '../news/news-data/news.data';
 })
 export class HomeComponent implements AfterViewInit, OnInit {
 
-  @ViewChild('selectOptions') selectOptions;
+  @ViewChild('selectOptions', { static: true }) selectOptions;
 
   newsList: NewsData[] = NewsList.sort(this.sortNews).slice(0, 3);
 
