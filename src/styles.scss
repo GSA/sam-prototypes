@@ -117,7 +117,7 @@ $theme-font-role-alt: 'sans';
 
 .n-sds-hero {
   @include u-height('full');
-  background: url("/assets/img/landing-splash-image.png") no-repeat right bottom;
+  background: url("./assets/img/landing-splash-image.png") no-repeat right bottom;
   background-size: cover;
   @include u-padding-bottom(4);
   @include adjust-responsive-site-margins;
