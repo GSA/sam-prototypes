@@ -18,11 +18,13 @@
             <div class="tablet:grid-col-7">
               <h2 class="font-sans-lg margin-top-4 text-ink text-semibold">Search Entities and Exclusions</h2>
               <div class="maxw-tablet">
-                <sds-search placeholder="Enter a unique entity ID, name, or other keyword" 
-                  (term)="search($event)" 
-                  placeholderText="Enter a unique entity ID, name, or other keyword"
-                  inputClass="sds-search--big">
-                </sds-search>
+                <form #searchForm="ngForm" class="usa-search usa-search--big" (ngSubmit)="search(searchForm);" role="search">
+                <label class="usa-sr-only" for="search-field-big">Search</label>
+                <input #searchBar class="usa-input" id="search-field-big" type="search" name="search" placeholder="Enter an entity ID, name, or keyword">
+                <button class="usa-button" type="submit">
+                  <span class="usa-sr-only">Search</span>
+                </button>
+              </form>
               </div>
           </div>
          <div class="desktop:grid-col-5 grid-row">
@@ -211,98 +213,150 @@
   <!-- reports/data & user account sections -->
   <div class="grid-row margin-top-8">
     <!-- reports and data -->
-    <div class="tablet:grid-col sds-card">
-      <div class="sds-card__header">
-        <h3><a [routerLink]="['news']">Data Services</a></h3>
+    <div class="tablet:grid-col sds-card  sds-card--shadowed sds-card--bordered margin-1">
+      <div class="sds-card__header  sds-card__header--accent-cool sds-card__header--left">
+        <h3  class="sds-card__title"><a class="sds-card__link" [routerLink]="['news']">Data Services</a></h3>
       </div>
-      <div class="sds-card__body">
+      <div class="sds-card__content">
         <!-- contract opportunity report links -->
         <h4 class="sds-card__title">Connect to Service APIs</h4>
-        <div class="sds-card__links">
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            Getting started with web services
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="fa fa-play-circle text-primary margin-right-1"></i>
-            Go to Entity Registration APIs
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="fa fa-play-circle text-primary margin-right-1"></i>
-            Go to Exclusions APIs
-          </a>
-        </div>
+            <ul class="sds-list sds-list--unstyled sds-list--flex">
+              <li>
+                <i class="sds fa-file "></i>
+                <span class="sr-only"></span>
+                <a class="usa-link" href=" ">
+                  Getting started with web services
+                </a>
+              </li>
+              <li>
+                <i class="fa fa-play-circle "></i>
+                <span class="sr-only"></span>
+                <a class="usa-link" href=" ">
+                  Go to Entity Registration APIs
+                </a>
+              </li>
+              <li>
+                <i class="fa fa-play-circle  "></i>
+                <span class="sr-only"></span>
+                <a class="usa-link" href=" ">
+                  Go to Exclusions APIs
+                </a>
+              </li>
+            </ul>
         <!-- contract opportunity data links -->
-        <h4 class="sds-card__title">Downloads</h4>
-        <div class="sds-card__links">
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            Downloading entity registration files
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="sds fa-file text-base-dark margin-right-1"></i>
-            Downloading exclusions files
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="fa fa-play-circle text-primary margin-right-1"></i>
-            Go to Entity Registration Downloads
-          </a>
-          <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['news']">
-            <i class="fa fa-play-circle text-primary margin-right-1"></i>
-            Go to Exclusions Downloads
-          </a>
-        </div>
+        <h4 class="sds-card__title">Downloads</h4>           
+         <ul class="sds-list sds-list--unstyled sds-list--flex">
+              <li>
+                <i class="sds fa-file "></i>
+                <span class="sr-only"></span>
+                <a class="usa-link" href=" ">
+                  Downloading entity registration files
+                </a>
+              </li>
+              <li>
+                <i class="sds fa-file "></i>
+                <span class="sr-only"></span>
+                <a class="usa-link" href=" ">
+                  Downloading exclusions files
+                </a>
+              </li>
+              <li>
+                <i class="fa fa-play-circle "></i>
+                <span class="sr-only"></span>
+                <a class="usa-link" href=" ">
+                  Go to Entity Registration Downloads
+                </a>
+              </li>
+              <li>
+                <i class="fa fa-play-circle"></i>
+                <span class="sr-only"></span>
+                <a class="usa-link" href=" ">
+                  Go to Exclusions Downloads
+                </a>
+              </li>
+            </ul>
       </div>
     </div>
     <!-- do I need a user account -->
-    <div class="tablet:grid-col sds-card">
-      <div class="sds-card__header">
-        <h3><a [routerLink]="['news']">More About Entity Information</a></h3>
+    <div class="tablet:grid-col sds-card  sds-card--shadowed sds-card--bordered margin-1">
+      <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+        <h3 class="sds-card__title"><a class="sds-card__link" [routerLink]="['news']">More About Entity Information</a></h3>
       </div>
-      <div class="sds-card__body">
+      <div class="sds-card__content">
         <!-- contract opportunity data links -->
         <h4 class="sds-card__title">Exclusions Resources</h4>
-        <div class="sds-card__links">
-            <a class="usa-link">
-                <i class="sds fa-file"></i>
-                Types of exclusions
-            </a>
-            <a class="usa-link">
-                <i class="sds fa-file"></i>
-                Legacy CT Codes
-            </a>
-            <a class="usa-link">
-                <i class="sds fa-file"></i>
-                Agency Exclusion POCs
-            </a>
-          </div>
-          <h4 class="sds-card__title">User Guides</h4>
-          <div class="sds-card__links">
-            <a class="usa-link">
-                <i class="sds fa-file"></i>
-                Exclusions Managmement User Guide for Federal Users
-            </a>
-            <a class="usa-link">
-                <i class="sds fa-file"></i>
-                Data Services User Guide
-            </a>
-          </div>
-          <h4 class="sds-card__title">Help</h4>
-          <div class="sds-card__links">
-            <a class="usa-link">
-                <i class="sds fa-question-circle"></i>
-                Frequently Asked Questions
-            </a>
+            <ul class="sds-list sds-list--unstyled sds-list--flex">
+              <li>
+                <i class="sds fa-file "></i>
+                <span class="sr-only"></span>
+                <a class="usa-link" href=" ">
+                  Types of exclusions
+                </a>
+              </li>
+              <li>
+                <i class="sds fa-file "></i>
+                <span class="sr-only"></span>
+                <a class="usa-link" href=" ">
+                  Legacy CT Codes
+                </a>
+              </li>
+              <li>
+                <i class="sds fa-file "></i>
+                <span class="sr-only"></span>
+                <a class="usa-link" href=" ">
+                  Agency Exclusion POCs
+                </a>
+              </li>
+            </ul>
 
-            <a class="usa-link">
-                <i class="sds fa-book"></i>
-                Glossary Terms
-            </a>
-            <a class="usa-link">
-                <i class="sds fa-video-square"></i>
-                Videos
-            </a>
-        </div>
+          <h4 class="sds-card__title">User Guides</h4>
+            <ul class="sds-list sds-list--unstyled sds-list--flex">
+              <li>
+                <i class="sds fa-file "></i>
+                <span class="sr-only"></span>
+                <a class="usa-link" href=" ">
+                  Quick start guide for creating a login.gov account
+                </a>
+              </li>
+              <li>
+                <i class="sds fa-file "></i>
+                <span class="sr-only"></span>
+                <a class="usa-link" href=" ">
+                  Exclusions Managmement User Guide for Federal Users
+                </a>
+              </li>
+              <li>
+                <i class="sds fa-file "></i>
+                <span class="sr-only"></span>
+                <a class="usa-link" href=" ">
+                  Data Services User Guide
+                </a>
+              </li>
+            </ul>
+          <h4 class="sds-card__title">Help</h4>
+                      <ul class="sds-list sds-list--unstyled sds-list--flex">
+              <li>
+                <i class="sds fa-question-circle "></i>
+                <span class="sr-only"></span>
+                <a class="usa-link" href=" ">
+                  Frequently Asked Questions
+                </a>
+              </li>
+              <li>
+                <i class="sds fa-book "></i>
+                <span class="sr-only"></span>
+                <a class="usa-link" href=" ">
+                  Glossary Terms
+                </a>
+              </li>
+              <li>
+                <i class="sds fa-video-square "></i>
+                <span class="sr-only"></span>
+                <a class="usa-link" href=" ">
+                  Videos
+                </a>
+              </li>
+            </ul>
     </div>
     </div>
   </div>

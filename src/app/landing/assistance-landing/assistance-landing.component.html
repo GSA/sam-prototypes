@@ -12,9 +12,9 @@
                 across all government
                 agencies to form a “big picture” of potential funding options.</p>
               <h2 class="font-sans-lg margin-top-4 text-ink text-normal">Search Assistance Listings</h2>
-              <form class="usa-search usa-search--big" role="search">
+              <form #searchForm="ngForm" class="usa-search usa-search--big" (ngSubmit)="search(searchForm);" role="search">
                 <label class="usa-sr-only" for="search-field-big">Search</label>
-                <input class="usa-input" id="search-field-big" type="search" name="search" placeholder="Enter CFDA number or keyword here">
+                <input #searchBar class="usa-input" id="search-field-big" type="search" name="search" placeholder="Enter CFDA number or keyword here">
                 <button class="usa-button" type="submit">
                   <span class="usa-sr-only">Search</span>
                 </button>

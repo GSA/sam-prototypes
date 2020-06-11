@@ -15,8 +15,8 @@ export class AssistanceLandingComponent implements OnInit {
   ngOnInit() {
   }
 
-  search(searchTerm) {
-     this.router.navigate(['/search/results'], { queryParams: { index: 'assistancelist', keyword: searchTerm } });
+  search(searchForm) {
+     this.router.navigate(['/search/results'], { queryParams: { index: 'assistancelist' } });
   }
 
 }

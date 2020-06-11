@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import {
   SdsSearchModule
@@ -14,6 +15,7 @@ import { EntityInformationLandingComponent } from './entity-information-landing.
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule,
     SdsSearchModule,
     EntityInformationLandingRoutingModule
   ],
