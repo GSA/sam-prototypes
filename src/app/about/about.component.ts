@@ -31,6 +31,8 @@ import { aboutSideNavigationData } from './navigation/navigation.data';
 })
 export class AboutComponent implements OnInit {
 
+  navId: string;
+
   constructor(
     private route: ActivatedRoute,
     public router: Router,
@@ -41,33 +43,16 @@ export class AboutComponent implements OnInit {
   @ViewChild('sideNav', {static: true}) sideNav;
 
   ngOnInit() {
-    this.router.events
-      .pipe(
-        filter(event => event instanceof NavigationEnd),
-        map(() => {
-          let itemCode = 'sideId';
-          let child = this.route.firstChild;
-          let searchedValue = null;
-          if (this.route.snapshot.data && this.route.snapshot.data[itemCode]) {
-            searchedValue = this.route.snapshot.data[itemCode];
-          }
-          while (child) {
-            if (child.snapshot.data && child.snapshot.data[itemCode]) {
-              searchedValue = child.snapshot.data[itemCode];
-            }
-            if (child.firstChild) {
-              child = child.firstChild;
-            } else {
-              child = null;
-            }
-          }
-          return searchedValue;
-        })
-      )
-      .subscribe((customData: any) => {
-        this.sideNav.select(customData);
-      });
 
+    this.router.events.subscribe((e) => {
+        if(e instanceof NavigationEnd) {
+           let navId = e.url.split('/').pop();
+           if(navId && navId != this.navId) {
+              this.navId = navId;
+              this.sideNav.select(this.navId);
+           }
+        }
+    });
   }
 
   ngAfterViewInit() {

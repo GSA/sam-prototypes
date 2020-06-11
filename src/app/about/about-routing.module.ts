@@ -10,35 +10,35 @@ const routes: Routes = [
 	  children: [
 			{
 				path: '',
-				redirectTo: 'about-sam'
+				redirectTo: 'about'
 			},
 			{
 			path: 'partners',
 			loadChildren: './partners/partners.module#PartnersModule',
-			data: {
-			  id: "home"
-			}
+				data: {
+				  id: "home"
+				}
 			},
 			{
 			path: 'fsd',
 			loadChildren: './fsd/fsd.module#FsdModule',
-			data: {
-			  id: "home"
-			}
+				data: {
+				  id: "home"
+				}
 			},
 			{
 			path: 'release-notes',
 			loadChildren: './release-notes/release-notes.module#ReleaseNotesModule',
-			data: {
-			  id: "home"
-			}
+				data: {
+				  id: "home"
+				}
 			},
 			{
-			path: 'about-sam',
+			path: 'about',
 			loadChildren: './this-site/this-site.module#ThisSiteModule',
-			data: {
-			  id: "home"
-			}
+				data: {
+				  id: "home"
+				}
 			},
 			{
 				path: 'external-resources',
@@ -47,25 +47,25 @@ const routes: Routes = [
 			{
 			path: 'community',
 			loadChildren: './community/community.module#CommunityModule',
-			data: {
-			  id: "home"
-			}
+				data: {
+				  id: "home"
+				}
+			},
+			{
+				path: 'policies',
+				loadChildren: './policies/policies.module#PoliciesModule',
+				data: {
+				  id: "home"
+				}
+			},
+			{
+				path: 'contact',
+				loadChildren: './contact/contact.module#ContactModule',
+				data: {
+				  id: "home"
+				}
 			}
   	  ]
-  },
-  {
-	path: 'policies',
-	loadChildren: './policies/policies.module#PoliciesModule',
-	data: {
-	  id: "home"
-	}
-  },
-  {
-	path: 'contact',
-	loadChildren: './contact/contact.module#ContactModule',
-	data: {
-	  id: "home"
-	}
   }
 ];
 
