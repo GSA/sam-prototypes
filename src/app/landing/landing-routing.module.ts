@@ -52,6 +52,13 @@ const routes: Routes = [
 	    }
 	},
 	{
+		path: 'assistance/federal',
+		loadChildren: './assistance-landing-federal/assistance-landing-federal.module#AssistanceLandingFederalModule',
+	    data: {
+	      id: "home"
+	    }
+	},
+	{
 		path: 'registration',
 		loadChildren: './registration-landing/registration-landing.module#RegistrationLandingModule',
 	    data: {
