@@ -1,28 +1,22 @@
 // backgound image for hero
-.home-top {
-  background: url("../../assets/img/Slice 1.png") no-repeat;
-  background-size: 100%;
-  background-position: right bottom;
-  background-color: #d9ebff;
+.home-hero {
+  background-color: #D9EBFF;
+  background: linear-gradient(#D9EBFF, #FFFFFF);
+  @media only screen and (min-width: 881px) {
+    background: url("../../assets/img/Slice 1.png") no-repeat;
+    background-size: 100%;
+    background-position: right bottom;
+    background-color: #D9EBFF;
+  }
 }
-// backgound image for hero
-.home-bottom {
-  background: url("../../assets/img/Slice 2.png") no-repeat;
-  background-size: 100%;
-  background-position: right top;
-  background-color: #8d8563;
 
+.sds-logo {
+  background: url("../../assets/sam-styles/img/logo-sam.svg") no-repeat;
+  background-position: 30px center;
+  background-size: 300px;
 }
-// NEED DESIGNERS TO CHANGE THE LOOK FOR 508 COMPLIANCE ***also ask designers about buttons on tile--lg
-.home-text {
-  color: white;
-  border-radius: 5px;
-  max-width: max-content;
-  background: rgba(141, 133, 99, 0.5);
-  padding: 5px;
-  box-shadow: 1px 1px 15px 1px #8d8563;
-  font-weight:500;
-}
+
+
 // placeholder for video code
 .home-video {
   @media only screen and (max-width: 600px) {
@@ -36,42 +30,13 @@
   }
 }
 
-.sds-button:visited{
-  color: #1a4480;
-}
-
-
 .sds-tile--outline {
   border: 2px solid white;
   border-radius: 20px;
-  padding: 25px 8px;
-  margin: 8px;
+  padding: 32px;
   background: rgba(240, 245, 249, 0.8);
   width: 100%;
   height: auto;
-
-
-  .sds-tile__header {
-    display: flex;
-    flex-direction: row;
-     justify-content: center;
-     align-items: center;
-
-    a {
-      font-size: 23px;
-      margin: auto 8px auto 8px;
-      text-decoration: none;
-    }
-  }
-
-  .sds-tile__body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    font-size: .93rem;
-    padding: 0 8px 0 8px;
-  }
 
   .sds-tile__footer {
     display: flex;
@@ -89,26 +54,9 @@
   }
 }
 
-.sds-tile--outline.sds-tile--outline--sm {
-  height: 150px;
-  width: 200px;
-
-  @media only screen and (max-width: 600px) {
+.sds-list-link {
+  li{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    min-height: 64px;
-    height: auto;
-    width: 95%;
-    padding: 16px;
-    margin-left: auto;
-    margin-right: auto;
-
-    .sds-tile__header {
-      svg {
-        width: 32px;
-        height: 32px;
-      }
-    }
+    flex-direction: column;
   }
 }
