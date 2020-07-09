@@ -27,7 +27,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
     "accessible-html5-video-player": "^1.0.6",
-    "@gsa-sam/sam-styles": "^0.0.70",
+    "@gsa-sam/sam-styles": "^0.0.74",
     "@gsa-sam/components": "^0.6.17",
     "@gsa-sam/layouts": "^0.6.17",
     "@gsa-sam/sam-formly": "^0.6.17",
