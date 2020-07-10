@@ -1,182 +1,121 @@
 <main>
   <div class="grid-container ">
-    <!-- title/tiles/search section -->
-    <div class="grid-row width-full">
+    <!-- logo/tiles/search section -->
+    <div class="grid-row width-full home-hero">
       <div class="grid-col">
-        <div class="home-top">
-          <!-- homepage title and seal -->
-          <div class="grid-row flex-no-wrap">
-            <!-- page heading -->
-            <div class="grid-col-fill">
-              <h1 class="text-base-dark margin-4">SAM.gov is the official U.S. government system for:</h1>
-            </div>
-            <!-- seal -->
-            <div class="grid-col-auto">
-              <div class="sds-seal margin-y-2">
-                <i class="sds fa-flag fa-2x sds-seal__grey margin-y-1 text-secondary"></i>
-                <div class="sds-seal__content">
-                  <div class="sds-seal__official">Official U.S. Government Website</div>
-                  <div class="sds-seal__free">100% Free</div>
-                </div>
-              </div>
-            </div>
+        <!-- logo & seal -->
+        <div class="grid-row padding-y-3">
+          <div class="sds-logo height-7 grid-col-fill">
           </div>
-          <!-- homepage tiles -->
-          <div class="grid-row text-center flex-justify-center">
-            <div class="desktop-lg:grid-col-4 desktop:grid-offset-1 padding-x-3">
-              <div class="sds-tile--outline">
-                <div class="sds-tile__header">
-                  <i class="sds fa-building fa-3x text-base"></i>
-                  <a class="usa-link" routerLink="/home/entity-information">Entity Information</a>
-                </div>
-                <div class="sds-tile__body">
-                  <p>Register your entity to get started doing business with the federal government.</p>
-                </div>
-
-                <div class="sds-tile__footer">
-                  <a class="sds-button sds-button--icon" [routerLink]="['/home/registration']">
-                    <span class="fa-stack fa-2x">
-                      <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
-                      <i class="sds fa-folder fa-stack-1x text-base fa-2x"></i>
-                    </span>
-                    <span class="sds-button--icon__title">Register Entity</span>
-                  </a>
-                  <button class="sds-button sds-button--icon" routerLink="/home/check-status">
-                    <span class="fa-stack fa-2x">
-                      <i class="sds fa-pentagon fa-stack-2x text-primary-lighter fa-1x"></i>
-                      <i class="sds fa-check-circle fa-stack-1x text-base fa-2x"></i>
-                    </span>
-                    <span class="sds-button--icon__title">Check Status</span>
-                  </button>
-                  <a class="sds-button sds-button--icon" routerLink="/home/entity-information">
-                    <span class="fa-stack fa-2x">
-                      <i class="sds fa-pentagon fa-stack-2x text-accent-warm-light fa-1x"></i>
-                      <i class="sds fa-search fa-stack-1x text-base fa-2x"></i>
-                    </span>
-                    <span>Search Entities and Exclusions</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="desktop-lg:grid-col-fill maxw-tablet-lg tablet:padding-x-2">
-              <div class="grid-row flex-justify-center desktop:flex-justify-start">
-                <!-- contract opportunities tile -->
-                <div class="tablet:grid-col-auto">
-                  <div class="sds-tile--outline sds-tile--outline--sm">
-                    <header class="sds-tile__header">
-                      <i class="sds fa-open-doors fa-3x text-base"></i>
-                    </header>
-                    <div class="sds-tile__body">
-                      <a [routerLink]="['home/opportunities']" class="usa-link">Contract Opportunities</a>
-                    </div>
-                    <div class="sds-tile__footer">(was fbo.gov)</div>
-                  </div>
-                </div>
-                <!-- contract datat reports tile-->
-                <div class="tablet:grid-col-auto">
-                  <div class="sds-tile--outline sds-tile--outline--sm">
-                    <header class="sds-tile__header">
-                      <i class="sds fa-file-chart-line fa-3x text-base"></i>
-                    </header>
-                    <div class="sds-tile__body">
-                      <a [routerLink]="['home/contract-data']" class="usa-link">Contract Data</a>
-                    </div>
-                    <div class="sds-tile__footer">(Reports ONLY from FPDS)</div>
-                  </div>
-                </div>
-                <!-- entity compliance tile-->
-                <div class="tablet:grid-col-auto">
-                  <div class="sds-tile--outline sds-tile--outline--sm">
-                    <header class="sds-tile__header">
-                      <i class="sds fa-new-version fa-3x text-base"></i>
-                    </header>
-                    <div class="sds-tile__body">
-                      <a [routerLink]="['home/entity-compliance']" class="usa-link">Entity Compliance</a>
-                    </div>
-                    <div class="sds-tile__footer">SCR and Biopreferred Reports</div>
-                  </div>
-                </div>
-                <!-- assistance listing tile -->
-                <div class="tablet:grid-col-auto">
-                  <div class="sds-tile--outline sds-tile--outline--sm">
-                    <header class="sds-tile__header">
-                      <i class="sds fa-tag fa-3x text-base"></i>
-                    </header>
-                    <div class="sds-tile__body">
-                      <a [routerLink]="['home/assistance']" class="usa-link">Assistance Listings</a>
-                    </div>
-                    <div class="sds-tile__footer">(was cfda.gov)</div>
-                  </div>
-                </div>
-                <!-- wage determinations tile -->
-                <div class="tablet:grid-col-auto">
-                  <div class="sds-tile--outline sds-tile--outline--sm">
-                    <header class="sds-tile__header">
-                      <i class="sds fa-invoice fa-3x text-base"></i>
-                    </header>
-                    <div class="sds-tile__body">
-                      <a [routerLink]="['home/wages']" class="usa-link">Wage Determinations</a>
-                    </div>
-                    <div class="sds-tile__footer">(was wdol.gov)</div>
-                  </div>
-                </div>
-                <!-- federal hierarchy tile -->
-                <div class="tablet:grid-col-auto">
-                  <div class="sds-tile--outline sds-tile--outline--sm">
-                    <header class="sds-tile__header">
-                      <i class="sds fa-users fa-3x text-base"></i>
-                    </header>
-                    <div class="sds-tile__body">
-                      <a [routerLink]="['home/hierarchy']" class="usa-link">Federal Hierarchy</a>
-                    </div>
-                    <div class="sds-tile__footer">Departments, Subtiers, and more</div>
-                  </div>
-                </div>
-              </div>
+          <div class="sds-seal grid-col-auto">
+            <i class="sds fa-flag fa-2x margin-y-1 text-secondary"></i>
+            <div class="sds-seal__content">
+              Official U.S. Government Website
+              <span>100% Free</span>
             </div>
           </div>
         </div>
-        <!-- homepage get started and search -->
-        <div class="grid-row padding-x-4 padding-bottom-4 home-bottom">
-          <div class="tablet-lg:grid-col-4 display-flex flex-column maxw-mobile-lg mobile-lg:margin-left-4">
-            <h2 class="home-text">New to SAM.gov?</h2>
-            <div class="sds-button--outline">
-              <button class="sds-button sds-button--icon text-center">
-                <span class="fa-stack fa-2x">
-                  <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
-                  <i class="sds fa-folder fa-stack-1x text-base fa-2x"></i>
-                </span>
-                <span class="sds-button--icon__title"><a class="usa-link" [routerLink]="['/home/new-to-sam']">Help Me Get Started</a></span>
-              </button>
+        <!-- tiles -->
+        <div class="grid-row grid-gap flex-align-center desktop:flex-align-start padding-x-4">
+          <div class="desktop:grid-col-6 desktop:grid-offset-1 desktop:order-1">
+            <div class="sds-tile--outline">
+              <h3>The Official U.S. Government System for:</h3>
+              <div class="grid-row">
+                <div class="grid-col">
+                  <ul class="sds-list  sds-list--unstyled sds-list-link">
+                    <li>
+                      <a href=" " class="usa-link">Contract Opportunities</a>
+                      (was fbo.gov)
+                    </li>
+                    <li>
+                      <a href=" " class="usa-link">Contract Data</a>
+                      (Reports ONLY from fpds.gov)
+                    </li>
+                    <li>
+                      <a href=" " class="usa-link">Entity Compliance</a>
+                      SCR and Bio-Preferred Reporting
+                    </li>
+                    <li>
+                      <a href=" " class="usa-link">Wage Determinations</a>
+                      (was wdol.gov)
+                    </li>
+                  </ul>
+                </div>
+                <div class="grid-col">
+                  <ul class="sds-list  sds-list--unstyled sds-list-link">
+                    <li>
+                      <a href=" " class="usa-link">Contract Opportunities</a>
+                      (was fbo.gov)
+                    </li>
+                    <li>
+                      <a href=" " class="usa-link">Contract Data</a>
+                      (Reports ONLY from fpds.gov)
+                    </li>
+                    <li>
+                      <a href=" " class="usa-link">Entity Compliance</a>
+                      SCR and Bio-Preferred Reporting
+                    </li>
+                    <li>
+                      <a href=" " class="usa-link">Wage Determinations</a>
+                      (was wdol.gov)
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="tablet-lg:grid-col-7 display-flex flex-column mobile-lg:margin-left-4 desktop:margin-left-0">
-            <h2 class="home-text"> Already know what you want to find?</h2>
-            <div class="sds-search margin-top-05">
-              <form class="usa-form usa-search usa-search--small sds-inverse" role="search">
+          <div class="desktop:grid-col-6 desktop:grid-offset-1 padding-3 desktop:order-3">
+            <section aria-label="Small search component with select">
+              <h2>Already know what you want to find?</h2>
+              <form class="usa-form usa-search usa-search--small" role="search">
                 <label class="usa-sr-only" for="options">Dropdown label</label>
                 <select class="usa-select" name="options" id="options">
-                  <option value="all">Select... </option>
-                  <option value="assistancelist">Assistance Listings</option>
-                  <option value="opportunities">Contract Opportunities</option>
-                  <option value="contractdata">Contract Data</option>
-                  <option value="entityinfo">Entity Information</option>
-                  <option value="hierarchy">Federal Hierarchy</option>
-                  <option value="wages">Wage Determinations</option>
+                  <option value>- Select -</option>
+                  <option value="value1">Option A</option>
+                  <option value="value2">Option B</option>
+                  <option value="value3">Option C</option>
                 </select>
-                <div class="sds-inverse__search">
-                  <label class="usa-sr-only" for="search-field-small">Search</label>
-                  <input class="usa-input" id="search-field-small" type="search" name="search" placeholder="Search Here">
-                  <button class="usa-button" type="submit">
-                    <span class="usa-sr-only">Search</span>
-                  </button>
-                </div>
+                <label class="usa-sr-only" for="search-field-small">Search</label>
+                <input class="usa-input" id="search-field-small" type="search" name="search" placeholder="Search Here">
+                <button class="usa-button" type="submit">
+                  <span class="usa-sr-only">Search</span>
+                </button>
               </form>
+            </section>
+          </div>
+          <div class="desktop:grid-col-4 desktop:order-2">
+            <div class="sds-tile--outline">
+              <h3>Register Your Entity</h3>
+              <p>Register your entity to get started doing business with the federal government.</p>
+              <div class="desktop:flex-column flex-justify-center grid-row">
+                <button class="sds-button sds-button--icon desktop:width-full margin-y-2">
+                  <span class="fa-stack fa-2x">
+                    <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
+                    <i class="sds fa-folder fa-stack-1x text-base fa-2x"></i>
+                  </span>
+                  <span class="sds-button--icon__title">Get Started</span>
+                </button>
+                <button class="sds-button sds-button--icon desktop:width-full margin-y-2">
+                  <span class="fa-stack fa-2x">
+                    <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
+                    <i class="sds fa-folder fa-stack-1x text-base fa-2x"></i>
+                  </span>
+                  <span class="sds-button--icon__title">Renew Entity</span>
+                </button>
+                <button class="sds-button sds-button--icon desktop:width-full margin-y-2">
+                  <span class="fa-stack fa-2x">
+                    <i class="sds fa-pentagon fa-stack-2x text-primary-light fa-1x"></i>
+                    <i class="sds fa-check-circle fa-stack-1x text-base fa-2x"></i>
+                  </span>
+                  <span class="sds-button--icon__title">Check Registration Status</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
     <!-- homepage video and news list section-->
     <div class="grid-row width-full flex-nowrap">
       <!-- news list -->
