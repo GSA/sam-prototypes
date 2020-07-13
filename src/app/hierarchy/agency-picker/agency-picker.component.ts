@@ -31,7 +31,7 @@ export class AgencyPickerComponent implements OnInit {
     private filter: any = {};
 
     /**
-     * 
+     *
      */
     @Input() level: number = 0;
 
@@ -56,7 +56,7 @@ export class AgencyPickerComponent implements OnInit {
     }
 
     public addItem(item: any) {
-        SDSSelectedItemModelHelper.addItem(item, this.settings.primaryKeyField, this.settings.selectionMode, this.selectModel.items);
+        SDSSelectedItemModelHelper.addItem(item, this.settings.primaryKeyField, this.settings.selectionMode, this.selectModel);
 
     }
 
