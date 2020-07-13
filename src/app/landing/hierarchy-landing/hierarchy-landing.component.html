@@ -1,26 +1,44 @@
-<div class="n-sds-page">
+<main id="main-content">
 	<div class="grid-container">
-        <section>
-        <div class="n-sds-hero">
-          <div class="grid-row">
-            <div class="tablet:grid-col-fill">
-              <h1>Federal Hierarchy</h1>
-              <p class="usa-prose usa-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et netus et malesuada fames. Massa enim nec dui nunc mattis.</p>
-            </div>
-            <div class="sds-seal margin-top-4 margin-right-neg-3 tablet:grid-col-auto">
-                <i class="sds fa-flag fa-2x text-secondary"></i>
-                <div class="sds-seal__content">Official U.S. Government Website<span>100% Free</span></div>
-            </div>
-          </div>
-          <h2 class="font-sans-lg margin-top-4 text-ink text-semibold">Search Federal Hierarchy</h2>
-          <div class="maxw-tablet">
-            <sds-search placeholder="Enter a Department or Subtier name or code" 
-              (term)="search($event)" 
-              placeholderText="Enter a Department or Subtier name or code"
-              inputClass="sds-search--big">
-            </sds-search>
-          </div>
-        </div>
-      </section>
+		<div class="grid-row sds-hero sds-hero--image">
+			<div class="desktop:grid-offset-1 desktop:grid-col-11">
+				<div class="grid-row">
+					<div class="grid-col-fill">
+						<h1>Federal Hierarchy</h1>
+						<p>The Federal Hierarchy is the authoritative source for managing and referencing federal funding and awarding organizations. It’s a directory or “family tree” that organizes federal Government users and establishes relationships between
+							each Department/Independent Agency’s sub-tiers and its offices.
+						</p>
+					</div>
+					<div class="grid-col-auto">
+						<div class="sds-seal">
+							<i class="sds fa-flag fa-2x margin-y-1 text-secondary"></i>
+							<div class="sds-seal__content">
+								Official U.S. Government Website
+								<span>100% Free</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="grid-row">
+						<h2>Search Federal Hierarchy</h2>
+						<form class="usa-search usa-search--big" role="search">
+				      <label class="usa-sr-only" for="search-field-big">Search</label>
+				      <input class="usa-input" id="search-field-big" type="search" name="search" placeholder="Search Here">
+				      <button class="usa-button" type="submit">
+				        <span class="usa-sr-only">Search</span>
+				      </button>
+				  	</form>
+				</div>
+			</div>
+		</div>
+		<div class="grid-row">
+			<!-- ACCORDION -->
+		</div>
+		<div class="grid-row">
+			<!-- TILE -->
+		</div>
+		<div class="grid-row">
+			<!-- CARDS -->
+		</div>
 	</div>
-</div>
+</main>
