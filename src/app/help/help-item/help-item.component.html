@@ -1,25 +1,21 @@
-
-<div class="sds-card sds-card--vertical">
-    <div class="sds-card__title--vertical">
-        <i *ngIf="model.type == 1" class="sds fa-book fa-2x"></i>
-        <i *ngIf="model.type == 2" class="sds fa-question fa-2x"></i>
-        <i *ngIf="model.type == 3" class="sds fa-video-square fa-2x"></i>
-        <i *ngIf="model.type == 4" class="sds fa-pen-paper fa-2x"></i>
+<div class="sds-card  sds-card--vertical">
+    <div class="sds-card__header">
+        <div class="sds-card__icon">    
+            <i *ngIf="model.type == 1" class="sds fa-book fa-2x"></i>
+            <i *ngIf="model.type == 2" class="sds fa-question fa-2x"></i>
+            <i *ngIf="model.type == 3" class="sds fa-video-square fa-2x"></i>
+            <i *ngIf="model.type == 4" class="sds fa-pen-paper fa-2x"></i>
+        </div>
     </div>
     <div class="sds-card__body">
-        <div class="grid-row grid-gap">
-            <div class="grid-col-8">
-                <h3 class="sds-card--subtitle">
-                    <a class="usa-link" [routerLink]="['/help/' + model.contentId]" [queryParams]="{isSearchResult: true}">{{model.title}}</a>
-                </h3>
-                <p>Latest Update: <b>{{model.lastModifiedDate | date }}</b></p>
-                <p style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: 16px; font-size: 15px; max-height: 32px; margin-bottom: 1rem;" [innerHTML]="model.description">
-                </p>
-                <a class="usa-link" [routerLink]="['/help/' + model.contentId]">View Full Article</a>
-            </div>                
-            <div class="grid-col-4">
-                <img *ngIf="model.type == 3 && model.videoUrl" [attr.src]="model.thumbnail">
-            </div>
-        </div>
+        <h3 class="sds-card__title">
+            <a class="usa-link" [routerLink]="['/help/' + model.contentId]" [queryParams]="{isSearchResult: true}">{{model.title}}</a>
+        </h3>
+
+        <p>Latest Update: <b>{{model.lastModifiedDate | date }}</b></p>
+        <p style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: 16px; font-size: 15px; max-height: 32px; margin-bottom: 1rem;" [innerHTML]="model.description">
+        </p>
+        <a class="usa-link" [routerLink]="['/help/' + model.contentId]" [queryParams]="{isSearchResult: true}">View Full Article</a>
+
     </div>
 </div>

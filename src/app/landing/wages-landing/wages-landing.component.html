@@ -74,14 +74,14 @@
       <!-- accordion and links -->
       <div class="grid-row padding-y-4">
         <div class="tablet:grid-col-10 tablet:grid-offset-1">
-          <div class="sds-accordion usa-accordion" aria-multiselectable="true">
-            <h3 class="usa-accordion__heading sds-accordion__heading">
-              <button class="usa-accordion__button usa-accordion__block border-top border-base-light" aria-expanded="false" aria-controls="a1">
+          <div class="usa-accordion usa-accordion--bordered" aria-multiselectable="true">
+
+            <h2 class="usa-accordion__heading">
+                <button class="usa-accordion__button  border-top-1px border-base-light " aria-expanded="" aria-controls="get-started">
                 How to find wage determinations
               </button>
-            </h3>
-            <div id="a1" class="usa-accordion__content usa-prose" hidden>
-
+            </h2>
+            <div id="get-started" class="usa-accordion__content usa-prose">
               <!-- Get started links -->
               <h4 class="text-ink text-semibold font-sans-md">Get started searching wage determinations</h4>
               <div class="padding-x-2 display-flex flex-column">
@@ -135,12 +135,12 @@
                 </a>
               </div>
             </div>
-            <h3 class="usa-accordion__heading sds-accordion__heading">
-              <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="a2">
+            <h2 class="usa-accordion__heading">
+              <button class="usa-accordion__button  border-top-1px border-base-light " aria-expanded="" aria-controls="learn">
                 Learn about wage determinations
               </button>
-            </h3>
-            <div id="a2" class="usa-accordion__content usa-prose" hidden>
+            </h2>
+            <div id="learn" class="usa-accordion__content usa-prose">
               <!-- specialist/officer links -->
               <p class="text-base">Wage determinations fall under two categories: Davis-Bacon Act (DBA) WDs and Service Contract Act (SCA) WDs. The DBA applies to contracts involving the construction, alteration, and/or repair (including painting or
                 decorating) of public buildings or public works. The Service Contract Act (SCA) applies to federal and District of Columbia contracts that provide services. It establishes standards for wage rates and safety and health protections for
@@ -254,124 +254,110 @@
         </div>
       </div>
       <!-- reports/data & user account sections -->
-      <div class="grid-row">
+      <div class="grid-row grid-gap">
         <!-- reports and data -->
-        <div class="tablet:grid-col sds-card sds-card--shadowed sds-card--bordered margin-1">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <h2 class="sds-card__title">Contract Opportunities</h2>
-          </div>
-          <div class="sds-card__content">
-            <span>The Davis-Bacon Act (DBA)</span>
-            <ul class="sds-list sds-list--unstyled sds-list--flex">
-              <li>
-                <i class="sds fa-new-note "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" [routerLink]="['/home/wages/dba-conformances']">
-                  DBA Conformances
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-new-note "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  DBA Agency Memos
-                </a>
-              </li>
-            </ul>
-            <span>The Service Contract Act (SCA)</span>
-            <ul class="sds-list sds-list--unstyled sds-list--flex">
-              <li>
-                <i class="sds fa-new-note "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" [routerLink]="['/home/wages/sca-conformances']">
-                  SCA Conformances
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-new-note "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  SCA Agency Memos
-                </a>
-              </li>
-            </ul>
-            <span>General</span>
-            <ul class="sds-list sds-list--unstyled sds-list--flex">
-              <li>
-                <i class="sds fa-new-note "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" [routerLink]="['/home/wages/labor-advisors']">
-                  Labor Advisors
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-new-note "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" [routerLink]="['/home/wages/all-agency-memos']">
-                  All Agency Memos
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-new-note "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" [routerLink]="['/home/wages/cross-index']">
-                  Labor Cross Index™
-                </a>
-              </li>
-            </ul>
+        <div class="tablet:grid-col-4 tablet:height-full">
+          <div class="sds-card height-full">
+              <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+                <h2 class="sds-card__title ">Resources</h2>
+              </div>
+              <div class="sds-card__body">
+                  <ul class="sds-list sds-list--unstyled sds-list--flex">
+                    <li>
+                      <i class="sds fa-new-note "></i>
+                      <span class="sr-only"></span>
+                      <a class="usa-link" [routerLink]="['/home/wages/dba-conformances']">
+                        DBA Conformances
+                      </a>
+                    </li>
+                    <li>
+                      <i class="sds fa-new-note "></i>
+                      <span class="sr-only"></span>
+                      <a class="usa-link" [routerLink]="['/home/wages/sca-conformances']">
+                        SCA Conformances
+                      </a>
+                    </li>
+                    <li>
+                      <i class="sds fa-new-note "></i>
+                      <span class="sr-only"></span>
+                      <a class="usa-link" [routerLink]="['/home/wages/labor-advisors']">
+                        Labor Advisors
+                      </a>
+                    </li>
+                    <li>
+                      <i class="sds fa-new-note "></i>
+                      <span class="sr-only"></span>
+                      <a class="usa-link" [routerLink]="['/home/wages/all-agency-memos']">
+                        All Agency Memos
+                      </a>
+                    </li>
+                    <li>
+                      <i class="sds fa-new-note "></i>
+                      <span class="sr-only"></span>
+                      <a class="usa-link" [routerLink]="['/home/wages/cross-index']">
+                        Labor Cross Index™
+                      </a>
+                    </li>
+                  </ul>
+              </div>
           </div>
         </div>
+          
         <!-- do I need a user account -->
-        <div class="tablet:grid-col sds-card sds-card--shadowed sds-card--bordered margin-1">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">Do I need a user account?</h2>
-            </a>
-          </div>
-          <div class="sds-card__content">
-            <div class="grid-row">
-              <div class="tablet:grid-col padding-bottom-0 text-base">
-                <p class="margin-0 line-height-sans-5">While you don’t need a user account to view contract opportunities, you will need one to access additional capabilities available on SAM. With a Login.gov account, you can sign in to multiple
-                  government websites,
-                  including SAM.gov, with the same username and password. With a user account you may</p>
-                <ul class="margin-top-05">
+        <div class="tablet:grid-col-4 tablet:height-full">
+          <div class="sds-card height-full">
+              <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+                <h2 class="sds-card__title ">Do I need a user account?</h2>
+              </div>
+              <div class="sds-card__body">
+                <p>While you don’t need a user account to view contract opportunities, you will need one to access additional capabilities available on SAM. With a Login.gov account, you can sign in to multiple government websites,
+                including SAM.gov, with the same username and password. With a user account you may</p>
+
+                <ul class="sds-list">
                   <li>Saved searches</li>
                   <li>Follow changes and opportunities</li>
                   <li>Join interested vendor lists</li>
                 </ul>
               </div>
-              <div class="tablet:grid-col-5 padding-2">
-                <!-- paste video code here -->
-                <img src="assets/img/home-video.png" style="width:100%;" class="text-center">
-                <div class="font-sans-3xs text-base text-center">Video on how to create a login.gov account</div>
+            </div>
+          </div>        
+          <div class="tablet:grid-col-4 tablet:height-full">
+            <div class="sds-card height-full">
+              <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+                <h2 class="sds-card__title ">Help</h2>
+              </div>
+              <div class="sds-card__body">
+                  <!-- paste video code here -->
+                  <img src="assets/img/home-video.png" class="text-center width-full">
+                  <div class="font-sans-3xs text-base text-center">Video on how to create a login.gov account</div>
+
+                  <ul class="sds-list">
+                    <li>
+                      <i class="sds fa-new-note "></i>
+                      <span class="sr-only"></span>
+                      <a class="usa-link" href=" ">
+                        Quick start guide for creating a login.gov account
+                      </a>
+                    </li>
+                    <li>
+                      <i class="sds fa-book "></i>
+                      <span class="sr-only"></span>
+                      <a class="usa-link" href=" ">
+                        Glossary Terms
+                      </a>
+                    </li>
+                    <li>
+                      <i class="sds fa-question-circle "></i>
+                      <span class="sr-only"></span>
+                      <a class="usa-link" href=" ">
+                        Frequently Asked Questions
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-            <ul class="sds-list sds-list--unstyled sds-list--flex">
-              <li>
-                <i class="sds fa-new-note "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Quick start guide for creating a login.gov account
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-book "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Glossary Terms
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-question-circle "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Frequently Asked Questions
-                </a>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</main>
+    </main>

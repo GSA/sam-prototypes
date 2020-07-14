@@ -11,9 +11,6 @@ export let aboutSideNavigationData: SideNavigationModel = {
         	{ id: 'disclaimers', text: 'Disclaimers', mode: NavigationMode.INTERNAL, route: '/about/policies/disclaimers' },
         	{ id: 'accessibility', text: 'Accessibility', mode: NavigationMode.INTERNAL, route: '/about/policies/accessibility' },
         	{ id: 'logo', text: 'Logo Policy', mode: NavigationMode.INTERNAL, route: '/about/policies/logo' }
-        ] },
-       	{ id: 'release-notes', text: 'Release Notes', mode: NavigationMode.INTERNAL, route: '/about/release-notes' },
-       	{ id: 'alerts', text: 'Alerts', mode: NavigationMode.INTERNAL, route: '/about/alerts' },
-       	{ id: 'news', text: 'News', mode: NavigationMode.INTERNAL, route: '/about/news' }
+        ] }
     ]
 };
