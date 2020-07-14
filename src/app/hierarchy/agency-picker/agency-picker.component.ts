@@ -31,7 +31,7 @@ export class AgencyPickerComponent implements OnInit {
     private filter: any = {};
 
     /**
-     * 
+     *
      */
     @Input() level: number = 0;
 
