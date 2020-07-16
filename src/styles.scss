@@ -134,46 +134,6 @@ $theme-font-role-alt: 'sans';
     background-color: color('base-lightest');
 }
 
-.usa-accordion {
-
-  + .usa-accordion,
-  + .usa-accordion--bordered {
-    margin-top: units(0);
-  }
-
-  .usa-accordion__heading {
-    margin-top: units(0);
-    border-width: 0px 1px 1px 1px;
-    @include u-border('base-light');
-
-    &:first-child {
-      @include u-border-top(1px);
-    }
-
-    .usa-accordion__button {
-      @include sds-accordion-button-styles;
-
-      &:hover {
-        background-color: color('accent-cool-light');
-      }
-    }
-
-    .usa-accordion__button[aria-expanded=false] {
-      @include sds-accordion-button-unopened-styles;
-    }
-  }
-
-  .usa-accordion__content {
-    border-width: 0px 1px 1px 1px;
-    @include u-border('base-light');
-
-    p {
-      max-width: unset;
-    }
-  }
-
-}
-
 .sds-accordion__title {
 	p {
 		margin-top: 0px;
