@@ -24,7 +24,7 @@
 							<div class="desktop:flex-column flex-justify-center grid-row grid-gap">
 								<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
 	              	<button class="usa-button usa-button--secondary width-full">
-										<a [routerLink]="['/home/federal-hierarchy']">Federal Hierarchy for Federal Users</a>
+										<a [routerLink]="['/home/federal-hierarchy']" class="usa-link">Federal Hierarchy for Federal Users</a>
 									</button>
 								</div>
 								<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
@@ -42,11 +42,11 @@
 			<!-- ACCORDION -->
 			<div class="usa-accordion usa-accordion--bordered">
 				<h2 class="usa-accordion__heading">
-					<button class="usa-accordion__button  border-top-1px border-base-light " aria-expanded="" aria-controls="b-a1">
+					<button class="usa-accordion__button  border-top-1px border-base-light " aria-expanded="false" aria-multiselectable="false" aria-controls="b-a1">
 						Get started searching federal hierarchy
 					</button>
 				</h2>
-				<div id="b-a1" class="usa-accordion__content usa-prose">
+				<div id="b-a1" class="usa-accordion__content usa-prose" hidden>
 					<ul class="sds-list sds-list--unstyled sds-list--flex">
             <li>
               <i class="sds fa-new-note"></i>
@@ -86,7 +86,7 @@
           </ul>
 				</div>
 				<h2 class="usa-accordion__heading">
-					<button class="usa-accordion__button " aria-expanded="" aria-controls="b-a2">
+					<button class="usa-accordion__button " aria-expanded="false" aria-multiselectable="false" aria-controls="b-a2">
 						Use federal hierarchy advanced search
 					</button>
 				</h2>
@@ -136,7 +136,7 @@
 			</div>
 		</div>
 		<!-- CARDS -->
-		<div class="grid-row flex-wrap padding-x-3 desktop:padding-0">
+		<div class="grid-row grid-gap flex-wrap padding-x-3 desktop:padding-0">
 			<div class="grid-row tablet:grid-col-5 desktop:grid-col margin-1">
 			<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
         <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
