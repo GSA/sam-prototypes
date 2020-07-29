@@ -45,6 +45,13 @@ const routes: Routes = [
 	    }
 	},
 	{
+		path: 'federal-hierarchy',
+		loadChildren: './federal-hierarchy-landing/federal-hierarchy-landing.module#FederalHierarchyLandingModule',
+			data: {
+				id: "home"
+			}
+	},
+	{
 		path: 'assistance',
 		loadChildren: './assistance-landing/assistance-landing.module#AssistanceLandingModule',
 	    data: {

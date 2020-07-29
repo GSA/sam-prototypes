@@ -26,9 +26,9 @@
       <!-- accordion & links -->
       <div class="grid-row padding-y-4">
         <div class="tablet:grid-col-10 tablet:grid-offset-1">
-          <div class="sds-accordion usa-accordion">
+          <div class="usa-accordion usa-accordion--bordered">
             <!-- How to find assistance listings -->
-            <h2 class="usa-accordion__heading sds-accordion__heading">
+            <h2 class="usa-accordion__heading">
               <button class="usa-accordion__button usa-accordion__block border-top border-base-light" aria-expanded="false" aria-controls="a1">
                 How to find assistance listings to do business with the government
               </button>
@@ -92,7 +92,7 @@
               </div>
             </div>
             <!-- federal employee working on assistance listing -->
-            <h2 class="usa-accordion__heading sds-accordion__heading">
+            <h2 class="usa-accordion__heading">
               <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="a2">
                 I am a federal employee working on assistance listings
               </button>
@@ -144,14 +144,15 @@
 
       </div>
       <!-- reports/data & external resources -->
-      <div class="grid-row desktop:margin-x-8 tablet:padding-x-4">
+      <div class="grid-row grid-gap desktop:margin-x-8 tablet:padding-x-4">
         <!-- reports and data section -->
-        <div class="tablet:grid-col sds-card sds-card--shadowed sds-card--bordered margin-1">
+        <div class="tablet:grid-col">
+        <div class="sds-card sds-card--shadowed sds-card--bordered margin-1">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
             <a [routerLink]="['news']" class="sds-card__link"><h2 class="sds-card__title">Reports and Data</h2></a>
           </div>
           <!-- run report links -->
-          <div class="sds-card__content">
+          <div class="sds-card__body">
             <span>Run a report</span>
             <ul class="sds-list sds-list--unstyled sds-list--flex">
               <li>
@@ -207,13 +208,15 @@
             </ul>
           </div>
         </div>
+        </div>
         <!-- external resources section-->
-        <div class="tablet:grid-col sds-card sds-card--shadowed sds-card--bordered margin-1">
+        <div class="tablet:grid-col">
+        <div class="sds-card sds-card--shadowed sds-card--bordered margin-1 height-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
             <a [routerLink]="['news']" class="sds-card__link"><h2 class="sds-card__title">External Resources</h2></a>
           </div>
           <!-- contract opportunity report links -->
-          <div class="sds-card__content">
+          <div class="sds-card__body">
             <p class="font-sans-md text-base">
               Connect to one of our partner sites to review policy, learn about the grants lifecycle, and find information about eligibility for different types of rederal assistance.
             </p>
@@ -249,14 +252,16 @@
             </ul>
           </div>
         </div>
+        </div>
       </div>
       <!-- do I need an account -->
       <div class="grid-row margin-top-4">
-        <div class="sds-card sds-card--shadowed sds-card--bordered tablet:grid-col-10 tablet:grid-offset-1">
+        <div class="tablet:grid-col-10 tablet:grid-offset-1">
+        <div class="sds-card sds-card--shadowed sds-card--bordered">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
             <a [routerLink]="['news']" class="sds-card__link"><h2 class="sds-card__title">Do I need a user account</h2></a>
           </div>
-          <div class="sds-card__content">
+          <div class="sds-card__body">
             <div class="grid-row">
               <div class="tablet:grid-col-fill padding-2 text-ink font-sans-md">
                 <p class="margin-0">
@@ -302,6 +307,7 @@
               </li>
             </ul>
           </div>
+        </div>
         </div>
       </div>
     </div>
