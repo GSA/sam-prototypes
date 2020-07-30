@@ -1,17 +1,14 @@
 <main>
   <div class="n-sds-page">
-      <div class="grid-container">
+    <div class="grid-container">
       <!-- HERO SECTION -->
       <section>
         <div class="n-sds-hero">
           <div class="grid-row">
             <div class="tablet:grid-col-fill">
               <h1>Entity Information</h1>
-              <p class="usa-prose usa-intro">An entity is any person or organization that is registered to do business with the federal government.  You must have an active entity registration in SAM to receive a federal contract or federal assistance.</p>
-            </div>
-            <div class="sds-seal margin-top-4 margin-right-neg-3 tablet:grid-col-auto">
-                <i class="sds fa-flag fa-2x text-secondary"></i>
-                <div class="sds-seal__content">Official U.S. Government Website<span>100% Free</span></div>
+              <p class="usa-prose usa-intro">An entity is any person or organization that is registered to do business with the federal government. You must have an active entity registration in SAM to receive a federal contract or federal
+                assistance.</p>
             </div>
           </div>
           <div class="grid-row">
@@ -19,44 +16,44 @@
               <h2 class="font-sans-lg margin-top-4 text-ink text-semibold">Search Entities and Exclusions</h2>
               <div class="maxw-tablet">
                 <form #searchForm="ngForm" class="usa-search usa-search--big" (ngSubmit)="search(searchForm);" role="search">
-                <label class="usa-sr-only" for="search-field-big">Search</label>
-                <input #searchBar class="usa-input" id="search-field-big" type="search" name="search" placeholder="Enter an entity ID, name, or keyword">
-                <button class="usa-button" type="submit">
-                  <span class="usa-sr-only">Search</span>
-                </button>
-              </form>
+                  <label class="usa-sr-only" for="search-field-big">Search</label>
+                  <input #searchBar class="usa-input" id="search-field-big" type="search" name="search" placeholder="Enter an entity ID, name, or keyword">
+                  <button class="usa-button" type="submit">
+                    <span class="usa-sr-only">Search</span>
+                  </button>
+                </form>
               </div>
-          </div>
-         <div class="desktop:grid-col-5 grid-row">
-                        <div class="grid-col-12 margin-bottom-1">
-                            <label class="text-bold">New to SAM.gov</label>
-                            <!-- <button class="usa-button">
+            </div>
+            <div class="desktop:grid-col-5 grid-row">
+              <div class="grid-col-12 margin-bottom-1">
+                <label class="text-bold">New to SAM.gov</label>
+                <!-- <button class="usa-button">
                             <i class="sds fa-video-play fa-2x"></i> Help Me Get Started
                         </button> -->
-                            <div class="sds-button--outline">
-                                <a [routerLink]="['/home/new-to-sam']" class="sds-button sds-button--icon text-center">
-                                    <span class="fa-stack fa-2x">
-                                        <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
-                                        <i class="sds fa-video-circle fa-stack-1x text-base fa-2x"></i>
-                                    </span>
-                                    <span class="usa-link">Help Me Get Started</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid-col-12 ">
-                            <label class="text-bold">Ready to Register?</label>
-                            <div class="sds-button--outline">
-                                <a [routerLink]="['/home/registration']" class="sds-button sds-button--icon text-center">
-                                    <span class="fa-stack fa-2x">
-                                        <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
-                                        <i class="sds fa-video-circle fa-stack-1x text-base fa-2x"></i>
-                                    </span>
-                                    <span class="usa-link">Go to Entity Registration</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="sds-button--outline">
+                  <a [routerLink]="['/home/new-to-sam']" class="sds-button sds-button--icon text-center">
+                    <span class="fa-stack fa-2x">
+                      <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
+                      <i class="sds fa-video-circle fa-stack-1x text-base fa-2x"></i>
+                    </span>
+                    <span class="usa-link">Help Me Get Started</span>
+                  </a>
                 </div>
+              </div>
+              <div class="grid-col-12 ">
+                <label class="text-bold">Ready to Register?</label>
+                <div class="sds-button--outline">
+                  <a [routerLink]="['/home/registration']" class="sds-button sds-button--icon text-center">
+                    <span class="fa-stack fa-2x">
+                      <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
+                      <i class="sds fa-video-circle fa-stack-1x text-base fa-2x"></i>
+                    </span>
+                    <span class="usa-link">Go to Entity Registration</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -69,32 +66,32 @@
               </button>
             </h3>
             <div id="a1" class="usa-accordion__content usa-prose" hidden>
-            
-                <!-- Get started links -->
-                <h4>Get started searching entities</h4>
-                <div class="padding-x-2 display-flex flex-column">
-                    <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['/help/2003']">
-                      <i class="sds fa-file text-base-dark margin-right-1"></i>
-                      <span>Search entity registrations</span>
-                    </a>
-                    <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['/help/2004']">
-                      <i class="sds fa-file text-base-dark margin-right-1"></i>
-                      <span>Search the disaster response registry</span>
-                    </a>
-                    <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['/help/1992']">
-                      <i class="sds fa-file text-base-dark margin-right-1"></i>
-                      <span>Save my searches</span>
-                    </a>
-                    <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['/help/2005']">
-                      <i class="sds fa-file text-base-dark margin-right-1"></i>
-                      <span>Follow an entity</span>
-                    </a>
-                    <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['/help/2006']">
-                      <i class="sds fa-video-square text-base-dark margin-right-1"></i>
-                      <span>Video - Searching entities</span>
-                    </a>
-                  </div>
-        
+
+              <!-- Get started links -->
+              <h4>Get started searching entities</h4>
+              <div class="padding-x-2 display-flex flex-column">
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['/help/2003']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Search entity registrations</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['/help/2004']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Search the disaster response registry</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['/help/1992']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Save my searches</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['/help/2005']">
+                  <i class="sds fa-file text-base-dark margin-right-1"></i>
+                  <span>Follow an entity</span>
+                </a>
+                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['/help/2006']">
+                  <i class="sds fa-video-square text-base-dark margin-right-1"></i>
+                  <span>Video - Searching entities</span>
+                </a>
+              </div>
+
               <!-- additional filters links -->
               <h4>Use additional filters to find entities</h4>
               <div class="padding-x-2 display-flex flex-column">
@@ -115,7 +112,7 @@
                   <span>Search by product and service codes (NAICS and PSC)</span>
                 </a>
               </div>
-          </div>
+            </div>
             <h3 class="usa-accordion__heading sds-accordion__heading-bordered">
               <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="a4">How to search exclusions
               </button>
@@ -206,160 +203,164 @@
                 </a>
               </div>
             </div>
+          </div>
         </div>
-  </div>
-</div>
+      </div>
 
-  <!-- reports/data & user account sections -->
-  <div class="grid-row margin-top-8">
-    <!-- reports and data -->
-    <div class="tablet:grid-col sds-card  sds-card--shadowed sds-card--bordered margin-1">
-      <div class="sds-card__header  sds-card__header--accent-cool sds-card__header--left">
-        <h3  class="sds-card__title"><a class="sds-card__link" [routerLink]="['news']">Data Services</a></h3>
-      </div>
-      <div class="sds-card__content">
-        <!-- contract opportunity report links -->
-        <h4 class="sds-card__title">Connect to Service APIs</h4>
-            <ul class="sds-list sds-list--unstyled sds-list--flex">
-              <li>
-                <i class="sds fa-file "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Getting started with web services
-                </a>
-              </li>
-              <li>
-                <i class="fa fa-play-circle "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Go to Entity Registration APIs
-                </a>
-              </li>
-              <li>
-                <i class="fa fa-play-circle  "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Go to Exclusions APIs
-                </a>
-              </li>
-            </ul>
-        <!-- contract opportunity data links -->
-        <h4 class="sds-card__title">Downloads</h4>           
-         <ul class="sds-list sds-list--unstyled sds-list--flex">
-              <li>
-                <i class="sds fa-file "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Downloading entity registration files
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-file "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Downloading exclusions files
-                </a>
-              </li>
-              <li>
-                <i class="fa fa-play-circle "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Go to Entity Registration Downloads
-                </a>
-              </li>
-              <li>
-                <i class="fa fa-play-circle"></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Go to Exclusions Downloads
-                </a>
-              </li>
-            </ul>
-      </div>
-    </div>
-    <!-- do I need a user account -->
-    <div class="tablet:grid-col sds-card  sds-card--shadowed sds-card--bordered margin-1">
-      <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-        <h3 class="sds-card__title"><a class="sds-card__link" [routerLink]="['news']">More About Entity Information</a></h3>
-      </div>
-      <div class="sds-card__content">
-        <!-- contract opportunity data links -->
-        <h4 class="sds-card__title">Exclusions Resources</h4>
-            <ul class="sds-list sds-list--unstyled sds-list--flex">
-              <li>
-                <i class="sds fa-file "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Types of exclusions
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-file "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Legacy CT Codes
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-file "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Agency Exclusion POCs
-                </a>
-              </li>
-            </ul>
+      <!-- reports/data & user account sections -->
+      <div class="grid-row grid-gap margin-top-8">
+        <!-- reports and data -->
+        <div class="tablet:grid-col">
+          <div class="sds-card sds-card--shadowed sds-card--bordered height-full">
+            <div class="sds-card__header  sds-card__header--accent-cool sds-card__header--left">
+              <h3 class="sds-card__title"><a class="sds-card__link" [routerLink]="['news']">Data Services</a></h3>
+            </div>
+            <div class="sds-card__body">
+              <!-- contract opportunity report links -->
+              <h4 class="sds-card__title">Connect to Service APIs</h4>
+              <ul class="sds-list sds-list--unstyled sds-list--flex">
+                <li>
+                  <i class="sds fa-file "></i>
+                  <span class="sr-only"></span>
+                  <a class="usa-link" href=" ">
+                    Getting started with web services
+                  </a>
+                </li>
+                <li>
+                  <i class="fa fa-play-circle "></i>
+                  <span class="sr-only"></span>
+                  <a class="usa-link" href=" ">
+                    Go to Entity Registration APIs
+                  </a>
+                </li>
+                <li>
+                  <i class="fa fa-play-circle  "></i>
+                  <span class="sr-only"></span>
+                  <a class="usa-link" href=" ">
+                    Go to Exclusions APIs
+                  </a>
+                </li>
+              </ul>
+              <!-- contract opportunity data links -->
+              <h4 class="sds-card__title">Downloads</h4>
+              <ul class="sds-list sds-list--unstyled sds-list--flex">
+                <li>
+                  <i class="sds fa-file "></i>
+                  <span class="sr-only"></span>
+                  <a class="usa-link" href=" ">
+                    Downloading entity registration files
+                  </a>
+                </li>
+                <li>
+                  <i class="sds fa-file "></i>
+                  <span class="sr-only"></span>
+                  <a class="usa-link" href=" ">
+                    Downloading exclusions files
+                  </a>
+                </li>
+                <li>
+                  <i class="fa fa-play-circle "></i>
+                  <span class="sr-only"></span>
+                  <a class="usa-link" href=" ">
+                    Go to Entity Registration Downloads
+                  </a>
+                </li>
+                <li>
+                  <i class="fa fa-play-circle"></i>
+                  <span class="sr-only"></span>
+                  <a class="usa-link" href=" ">
+                    Go to Exclusions Downloads
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- do I need a user account -->
+        <div class="tablet:grid-col">
+          <div class="sds-card sds-card--shadowed sds-card--bordered height-full">
+            <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+              <h3 class="sds-card__title"><a class="sds-card__link" [routerLink]="['news']">More About Entity Information</a></h3>
+            </div>
+            <div class="sds-card__body">
+              <!-- contract opportunity data links -->
+              <h4 class="sds-card__title">Exclusions Resources</h4>
+              <ul class="sds-list sds-list--unstyled sds-list--flex">
+                <li>
+                  <i class="sds fa-file "></i>
+                  <span class="sr-only"></span>
+                  <a class="usa-link" href=" ">
+                    Types of exclusions
+                  </a>
+                </li>
+                <li>
+                  <i class="sds fa-file "></i>
+                  <span class="sr-only"></span>
+                  <a class="usa-link" href=" ">
+                    Legacy CT Codes
+                  </a>
+                </li>
+                <li>
+                  <i class="sds fa-file "></i>
+                  <span class="sr-only"></span>
+                  <a class="usa-link" href=" ">
+                    Agency Exclusion POCs
+                  </a>
+                </li>
+              </ul>
 
-          <h4 class="sds-card__title">User Guides</h4>
-            <ul class="sds-list sds-list--unstyled sds-list--flex">
-              <li>
-                <i class="sds fa-file "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Quick start guide for creating a login.gov account
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-file "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Exclusions Managmement User Guide for Federal Users
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-file "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Data Services User Guide
-                </a>
-              </li>
-            </ul>
-          <h4 class="sds-card__title">Help</h4>
-                      <ul class="sds-list sds-list--unstyled sds-list--flex">
-              <li>
-                <i class="sds fa-question-circle "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Frequently Asked Questions
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-book "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Glossary Terms
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-video-square "></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Videos
-                </a>
-              </li>
-            </ul>
-    </div>
+              <h4 class="sds-card__title">User Guides</h4>
+              <ul class="sds-list sds-list--unstyled sds-list--flex">
+                <li>
+                  <i class="sds fa-file "></i>
+                  <span class="sr-only"></span>
+                  <a class="usa-link" href=" ">
+                    Quick start guide for creating a login.gov account
+                  </a>
+                </li>
+                <li>
+                  <i class="sds fa-file "></i>
+                  <span class="sr-only"></span>
+                  <a class="usa-link" href=" ">
+                    Exclusions Managmement User Guide for Federal Users
+                  </a>
+                </li>
+                <li>
+                  <i class="sds fa-file "></i>
+                  <span class="sr-only"></span>
+                  <a class="usa-link" href=" ">
+                    Data Services User Guide
+                  </a>
+                </li>
+              </ul>
+              <h4 class="sds-card__title">Help</h4>
+              <ul class="sds-list sds-list--unstyled sds-list--flex">
+                <li>
+                  <i class="sds fa-question-circle "></i>
+                  <span class="sr-only"></span>
+                  <a class="usa-link" href=" ">
+                    Frequently Asked Questions
+                  </a>
+                </li>
+                <li>
+                  <i class="sds fa-book "></i>
+                  <span class="sr-only"></span>
+                  <a class="usa-link" href=" ">
+                    Glossary Terms
+                  </a>
+                </li>
+                <li>
+                  <i class="sds fa-video-square "></i>
+                  <span class="sr-only"></span>
+                  <a class="usa-link" href=" ">
+                    Videos
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-</div>
 </main>
