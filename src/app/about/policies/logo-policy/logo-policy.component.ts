@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { LocationStrategy } from '@angular/common';
 
 @Component({
   selector: 'app-logo-policy',
@@ -8,7 +9,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class LogoPolicyComponent implements OnInit {
 
-  constructor() { }
+  constructor(public locationStrategy: LocationStrategy) { }
 
   ngOnInit() {
   }

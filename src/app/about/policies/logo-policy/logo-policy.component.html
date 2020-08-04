@@ -1,4 +1,122 @@
-<div class="usa-prose measure-6">
-	<h2>Logo Policy</h2>
+<div class="measure-6">
+	<h1>Logo Policy</h1>
+    <p>SAM.gov is a registered trademark of the U. S. General Services Administration.  The wordmark contains the words "SAM.GOV" in navy blue, with a red star representing the period between "SAM" and "GOV". The graphic symbol is an illustration of a stovepipe hat evoking the American flag.</p>
+    <div class="grid-row grid-gap-2">
+    	<div class="grid-col flex-fill">
+    		<img aria-hidden="true" role="presentation" class="margin-top-2 height-6" [src]="locationStrategy.getBaseHref() + 'assets/img/SAM_gov_horizontal.svg'"  alt="SAM.gov logo with horizontal layout">
+    	</div>
+    	<div class="grid-col flex-fill">
+    		<img  aria-hidden="true" role="presentation" class="height-10" [src]="locationStrategy.getBaseHref() + 'assets/img/SAM_gov_vertical.svg'" alt="SAM.gov logo with vertical layout">
+    	</div>
+    </div>
+	<h2>Use on Web Pages</h2>
+	<h3>Federal Websites</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque sagittis purus sit amet volutpat. Ornare suspendisse sed nisi lacus sed. Aliquet bibendum enim facilisis gravida neque convallis a cras semper. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Nulla porttitor massa id neque aliquam vestibulum morbi. Mauris sit amet massa vitae tortor condimentum lacinia quis vel. Elit eget gravida cum sociis natoque penatibus et. In mollis nunc sed id semper risus.</p>
+	<p>Adipiscing tristique risus nec feugiat in. Id nibh tortor id aliquet lectus proin. Vitae semper quis lectus nulla at volutpat diam ut venenatis. Imperdiet sed euismod nisi porta lorem mollis aliquam. Sed faucibus turpis in eu mi bibendum neque egestas. At in tellus integer feugiat scelerisque. Neque egestas congue quisque egestas diam in arcu cursus euismod.</p>
+
+	<h3>Other Websites</h3>
+	<p>Pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Massa id neque aliquam vestibulum. Id aliquet risus feugiat in ante metus. Diam maecenas ultricies mi eget mauris. Ullamcorper eget nulla facilisi etiam dignissim diam. Quam id leo in vitae turpis massa sed. Egestas diam in arcu cursus euismod quis viverra. Donec et odio pellentesque diam volutpat. Mauris ultrices eros in cursus turpis. </p>
+
+	<h2>Use in Promotional Materials, Fliers, Presentations, and Other Materials</h2>
+	<p>Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Amet nulla facilisi morbi tempus iaculis urna id. Diam vulputate ut pharetra sit amet aliquam id diam maecenas. Consectetur adipiscing elit ut aliquam. Neque vitae tempus quam pellentesque nec nam aliquam sem. Adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. Faucibus a pellentesque sit amet.</p>
+
+	<h2>Graphic Standards</h2>
+	<p>The SAM.gov logo is intended to be displayed as provided in the downloadable files on this web page.  The list of prohibited changes includes, but is not limited to, the following.</p>
+
+	<ul class="usa-list">
+		<li>Do not change the aspect ratio of the logo, stretching it or skewing it in any way.</li>
+		<li>Do not change the relative size of the work mark and the graphic symbol.</li>
+		<li>Do not display the logo against an image, patterned, or multi-colored background.  The preferred background is white.</li>
+		<li>Do not apply outlines to the logo.</li>
+		<li>Do not change the arrangement of the word mark and the graphic symbol.</li>
+		<li>Do not replace the font in the word mark.</li>
+		<li>Do not replace any colors in the logo.</li>
+	</ul>
+
+	<h3>Color Specification</h3>
+	  <table class="usa-table usa-table--borderless">
+		  <thead>
+		    <tr>
+		      <th scope="col">Color</th>
+		      <th scope="col">Hex</th>
+		      <th scope="col">RGBA</th>
+		      <th scope="col">CMYK</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <th scope="row">Red</th>
+		      <td>#CC202A</td>
+		      <td>204 / 32 / 42 / 100</td>
+		      <td>13 / 100 / 96 / 03</td>
+		    </tr>
+		    <tr>
+		      <th scope="row">Dark Blue</th>
+		      <td>#112E4F</td>
+		      <td>17 / 46 / 79 / 100</td>
+		      <td>99 / 82 / 42 / 39</td>
+		    </tr>
+		  </tbody>
+		</table>
+
+
+	<h3>Minimum Size</h3>
+	<p>The minimum height of the horizontal logo must always be 32 pixels for digital medium or 0.75 inches for print.  The minimum height of the vertical logo must always be 64 pixels for digital medium and 1.5 inches for print. </p>
+
+
+	<h2>Available File Formats</h2>
+	  <table class="usa-table usa-table--borderless">
+		  <thead>
+		    <tr>
+		      <th scope="col">Layout</th>
+		      <th scope="col">File Type</th>
+		      <th scope="col">Downloadable Image</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <td scope="row">Horizontal</td>
+		      <td>PNG</td>
+		      <td><a [routerLink]="locationStrategy.getBaseHref() + 'assets/img/SAM_gov_horizontal.png'" download>
+		      		<img class="height-4" [src]="locationStrategy.getBaseHref() + 'assets/img/SAM_gov_horizontal.png'" alt="Downloadable PNG file with horizontal layout">
+		      </a></td>
+		    </tr>
+		    <tr>
+		      <td scope="row" aria-label="Horizontal"></td>
+		      <td>JPG</td>
+		      <td><a [routerLink]="locationStrategy.getBaseHref() + 'assets/img/SAM_gov_horizontal.jpg'" download>
+		      	<img class="height-4" [src]="locationStrategy.getBaseHref() + 'assets/img/SAM_gov_horizontal.jpg'" alt="Downloadable JPG file with horizontal layout">
+		      </a></td>
+		    </tr>
+		    <tr>
+		      <td scope="row" aria-label="Horizontal"></td>
+		      <td>SVG</td>
+		      <td><a [routerLink]="locationStrategy.getBaseHref() + 'assets/img/SAM_gov_horizontal.svg'" download>
+		      	<img class="height-4" [src]="locationStrategy.getBaseHref() + 'assets/img/SAM_gov_horizontal.svg'" alt="Downloadable SVG file with horizontal layout">
+		      </a></td>
+		    </tr>
+		    <tr>
+		      <td scope="row">Vertical</td>
+		      <td>PNG</td>
+		      <td class="text-center"><a [routerLink]="locationStrategy.getBaseHref() + 'assets/img/SAM_gov_vertical.png'" download>
+		      	<img class="height-8" [src]="locationStrategy.getBaseHref() + 'assets/img/SAM_gov_vertical.png'" alt="Downloadable PNG file with vertical layout">
+		      </a></td>
+		    </tr>
+		    <tr>
+		      <td scope="row" aria-label="Vertical"></td>
+		      <td>JPG</td>
+		      <td class="text-center"><a [routerLink]="locationStrategy.getBaseHref() + 'assets/img/SAM_gov_vertical.jpg'" download>
+		      	<img class="height-8" [src]="locationStrategy.getBaseHref() + 'assets/img/SAM_gov_vertical.jpg'" alt="Downloadable JPG file with vertical layout">
+		      </a></td>
+		    </tr>
+		    <tr>
+		      <td scope="row" aria-label="Vertical"></td>
+		      <td>SVG</td>
+		      <td class="text-center"><a [routerLink]="locationStrategy.getBaseHref() + 'assets/img/SAM_gov_vertical.svg'" download>
+		      	<img class="height-8" [src]="locationStrategy.getBaseHref() + 'assets/img/SAM_gov_vertical.svg'" alt="Downloadable SVG file with vertical layout">
+		      </a></td>
+		    </tr>
+		  </tbody>
+		</table>
 </div>
 
