@@ -187,104 +187,61 @@
             </div>
         </div>
     </div>
-    <div class="usa-footer__primary-section">
-        <div class="grid-container">
-            <div class="grid-row grid-gap">
-                <div class="tablet:grid-col-12">
-                    <nav class="usa-footer__nav">
-                        <div class="grid-row grid-gap-4">
-                            <div class="grid-col-6 tablet:grid-col-3">
-                                <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
-                                    <h2 class="usa-footer__primary-link">About This Site</h2>
-                                    <ul class="sds-list sds-list--no-bullets">
-                                        <li>
-                                            <a href="javascript:void(0);" class="usa-link">About Us</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" class="usa-link">Our Community<i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" class="usa-link">Release Notes</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" class="usa-link">Alerts</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" class="usa-link">News</a>
-                                        </li>
-                                    </ul>
-
-                                </section>
-                            </div>
-                            <div class="grid-col-6 tablet:grid-col-3">
-                                <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
-                                    <h2 class="usa-footer__primary-link">Our Partners</h2>
-                                    <ul class="sds-list sds-list--no-bullets">
-                                        <li>
-                                            <a href="javascript:void(0);" class="usa-link">Aquisition.gov<i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" class="usa-link">USASpending.gov<i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" class="usa-link">Grants.gov<i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" class="usa-link">More Partners</a>
-                                        </li>
-                                    </ul>
-
-                                </section>
-                            </div>
-                            <div class="grid-col-6 tablet:grid-col-3">
-                                <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
-                                    <h2 class="usa-footer__primary-link">Policies</h2>
-                                    <ul class="sds-list sds-list--no-bullets">
-                                        <li>
-                                            <a href="javascript:void(0);" class="usa-link">Privacy Policy</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" class="usa-link">Disclaimers</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" class="usa-link">Freedom of Information Act<i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" class="usa-link">Accessibility</a>
-                                        </li>
-                                    </ul>
-
-                                </section>
-                            </div>
-                            <div class="grid-col-6 tablet:grid-col-3">
-                                <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
-                                    <h2 class="usa-footer__primary-link">Customer Service</h2>
-                                    <ul class="sds-list sds-list--no-bullets">
-                                        <li>
-                                            <a href="javascript:void(0);" class="usa-link">Help</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" class="usa-link">Check Registration Status</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" class="usa-link">Federal Service Desk<i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" class="usa-link">External Resources</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" class="usa-link">Contact Us</a>
-                                        </li>
-                                    </ul>
-
-                                </section>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
+  <div class="usa-footer__primary-section">
+    <div class="grid-container">
+      <nav class="usa-footer__nav" aria-label="Footer navigation">
+        <div class="grid-row grid-gap-4">
+          <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+            <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+              <h2 class="usa-footer__primary-link">About This Site</h2>
+              <ul class="usa-list usa-list--unstyled">
+                <li class="usa-footer__secondary-link"><a [routerLink]="['about/about']">About Us</a></li>
+                <li class="usa-footer__secondary-link"><a href="https://interact.gsa.gov/group/integrated-award-environment-iae-industry-community" target="_blank">Our Community <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i></a></li>
+                <li class="usa-footer__secondary-link"><a [routerLink]="['about/release-notes']">Release Notes</a></li>
+                <li class="usa-footer__secondary-link"><a [routerLink]="['alerts']">Alerts</a></li>
+                <li class="usa-footer__secondary-link"><a  [routerLink]="['news']">News</a></li>
+              </ul>
+            </section>
+          </div>
+          <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+            <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+              <h2 class="usa-footer__primary-link">Our Partners</h2>
+              <ul class="usa-list usa-list--unstyled">
+                <li class="usa-footer__secondary-link"><a href="https://acquisition.gov" target="_blank">Acquisition.gov <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i></a></li>
+                <li class="usa-footer__secondary-link"><a href="https://usaspending.gov" target="_blank">USASpending.gov <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i></a></li>
+                <li class="usa-footer__secondary-link"><a href="https://grants.gov" target="_blank">Grants.gov <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i></a></li>
+                <li class="usa-footer__secondary-link"><a [routerLink]="['about/partners']">More Partners</a></li>
+              </ul>
+            </section>
+          </div>
+          <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+            <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+              <h2 class="usa-footer__primary-link">Policies</h2>
+              <ul class="usa-list usa-list--unstyled">
+                <li class="usa-footer__secondary-link"><a [routerLink]="['/about/policies/privacy']">Privacy Policy</a></li>
+                <li class="usa-footer__secondary-link"><a [routerLink]="['/about/policies/disclaimers']">Disclaimers</a></li>
+                <li class="usa-footer__secondary-link"><a href="https://www.gsa.gov/reference/freedom-of-information-act-foia" target="_blank">Freedom of Information Act <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i></a></li>
+                <li class="usa-footer__secondary-link"><a [routerLink]="['/about/policies/accessibility']">Accessibility</a></li>
+                <li class="usa-footer__secondary-link"><a [routerLink]="['/about/policies/logo']">Logo</a></li>
+              </ul>
+            </section>
+          </div>
+          <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+            <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+              <h2 class="usa-footer__primary-link">Customer Service</h2>
+              <ul class="usa-list usa-list--unstyled">
+                <li class="usa-footer__secondary-link"><a [routerLink]="['help']">Help</a></li>
+                <li class="usa-footer__secondary-link"><a [routerLink]="['about/partners']">Check Registration Status</a></li>
+                <li class="usa-footer__secondary-link"><a href="https://fsd.gov" target="_blank">Federal Service Desk <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i></a></li>
+                <li class="usa-footer__secondary-link"><a [routerLink]="['about/external-resources']">External Resources</a></li>
+                <li class="usa-footer__secondary-link"><a [routerLink]="['about/contact']">Contact Us</a></li>
+              </ul>
+            </section>
+          </div>
         </div>
+      </nav>
     </div>
+  </div>
     <div class="usa-footer__secondary-section">
         <div class="grid-container">
             <div class="grid-row grid-gap">
