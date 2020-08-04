@@ -1,13 +1,14 @@
 <sds-subheader>
   <!-- =============== BACK BUTTON =============== -->
-  <button class="sds-button sds-button--circular" [routerLink]="['/home/wages']">
+  <button id="backbutton" class="sds-button sds-button--circular" [routerLink]="['/home/wages']">
     <fa-icon [icon]="['fas', 'chevron-left']" [fixedWidth]="true"></fa-icon>
   </button>
+  <label class="sr-only" for="backbutton">Back to Wages Home</label>
 
   <!-- =============== TITLE =============== -->
-  <h1 class="tablet-lg:width-mobile">
+  <span class="font-heading-lg text-semibold">
     Wage Determinations
-  </h1>
+  </span>
 </sds-subheader>
 <div class="sds-page">
 	<div class="grid-container">
