@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { LocationStrategy } from '@angular/common';
 
 @Component({
   selector: 'app-partners',
@@ -8,7 +9,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class PartnersComponent implements OnInit {
 
-  constructor() { }
+  constructor(public locationStrategy: LocationStrategy) { }
 
   ngOnInit() {
   }

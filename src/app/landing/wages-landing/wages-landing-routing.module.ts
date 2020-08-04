@@ -5,18 +5,13 @@ import { WagesSubPagesComponent } from './wages-sub-pages.component';
 
 const routes: Routes = [
 	{
-		path: 'main',
-		component: WagesLandingComponent
+		path: '',
+		component: WagesLandingComponent,
 	},
 	{
-		path: '',
+		path: 'resources',
 		component: WagesSubPagesComponent,
 		children: [
-			{
-				path: '',
-				redirectTo: 'labor-advisors',
-				pathMatch: 'full'
-			},
 			{
 				path: 'labor-advisors',		
     			loadChildren: () => import('./wages-labor-advisors/wages-labor-advisors.module').then(m => m.WagesLaborAdvisorsModule)

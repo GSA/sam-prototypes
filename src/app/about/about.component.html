@@ -1,7 +1,7 @@
 <main>
   <div class="grid-container">
     <div class="sds-page">
-      <div class="grid-row grid-gap-4">
+      <div class="grid-row grid-gap">
         <div class="grid-auto">
           <sds-toolbar class="tablet:grid-col-auto" #toolbar="sdsToolbar" [expanded]="true">
             <sds-accordion>
@@ -12,7 +12,7 @@
              </sds-accordion>
           </sds-toolbar>
         </div>
-        <div class="grid-fill">
+        <div class="tablet:grid-col-fill">
           <router-outlet></router-outlet>
         </div>
       </div>

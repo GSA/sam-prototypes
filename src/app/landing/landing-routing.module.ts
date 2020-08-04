@@ -92,6 +92,13 @@ const routes: Routes = [
 	    data: {
 	      id: "home"
 	    }
+	},
+	{
+		path: 'exclusions',
+		loadChildren: './exclusions/exclusions.module#ExclusionsModule',
+	    data: {
+	      id: "home"
+	    }
 	}
 
 ];

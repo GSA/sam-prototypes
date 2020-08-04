@@ -1,28 +1,31 @@
-<sds-subheader>
-  <!-- =============== BACK BUTTON =============== -->
-  <button class="sds-button sds-button--circular">
-    <fa-icon [icon]="['fas', 'chevron-left']" [fixedWidth]="true"></fa-icon>
-  </button>
 
-  <!-- =============== TITLE =============== -->
-  <h1 class="tablet-lg:width-mobile">
-    DBA Conformances
-  </h1>
 
-  <!-- =============== ACTIONS BUTTONS =============== -->
-  <sds-subheader-actions
-    [model]="subheader"
-    (clicks)="log($event)">
-  </sds-subheader-actions>
-</sds-subheader>
-<div class="sds-page">
-	<div class="grid-container">
-		<div class="grid-row">
-			<div class="tablet:grid-col-auto">
-				<wages-sub-menu></wages-sub-menu>
-			</div>
-			<div class="tablet:grid-col-fill">
-			</div>
-		</div>
-	</div>
-</div>
+<h1>DBA Conformances</h1>
+<p>The U.S. Department of Labor (DOL) issues wage determinations under the Davis-Bacon Act (DBA) using survey data on prevailing construction wages and benefits paid in specific areas. On occasion, the data does not contain sufficient information to issue rates for a particular classification of worker needed in the performance of the contract. Because of this, DBA provisions contain a conformance procedure for the purpose of establishing an enforceable wage and benefit rate for the missing classification.</p>
+
+<h2>PRE-AWARD</h2>
+<p>Contractors are responsible for determining the appropriate staffing necessary to perform the contract work. Contractors are also responsible for complying with the minimum wage and benefits requirements for each classification performing work on the contract. If a classification considered necessary by the contractor for performance of the work is not listed on the applicable wage determination, the contractor must initiate a request for approval of an additional classification along with the proposed wage and benefit rates for that classification.</p>
+
+<h2>POST-AWARD</h2>
+<h3>Awarded Contractors</h3>
+<p>Awarded Contractors initiates the request by preparing an SF1444, Request for Authorization of Additional Classification and Rate, at the time of employment of the unlisted classification. (Reference FAR 22.406-3 and 52.222-6(b), and Title 29 CFR Part 5, Section 5.5(a)). The contractor completes blocks 2 through 15 on the form. Request may be submitted to DOL without the form, but must contain the required information.</p>
+
+<h3>Employees</h3>
+<p>Employees, if present, or their designated representative must sign block 16 noting their concurrence or disagreement with the contractor's proposed wage and benefit rate. If the employee indicates disagreement with the contractor's proposal, he must provide a statement supporting a recommendation for different rates. (“Designated representative” is generally a union. It cannot be the contractor 's personnel officer or other contractor representative.)</p>
+
+<h3>Contractors</h3>
+<p>Contractors submits the request to the Contracting Officer.</p>
+
+<h3>Contracting Officers</h3>
+<p>Contracting Officers reviews the request for completeness and signs the form designating the contracting agency's concurrence or disagreement with regard to the contractor's proposal. If the Contracting Officer indicates disagreement with the contractor's proposal, a statement must be attached supporting a recommendation for different rates. The Contracting Officer then submits the proposal with all attachments to DOL for approval . The Contractor is obligated to pay the proposed wage and benefit rates pending a response from DOL.</p>
+
+<h2>Checklist for DBA Conformances</h2>
+<ol type="a">
+  <li>The classification must be appropriate for the contract work, and must be a classification that is utilized in that locality by the construction industry.</li>
+  <li>The contractor cannot propose a new classification by combining job duties from two or more existing classifications on the wage determination, or propose a new classification that performs only part of the duties of an existing classification.</li>
+  <li>The proposed classification cannot be a "trainee". Generally, a proposed classification of "helper" will not be approved. Under DBA provisions, a "helper" will not be approved by DOL unless the contractor establishes that the criteria in the regulations at 29 C.F.R. Part 5 are met.</li>
+  <li>Conformance requests should not be submitted for exempt classifications (project managers, full-time supervisors, professionals such as engineers), nor for classifications other than "laborers or mechanics" employed on the site of work, as covered by DBA.</li>
+  <li>The proposed rate and fringe benefits should bear a reasonable relationship to the wage rates listed on the wage determination.</li>
+  <li>The contractor must attach a brief job description to each SF1444 request submitted for classifications that are not generally known and utilized in the construction industry in the locality. The contractor should include all pertinent documentation that supports his request for approval of an additional classification.</li>
+  <li>If the contractor has further questions about a conformance process, he/she may contact the nearest Regional Office of the U. S. Department of Labor, Wage and Hour Division (see DOL's website). </li>
+</ol>

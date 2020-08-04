@@ -11,12 +11,12 @@ export class WagesSubMenuComponent implements OnInit {
 
     sideMenu: SideNavigationModel = {
 	    navigationLinks: [
-	        { id: 'wageshome', text: 'Wage Determinations Home', mode: NavigationMode.INTERNAL, route: '/home/wages/main' },
-	        { id: 'laboradvisors', text: 'Labor Advisors', mode: NavigationMode.INTERNAL, route: '/home/wages/labor-advisors' },
-	        { id: 'dbaconformances', text: 'DBA Conformances', mode: NavigationMode.INTERNAL, route: '/home/wages/dba-conformances' },
-	        { id: 'scaconformances', text: 'SCA Conformances', mode: NavigationMode.INTERNAL, route: '/home/wages/sca-conformances' },
-	        { id: 'crossindex', text: 'Cross Index', mode: NavigationMode.INTERNAL, route: '/home/wages/cross-index' },
-	        { id: 'allagencymemos', text: 'All Agency Memorandums', mode: NavigationMode.INTERNAL, route: '/home/wages/all-agency-memos' },
+	        { id: 'wageshome', text: 'Wage Determinations Home', mode: NavigationMode.INTERNAL, route: '/home/wages' },
+	        { id: 'laboradvisors', text: 'Labor Advisors', mode: NavigationMode.INTERNAL, route: '/home/wages/resources/labor-advisors' },
+	        { id: 'dbaconformances', text: 'DBA Conformances', mode: NavigationMode.INTERNAL, route: '/home/wages/resources/dba-conformances' },
+	        { id: 'scaconformances', text: 'SCA Conformances', mode: NavigationMode.INTERNAL, route: '/home/wages/resources/sca-conformances' },
+	        { id: 'crossindex', text: 'Cross Index', mode: NavigationMode.INTERNAL, route: '/home/wages/resources/cross-index' },
+	        { id: 'allagencymemos', text: 'All Agency Memorandums', mode: NavigationMode.INTERNAL, route: '/home/wages/resources/all-agency-memos' },
 	    ]
 	};
 

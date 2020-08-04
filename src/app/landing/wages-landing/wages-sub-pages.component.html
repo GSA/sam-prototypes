@@ -1,2 +1,23 @@
+<sds-subheader>
+  <!-- =============== BACK BUTTON =============== -->
+  <button class="sds-button sds-button--circular" [routerLink]="['/home/wages']">
+    <fa-icon [icon]="['fas', 'chevron-left']" [fixedWidth]="true"></fa-icon>
+  </button>
 
-<router-outlet></router-outlet>
+  <!-- =============== TITLE =============== -->
+  <h1 class="tablet-lg:width-mobile">
+    Wage Determinations
+  </h1>
+</sds-subheader>
+<div class="sds-page">
+	<div class="grid-container">
+		<div class="grid-row grid-gap">
+			<div class="tablet:grid-col-auto">
+				<wages-sub-menu></wages-sub-menu>
+			</div>
+			<div class="tablet:grid-col-fill">
+				<router-outlet></router-outlet>
+			</div>
+		</div>
+	</div>
+</div>

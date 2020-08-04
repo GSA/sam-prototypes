@@ -16,6 +16,7 @@ import { LocationStrategy } from '@angular/common';
 export class AppComponent {
   title = "sam-gov";
   sectionId: string = "home";
+  isCollapsedContent: boolean = true;
 
   @ViewChild("header", {static: true}) header;
 
