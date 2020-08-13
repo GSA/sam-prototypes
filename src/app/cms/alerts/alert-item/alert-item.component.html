@@ -1,0 +1,44 @@
+  <div class="grid-row grid-gap">
+    <div class="grid-col-fill">
+      <h3 class="font-sans-xs margin-y-0">
+        <a class="usa-link" [routerLink]="['/']">
+          {{model.type}} for {{model.requestedBy}}
+        </a>
+      </h3>
+      <p  class="sds-static--label">
+        {{model.description}}
+      </p>
+    </div>
+    <div class="tablet:grid-col-4 grid-col-12">
+
+      <!-- Horizontal Config -->
+      <div class="grid-row grid-gap-05">
+
+        <!-- Key/Value Wrapper -->
+        <div class="tablet:grid-col-6 grid-col-4">
+          <div class="grid-row">
+            <div class="grid-col-12">
+              <div class="sds-static--label font-sans-3xs text-light text-italic">Status</div>
+            </div>
+            <div class="grid-col-12">
+              <span class="sds-tag sds-tag--outline">
+                <i class="sds-status sds-status--sm sds-status--green"></i>{{getLabel(model.status)}}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key/Value Wrapper -->
+        <div class="tablet:grid-col-6 grid-col-4">
+          <div class="grid-row">
+            <div class="grid-col-12">
+              <div class="sds-static--label font-sans-3xs text-light text-italic">Received Date</div>
+            </div>
+            <div class="grid-col-12">
+              <span class="sds-tag sds-tag--outline">{{ model.date | date }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+

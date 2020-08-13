@@ -105,6 +105,13 @@ const routes: Routes = [
     }
   },
   {
+    path: 'cms/alerts',
+    loadChildren: './cms/alerts/alerts.module#AlertsModule',
+    data: {
+      id: "alerts"
+    }
+  },  
+  {
     path: '*',
     redirectTo: '/',
     pathMatch: 'full',
