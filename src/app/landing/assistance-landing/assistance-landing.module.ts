@@ -4,7 +4,8 @@ import { RouterModule } from '@angular/router';
 import { FormsModule} from '@angular/forms';
 
 import {
-  SdsSearchModule
+  SdsSearchModule,
+  SdsAccordionModule
 } from '@gsa-sam/components';
 
 
@@ -18,6 +19,7 @@ import { AssistanceLandingComponent } from './assistance-landing.component';
     RouterModule,
     FormsModule,
     SdsSearchModule,
+    SdsAccordionModule,
     AssistanceLandingRoutingModule
   ],
   exports: [AssistanceLandingComponent]

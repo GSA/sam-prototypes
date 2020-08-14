@@ -38,6 +38,13 @@ const routes: Routes = [
 	    }
 	},
 	{
+		path: 'opportunities-federal',
+		loadChildren: './opportunities-landing-federal/opportunities-landing-federal.module#OpportunitiesLandingFederalModule',
+			data: {
+				id: "home"
+			}
+	},
+	{
 		path: 'hierarchy',
 		loadChildren: './hierarchy-landing/hierarchy-landing.module#HierarchyLandingModule',
 	    data: {

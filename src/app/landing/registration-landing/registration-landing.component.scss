@@ -7,36 +7,3 @@
   min-width: 415px;
   min-height: 580px;
 }
-
-.sds-tile--outline {
-  border: 2px solid white;
-  border-radius: 20px;
-  padding: 25px 8px;
-  margin: 8px;
-  background: rgba(240, 245, 249, 0.8);
-  width: 100%;
-  height: auto;
-
-
-  .sds-tile__header {
-    display: flex;
-    flex-direction: row;
-
-    a {
-      font-size: 23px;
-      margin: auto 8px auto 8px;
-      text-decoration: none;
-    }
-  }
-
-  .sds-tile__body {
-    display: flex;
-    flex-direction: column;
-    font-size: .93rem;
-    padding: 0 8px 0 8px;
-  }
-
-  a {
-    font-weight: bold;
-  }
-}

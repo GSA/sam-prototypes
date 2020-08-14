@@ -29,34 +29,3 @@
     }
   }
 }
-
-.sds-tile--outline {
-  border: 2px solid white;
-  border-radius: 20px;
-  padding: 32px;
-  background: rgba(240, 245, 249, 0.8);
-  width: 100%;
-  height: auto;
-
-  .sds-tile__footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #767676;
-
-    button {
-      margin: 8px auto 8px auto;
-    }
-  }
-
-  a {
-    font-weight: bold;
-  }
-}
-
-.sds-list-link {
-  li{
-    display: flex;
-    flex-direction: column;
-  }
-}
