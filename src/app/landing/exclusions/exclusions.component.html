@@ -1,1 +1,411 @@
-<p>exclusions works!</p>
+<main id="main-content">
+	<div class="grid-container">
+		<div class="grid-row sds-hero sds-hero--image">
+			<div class="desktop:grid-offset-1 desktop:grid-col-10">
+				<!-- HERO SECTION -->
+				<div class="grid-row padding-x-3 desktop:padding-0">
+					<div class="desktop:grid-col-7 margin-bottom-4 desktop:margin-0 tablet:padding-right-3">
+						<div class="display-flex flex-justify-space-between">
+              <h1>Exclusions</h1>
+            </div>
+						<p class="maxw-full text-base-dark">An exclusion is any person who or organization that has been declared ineligible from receiving federal contracts, certain subcontracts, and certain types of federal financial and non-financial assistance and benefits.
+						</p>
+            <p><b>Exclusions are a part of entity information. Entity information includes the following:</b></p>
+            <a class="usa-link">Entity Registration</a><a class="usa-link">Disaster Response Registry</a><a class="usa-link">Exclusions</a>
+						<h2>Search Entity Exclusions</h2>
+						<form class="usa-search usa-search--big padding-right-2" role="search">
+							<label class="usa-sr-only" for="search-field-big">Search</label>
+							<input class="usa-input " id="search-field-big" type="search" name="search" placeholder="Enter notice ID or keyword">
+							<button class="usa-button" type="submit">
+								<span class="usa-sr-only">Search</span>
+							</button>
+						</form>
+					</div>
+					<div class="desktop:grid-col-5 display-none desktop:display-flex">
+						<div class="sds-tile--outline display-flex flex-column flex-justify height-full">
+              <div>
+                <h2>Federal Users Get Started Here:</h2>
+  							<p class="text-base-dark"> Manage contract exclusions as a contracting officer or contracting specialist.</p>
+              </div>
+							<div class="desktop:flex-column flex-justify-center grid-row grid-gap">
+								<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
+	              	<button class="usa-button usa-button--secondary width-full" [routerLink]="['/home/exclusions-federal']">
+									 Exclusions for Federal Users
+									</button>
+								</div>
+								<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
+									<button class="usa-button width-full">Sign in to Get Started</button>
+								</div>
+							</div>
+            </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ACCORDION -->
+    <div class="grid-row">
+      <div class="tablet:grid-col-10 tablet:grid-offset-1">
+        <div class="usa-accordion usa-accordion--bordered" aria-multiselectable="false">
+          <h3 class="usa-accordion__heading sds-accordion__heading-bordered">
+            <button class="usa-accordion__button border-top-1px border-base-light" aria-expanded="false" aria-controls="a1">
+              Get started searching exclusions
+            </button>
+          </h3>
+          <div id="a1" class="usa-accordion__content usa-prose" hidden>
+            <!-- Get started links -->
+            <h4>Get started searching entities</h4>
+              <ul class="sds-list sds-list--icon padding-0">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-new-note"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Search entity registrations</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-new-note"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Search disaster response registry</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-new-note"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Save my searches</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-new-note"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Use the interested vendors list</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-document-pdf"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Quick Start Guide for Contractors</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-video-square"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Video - Use contract exclusions to do business with the government</a>
+                  </span>
+                </li>
+              </ul>
+          </div>
+          <h3 class="usa-accordion__heading sds-accordion__heading-bordered">
+            <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="a4">
+              Use exclusions advanced search
+            </button>
+          </h3>
+          <div id="a4" class="usa-accordion__content usa-prose" hidden>
+            <!-- specialist/officer links -->
+            <ul class="sds-list sds-list--icon padding-0">
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-new-note"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Changing search filters</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-new-note"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Understanding notice types</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-new-note"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Set-Asides for small businesses</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-new-note"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Using NAICS Codes</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-new-note"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Using PCS Codes</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-new-note"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Search by place of performance</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-new-note"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Vendor collaboration exclusions</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-new-note"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Small business events</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+		<!-- Tile -->
+		<div class="grid-row desktop:display-none">
+			<div class="grid-col-11 margin-x-auto">
+				<div class="sds-tile--outline">
+					<h2>Manage Entity Exclusions:</h2>
+					<p class="text-base-dark">Getting started for federal exclusions managers.</p>
+					<div class="desktop:flex-column flex-justify-center grid-row grid-gap">
+						<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
+							<button class="usa-button usa-button--secondary width-full">Exclusions for Federal Users</button>
+						</div>
+						<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
+							<button class="usa-button width-full">Sign in to Get Started</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- CARDS -->
+		<div class="grid-row grid-gap flex-wrap padding-x-3 desktop:padding-0">
+      <!-- service api -->
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a class="sds-card__link">
+              <h2 class="sds-card__title">Connect to Service APIs</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-document-pdf"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Connect to Data Services</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-new-note"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">How to use APIs</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-video-square"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">How to access data extracts and use APIs</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Connect to data APIs</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- download data -->
+			<div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+  			<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a class="sds-card__link">
+              <h2 class="sds-card__title">Download Data Files</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-new-note"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">How to use APIs</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Connect to data APIs</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+			</div>
+      <!-- exclusions resources -->
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a class="sds-card__link">
+              <h2 class="sds-card__title">Exclusions Resources</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-new-note"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">How to run a DataBank Report</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Go to DataBank Reports</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- user guides -->
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a class="sds-card__link">
+              <h2 class="sds-card__title">User Guides</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <p class="margin-bottom-2">Connect to one of our partner sites to review policy, learn about the grants lifecycle, and find information about eligibility for different types of federal assistance.</p>
+            <ul class="sds-list sds-list--unstyled sds-list--flex">
+              <li>
+                <span class="sr-only"></span>
+                <a class="usa-link" href=" ">
+                  Chief Financial Officers Council Grants Training
+                </a>
+              </li>
+              <li>
+                <span class="sr-only"></span>
+                <a class="usa-link" href=" ">
+                  Grants.gov Learning Center
+                </a>
+              </li>
+              <li>
+                <span class="sr-only"></span>
+                <a class="usa-link" href=" ">
+                  Benefits.gov Benefit Finder
+                </a>
+              </li>
+              <li>
+                <span class="sr-only"></span>
+                <a class="usa-link" href=" ">
+                  USA.gov Government Benefits, Grants, and Loans
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- help -->
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a class="sds-card__link">
+              <h2 class="sds-card__title">Help</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-document-pdf"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Connect to Data Services</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-new-note"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">How to use APIs</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-video-square"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">How to access data extracts and use APIs</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Connect to data APIs</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- video -->
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a class="sds-card__link">
+              <h2 class="sds-card__title">Featured Video Title</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <div class="video-code" style="height:200px; margin: auto; background-image: url('assets/img/home-video.png'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+            </div>
+          </div>
+        </div>
+      </div>
+		</div>
+	</div>
+</main>

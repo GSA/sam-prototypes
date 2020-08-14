@@ -6,7 +6,7 @@
 				<div class="grid-row padding-x-3 desktop:padding-0">
 					<div class="desktop:grid-col-7 margin-bottom-4 desktop:margin-0 tablet:padding-right-3">
 						<div class="display-flex flex-justify-space-between">
-              <h1>Entity Registration</h1>
+              <h1>Search Registered Entities</h1>
             </div>
 						<p class="maxw-full text-base-dark">An entity is any person who or organization that is registered to do business with the federal government. You must have an active entity registration in SAM.gov to receive a federal contract or federal assistance.
 						</p>
@@ -23,34 +23,28 @@
 						<div class="sds-tile--outline">
               <h2>Register Your Entity</h2>
 							<p class="text-base-dark">Register your entity to get started doing business with the federal government.</p>
-							<div class="desktop:flex-column flex-justify-center grid-row grid-gap">
-								<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-                  <button class="sds-button sds-button--icon margin-auto">
+							<div class="desktop:flex-column flex-justify-center grid-row">
+                  <button class="sds-button sds-button--icon margin-bottom-1">
                     <span class="fa-stack fa-2x">
                       <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
                       <i class="sds fa-folder fa-stack-1x text-base fa-2x"></i>
                     </span>
                     <span class="sds-button--icon__title">Get Started</span>
                   </button>
-								</div>
-								<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-                  <button class="sds-button sds-button--icon margin-auto">
+                  <button class="sds-button sds-button--icon margin-bottom-1">
                     <span class="fa-stack fa-2x">
                       <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
                       <i class="sds fa-folder fa-stack-1x text-base fa-2x"></i>
                     </span>
                     <span class="sds-button--icon__title">Renew Entity</span>
                   </button>
-								</div>
-                <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-                  <button class="sds-button sds-button--icon margin-auto">
+                  <button class="sds-button sds-button--icon">
                     <span class="fa-stack fa-2x">
-                      <i class="sds fa-pentagon fa-stack-2x text-primary-light fa-1x"></i>
+                      <i class="sds fa-pentagon fa-stack-2x text-primary-lighter fa-1x"></i>
                       <i class="sds fa-check-circle fa-stack-1x text-base fa-2x"></i>
                     </span>
                     <span class="sds-button--icon__title">Check Registration Status</span>
                   </button>
-                </div>
 							</div>
             </div>
 					</div>
@@ -63,7 +57,7 @@
         <div class="usa-accordion usa-accordion--bordered" aria-multiselectable="false">
           <h3 class="usa-accordion__heading sds-accordion__heading-bordered">
             <button class="usa-accordion__button border-top-1px border-base-light" aria-expanded="false" aria-controls="a1">
-              Get started with my entity search
+              Get started with entity search
             </button>
           </h3>
           <div id="a1" class="usa-accordion__content usa-prose" hidden>
@@ -160,18 +154,33 @@
     </div>
 		<!-- Tile -->
 		<div class="grid-row desktop:display-none">
-			<div class="grid-col-11 margin-x-auto">
+			<div class="grid-col-11 margin-x-auto margin-top-2">
 				<div class="sds-tile--outline">
 					<h2>Federal Users Get Started Here:</h2>
 					<p class="text-base-dark">Manage federal funding and awarding organizations as a hierarchy administrator.</p>
-					<div class="desktop:flex-column flex-justify-center grid-row grid-gap">
-						<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-							<button class="usa-button usa-button--secondary width-full">Federal Hierarchy for Federal Users</button>
-						</div>
-						<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-							<button class="usa-button width-full">Sign in to Get Started</button>
-						</div>
-					</div>
+          <div class="grid-row grid-gap display-flex flex-justify-center">
+              <button class="sds-button sds-button--icon margin-bottom-1">
+                <span class="fa-stack fa-2x">
+                  <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
+                  <i class="sds fa-folder fa-stack-1x text-base fa-2x"></i>
+                </span>
+                <span class="sds-button--icon__title">Get Started</span>
+              </button>
+              <button class="sds-button sds-button--icon margin-bottom-1">
+                <span class="fa-stack fa-2x">
+                  <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
+                  <i class="sds fa-folder fa-stack-1x text-base fa-2x"></i>
+                </span>
+                <span class="sds-button--icon__title">Renew Entity</span>
+              </button>
+              <button class="sds-button sds-button--icon margin-bottom-1">
+                <span class="fa-stack fa-2x">
+                  <i class="sds fa-pentagon fa-stack-2x text-primary-lighter fa-1x"></i>
+                  <i class="sds fa-check-circle fa-stack-1x text-base fa-2x"></i>
+                </span>
+                <span class="sds-button--icon__title">Check Registration Status</span>
+              </button>
+          </div>
 				</div>
 			</div>
 		</div>
@@ -207,7 +216,7 @@
 			<div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
   			<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
+            <a class="sds-card__link">
               <h2 class="sds-card__title">Download Data Files</h2>
             </a>
           </div>
@@ -241,7 +250,7 @@
 			<div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
   			<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
+            <a class="sds-card__link">
               <h2 class="sds-card__title">Connect to Data Services</h2>
             </a>
           </div>
@@ -268,7 +277,7 @@
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
         <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
+            <a class="sds-card__link">
               <h2 class="sds-card__title">Do I need a user account?</h2>
             </a>
           </div>
@@ -306,7 +315,7 @@
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
         <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
+            <a class="sds-card__link">
               <h2 class="sds-card__title">Help</h2>
             </a>
           </div>
@@ -340,7 +349,7 @@
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
         <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
+            <a class="sds-card__link">
               <h2 class="sds-card__title">Featured Video Title</h2>
             </a>
           </div>
