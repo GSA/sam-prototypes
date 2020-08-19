@@ -1,4 +1,4 @@
-  <div class="grid-row grid-gap">
+  <div class="grid-row grid-gap margin-y-2">
     <div class="grid-col-12 tablet:grid-col-9">
       <h3 class="font-sans-xs margin-y-0">
         <a class="usa-link" [routerLink]="['/']">
@@ -8,7 +8,7 @@
       <h4 style="margin-top: .5rem; margin-bottom: .5rem;">Notice ID: {{model.notice_id}}</h4>
     </div>
     <div class="grid-col-12 tablet:grid-col-3">              
-      <span class="sds-tag sds-tag--outline">Contract Opportunity</span>
+      <span class="sds-tag sds-tag--outline width-auto flex-column flex-align-center">Contract Opportunity</span>
     </div>
     <div class="grid-col-12 tablet:grid-col-9">
       <p style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: 16px; font-size: 15px; max-height: 32px; margin-bottom: 1rem;">{{model.Description.replace(no_html, '')}}</p>

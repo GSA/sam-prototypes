@@ -5,10 +5,9 @@
   </button>
 
   <!-- =============== TITLE =============== -->
-    <select class="usa-select" id="section" (change)="selectPage($event.target.value)">
-      <option value="results" [selected]="!page || page == 'results'"><h1>Search Results</h1></option>
-      <option value="saved-search" [selected]="page == 'saved-search'"><h1>Saved Search</h1></option>
-    </select>
+  <span class="font-heading-lg text-semibold margin-right-6">
+    Search
+  </span>
 
   <!-- =============== SEARCH =============== -->
   <sds-search

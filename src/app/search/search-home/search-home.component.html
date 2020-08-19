@@ -14,22 +14,8 @@
               </sds-accordion-item>
               <sds-accordion-item #filtersAccordion [expanded]="filtersExpanded">
               	<sds-accordion-item-header>Filter By</sds-accordion-item-header>
-                <sds-filters [form]="form" [fields]="fields" [model]="filterModel" (filterChange)="filterChange$.next($event)">
+                  <sds-filters [form]="form" [fields]="fields" [model]="filterModel" [advancedFilters]="true" [getCleanModel]="true" (filterChange)="filterChange$.next($event)">
                 </sds-filters>
-                <div class="grid-row margin-top-1">
-              		<div class="grid-col-fill"><button *ngIf="service.domain == 'opportunities'" style="background: transparent; border: 0 solid transparent" class="usa-link" (click)="openAdvancedFiltersDialog()">More Filters</button></div>
-              		<div class="grid-col-auto"><button style="background: transparent; border: 0 solid transparent" class="usa-link" (click)="resetAll()">Reset All</button></div>
-              	</div>
-                <div class="grid-row" *ngIf="!service.domain || service.domain == 'all'" class="padding-2">
-                  <div class="grid-col-fill">
-                    Select an individual domain to see additional filters
-                  </div>
-                </div>
-                <div class="grid-row" *ngIf="service.domain && service.domain == 'entityinfo'" class="padding-2">
-                  <div class="grid-col-fill">
-                    Select an entity information subdomain to see additional filters for entity registrations or exclusions
-                  </div>
-                </div>
               </sds-accordion-item>
             </sds-accordion>
           </sds-toolbar>

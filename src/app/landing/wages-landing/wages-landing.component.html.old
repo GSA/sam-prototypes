@@ -1,0 +1,170 @@
+<main id="main-content">
+  <div class="grid-container">
+    <div class="grid-row sds-hero sds-hero--image">
+      <div class="desktop:grid-offset-1 desktop:grid-col-10">
+        <!-- HERO SECTION -->
+        <div class="grid-row padding-x-3 desktop:padding-0">
+          <div class="desktop:grid-col-7 margin-bottom-4 desktop:margin-0">
+            <h1>Wage Determinations</h1>
+            <p class="maxw-full text-base-dark">A wage determination (WD) is a listing of wage rates and fringe benefit rates for each labor category of workers which the U.S. department of labor has determined to be
+                prevailing in a given area</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- CARDS -->
+    <div class="grid-row grid-gap flex-wrap padding-3 flex-justify-center">
+      <div class="grid-row tablet:grid-col-5 desktop:grid-col padding-1">
+      <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+        <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+          <a [routerLink]="['news']" class="sds-card__link">
+            <h2 class="sds-card__title">Manage Organizations</h2>
+          </a>
+        </div>
+        <div class="sds-card__body">
+            <ul class="sds-list sds-list--unstyled sds-list--flex">
+              <li>
+                <i class="sds fa-new-note "></i>
+                <span class="sr-only"></span>
+                <a class="usa-link" [routerLink]="['/home/wages/resources/dba-conformances']">
+                  DBA Conformances
+                </a>
+              </li>
+              <li>
+                <i class="sds fa-new-note "></i>
+                <span class="sr-only"></span>
+                <a class="usa-link" [routerLink]="['/home/wages/resources/sca-conformances']">
+                  SCA Conformances
+                </a>
+              </li>
+              <li>
+                <i class="sds fa-new-note "></i>
+                <span class="sr-only"></span>
+                <a class="usa-link" [routerLink]="['/home/wages/resources/labor-advisors']">
+                  Labor Advisors
+                </a>
+              </li>
+              <li>
+                <i class="sds fa-new-note "></i>
+                <span class="sr-only"></span>
+                <a class="usa-link" [routerLink]="['/home/wages/resources/all-agency-memos']">
+                  All Agency Memos
+                </a>
+              </li>
+              <li>
+                <i class="sds fa-new-note "></i>
+                <span class="sr-only"></span>
+                <a class="usa-link" [routerLink]="['/home/wages/resources/cross-index']">
+                  Labor Cross Index™
+                </a>
+              </li>
+            </ul>
+        </div>
+      </div>
+      </div>
+      <div class="grid-row tablet:grid-col-5 desktop:grid-col padding-1">
+      <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+        <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+          <a [routerLink]="['news']" class="sds-card__link">
+            <h2 class="sds-card__title">Change Request Forms</h2>
+          </a>
+        </div>
+        <div class="sds-card__body">
+          <ul class="sds-list sds-list--unstyled sds-list--flex">
+            <li>
+              <i class="sds fa-new-note"></i>
+              <span class="sr-only"></span>
+              <a class="usa-link" href=" ">
+                Department Change Request Form
+              </a>
+            </li>
+            <li>
+              <i class="sds fa-new-note"></i>
+              <span class="sr-only"></span>
+              <a class="usa-link" href=" ">
+                Sub-Tier Agency Request Form
+              </a>
+            </li>
+            <li>
+              <i class="sds fa-new-note"></i>
+              <span class="sr-only"></span>
+              <a class="usa-link" href=" ">
+                Office Agency Change Request Form
+              </a>
+            </li>
+            <li>
+              <i class="sds fa-new-note"></i>
+              <span class="sr-only"></span>
+              <a class="usa-link" href=" ">
+                Federal Hierarchy Change Request Quick Start Guide
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </div>
+      <div class="grid-row tablet:grid-col-5 desktop:grid-col padding-1">
+      <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+        <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+          <a [routerLink]="['news']" class="sds-card__link">
+            <h2 class="sds-card__title">Administrative Reports</h2>
+          </a>
+        </div>
+        <div class="sds-card__body">
+          <ul class="sds-list sds-list--unstyled sds-list--flex">
+            <li>
+              <i class="sds fa-question-circle"></i>
+              <span class="sr-only"></span>
+              <a class="usa-link" href=" ">
+                How to run an administrative report
+              </a>
+            </li>
+            <li>
+              <i class="sds fa-book"></i>
+              <span class="sr-only"></span>
+              <a class="usa-link" href=" ">
+                Go to Databanks
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </div>
+      <div class="grid-row tablet:grid-col-5 desktop:grid-col padding-1">
+      <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+        <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+          <a [routerLink]="['news']" class="sds-card__link">
+            <h2 class="sds-card__title">Help</h2>
+          </a>
+        </div>
+        <div class="sds-card__body">
+          <ul class="sds-list sds-list--unstyled sds-list--flex">
+            <li>
+              <i class="sds fa-question-circle"></i>
+              <span class="sr-only"></span>
+              <a class="usa-link" href=" ">
+                Frequently ASked Questions
+              </a>
+            </li>
+            <li>
+              <i class="sds fa-book"></i>
+              <span class="sr-only"></span>
+              <a class="usa-link" href=" ">
+                Glossary Terms
+              </a>
+            </li>
+            <li>
+              <i class="sds fa-video-square"></i>
+              <span class="sr-only"></span>
+              <a class="usa-link" href=" ">
+                Videos
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </div>
+
+    </div>
+  </div>
+</main>

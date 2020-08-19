@@ -1,0 +1,32 @@
+<sds-subheader>
+  <!-- =============== BACK BUTTON =============== -->
+  <button class="sds-button sds-button--circular">
+    <fa-icon [icon]="['fas', 'chevron-left']" [fixedWidth]="true"></fa-icon>
+  </button>
+
+  <!-- =============== TITLE =============== -->
+  <h1 class="font-heading-md text-semibold tablet-lg:width-mobile">
+    News
+  </h1>
+</sds-subheader>
+<main>
+  <div class="grid-container">
+    <div class="sds-page">
+      <div class="grid-row grid-gap">
+        <div class="grid-auto">
+          <sds-toolbar class="tablet:grid-col-auto" #toolbar="sdsToolbar" [expanded]="true">
+            <sds-accordion>
+              <sds-accordion-item [expanded]="true">
+                <sds-accordion-item-header>Show</sds-accordion-item-header>
+                <sds-side-navigation #sideNav [model]="sideNavModel"></sds-side-navigation>
+              </sds-accordion-item>
+             </sds-accordion>
+          </sds-toolbar>
+        </div>
+        <div class="tablet:grid-col-fill">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule } from '@angular/forms';
 
 import { SdsSubheaderModule } from '@gsa-sam/layouts';
 import { SdsSideNavigationModule, 
          SdsToolbarModule, 
+         SdsSearchModule,
          SdsAccordionModule } from '@gsa-sam/components';
 
 import { WagesLandingRoutingModule } from './wages-landing-routing.module';
@@ -20,8 +22,10 @@ import { WagesSubMenuModule } from './wages-sub-menu/wages-sub-menu.module';
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule,
     SdsSideNavigationModule,
     SdsToolbarModule,
+    SdsSearchModule,
     SdsAccordionModule,
     SdsSubheaderModule,
     FontAwesomeModule,

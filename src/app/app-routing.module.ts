@@ -98,6 +98,13 @@ const routes: Routes = [
     }
   },
   {
+    path: 'profile',
+    loadChildren: './profile/profile.module#ProfileModule',
+    data: {
+      id: "workspace"
+    }
+  },
+  {
     path: 'entity-registration',
     loadChildren: './entity-registration/entity-registration.module#EntityRegistrationModule',
     data: {

@@ -39,10 +39,76 @@ export class OpportunityFilterService implements SearchFiltersWrapperService {
 
   keywordService: FakeAutocompleteService = new FakeAutocompleteService();
 
-  public filters: FormlyFieldConfig[] = [
+    public filters: FormlyFieldConfig[] = [
+	{
+	    key: 'keyword',
+	    type: 'autocomplete',
+	    templateOptions: {
+	        label: 'Keyword',
+            hideOptional: true,
+	        service: this.keywordService,
+	        configuration: this.keywordService.settings,
+	        model: this.keywordService.model
+	    }
+  	},  
+	{
+	      key: 'title',
+	      type: 'input',
+	      templateOptions: {
+	        type: 'text',
+	        label: 'Title',
+            hideOptional: true,
+	        labelClass:'usa-sr-only'
+	      }
+	},
+    {
+      key: 'dates',
+      templateOptions: {
+        label: 'Dates',
+        group: 'accordion',
+        expand: false,
+        hide: true
+      },
+      fieldGroup: [
+        {
+          key: 'dateOffersDue',
+          type: 'select',
+          templateOptions: {
+            label: 'Current Date Offers Due',
+            hideOptional: true,
+            options: [
+              { label: 'Last 24 hours', value: 'one-day' },
+              { label: 'Last 2 days', value: 'two-day' },
+              { label: 'Last Week', value: 'seven-day' },
+              { label: 'Last 30 days', value: 'thirty-day' },
+              { label: 'Last 90 days', value: 'ninety-day' },
+              { label: 'Custom', value: 'custom-day' }
+            ]
+          }
+        },
+        {
+          key: 'dateUpdated',
+          type: 'select',
+          hide: true,
+          templateOptions: {
+            label: 'Last Updated Date',
+            hideOptional: true,
+            options: [
+              { label: 'Last 24 hours', value: 'one-day' },
+              { label: 'Last 2 days', value: 'two-day' },
+              { label: 'Last Week', value: 'seven-day' },
+              { label: 'Last 30 days', value: 'thirty-day' },
+              { label: 'Last 90 days', value: 'ninety-day' },
+              { label: 'Custom', value: 'custom-day' }
+            ]
+          }
+        },
+      ]
+    }
+  ];
+  public oldfilters: FormlyFieldConfig[] = [
 	  {
 		    key: 'keyword',
-		    wrappers: ['filterwrapper'],
 		    type: 'autocomplete',
 		    templateOptions: {
 		        label: 'Keyword',

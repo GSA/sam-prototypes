@@ -1,522 +1,508 @@
-<div class="margin-8">
-  <h1>Workspace</h1>
-  <div class="grid-row tier-one">
-    <div class="tablet:grid-col-7 margin-right-2">
-      <!-- Contract Opportunities Card -->
-      <div class="sds-card"  *ngIf="false">
-        <div class="sds-card__header">
-          <div class="grid-row grid-gap-md">
-            <div class="grid-col-fill">
-              <h2><a class="usa-link" [routerLink]="['opportunities']">Contract Opportunities</a></h2>
-            </div>
-            <div class="grid-col-auto">
-              <button class="usa-button usa-button--outline">Create Opportunity</button>
-            </div>
-          </div>
-        </div>
-        <div class="sds-card__content tablet:display-block padding-4">
-          <div class="sds-statistics">
-            <a class="usa-link" [routerLink]="['opportunities']" class="green statistic" style="text-decoration: none;">
-              <div class="value"><span class="circular">15</span></div>
-              <div class="label">Active</div>
-            </a>
-            <a class="usa-link" [routerLink]="['opportunities']" class="blue statistic" style="text-decoration: none;">
-              <div class="value"><span class="circular">0</span></div>
-              <div class="label">Draft</div>
-            </a>
-            <a class="usa-link" [routerLink]="['opportunities']" class="red statistic" style="text-decoration: none;">
-              <div class="value"><span class="circular">1</span></div>
-              <div class="label">Work in Progress</div>
-            </a>
-            <a class="usa-link" [routerLink]="['opportunities']" class="orange statistic" style="text-decoration: none;">
-              <div class="value"><span class="circular">2</span></div>
-              <div class="label">Submitted</div>
-            </a>
-            <a class="usa-link" [routerLink]="['registrations']" class="red statistic" style="text-decoration: none;">
-              <div class="value"><span class="circular">2</span></div>
-              <div class="label">Expired</div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- Entity Information Card -->
-      <div class="sds-card" *ngIf="false">
-        <div class="sds-card__header">
-          <div class="grid-row grid-gap-md">
-            <div class="grid-col-fill">
-              <h2 class="padding-top-1"><a [routerLink]="['registrations']" class="usa-link" style="text-decoration: none;">Entity Registrations</a></h2>
-            </div>
-            <div class="grid-col-auto">
-              <button class="usa-button usa-button--outline" [routerLink]="['/entity-registration/register']">Register Entity</button>
-            </div>
-          </div>
-        </div>
-        <div class="sds-card__content tablet:display-block padding-4">
-          <div class="sds-statistics">
-            <a class="usa-link" [routerLink]="['registrations']" class="green statistic" style="text-decoration: none;">
-              <div class="value"><span class="circular">15</span></div>
-              <div class="label">Active</div>
-            </a>
-            <a class="usa-link" [routerLink]="['registrations']" class="grey statistic" style="text-decoration: none;">
-              <div class="value"><span class="circular">0</span></div>
-              <div class="label">Draft</div>
-            </a>
-            <a class="usa-link" [routerLink]="['registrations']" class="blue statistic" style="text-decoration: none;">
-              <div class="value"><span class="circular">1</span></div>
-              <div class="label">Work in Progress</div>
-            </a>
-            <a class="usa-link" [routerLink]="['registrations']" class="yellow statistic" style="text-decoration: none;">
-              <div class="value"><span class="circular">2</span></div>
-              <div class="label">Submitted</div>
-            </a>
-            <a class="usa-link" [routerLink]="['registrations']" class="red statistic" style="text-decoration: none;">
-              <div class="value"><span class="circular">2</span></div>
-              <div class="label">Expired</div>
-            </a>
-          </div>
-        </div>
-      </div>
+<main>
+  <div class="sds-page">
+    <div class="grid-container">        
+      <h1>Workspace</h1>
+      <div class="grid-row grid-gap">
 
-
-      <!-- Assistance Listing Card -->
-      <div class="sds-card" *ngIf="true">
-        <div class="sds-card__header">
-          <div class="grid-row grid-gap-md">
-            <div class="grid-col-fill">
-              <h2 class="padding-top-1"><a [routerLink]="['assistancelist']" class="usa-link" style="text-decoration: none;">Assistance Listings</a></h2>
+        <div class="tablet:grid-col-7 margin-right-2">
+          <!-- Contract Opportunities Card -->
+          <div class="sds-card">
+            <div class="sds-card__header sds-card__header--flex">
+                <a  class="usa-link" [routerLink]="['opportunities']"><h2 class="sds-card__title ">Contract Opportunities</h2></a>
+                <div class="sds-card__buttons">
+                    <button class="usa-button usa-button--outline">Create Opportunity</button>
+                </div>
             </div>
-            <div class="grid-col-auto">
-              <button class="usa-button usa-button--outline" [routerLink]="['/']">Create Listing</button>
-            </div>
-          </div>
-        </div>
-        <div class="sds-card__content tablet:display-block">
-          <div class="sds-statistics">
-            <a class="green statistic">
-              <div class="value"><span class="circular">15</span></div>
-              <div class="label">Published</div>
-            </a>
-            <a class="blue statistic">
-              <div class="value"><span class="circular">0</span></div>
-              <div class="label">Draft</div>
-            </a>
-            <a class="red statistic">
-              <div class="value"><span class="circular">1</span></div>
-              <div class="label">Rejected</div>
-            </a>
-            <a class="orange statistic">
-              <div class="value"><span class="circular">2</span></div>
-              <div class="label">Overdue</div>
-            </a>
-          </div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-col">
-            <ul>
-              <li>
-                <a href="">
-                  Download Assistance Listing Template
-                  <i class="fa fa-file-word margin-left-05" aria-hidden="true"></i>
+            <div class="sds-card__body">
+              <div class="sds-statistics">
+                <a class="usa-link" [routerLink]="['opportunities']" class="green statistic" style="text-decoration: none;">
+                  <div class="value"><span class="circular">15</span></div>
+                  <div class="label">Active</div>
                 </a>
-              </li>
-            </ul>
-          </div>
-          <div class="grid-col">
-            <ul>
-              <li>
-                <a href="">Regional Assistance Locations</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Collective Bargaining Agreements Card -->
-      <div class="sds-card" *ngIf="false">
-        <div class="sds-card__header">
-          <div class="grid-row grid-gap-md">
-            <div class="grid-col-fill">
-              <h2><a class="usa-link">Collective Bargaining Agreements</a></h2>
-            </div>
-            <div class="grid-col-fill">
-              <div class="sds-card__header-actions">
-                <button class="usa-button usa-button--outline">Create CBA</button>
+                <a class="usa-link" [routerLink]="['opportunities']" class="blue statistic" style="text-decoration: none;">
+                  <div class="value"><span class="circular">0</span></div>
+                  <div class="label">Draft</div>
+                </a>
               </div>
             </div>
           </div>
-        </div>
-        <div class="grid-row">
-          <ul>
-            <li>
-              <a href="">
-                Revise existing CBA
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- User Directory Card -->
-      <div class="sds-card margin-top-4">
-        <div class="sds-card__header">
-          <h2><a class="usa-link">User Directory</a></h2>
-          <div class="sds-card__header-actions" *ngIf="false">
-            <button class="usa-button usa-button--outline">Role Definitions</button>
-            <button class="usa-button usa-button--outline">Bulk Update</button>
+          <!-- Entity Information Card -->
+          <div class="sds-card" *ngIf="false">
+            <div class="sds-card__header">
+              <div class="grid-row grid-gap-md">
+                <div class="grid-col-fill">
+                  <h2 class="padding-top-1"><a [routerLink]="['registrations']" class="usa-link" style="text-decoration: none;">Entity Registrations</a></h2>
+                </div>
+                <div class="grid-col-auto">
+                  <button class="usa-button usa-button--outline" [routerLink]="['/entity-registration/register']">Register Entity</button>
+                </div>
+              </div>
+            </div>
+            <div class="sds-card__content tablet:display-block padding-4">
+              <div class="sds-statistics">
+                <a class="usa-link" [routerLink]="['registrations']" class="green statistic" style="text-decoration: none;">
+                  <div class="value"><span class="circular">15</span></div>
+                  <div class="label">Active</div>
+                </a>
+                <a class="usa-link" [routerLink]="['registrations']" class="grey statistic" style="text-decoration: none;">
+                  <div class="value"><span class="circular">0</span></div>
+                  <div class="label">Draft</div>
+                </a>
+                <a class="usa-link" [routerLink]="['registrations']" class="blue statistic" style="text-decoration: none;">
+                  <div class="value"><span class="circular">1</span></div>
+                  <div class="label">Work in Progress</div>
+                </a>
+                <a class="usa-link" [routerLink]="['registrations']" class="yellow statistic" style="text-decoration: none;">
+                  <div class="value"><span class="circular">2</span></div>
+                  <div class="label">Submitted</div>
+                </a>
+                <a class="usa-link" [routerLink]="['registrations']" class="red statistic" style="text-decoration: none;">
+                  <div class="value"><span class="circular">2</span></div>
+                  <div class="label">Expired</div>
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="sds-card__content tablet:display-block">
-          <div class="grid-row padding-left-4 padding-y-4 flex-no-wrap">
-            <div class="grid-col-fill">
-              <!-- Search  -->
-              <label class="usa-label margin-0" for="options">Who are you looking for?</label>
-              <div class="sds-search">
-                <form class="usa-search usa-search--small">
-                  <select class="usa-select" name="options" id="options">
-                    <option value="value">Select</option>
-                    <option value="value1">Option A</option>
-                    <option value="value2">Option B</option>
-                    <option value="value3">Option C</option>
-                  </select>
-                  <div role="search" class="search">
-                    <input class="usa-input" id="search-field-small" type="search" name="search">
-                    <button class="usa-button" type="submit">
-                      <span class="usa-sr-only">Search</span>
-                    </button>
+
+
+          <!-- Assistance Listing Card -->
+          <div class="sds-card margin-top-4">            
+            <div class="sds-card__header sds-card__header--flex">
+                <a  class="usa-link" [routerLink]="['assistancelist']"><h2 class="sds-card__title ">Assistance Listings</h2></a>
+                <div class="sds-card__buttons">
+                    <button class="usa-button usa-button--outline">Create Listing</button>
+                </div>
+            </div>
+            <div class="sds-card__body">
+              <div class="sds-statistics">
+                <a class="green statistic">
+                  <div class="value"><span class="circular">15</span></div>
+                  <div class="label">Published</div>
+                </a>
+                <a class="blue statistic">
+                  <div class="value"><span class="circular">0</span></div>
+                  <div class="label">Draft</div>
+                </a>
+                <a class="red statistic">
+                  <div class="value"><span class="circular">1</span></div>
+                  <div class="label">Rejected</div>
+                </a>
+                <a class="orange statistic">
+                  <div class="value"><span class="circular">2</span></div>
+                  <div class="label">Overdue</div>
+                </a>
+              </div>
+              <div class="grid-row">
+                <div class="grid-col">
+                  <ul>
+                    <li>
+                      <a href="">
+                        Download Assistance Listing Template
+                        <i class="fa fa-file-word margin-left-05" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="grid-col">
+                  <ul>
+                    <li>
+                      <a href="">Regional Assistance Locations</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Collective Bargaining Agreements Card -->
+          <div class="sds-card" *ngIf="false">
+            <div class="sds-card__header">
+              <div class="grid-row grid-gap-md">
+                <div class="grid-col-fill">
+                  <h2><a class="usa-link">Collective Bargaining Agreements</a></h2>
+                </div>
+                <div class="grid-col-fill">
+                  <div class="sds-card__header-actions">
+                    <button class="usa-button usa-button--outline">Create CBA</button>
                   </div>
-                </form>
+                </div>
               </div>
             </div>
+            <div class="grid-row">
+              <ul>
+                <li>
+                  <a href="">
+                    Revise existing CBA
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <!-- System Accounts Card -->
-      <div class="sds-card" *ngIf="false">
-        <div class="sds-card__header">
-          <h2><a [routerLink]="['/workspace/system-accounts']" class="usa-link">Systems Accounts</a></h2>
-        </div>
-        <div class="sds-card__content tablet:display-block">
-          <div class="sds-statistics">
-            <a class="green statistic">
-              <div class="value"><span class="circular">15</span></div>
-              <div class="label">Active</div>
-            </a>
-            <a class="blue statistic">
-              <div class="value"><span class="circular">0</span></div>
-              <div class="label">Draft</div>
-            </a>
-            <a class="red statistic">
-              <div class="value"><span class="circular">1</span></div>
-              <div class="label">Rejected</div>
-            </a>
-            <a class="yellow statistic">
-              <div class="value"><span class="circular">2</span></div>
-              <div class="label">Pending</div>
-            </a>
-            <a class="orange statistic">
-              <div class="value"><span class="circular">2</span></div>
-              <div class="label">Expired</div>
-            </a>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- Content Management Card -->
-      <div class="sds-card" *ngIf="false">
-        <div class="sds-card__header">
-          <h2><a class="usa-link">Content Management</a></h2>
-        </div>
-        <div class="sds-card__content tablet:display-block">
-          <div class="display-flex flex-direction-row flex-justify padding-x-4">
-            <a class="text-center" style="color:#3F57A6;">
-              <i class="fa fa-book fa-3x"></i>
-              <div class="label">Glossary</div>
-            </a>
-            <a class="text-center" style="color:#3F57A6;">
-              <i class="fa fa-question fa-3x"></i>
-              <div class="label">FAQs</div>
-            </a>
-            <a class="text-center" style="color:#3F57A6;">
-              <i class="fa fa-video fa-3x"></i>
-              <div class="label">Videos</div>
-            </a>
-            <a class="text-center" style="color:#3F57A6;">
-              <i class="fa fa-file-alt fa-3x"></i>
-              <div class="label">Release Notes</div>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Federal Hierarchy Card -->
-      <div class="sds-card" *ngIf="false">
-        <div class="sds-card__header">
-          <h2><a class="usa-link">Federal Hierarchy</a></h2>
-        </div>
-        <div class="sds-card__content tablet:display-block">
-          <div class="grid-row margin-x-2">
-            <div class="grid-col">
-              <!-- Search  -->
-              <label class="usa-label margin-0" for="options">What Organization are you looking for?</label>
-              <div class="sds-search">
-                <form class="usa-search usa-search--small">
-                  <div role="search" class="search width-full">
-                    <input class="usa-input" id="search-field-small" type="search" name="search">
-                    <button class="usa-button" type="submit">
-                      <span class="usa-sr-only">Search</span>
-                    </button>
+          <!-- User Directory Card -->
+          <div class="sds-card margin-top-4">
+            <div class="sds-card__header">
+              <h2><a class="usa-link">User Directory</a></h2>
+              <div class="sds-card__header-actions" *ngIf="false">
+                <button class="usa-button usa-button--outline">Role Definitions</button>
+                <button class="usa-button usa-button--outline">Bulk Update</button>
+              </div>
+            </div>
+            <div class="sds-card__content tablet:display-block">
+              <div class="grid-row padding-left-4 padding-y-4 flex-no-wrap">
+                <div class="grid-col-fill">
+                  <!-- Search  -->
+                  <label class="usa-label margin-0" for="options">Who are you looking for?</label>
+                  <div class="sds-search">
+                    <form class="usa-search usa-search--small">
+                      <select class="usa-select" name="options" id="options">
+                        <option value="value">Select</option>
+                        <option value="value1">Option A</option>
+                        <option value="value2">Option B</option>
+                        <option value="value3">Option C</option>
+                      </select>
+                      <div role="search" class="search">
+                        <input class="usa-input" id="search-field-small" type="search" name="search">
+                        <button class="usa-button" type="submit">
+                          <span class="usa-sr-only">Search</span>
+                        </button>
+                      </div>
+                    </form>
                   </div>
-                </form>
-              </div>
-            </div>
-          </div>
-
-          <!-- KPI -->
-          <div class="grid-row margin-top-2 flex-justify">
-            <div class="grid-col-auto">
-              <div class="text-center">
-                Events in the <strong>Last 90 Days</strong>
-              </div>
-              <div class="margin-x-2 display-flex">
-                <div class="sds-statistics--alt">
-                  <button class="statistic-alt">
-                    <div class="value">18</div>
-                    <div class="label">Statistic Label</div>
-                  </button>
-                </div>
-                <div class="sds-statistics--alt">
-                  <button class="statistic-alt">
-                    <div class="value">45</div>
-                    <div class="label">Statistic Label</div>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="grid-col-auto">
-              <div class="text-center">
-                Events in the <strong>Next 90 Days</strong>
-              </div>
-              <div class="margin-x-2 display-flex">
-                <div class="sds-statistics--alt">
-                  <button class="statistic-alt">
-                    <div class="value">18</div>
-                    <div class="label">Statistic Label</div>
-                  </button>
-                </div>
-                <div class="sds-statistics--alt">
-                  <button class="statistic-alt">
-                    <div class="value">45</div>
-                    <div class="label">Statistic Label</div>
-                  </button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-
-      <!-- Activity Address Code Card -->
-      <div class="sds-card" *ngIf="false">
-        <div class="sds-card__header">
-          <h2><a class="usa-link">Activity Address Code (AACs)</a></h2>
-        </div>
-        <div class="sds-card__content display-block btn-update">
-          <button class="usa-button">Upload AAC</button>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- SIDE NAVIGATION -->
-    <div class="tablet:grid-col-4 bg-white padding-x-2">
-      <!-- PROFILE -->
-      <h3>
-        <a class="usa-link" href="javascript:void(0);">Profile</a>
-      </h3>
-      <div class="display-block">
-        <div class="display-flex flex-align-start flex-wrap margin-top-2">
-          <div class="bg-base-lightest margin-right-2">
-            <i class="fa fa-user fa-fw fa-3x text-gray-30" aria-hidden="true"></i>
+          <!-- System Accounts Card -->
+          <div class="sds-card" *ngIf="false">
+            <div class="sds-card__header">
+              <h2><a [routerLink]="['/workspace/system-accounts']" class="usa-link">Systems Accounts</a></h2>
+            </div>
+            <div class="sds-card__content tablet:display-block">
+              <div class="sds-statistics">
+                <a class="green statistic">
+                  <div class="value"><span class="circular">15</span></div>
+                  <div class="label">Active</div>
+                </a>
+                <a class="blue statistic">
+                  <div class="value"><span class="circular">0</span></div>
+                  <div class="label">Draft</div>
+                </a>
+                <a class="red statistic">
+                  <div class="value"><span class="circular">1</span></div>
+                  <div class="label">Rejected</div>
+                </a>
+                <a class="yellow statistic">
+                  <div class="value"><span class="circular">2</span></div>
+                  <div class="label">Pending</div>
+                </a>
+                <a class="orange statistic">
+                  <div class="value"><span class="circular">2</span></div>
+                  <div class="label">Expired</div>
+                </a>
+              </div>
+            </div>
           </div>
 
+
+          <!-- Content Management Card -->
+          <div class="sds-card" *ngIf="false">
+            <div class="sds-card__header">
+              <h2><a class="usa-link">Content Management</a></h2>
+            </div>
+            <div class="sds-card__content tablet:display-block">
+              <div class="display-flex flex-direction-row flex-justify padding-x-4">
+                <a class="text-center" style="color:#3F57A6;">
+                  <i class="fa fa-book fa-3x"></i>
+                  <div class="label">Glossary</div>
+                </a>
+                <a class="text-center" style="color:#3F57A6;">
+                  <i class="fa fa-question fa-3x"></i>
+                  <div class="label">FAQs</div>
+                </a>
+                <a class="text-center" style="color:#3F57A6;">
+                  <i class="fa fa-video fa-3x"></i>
+                  <div class="label">Videos</div>
+                </a>
+                <a class="text-center" style="color:#3F57A6;">
+                  <i class="fa fa-file-alt fa-3x"></i>
+                  <div class="label">Release Notes</div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Federal Hierarchy Card -->
+          <div class="sds-card" *ngIf="false">
+            <div class="sds-card__header">
+              <h2><a class="usa-link">Federal Hierarchy</a></h2>
+            </div>
+            <div class="sds-card__content tablet:display-block">
+              <div class="grid-row margin-x-2">
+                <div class="grid-col">
+                  <!-- Search  -->
+                  <label class="usa-label margin-0" for="options">What Organization are you looking for?</label>
+                  <div class="sds-search">
+                    <form class="usa-search usa-search--small">
+                      <div role="search" class="search width-full">
+                        <input class="usa-input" id="search-field-small" type="search" name="search">
+                        <button class="usa-button" type="submit">
+                          <span class="usa-sr-only">Search</span>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <!-- KPI -->
+              <div class="grid-row margin-top-2 flex-justify">
+                <div class="grid-col-auto">
+                  <div class="text-center">
+                    Events in the <strong>Last 90 Days</strong>
+                  </div>
+                  <div class="margin-x-2 display-flex">
+                    <div class="sds-statistics--alt">
+                      <button class="statistic-alt">
+                        <div class="value">18</div>
+                        <div class="label">Statistic Label</div>
+                      </button>
+                    </div>
+                    <div class="sds-statistics--alt">
+                      <button class="statistic-alt">
+                        <div class="value">45</div>
+                        <div class="label">Statistic Label</div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="grid-col-auto">
+                  <div class="text-center">
+                    Events in the <strong>Next 90 Days</strong>
+                  </div>
+                  <div class="margin-x-2 display-flex">
+                    <div class="sds-statistics--alt">
+                      <button class="statistic-alt">
+                        <div class="value">18</div>
+                        <div class="label">Statistic Label</div>
+                      </button>
+                    </div>
+                    <div class="sds-statistics--alt">
+                      <button class="statistic-alt">
+                        <div class="value">45</div>
+                        <div class="label">Statistic Label</div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Activity Address Code Card -->
+          <div class="sds-card" *ngIf="false">
+            <div class="sds-card__header">
+              <h2><a class="usa-link">Activity Address Code (AACs)</a></h2>
+            </div>
+            <div class="sds-card__content display-block btn-update">
+              <button class="usa-button">Upload AAC</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SIDE NAVIGATION -->
+        <div class="tablet:grid-col-4 bg-white padding-x-2">
+          <!-- PROFILE -->
+          <h3>
+            <a class="usa-link" href="javascript:void(0);">Profile</a>
+          </h3>
+          <div class="display-block">
+            <div class="display-flex flex-align-start flex-wrap margin-top-2">
+              <div class="bg-base-lightest margin-right-2">
+                <i class="fa fa-user fa-fw fa-3x text-gray-30" aria-hidden="true"></i>
+              </div>
+
+              <div>
+                <div>Firstname Lastname</div>
+                <div class="margin-bottom-2">firstname.lastname@company.com</div>
+                <a class="display-block m_T-2x" href="" *ngIf="false">HEALTH AND HUMAN SERVICES</a>
+                <em *ngIf="false">Department</em>
+              </div>
+            </div>
+
+            <div class="margin-y-2 display-flex">
+              <button class="border-gray-30 border-1px radius-md bg-white padding-1 display-flex flex-column flex-justify-center margin-x-2" style="width: 100px;">
+                <i class="fas fa-download fa-2x text-secondary margin-x-auto"></i>
+                <span>Downloads</span>
+              </button>
+              <button [routerLink]="['/search/saved-search']" class="border-gray-30 border-1px radius-md bg-white padding-1 display-flex flex-column margin-x-2 flex-justify-center" style="width: 100px;">
+                <i class="fas fa-plus-square fa-2x text-secondary margin-x-auto"></i>
+                <span>Saved Searches</span>
+              </button>
+              <button class="border-gray-30 border-1px radius-md bg-white padding-1 display-flex flex-column margin-x-2 flex-justify-center" style="width: 100px;">
+                <i class="fas fa-binoculars fa-2x text-secondary margin-x-auto"></i>
+                <span>Following</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- PENDING REQUESTS -->
+          <div class="display-flex flex-justify flex-align-center">
+            <h3>
+              <a class="usa-link" href="javascript:void(0);">Pending Requests</a>
+            </h3>
+            <span class="sds-circular red label tablet:display-none">5</span>
+          </div>
+
+          <div class="sds-feed display-block m_B-6x">
+            <div class="event">
+              <div class="content">
+                <div class="summary">
+                  <div class="date">10:11 am</div>
+                  <a class="action">Assign Role</a> to K. Litchfield
+                </div>
+                <div class="meta">
+                  <em>Type of role and name of organization</em>
+                </div>
+              </div>
+            </div>
+            <div class="event">
+              <div class="content">
+                <div class="summary">
+                  <div class="date">Yesterday</div>
+                  <a class="action">Assign Role</a> to M. Sanchez
+                </div>
+                <div class="meta">
+                  <em>Type of role and name of organization</em>
+                </div>
+              </div>
+            </div>
+            <div class="event">
+              <div class="content">
+                <div class="summary">
+                  <div class="date">2 days ago</div>
+                  <a class="action">Delete Opportunity</a> for A. Lewis
+                </div>
+                <div class="meta">
+                  <em>Details and name of organization</em>
+                </div>
+              </div>
+            </div>
+            <div class="event">
+              <div class="content">
+                <div class="summary">
+                  <div class="date">4 days ago</div>
+                  <a class="action">Assign Role</a> to J. Wong
+                </div>
+                <div class="meta">
+                  <em>Type of role and name of organization</em>
+                </div>
+              </div>
+            </div>
+            <div class="event">
+              <div class="content">
+                <div class="summary">
+                  <div class="date">10 days ago</div>
+                  <a class="action">Approve Sub-Award Report</a> for A. Peterson
+                </div>
+                <div class="meta">
+                  <em>Details and name of organization</em>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- NOTIFICATIONS -->
+          <h3>
+            <a class="usa-link" href="javascript:void(0);">Notifications</a>
+          </h3>
+          <div class="sds-feed display-flex">
+            <div class="event">
+              <div class="label">
+                <i class="fa fa-newspaper fa-2x fa-fw" style="color:#3F57A6;"></i>
+              </div>
+              <div class="content">
+                <div class="summary">
+                  <div class="date">10:11 am</div>
+                  Wage Determinations: <a class="action">CA09832498</a> has been
+                  updated.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sds-feed display-flex">
+            <div class="event">
+              <div class="label">
+                <i class="fa fa-newspaper fa-2x fa-fw" style="color:#3F57A6;"></i>
+              </div>
+              <div class="content">
+                <div class="summary">
+                  <div class="date">Tuesday</div>
+                  Contract Opportunities:
+                  <a class="action">
+                    Z-Replacement and installation of an irrigation system
+                  </a>
+                  has been updated.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sds-feed display-flex">
+            <div class="event">
+              <div class="label">
+                <i class="fa fa-exclamation-circle fa-2x fa-fw text-red"></i>
+              </div>
+              <div class="content">
+                <div class="summary">
+                  <div class="date">Sep 24</div>
+                  <a class="action">
+                    Planned System Downtime Sep 29, 2018 from 2am-3am
+                  </a>
+                </div>
+                <div class="meta">
+                  <em>
+                    Sep 24 8:55AM - SAM.gov will be performing routine system
+                    maintenance from 2am - 3am on Sat, Sep 29, 2018. The websitee will
+                    be unavailable during this window.
+                  </em>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- ADD NEW ROLE -->
+          <h3>
+            <a class="usa-link" href="javascript:void(0);">Add New Role</a>
+          </h3>
           <div>
-            <div>Firstname Lastname</div>
-            <div class="margin-bottom-2">firstname.lastname@company.com</div>
-            <a class="display-block m_T-2x" href="" *ngIf="false">HEALTH AND HUMAN SERVICES</a>
-            <em *ngIf="false">Department</em>
+            <p>
+              Select one of the options below to request a new role. If you need a
+              role that you do not see below, contact a website administrator from
+              your agency directly.
+            </p>
+
+            <form class=" maxw-none usa-form">
+              <select class="usa-select" name="options" id="options">
+                <option value="contracting specialist">Contracting Specialist</option>
+                <option value="role1">Role 1</option>
+                <option value="role2">Role 2</option>
+                <option value="role3">Role 3</option>
+              </select>
+              <p class="font-sans-2xs ">
+                A contracting specialist contributes to contract opportunities.
+              </p>
+            </form>
+            <input type="checkbox" name="checkrole" value="verified" class="margin-top-1" />
+            <label for="verified" class="font-sans-3xs display-inline-block padding-x-05">I verify I have a business need for this role.</label>
+            <button class="usa-button usa-button--outline flex-align-center margin-auto">Request Role</button>
           </div>
         </div>
 
-        <div class="margin-y-2 display-flex">
-          <button class="border-gray-30 border-1px radius-md bg-white padding-1 display-flex flex-column flex-justify-center margin-x-2" style="width: 100px;">
-            <i class="fas fa-download fa-2x text-secondary margin-x-auto"></i>
-            <span>Downloads</span>
-          </button>
-          <button [routerLink]="['/search/saved-search']" class="border-gray-30 border-1px radius-md bg-white padding-1 display-flex flex-column margin-x-2 flex-justify-center" style="width: 100px;">
-            <i class="fas fa-plus-square fa-2x text-secondary margin-x-auto"></i>
-            <span>Saved Searches</span>
-          </button>
-          <button class="border-gray-30 border-1px radius-md bg-white padding-1 display-flex flex-column margin-x-2 flex-justify-center" style="width: 100px;">
-            <i class="fas fa-binoculars fa-2x text-secondary margin-x-auto"></i>
-            <span>Following</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- PENDING REQUESTS -->
-      <div class="display-flex flex-justify flex-align-center">
-        <h3>
-          <a class="usa-link" href="javascript:void(0);">Pending Requests</a>
-        </h3>
-        <span class="sds-circular red label tablet:display-none">5</span>
-      </div>
-
-      <div class="sds-feed display-block m_B-6x">
-        <div class="event">
-          <div class="content">
-            <div class="summary">
-              <div class="date">10:11 am</div>
-              <a class="action">Assign Role</a> to K. Litchfield
-            </div>
-            <div class="meta">
-              <em>Type of role and name of organization</em>
-            </div>
-          </div>
-        </div>
-        <div class="event">
-          <div class="content">
-            <div class="summary">
-              <div class="date">Yesterday</div>
-              <a class="action">Assign Role</a> to M. Sanchez
-            </div>
-            <div class="meta">
-              <em>Type of role and name of organization</em>
-            </div>
-          </div>
-        </div>
-        <div class="event">
-          <div class="content">
-            <div class="summary">
-              <div class="date">2 days ago</div>
-              <a class="action">Delete Opportunity</a> for A. Lewis
-            </div>
-            <div class="meta">
-              <em>Details and name of organization</em>
-            </div>
-          </div>
-        </div>
-        <div class="event">
-          <div class="content">
-            <div class="summary">
-              <div class="date">4 days ago</div>
-              <a class="action">Assign Role</a> to J. Wong
-            </div>
-            <div class="meta">
-              <em>Type of role and name of organization</em>
-            </div>
-          </div>
-        </div>
-        <div class="event">
-          <div class="content">
-            <div class="summary">
-              <div class="date">10 days ago</div>
-              <a class="action">Approve Sub-Award Report</a> for A. Peterson
-            </div>
-            <div class="meta">
-              <em>Details and name of organization</em>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- NOTIFICATIONS -->
-      <h3>
-        <a class="usa-link" href="javascript:void(0);">Notifications</a>
-      </h3>
-      <div class="sds-feed display-flex">
-        <div class="event">
-          <div class="label">
-            <i class="fa fa-newspaper fa-2x fa-fw" style="color:#3F57A6;"></i>
-          </div>
-          <div class="content">
-            <div class="summary">
-              <div class="date">10:11 am</div>
-              Wage Determinations: <a class="action">CA09832498</a> has been
-              updated.
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="sds-feed display-flex">
-        <div class="event">
-          <div class="label">
-            <i class="fa fa-newspaper fa-2x fa-fw" style="color:#3F57A6;"></i>
-          </div>
-          <div class="content">
-            <div class="summary">
-              <div class="date">Tuesday</div>
-              Contract Opportunities:
-              <a class="action">
-                Z-Replacement and installation of an irrigation system
-              </a>
-              has been updated.
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="sds-feed display-flex">
-        <div class="event">
-          <div class="label">
-            <i class="fa fa-exclamation-circle fa-2x fa-fw text-red"></i>
-          </div>
-          <div class="content">
-            <div class="summary">
-              <div class="date">Sep 24</div>
-              <a class="action">
-                Planned System Downtime Sep 29, 2018 from 2am-3am
-              </a>
-            </div>
-            <div class="meta">
-              <em>
-                Sep 24 8:55AM - SAM.gov will be performing routine system
-                maintenance from 2am - 3am on Sat, Sep 29, 2018. The websitee will
-                be unavailable during this window.
-              </em>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- ADD NEW ROLE -->
-      <h3>
-        <a class="usa-link" href="javascript:void(0);">Add New Role</a>
-      </h3>
-      <div>
-        <p>
-          Select one of the options below to request a new role. If you need a
-          role that you do not see below, contact a website administrator from
-          your agency directly.
-        </p>
-
-        <form class=" maxw-none usa-form">
-          <select class="usa-select" name="options" id="options">
-            <option value="contracting specialist">Contracting Specialist</option>
-            <option value="role1">Role 1</option>
-            <option value="role2">Role 2</option>
-            <option value="role3">Role 3</option>
-          </select>
-          <p class="font-sans-2xs ">
-            A contracting specialist contributes to contract opportunities.
-          </p>
-        </form>
-        <input type="checkbox" name="checkrole" value="verified" class="margin-top-1" />
-        <label for="verified" class="font-sans-3xs display-inline-block padding-x-05">I verify I have a business need for this role.</label>
-        <button class="usa-button usa-button--outline flex-align-center margin-auto">Request Role</button>
-      </div>
+     </div>
     </div>
   </div>
-</div>
+</main>

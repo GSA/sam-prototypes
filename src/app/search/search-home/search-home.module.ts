@@ -13,7 +13,7 @@ import {
   SdsSearchModule,
   SdsDialogModule
 } from '@gsa-sam/components';
-import { SdsFiltersModule, SDSFormlyUpdateComunicationService } from '@gsa-sam/sam-formly';
+import { SdsFiltersModule, SDSFormlyUpdateComunicationService, SdsFormlyDialogModule } from '@gsa-sam/sam-formly';
 import { SdsSubheaderModule, SearchListServiceModule } from '@gsa-sam/layouts';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -49,6 +49,7 @@ import { ScaFilterServiceModule } from './wages/sca-filter-service/sca-filter-se
     SdsDialogModule,
     SdsToolbarModule,
     SdsSideNavigationModule,
+    SdsFormlyDialogModule,
     SdsSubheaderModule,
     SdsFiltersModule,
     SearchListServiceModule,
