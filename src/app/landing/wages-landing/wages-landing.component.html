@@ -23,8 +23,9 @@
                         <div class="display-flex flex-row flex-align-center padding-bottom-2">
                           <i class="sds fa-search fa-2x"></i><span class="padding-left-1">Search by WD Number</span>
                         </div>
-                        <sds-search [(ngModel)]="model" (ngOnChange)="search()" [searchSettings]="searchSettings" placeholder="Ex: PA200001 or 2015-4045">
+                        <sds-search [(ngModel)]="model" (ngModelChange)="search()" [searchSettings]="searchSettings" placeholder="Ex: PA200001 or 2015-4045">
                         </sds-search>
+                        Model: {{model |json}}
                     </div>
                     <div class="tablet:grid-col-6">
                       <h3>I do not know the number</h3>
@@ -38,7 +39,10 @@
                                 <div class="sds-card__header sds-card__header--stacked">
                                     <div class="sds-card__icon"><i class="fas fa-landmark fa-2x fa-fw"></i></div>
                                     <h4>Public Buildings or Works</h4>
-                                    <p>Wage rates 
+                                </div>
+                                <div class="sds-card__body">
+                                    <p class="text-bold">Wage rates for laborers and mechanics</p>
+                                    <p class="text-italics">Davis-Bacon Act (DBA)</p> 
                                  </div>
                               </div>
                             </a>
@@ -49,6 +53,10 @@
                                 <div class="sds-card__header sds-card__header--stacked">
                                     <div class="sds-card__icon"><i class="fas fa-laptop fa-2x fa-fw"></i></div>
                                     <h4>Service Contracts</h4>
+                                 </div>
+                                <div class="sds-card__body">
+                                    <p class="text-bold">Wage rates for service employees</p>
+                                    <p class="text-italics">Service Contract Act (SCA)</p> 
                                  </div>
                               </div>
                             </a>

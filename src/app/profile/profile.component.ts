@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { profileNavigationData } from './navigation.data';
 
 @Component({
   selector: 'app-profile',
@@ -7,6 +8,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProfileComponent implements OnInit {
+
+  public navigationData = profileNavigationData;
 
   constructor() { }
 

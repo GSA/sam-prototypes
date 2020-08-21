@@ -1,14 +1,13 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, OnChanges, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { SdsSearchModule } from '@gsa-sam/components';
 
 @Component({
   selector: 'app-wages-landing',
   templateUrl: './wages-landing.component.html',
-  styleUrls: ['./wages-landing.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./wages-landing.component.scss']
 })
-export class WagesLandingComponent implements OnInit {
+export class WagesLandingComponent implements OnInit, OnChanges {
 
   public model: {};
 
@@ -22,6 +21,12 @@ export class WagesLandingComponent implements OnInit {
   }
 
   search() {
+      console.log('Searching...');
+      this.router.navigate(['/search/results'], { queryParams: { index: 'wages' } });
+  }
+
+  ngOnChanges() {
+      console.log('Searching...');
       this.router.navigate(['/search/results'], { queryParams: { index: 'wages' } });
   }
 

@@ -102,9 +102,33 @@ export class OpportunityFilterService implements SearchFiltersWrapperService {
               { label: 'Custom', value: 'custom-day' }
             ]
           }
-        },
+        }
       ]
-    }
+    },
+    {
+	    key: 'hierarchy',
+	    type: 'autocomplete',
+	    templateOptions: {
+	      label: 'Federal Organizations',
+	      group: 'accordion',
+	      expand: false,
+	      service: this.hierarchyService,
+	      configuration: this.hierarchyService.settings,
+	      model: this.hierarchyService.model
+	    }
+	 },
+	 {
+	    key: 'noticeType',
+	    type: 'autocomplete',
+	    templateOptions: {
+	    	label: 'Notice Type',
+	    	group: 'accordion',
+	    	expand: false,
+	        service: this.awardIdvTypeService,
+	        configuration: this.awardIdvTypeService.settings,
+	        model: this.awardIdvTypeService.model
+	    }
+	 }
   ];
   public oldfilters: FormlyFieldConfig[] = [
 	  {

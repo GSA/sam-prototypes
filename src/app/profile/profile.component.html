@@ -1,13 +1,14 @@
 <sds-subheader>
   <!-- =============== BACK BUTTON =============== -->
-  <button class="sds-button sds-button--circular">
+  <button id="backbutton" class="sds-button sds-button--circular" aria-label="Back to Workspace Home" [routerLink]="['/workspace']">
     <fa-icon [icon]="['fas', 'chevron-left']" [fixedWidth]="true"></fa-icon>
   </button>
+  
 
   <!-- =============== TITLE =============== -->
-  <h1 class="font-heading-md text-semibold tablet-lg:width-mobile">
-    News
-  </h1>
+  <span class="font-heading-lg text-semibold">
+    Profile
+  </span>
 </sds-subheader>
 <main>
   <div class="grid-container">
@@ -17,8 +18,7 @@
           <sds-toolbar class="tablet:grid-col-auto" #toolbar="sdsToolbar" [expanded]="true">
             <sds-accordion>
               <sds-accordion-item [expanded]="true">
-                <sds-accordion-item-header>Show</sds-accordion-item-header>
-                <sds-side-navigation #sideNav [model]="sideNavModel"></sds-side-navigation>
+                <sds-side-navigation #sideNav [model]="navigationData"></sds-side-navigation>
               </sds-accordion-item>
              </sds-accordion>
           </sds-toolbar>
