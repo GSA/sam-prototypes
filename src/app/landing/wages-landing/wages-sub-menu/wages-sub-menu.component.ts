@@ -15,7 +15,10 @@ export class WagesSubMenuComponent implements OnInit {
 		        { id: 'laboradvisors', text: 'Labor Advisors', mode: NavigationMode.INTERNAL, route: '/home/wages/resources/labor-advisors' },
 		        { id: 'dbaconformances', text: 'DBA Conformances', mode: NavigationMode.INTERNAL, route: '/home/wages/resources/dba-conformances' },
 		        { id: 'scaconformances', text: 'SCA Conformances', mode: NavigationMode.INTERNAL, route: '/home/wages/resources/sca-conformances' },
-		        { id: 'crossindex', text: 'Cross Index', mode: NavigationMode.INTERNAL, route: '/home/wages/resources/cross-index' },
+		        { id: 'crossindex', text: 'Cross Index', mode: NavigationMode.INTERNAL, route: '/home/wages/resources/cross-index', children: [
+			        { id: 'dbacrossindex', text: 'Labor Standards for Construction', mode: NavigationMode.INTERNAL, route: '/home/wages/resources/cross-index#construction' },
+			        { id: 'scacrossindex', text: 'Labor Standards for Services', mode: NavigationMode.INTERNAL, route: '/home/wages/resources/cross-index#services' }
+		        ] },
 		        { id: 'allagencymemos', text: 'All Agency Memorandums', mode: NavigationMode.INTERNAL, route: '/home/wages/resources/all-agency-memos' }
 	        ]}
 	    ]
