@@ -31,6 +31,10 @@ const routes: Routes = [
 			{
 				path: 'all-agency-memos',		
     			loadChildren: () => import('./wages-aams/wages-aams.module').then(m => m.WagesAamsModule)
+			},
+			{
+				path: 'dbas-tobe-revised',
+				loadChildren: () => import('./dba-tobe-revised/dba-tobe-revised.module').then(m => m.DbaTobeRevisedModule)
 			}
 		]
 	}

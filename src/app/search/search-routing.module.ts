@@ -10,11 +10,11 @@ const routes: Routes = [
 			children: [
 				{
 					path: 'saved-search',
-					loadChildren: './search-save/search-save.module#SearchSaveModule'
+					loadChildren: () => import('./search-save/search-save.module').then(m => m.SearchSaveModule)
 				},
 				{
 					path: 'results',
-					loadChildren: './search-home/search-home.module#SearchHomeModule'
+					loadChildren: () => import('./search-home/search-home.module').then(m => m.SearchHomeModule)
 				}
 
 			]

@@ -36,6 +36,13 @@ import { filters } from './filters.config';
 })
 export class DatabankSearchComponent implements OnInit {
 
+  public subheader = {
+      buttons: [],
+      actions: [
+        { id: 'DownloadBtn', icon: 'bars', text: 'Download' }
+      ]
+  };
+
   form = new FormGroup({});
   filterModel;
   fields: FormlyFieldConfig[] = [];
@@ -53,16 +60,22 @@ export class DatabankSearchComponent implements OnInit {
 
   public filterChange$ = new BehaviorSubject<object>(null);
 
-  constructor(private route: ActivatedRoute, 
-    private change: ChangeDetectorRef,) {
-    this.fields = filters;
+  constructor(private route: ActivatedRoute, private router: Router, private change: ChangeDetectorRef) { 
+      this.fields = filters;
+  }
+
+  log(value) {
+    console.log(`%cLog: ${value}`, 'color: blue; font-weight: bold');
   }
 
 
-  ngOnInit() {    
+  ngOnInit() {   
     this.route.queryParams.subscribe(
       data => {
    		 this.domain = this.route.snapshot.queryParamMap.get('index');
+       if(!this.domain) {
+          this.domain = 'all';
+       }
       });
   }
 

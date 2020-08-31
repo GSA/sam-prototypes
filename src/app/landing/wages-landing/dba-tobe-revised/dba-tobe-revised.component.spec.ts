@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProfileComponent } from './profile.component';
+import { DbaTobeRevisedComponent } from './dba-tobe-revised.component';
 
-describe('ProfileComponent', () => {
-  let component: ProfileComponent;
-  let fixture: ComponentFixture<ProfileComponent>;
+describe('DbaTobeRevisedComponent', () => {
+  let component: DbaTobeRevisedComponent;
+  let fixture: ComponentFixture<DbaTobeRevisedComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfileComponent ]
+      declarations: [ DbaTobeRevisedComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProfileComponent);
+    fixture = TestBed.createComponent(DbaTobeRevisedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

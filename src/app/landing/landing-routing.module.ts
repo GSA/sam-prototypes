@@ -4,105 +4,105 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
 	{
 		path: 'entity-registration',
-		loadChildren: './entity-registration-landing/entity-registration-landing.module#EntityRegistrationLandingModule',
+		loadChildren: () => import('./entity-registration-landing/entity-registration-landing.module').then(m => m.EntityRegistrationLandingModule),
 	    data: {
 	      id: "home"
 	    }
 	},
 	{
 		path: 'entity-information',
-		loadChildren: './entity-information-landing/entity-information-landing.module#EntityInformationLandingModule',
+		loadChildren: () => import('./entity-information-landing/entity-information-landing.module').then(m => m.EntityInformationLandingModule),
 	    data: {
 	      id: "home"
 	    }
 	},
 	{
 		path: 'contract-data',
-		loadChildren: './contract-data-landing/contract-data-landing.module#ContractDataLandingModule',
+		loadChildren: () => import('./contract-data-landing/contract-data-landing.module').then(m => m.ContractDataLandingModule),
 	    data: {
 	      id: "home"
 	    }
 	},
 	{
 		path: 'check-status',
-		loadChildren: './status-tracker/status-tracker.module#StatusTrackerModule',
+		loadChildren: () => import('./status-tracker/status-tracker.module').then(m => m.StatusTrackerModule),
 	    data: {
 	      id: "home"
 	    }
 	},
 	{
 		path: 'opportunities',
-		loadChildren: './opportunities-landing/opportunities-landing.module#OpportunitiesLandingModule',
+		loadChildren: () => import('./opportunities-landing/opportunities-landing.module').then(m => m.OpportunitiesLandingModule),
 	    data: {
 	      id: "home"
 	    }
 	},
 	{
 		path: 'opportunities-federal',
-		loadChildren: './opportunities-landing-federal/opportunities-landing-federal.module#OpportunitiesLandingFederalModule',
+		loadChildren: () => import('./opportunities-landing-federal/opportunities-landing-federal.module').then(m => m.OpportunitiesLandingFederalModule),
 			data: {
 				id: "home"
 			}
 	},
 	{
 		path: 'hierarchy',
-		loadChildren: './hierarchy-landing/hierarchy-landing.module#HierarchyLandingModule',
+		loadChildren: () => import('./hierarchy-landing/hierarchy-landing.module').then(m => m.HierarchyLandingModule),
 	    data: {
 	      id: "home"
 	    }
 	},
 	{
 		path: 'federal-hierarchy',
-		loadChildren: './federal-hierarchy-landing/federal-hierarchy-landing.module#FederalHierarchyLandingModule',
+		loadChildren: () => import('./federal-hierarchy-landing/federal-hierarchy-landing.module').then(m => m.FederalHierarchyLandingModule),
 			data: {
 				id: "home"
 			}
 	},
 	{
 		path: 'assistance',
-		loadChildren: './assistance-landing/assistance-landing.module#AssistanceLandingModule',
+		loadChildren: () => import('./assistance-landing/assistance-landing.module').then(m => m.AssistanceLandingModule),
 	    data: {
 	      id: "home"
 	    }
 	},
 	{
 		path: 'assistance/federal',
-		loadChildren: './assistance-landing-federal/assistance-landing-federal.module#AssistanceLandingFederalModule',
+		loadChildren: () => import('./assistance-landing-federal/assistance-landing-federal.module').then(m => m.AssistanceLandingFederalModule),
 	    data: {
 	      id: "home"
 	    }
 	},
 	{
 		path: 'registration',
-		loadChildren: './registration-landing/registration-landing.module#RegistrationLandingModule',
+		loadChildren: () => import('./registration-landing/registration-landing.module').then(m => m.RegistrationLandingModule),
 	    data: {
 	      id: "home"
 	    }
 	},
 	{
 		path: 'wages',
-		loadChildren: './wages-landing/wages-landing.module#WagesLandingModule',
+		loadChildren: () => import('./wages-landing/wages-landing.module').then(m => m.WagesLandingModule),
 	    data: {
 	      id: "home"
 	    }
 	},
 	{
 		path: 'new-to-sam',
-		loadChildren: './new-to-sam/new-to-sam.module#NewToSamModule',
+		loadChildren: () => import('./new-to-sam/new-to-sam.module').then(m => m.NewToSamModule),
 	    data: {
 	      id: "home"
 	    }
 	},
 	{
 		path: 'entity-compliance',
-		loadChildren: './entity-compliance/entity-compliance.module#EntityComplianceModule',
+		loadChildren: () => import('./entity-compliance/entity-compliance.module').then(m => m.EntityComplianceModule),
 	    data: {
 	      id: "home"
 	    }
 	},
 	{
 		path: 'exclusions',
-		loadChildren: './exclusions/exclusions.module#ExclusionsModule',
+		loadChildren: () => import('./exclusions/exclusions.module').then(m => m.ExclusionsModule),
 	    data: {
 	      id: "home"
 	    }

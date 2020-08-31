@@ -3,13 +3,21 @@ import { Routes, RouterModule } from '@angular/router';
 import { HelpComponent } from './help.component';
 
 const routes: Routes = [
+
 	{
-		path: '',
-	    component: HelpComponent
+	    path: '',
+	    loadChildren: () => import('./help-home/help-home.module').then(m => m.HelpHomeModule),
+	    data: {
+	      id: "help"
+	    }
+	},
+	{
+		path: 'results',
+		component: HelpComponent
 	},
 	{
 		path: ':id',
-			loadChildren: './help-page/help-page.module#HelpPageModule'
+	    loadChildren: () => import('./help-page/help-page.module').then(m => m.HelpPageModule),
 	}
 ];
 

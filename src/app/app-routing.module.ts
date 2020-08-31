@@ -5,28 +5,28 @@ import { IsAuthenticated } from './security/is-authenticated';
 const routes: Routes = [
   {
     path: 'hierarchy',
-    loadChildren: './hierarchy/hierarchy.module#HierarchyModule',
+    loadChildren: () => import('./hierarchy/hierarchy.module').then(m => m.HierarchyModule),
     data: {
       id: "home"
     }
   },
   {
     path: '',
-    loadChildren: './home/home.module#HomeModule',
+    loadChildren: () => import ('./home/home.module').then(m => m.HomeModule),
     data: {
       id: "home"
     }
   },
   {
     path: 'home',
-    loadChildren: './landing/landing.module#LandingModule',
+    loadChildren: () => import ('./landing/landing.module').then(m => m.LandingModule),
     data: {
       id: "home"
     }
   },
   {
     path: 'workspace',
-    loadChildren: './workspace/workspace.module#WorkspaceModule',
+    loadChildren: () => import ('./workspace/workspace.module').then(m => m.WorkspaceModule),
     canActivate: [IsAuthenticated], 
     data: {
       id: "workspace"
@@ -35,28 +35,28 @@ const routes: Routes = [
   },
   {
     path: 'requests',
-    loadChildren: './request/request.module#RequestModule',
+    loadChildren: () => import('./request/request.module').then(m => m.RequestModule),
     data: {
       id: "requests"
     }
   },
   {
     path: 'news',
-    loadChildren: './news/news.module#NewsModule',
+    loadChildren: () => import('./news/news.module').then(m => m.NewsModule),
     data: {
       id: "home"
     }
   },
   {
     path: 'alerts',
-    loadChildren: './alerts/alerts.module#AlertsModule',
+    loadChildren: () => import('./alerts/alerts.module').then(m => m.AlertsModule),
     data: {
       id: "home"
     }
   },
   {
     path: 'messages',
-    loadChildren: './feed/feed.module#FeedModule',
+    loadChildren: () => import('./feed/feed.module').then(m => m.FeedModule),
     data: {
       id: "messages"
     }
@@ -64,51 +64,51 @@ const routes: Routes = [
   {
     path: 'search',
 
-    loadChildren: './search/search.module#SearchModule',
+    loadChildren: () => import('./search/search.module').then(m => m.SearchModule),
     data: {
       id: "search"
     }
   },
   {
     path: 'databank',
-    loadChildren: './databank/databank.module#DatabankModule',
+    loadChildren: () => import('./databank/databank.module').then(m => m.DatabankModule),
     data: {
       id: "databank"
     }
   },
   {
     path: 'dataservices',
-    loadChildren: './data-services/data-services.module#DataServicesModule',
+    loadChildren: () => import('./data-services/data-services.module').then(m => m.DataServicesModule),
     data: {
       id: "dataservices"
     }
   },
   {
     path: 'help',
-    loadChildren: './help/help.module#HelpModule',
+    loadChildren: () => import ('./help/help.module').then(m => m.HelpModule),
     data: {
       id: "help"
     }
   },
   {
     path: 'about',
-    loadChildren: './about/about.module#AboutModule',
+    loadChildren: () => import('./about/about.module').then(m => m.AboutModule),
     data: {
       id: "help"
     }
   },
   {
     path: 'profile',
-    loadChildren: './profile/profile.module#ProfileModule',
+    loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule),
     data: {
       id: "workspace"
     }
   },
   {
     path: 'entity-registration',
-    loadChildren: './entity-registration/entity-registration.module#EntityRegistrationModule',
+    loadChildren: () => import('./entity-registration/entity-registration.module').then(m => m.EntityRegistrationModule),
     data: {
-      id: "help"
+      id: "workspace"
     }
   },
   {

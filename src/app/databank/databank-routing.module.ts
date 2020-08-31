@@ -9,19 +9,19 @@ const routes: Routes = [
 			children: [
 				{
 					path: 'databank-schedule',
-					loadChildren: './databank-scheduled-reports/databank-scheduled-reports.module#DatabankScheduledReportsModule'
+					loadChildren: () => import('./databank-scheduled-reports/databank-scheduled-reports.module').then(m => m.DatabankScheduledReportsModule)
 				},
 				{
 					path: 'databank-search',
-					loadChildren: './databank-search/databank-search.module#DatabankSearchModule'
+					loadChildren: () => import('./databank-search/databank-search.module').then(m => m.DatabankSearchModule)
 				},
 				{
 					path: 'databank-history',
-					loadChildren: './databank-history/databank-history.module#DatabankHistoryModule'
+					loadChildren: () => import('./databank-history/databank-history.module').then(m => m.DatabankHistoryModule)
 				},
 				{
 					path: '',
-					loadChildren: './databank-reports/databank-reports.module#DatabankReportsModule'
+					loadChildren: () => import('./databank-reports/databank-reports.module').then(m => m.DatabankReportsModule)
 				}
 
 			]

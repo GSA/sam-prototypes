@@ -14,21 +14,21 @@ const routes: Routes = [
 			},
 			{
 				path: 'account-details',
-				loadChildren: './account-details/account-details.module#AccountDetailsModule',
+				loadChildren: () => import('./account-details/account-details.module').then(m => m.AccountDetailsModule),
 				data: {
 					id: "workspace"
 				}
 			},
 			{
 				path: 'roles',
-				loadChildren: './account-roles/account-roles.module#AccountRolesModule',
+				loadChildren: () => import('./account-roles/account-roles.module').then(m=> m.AccountRolesModule),
 				data: {
 					id: "workspace"
 				}
 			},
 			{
 				path: 'history',
-				loadChildren: './account-history/account-history.module#AccountHistoryModule',
+				loadChildren: () => import('./account-history/account-history.module').then(m => m.AccountHistoryModule),
 				data: {
 					id: "workspace"
 				}
