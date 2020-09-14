@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 
 import { 
-  AwardIdvTypeService, 
+  HierarchyService,
   SearchFiltersWrapperService 
 } from '../../../common/public-apis';
+
+import { FakeAutocompleteService } from '../fake-autocomplete.service';
 
 import { AllDomainFiltersModule } from './all-domain-filters.module';
 
@@ -13,44 +15,54 @@ import { AllDomainFiltersModule } from './all-domain-filters.module';
 })
 export class AllDomainFiltersService implements SearchFiltersWrapperService {
 
-  constructor() { }
+  keywordService: FakeAutocompleteService = new FakeAutocompleteService();
+
+  constructor(public hierarchyService: HierarchyService) { }
 
   public model = {};
 
   public filters: FormlyFieldConfig[] = [
-	  {
-	      key: 'keyword',
-	      wrappers: ['filterwrapper'],
-	      type: 'input',
-	      templateOptions: {
-	        type: 'text',
+	{
+	    key: 'keyword',
+	    type: 'autocomplete',
+	    templateOptions: {
 	        label: 'Keyword',
-	        labelClass:'usa-sr-only'
-	      }
-	  },
-	  {
-	    key: 'statusWrapper',
-	    wrappers: ['filterwrapper'],
-	    templateOptions: { label: 'Status' },
-	    fieldGroup: [
-	      {
-	        key: 'status',
-	        type: 'multicheckbox',
-	        templateOptions: {
-	          hideLabel: true,
-	          options: [
-	            {
-	              key: 'Active',
-	              value: 'Active'
-	            },
-	            {
-	              key: 'Inactive',
-	              value: 'Inactive'
-	            }
-	          ]
-	        }
-	      }
-	    ]
-	  }
-	];
+            hideOptional: true,
+	        service: this.keywordService,
+	        configuration: this.keywordService.settings,
+	        model: this.keywordService.model
+	    }
+  	},
+    {
+	    key: 'hierarchy',
+	    type: 'autocomplete',
+	    templateOptions: {
+	      label: 'Federal Organizations',
+	      group: 'accordion',
+	      expand: false,
+	      service: this.hierarchyService,
+	      configuration: this.hierarchyService.settings,
+	      model: this.hierarchyService.model
+	    }
+	 },
+	 {
+	    key: 'status',
+	    type: 'multicheckbox',
+	    templateOptions: {
+	    	label: 'Status',
+	    	group: 'accordion',
+	    	expand: false,
+	    	options: [
+	    		{
+	    			label: 'Active',
+	    			value: 'Active'
+	    		},
+	    		{
+	    			label: 'Inactive',
+	    			value: 'Inactive'
+	    		}
+	    	]
+	    }
+	 }
+  ];
 }
