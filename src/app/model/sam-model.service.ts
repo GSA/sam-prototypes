@@ -12,7 +12,7 @@ export class SamModelService {
    * Sign in
    */
   
-  signedIn: boolean = false;
+  public signedIn: boolean = false;
 
   signInItem =
     {
