@@ -16,7 +16,7 @@
                 <h2>Search Contract Opportunities</h2>
               </div>
               <div class="grid-col-auto">
-                <a class="usa-link text-bold" [routerLink]="['/search/results']" [queryParams]="{index: opportunities}">Advanced Search</a>
+                <a class="usa-link text-bold" [routerLink]="['/search/results']" [queryParams]="{index: 'opportunities'}">Advanced Search</a>
               </div>
             </div>
               <div class="grid-row margin-top-1">
@@ -64,7 +64,7 @@
 		<!-- ACCORDION -->
     <div class="grid-row">
       <div class="tablet:grid-col-10 tablet:grid-offset-1">
-          <sds-accordion-next [(multi)]="multi" #sdsAccordionDemo>
+          <sds-accordion-next multi="multi" #sdsAccordionDemo>
             <sds-accordion-item *ngFor="let help of searchHelp" #first>
               <sds-accordion-title>{{help.title}}</sds-accordion-title>
               <sds-accordion-content>
