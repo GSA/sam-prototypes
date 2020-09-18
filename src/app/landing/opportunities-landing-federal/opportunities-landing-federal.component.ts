@@ -1,4 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
+import { SamModelService } from '../../model/sam-model.service';
 
 @Component({
   selector: 'app-opportunities-landing-federal',
@@ -8,9 +10,20 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class OpportunitiesLandingFederalComponent implements OnInit {
 
-  constructor() { }
+  public searchModel: {};
+
+  public searchSettings = {
+    size: 'large',
+    placeholder: 'Enter an ID or keyword'
+  }
+
+  constructor(private router: Router, public model: SamModelService) { }
 
   ngOnInit() {
+  }
+
+  search() {
+     this.router.navigate(['/search/results'], { queryParams: { index: 'opportunities', keyword: 'hello' } });
   }
 
 }

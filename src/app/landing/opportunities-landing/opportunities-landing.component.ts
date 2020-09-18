@@ -1,7 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { SamModelService } from '../../model/sam-model.service';
-import { SdsSearchComponent } from '@gsa-sam/components';
 
 @Component({
   selector: 'app-opportunities-landing',
@@ -23,17 +22,17 @@ export class OpportunitiesLandingComponent implements OnInit {
       title: 'Getting started searching entities',
       articles: [
         {
-          title: 'Search entity registrations',
+          title: 'Search contract opportunities',
           link: '/help',
           icon: 'sds fa-document'
         },
         {
-          title: 'Search disaster response registry',
+          title: 'Follow contract opportunities',
           link: '/help',
           icon: 'sds fa-document'
         },
         {
-          title: 'Save my searches',
+          title: 'Save searches and receive updates',
           link: '/help',
           icon: 'sds fa-document'
         },
@@ -43,7 +42,7 @@ export class OpportunitiesLandingComponent implements OnInit {
           icon: 'sds fa-document'
         },
         {
-          title: 'Quick Start Guide for Contractors',
+          title: 'Contract opportunities quick start guide for contractors',
           link: '/help',
           icon: 'sds fa-document-pdf'
         },
@@ -58,32 +57,27 @@ export class OpportunitiesLandingComponent implements OnInit {
       title: 'Use contract opportunities advanced search',
       articles: [
         {
-          title: 'Changing search filters',
+          title: 'Change search filters',
           link: '/help',
           icon: 'sds fa-document'
         },
         {
-          title: 'Understanding notice types',
+          title: 'Filter by notice types',
           link: '/help',
           icon: 'sds fa-document'
         },
         {
-          title: 'Set-Asides for small businesses',
+          title: 'Filter by small business set-asides',
           link: '/help',
           icon: 'sds fa-document'
         },
         {
-          title: 'Using NAICS Codes',
+          title: 'Filter by product and services (NAICS and PSC)',
           link: '/help',
           icon: 'sds fa-document'
         },
         {
-          title: 'Using PCS Codes',
-          link: '/help',
-          icon: 'sds fa-document'
-        },
-        {
-          title: 'Search by place of performance',
+          title: 'Filter by place of performance',
           link: '/help',
           icon: 'sds fa-document'
         },
