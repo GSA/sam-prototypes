@@ -12,7 +12,7 @@
         </div>
         <div class="grid-row">
           <div class="grid-col-12">
-            <div class="sds-card shadow-none">
+            <div class="sds-card sds-card--bordered shadow-none">
                 <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
                   <h2>Help me find a wage determination</h2>
                 </div>
@@ -33,32 +33,30 @@
                         </div>
                         <div class="grid-row grid-gap">
                           <div class="tablet:grid-col-6">
-                            <a class="usa-link" [routerLink]="['/search/results']" [queryParams]="{index: 'dba'}">
-                              <div class="sds-card">                
-                                <div class="sds-card__header sds-card__header--stacked">
-                                    <div class="sds-card__icon"><i class="fas fa-landmark fa-2x fa-fw"></i></div>
-                                    <h4>Public Buildings or Works</h4>
-                                </div>
-                                <div class="sds-card__body">
-                                    <p class="text-bold">Wage rates for laborers and mechanics</p>
-                                    <p class="text-italic">Davis-Bacon Act (DBA)</p> 
-                                 </div>
+                            <button class="sds-button sds-button--icon-lg" [routerLink]="['/search/results']" [queryParams]="{index: 'sca'}">
+                              <div class="sds-button__header">
+                                <h4>Public Building or Works</h4>
+                                <span class="fa-stack fa-1x">
+                                  <i class="sds fa-pentagon fa-stack-2x text-accent-cool-light fa-1x"></i>
+                                  <i class="sds fa-check-circle fa-stack-1x text-base fa-2x"></i>
+                                </span>
                               </div>
-                            </a>
+                              <p>Wage rates for laborers and mechanics</p>
+                              <span>Davis-Bacon Act (DBA)</span>
+                            </button>
                           </div>
                           <div class="tablet:grid-col-6">
-                            <a class="usa-link" [routerLink]="['/search/results']" [queryParams]="{index: 'sca'}">
-                              <div class="sds-card">               
-                                <div class="sds-card__header sds-card__header--stacked">
-                                    <div class="sds-card__icon"><i class="fas fa-laptop fa-2x fa-fw"></i></div>
-                                    <h4>Service Contracts</h4>
-                                 </div>
-                                <div class="sds-card__body">
-                                    <p class="text-bold">Wage rates for service employees</p>
-                                    <p class="text-italic">Service Contract Act (SCA)</p> 
-                                 </div>
+                            <button class="sds-button sds-button--icon-lg" [routerLink]="['/search/results']" [queryParams]="{index: 'dba'}">
+                              <div class="sds-button__header">
+                                <h4>Service Contracts</h4>
+                                <span class="fa-stack fa-1x">
+                                  <i class="sds fa-pentagon fa-stack-2x text-accent-cool-light fa-1x"></i>
+                                  <i class="sds fa-check-circle fa-stack-1x text-base fa-2x"></i>
+                                </span>
                               </div>
-                            </a>
+                              <p>Wage rates for service employees</p>
+                              <span>Service Contract Act (SCA)</span>
+                            </button>
                           </div>
                         </div>
                     </div>
@@ -136,7 +134,7 @@
               Learn about wage determinations
             </button>
           </h3>
-          <div id="a2" class="usa-accordion__content usa-prose" hidden>            
+          <div id="a2" class="usa-accordion__content usa-prose" hidden>
             <p>Wage determinations (WD) are categorized under either Davis-Bacon Act (DBA) or the Service Contract Act (SCA). The DBA applies to contracts involving the construction, alteration, and/or repair (including painting or decorating) of public buildings or public works. It is intended to protect communities and workers from the economic disruption caused by competition arising from non-local contractors coming into an area and obtaining federal construction contracts by underbidding local wage levels. The SCA applies to federal and District of Columbia contracts that provide services. It establishes standards for wage rates and safety and health protections for employees performing work on covered contracts.</p>
             <!-- specialist/officer links -->
             <ul class="sds-list sds-list--icon padding-0">
