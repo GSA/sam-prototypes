@@ -54,6 +54,7 @@ export class SearchHomeComponent implements OnInit {
   form = new FormGroup({});
   filterModel;
   fields: FormlyFieldConfig[] = [];
+  showAdvancedFilters: boolean = false;
 
   domainLabelMap: Map<string, string> = new Map<string, string>([
     ['opportunities', 'Contract Opportunities'],
@@ -131,6 +132,7 @@ export class SearchHomeComponent implements OnInit {
           this.fields = [];
           this.filterModel = {};
       }
+      this.showAdvancedFilters = (domain === 'opportunities') ? true : false;
       let label = this.domainLabelMap.get(domain);
       this.domainLabel = label ? label : 'All Domains';
       if(!this.filtersAccordion.expanded) {

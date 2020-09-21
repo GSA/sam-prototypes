@@ -3,38 +3,58 @@
 		<div class="grid-row sds-hero sds-hero--image">
 			<div class="desktop:grid-offset-1 desktop:grid-col-10">
 				<!-- HERO SECTION -->
-				<div class="grid-row padding-x-3 desktop:padding-0">
-					<div class="desktop:grid-col-7 margin-bottom-4 desktop:margin-0 tablet:padding-right-3">
+				<div class="grid-row padding-x-3 grid-gap-6">
+					<div class="desktop:grid-col-7 margin-y-4">
 						<div class="display-flex flex-justify-space-between">
               <h1>Contract Opportunities</h1>
               <img src="assets/img/FBO.png" alt="FBO Legcay Site" style="height:50px; margin-left: auto; margin-top: 0;">
             </div>
-						<p class="maxw-full text-base-dark">Contract opportunities are procurement notices from federal contracting offices. Anyone interested in doing business with the government can use this system to search opportunities. Opportunities include pre-solicitation notices, solicitation notices, award notices, and sole source notices.
+						<p class="text-base-dark">Contract opportunities are procurement notices from federal contracting offices. Anyone interested in doing business with the government can use this system to search opportunities. Opportunities include pre-solicitation notices, solicitation notices, award notices, and sole source notices.
 						</p>
-						<h2>Search the Contract Opportunities</h2>
-						<form class="usa-search usa-search--big padding-right-2" role="search">
-							<label class="usa-sr-only" for="search-field-big">Search</label>
-							<input class="usa-input " id="search-field-big" type="search" name="search" placeholder="Enter notice ID or keyword">
-							<button class="usa-button" type="submit">
-								<span class="usa-sr-only">Search</span>
-							</button>
-						</form>
-					</div>
-					<div class="desktop:grid-col-5 display-none desktop:display-flex">
-						<div class="sds-tile--outline display-flex flex-column flex-justify height-full">
-              <div>
-                <h2>Federal Users Get Started Here:</h2>
-  							<p class="text-base-dark"> Manage contract opportunities as a contracting officer or contracting specialist.</p>
+            <div class="grid-row margin-top-4">
+              <div class="grid-col-fill">
+                <h2>Search contract opportunities</h2>
               </div>
-							<div class="desktop:flex-column flex-justify-center grid-row grid-gap">
-								<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-	              	<button class="usa-button usa-button--secondary width-full" [routerLink]="['/home/opportunities-federal']">
-										Contract Opportunities for Federal Users
-									</button>
+              <div class="grid-col-auto">
+                <a class="usa-link text-bold" [routerLink]="['/search/results']" [queryParams]="{index: 'opportunities'}">Advanced Search</a>
+              </div>
+            </div>
+              <div class="grid-row margin-top-1">
+                <div class="grid-col">
+                  <sds-search name="opps-search" [(ngModel)]="searchModel" (ngModelChange)="search()" [searchSettings]="searchSettings">
+                  </sds-search>
+                </div>
+              </div>
+              <div class="grid-row">
+                <div class="usa-checkbox grid-col-fill">
+                    <input class="usa-checkbox__input" id="activeOnly" type="checkbox" name="activeOnly" value="activeOnly" checked="checked">
+                    <label class="usa-checkbox__label" for="activeOnly">Active Only</label>
+                </div>
+              </div>
+					</div>
+					<div class="desktop:grid-col-5 display-none desktop:display-flex height-full">
+						<div class="sds-tile--outline display-flex flex-column flex-justify margin-top-2">
+              <div>
+                <h2>Federal Users</h2>
+  							<p class="text-base-dark"> Manage contract opportunities as a contracting officer, contracting specialist, or administrator.</p>
+              </div>
+							<div class="desktop:flex-column flex-justify-center grid-row grid-gap margin-top-2">
+								<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12">
+									<button *ngIf="!model.signedIn" class="usa-button width-full" 
+                        [routerLink]="['/workspace']" 
+                        [queryParams]="{signin: true}">
+                      Sign in to get started
+                  </button>
+                  <button *ngIf="model.signedIn" class="usa-button width-full" 
+                        [routerLink]="['/workspace']">
+                        Go to workspace
+                  </button>
 								</div>
-								<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-									<button class="usa-button width-full">Sign in to Get Started</button>
-								</div>
+                <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
+                  <button class="usa-button usa-button--secondary width-full" [routerLink]="['/home/opportunities-federal']">
+                    Go to contract opportunites federal home
+                  </button>
+                </div>
 							</div>
             </div>
 					</div>
@@ -44,143 +64,26 @@
 		<!-- ACCORDION -->
     <div class="grid-row">
       <div class="tablet:grid-col-10 tablet:grid-offset-1">
-        <div class="usa-accordion usa-accordion--bordered" aria-multiselectable="false">
-          <h3 class="usa-accordion__heading sds-accordion__heading-bordered">
-            <button class="usa-accordion__button border-top-1px border-base-light" aria-expanded="false" aria-controls="a1">
-              Get started searching contract opportunities
-            </button>
-          </h3>
-          <div id="a1" class="usa-accordion__content usa-prose" hidden>
-            <!-- Get started links -->
-            <h4>Get started searching entities</h4>
-              <ul class="sds-list sds-list--icon padding-0">
-                <li>
-                  <span class="sds-list__item-icon">
-                    <i class="sds fa-new-note"></i>
-                  </span>
-                  <span class="sds-list__item-content">
-                    <a href="#" class="usa-link">Search entity registrations</a>
-                  </span>
-                </li>
-                <li>
-                  <span class="sds-list__item-icon">
-                    <i class="sds fa-new-note"></i>
-                  </span>
-                  <span class="sds-list__item-content">
-                    <a href="#" class="usa-link">Search disaster response registry</a>
-                  </span>
-                </li>
-                <li>
-                  <span class="sds-list__item-icon">
-                    <i class="sds fa-new-note"></i>
-                  </span>
-                  <span class="sds-list__item-content">
-                    <a href="#" class="usa-link">Save my searches</a>
-                  </span>
-                </li>
-                <li>
-                  <span class="sds-list__item-icon">
-                    <i class="sds fa-new-note"></i>
-                  </span>
-                  <span class="sds-list__item-content">
-                    <a href="#" class="usa-link">Use the interested vendors list</a>
-                  </span>
-                </li>
-                <li>
-                  <span class="sds-list__item-icon">
-                    <i class="sds fa-document-pdf"></i>
-                  </span>
-                  <span class="sds-list__item-content">
-                    <a href="#" class="usa-link">Quick Start Guide for Contractors</a>
-                  </span>
-                </li>
-                <li>
-                  <span class="sds-list__item-icon">
-                    <i class="sds fa-video-square"></i>
-                  </span>
-                  <span class="sds-list__item-content">
-                    <a href="#" class="usa-link">Video - Use contract opportunities to do business with the government</a>
-                  </span>
-                </li>
-              </ul>
-          </div>
-          <h3 class="usa-accordion__heading sds-accordion__heading-bordered">
-            <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="a4">
-              Use contract opportunities advanced search
-            </button>
-          </h3>
-          <div id="a4" class="usa-accordion__content usa-prose" hidden>
-            <!-- specialist/officer links -->
-            <ul class="sds-list sds-list--icon padding-0">
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Changing search filters</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Understanding notice types</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Set-Asides for small businesses</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Using NAICS Codes</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Using PCS Codes</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Search by place of performance</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Vendor collaboration opportunities</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Small business events</a>
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
+          <sds-accordion-next multi="multi" #sdsAccordionDemo>
+            <sds-accordion-item *ngFor="let help of searchHelp" #first>
+              <sds-accordion-title>{{help.title}}</sds-accordion-title>
+              <sds-accordion-content>
+                <ul class="sds-list sds-list--icon padding-0">
+                  <li *ngFor="let article of help.articles">
+                    <span class="sds-list__item-icon">
+                      <i [ngClass]="article.icon"></i>
+                    </span>
+                    <span class="sds-list__item-content">
+                      <a class="usa-link" [routerLink]="[article.link]">{{article.title}}</a>
+                    </span>
+                  </li>
+                </ul>
+              </sds-accordion-content>
+            </sds-accordion-item>
+          </sds-accordion-next>
       </div>
     </div>
+
 		<!-- Tile -->
 		<div class="grid-row desktop:display-none">
 			<div class="grid-col-11 margin-x-auto">
@@ -199,19 +102,19 @@
 			</div>
 		</div>
 		<!-- CARDS -->
-		<div class="grid-row grid-gap flex-wrap padding-x-3 desktop:padding-0">
+		<div class="grid-row grid-gap flex-wrap margin-top-4 padding-x-3 desktop:padding-0">
 			<div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
   			<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
             <a class="sds-card__link">
-              <h2 class="sds-card__title">Opportunities Report</h2>
+              <h2 class="sds-card__title">Opportunities Reports</h2>
             </a>
           </div>
           <div class="sds-card__body">
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <i class="sds fa-document"></i>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">How to run a DataBank Report</a>
@@ -240,10 +143,10 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <i class="sds fa-document"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">How to use APIs</a>
+                  <a href="#" class="usa-link">How to use contract opportunities data files</a>
                 </span>
               </li>
               <li>
@@ -251,7 +154,15 @@
                   <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Connect to data APIs</a>
+                  <a href="#" class="usa-link">Go to contract opportunities data</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Go to <span class="text-bold">Buy American Act</span> data</a>
                 </span>
               </li>
             </ul>
@@ -269,18 +180,18 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document-pdf"></i>
+                  <i class="sds fa-document"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Connect to Data Services</a>
+                  <a href="#" class="usa-link">How to use data services</a>
                 </span>
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <i class="sds fa-document-pdf"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">How to use APIs</a>
+                  <a href="#" class="usa-link">Data services quick start guide</a>
                 </span>
               </li>
               <li>
@@ -288,7 +199,7 @@
                   <i class="sds fa-video-square"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">How to access data extracts and use APIs</a>
+                  <a href="#" class="usa-link">Video: Using data services</a>
                 </span>
               </li>
               <li>
@@ -296,7 +207,7 @@
                   <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Connect to data APIs</a>
+                  <a href="#" class="usa-link">Go to public contract opportunties API</a>
                 </span>
               </li>
             </ul>
@@ -311,32 +222,12 @@
             </a>
           </div>
           <div class="sds-card__body">
-            <p class="margin-bottom-2">Connect to one of our partner sites to review policy, learn about the grants lifecycle, and find information about eligibility for different types of federal assistance.</p>
-            <ul class="sds-list sds-list--unstyled sds-list--flex">
-              <li>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Chief Financial Officers Council Grants Training
-                </a>
-              </li>
-              <li>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Grants.gov Learning Center
-                </a>
-              </li>
-              <li>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Benefits.gov Benefit Finder
-                </a>
-              </li>
-              <li>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  USA.gov Government Benefits, Grants, and Loans
-                </a>
-              </li>
+            <p>While you don’t need a user account to view contract opportunities, you will need one to access additional capabilities available on SAM.gov. With a user account you can:</p>
+            <ul class="sds-list">
+              <li>Save searches</li>
+              <li>Follow changes to opportunities</li>
+              <li>Join interested vendor lists</li>
+              <li>Use the same account to sign in to multiple government websites</li>
             </ul>
           </div>
         </div>
@@ -352,18 +243,18 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document-pdf"></i>
+                  <i class="sds fa-question-circle"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Connect to Data Services</a>
+                  <a [routerLink]="['/help']" class="usa-link">Frequently Asked Questions</a>
                 </span>
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <i class="sds fa-book"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">How to use APIs</a>
+                  <a href="#" class="usa-link">Glossary Terms</a>
                 </span>
               </li>
               <li>
@@ -371,15 +262,15 @@
                   <i class="sds fa-video-square"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">How to access data extracts and use APIs</a>
+                  <a href="#" class="usa-link">Videos</a>
                 </span>
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                  <i class="sds fa-document-pdf"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Connect to data APIs</a>
+                  <a href="#" class="usa-link">Quick start guide for creating a login.gov account</a>
                 </span>
               </li>
             </ul>
@@ -390,12 +281,11 @@
         <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
             <a class="sds-card__link">
-              <h2 class="sds-card__title">Featured Video Title</h2>
+              <h2 class="sds-card__title">Search Opportunities</h2>
             </a>
           </div>
           <div class="sds-card__body">
-            <div class="video-code" style="height:200px; margin: auto; background-image: url('assets/img/home-video.png'); background-size: cover; background-repeat: no-repeat; background-position: center;">
-            </div>
+            <sds-video-player [VPConfiguration]="videoConfiguration"></sds-video-player>
           </div>
         </div>
       </div>

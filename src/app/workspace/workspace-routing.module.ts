@@ -32,7 +32,7 @@ const routes: Routes = [
 	},
 	{
 		path: 'system-accounts',
-		loadChildren: '../system-accounts/system-accounts.module#SystemAccountsModule',
+		loadChildren: () => import('../system-accounts/system-accounts.module').then(m => m.SystemAccountsModule),
 		data: {
 			id: 'workspace'
 		}
