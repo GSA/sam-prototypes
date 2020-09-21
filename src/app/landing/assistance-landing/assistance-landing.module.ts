@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { FormsModule} from '@angular/forms';
 
 import {
   SdsSearchModule,
-  SdsAccordionModule
+  SdsVideoPlayerModule
 } from '@gsa-sam/components';
 
+
+import { SdsAccordionModule } from '@gsa-sam/sam-material-extensions';
 
 import { AssistanceLandingRoutingModule } from './assistance-landing-routing.module';
 import { AssistanceLandingComponent } from './assistance-landing.component';
@@ -20,6 +22,7 @@ import { AssistanceLandingComponent } from './assistance-landing.component';
     FormsModule,
     SdsSearchModule,
     SdsAccordionModule,
+    SdsVideoPlayerModule,
     AssistanceLandingRoutingModule
   ],
   exports: [AssistanceLandingComponent]

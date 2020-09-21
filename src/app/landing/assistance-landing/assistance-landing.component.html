@@ -1,128 +1,93 @@
 <main id="main-content">
-	<div class="grid-container">
-		<div class="grid-row sds-hero sds-hero--image">
-			<div class="desktop:grid-offset-1 desktop:grid-col-10">
-				<!-- HERO SECTION -->
-				<div class="grid-row padding-x-3 desktop:padding-0">
-					<div class="desktop:grid-col-7 margin-bottom-4 desktop:margin-0 tablet:padding-right-3">
-						<div class="display-flex flex-justify">
+  <div class="grid-container">
+    <div class="grid-row sds-hero sds-hero--image">
+      <div class="desktop:grid-offset-1 desktop:grid-col-10">
+        <!-- HERO SECTION -->
+        <div class="grid-row padding-x-3 grid-gap-6">
+          <div class="desktop:grid-col-7 margin-y-4">
+            <div class="display-flex flex-justify-space-between">
               <h1>Assistance Listings</h1>
               <div class="display-flex flex-column text-center margin-top-0">
-                <span class="text-base">Legacy Website</span>
-                <img src="assets/img/cfda.png" alt="CFDA Legcay Site" style="height:30px;">
+                <span class="text-base font-sans-3xs">Legacy Website</span>
+                <img src="assets/img/CFDA.png" alt="CFDA Legcay Site" class="height-4">
               </div>
             </div>
-						<p class="maxw-full text-base-dark">Assistance listings are detailed public descriptions of federal programs that provide grants, loans, scholarships, insurance, and other types of assistance awards. You may browse assistance listings across all government agencies to learn about potential funding sources.
-						</p>
-						<h2>Search the Assistance Listings</h2>
-						<form class="usa-search usa-search--big padding-right-2" role="search">
-							<label class="usa-sr-only" for="search-field-big">Search</label>
-							<input class="usa-input " id="search-field-big" type="search" name="search" placeholder="Enter a CFDA number or keyword">
-							<button class="usa-button" type="submit">
-								<span class="usa-sr-only">Search</span>
-							</button>
-						</form>
-					</div>
-					<div class="desktop:grid-col-5 display-none desktop:display-flex">
-						<div class="sds-tile--outline">
-              <h2>Federal Users Get Started Here:</h2>
-							<p class="text-base-dark">Manage federal funding and awarding organizations as a hierarchy administrator.</p>
-							<div class="desktop:flex-column flex-justify-center grid-row grid-gap">
-								<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-	              	<button class="usa-button usa-button--secondary width-full" [routerLink]="['/home/assistance/federal']">
-										Assistance Listings for Federal Users
-									</button>
-								</div>
-								<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-									<button class="usa-button width-full">Sign in to Get Started</button>
-								</div>
-							</div>
+						<p class="text-base-dark">Assistance listings are detailed public descriptions of federal programs that provide grants, loans, scholarships, insurance, and other types of assistance awards. You may browse assistance listings across all government agencies to learn about potential funding sources.
+						</p>            
+            <div class="grid-row margin-top-4">
+              <div class="grid-col-fill">
+                <h2>Search assistance listings</h2>
+              </div>
+              <div class="grid-col-auto">
+                <a class="usa-link text-bold" [routerLink]="['/search/results']" [queryParams]="{index: 'assistancelist'}">Advanced Search</a>
+              </div>
             </div>
+              <div class="grid-row margin-top-1">
+                <div class="grid-col">
+                  <sds-search name="opps-search" [(ngModel)]="searchModel" (ngModelChange)="search()" [searchSettings]="searchSettings">
+                  </sds-search>
+                </div>
+              </div>
+              <div class="grid-row">
+                <div class="usa-checkbox grid-col-fill">
+                    <input class="usa-checkbox__input" id="activeOnly" type="checkbox" name="activeOnly" value="activeOnly" checked="checked">
+                    <label class="usa-checkbox__label" for="activeOnly">Active Only</label>
+                </div>
+              </div>
 					</div>
-				</div>
+          <div class="desktop:grid-col-5 display-none desktop:display-flex height-full">
+            <div class="sds-tile--outline display-flex flex-column flex-justify margin-top-2">
+              <div>
+                <h2>Federal Users</h2>
+                <p class="text-base-dark">Manage federal funding and awarding organizations as a hierarchy administrator.</p>
+              </div>
+              <div class="desktop:flex-column flex-justify-center grid-row grid-gap margin-top-2">
+                <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12">
+                  <button *ngIf="!model.signedIn" class="usa-button width-full" 
+                        [routerLink]="['/workspace']" 
+                        [queryParams]="{signin: true}">
+                      Sign in to get started
+                  </button>
+                  <button *ngIf="model.signedIn" class="usa-button width-full" 
+                        [routerLink]="['/workspace']">
+                        Go to workspace
+                  </button>
+                </div>
+                <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
+                  <button class="usa-button usa-button--secondary width-full" [routerLink]="['/home/assistance/federal']">
+                    Go to assistance listings federal home
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 			</div>
 		</div>
-		<!-- ACCORDION -->
+
+    <!-- ACCORDION -->
     <div class="grid-row">
       <div class="tablet:grid-col-10 tablet:grid-offset-1">
-        <div class="usa-accordion usa-accordion--bordered" aria-multiselectable="false">
-          <h3 class="usa-accordion__heading sds-accordion__heading-bordered">
-            <button class="usa-accordion__button border-top-1px border-base-light" aria-expanded="false" aria-controls="a1">
-  						Get started searching assistance listings
-  					</button>
-  				</h3>
-  				<div id="a1" class="usa-accordion__content usa-prose" hidden>
-  					<ul class="sds-list sds-list--icon">
-              <li>
-                <i class="sds fa-new-note"></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Use the search feature on SAM.gov
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-new-note"></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Following federal hierarchy
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-video-square"></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Saving my searches
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-document-pdf"></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Quick Start Guide
-                </a>
-              </li>
-  						<li>
-                <i class="sds fa-video-square"></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Video - Finding federal funding and awarding organizations
-                </a>
-              </li>
-            </ul>
-  				</div>
-          <h3 class="usa-accordion__heading sds-accordion__heading-bordered">
-            <button class="usa-accordion__button" aria-expanded="false" aria-controls="a2">
-  						Using the advanced assistance listings search
-  					</button>
-  				</h3>
-  				<div id="a2" class="usa-accordion__content usa-prose" hidden>
-  					<ul class="sds-list sds-list--icon">
-              <li>
-                <i class="sds fa-new-note"></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Changing search filters
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-new-note"></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Federal hierarchy organization types
-                </a>
-              </li>
-              <li>
-                <i class="sds fa-new-note"></i>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Using even filters
-                </a>
-              </li>
-            </ul>
-  				</div>
-  			</div>
-			</div>
-		</div>
+          <sds-accordion-next multi="multi" #sdsAccordionDemo>
+            <sds-accordion-item *ngFor="let help of searchHelp" #first>
+              <sds-accordion-title>{{help.title}}</sds-accordion-title>
+              <sds-accordion-content>
+                <ul class="sds-list sds-list--icon padding-0">
+                  <li *ngFor="let article of help.articles">
+                    <span class="sds-list__item-icon">
+                      <i [ngClass]="article.icon"></i>
+                    </span>
+                    <span class="sds-list__item-content">
+                      <a class="usa-link" [routerLink]="[article.link]">{{article.title}}</a>
+                    </span>
+                  </li>
+                </ul>
+              </sds-accordion-content>
+            </sds-accordion-item>
+          </sds-accordion-next>
+      </div>
+    </div>
+
 		<!-- Tile -->
 		<div class="grid-row desktop:display-none">
 			<div class="grid-col-11 margin-x-auto">
@@ -141,22 +106,22 @@
 			</div>
 		</div>
 		<!-- CARDS -->
-		<div class="grid-row grid-gap flex-wrap padding-x-3 desktop:padding-0">
+		<div class="grid-row grid-gap flex-wrap margin-top-4 padding-x-3 desktop:padding-0">
 			<div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
   			<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
             <a class="sds-card__link">
-              <h2 class="sds-card__title">Run Assistance Report</h2>
+              <h2 class="sds-card__title">Assistance Listings Reports</h2>
             </a>
           </div>
           <div class="sds-card__body">
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <i class="sds fa-document"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">How to run a databank report</a>
+                  <a href="#" class="usa-link">How to run a DataBank report</a>
                 </span>
               </li>
               <li>
@@ -164,7 +129,7 @@
                   <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Go to Databank Reports</a>
+                  <a href="#" class="usa-link">Go to Databank reports</a>
                 </span>
               </li>
             </ul>
@@ -175,25 +140,17 @@
   			<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
             <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">Connect to Service APIs</h2>
+              <h2 class="sds-card__title">Download Data Files</h2>
             </a>
           </div>
           <div class="sds-card__body">
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <i class="sds fa-document"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Getting started with web services</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">How to use assistance listings</a>
+                  <a href="#" class="usa-link">How to use assistance listings data files</a>
                 </span>
               </li>
               <li>
@@ -201,7 +158,7 @@
                   <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Go to Asstistance Listing APIs<i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i></a>
+                  <a href="#" class="usa-link">Go to asstistance listing data</a>
                 </span>
               </li>
             </ul>
@@ -212,28 +169,11 @@
   			<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
             <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">Download Data</h2>
+              <h2 class="sds-card__title">CFDA Print Editions</h2>
             </a>
           </div>
           <div class="sds-card__body">
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">How to download all assistance listings</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Go to Assistance Listing Downloads</a>
-                </span>
-              </li>
-            </ul>
+            <p>Annual catalogs of updated assistance listings, dating back to 2008, are available for download as PDF files.
           </div>
         </div>
 			</div>

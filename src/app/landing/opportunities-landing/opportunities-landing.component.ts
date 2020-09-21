@@ -19,7 +19,7 @@ export class OpportunitiesLandingComponent implements OnInit {
 
   public searchHelp = [
     {
-      title: 'Getting started searching entities',
+      title: 'Getting started searching contract opportunities',
       articles: [
         {
           title: 'Search contract opportunities',
@@ -54,7 +54,7 @@ export class OpportunitiesLandingComponent implements OnInit {
       ]
     },
     {
-      title: 'Use contract opportunities advanced search',
+      title: 'Using contract opportunities advanced search',
       articles: [
         {
           title: 'Change search filters',
