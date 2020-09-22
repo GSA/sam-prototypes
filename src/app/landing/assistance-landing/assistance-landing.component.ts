@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
+import { LocationStrategy } from '@angular/common';
 import { SamModelService } from '../../model/sam-model.service';
 
 @Component({
@@ -88,8 +89,59 @@ public searchModel: {};
     'preload': 'none'
   };
 
+  catalogVersions = [
+    {
+      label: '2019 Catalog',
+      id: '2019-catalog'
+    },
+    {
+      label: '2018 Catalog',
+      id: '2018-catalog'
+    },
+    {
+      label: '2017 Catalog',
+      id: '2017-catalog'
+    },
+    {
+      label: '2016 Catalog',
+      id: '2016-catalog'
+    },
+    {
+      label: '2015 Catalog',
+      id: '2015-catalog'
+    },
+    {
+      label: '2014 Catalog',
+      id: '2014-catalog'
+    },
+    {
+      label: '2013 Catalog',
+      id: '2013-catalog'
+    },
+    {
+      label: '2012 Catalog',
+      id: '2012-catalog'
+    },
+    {
+      label: '2011 Catalog',
+      id: '2011-catalog'
+    },
+    {
+      label: '2010 Catalog',
+      id: '2010-catalog'
+    },
+    {
+      label: '2009 Catalog',
+      id: '2009-catalog'
+    },
+    {
+      label: '2008 Catalog',
+      id: '2008-catalog'
+    }
+  ];
 
-  constructor(private router: Router, public model: SamModelService) { }
+
+  constructor(private router: Router, public locationStrategy: LocationStrategy, public model: SamModelService) { }
 
   ngOnInit() {
   }

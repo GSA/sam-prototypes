@@ -1,46 +1,58 @@
 <main id="main-content">
-	<div class="grid-container">
-		<!-- HERO -->
-		<div class="grid-row sds-hero sds-hero--image">
-			<div class="desktop:grid-offset-1 desktop:grid-col-10">
-				<!-- HERO SECTION -->
-				<div class="grid-row padding-x-3 desktop:padding-0">
-					<div class="desktop:grid-col-7 margin-bottom-4 desktop:margin-0">
-						<h1>Assistance Listings for Federal Users</h1>
-						<p class="maxw-full text-base-dark">This site is the official source of public descriptions of federal assistance listings. Federal users with an assistance user or assistance administrator role can use the features on this page to manage assistance listings.
-						</p>
-						<h2>Search Assistance Listings</h2>
-						<form class="usa-form usa-search usa-search--big desktop:padding-right-2" role="search">
-							<label class="usa-sr-only" for="search-field">Search</label>
-							<input class="usa-input" id="search-field" type="search" name="search" placeholder="Enter CFDA number or keyword">
-							<button class="usa-button" type="submit">
-								<span class="usa-sr-only">Search</span>
-							</button>
-						</form>
-						<form>
-							<fieldset class="usa-fieldset">
-										<div class="usa-checkbox">
-												<input class="usa-checkbox__input" id="truth" type="checkbox" name="historical-figures-1" value="truth" checked="checked">
-												<label class="usa-checkbox__label" for="truth">Show active only</label>
-										</div>
-								</fieldset>
-						</form>
+  <div class="grid-container">
+    <div class="grid-row sds-hero sds-hero--image">
+      <div class="desktop:grid-offset-1 desktop:grid-col-10">
+        <!-- HERO SECTION -->
+        <div class="grid-row padding-x-3 grid-gap-6">
+          <div class="desktop:grid-col-7 margin-y-4">
+				<h1>Assistance Listings for Federal Users</h1>
+				<p class="maxw-full text-base-dark">This site is the official source of public descriptions of federal assistance listings. Federal users with an assistance user or assistance administrator role can use the features on this page to manage assistance listings.
+				</p>
+				<h2>Search assistance listings</h2>
+				<form class="usa-form usa-search usa-search--big desktop:padding-right-2" role="search">
+					<label class="usa-sr-only" for="search-field">Search</label>
+					<input class="usa-input" id="search-field" type="search" name="search" placeholder="Enter CFDA number or keyword">
+					<button class="usa-button" type="submit">
+						<span class="usa-sr-only">Search</span>
+					</button>
+				</form>
+				<form>
+					<fieldset class="usa-fieldset">
+								<div class="usa-checkbox">
+										<input class="usa-checkbox__input" id="truth" type="checkbox" name="historical-figures-1" value="truth" checked="checked">
+										<label class="usa-checkbox__label" for="truth">Show active only</label>
+								</div>
+						</fieldset>
+				</form>
+			</div>
+			<div class="desktop:grid-col-5">
+				<div class="sds-tile--outline display-flex flex-column flex-justify margin-top-2">
+					<div>
+						<p class="text-base-dark">The  Assistance Listings workspace provides additional information and features including:</p>
+						<ul class="sds-list">
+					    <li>A dashboard to track the status of your listings.</li>
+					    <li>Tools to create, update, and manage listings.</li>
+						</ul>
 					</div>
-					<div class="desktop:grid-col-5">
-						<div class="sds-tile--outline display-flex flex-column flex-justify height-full">
-							<div>
-								<p class="text-base-dark">The  Assistance Listings workspace provides additional information and features including:</p>
-								<ul class="sds-list">
-							    <li>A dashboard to track the status of your listings.</li>
-							    <li>Tools to create, update, and manage listings.</li>
-								</ul>
-							</div>
-								<button class="usa-button width-full margin-top-2">Sign into Workspace</button>
-            </div>
-					</div>
-				</div>
+					<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
+	                  <button *ngIf="!model.signedIn" 
+	                        class="usa-button width-full margin-top-2"
+	                        [routerLink]="['/workspace']"
+	                        [queryParams]="{signin: true}">Sign in to get started</button>
+	                  <button *ngIf="model.signedIn" 
+	                        class="usa-button width-full margin-top-2"
+	                        [routerLink]="['/workspace']">Go to workspace</button>
+	                </div>
+	                <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
+	                  <button class="usa-button usa-button--secondary width-full" [routerLink]="['/home/assistance']">
+	                    Go to assistance listings home
+	                  </button>
+	                </div>
+    			</div>
 			</div>
 		</div>
+	</div>
+</div>
 		<!-- CARDS -->
 		<div class="grid-row grid-gap flex-wrap padding-3 flex-justify-center">
 			<div class="grid-row tablet:grid-col-5 desktop:grid-col padding-1">

@@ -9,7 +9,7 @@
               <h1>Assistance Listings</h1>
               <div class="display-flex flex-column text-center margin-top-0">
                 <span class="text-base font-sans-3xs">Legacy Website</span>
-                <img src="assets/img/CFDA.png" alt="CFDA Legcay Site" class="height-4">
+                <img [src]="locationStrategy.getBaseHref() + 'assets/img/CFDA.png'" alt="CFDA Legacy Site" class="height-4">
               </div>
             </div>
 						<p class="text-base-dark">Assistance listings are detailed public descriptions of federal programs that provide grants, loans, scholarships, insurance, and other types of assistance awards. You may browse assistance listings across all government agencies to learn about potential funding sources.
@@ -158,7 +158,7 @@
                   <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Go to asstistance listing data</a>
+                  <a href="#" class="usa-link">Go to assistance listings data</a>
                 </span>
               </li>
             </ul>
@@ -173,7 +173,14 @@
             </a>
           </div>
           <div class="sds-card__body">
-            <p>Annual catalogs of updated assistance listings, dating back to 2008, are available for download as PDF files.
+            <p>Annual catalogs of updated assistance listings, dating back to 2008, are available for download as PDF files.</p>
+            <form class="usa-form">
+                <label class="usa-label" for="cfda-print-catalog-versions">Catalog versions</label>
+                <select class="usa-select" name="cfda-print-catalog-versions" id="cfda-print-catalog-versions">
+                  <option *ngFor="let version of catalogVersions" value="version.id">{{version.label}}</option>
+                </select>
+                <button class="usa-button usa-button--secondary">Download</button>
+            </form>
           </div>
         </div>
 			</div>
@@ -181,39 +188,38 @@
         <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
             <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">External Resources</h2>
+              <h2 class="sds-card__title">Partner Resources</h2>
             </a>
           </div>
           <div class="sds-card__body">
-            <p>Connect to one of our partner sites to review policy, learn about the grants lifecycle, and find information about eligibility for different types of federal assistance.</p>
-            <ul class="sds-list sds-list--unstyled">
+            <ul class="sds-list">
               <li>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Chief Financial Officers Council Grants Training
+                <span class="sds-list__item-content">
+                <a class="usa-link text-semibold" target="_blank" href="https://cfo.gov/grants/training/">
+                  Chief Financial Officers Council Grants Training.
                   <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i>
-                </a>
+                </a> Explore training modules on grants and cooperative agreements for federal officials.</span>
               </li>
               <li>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Grants.gov Learning Center
+                <span class="sds-list__item-content">
+                <a class="usa-link text-semibold" target="_blank" href="https://www.grants.gov/web/grants/learn-grants.html">
+                  Grants.gov Learning Center.
                   <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i>
-                </a>
+                </a> Learn and navigate the grants lifecycle from online application through post-award.</span>
               </li>
               <li>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Benefits.gov Benefit Finder
+                <span class="sds-list__item-content">
+                <a class="usa-link text-semibold" target="_blank" href="https://www.benefits.gov/benefits/benefit-finder#benefits&qc=cat_1">
+                  Benefits.gov Benefit Finder.
                   <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i>
-                </a>
+                </a> Find government benefits information and determine your eligibility.</span>
               </li>
               <li>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  USA.gov Government Benefits, Grants, and Loans
+                <span class="sds-list__item-content">
+                <a class="usa-link text-semibold" target="_blank" href="https://www.usa.gov/benefits-grants-loans">
+                  USA.gov Government Benefits, Grants, and Loans.
                   <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i>
-                </a>
+                </a> Learn about affordable housing, grants, loans, and other assistance for individuals and organizations.</span>
               </li>
             </ul>
           </div>
@@ -233,7 +239,7 @@
                   <i class="sds fa-question-circle"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Frequently asked questions</a>
+                  <a [routerLink]="['/help']" class="usa-link">Frequently Asked Questions</a>
                 </span>
               </li>
               <li>
@@ -252,6 +258,14 @@
                   <a href="#" class="usa-link">Videos</a>
                 </span>
               </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-document-pdf"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Quick start guide for creating a login.gov account</a>
+                </span>
+              </li>
             </ul>
           </div>
         </div>
@@ -260,12 +274,11 @@
         <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
             <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">Featured Video Title</h2>
+              <h2 class="sds-card__title">Assistance Listings Overview</h2>
             </a>
           </div>
           <div class="sds-card__body">
-            <div class="video-code" style="height:200px; margin: auto; background-image: url('assets/img/home-video.png'); background-size: cover; background-repeat: no-repeat; background-position: center;">
-            </div>
+            <sds-video-player [VPConfiguration]="videoConfiguration"></sds-video-player>
           </div>
         </div>
       </div>

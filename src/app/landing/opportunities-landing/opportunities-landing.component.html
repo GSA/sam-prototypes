@@ -7,7 +7,7 @@
 					<div class="desktop:grid-col-7 margin-y-4">
 						<div class="display-flex flex-justify-space-between">
               <h1>Contract Opportunities</h1>
-              <img src="assets/img/FBO.png" alt="FBO Legacy Site Logo" class="height-6 margin-left-auto margin-top-0">
+              <img [src]="locationStrategy.getBaseHref() + 'assets/img/FBO.png'" alt="FBO Legacy Site Logo" class="height-6 margin-left-auto margin-top-0">
             </div>
 						<p class="text-base-dark">Contract opportunities are procurement notices from federal contracting offices. Anyone interested in doing business with the government can use this system to search opportunities. Opportunities include pre-solicitation notices, solicitation notices, award notices, and sole source notices.
 						</p>
@@ -125,7 +125,7 @@
                   <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Go to DataBank Reports</a>
+                  <a href="#" class="usa-link">Go to DataBank reports</a>
                 </span>
               </li>
             </ul>
@@ -218,16 +218,126 @@
         <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
             <a class="sds-card__link">
+              <h2 class="sds-card__title">Policy and Regulations</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <p>Learn about policy that guides federal contracting.</p>
+             <ul class="sds-list">
+              <li>
+                <span class="sds-list__item-content">
+                <a class="usa-link" target="_blank" href="https://acquisition.gov">
+                  Acquisition.gov
+                  <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i>
+                </a></span>
+              </li>
+              <li>
+                <span class="sds-list__item-content">
+                <a class="usa-link" target="_blank" href="https://www.acquisition.gov/?q=browsefar">
+                  Federal Acquistion Regulation (FAR) 
+                  <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i>
+                </a></span>
+              </li>
+              <li>
+                <span class="sds-list__item-content">
+                <a class="usa-link" target="_blank" href="https://www.acquisition.gov/Supplemental_Regulations">
+                  Supplemental Agency Regulations
+                  <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i>
+                </a></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a class="sds-card__link">
+              <h2 class="sds-card__title">Small Business Resources</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <p>Find support and training to help orient small businesses to federal contracting.</p>
+            <ul class="sds-list">
+              <li>
+                <span class="sds-list__item-content">
+                <a class="usa-link" target="_blank" href="http://www.dla.mil/HQ/SmallBusiness/PTAP.aspx">
+                  Procurement Technical Assistance Program
+                  <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i>
+                </a></span>
+              </li>
+              <li>
+                <span class="sds-list__item-content">
+                <a class="usa-link" target="_blank" href="http://web.sba.gov/pro-net/search/dsp_dsbs.cfm">
+                  Dynamic Small Business Search 
+                  <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i>
+                </a></span>
+              </li>
+              <li>
+                <span class="sds-list__item-content">
+                <a class="usa-link" target="_blank" href="https://eweb1.sba.gov/subnet/client/dsp_Landing.cfm">
+                  SBA Subcontracting Network (SubNet)
+                  <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i>
+                </a></span>
+              </li>
+              <li>
+                <span class="sds-list__item-content">
+                <a class="usa-link" target="_blank" href="https://www.sba.gov/federal-contracting/counseling-help">
+                  SBA Commercial Market Representative (CMR) 
+                  <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i>
+                </a></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a class="sds-card__link">
+              <h2 class="sds-card__title">Forecasting</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <p>Link to individual agency recurring procurement forecasts.</p>
+            <ul class="sds-list">
+              <li>
+                <span class="sds-list__item-content">
+                <a class="usa-link" target="_blank" href="https://www.acquisition.gov/?q=procurement-forecasts">
+                  Federal Agency Business Forecasts
+                  <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i>
+                </a></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a class="sds-card__link">
               <h2 class="sds-card__title">Do I need a user account?</h2>
             </a>
           </div>
           <div class="sds-card__body">
-            <p>While you don’t need a user account to view contract opportunities, you will need one to access additional capabilities available on SAM.gov. With a user account you can:</p>
-            <ul class="sds-list">
-              <li>Save searches</li>
-              <li>Follow changes to opportunities</li>
-              <li>Join interested vendor lists</li>
-              <li>Use the same account to sign in to multiple government websites</li>
+            <p>Anyone may search contract opportunities without an account. A user account lets you save searches, follow changes to opportunities, and join interested vendor lists.</p>
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-document-pdf"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Quick start guide for creating a login.gov account</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Sign up at login.gov</a>
+                </span>
+              </li>
             </ul>
           </div>
         </div>
@@ -265,14 +375,6 @@
                   <a href="#" class="usa-link">Videos</a>
                 </span>
               </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-document-pdf"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Quick start guide for creating a login.gov account</a>
-                </span>
-              </li>
             </ul>
           </div>
         </div>
@@ -281,7 +383,7 @@
         <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
             <a class="sds-card__link">
-              <h2 class="sds-card__title">Search Opportunities</h2>
+              <h2 class="sds-card__title">Video: Search Opportunities</h2>
             </a>
           </div>
           <div class="sds-card__body">
