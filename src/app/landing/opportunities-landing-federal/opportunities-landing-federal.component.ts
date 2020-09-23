@@ -17,6 +17,19 @@ export class OpportunitiesLandingFederalComponent implements OnInit {
     placeholder: 'Enter an ID or keyword'
   }
 
+  videoConfiguration = {
+    'sourceWebm': '',
+    'sourceMp4': 'https://iae-prd-videos.s3.amazonaws.com/fbo/VID007_Bidders.mp4',
+    'height': '200',
+    'width': '350',
+    'caption':'./assets/video/Contractors.vtt',
+    'poster':'./assets/img/video-search-opps.png',
+    'id': 'smapleId1',
+    'seekInterval': 20,
+    'debug': true,
+    'preload': 'none'
+  };
+
   constructor(private router: Router, public model: SamModelService) { }
 
   ngOnInit() {

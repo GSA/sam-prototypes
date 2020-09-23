@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import {
-  SdsSearchModule
+  SdsSearchModule,
+  SdsVideoPlayerModule
 } from '@gsa-sam/components';
 
 import { OpportunitiesLandingFederalRoutingModule } from './opportunities-landing-federal-routing.module';
@@ -17,6 +18,7 @@ import { OpportunitiesLandingFederalComponent } from './opportunities-landing-fe
     FontAwesomeModule,
     FormsModule,
     SdsSearchModule,
+    SdsVideoPlayerModule,
     OpportunitiesLandingFederalRoutingModule
   ],
   exports: [OpportunitiesLandingFederalComponent]

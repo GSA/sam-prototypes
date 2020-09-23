@@ -60,7 +60,7 @@
 		</div>
 		<!-- CARDS -->
 		<div class="grid-row grid-gap flex-wrap padding-3 flex-justify-center">
-			<div class="grid-row tablet:grid-col-5 desktop:grid-col padding-1">
+			<div class="grid-row tablet:grid-col-6 desktop:grid-col-4 padding-1">
   			<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
             <a class="sds-card__link">
@@ -97,7 +97,7 @@
           </div>
         </div>
 			</div>
-			<div class="grid-row tablet:grid-col-5 desktop:grid-col padding-1">
+			<div class="grid-row tablet:grid-col-6 desktop:grid-col-4 padding-1">
   			<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
             <a class="sds-card__link">
@@ -119,7 +119,7 @@
                   <i class="sds fa-document-pdf fa-fw"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Quick Start Guide for Role Management</a>
+                  <a href="#" class="usa-link">Quick Start Guide for role management</a>
                 </span>
               </li>
 							<li>
@@ -134,7 +134,60 @@
           </div>
         </div>
 			</div>
-			<div class="grid-row tablet:grid-col-5 desktop:grid-col padding-1">
+      <div class="grid-row tablet:grid-col-6 desktop:grid-col-4 padding-1">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a class="sds-card__link">
+              <h2 class="sds-card__title">System Accounts</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-document"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Creating a system account</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-document"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Renewing a system account</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-document-pdf fa-fw"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Quick Start Guide for system accounts</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-video-square fa-fw"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Video - System Accounts</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Go to opportunity management API</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+			<div class="grid-row tablet:grid-col-6 desktop:grid-col-4 padding-1">
   			<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
             <a class="sds-card__link">
@@ -163,7 +216,7 @@
           </div>
         </div>
 			</div>
-			<div class="grid-row tablet:grid-col-5 desktop:grid-col padding-1">
+      <div class="grid-row tablet:grid-col-6 desktop:grid-col-4 padding-1">
   			<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
   				<div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
   					<a class="sds-card__link">
@@ -200,7 +253,18 @@
           </div>
   			</div>
 			</div>
-
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a class="sds-card__link">
+              <h2 class="sds-card__title">Video: Publishing Opportunities</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <sds-video-player [VPConfiguration]="videoConfiguration"></sds-video-player>
+          </div>
+        </div>
+      </div>
 		</div>
 	</div>
 </main>
