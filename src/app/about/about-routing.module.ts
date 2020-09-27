@@ -14,53 +14,60 @@ const routes: Routes = [
 			},
 			{
 			path: 'partners',
-			loadChildren: './partners/partners.module#PartnersModule',
+			loadChildren: () => import ('./partners/partners.module').then(m => m.PartnersModule),
 				data: {
 				  id: "home"
 				}
 			},
 			{
 			path: 'fsd',
-			loadChildren: './fsd/fsd.module#FsdModule',
+			loadChildren: () => import ('./fsd/fsd.module').then(m => m.FsdModule),
 				data: {
 				  id: "home"
 				}
 			},
 			{
 			path: 'release-notes',
-			loadChildren: './release-notes/release-notes.module#ReleaseNotesModule',
+			loadChildren: () => import ('./release-notes/release-notes.module').then(m => m.ReleaseNotesModule),
 				data: {
 				  id: "home"
 				}
 			},
 			{
 			path: 'about',
-			loadChildren: './this-site/this-site.module#ThisSiteModule',
+			loadChildren: () => import ('./this-site/this-site.module').then(m => m.ThisSiteModule),
 				data: {
 				  id: "home"
 				}
 			},
 			{
 				path: 'external-resources',
-				loadChildren: './external-resources/external-resources.module#ExternalResourcesModule',
+				loadChildren: () => import ('./external-resources/external-resources.module').then(m => m.ExternalResourcesModule),
 			},
 			{
 			path: 'community',
-			loadChildren: './community/community.module#CommunityModule',
+			loadChildren: () => import ('./community/community.module').then(m => m.CommunityModule),
 				data: {
 				  id: "home"
 				}
 			},
 			{
 				path: 'policies',
-				loadChildren: './policies/policies.module#PoliciesModule',
+				loadChildren: () => import ('./policies/policies.module').then(m => m.PoliciesModule),
 				data: {
 				  id: "home"
 				}
 			},
 			{
 				path: 'contact',
-				loadChildren: './contact/contact.module#ContactModule',
+				loadChildren: () => import ('./contact/contact.module').then(m => m.ContactModule),
+				data: {
+				  id: "home"
+				}
+			},
+			{
+				path: 'site-map',
+				loadChildren: () => import ('./site-map/site-map.module').then(m => m.SiteMapModule),
 				data: {
 				  id: "home"
 				}
