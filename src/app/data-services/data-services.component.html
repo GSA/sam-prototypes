@@ -1,29 +1,3 @@
-<sds-subheader>
-  <!-- =============== BACK BUTTON =============== -->
-  <button class="sds-button sds-button--circular">
-    <fa-icon [icon]="['fas', 'chevron-left']" [fixedWidth]="true"></fa-icon>
-  </button>
-
-  <!-- =============== TITLE =============== -->
-  <h1 class="font-heading-md text-semibold tablet-lg:width-mobile">
-    Data Services
-  </h1>
-
-  <!-- =============== SEARCH =============== -->
-  <sds-search
-    (term)="log($event)"
-    parentSelector=".grid-row"
-    placeholder="Entity an ID, name, or keyword"
-    inputClass="width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block"
-  >
-  </sds-search>
-
-  <!-- =============== ACTIONS BUTTONS =============== -->
-  <sds-subheader-actions
-    [model]="subheader"
-    (clicks)="log($event)">
-  </sds-subheader-actions>
-</sds-subheader>
 <main>
   <div class="n-sds-page">
     <div class="grid-container">

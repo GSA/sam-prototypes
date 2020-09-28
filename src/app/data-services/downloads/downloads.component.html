@@ -1,32 +1,38 @@
 <sds-subheader>
   <!-- =============== BACK BUTTON =============== -->
-  <button class="sds-button sds-button--circular">
+  <button id="backbutton" class="sds-button sds-button--circular" aria-label="Back to Wages Home" [routerLink]="['/home/wages']">
     <fa-icon [icon]="['fas', 'chevron-left']" [fixedWidth]="true"></fa-icon>
   </button>
+  
 
   <!-- =============== TITLE =============== -->
-  <h1 class="font-heading-md text-semibold tablet-lg:width-mobile">
-    Downloads
-  </h1>
+  <span class="font-heading-lg text-semibold">
+    Download Files
+  </span>
 
-  <!-- =============== SEARCH =============== -->
-  <sds-search
-    (term)="search($event)"
-    parentSelector=".grid-row"
-    placeholder="Entity an ID, name, or keyword"
-    inputClass="width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block"
-  >
+  <sds-search name="dataservices-search" [(ngModel)]="searchModel" (ngModelChange)="search()" [searchSettings]="searchSettings">
   </sds-search>
 
-  <!-- =============== ACTIONS BUTTONS =============== -->
   <sds-subheader-actions
     [model]="subheader"
     (clicks)="log($event)">
   </sds-subheader-actions>
 </sds-subheader>
+
 <div class="main">
-	<div class="n-sds-page">
+	<div class="sds-page">
 		<div class="grid-container">
+      <div class="display-flex flex-row flex-align-center" *ngFor="let file of currentFolder.children">
+          <div class="grid-col flex-auto">
+            <p class="line-height-sans-5">
+              <i *ngIf="!file.children" class="sds fa-document fa-fw fa-2x"></i>
+              <i *ngIf="file.children" class="sds fa-folder fa-fw fa-2x"></i>
+            </p>
+          </div>
+          <div class="grid-col flex-fill">
+            <p class="line-height-sans-5"><a class="usa-link" [routerLink]="['/dataservices/downloads']" [queryParams]="{index: file.id}">{{file.label}}</a></p>
+          </div>
+      </div>
 		</div>
 	</div>
 </div>

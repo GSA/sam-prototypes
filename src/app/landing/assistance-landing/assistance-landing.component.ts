@@ -11,7 +11,7 @@ import { SamModelService } from '../../model/sam-model.service';
 })
 export class AssistanceLandingComponent implements OnInit {
 
-public searchModel: {};
+  public searchModel: {};
 
   public searchSettings = {
     size: 'large',

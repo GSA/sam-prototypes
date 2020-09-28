@@ -9,7 +9,7 @@ const routes: Routes = [
 	},
 	{
 		path: 'downloads',
-		loadChildren: './downloads/downloads.module#DownloadsModule'
+		loadChildren: () => import('./downloads/downloads.module').then(m => m.DownloadsModule)
 	}
 ];
 

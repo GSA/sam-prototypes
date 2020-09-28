@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { DataServicesRoutingModule } from './data-services-routing.module';
@@ -14,11 +16,12 @@ import { SdsDialogModule, SdsSearchModule } from '@gsa-sam/components';
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     FontAwesomeModule,
-    DataServicesRoutingModule,
     SdsSubheaderModule,
     SdsDialogModule,
-    SdsSearchModule
+    SdsSearchModule,
+    DataServicesRoutingModule,
   ],
   declarations: [DataServicesComponent, AlertComponent, OfficialComponent],
   exports: [DataServicesComponent],
