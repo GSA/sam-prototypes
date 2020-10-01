@@ -16,6 +16,22 @@ export class HomeComponent implements AfterViewInit, OnInit {
 
   newsList: NewsData[] = NewsList.sort(this.sortNews).slice(0, 3);
 
+  public searchModel:any = {};
+
+  searchSettings = {
+    placeholder: 'Enter an ID or keyword',
+    size: 'large',
+    dropdown: {
+      placeholder: 'Select domain...',
+      options: [
+        { value: 'assistancelist', label: 'Assistance Listings' },
+        { value: 'opportunities', label: 'Contract Opportunities' },
+        { value: 'entityinfo', label: 'Entity Information' },
+        { value: 'hierarchy', label: 'Federal Hierarchy' },
+        { value: 'wdbyid', label: 'Wage Determinations' }
+      ]
+    }
+  };
 
   constructor(private router: Router) {
   }
@@ -31,8 +47,8 @@ export class HomeComponent implements AfterViewInit, OnInit {
       return(a.publishDate < b.publishDate) ? 1 : -1;
   }
 
-  onSubmit() {
-     this.router.navigate(['/search/results'], { queryParams: { index: this.selectOptions.selected } });
+  search() {
+     this.router.navigate(['/search/results'], { queryParams: { index: this.searchModel.searchCategory } });
   }
 
   log(value) {

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlySelectModule } from '@ngx-formly/core/select';
 import { SdsSubheaderModule, SearchListServiceModule } from '@gsa-sam/layouts';  
@@ -26,8 +26,8 @@ import { HelpServiceModule } from './service/service.module';
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule,
     FontAwesomeModule,
-    ReactiveFormsModule,
     FormlyModule,
     FormlySelectModule,
     SdsFiltersModule, 

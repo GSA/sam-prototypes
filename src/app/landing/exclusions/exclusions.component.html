@@ -1,26 +1,36 @@
 <main id="main-content">
-	<div class="grid-container">
-		<div class="grid-row sds-hero sds-hero--image">
-			<div class="desktop:grid-offset-1 desktop:grid-col-10">
-				<!-- HERO SECTION -->
-				<div class="grid-row padding-x-3 desktop:padding-0">
-					<div class="desktop:grid-col-7 margin-bottom-4 desktop:margin-0 tablet:padding-right-3">
-						<div class="display-flex flex-justify-space-between">
-              <h1>Exclusions</h1>
-            </div>
+  <div class="grid-container">
+    <div class="grid-row sds-hero sds-hero--image">
+      <div class="desktop:grid-offset-1 desktop:grid-col-10">
+        <!-- HERO SECTION -->
+        <div class="grid-row padding-x-3 grid-gap-6">
+          <div class="desktop:grid-col-7 margin-y-4">
+            <h1>Exclusions</h1>
 						<p class="maxw-full text-base-dark">An exclusion is any person who or organization that has been declared ineligible from receiving federal contracts, certain subcontracts, and certain types of federal financial and non-financial assistance and benefits.
 						</p>
             <p><b>Exclusions are a part of entity information. Entity information includes the following:</b></p>
             <a class="usa-link">Entity Registration</a><a class="usa-link">Disaster Response Registry</a><a class="usa-link">Exclusions</a>
-						<h2>Search Entity Exclusions</h2>
-						<form class="usa-search usa-search--big padding-right-2" role="search">
-							<label class="usa-sr-only" for="search-field-big">Search</label>
-							<input class="usa-input " id="search-field-big" type="search" name="search" placeholder="Enter notice ID or keyword">
-							<button class="usa-button" type="submit">
-								<span class="usa-sr-only">Search</span>
-							</button>
-						</form>
-					</div>
+            <div class="grid-row margin-top-4">
+              <div class="grid-col-fill">
+                <h2>Search exclusions</h2>
+              </div>
+              <div class="grid-col-auto">
+                <a class="usa-link text-bold" [routerLink]="['/search/results']" [queryParams]="{index: 'exclusions'}">Advanced Search</a>
+              </div>
+            </div>
+              <div class="grid-row margin-top-1">
+                <div class="grid-col">
+                  <sds-search name="opps-search" [(ngModel)]="searchModel" (ngModelChange)="search()" [searchSettings]="searchSettings">
+                  </sds-search>
+                </div>
+              </div>
+              <div class="grid-row">
+                <div class="usa-checkbox grid-col-fill">
+                    <input class="usa-checkbox__input" id="activeOnly" type="checkbox" name="activeOnly" value="activeOnly" checked="checked">
+                    <label class="usa-checkbox__label" for="activeOnly">Active Only</label>
+                </div>
+              </div>
+          </div>
 					<div class="desktop:grid-col-5 display-none desktop:display-flex">
 						<div class="sds-tile--outline display-flex flex-column flex-justify height-full">
               <div>

@@ -46,41 +46,44 @@ export class HelpFiltersService {
   config: FormlyFieldConfig[] = [
   {
     key: 'keyword',
-    wrappers: ['filterwrapper'],
-    type: 'autocomplete',
-    templateOptions: {
-        label: 'Keyword',
-        service: this.keywordService,
-        configuration: this.keywordService.settings,
-        model: this.keywordService.model
-    }
+      type: 'autocomplete',
+      templateOptions: {
+          label: 'Keyword',
+          hideOptional: true,
+          service: this.keywordService,
+          configuration: this.keywordService.settings,
+          model: this.keywordService.model
+      }
   },
   {
-    key: 'type',
-    wrappers: ['filterwrapper'],
-    type: 'multicheckbox',
-    templateOptions: { 
-    	label: 'Type',
-    	options: [
-	        {
-	          key: 'video',
-	          value: 'Video'
-	        },
-	        {
-	          key: 'article',
-	          value: 'Article'
-	        },
-	        {
-	          key: 'faq',
-	          value: 'Frequently Asked Question'
-	        },
-	        {
-	          key: 'term',
-	          value: 'Glossary Term'
-	        }
-      	]
-     }
-  }
+      key: 'type',
+      type: 'multicheckbox',
+      templateOptions: {
+        label: 'Type',
+        options: [
+          {
+            value: 'video',
+            label: 'Video'
+          },
+          {
+            value: 'article',
+            label: 'Article'
+          },
+          {
+            value: 'faq',
+            label: 'Frequently Asked Question'
+          },
+          {
+            value: 'term',
+            label: 'Glossary Term'
+          },
+          {
+            value: 'qsg',
+            label: 'Quick StartGuide'
+          }
+        ]
+      }
+   }
 ];
 
 }

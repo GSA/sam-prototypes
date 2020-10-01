@@ -67,23 +67,8 @@
           <div class="desktop:grid-col-6 desktop:grid-offset-1 padding-3 desktop:order-3">
             <section aria-label="Small search component with select">
               <h2>Already know what you want to find?</h2>
-              <form class="usa-form usa-search usa-search--small" role="search">
-                <label class="usa-sr-only" for="options">Dropdown label</label>
-                <select class="usa-select" name="options" id="options">
-                  <option value>- Select -</option>
-                  <option value="value1">Assistance Listings</option>
-                  <option value="value2">Contract Opportunities</option>
-                  <option value="value3">Contract Data</option>
-                  <option value="value1">Entity Information</option>
-                  <option value="value2">Federal Hierarchy</option>
-                  <option value="value3">Wage Determinations</option>
-                </select>
-                <label class="usa-sr-only" for="search-field-small">Search</label>
-                <input class="usa-input" id="search-field-small" type="search" name="search" placeholder="Search Here">
-                <button class="usa-button" type="submit">
-                  <span class="usa-sr-only">Search</span>
-                </button>
-              </form>
+              <sds-search name="home-search" [(ngModel)]="searchModel" (ngModelChange)="search()" [searchSettings]="searchSettings">
+              </sds-search>
             </section>
           </div>
           <div class="desktop:grid-col-4 desktop:order-2">
@@ -164,21 +149,21 @@
                   <li>
                     <i class="sds fa-video-square"></i>
                     <span class="sr-only"></span>
-                    <a class="usa-link" href=" ">
+                    <a class="usa-link" [routerLink]="['/help/results']" [queryParams]="{type: 'video'}">
                       Videos
                     </a>
                   </li>
                   <li>
                     <i class="sds fa-book"></i>
                     <span class="sr-only"></span>
-                    <a class="usa-link" href=" ">
+                    <a class="usa-link" [routerLink]="['/help/results']" [queryParams]="{type: 'term'}">
                       Glossary Terms
                     </a>
                   </li>
                   <li>
                     <i class="sds fa-document-pdf"></i>
                     <span class="sr-only"></span>
-                    <a class="usa-link" href=" ">
+                    <a class="usa-link" [routerLink]="['/help/results']" [queryParams]="{type: 'qsd'}">
                       Quick Start Guides
                     </a>
                   </li>
@@ -211,7 +196,7 @@
                 <i class="sds fa-question-circle"></i>
                 <span class="sr-only"></span>
                 <a class="usa-link" href=" ">
-                  What is I already have a login.gov account?
+                  What if I already have a login.gov account?
                 </a>
               </li>
               <li>

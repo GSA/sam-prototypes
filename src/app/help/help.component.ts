@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy, ChangeDetectorRef, AfterViewInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { BehaviorSubject } from 'rxjs';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 import { FormGroup } from '@angular/forms';
@@ -16,6 +17,12 @@ import { HelpService } from './service/help.service';
   templateUrl: './help.component.html',
 })
 export class HelpComponent implements OnInit, AfterViewInit {
+
+  public searchModel: {};
+
+  public searchSettings = {
+    placeholder: 'Enter a keyword'
+  }
 
   domainLabelMap: Map<string, string> = new Map<string, string>([
     ['opportunities', 'Contract Opportunities'],
@@ -35,8 +42,7 @@ export class HelpComponent implements OnInit, AfterViewInit {
   form = new FormGroup({});
   public filterChange$ = new BehaviorSubject<object>(null);  
 
-  public subheader = {
-    buttons: [],
+  public pageActions = {
     actions: [
       { id: 'DownloadBtn', icon: 'bars', text: 'Download' }
     ]
@@ -45,6 +51,7 @@ export class HelpComponent implements OnInit, AfterViewInit {
   constructor(
     private change: ChangeDetectorRef, 
     private route: ActivatedRoute,
+    public location: Location,
     public router: Router,
     public service: HelpService, 
     public filtersService: HelpFiltersService) { }
@@ -70,11 +77,8 @@ export class HelpComponent implements OnInit, AfterViewInit {
       }
   }
 
-  newSearch(searchTerm) {
-    if(this.filtersService) {
-        this.filtersService.model = {};
-        this.filtersService.model["keyword"] = searchTerm;
-    }
+  search() {
+     this.router.navigate(['/help/results'], { queryParams: { keyword: 'hello' } });
   }
 
   log(value) {
