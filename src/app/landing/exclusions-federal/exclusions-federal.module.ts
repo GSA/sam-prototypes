@@ -9,11 +9,11 @@ import {
   SdsVideoPlayerModule
 } from '@gsa-sam/components';
 
-import { OpportunitiesLandingFederalRoutingModule } from './opportunities-landing-federal-routing.module';
-import { OpportunitiesLandingFederalComponent } from './opportunities-landing-federal.component';
+import { ExclusionsFederalRoutingModule } from './exclusions-federal-routing.module';
+import { ExclusionsFederalComponent } from './exclusions-federal.component';
 
 @NgModule({
-  declarations: [OpportunitiesLandingFederalComponent],
+  declarations: [ExclusionsFederalComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -21,8 +21,8 @@ import { OpportunitiesLandingFederalComponent } from './opportunities-landing-fe
     FormsModule,
     SdsSearchModule,
     SdsVideoPlayerModule,
-    OpportunitiesLandingFederalRoutingModule
+    ExclusionsFederalRoutingModule
   ],
-  exports: [OpportunitiesLandingFederalComponent]
+  exports: [ExclusionsFederalComponent]
 })
-export class OpportunitiesLandingFederalModule { }
+export class ExclusionsFederalModule { }

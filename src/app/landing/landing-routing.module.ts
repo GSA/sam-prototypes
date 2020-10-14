@@ -106,6 +106,13 @@ const routes: Routes = [
 	    data: {
 	      id: "home"
 	    }
+	},
+	{
+		path: 'exclusions-federal',
+		loadChildren: () => import('./exclusions-federal/exclusions-federal.module').then(m => m.ExclusionsFederalModule),
+	    data: {
+	      id: "home"
+	    }
 	}
 
 ];
