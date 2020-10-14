@@ -200,13 +200,6 @@
           </div>
           <div class="sds-card__body">
             <p>Annual CFDA catalogs, dating back to 2008, are available for download as PDF files.</p>
-            <form class="usa-form">
-                <label class="usa-label" for="cfda-print-catalog-versions">Catalog editions</label>
-                <select class="usa-select" name="cfda-print-catalog-versions" id="cfda-print-catalog-versions">
-                  <option *ngFor="let version of catalogVersions" value="version.id">{{version.label}}</option>
-                </select>
-                <button class="usa-button usa-button--secondary">Download</button>
-            </form>
           </div>
         </div>
       </div>
