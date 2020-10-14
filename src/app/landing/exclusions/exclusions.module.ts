@@ -8,6 +8,8 @@ import {
   SdsVideoPlayerModule
 } from '@gsa-sam/components';
 
+import { SdsAccordionModule } from '@gsa-sam/sam-material-extensions';
+
 import { ExclusionsRoutingModule } from './exclusions-routing.module';
 import { ExclusionsComponent } from './exclusions.component';
 
@@ -19,6 +21,7 @@ import { ExclusionsComponent } from './exclusions.component';
     FormsModule,
     SdsSearchModule,
     SdsVideoPlayerModule,
+    SdsAccordionModule,
     ExclusionsRoutingModule
   ],
   exports: [ExclusionsComponent]

@@ -119,7 +119,7 @@
               <div *ngFor="let news of newsList" class="event margin-0">
                 <div class="content">
                   <div class="summary">
-                    <div class="date">{{news.publishDate | date}}</div>
+                    <div class="date">{{news.publishDate | date:news.dateFormat }}</div>
                     <a class="action">{{news.title}}</a>
                   </div>
                   <div class="meta">

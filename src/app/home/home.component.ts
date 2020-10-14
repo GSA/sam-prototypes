@@ -43,6 +43,20 @@ export class HomeComponent implements AfterViewInit, OnInit {
   {
   }
 
+  setFormat() {
+      let today:Date = new Date();
+      for(let i=0; i<this.newsList.length; i++) {
+          let publishDate = new Date(this.newsList[i].publishDate);
+          if(publishDate.getDate() == today.getDate() && publishDate.getMonth() == today.getMonth() && publishDate.getFullYear() == today.getFullYear())
+          {
+            this.newsList[i].dateFormat = 'shortTime';
+          } else {
+            this.newsList[i].dateFormat = 'mediumDate';
+          }
+      }
+
+  }
+
   sortNews(a: NewsData, b: NewsData) {
       return(a.publishDate < b.publishDate) ? 1 : -1;
   }

@@ -1,3 +1,254 @@
+<main id="main-content">
+  <div class="grid-container">
+    <div class="grid-row sds-hero sds-hero--image">
+      <div class="desktop:grid-offset-1 desktop:grid-col-10">
+        <!-- HERO SECTION -->
+        <div class="grid-row padding-x-3 grid-gap-6">
+          <div class="desktop:grid-col-7 margin-y-4">
+            <div class="display-flex flex-justify-space-between">
+              <h1>Data Services</h1>
+            </div>
+            <p class="text-base-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum consectetur libero id faucibus nisl tincidunt. 
+            </p>            
+            <h2 class="margin-bottom-1">Downloads</h2>
+            <sds-search *ngIf="false" name="opps-search" [(ngModel)]="searchModel" (ngModelChange)="search()" [searchSettings]="searchSettings">
+            </sds-search>
+            <ul class="sds-list sds-list--icon">
+                  <li>
+                    <span class="sds-list__item-icon">
+                      <i class="sds fa-download"></i>
+                    </span>
+                    <span class="sds-list__item-content">
+                      <a href="#" class="usa-link">Go to all downloads</a>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="sds-list__item-icon">
+                      <i class="sds fa-download"></i>
+                    </span>
+                    <span class="sds-list__item-content">
+                      <a href="#" class="usa-link">Contract data downloads</a>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="sds-list__item-icon">
+                      <i class="sds fa-download"></i>
+                    </span>
+                    <span class="sds-list__item-content">
+                      <a href="#" class="usa-link">Assistance Listings downloads</a>
+                    </span>
+                  </li>
+                </ul>
+          </div>
+          <div class="desktop:grid-col-5 display-none desktop:display-flex height-full">
+            <div class="sds-tile--outline display-flex flex-column flex-justify margin-top-2">
+                <h2>APIs</h2>
+                <p class="text-base-dark">Explore our API documentation.</p>
+                <ul class="sds-list sds-list--icon">
+                  <li>
+                    <span class="sds-list__item-icon">
+                      <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                    </span>
+                    <span class="sds-list__item-content">
+                      <a href="https://open.gsa.gov" target="_blank" class="usa-link">Go to Open GSA 
+                        <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i></a>
+                    </span>
+                  </li>
+                </ul>
+
+                <p class="text-base-dark">To access controlled APIs, request a system account.</p>
+                <ul class="sds-list sds-list--icon">
+                  <li>
+                    <span class="sds-list__item-icon">
+                      <i class="sds fa-document"></i>
+                    </span>
+                    <span class="sds-list__item-content">
+                      <a href="#" class="usa-link">Do I need a system account?</a>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="sds-list__item-icon">
+                      <i class="sds fa-document"></i>
+                    </span>
+                    <span class="sds-list__item-content">
+                      <a href="#" class="usa-link">How to request a system account</a>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="sds-list__item-icon">
+                      <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                    </span>
+                    <span class="sds-list__item-content">
+                      <a [routerLink]="['/']" class="usa-link">Request a system account</a>
+                    </span>
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tile -->
+    <div class="grid-row desktop:display-none">
+      <div class="grid-col-11 margin-x-auto">
+        <div class="sds-tile--outline">
+          <h2>Federal Users Get Started Here:</h2>
+          <p class="text-base-dark">Manage federal funding and awarding organizations as a hierarchy administrator.</p>
+          <div class="desktop:flex-column flex-justify-center grid-row grid-gap">
+            <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
+              <button class="usa-button usa-button--secondary width-full">Federal Hierarchy for Federal Users</button>
+            </div>
+            <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
+              <button class="usa-button width-full">Sign in to Get Started</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- CARDS -->
+    <div class="grid-row grid-gap flex-wrap margin-top-4 padding-x-3 desktop:padding-0">
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a [routerLink]="['news']" class="sds-card__link">
+              <h2 class="sds-card__title">Data Dictionary</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <p class="text-base-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            </p>  
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Go to data dictionary</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a [routerLink]="['news']" class="sds-card__link">
+              <h2 class="sds-card__title">Technical Interface Community</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <p class="text-base-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>  
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Go to Technical Interface Community</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a [routerLink]="['news']" class="sds-card__link">
+              <h2 class="sds-card__title">Help</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-question-circle"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a [routerLink]="['/help']" class="usa-link">Frequently Asked Questions</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-book"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Glossary Terms</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-video-square"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Videos</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a [routerLink]="['news']" class="sds-card__link">
+              <h2 class="sds-card__title">CFDA PDF Editions</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <p>Annual CFDA catalogs, dating back to 2008, are available for download as PDF files.</p>
+            <form class="usa-form">
+                <label class="usa-label" for="cfda-print-catalog-versions">Catalog editions</label>
+                <select class="usa-select" name="cfda-print-catalog-versions" id="cfda-print-catalog-versions">
+                  <option *ngFor="let version of catalogVersions" value="version.id">{{version.label}}</option>
+                </select>
+                <button class="usa-button usa-button--secondary">Download</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="tablet:grid-col-12 desktop:grid-col-8 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a [routerLink]="['news']" class="sds-card__link">
+              <h2 class="sds-card__title">External Resources</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <ul class="sds-list">
+              <li>
+                <span class="sds-list__item-content">
+                <a class="usa-link text-semibold" target="_blank" href="https://www.grants.gov/web/grants/learn-grants.html">
+                  Grants.gov Learning Center.
+                  <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i>
+                </a> Learn and navigate the grants lifecycle from online application through post-award.</span>
+              </li>
+              <li>
+                <span class="sds-list__item-content">
+                <a class="usa-link text-semibold" target="_blank" href="https://usaspending.gov">
+                  USASpending.gov
+                  <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i>
+                </a> Visit the official open data source of federal spending information.</span>
+              </li>
+              <li>
+                <span class="sds-list__item-content">
+                <a class="usa-link text-semibold" target="_blank" href="https://www.usa.gov/benefits-grants-loans">
+                  USA.gov Government Benefits, Grants, and Loans.
+                  <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i>
+                </a> Learn about affordable housing, grants, loans, and other assistance for individuals and organizations.</span>
+              </li>    
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
 <main>
   <div class="n-sds-page">
     <div class="grid-container">

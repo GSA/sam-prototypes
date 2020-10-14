@@ -7,4 +7,5 @@ export interface NewsData {
     shortDescription: string;
     fullDescription: string;
     publishDate: string;
+    dateFormat: string;
 }

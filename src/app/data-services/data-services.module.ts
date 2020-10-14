@@ -4,27 +4,23 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import { DataServicesRoutingModule } from './data-services-routing.module';
 import {
-  DataServicesComponent,
-  AlertComponent,
-  OfficialComponent
-} from './data-services.component';
-import { SdsSubheaderModule } from '@gsa-sam/layouts';
-import { SdsDialogModule, SdsSearchModule } from '@gsa-sam/components';
+  SdsSearchModule,
+} from '@gsa-sam/components';
+
+import { DataServicesRoutingModule } from './data-services-routing.module';
+import { DataServicesComponent } from './data-services.component';
 
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
     FormsModule,
     FontAwesomeModule,
-    SdsSubheaderModule,
-    SdsDialogModule,
     SdsSearchModule,
     DataServicesRoutingModule,
   ],
-  declarations: [DataServicesComponent, AlertComponent, OfficialComponent],
-  exports: [DataServicesComponent],
-  entryComponents: [AlertComponent, OfficialComponent]
+  declarations: [DataServicesComponent],
+  exports: [DataServicesComponent]
 })
 export class DataServicesModule {}

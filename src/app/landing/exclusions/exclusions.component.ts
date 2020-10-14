@@ -17,6 +17,69 @@ export class ExclusionsComponent implements OnInit {
     placeholder: 'Enter an ID or keyword'
   }
 
+   public searchHelp = [
+    {
+      title: 'Getting started searching exclusions',
+      articles: [
+        {
+          title: 'Search exclusions',
+          link: '/help',
+          icon: 'sds fa-document'
+        },
+        {
+          title: 'Search for multiple exclusions',
+          link: '/help',
+          icon: 'sds fa-document'
+        },
+        {
+          title: 'Search by SSN/TIN',
+          link: '/help',
+          icon: 'sds fa-document'
+        },
+        {
+          title: 'Save searches',
+          link: '/help',
+          icon: 'sds fa-document'
+        },
+        {
+          title: 'Exclusions quick start guide',
+          link: '/help',
+          icon: 'sds fa-document-pdf'
+        }
+      ]
+    },
+    {
+      title: 'Using exclusions advanced search',
+      articles: [
+        {
+          title: 'Filter by agency',
+          link: '/help',
+          icon: 'sds fa-document'
+        },
+        {
+          title: 'Filter by location',
+          link: '/help',
+          icon: 'sds fa-document'
+        },
+        {
+          title: 'Filter by exclusion type',
+          link: '/help',
+          icon: 'sds fa-document'
+        },
+        {
+          title: 'Filter by date',
+          link: '/help',
+          icon: 'sds fa-document'
+        },
+        {
+          title: 'Filter by status',
+          link: '/help',
+          icon: 'sds fa-document'
+        }
+      ]
+    }
+  ];
+
   videoConfiguration = {
     'sourceWebm': '',
     'sourceMp4': 'https://iae-prd-videos.s3.amazonaws.com/fbo/VID007_Bidders.mp4',
