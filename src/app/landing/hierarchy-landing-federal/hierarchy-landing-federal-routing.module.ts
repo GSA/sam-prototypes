@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FederalHierarchyLandingComponent } from './federal-hierarchy-landing.component';
+import { HierarchyLandingFederalComponent } from './hierarchy-landing-federal.component';
 
 const routes: Routes = [
 	{
 		path: '',
-		component: FederalHierarchyLandingComponent
+		component: HierarchyLandingFederalComponent
 	}
-
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class FederalHierarchyLandingRoutingModule { }
+export class HierarchyLandingFederalRoutingModule { }

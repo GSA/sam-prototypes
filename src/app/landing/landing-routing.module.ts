@@ -52,8 +52,8 @@ const routes: Routes = [
 	    }
 	},
 	{
-		path: 'federal-hierarchy',
-		loadChildren: () => import('./federal-hierarchy-landing/federal-hierarchy-landing.module').then(m => m.FederalHierarchyLandingModule),
+		path: 'hierarchy-federal',
+		loadChildren: () => import('./hierarchy-landing-federal/hierarchy-landing-federal.module').then(m => m.HierarchyLandingFederalModule),
 			data: {
 				id: "home"
 			}

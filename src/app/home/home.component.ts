@@ -37,6 +37,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit() {
+    this.setFormat();
   }
 
   ngAfterViewInit()
@@ -50,6 +51,8 @@ export class HomeComponent implements AfterViewInit, OnInit {
           if(publishDate.getDate() == today.getDate() && publishDate.getMonth() == today.getMonth() && publishDate.getFullYear() == today.getFullYear())
           {
             this.newsList[i].dateFormat = 'shortTime';
+          } else if(publishDate.getFullYear() == today.getFullYear()) {
+            this.newsList[i].dateFormat = 'MMM d';
           } else {
             this.newsList[i].dateFormat = 'mediumDate';
           }

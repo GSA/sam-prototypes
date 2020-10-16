@@ -3,123 +3,85 @@
 		<div class="grid-row sds-hero sds-hero--image">
 			<div class="desktop:grid-offset-1 desktop:grid-col-10">
 				<!-- HERO SECTION -->
-				<div class="grid-row padding-x-3 desktop:padding-0">
+				<div class="grid-row grid-gap padding-x-3 desktop:padding-0">
 					<div class="desktop:grid-col-7 margin-bottom-4 desktop:margin-0">
 						<h1>Federal Hierarchy</h1>
 						<p class="maxw-full text-base-dark">The Federal Hierarchy is the directory or family tree that establishes relationships between each department's or independent agency's sub-tiers and its offices. It is used by federal agencies as the authoritative source for managing and referencing federal funding and awarding organizations.
 						</p>
-						<h2>Search the Federal Hierarchy</h2>
-						<form class="usa-search usa-search--big padding-right-2" role="search">
-							<label class="usa-sr-only" for="search-field-big">Search</label>
-							<input class="usa-input " id="search-field-big" type="search" name="search" placeholder="Enter code or name of organization">
-							<button class="usa-button" type="submit">
-								<span class="usa-sr-only">Search</span>
-							</button>
-						</form>
-					</div>
-					<div class="desktop:grid-col-5 display-none desktop:display-flex">
-						<div class="sds-tile--outline">
-              <h2>Federal Users Get Started Here:</h2>
-							<p class="text-base-dark">Manage federal funding and awarding organizations as a hierarchy administrator.</p>
-							<div class="desktop:flex-column flex-justify-center grid-row grid-gap">
-								<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-	              	<button class="usa-button usa-button--secondary width-full">
-										<a [routerLink]="['/home/federal-hierarchy']" class="usa-link">Federal Hierarchy for Federal Users</a>
-									</button>
-								</div>
-								<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-									<button class="usa-button width-full">Sign in to Get Started</button>
-								</div>
-							</div>
+            <div class="grid-row margin-top-4">
+              <div class="grid-col-fill">
+                <h2>Search federal hierarchy</h2>
+              </div>
+              <div class="grid-col-auto">
+                <a class="usa-link text-bold" [routerLink]="['/search/results']" [queryParams]="{index: 'hierarchy'}">Advanced Search</a>
+              </div>
             </div>
-					</div>
+              <div class="grid-row margin-top-1">
+                <div class="grid-col">
+                  <sds-search name="opps-search" [(ngModel)]="searchModel" (ngModelChange)="search()" [searchSettings]="searchSettings">
+                  </sds-search>
+                </div>
+              </div>
+              <div class="grid-row">
+                <div class="usa-checkbox grid-col-fill">
+                    <input class="usa-checkbox__input" id="activeOnly" type="checkbox" name="activeOnly" value="activeOnly" checked="checked">
+                    <label class="usa-checkbox__label" for="activeOnly">Active Only</label>
+                </div>
+              </div>
+					</div>         
+          <div class="desktop:grid-col-5 display-none desktop:display-flex height-full">
+            <div class="sds-tile--outline display-flex flex-column flex-justify margin-top-2">
+              <div>
+                <h2>Federal Users</h2>
+                <p class="text-base-dark">Manage federal funding and awarding organizations as a hierarchy administrator.</p>
+              </div>
+              <div class="desktop:flex-column flex-justify-center grid-row grid-gap margin-top-2">
+                <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12">
+                  <button *ngIf="!model.signedIn" class="usa-button width-full" 
+                        [routerLink]="['/workspace']" 
+                        [queryParams]="{signin: true}">
+                      Sign in to get started
+                  </button>
+                  <button *ngIf="model.signedIn" class="usa-button width-full" 
+                        [routerLink]="['/workspace']">
+                        Go to workspace
+                  </button>
+                </div>
+                <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
+                  <button class="usa-button usa-button--secondary width-full" [routerLink]="['/home/hierarchy-federal']">
+                    Go to hierarchy federal home
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
 				</div>
 			</div>
 		</div>
-		<!-- ACCORDION -->
-		<div class="grid-row padding-x-3 desktop:padding-0">
-			<div class="desktop:grid-offset-1 desktop:grid-col-10 margin-bottom-4">
-			<!-- ACCORDION -->
-			<div class="usa-accordion usa-accordion--bordered">
-				<h2 class="usa-accordion__heading">
-					<button class="usa-accordion__button  border-top-1px border-base-light " aria-expanded="false" aria-multiselectable="false" aria-controls="b-a1">
-						Get started searching federal hierarchy
-					</button>
-				</h2>
-				<div id="b-a1" class="usa-accordion__content usa-prose" hidden>
-					<ul class="sds-list sds-list--unstyled sds-list--flex">
-            <li>
-              <i class="sds fa-new-note"></i>
-              <span class="sr-only"></span>
-              <a class="usa-link" href=" ">
-                Use the search feature on SAM.gov
-              </a>
-            </li>
-            <li>
-              <i class="sds fa-new-note"></i>
-              <span class="sr-only"></span>
-              <a class="usa-link" href=" ">
-                Following federal hierarchy
-              </a>
-            </li>
-            <li>
-              <i class="sds fa-video-square"></i>
-              <span class="sr-only"></span>
-              <a class="usa-link" href=" ">
-                Saving my searches
-              </a>
-            </li>
-            <li>
-              <i class="sds fa-document-pdf"></i>
-              <span class="sr-only"></span>
-              <a class="usa-link" href=" ">
-                Quick Start Guide
-              </a>
-            </li>
-						<li>
-              <i class="sds fa-video-square"></i>
-              <span class="sr-only"></span>
-              <a class="usa-link" href=" ">
-                Video - Finding federal funding and awarding organizations
-              </a>
-            </li>
-          </ul>
-				</div>
-				<h2 class="usa-accordion__heading">
-					<button class="usa-accordion__button " aria-expanded="false" aria-multiselectable="false" aria-controls="b-a2">
-						Use federal hierarchy advanced search
-					</button>
-				</h2>
-				<div id="b-a2" class="usa-accordion__content usa-prose">
-					<ul class="sds-list sds-list--unstyled sds-list--flex">
-            <li>
-              <i class="sds fa-new-note"></i>
-              <span class="sr-only"></span>
-              <a class="usa-link" href=" ">
-                Changing search filters
-              </a>
-            </li>
-            <li>
-              <i class="sds fa-new-note"></i>
-              <span class="sr-only"></span>
-              <a class="usa-link" href=" ">
-                Federal hierarchy organization types
-              </a>
-            </li>
-            <li>
-              <i class="sds fa-new-note"></i>
-              <span class="sr-only"></span>
-              <a class="usa-link" href=" ">
-                Using even filters
-              </a>
-            </li>
-          </ul>
-				</div>
-			</div>
-			</div>
-		</div>
+    <!-- ACCORDION -->
+    <div class="grid-row">
+      <div class="tablet:grid-col-10 tablet:grid-offset-1">
+          <sds-accordion-next multi="multi" #sdsAccordionDemo>
+            <sds-accordion-item *ngFor="let help of searchHelp" #first>
+              <sds-accordion-title>{{help.title}}</sds-accordion-title>
+              <sds-accordion-content>
+                <ul class="sds-list sds-list--icon padding-0">
+                  <li *ngFor="let article of help.articles">
+                    <span class="sds-list__item-icon">
+                      <i [ngClass]="article.icon"></i>
+                    </span>
+                    <span class="sds-list__item-content">
+                      <a class="usa-link" [routerLink]="[article.link]">{{article.title}}</a>
+                    </span>
+                  </li>
+                </ul>
+              </sds-accordion-content>
+            </sds-accordion-item>
+          </sds-accordion-next>
+      </div>
+    </div>
 		<!-- Tile -->
-		<div class="grid-row desktop:display-none">
+		<div class="grid-row desktop:display-none margin-top-2">
 			<div class="grid-col-11 margin-x-auto">
 				<div class="sds-tile--outline">
 					<h2>Federal Users Get Started Here:</h2>
@@ -135,110 +97,119 @@
 				</div>
 			</div>
 		</div>
-		<!-- CARDS -->
-		<div class="grid-row grid-gap flex-wrap padding-x-3 desktop:padding-0">
-			<div class="grid-row tablet:grid-col-5 desktop:grid-col margin-1">
-			<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-        <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-          <a [routerLink]="['news']" class="sds-card__link">
-            <h2 class="sds-card__title">Connect to Data Services</h2>
-          </a>
-        </div>
-        <div class="sds-card__body">
-          <ul class="sds-list sds-list--unstyled sds-list--flex">
-            <li>
-              <i class="sds fa-document-pdf"></i>
-              <span class="sr-only"></span>
-              <a class="usa-link" href=" ">
-                Data Services Quick Start Guide
-              </a>
-            </li>
-            <li>
-              <i class="sds fa-new-note"></i>
-              <span class="sr-only"></span>
-              <a class="usa-link" href=" ">
-                How to use APIs
-              </a>
-            </li>
-            <li>
-              <i class="sds fa-video-square"></i>
-              <span class="sr-only"></span>
-              <a class="usa-link" href=" ">
-                Video - How to access data extracts and use APIs
-              </a>
-            </li>
-            <li>
-              <i class="sds fa-question-circle"></i>
-              <span class="sr-only"></span>
-              <a class="usa-link" href=" ">
-                Go to federal hierarchy APIs
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-			</div>
-			<div class="grid-row tablet:grid-col-5 desktop:grid-col margin-1">
-			<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-        <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-          <a [routerLink]="['news']" class="sds-card__link">
-            <h2 class="sds-card__title">Download Data Files</h2>
-          </a>
-        </div>
-        <div class="sds-card__body">
-          <ul class="sds-list sds-list--unstyled sds-list--flex">
-            <li>
-              <i class="sds fa-new-note"></i>
-              <span class="sr-only"></span>
-              <a class="usa-link" href=" ">
-                How to download all federal hierarchy information
-              </a>
-            </li>
-            <li>
-              <i class="sds fa-new-note"></i>
-              <span class="sr-only"></span>
-              <a class="usa-link" href=" ">
-                Go to file extracts
-              </a>
-            </li>
-          </ul>
+
+    <div class="grid-row grid-gap flex-wrap margin-top-4 padding-x-3 desktop:padding-0">
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a class="sds-card__link">
+              <h2 class="sds-card__title">Connect to Data Services</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-document"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">How to use data services</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-document-pdf"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Data services quick start guide</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-video-square"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Video: Using data services</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Go to public federal hierarchy API</a>
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-			</div>
-			<div class="grid-row tablet:grid-col-5 desktop:grid-col margin-1">
-			<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-        <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-          <a [routerLink]="['news']" class="sds-card__link">
-            <h2 class="sds-card__title">Help</h2>
-          </a>
-        </div>
-        <div class="sds-card__body">
-          <ul class="sds-list sds-list--unstyled sds-list--flex">
-            <li>
-              <i class="sds fa-question-circle"></i>
-              <span class="sr-only"></span>
-              <a class="usa-link" href=" ">
-                Frequently ASked Questions
-              </a>
-            </li>
-            <li>
-              <i class="sds fa-book"></i>
-              <span class="sr-only"></span>
-              <a class="usa-link" href=" ">
-                Glossary Terms
-              </a>
-            </li>
-            <li>
-              <i class="sds fa-video-square"></i>
-              <span class="sr-only"></span>
-              <a class="usa-link" href=" ">
-                Videos
-              </a>
-            </li>
-          </ul>
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a [routerLink]="['news']" class="sds-card__link">
+              <h2 class="sds-card__title">Download Data Files</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-document"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">How to use federal hierarchy data files</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Go to federal hierarchy data</a>
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-			</div>
-		</div>
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a [routerLink]="['news']" class="sds-card__link">
+              <h2 class="sds-card__title">Help</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-question-circle"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a [routerLink]="['/help']" class="usa-link">Frequently Asked Questions</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-book"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Glossary Terms</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-video-square"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Videos</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 	</div>
 </main>

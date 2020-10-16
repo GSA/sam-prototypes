@@ -5,7 +5,7 @@ export let NewsList: NewsData[] = [
 		"id" : "0000001",
 		"domain" : "all",
 		"title" : "Release Notes Posted",
-		"shortDescription" : "The SAM.gov November 9, 2019 release notes are posted. Remember, you can find release notes for all SAM.gov software releases at SAM.gov.",
+		"shortDescription" : "The SAM.gov October 14 release notes are posted. Remember, you can find release notes for all SAM.gov software releases at SAM.gov.",
 		"fullDescription": "",
 		"publishDate" : "2020-10-14 06:15 AM",
 		"dateFormat": null
@@ -25,7 +25,7 @@ export let NewsList: NewsData[] = [
 		"title" : "FY18 Procurement Data Quality Summary",
 		"shortDescription" : "Read the Federal Procurement Data Quality Summary of agency data in the Federal Procurement Data System (FPDS) for Fiscal Year 2018. The regulatory and policy requirement for verifying the accuracy and completeness of data meets the requirements for agencies certifying procurement data for the DATA Act.",
 		"fullDescription": "",
-		"publishDate" : "2019-08-17",
+		"publishDate" : "2020-10-01",
 		"dateFormat": null
 	},
 	{
@@ -34,7 +34,7 @@ export let NewsList: NewsData[] = [
 		"title" : "Financial Assistance Certifications and Representations",
 		"shortDescription" : "On February 2, 2019, the System for Award Management (SAM) implemented a new process that allows financial assistance registrants to submit common federal government-wide certifications and representations.",
 		"fullDescription": "",
-		"publishDate" : "2019-02-02",
+		"publishDate" : "2019-02-15",
 		"dateFormat": null
 	},	{
 		"id" : "0000005",
@@ -42,7 +42,7 @@ export let NewsList: NewsData[] = [
 		"title" : "NIA Extension for Hurricane Maria",
 		"shortDescription" : "The expiration date for National Interest Action value 'Hurricane Maria 2017' has been extended to 10/15/2019 in FPDS Production. National Interest Action value 'Hurricane Maria 2017' (code H17M) is valid from 09/20/2017 to 10/15/2019.",
 		"fullDescription": "",
-		"publishDate" : "2019-10-07",
+		"publishDate" : "2019-05-23",
 		"dateFormat": null
 	},
 	{

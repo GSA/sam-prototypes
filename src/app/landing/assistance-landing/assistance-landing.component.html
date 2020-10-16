@@ -43,7 +43,7 @@
                 <p class="text-base-dark">Manage assistance listings as a federal assistance coordinator.</p>
               </div>
               <div class="desktop:flex-column flex-justify-center grid-row grid-gap margin-top-2">
-                <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12">
+                <div class="grid-col-12">
                   <button *ngIf="!model.signedIn" class="usa-button width-full" 
                         [routerLink]="['/workspace']" 
                         [queryParams]="{signin: true}">
@@ -54,7 +54,7 @@
                         Go to workspace
                   </button>
                 </div>
-                <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
+                <div class="grid-col-12 margin-y-1">
                   <button class="usa-button usa-button--secondary width-full" [routerLink]="['/home/assistance/federal']">
                     Go to assistance listings federal home
                   </button>
@@ -90,22 +90,32 @@
     </div>
 
 		<!-- Tile -->
-		<div class="grid-row desktop:display-none">
+		<div class="grid-row desktop:display-none margin-top-2">
 			<div class="grid-col-11 margin-x-auto">
 				<div class="sds-tile--outline">
-					<h2>Federal Users Get Started Here:</h2>
-					<p class="text-base-dark">Manage federal funding and awarding organizations as a hierarchy administrator.</p>
-					<div class="desktop:flex-column flex-justify-center grid-row grid-gap">
-						<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-							<button class="usa-button usa-button--secondary width-full">Federal Hierarchy for Federal Users</button>
-						</div>
-						<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-							<button class="usa-button width-full">Sign in to Get Started</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+					<h2>Federal Users</h2>
+					<p class="text-base-dark">Manage assistance listings as a federal assistance coordinator.</p>
+					<div class="desktop:flex-column flex-justify-center grid-row grid-gap margin-top-2">
+            <div class="grid-col-12 grid-col-12 tablet:grid-col-6 margin-y-1">
+              <button *ngIf="!model.signedIn" class="usa-button width-full" 
+                    [routerLink]="['/workspace']" 
+                    [queryParams]="{signin: true}">
+                  Sign in to get started
+              </button>
+              <button *ngIf="model.signedIn" class="usa-button width-full" 
+                    [routerLink]="['/workspace']">
+                    Go to workspace
+              </button>
+            </div>
+            <div class="grid-col-12 grid-col-12 tablet:grid-col-6 margin-y-1">
+              <button class="usa-button usa-button--secondary width-full" [routerLink]="['/home/assistance/federal']">
+                Go to assistance listings federal home
+              </button>
+            </div>
+          </div>
+  			</div>
+  		</div>
+    </div>
 		<!-- CARDS -->
 		<div class="grid-row grid-gap flex-wrap margin-top-4 padding-x-3 desktop:padding-0">
 			<div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
