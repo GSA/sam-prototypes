@@ -17,6 +17,7 @@ export class AppComponent {
   title = "sam-gov";
   sectionId: string = "home";
   isCollapsedContent: boolean = true;
+  isHomePage: boolean = true;
 
   @ViewChild("header", {static: true}) header;
 
@@ -32,6 +33,8 @@ export class AppComponent {
         this.router.events.subscribe((evt) => {
             if (!(evt instanceof NavigationEnd)) {
                 return;
+            } else {
+              this.isHomePage = (evt.url == '/');
             }
             window.scrollTo(0, 0);
         });

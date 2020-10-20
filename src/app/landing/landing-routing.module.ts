@@ -3,20 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
 	{
-		path: 'entity-registration',
-		loadChildren: () => import('./entity-registration-landing/entity-registration-landing.module').then(m => m.EntityRegistrationLandingModule),
-	    data: {
-	      id: "home"
-	    }
-	},
-	{
-		path: 'entity-information',
-		loadChildren: () => import('./entity-information-landing/entity-information-landing.module').then(m => m.EntityInformationLandingModule),
-	    data: {
-	      id: "home"
-	    }
-	},
-	{
 		path: 'contract-data',
 		loadChildren: () => import('./contract-data-landing/contract-data-landing.module').then(m => m.ContractDataLandingModule),
 	    data: {
@@ -78,6 +64,13 @@ const routes: Routes = [
 	    data: {
 	      id: "home"
 	    }
+	},
+	{
+		path: 'registration-entity',
+		loadChildren: () => import('./registration-landing-entity/registration-landing-entity.module').then(m => m.RegistrationLandingEntityModule),
+	    data: {
+	      id: "home"
+	    }	
 	},
 	{
 		path: 'wages',

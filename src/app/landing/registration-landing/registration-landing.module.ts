@@ -1,5 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
+import {
+  SdsSearchModule,
+  SdsVideoPlayerModule
+} from '@gsa-sam/components';
+
+import { SdsAccordionModule } from '@gsa-sam/sam-material-extensions';
 
 import { RegistrationLandingRoutingModule } from './registration-landing-routing.module';
 import { RegistrationLandingComponent } from './registration-landing.component';
@@ -8,6 +17,11 @@ import { RegistrationLandingComponent } from './registration-landing.component';
   declarations: [RegistrationLandingComponent],
   imports: [
     CommonModule,
+    RouterModule,
+    FormsModule,
+    SdsSearchModule,
+    SdsAccordionModule,
+    SdsVideoPlayerModule,
     RegistrationLandingRoutingModule
   ],
   exports: [RegistrationLandingComponent]
