@@ -7,6 +7,7 @@ import { AdvancedFiltersComponent } from './advanced-filters.component';
   imports: [
     CommonModule
   ],
+  exports: [AdvancedFiltersComponent],
   entryComponents: [AdvancedFiltersComponent]
 })
 export class AdvancedFiltersModule { }
