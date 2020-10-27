@@ -9,6 +9,7 @@ import { SDSAutocompleteServiceInterface,
 import { hierarchyData } from './hierarchy.data';
 
 
+@Injectable()
 export class HierarchyService implements SDSAutocompleteServiceInterface {
 
    	public model: SDSSelectedItemModel = new SDSSelectedItemModel();

@@ -8,6 +8,7 @@ import { SDSAutocompleteServiceInterface,
 		 SelectionMode } from '@gsa-sam/components';
 import { naicsData } from './naics.data';
 
+@Injectable()
 export class NaicsService implements SDSAutocompleteServiceInterface {
 
    	public model: SDSSelectedItemModel = new SDSSelectedItemModel();

@@ -7,6 +7,7 @@ import { SDSAutocompleteServiceInterface,
 		 SDSAutocompletelConfiguration, 
 		 SelectionMode } from '@gsa-sam/components';
 
+@Injectable()
 export class AwardIdvTypeService implements SDSAutocompleteServiceInterface {
 	
    	public model: SDSSelectedItemModel = new SDSSelectedItemModel();

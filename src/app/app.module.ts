@@ -44,7 +44,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
   exports: []
 })
 export class AppModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<AppModule> {
     return {
       ngModule: AppModule,
       providers: [SamModelService, HelpService, HelpFiltersService]

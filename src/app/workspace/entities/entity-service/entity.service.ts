@@ -2,6 +2,8 @@ import { data } from './entity.data';
 import { Observable, of } from 'rxjs';
 import { SearchParameters, SearchListInterface, SearchResult } from '@gsa-sam/layouts';
 import { EntityData } from './entity.model';
+import { Injectable } from "@angular/core";
+@Injectable()
 export class EntityService implements SearchListInterface {
     filterParam = {};
     getData(search: SearchParameters): Observable<SearchResult> {

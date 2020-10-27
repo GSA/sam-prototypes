@@ -8,6 +8,7 @@ import { SDSAutocompleteServiceInterface,
 		 SelectionMode } from '@gsa-sam/components';
 import { pscData } from './psc.data';
 
+@Injectable()
 export class PscService implements SDSAutocompleteServiceInterface {
 
    	public model: SDSSelectedItemModel = new SDSSelectedItemModel();

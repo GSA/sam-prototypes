@@ -10,14 +10,14 @@ const routes: Routes = [
 	},
 	{
 		path: 'registrations',
-		loadChildren: './entities/entities.module#EntitiesModule',
+		loadChildren: () => import('./entities/entities.module').then(m => m.EntitiesModule),
 		data: {
 			sideId: 'registrations'
 		}
 	},
 	{
 		path: 'assistancelist',
-		loadChildren: './assistancelist/assistancelist.module#AssistancelistModule',
+		loadChildren: () => import('./assistancelist/assistancelist.module').then(m => m.AssistancelistModule),
 		data: {
 			sideId: 'assistancelist'
 		}
@@ -25,7 +25,7 @@ const routes: Routes = [
 	},
 	{
 		path: 'opportunities',
-		loadChildren: './opportunities/opportunities.module#OpportunitiesModule',
+		loadChildren: () => import('./opportunities/opportunities.module').then(m => m.OpportunitiesModule),
 		data: {
 			sideId: 'opportunities'
 		}

@@ -17,6 +17,7 @@ let dateRanges = [
     { 'label': 'Custom', 'value': 'custom' }
 ];
 
+@Injectable()
 export class DateRangeService implements SDSAutocompleteServiceInterface {
 
 	
