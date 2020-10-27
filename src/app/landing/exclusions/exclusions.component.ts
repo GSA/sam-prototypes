@@ -99,7 +99,7 @@ export class ExclusionsComponent implements OnInit {
   }
 
   search() {
-     this.router.navigate(['/search/results'], { queryParams: { index: 'exclusions', keyword: 'hello' } });
+     this.router.navigate(['/search'], { queryParams: { index: 'exclusions', keyword: 'hello' } });
   }
 
 }

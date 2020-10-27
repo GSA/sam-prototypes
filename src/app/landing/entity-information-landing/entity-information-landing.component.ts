@@ -29,6 +29,6 @@ export class EntityInformationLandingComponent implements OnInit {
   }
 
   search(searchForm) {
-     this.router.navigate(['/search/results'], { queryParams: { index: 'entityinfo' } });
+     this.router.navigate(['/search'], { queryParams: { index: 'entityinfo' } });
   }
 }

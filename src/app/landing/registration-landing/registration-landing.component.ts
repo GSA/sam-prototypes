@@ -96,7 +96,7 @@ export class RegistrationLandingComponent implements OnInit {
   }
 
   search() {
-     this.router.navigate(['/search/results'], { queryParams: { index: 'registrations', keyword: 'hello' } });
+     this.router.navigate(['/search'], { queryParams: { index: 'registrations', keyword: 'hello' } });
   }
 
 }

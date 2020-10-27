@@ -35,12 +35,12 @@ export class WagesLandingComponent implements OnInit, OnChanges {
 
   search() {
       console.log('Searching...');
-      this.router.navigate(['/search/results'], { queryParams: { index: 'wages' } });
+      this.router.navigate(['/search'], { queryParams: { index: 'wages' } });
   }
 
   ngOnChanges() {
       console.log('Searching...');
-      this.router.navigate(['/search/results'], { queryParams: { index: 'wages' } });
+      this.router.navigate(['/search'], { queryParams: { index: 'wages' } });
   }
 
 }

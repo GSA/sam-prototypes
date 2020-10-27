@@ -1,0 +1,107 @@
+<sds-subheader>
+  <!-- =============== BACK BUTTON =============== -->
+  <button class="sds-button sds-button--circular" (click)="back();">
+    <fa-icon [icon]="['fas', 'chevron-left']" [fixedWidth]="true"></fa-icon>
+  </button>
+
+  <!-- =============== TITLE =============== -->
+  <span class="font-heading-lg text-semibold margin-right-6">
+    Integrity Record
+  </span>
+
+  <sds-subheader-actions
+    [model]="subheaderActions"
+    (clicks)="log($event)">
+  </sds-subheader-actions>
+
+</sds-subheader>
+<main>
+  <div class="sds-page">
+    <div class="grid-container width-desktop">
+    	<h1 class="margin-top-4">{{record.awardeeName}}</h1>
+	    <div class="grid-row grid-gap padding-bottom-1 margin-bottom-2 border-bottom-05 border-base-light">
+	    	<div class="grid-col-3">
+	    		<div class="sds-field sds-field--stacked sds-field--large">
+			        <div class="sds-field__name"><span class="usa-tag sds-tag--info-purple">DUNS</span>Unique Entity ID</div>
+			        <div class="sds-field__value">{{ record.DUNS }}</div>
+			    </div>
+	    	</div>
+	    	<div class="grid-col-fill">
+	    		<div class="sds-field sds-field--stacked sds-field--large">
+			        <div class="sds-field__name">CAGE/NCAGE</div>
+			        <div class="sds-field__value">{{ record.cage ? record.cage : "(blank)" }}</div>
+			    </div>
+	        </div>
+	        <div class="grid-col-auto">
+	        	<span class="sds-type--label-title">Record Date</span>
+	        	<span class="sds-tag sds-tag--outline flex-justify-center width-auto">{{ record.recordDate | date }}</span>
+	        </div>
+	        <div class="grid-col-auto">
+	        	<span class="sds-type--label-title">Record Type</span>
+	       	    <span class="sds-tag sds-tag--outline flex-justify-center width-auto">{{ record.recordType }}</span>
+	        </div>
+	      </div>
+
+	      <div class="grid-row grid-gap">
+	      	<div class="grid-col-5">
+	      		<div class="sds-tile--outline">
+	      			<div class="sds-field sds-field--stacked">
+			        	<div class="sds-field__name">Address</div>
+	      				<div class="sds-field__value">{{record.ADDRESS1}}</div>
+	      				<div class="sds-field__value">{{record.CITY + ", " + record.STATE + ' ' + record.zipCode}}</div>
+	      				<div class="sds-field__value">{{record.COUNTRY}}</div>
+	      			</div>
+	      		</div>
+	        </div>
+	        <div class="grid-col-7">
+	        	<div class="grid-row grid-gap margin-y-2">
+			    	<div class="grid-col-6">
+			    		<div class="sds-field sds-field--stacked sds-field--large">
+					        <div class="sds-field__name"><span class="usa-tag sds-tag--info-white">SAM</span>Unique Entity ID</div>
+					        <div class="sds-field__value">{{ record.UEI ? record.UEI : '(blank)'}}</div>
+					    </div>
+					</div>
+			    	<div class="grid-col-6">
+			    		<div class="sds-field sds-field--stacked sds-field--large">
+					        <div class="sds-field__name">Record Type</div>
+					        <div class="sds-field__value">{{ record.recordType}}</div>
+					    </div>
+			    	</div>
+			    </div>
+	        	<div class="grid-row grid-gap margin-bottom-2">
+			    	<div class="grid-col-6">
+			    		<div class="sds-field sds-field--stacked sds-field--large">
+					        <div class="sds-field__name">Contract/Grant Number</div>
+					        <div class="sds-field__value">{{ record.awardNumber }}</div>
+					    </div>
+			    	</div>
+			    	<div class="grid-col-6">
+			    		<div class="sds-field sds-field--stacked sds-field--large">
+					        <div class="sds-field__name">Termination Date</div>
+					        <div class="sds-field__value">{{ record.terminationDate ? (record.terminationDate | date) : '(blank)'}}</div>
+					    </div>
+			    	</div>
+			    </div>
+	        </div>
+      	</div>
+      	<h2 class="padding-top-2 border-bottom-2px border-base">
+      		AWARDEE INFORMATION
+      	</h2>
+      	<div class="height-card-lg">
+      	</div>
+
+      	<h2 class="padding-top-2 border-bottom-2px border-base">
+      		OFFICIAL REPORTING AGENCY INFORMATION
+      	</h2>
+      	<div class="height-card-lg">
+      	</div>
+
+
+      	<h2 class="padding-top-2 border-bottom-2px border-base">
+      		HISTORICAL RECORD OF PREVIOUS COMMENTS
+      	</h2>
+      	<div class="height-card-lg">
+      	</div>
+    </div>
+  </div>
+</main>

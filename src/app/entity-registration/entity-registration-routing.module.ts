@@ -4,10 +4,17 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
 	{
 		path: 'register',
-    	loadChildren: './register/register.module#RegisterModule',
+		loadChildren: () => import('./register/register.module').then(m => m.RegisterModule),
     	data: {
     		id: 'workspace'
     	}
+    },
+    {
+	    path: 'view',
+	    loadChildren: () => import('./entity-registration-display/entity-registration-display.module').then(m => m.EntityRegistrationDisplayModule),
+	    data: {
+	      id: "search"
+	    }
 	}
 ];
 

@@ -112,6 +112,10 @@ const routes: Routes = [
     }
   },
   {
+    path: 'integrity',
+    loadChildren: () => import('./integrity/integrity.module').then(m => m.IntegrityModule)
+  },
+  {
     path: '*',
     redirectTo: '/',
     pathMatch: 'full',

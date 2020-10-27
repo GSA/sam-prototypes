@@ -9,6 +9,8 @@ import {
   OnChanges
 } from '@angular/core';
 
+import { Location } from '@angular/common';
+
 import {
   ActivatedRoute,
   Router,
@@ -38,6 +40,12 @@ import { searchSaveListConfig, searchSaveListFilters } from './search-save.confi
 })
 export class SearchSaveComponent implements OnInit {
 
+  public subheaderSearchModel: {};
+
+  public subheaderSearchSettings = {
+    placeholder: 'Enter an ID or keyword'
+  }
+
   form = new FormGroup({});
   filterModel = {};
   fields: FormlyFieldConfig[] = searchSaveListFilters;
@@ -50,6 +58,7 @@ export class SearchSaveComponent implements OnInit {
     public service: SearchSaveService,
     private route: ActivatedRoute,
     public router: Router,
+    private location: Location,
     private change: ChangeDetectorRef,
     public dialog: SdsDialogService) { 
 
@@ -62,8 +71,12 @@ export class SearchSaveComponent implements OnInit {
   	this.change.detectChanges();
   }
 
-  newSearch(value) {
-  	console.log(`%cLog: ${value}`, 'color: blue; font-weight: bold');
+  back() {
+    this.location.back();
+  }
+
+  search() {
+  	
   }
 
   public navigationModel: SideNavigationModel = navigationConfig;

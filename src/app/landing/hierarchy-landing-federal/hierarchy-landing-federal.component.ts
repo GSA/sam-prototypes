@@ -23,6 +23,6 @@ export class HierarchyLandingFederalComponent implements OnInit {
   }
 
   search() {
-     this.router.navigate(['/search/results'], { queryParams: { index: 'hierarchy', keyword: 'hello' } });
+     this.router.navigate(['/search'], { queryParams: { index: 'hierarchy', keyword: 'hello' } });
   }
 }

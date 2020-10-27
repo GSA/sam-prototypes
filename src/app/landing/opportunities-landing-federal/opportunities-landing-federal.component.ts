@@ -36,7 +36,7 @@ export class OpportunitiesLandingFederalComponent implements OnInit {
   }
 
   search() {
-     this.router.navigate(['/search/results'], { queryParams: { index: 'opportunities', keyword: 'hello' } });
+     this.router.navigate(['/search'], { queryParams: { index: 'opportunities', keyword: 'hello' } });
   }
 
 }

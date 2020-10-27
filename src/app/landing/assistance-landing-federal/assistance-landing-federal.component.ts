@@ -23,7 +23,7 @@ export class AssistanceLandingFederalComponent implements OnInit {
   }
 
   search() {
-     this.router.navigate(['/search/results'], { queryParams: { index: 'assistancelist', keyword: 'hello' } });
+     this.router.navigate(['/search'], { queryParams: { index: 'assistancelist', keyword: 'hello' } });
   }
 
 }

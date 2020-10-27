@@ -1,28 +1,62 @@
-<div style="margin-top: 1.5em; margin-bottom: 1.5em;">
-<sds-page>
-  <sds-page-options class="sam-page__options">
-    <sds-toolbar class="tablet:grid-col-auto" #toolbar="sdsToolbar" [expanded]="true">
-      <sds-accordion>
-        <sds-accordion-item [expanded]="false">
-          <sds-accordion-item-header>Show Results For</sds-accordion-item-header>
-          <sds-side-navigation #sideNav [model]="navigationModel"></sds-side-navigation>
-        </sds-accordion-item>
-        <sds-accordion-item [expanded]="true">
-        	<sds-accordion-item-header>Filter By</sds-accordion-item-header>
-          <sds-filters *ngIf="fields && fields.length > 0" [form]="form" [fields]="fields" [model]="filterModel" (filterChange)="filterChange$.next($event)">
-          </sds-filters>
-        </sds-accordion-item>
-      </sds-accordion>
-    </sds-toolbar>
-  <div class="sds-page__content tablet:grid-col-fill margin-0">
-     <search-list-layout #resultList [service]="service" [configuration]="listModel">
-          <ng-template #resultContent let-item>
-              <div>
-              	  <search-save-result [model]="item"></search-save-result>
-              </div>
-          </ng-template>
-      </search-list-layout>
-  </div> 
-  </sds-page-options>
-</sds-page>
-</div>
+<sds-subheader>
+  <!-- =============== BACK BUTTON =============== -->
+  <button class="sds-button sds-button--circular" (click)="back();">
+    <fa-icon [icon]="['fas', 'chevron-left']" [fixedWidth]="true"></fa-icon>
+  </button>
+
+  <!-- =============== TITLE =============== -->
+  <span class="font-heading-lg text-semibold margin-right-6">
+    Saved Search
+  </span>
+
+  <!-- =============== SEARCH =============== -->
+  <sds-search name="keyword-search" [(ngModel)]="subheaderSearchModel" (ngModelChange)="search()" [searchSettings]="subheaderSearchSettings">
+  </sds-search>
+  <ng-container subheader-buttons-container>
+    <ul class="sds-button-group--secondary sds-button-group--segmented">
+      <li class="sds-button-group__item">
+          <button class="usa-button usa-button--outline" [routerLink]="['/search']">Search</button>
+      </li>
+      <li class="sds-button-group__item">
+          <button class="usa-button usa-button--outline" [routerLink]="['/search/search-builder']">Search Builder</button>
+      </li>
+      <li class="sds-button-group__item">
+          <button class="usa-button" [routerLink]="['/search/saved-search']">Saved Search</button>
+      </li>
+    </ul>
+  </ng-container>
+
+</sds-subheader>
+<main>
+  <div class="sds-page">
+    <div class="grid-container">
+        <div class="grid-row grid-gap">
+          <div class="grid-col-auto">
+            <sds-toolbar class="tablet:grid-col-auto" #toolbar="sdsToolbar" [expanded]="true">
+              <sds-accordion>
+                <sds-accordion-item [expanded]="false">
+                  <sds-accordion-item-header>Show Results For</sds-accordion-item-header>
+                  <sds-side-navigation #sideNav [model]="navigationModel"></sds-side-navigation>
+                </sds-accordion-item>
+                <sds-accordion-item [expanded]="true">
+                	<sds-accordion-item-header>Filter By</sds-accordion-item-header>
+                  <sds-filters *ngIf="fields && fields.length > 0" [form]="form" [fields]="fields" [model]="filterModel" (filterChange)="filterChange$.next($event)">
+                  </sds-filters>
+                </sds-accordion-item>
+              </sds-accordion>
+            </sds-toolbar>
+          </div>
+          <div class="grid-col-fill">
+              <search-list-layout #resultList [service]="service" [configuration]="listModel">
+                  <ng-template #resultContent let-item>
+                      <div>
+                          <search-save-result [model]="item"></search-save-result>
+                      </div>
+                  </ng-template>
+              </search-list-layout>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+

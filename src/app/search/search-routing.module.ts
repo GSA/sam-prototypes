@@ -3,21 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { SearchComponent } from './search.component';
 
 
-const routes: Routes = [
-	{
+const routes: Routes = [	
+    {
 		path: '',
-		component: SearchComponent,
-			children: [
-				{
-					path: 'saved-search',
-					loadChildren: () => import('./search-save/search-save.module').then(m => m.SearchSaveModule)
-				},
-				{
-					path: 'results',
-					loadChildren: () => import('./search-home/search-home.module').then(m => m.SearchHomeModule)
-				}
-
-			]
+		component: SearchComponent
+	},
+	{
+		path: 'saved-search',
+		loadChildren: () => import('./search-save/search-save.module').then(m => m.SearchSaveModule)
+	},
+	{
+		path: 'search-builder',
+		loadChildren: () => import('./search-builder/search-builder.module').then(m => m.SearchBuilderModule)
 	}
 ];
 

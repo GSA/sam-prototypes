@@ -5,7 +5,7 @@ export let navigationConfig: SideNavigationModel = {
         { id: 'all', text: 'All Domains', mode: NavigationMode.INTERNAL, route: '/savedsearch' },
         {
             id: 'contracting', text: 'Contracting', mode: NavigationMode.INTERNAL, route: '/savedsearch', children: [
-                { id: 'opportunites', text: 'Contract Opportunities', mode: NavigationMode.INTERNAL, route: '/savedsearch', queryParams: { 'index' : 'opportunities'}},
+                { id: 'opportunities', text: 'Contract Opportunities', mode: NavigationMode.INTERNAL, route: '/savedsearch', queryParams: { 'index' : 'opportunities'}},
                 { id: 'contractData', text: 'Contract Data', mode: NavigationMode.INTERNAL, route: '/savedsearch' }
             ]
         }, 

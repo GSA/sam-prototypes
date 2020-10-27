@@ -8,7 +8,6 @@ import {
   SdsVideoPlayerModule
 } from '@gsa-sam/components';
 
-
 import { SdsAccordionModule } from '@gsa-sam/sam-material-extensions';
 
 import { OpportunitiesLandingRoutingModule } from './opportunities-landing-routing.module';

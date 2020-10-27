@@ -21,55 +21,55 @@ export let siteMapData: any[] = [
     {
   			label: 'Search',
         public: true,
-  			routerLink: '/search/results',
+  			routerLink: '/search',
   			description: 'Search across all domains or within a single domain by keyword search and using advanced search filters. Common filters are available when you search all domains. Go to the advanced search for each domain for more filtering options.',
   			children: [
   				{
   					label: 'Assistance listings advanced search',
             public: true,
-  					routerLink: '/search/results',
+  					routerLink: '/search',
   					queryParams: { index: 'assistancelist'}
   				},
   				{
   					label: 'Contract opportunities advanced search',
             public: true,
-  					routerLink: '/search/results',
+  					routerLink: '/search',
   					queryParams: { index: 'opportunities'}
   				},
   				{
   					label: 'Contract data advanced search',
             public: true,
-  					routerLink: '/search/results',
+  					routerLink: '/search',
   					queryParams: { index: 'opportunities'}
   				},
   				{
   					label: 'Entity information advanced search',
             public: true,
-  					routerLink: '/search/results',
+  					routerLink: '/search',
   					queryParams: { index: 'entityinfo'},
   					children: [
 		  				{
 		  					label: 'Entity registration advanced search',
                 public: true,
-		  					routerLink: '/search/results',
+		  					routerLink: '/search',
 		  					queryParams: { index: 'opportunities'}
 		  				},
 		  				{
 		  					label: 'Exclusions advanced search',
                 public: true,
-		  					routerLink: '/search/results',
+		  					routerLink: '/search',
 		  					queryParams: { index: 'opportunities'}
 		  				},
 		  				{
 		  					label: 'Integrity information advanced search',
                 public: true,
-		  					routerLink: '/search/results',
+		  					routerLink: '/search',
 		  					queryParams: { index: 'opportunities'}
 		  				},
 		  				{
 		  					label: 'Disaster response registry',
                 public: true,
-		  					routerLink: '/search/results',
+		  					routerLink: '/search',
 		  					queryParams: { index: 'opportunities'}
 		  				},
   					]
@@ -77,25 +77,25 @@ export let siteMapData: any[] = [
   				{
   					label: 'Federal hierarchy advanced search',
             public: true,
-  					routerLink: '/search/results',
+  					routerLink: '/search',
   					queryParams: { index: 'hierarchy'}
   				},
   				{
   					label: 'Wage determinations search by id',
             public: true,
-  					routerLink: '/search/results',
+  					routerLink: '/search',
   					queryParams: { index: 'hierarchy'}
   				},
   				{
   					label: 'Wage determinations DBA search',
             public: true,
-  					routerLink: '/search/results',
+  					routerLink: '/search',
   					queryParams: { index: 'hierarchy'}
   				},
   				{
   					label: 'Wage determinations SCA search',
             public: true,
-  					routerLink: '/search/results',
+  					routerLink: '/search',
   					queryParams: { index: 'hierarchy'}
   				}
   			]

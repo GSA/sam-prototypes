@@ -106,6 +106,20 @@ const routes: Routes = [
 	    data: {
 	      id: "home"
 	    }
+	},
+	{
+		path: 'disaster-response',
+		loadChildren: () => import('./disaster-response-landing/disaster-response-landing.module').then(m => m.DisasterResponseLandingModule),
+	    data: {
+	      id: "home"
+	    }
+	},
+	{
+		path: 'integrity',
+		loadChildren: () => import('./integrity-landing/integrity-landing.module').then(m => m.IntegrityLandingModule),
+	    data: {
+	      id: "home"
+	    }
 	}
 
 ];
