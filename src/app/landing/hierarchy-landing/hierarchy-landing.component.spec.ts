@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { HierarchyLandingComponent } from './hierarchy-landing.component';
 
@@ -6,7 +6,7 @@ describe('HierarchyLandingComponent', () => {
   let component: HierarchyLandingComponent;
   let fixture: ComponentFixture<HierarchyLandingComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ HierarchyLandingComponent ]
     })

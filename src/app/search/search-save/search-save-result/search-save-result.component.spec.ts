@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SearchSaveResultComponent } from './search-save-result.component';
 
@@ -6,7 +6,7 @@ describe('SearchSaveResultComponent', () => {
   let component: SearchSaveResultComponent;
   let fixture: ComponentFixture<SearchSaveResultComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ SearchSaveResultComponent ]
     })

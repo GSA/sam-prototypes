@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { DbaTobeRevisedComponent } from './dba-tobe-revised.component';
 
@@ -6,7 +6,7 @@ describe('DbaTobeRevisedComponent', () => {
   let component: DbaTobeRevisedComponent;
   let fixture: ComponentFixture<DbaTobeRevisedComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ DbaTobeRevisedComponent ]
     })

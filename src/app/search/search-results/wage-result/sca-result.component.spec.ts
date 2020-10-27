@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ScaResultComponent } from './sca-result.component';
 
@@ -6,7 +6,7 @@ describe('ScaResultComponent', () => {
   let component: ScaResultComponent;
   let fixture: ComponentFixture<ScaResultComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ScaResultComponent ]
     })
