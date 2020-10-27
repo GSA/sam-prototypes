@@ -17,27 +17,27 @@ import { FormlyModule } from '@ngx-formly/core';
 import { FormsModule } from '@angular/forms';
 
 import { AssistanceResultModule } from './search-results/assistance-result/assistance-result.module';
-import { ContractOpportunityResultModule} from './search-results/contract-opportunity-result/contract-opportunity-result.module';
+import { ContractOpportunityResultModule } from './search-results/contract-opportunity-result/contract-opportunity-result.module';
 import { ContractDataResultModule } from './search-results/contract-data-result/contract-data-result.module';
 import { EntityRegistrationResultModule } from './search-results/entity-registration-result/entity-registration-result.module';
 import { ExclusionResultModule } from './search-results/exclusion-result/exclusion-result.module';
 import { HierarchyResultModule } from './search-results/hierarchy-result/hierarchy-result.module';
 import { IntegrityResultModule } from './search-results/integrity-result/integrity-result.module';
-import { WageResultModule} from './search-results/wage-result/wage-result.module';
+import { WageResultModule } from './search-results/wage-result/wage-result.module';
 
 import { AllDomainFiltersModule } from './search-filters/all-domain-filters/all-domain-filters.module';
 import { AssistanceFiltersModule } from './search-filters/assistance-filters/assistance-filters.module';
-import { ContractOpportunityFiltersModule} from './search-filters/contract-opportunity-filters/contract-opportunity-filters.module';
+import { ContractOpportunityFiltersModule } from './search-filters/contract-opportunity-filters/contract-opportunity-filters.module';
 import { ContractDataFiltersModule } from './search-filters/contract-data-filters/contract-data-filters.module';
 import { EntityRegistrationFiltersModule } from './search-filters/entity-registration-filters/entity-registration-filters.module';
 import { EntityInformationFiltersModule } from './search-filters/entity-information-filters/entity-information-filters.module';
 import { DisasterResponseFiltersModule } from './search-filters/disaster-response-filters/disaster-response-filters.module';
 import { ExclusionFiltersModule } from './search-filters/exclusion-filters/exclusion-filters.module';
 import { IntegrityFiltersModule } from './search-filters/integrity-filters/integrity-filters.module';
-import { WageFiltersModule} from './search-filters/wage-filters/wage-filters.module';
+import { WageFiltersModule } from './search-filters/wage-filters/wage-filters.module';
 
 import { SearchServiceModule } from '../services/search-service/search-service.module';
-
+import { AdvancedFiltersModule } from './search-filters/advanced-filters/advanced-filters.module'
 import { SearchRoutingModule } from './search-routing.module';
 import { SearchComponent } from './search.component';
 
@@ -57,15 +57,15 @@ import { SearchComponent } from './search.component';
     SdsSideNavigationModule,
     SdsAccordionModule,
     SdsSubheaderModule,
-    SdsFiltersModule, 
+    SdsFiltersModule,
     SearchListServiceModule,
-    AssistanceResultModule, 
-    ContractOpportunityResultModule, 
-    ContractDataResultModule, 
-    EntityRegistrationResultModule, 
-    ExclusionResultModule, 
-    HierarchyResultModule, 
-    IntegrityResultModule, 
+    AssistanceResultModule,
+    ContractOpportunityResultModule,
+    ContractDataResultModule,
+    EntityRegistrationResultModule,
+    ExclusionResultModule,
+    HierarchyResultModule,
+    IntegrityResultModule,
     WageResultModule,
     AllDomainFiltersModule,
     AssistanceFiltersModule,
@@ -78,7 +78,8 @@ import { SearchComponent } from './search.component';
     IntegrityFiltersModule,
     WageFiltersModule,
     SearchServiceModule,
-    SearchRoutingModule
+    SearchRoutingModule,
+    AdvancedFiltersModule
   ],
   exports: [SearchComponent]
 })
