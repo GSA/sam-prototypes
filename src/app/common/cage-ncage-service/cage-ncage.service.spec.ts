@@ -6,7 +6,7 @@ describe('CageNcageService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: CageNcageService = TestBed.get(CageNcageService);
+    const service: CageNcageService = TestBed.inject(CageNcageService);
     expect(service).toBeTruthy();
   });
 });

@@ -8,10 +8,10 @@ describe('EntityListComponent', () => {
   let fixture: ComponentFixture<EntityListComponent>;
   let store: Store<any>;
 
-  beforeEach(async() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
-      imports: [ StoreModule.forRoot({}) ],
-      declarations: [ EntityListComponent ]
+      imports: [StoreModule.forRoot({})],
+      declarations: [EntityListComponent]
     });
 
     await TestBed.compileComponents();
@@ -20,7 +20,7 @@ describe('EntityListComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(EntityListComponent);
     component = fixture.componentInstance;
-    store = TestBed.get(Store);
+    store = TestBed.inject(Store);
 
     spyOn(store, 'dispatch').and.callThrough();
     fixture.detectChanges();

@@ -6,7 +6,7 @@ describe('WageFiltersService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: WageFiltersService = TestBed.get(WageFiltersService);
+    const service: WageFiltersService = TestBed.inject(WageFiltersService);
     expect(service).toBeTruthy();
   });
 });

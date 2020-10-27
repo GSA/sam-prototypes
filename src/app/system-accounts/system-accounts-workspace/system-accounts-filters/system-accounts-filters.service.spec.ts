@@ -6,7 +6,7 @@ describe('SystemAccountFiltersService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: SystemAccountFiltersService = TestBed.get(SystemAccountFiltersService);
+    const service: SystemAccountFiltersService = TestBed.inject(SystemAccountFiltersService);
     expect(service).toBeTruthy();
   });
 });

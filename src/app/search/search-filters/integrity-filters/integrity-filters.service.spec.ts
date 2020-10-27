@@ -6,7 +6,7 @@ describe('IntegrityFiltersService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: IntegrityFiltersService = TestBed.get(IntegrityFiltersService);
+    const service: IntegrityFiltersService = TestBed.inject(IntegrityFiltersService);
     expect(service).toBeTruthy();
   });
 });

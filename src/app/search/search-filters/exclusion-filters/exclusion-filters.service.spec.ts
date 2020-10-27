@@ -6,7 +6,7 @@ describe('ExclusionFiltersService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ExclusionFiltersService = TestBed.get(ExclusionFiltersService);
+    const service: ExclusionFiltersService = TestBed.inject(ExclusionFiltersService);
     expect(service).toBeTruthy();
   });
 });

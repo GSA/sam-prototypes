@@ -6,7 +6,7 @@ describe('UeiDunsService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: UeiDunsService = TestBed.get(UeiDunsService);
+    const service: UeiDunsService = TestBed.inject(UeiDunsService);
     expect(service).toBeTruthy();
   });
 });

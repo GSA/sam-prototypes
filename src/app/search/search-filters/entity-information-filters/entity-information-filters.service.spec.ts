@@ -6,7 +6,7 @@ describe('EntityInformationFiltersService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: EntityInformationFiltersService = TestBed.get(EntityInformationFiltersService);
+    const service: EntityInformationFiltersService = TestBed.inject(EntityInformationFiltersService);
     expect(service).toBeTruthy();
   });
 });
