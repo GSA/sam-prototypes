@@ -36,8 +36,7 @@
             ],
             "scripts": [
               "node_modules/uswds/dist/js/uswds.min.js"
-            ],
-            "es5BrowserSupport": true
+            ]
           },
           "configurations": {
             "production": {
