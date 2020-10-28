@@ -45,6 +45,7 @@
     "lodash-es": "^4.17.15",
     "ngx-highlightjs": "^4.1.2",
     "ngx-markdown": "^10.1.1",
+    "node-sass": "^4.14.1",
     "qs": "^6.9.4",
     "rxjs": "~6.6.3",
     "ts-md5": "^1.2.7",
@@ -52,7 +53,7 @@
     "zone.js": "^0.11.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1002.0",
+    "@angular-devkit/build-angular": "^0.901.0",
     "@angular/cli": "~10.2.0",
     "@angular/compiler-cli": "^10.2.0",
     "@angular/language-service": "^10.2.0",
