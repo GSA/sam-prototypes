@@ -9,6 +9,8 @@ import {
   OnChanges
 } from '@angular/core';
 
+import { Location } from '@angular/common';
+
 import {
   ActivatedRoute,
   Router,
@@ -24,8 +26,10 @@ import { SideNavigationModel, NavigationMode, INavigationLink, SdsDialogService,
 import { filter, map } from 'rxjs/operators';
 import { FormGroup } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
+import { SearchListConfiguration } from '@gsa-sam/layouts';
 
-import { navigationConfig } from './navigate.config';
+import { DatabankService } from '../../services/databank-service/databank.service';
+
 import { filters } from './filters.config';
 
 
@@ -36,57 +40,81 @@ import { filters } from './filters.config';
 })
 export class DatabankSearchComponent implements OnInit {
 
-  public subheader = {
-      buttons: [],
-      actions: [
-        { id: 'DownloadBtn', icon: 'bars', text: 'Download' }
-      ]
+  public subheaderSearchModel: {};
+
+  public subheaderSearchSettings = {
+    placeholder: 'Enter an ID or keyword'
+  }
+
+  listModel: SearchListConfiguration = {
+    defaultSortValue: "relevanceDescending",
+    pageSize: 25,
+    sortList:
+    [
+      { text: "Relevance", value: "relevanceDescending" },
+      { text: "Updated Date", value: "dateDescending" },
+      { text: "Title: A - Z", value: "titleAscending" },
+      { text: "Title: Z - A", value: "titleDescending" }
+    ]
   };
+  
+  @ViewChild('resultList', { static: true }) resultList;
+
 
   form = new FormGroup({});
-  filterModel;
-  fields: FormlyFieldConfig[] = [];
-
-  showFilters: boolean = true;
-  domainLabel: string;
-  domainExpanded: boolean = false;
-  filtersExpanded: boolean = true;
-  domain: string;
-
-  @ViewChild('domainAccordion', { static: true })
-    domainAccordion: CdkAccordionItem;
-  @ViewChild('filtersAccordion', { static: true })
-    filtersAccordion: CdkAccordionItem;
+  filterModel = {};
+  fields: FormlyFieldConfig[] = filters;
 
   public filterChange$ = new BehaviorSubject<object>(null);
 
-  constructor(private route: ActivatedRoute, private router: Router, private change: ChangeDetectorRef) { 
-      this.fields = filters;
+  constructor(
+    public service: DatabankService,
+    private route: ActivatedRoute,
+    public router: Router,
+    private location: Location,
+    private change: ChangeDetectorRef) { 
+
+  }
+
+  ngOnInit() {
+  }
+
+  ngAfterViewInit() {      
+    this.change.detectChanges();
+    if(this.resultList) {
+        this.resultList.updateFilter(this.filterModel);
+    }
   }
 
   log(value) {
     console.log(`%cLog: ${value}`, 'color: blue; font-weight: bold');
   }
 
-
-  ngOnInit() {   
-    this.route.queryParams.subscribe(
-      data => {
-   		 this.domain = this.route.snapshot.queryParamMap.get('index');
-       if(!this.domain) {
-          this.domain = 'all';
-       }
-      });
+  search() {
+  	console.log(`%cLog: search databank`, 'color: blue; font-weight: bold');
   }
 
-  ngAfterViewInit() {      
-    this.change.detectChanges();
+  resetAll() {
+    this.filterModel = {};
   }
 
-  newSearch(value) {
-  	console.log(`%cLog: ${value}`, 'color: blue; font-weight: bold');
+  openDownloadDialog() {
+
   }
 
-  public navigationModel: SideNavigationModel = navigationConfig;
+  openSaveDialog() {
+
+  }
+
+  openSaveAsDialog() {
+
+  }
+
+  back() {
+      this.location.back();
+  }
 
 }
+
+
+

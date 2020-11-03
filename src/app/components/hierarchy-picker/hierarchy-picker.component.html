@@ -1,0 +1,25 @@
+
+  	<div class="grid-row margin-bottom-2">
+	   	<div class="grid-col">
+			<label>Department</label>
+			<sds-autocomplete [service]="departmentService" (ngModelChange)="departmentChanges($event)" [(ngModel)]="departmentModel" [configuration]="departmentSettings">
+			</sds-autocomplete>
+		</div>
+	</div>
+  	<div class="grid-row margin-bottom-2">
+	   	<div class="grid-col">
+		    <label>Subtier</label>
+			<sds-autocomplete [service]="subtierService" (ngModelChange)="subtierChanges($event)" [(ngModel)]="subtierModel" [configuration]="subtierSettings">
+			</sds-autocomplete>
+		</div>
+	</div>
+  	<div class="grid-row margin-bottom-2">
+	   	<div class="grid-col">
+			<label>Office</label>
+			<sds-autocomplete [service]="officeService" (ngModelChange)="officeChanges($event)" [(ngModel)]="officeModel" [configuration]="officeSettings">
+			</sds-autocomplete>
+		</div>
+	</div>
+
+
+

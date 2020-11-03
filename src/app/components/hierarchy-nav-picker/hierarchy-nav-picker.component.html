@@ -1,0 +1,28 @@
+<div class="grid-row">
+	<div *ngFor="let crumb of breadcrumbs; let last = last;" class="col-auto">
+		<button class="usa-button usa-button--unstyled" [name]="crumb.name" [id]="crumb.id" (click)="breadcrumbSelected($event.target)">{{crumb.name}}
+			<i class="fas fa-angle-right"></i></button>
+	</div>
+</div>
+<sds-table [data]="data" class="height-mobile">
+  <sds-table-column sdsColumnName="fpdsCode">
+    <ng-template #sdsHeaderCell>Code</ng-template>
+    <ng-template #sdsCell let-element="element">
+      <div class="usa-checkbox">
+           <input class="usa-checkbox__input" [id]="element.key" type="checkbox" [name]="element.key" [value]="element.key">
+           <label class="usa-checkbox__label" [for]="element.key">{{ element.fpdsCode }}</label>
+      </div>
+  	</ng-template>
+  </sds-table-column>
+  <sds-table-column sdsColumnName="name">
+    <ng-template #sdsHeaderCell>Name</ng-template>
+    <ng-template #sdsCell let-element="element"><button [name]="element.key" class="usa-button usa-button--unstyled" (click)="navigate($event);">{{ element.name }}</button></ng-template>
+  </sds-table-column>
+  <sds-table-column sdsColumnName="levelLabel">
+    <ng-template #sdsHeaderCell>Level</ng-template>
+    <ng-template #sdsCell let-element="element">{{ element.levelLabel }}</ng-template>
+  </sds-table-column>
+  <sds-header-row [displayedColumns]="displayedColumns"></sds-header-row>
+  <sds-row [displayedColumns]="displayedColumns"></sds-row>
+
+</sds-table>

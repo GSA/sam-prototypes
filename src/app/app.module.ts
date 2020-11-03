@@ -40,8 +40,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
     FontAwesomeModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  exports: []
+  bootstrap: [AppComponent]
 })
 export class AppModule {
   static forRoot(): ModuleWithProviders {

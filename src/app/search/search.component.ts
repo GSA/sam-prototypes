@@ -56,7 +56,7 @@ export class SearchComponent implements OnInit {
   parentDomain: any;
   domain: any;
   form = new FormGroup({});
-  filterModel;
+  filterModel = {};
   fields: FormlyFieldConfig[] = [];
   showAdvancedFilters: boolean = false;
 
