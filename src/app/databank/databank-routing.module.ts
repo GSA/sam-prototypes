@@ -8,7 +8,7 @@ const routes: Routes = [
 		component: DatabankComponent
 	},
 	{
-		path: 'databank-schedule',
+		path: 'scheduled-reports',
 		loadChildren: () => import('./databank-scheduled-reports/databank-scheduled-reports.module').then(m => m.DatabankScheduledReportsModule)
 	},
 	{

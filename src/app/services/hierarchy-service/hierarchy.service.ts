@@ -65,8 +65,39 @@ export class HierarchyService {
 	    return false;
 	}
 
+    getMatch(key: string, includeChildren: boolean, currentItems: number, searchValue: string): Observable<SDSHiercarchicalServiceResult> {
+        let result;
+        if(key && includeChildren && key) {
+            if(key == 'Root') {
+                result = this.data.filter(element => element.parentKey == "" && this.match(element, searchValue));
+            } else {
+            	result = this.data.filter(element => element.parentKey == key && this.match(element, searchValue));
+            }
+        } else {
+        	result = this.data.filter(element => this.match(element, searchValue));
+        }
+        return of({
+        	items: result.slice(0 + currentItems, ((30 + currentItems) < result.length) ? 30 + currentItems : result.length),
+        	totalItems: result.length
+        });      
+
+    }
+
 	getHierarchyNode(key: string): any {
 		return this.data.find(element => element.key == key);
+	}
+
+    getHierarchyNodePath(key: string): any[] {
+		let node = this.data.find(element => element.key == key);
+		let result = [node];
+		while(node.parentKey && node.parentKey != "") {
+		    let id = node.parentKey;
+		    node = this.data.find(element => element.key == id);
+		    if(node) {
+		    	result.unshift(node);
+		    }
+		}
+		return result;
 	}
 
 	getChildData(parentKey: string) : any[] {

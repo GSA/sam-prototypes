@@ -26,13 +26,55 @@
 				        <button class="usa-button" [class.usa-button--outline]="!showCriteria" (click)="toggleCriteria();">Report Criteria</button>
 				    </li>
 				    <li class="sds-button-group__item">
-				        <button class="usa-button"  [class.usa-button--outline]="!showDescription" (click)="toggleDescription()">Description</button>
+				        <button class="usa-button"  [class.usa-button--outline]="!showDescription" (click)="toggleDescription()">Report Criteria</button>
 				    </li>
 				</ul>
     		</div>
     	</div>
     	<div *ngIf="showDescription" class="grid-row margin-2">
-    		<p>{{report.description}}</p>
+    		<div class="grid-col-4">
+    			<p>{{report.description}}</p>
+    			<h3>Date Signed</h3>
+    			<p>You must select a date range for the date the procurement award was signed.</p>
+    			<h3>Federal Hierarchy</h3>
+    			<p></p>
+    			<div class="display-flex flex-row flex-align-center">
+    					<input class="usa-input margin-right-1" type="text">
+		    			<button class="usa-button sds-button--circle sds-button--white" (click)="openDialog()">
+						<i class="fas fa-ellipsis-h fa-2x"aria-hidden="true" title="Screen reader description"></i>
+						  <span class="sr-only">Advanced Selection Dialog</span>
+						</button>
+				</div>
+				<div class="display-flex flex-column flex-align-start">
+				  	<span class="sds-tag sds-tag--chip width-card">
+					  NAVSUP
+					  <button class="sds-tag__close">
+					    <span class="fas fa-times" aria-hidden="true"></span>
+					</button>
+					</span>
+					<span class="sds-tag sds-tag--chip width-card">
+					  NAVSEA
+					  <button class="sds-tag__close">
+					    <span class="fas fa-times" aria-hidden="true"></span>
+					</button>
+					</span>
+					<span class="sds-tag sds-tag--chip width-card">
+					  BUPERS
+					  <button class="sds-tag__close">
+					    <span class="fas fa-times" aria-hidden="true"></span>
+					</button>
+					</span>
+				</div>
+    			<h3>Contracting Office Region</h3>
+    			<form class="usa-form">
+				    <select class="usa-select" name="options" id="options">
+				    <option value value="value0"></option>
+				    <option value="value1">Region 1</option>
+				    <option value="value2">Region 2</option>
+				    <option value="value3">Region 3</option>
+				  </select>
+				</form>
+    		</div>
     	</div>
     	<div *ngIf="showCriteria" class="grid-row grid-gap margin-2">
     		<div class="grid-col-4">
@@ -51,25 +93,13 @@
 				  </select>
 				</form>
     		</div>
-    		<div class="grid-col-8">
-    			<h3>Date Signed</h3>
-    			<p>You must select a date range for the date the procurement award was signed.</p>
-    			<h3>Federal Hierarchy</h3>
-    			<p></p>
-    			<hierarchy-nav-picker></hierarchy-nav-picker>
-    			<h3>Contracting Office Region</h3>
-    			<form class="usa-form">
-				    <select class="usa-select" name="options" id="options">
-				    <option value value="value0"></option>
-				    <option value="value1">Region 1</option>
-				    <option value="value2">Region 2</option>
-				    <option value="value3">Region 3</option>
-				  </select>
-				</form>
-    		</div>
     	</div>
     	<div class="grid-row bg-base-lighter margin-y-4 height-mobile">
     	</div>
     </div>
 </div>
 </main>
+
+<ng-template #advancedPicker>
+	<hierarchy-nav-picker></hierarchy-nav-picker>
+</ng-template>
