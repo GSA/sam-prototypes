@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-databank-scheduled-reports',
@@ -8,9 +9,14 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class DatabankScheduledReportsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit() {
+  }
+
+
+  back() {
+      this.location.back();
   }
 
 }
