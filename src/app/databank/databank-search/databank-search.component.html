@@ -1,48 +1,54 @@
 <sds-subheader>
   <!-- =============== BACK BUTTON =============== -->
-  <button class="sds-button sds-button--circular">
+  <button class="sds-button sds-button--circular" (click)="back();">
     <fa-icon [icon]="['fas', 'chevron-left']" [fixedWidth]="true"></fa-icon>
   </button>
 
   <!-- =============== TITLE =============== -->
-  <span class="font-heading-lg text-semibold">
-    DataBank
+  <span class="font-heading-lg text-semibold margin-right-6">
+    Databank Reports
   </span>
 
   <!-- =============== SEARCH =============== -->
-  <sds-search
-    (term)="log($event)"
-    parentSelector=".grid-row"
-    placeholder="Entity an ID, name, or keyword"
-    inputClass="width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block"
-  >
+  <sds-search name="keyword-search" [(ngModel)]="subheaderSearchModel" (ngModelChange)="search()" [searchSettings]="subheaderSearchSettings">
   </sds-search>
+  <ng-container subheader-buttons-container>
+    <ul class="sds-button-group--secondary sds-button-group--segmented">
+      <li class="sds-button-group__item">
+          <button class="usa-button">Databank</button>
+      </li>
+      <li class="sds-button-group__item">
+          <button class="usa-button usa-button--outline" [routerLink]="['/databank/databank-history']">Report History</button>
+      </li>
+      <li class="sds-button-group__item">
+          <button class="usa-button usa-button--outline" [routerLink]="['/databank/scheduled-reports']">Scheduled Reports</button>
+      </li>
+    </ul>
+  </ng-container>
 
-  <!-- =============== ACTIONS BUTTONS =============== -->
-  <sds-subheader-actions
-    [model]="subheader"
-    (clicks)="log($event)">
-  </sds-subheader-actions>
 </sds-subheader>
-<div class="main">
-	<div class="sds-page">
-		<div class="grid-container">
-			<sds-toolbar class="tablet:grid-col-auto" #toolbar="sdsToolbar" [expanded]="true">
-		      <sds-accordion>
-		        <sds-accordion-item #domainAccordion [expanded]="domainExpanded">
-		          <sds-accordion-item-header>
-		               <span class="text-normal">Select Domain</span> <br>
-		               <span>{{domainLabel}}</span>
-		          </sds-accordion-item-header>
-		          <sds-side-navigation #sideNav [model]="navigationModel"></sds-side-navigation>
-		        </sds-accordion-item>
-		        <sds-accordion-item #filtersAccordion [expanded]="filtersExpanded">
-		        	<sds-accordion-item-header>Filter By</sds-accordion-item-header>
-		          <sds-filters [form]="form" [fields]="fields" [model]="filterModel" (filterChange)="filterChange$.next($event)">
-		          </sds-filters>
-		         </sds-accordion-item>
-		      </sds-accordion>
-		    </sds-toolbar>
-		</div>
-	</div>
-</div>
+<main>
+  <div class="sds-page">
+    <div class="grid-container">
+      <div class="grid-row grid-gap">
+        <div class="grid-col-3">
+              <div id="filterID" class="grid-col bg-accent-cool-lighter border-base-light border-1px padding-x-1 padding-bottom-2">
+                  <sds-filters [form]="form" [fields]="fields" [model]="filterModel" [isHistoryEnable]="true" 
+                      [advancedFilters]="false" [getCleanModel]="true" (filterChange)="filterChange$.next($event)">
+                  </sds-filters>
+              </div>
+        </div>
+        <div class="grid-col-9">
+           <search-list-layout #resultList [service]="service" [configuration]="listModel">
+                <ng-template #resultContent let-item>
+                    <div>
+                      <databank-search-item [model]="item"></databank-search-item>
+                    </div>
+                </ng-template>                
+            </search-list-layout>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+

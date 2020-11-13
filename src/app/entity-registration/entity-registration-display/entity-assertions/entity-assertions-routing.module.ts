@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DatabankReportsComponent } from './databank-reports.component';
- 
-const routes: Routes = [
+import { EntityAssertionsComponent } from './entity-assertions.component';
+
+const routes: Routes = [	
 	{
 		path: '',
-		component: DatabankReportsComponent
-	}];
+		component: EntityAssertionsComponent
+	}
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class DatabankReportsRoutingModule { }
+export class EntityAssertionsRoutingModule { }
