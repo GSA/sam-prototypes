@@ -6,7 +6,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import {
   SdsSearchModule,
-  SdsVideoPlayerModule
+  SdsVideoPlayerModule,
+  SdsIconModule
 } from '@gsa-sam/components';
 
 import { ExclusionsFederalRoutingModule } from './exclusions-federal-routing.module';
@@ -21,7 +22,8 @@ import { ExclusionsFederalComponent } from './exclusions-federal.component';
     FormsModule,
     SdsSearchModule,
     SdsVideoPlayerModule,
-    ExclusionsFederalRoutingModule
+    ExclusionsFederalRoutingModule,
+    SdsIconModule
   ],
   exports: [ExclusionsFederalComponent]
 })

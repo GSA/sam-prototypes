@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
+import {allIcons} from 'ngx-bootstrap-icons';
 
 @Component({
   selector: 'app-status-tracker',
@@ -18,7 +19,7 @@ export class StatusTrackerComponent implements OnInit {
   form = new FormGroup({});
   model: any = {};
   options:any=null;
-  fields: FormlyFieldConfig[] = [      
+  fields: FormlyFieldConfig[] = [
     {
       fieldGroupClassName: 'grid-row grid-gap',
       fieldGroup: [
@@ -34,7 +35,7 @@ export class StatusTrackerComponent implements OnInit {
         {
           className: 'grid-col-4',
           key: 'eft-id',
-          type: 'input',          
+          type: 'input',
           templateOptions: {
             required: true,
             label: 'EFT Identifier'
@@ -42,13 +43,13 @@ export class StatusTrackerComponent implements OnInit {
         }
       ],
     },
-    {      
+    {
       fieldGroupClassName: 'grid-row',
       fieldGroup: [
         {
           className: 'grid-col-6',
           type: 'input',
-          key: 'cage',          
+          key: 'cage',
           templateOptions: {
             required: true,
             label: 'CAGE / NCAGE'

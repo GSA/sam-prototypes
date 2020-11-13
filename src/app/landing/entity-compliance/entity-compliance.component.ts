@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {allIcons} from 'ngx-bootstrap-icons';
 
 @Component({
   selector: 'app-entity-compliance',
@@ -14,7 +15,7 @@ export class EntityComplianceComponent implements OnInit {
   }
 
   search(term) {
-  
+
   }
 
 }

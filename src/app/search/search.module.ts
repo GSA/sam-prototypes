@@ -7,7 +7,8 @@ import {
   SdsToolbarModule,
   SdsPageModule,
   SdsCollapseModule,
-  SdsSearchModule
+  SdsSearchModule,
+  SdsIconModule
 } from '@gsa-sam/components';
 import { SdsFiltersModule, SDSFormlyUpdateComunicationService } from '@gsa-sam/sam-formly';
 import { SdsSubheaderModule, SearchListServiceModule } from '@gsa-sam/layouts';
@@ -57,15 +58,15 @@ import { SearchComponent } from './search.component';
     SdsSideNavigationModule,
     SdsAccordionModule,
     SdsSubheaderModule,
-    SdsFiltersModule, 
+    SdsFiltersModule,
     SearchListServiceModule,
-    AssistanceResultModule, 
-    ContractOpportunityResultModule, 
-    ContractDataResultModule, 
-    EntityRegistrationResultModule, 
-    ExclusionResultModule, 
-    HierarchyResultModule, 
-    IntegrityResultModule, 
+    AssistanceResultModule,
+    ContractOpportunityResultModule,
+    ContractDataResultModule,
+    EntityRegistrationResultModule,
+    ExclusionResultModule,
+    HierarchyResultModule,
+    IntegrityResultModule,
     WageResultModule,
     AllDomainFiltersModule,
     AssistanceFiltersModule,
@@ -78,7 +79,8 @@ import { SearchComponent } from './search.component';
     IntegrityFiltersModule,
     WageFiltersModule,
     SearchServiceModule,
-    SearchRoutingModule
+    SearchRoutingModule,
+    SdsIconModule
   ],
   exports: [SearchComponent]
 })

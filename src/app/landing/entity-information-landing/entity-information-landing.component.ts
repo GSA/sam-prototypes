@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, ViewChild } from '@angular/
 import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
+import {allIcons} from 'ngx-bootstrap-icons';
 
 @Component({
   selector: 'app-entity-information-landing',
@@ -10,7 +11,7 @@ import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EntityInformationLandingComponent implements OnInit {
-  
+
   searchModel = {};
 
   @ViewChild('searchBar', { static: true }) searchBar;

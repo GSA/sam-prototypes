@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { LocationStrategy } from '@angular/common';
 import { SamModelService } from '../../model/sam-model.service';
+import {allIcons} from 'ngx-bootstrap-icons';
 
 @Component({
   selector: 'app-assistance-landing',

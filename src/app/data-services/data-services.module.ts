@@ -6,6 +6,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import {
   SdsSearchModule,
+  SdsIconModule
 } from '@gsa-sam/components';
 
 import { DataServicesRoutingModule } from './data-services-routing.module';
@@ -19,6 +20,7 @@ import { DataServicesComponent } from './data-services.component';
     FontAwesomeModule,
     SdsSearchModule,
     DataServicesRoutingModule,
+    SdsIconModule
   ],
   declarations: [DataServicesComponent],
   exports: [DataServicesComponent]

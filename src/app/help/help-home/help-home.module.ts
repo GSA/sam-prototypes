@@ -6,7 +6,8 @@ import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import {
-    SdsSearchModule
+    SdsSearchModule,
+    SdsIconModule
   } from '@gsa-sam/components';
 
 import { HelpHomeRoutingModule } from './help-home-routing.module';
@@ -20,7 +21,8 @@ import { HelpHomeComponent } from './help-home.component';
     FormsModule,
     FontAwesomeModule,
     SdsSearchModule,
-    HelpHomeRoutingModule
+    HelpHomeRoutingModule,
+    SdsIconModule
   ],
   exports: [HelpHomeComponent]
 })

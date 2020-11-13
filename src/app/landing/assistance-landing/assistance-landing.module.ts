@@ -5,7 +5,8 @@ import { RouterModule } from '@angular/router';
 
 import {
   SdsSearchModule,
-  SdsVideoPlayerModule
+  SdsVideoPlayerModule,
+  SdsIconModule
 } from '@gsa-sam/components';
 
 
@@ -23,7 +24,8 @@ import { AssistanceLandingComponent } from './assistance-landing.component';
     SdsSearchModule,
     SdsAccordionModule,
     SdsVideoPlayerModule,
-    AssistanceLandingRoutingModule
+    AssistanceLandingRoutingModule,
+    SdsIconModule
   ],
   exports: [AssistanceLandingComponent]
 })
