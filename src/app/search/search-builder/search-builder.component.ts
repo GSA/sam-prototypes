@@ -1,5 +1,17 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ViewChild, Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { Location } from '@angular/common';
+
+import { ActivatedRoute, Router, NavigationEnd, UrlSegment, NavigationStart, NavigationExtras } from '@angular/router';
+import { filter, map } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
+
+import { FormGroup } from '@angular/forms';
+import { FormlyFieldConfig } from '@ngx-formly/core';
+
+import { SearchListConfiguration } from '@gsa-sam/layouts';
+import { SearchService } from '../../services/search-service/search.service';
+
+import { resultsListConfigMap } from '../results-list.config';
 
 @Component({
   selector: 'app-search-builder',
@@ -24,9 +36,37 @@ export class SearchBuilderComponent implements OnInit {
     ]
   };
 
-  constructor(private location: Location) { }
+  filterModel = {};
+
+  listConfig: SearchListConfiguration = {
+	  defaultSortValue: "relevanceDescending",
+	  pageSize: 25,
+	  sortList:
+	    [
+	      { text: "Relevance", value: "relevanceDescending" }
+	    ]
+  };
+
+  @ViewChild('resultList', { static: true }) resultList;
+
+  public filterChange$ = new BehaviorSubject<object>(null);
+
+  constructor(public service: SearchService,
+    private route: ActivatedRoute,
+    public router: Router,
+    private location: Location,
+    private change: ChangeDetectorRef) { 
+    	this.service.setDomain("all");
+    }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit() {
+    this.change.detectChanges();
+    if(this.resultList) {
+        this.resultList.updateFilter(this.filterModel);
+    }
   }
 
   search() {

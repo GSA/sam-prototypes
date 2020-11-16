@@ -5,43 +5,47 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
   SdsSideNavigationModule,
   SdsToolbarModule,
-  SdsAccordionModule,
   SdsPageModule,
-  SdsSearchModule,
-  SdsDialogModule
+  SdsCollapseModule,
+  SdsSearchModule
 } from '@gsa-sam/components';
-
-import { SdsFiltersModule, SDSFormlyUpdateComunicationService } from '@gsa-sam/sam-formly';
+import { SdsFiltersModule } from '@gsa-sam/sam-formly';
 import { SdsSubheaderModule, SearchListServiceModule } from '@gsa-sam/layouts';
+import { SdsAccordionModule } from '@gsa-sam/sam-material-extensions';
 
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
-import { FormlySelectModule } from '@ngx-formly/core/select';
+import { FormsModule } from '@angular/forms';
+
+import { DatabankServiceModule } from '../../services/databank-service/databank-service.module';
+
+import { DatabankSearchItemModule } from './databank-search-item/databank-search-item.module';
 
 import { DatabankSearchRoutingModule } from './databank-search-routing.module';
 import { DatabankSearchComponent } from './databank-search.component';
 
 @NgModule({
+  declarations: [DatabankSearchComponent],
   imports: [
     CommonModule,
-    FontAwesomeModule,
-    ReactiveFormsModule,
-    FormsModule,
     FormlyModule,
-    FormlySelectModule,
-    SdsSubheaderModule,
-    SearchListServiceModule,
+    FormsModule,
+    FontAwesomeModule,
     SdsSideNavigationModule,
     SdsToolbarModule,
     SdsAccordionModule,
+    SdsPageModule,
+    SdsCollapseModule,
     SdsSearchModule,
-    SdsDialogModule,
-    SdsToolbarModule,
     SdsSideNavigationModule,
-    SdsFiltersModule,
+    SdsAccordionModule,
+    SdsSubheaderModule,
+    SdsFiltersModule, 
+    DatabankSearchItemModule,
+    SearchListServiceModule,
+    DatabankServiceModule,
     DatabankSearchRoutingModule
   ],
-  declarations: [DatabankSearchComponent],
-  providers: [SDSFormlyUpdateComunicationService]
+  exports: [DatabankSearchComponent],
+  providers: []
 })
 export class DatabankSearchModule { }

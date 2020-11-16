@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DatabankReportsComponent } from './databank-reports.component';
+import { EntityIntegrityComponent } from './entity-integrity.component';
 
-describe('DatabankReportsComponent', () => {
-  let component: DatabankReportsComponent;
-  let fixture: ComponentFixture<DatabankReportsComponent>;
+describe('EntityIntegrityComponent', () => {
+  let component: EntityIntegrityComponent;
+  let fixture: ComponentFixture<EntityIntegrityComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DatabankReportsComponent ]
+      declarations: [ EntityIntegrityComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DatabankReportsComponent);
+    fixture = TestBed.createComponent(EntityIntegrityComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -43,8 +43,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
     SdsIconModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  exports: []
+  bootstrap: [AppComponent]
 })
 export class AppModule {
   static forRoot(): ModuleWithProviders {
