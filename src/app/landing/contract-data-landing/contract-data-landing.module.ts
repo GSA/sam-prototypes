@@ -5,13 +5,15 @@ import { SdsAccordionModule } from '@gsa-sam/sam-material-extensions';
 
 import { ContractDataLandingRoutingModule } from './contract-data-landing-routing.module';
 import { ContractDataLandingComponent } from './contract-data-landing.component';
+import { SdsIconModule } from '@gsa-sam/components';
 
 @NgModule({
   declarations: [ContractDataLandingComponent],
   imports: [
     CommonModule,
     SdsAccordionModule,
-    ContractDataLandingRoutingModule
+    ContractDataLandingRoutingModule,
+    SdsIconModule
   ],
   exports: [ContractDataLandingComponent]
 })

@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { SamModelService } from '../model/sam-model.service';
+import {allIcons} from 'ngx-bootstrap-icons';
 
 @Component({
   selector: 'app-data-services',

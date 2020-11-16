@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, ViewChild } from '@angular/
 import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
+import {allIcons} from 'ngx-bootstrap-icons';
 
 @Component({
   selector: 'app-integrity-landing',
@@ -11,7 +12,7 @@ import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 })
 export class IntegrityLandingComponent implements OnInit {
 
-  
+
   searchModel = {};
 
   @ViewChild('searchBar', { static: true }) searchBar;

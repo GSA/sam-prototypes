@@ -21,7 +21,8 @@
                     <div class="tablet:grid-col-6">
                       <h3>I know the WD number</h3>
                         <div class="display-flex flex-row flex-align-center padding-bottom-2">
-                          <i class="sds fa-search fa-2x"></i><span class="padding-left-1">Search by WD Number</span>
+                          <sds-icon [icon]="['bs', 'search']" [size]="'lg'"></sds-icon>
+                          <span class="padding-left-1">Search by WD Number</span>
                         </div>
                         <sds-search [(ngModel)]="model" (ngModelChange)="search()" [searchSettings]="searchSettings" placeholder="Ex: PA200001 or 2015-4045">
                         </sds-search>
@@ -29,17 +30,15 @@
                     <div class="tablet:grid-col-6">
                       <h3>I do not know the number</h3>
                       <div class="display-flex flex-row flex-align-center padding-bottom-2">
-                          <i class="sds fa-search fa-2x"></i><span class="padding-left-1">Start your search by selecting a category</span>
+                          <sds-icon [icon]="['bs', 'search']" [size]="'lg'"></sds-icon>
+                          <span class="padding-left-1">Start your search by selecting a category</span>
                         </div>
                         <div class="grid-row grid-gap">
                           <div class="tablet:grid-col-6">
                             <button class="sds-button sds-button--icon-lg" [routerLink]="['/search']" [queryParams]="{index: 'sca'}">
                               <div class="sds-button__header">
                                 <h4>Public Building or Works</h4>
-                                <span class="fa-stack fa-1x">
-                                  <i class="sds fa-pentagon fa-stack-2x text-accent-cool-light fa-1x"></i>
-                                  <i class="sds fa-check-circle fa-stack-1x text-base fa-2x"></i>
-                                </span>
+                                <sds-icon [icon]="['bs', 'check-2-circle']" [size]="'2x'"></sds-icon>
                               </div>
                               <p>Wage rates for laborers and mechanics</p>
                               <span>Davis-Bacon Act (DBA)</span>
@@ -49,10 +48,7 @@
                             <button class="sds-button sds-button--icon-lg" [routerLink]="['/search']" [queryParams]="{index: 'dba'}">
                               <div class="sds-button__header">
                                 <h4>Service Contracts</h4>
-                                <span class="fa-stack fa-1x">
-                                  <i class="sds fa-pentagon fa-stack-2x text-accent-cool-light fa-1x"></i>
-                                  <i class="sds fa-check-circle fa-stack-1x text-base fa-2x"></i>
-                                </span>
+                                <sds-icon [icon]="['bs', 'check-2-circle']" [size]="'2x'"></sds-icon>
                               </div>
                               <p>Wage rates for service employees</p>
                               <span>Service Contract Act (SCA)</span>
@@ -81,7 +77,7 @@
               <ul class="sds-list sds-list--icon padding-0">
                 <li>
                   <span class="sds-list__item-icon">
-                    <i class="sds fa-new-note"></i>
+                    <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">Search entity registrations</a>
@@ -89,7 +85,7 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <i class="sds fa-new-note"></i>
+                    <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">Search disaster response registry</a>
@@ -97,7 +93,7 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <i class="sds fa-new-note"></i>
+                    <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">Save my searches</a>
@@ -105,7 +101,7 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <i class="sds fa-new-note"></i>
+                    <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">Use the interested vendors list</a>
@@ -113,7 +109,7 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <i class="sds fa-document-pdf"></i>
+                    <sds-icon [icon]="['bs', 'file-earmark-text']" [size]="'sm'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">Quick Start Guide for Contractors</a>
@@ -121,7 +117,7 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <i class="sds fa-video-square"></i>
+                    <sds-icon [icon]="['bs', 'camera-reels']" [size]="'sm'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">Video - Use contract opportunities to do business with the government</a>
@@ -140,7 +136,7 @@
             <ul class="sds-list sds-list--icon padding-0">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'sm'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">About Wage Determinations</a>
@@ -148,7 +144,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-question-circle"></i>
+                  <sds-icon [icon]="['bs', 'question-circle']" [size]="'sm'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">How does the Department of Labor categorize wage determinations for SCA and DBA contracts?</a>
@@ -156,7 +152,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Set-Asides for small businesses</a>
@@ -164,7 +160,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Using NAICS Codes</a>
@@ -172,7 +168,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Using PCS Codes</a>
@@ -180,7 +176,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Search by place of performance</a>
@@ -188,7 +184,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Vendor collaboration opportunities</a>
@@ -196,7 +192,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Small business events</a>
@@ -214,7 +210,7 @@
             <ul class="sds-list sds-list--icon padding-0">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Changing search filters</a>
@@ -222,7 +218,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Understanding notice types</a>
@@ -230,7 +226,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Set-Asides for small businesses</a>
@@ -238,7 +234,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Using NAICS Codes</a>
@@ -246,7 +242,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Using PCS Codes</a>
@@ -254,7 +250,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Search by place of performance</a>
@@ -262,7 +258,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Vendor collaboration opportunities</a>
@@ -270,7 +266,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Small business events</a>
@@ -288,7 +284,7 @@
             <ul class="sds-list sds-list--icon padding-0">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Changing search filters</a>
@@ -296,7 +292,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Understanding notice types</a>
@@ -304,7 +300,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Set-Asides for small businesses</a>
@@ -312,7 +308,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Using NAICS Codes</a>
@@ -320,7 +316,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Using PCS Codes</a>
@@ -328,7 +324,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Search by place of performance</a>
@@ -336,7 +332,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Vendor collaboration opportunities</a>
@@ -344,7 +340,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <sds-icon [icon]="['bs', 'journal']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Small business events</a>
@@ -366,19 +362,25 @@
               </a>
             </div>
             <div class="sds-card__body">
-                <ul class="sds-list sds-list--unstyled sds-list--flex">
+                <ul class="sds-list sds-list--icon">
                   <li>
-                    <i class="fas fa-arrow-circle-right text-primary-dark" aria-hidden="true" title="DBA Conformances"></i>
+                    <span class="sds-list__item-icon">
+                      <sds-icon [icon]="['bs', 'chevron-right']" [size]="'sm'"></sds-icon>
+                    </span>
                     <a class="usa-link" [routerLink]="['/home/wages/resources/dba-conformances']">DBA Conformances</a>
                   </li>
                   <li>
-                    <i class="fas fa-arrow-circle-right text-primary-dark" aria-hidden="true" title="DBAs to be Revised"></i>
+                    <span class="sds-list__item-icon">
+                      <sds-icon [icon]="['bs', 'chevron-right']" [size]="'sm'"></sds-icon>
+                    </span>
                     <a class="usa-link" [routerLink]="['/home/wages/resources/dbas-tobe-revised']">
                       DBAs to be Revised
                     </a>
                   </li>
                   <li>
-                    <i class="fa fa-file" aria-hidden="true" title="DBA Rollover Crosswalk"></i>
+                    <span class="sds-list__item-icon">
+                      <sds-icon [icon]="['bs', 'file-earmark']" [size]="'sm'"></sds-icon>
+                    </span>
                     <a class="usa-link" [routerLink]="['/home/wages/resources/sca-conformances']">
                       DBA Rollover Crosswalk
                     </a>
@@ -395,9 +397,11 @@
               </a>
             </div>
             <div class="sds-card__body">
-                <ul class="sds-list sds-list--unstyled sds-list--flex">
+                <ul class="sds-list sds-list--icon">
                   <li>
-                    <i class="fas fa-arrow-circle-right text-primary-dark" aria-hidden="true" title="SCA Conformances"></i>
+                    <span class="sds-list__item-icon">
+                      <sds-icon [icon]="['bs', 'chevron-right']" [size]="'sm'"></sds-icon>
+                    </span>
                     <a class="usa-link" [routerLink]="['/home/wages/resources/sca-conformances']">
                       SCA Conformances
                     </a>
@@ -414,21 +418,27 @@
               </a>
             </div>
             <div class="sds-card__body">
-                <ul class="sds-list sds-list--unstyled sds-list--flex">
+                <ul class="sds-list sds-list--icon">
                   <li>
-                    <i class="fas fa-arrow-circle-right text-primary-dark" aria-hidden="true" title="Labor Advisors"></i>
+                    <span class="sds-list__item-icon">
+                      <sds-icon [icon]="['bs', 'chevron-right']" [size]="'sm'"></sds-icon>
+                    </span>
                     <a class="usa-link" [routerLink]="['/home/wages/resources/labor-advisors']">
                       Labor Advisors
                     </a>
                   </li>
                   <li>
-                    <i class="fas fa-arrow-circle-right text-primary-dark" aria-hidden="true" title="All Agency Memorandums"></i>
+                    <span class="sds-list__item-icon">
+                      <sds-icon [icon]="['bs', 'chevron-right']" [size]="'sm'"></sds-icon>
+                    </span>
                     <a class="usa-link" [routerLink]="['/home/wages/resources/all-agency-memos']">
                       All Agency Memorandums
                     </a>
                   </li>
                   <li>
-                    <i class="fas fa-arrow-circle-right text-primary-dark" aria-hidden="true" title="Cross Index for Contract Labor Standards"></i>
+                    <span class="sds-list__item-icon">
+                      <sds-icon [icon]="['bs', 'chevron-right']" [size]="'sm'"></sds-icon>
+                    </span>
                     <a class="usa-link" [routerLink]="['/home/wages/resources/cross-index']">
                       Cross Index for Contract Labor Standards
                     </a>
@@ -450,7 +460,7 @@
           <ul class="sds-list sds-list--icon">
             <li>
               <span class="sds-list__item-icon">
-                <i class="fa fa-file" aria-hidden="true" title="SF308 Request for Wage Determination and Response to Request (DBA)"></i>
+                <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
               </span>
               <span class="sds-list__item-content">
                 <a class="usa-link" href=" ">SF308 - Request For Wage Determination And Response To Request (DBA)</a>
@@ -458,7 +468,7 @@
             </li>
             <li>
               <span class="sds-list__item-icon">
-                <i class="fa fa-file" aria-hidden="true" title="E98 - Notice of Intention to Make a Service Contract and Response to Notice (SCA)"></i>
+                <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
               </span>
               <span class="sds-list__item-content">
                 <a class="usa-link" href=" ">
@@ -468,7 +478,7 @@
             </li>
             <li>
               <span class="sds-list__item-icon">
-                <i class="fa fa-file" aria-hidden="true" title="SF1444 - Request for Authorization of Additional Classification and Rate"></i>
+                <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
               </span>
               <span class="sds-list__item-content">
                 <a class="usa-link" href=" ">
@@ -488,21 +498,27 @@
           </a>
         </div>
         <div class="sds-card__body">
-          <ul class="sds-list sds-list--unstyled sds-list--flex">
+          <ul class="sds-list sds-list--icon">
             <li>
-              <i class="sds fa-question-circle"></i>
+              <span class="sds-list__item-icon">
+                <sds-icon [icon]="['bs', 'question-circle']" [size]="'sm'"></sds-icon>
+              </span>
               <a class="usa-link" [routerLink]="['']">
                 Frequently Asked Questions
               </a>
             </li>
             <li>
-              <i class="sds fa-book"></i>
+              <span class="sds-list__item-icon">
+                <sds-icon [icon]="['bs', 'book']" [size]="'sm'"></sds-icon>
+              </span>
               <a class="usa-link" [routerLink]="['']">
                 Glossary Terms
               </a>
             </li>
             <li>
-              <i class="sds fa-video-square"></i>
+              <span class="sds-list__item-icon">
+                <sds-icon [icon]="['bs', 'camera-reels']" [size]="'sm'"></sds-icon>
+              </span>
               <a class="usa-link" [routerLink]="['']">
                 Videos
               </a>

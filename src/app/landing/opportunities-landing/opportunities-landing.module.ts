@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { SdsIconModule } from '@gsa-sam/components';
 
 import {
   SdsSearchModule,
@@ -22,7 +23,8 @@ import { OpportunitiesLandingComponent } from './opportunities-landing.component
     SdsVideoPlayerModule,
     SdsAccordionModule,
     RouterModule,
-    OpportunitiesLandingRoutingModule
+    OpportunitiesLandingRoutingModule,
+    SdsIconModule
   ],
   exports: [OpportunitiesLandingComponent]
 })

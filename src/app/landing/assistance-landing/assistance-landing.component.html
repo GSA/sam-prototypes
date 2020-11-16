@@ -13,8 +13,8 @@
               </div>
             </div>
 						<p class="text-base-dark">Assistance listings are detailed public descriptions of federal programs that provide grants, loans, scholarships, insurance, and other types of assistance awards. You may browse assistance listings across all government agencies to learn about potential funding sources.
-						</p>            
-            <p>If you are looking for grant opportunities, visit our partner site at <a class="usa-link text-bold" target="_blank" href="https://grants.gov" >grants.gov<i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i></a>.
+						</p>
+            <p>If you are looking for grant opportunities, visit our partner site at <a class="usa-link text-bold" target="_blank" href="https://grants.gov" >grants.gov<sds-icon [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon></a>.
             <div class="grid-row margin-top-4">
               <div class="grid-col-fill">
                 <h2>Search assistance listings</h2>
@@ -44,12 +44,12 @@
               </div>
               <div class="desktop:flex-column flex-justify-center grid-row grid-gap margin-top-2">
                 <div class="grid-col-12">
-                  <button *ngIf="!model.signedIn" class="usa-button width-full" 
-                        [routerLink]="['/workspace']" 
+                  <button *ngIf="!model.signedIn" class="usa-button width-full"
+                        [routerLink]="['/workspace']"
                         [queryParams]="{signin: true}">
                       Sign in to get started
                   </button>
-                  <button *ngIf="model.signedIn" class="usa-button width-full" 
+                  <button *ngIf="model.signedIn" class="usa-button width-full"
                         [routerLink]="['/workspace']">
                         Go to workspace
                   </button>
@@ -97,12 +97,12 @@
 					<p class="text-base-dark">Manage assistance listings as a federal assistance coordinator.</p>
 					<div class="desktop:flex-column flex-justify-center grid-row grid-gap margin-top-2">
             <div class="grid-col-12 grid-col-12 tablet:grid-col-6 margin-y-1">
-              <button *ngIf="!model.signedIn" class="usa-button width-full" 
-                    [routerLink]="['/workspace']" 
+              <button *ngIf="!model.signedIn" class="usa-button width-full"
+                    [routerLink]="['/workspace']"
                     [queryParams]="{signin: true}">
                   Sign in to get started
               </button>
-              <button *ngIf="model.signedIn" class="usa-button width-full" 
+              <button *ngIf="model.signedIn" class="usa-button width-full"
                     [routerLink]="['/workspace']">
                     Go to workspace
               </button>
@@ -129,7 +129,7 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">How to use assistance listings data files</a>
@@ -137,7 +137,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                  <sds-icon [icon]="['bs', 'chevron-right']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Go to assistance listings data</a>
@@ -158,7 +158,7 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-question-circle"></i>
+                  <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a [routerLink]="['/help']" class="usa-link">Frequently Asked Questions</a>
@@ -166,7 +166,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-book"></i>
+                  <sds-icon [icon]="['bs', 'book']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Glossary Terms</a>
@@ -174,7 +174,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-video-square"></i>
+                  <sds-icon [icon]="['bs', 'camera-reels']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Videos</a>
@@ -182,7 +182,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document-pdf"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark-text']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Quick start guide for creating a login.gov account</a>
@@ -236,23 +236,23 @@
                 <span class="sds-list__item-content">
                 <a class="usa-link text-semibold" target="_blank" href="https://www.grants.gov/web/grants/learn-grants.html">
                   Grants.gov Learning Center.
-                  <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i>
+                  <sds-icon [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon>
                 </a> Learn and navigate the grants lifecycle from online application through post-award.</span>
               </li>
               <li>
                 <span class="sds-list__item-content">
                 <a class="usa-link text-semibold" target="_blank" href="https://usaspending.gov">
                   USASpending.gov
-                  <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i>
+                  <sds-icon [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon>
                 </a> Visit the official open data source of federal spending information.</span>
               </li>
               <li>
                 <span class="sds-list__item-content">
                 <a class="usa-link text-semibold" target="_blank" href="https://www.usa.gov/benefits-grants-loans">
                   USA.gov Government Benefits, Grants, and Loans.
-                  <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i>
+                  <sds-icon [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon>
                 </a> Learn about affordable housing, grants, loans, and other assistance for individuals and organizations.</span>
-              </li>    
+              </li>
             </ul>
           </div>
         </div>

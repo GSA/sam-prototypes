@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {allIcons} from 'ngx-bootstrap-icons';
 
 @Component({
   selector: 'app-new-to-sam',
@@ -97,7 +98,7 @@ export class NewToSamComponent implements OnInit {
 
   public selectedTopics;
 
-  constructor() { 
+  constructor() {
   	this.filterTiles();
   }
 

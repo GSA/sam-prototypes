@@ -8,7 +8,7 @@
           <div class="sds-logo height-7 grid-col-fill">
           </div>
           <div class="sds-seal grid-col-auto">
-            <i class="sds fa-flag fa-2x margin-y-1 text-secondary"></i>
+            <sds-icon class="text-secondary" [icon]="['bs', 'flag-fill']" [size]="'2x'"></sds-icon>
             <div class="sds-seal__content">
               Official U.S. Government Website
               <span>100% Free</span>
@@ -85,24 +85,16 @@
               <p>Register your entity to get started doing business with the federal government.</p>
               <div class="desktop:flex-column flex-justify-center grid-row">
                 <button class="sds-button sds-button--icon desktop:width-full margin-y-1">
-                  <span class="fa-stack fa-2x">
-                    <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
-                    <i class="sds fa-folder fa-stack-1x text-base fa-2x"></i>
-                  </span>
+                  <sds-icon [icon]="['bs', 'folder']" [size]="'2x'"></sds-icon>
                   <span class="sds-button--icon__title">Get Started</span>
                 </button>
                 <button class="sds-button sds-button--icon desktop:width-full margin-y-1">
-                  <span class="fa-stack fa-2x">
-                    <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
-                    <i class="sds fa-folder fa-stack-1x text-base fa-2x"></i>
-                  </span>
+                  <sds-icon [icon]="['bs', 'folder']" [size]="'2x'"></sds-icon>
                   <span class="sds-button--icon__title">Renew Entity</span>
                 </button>
                 <button class="sds-button sds-button--icon desktop:width-full margin-top-1">
-                  <span class="fa-stack fa-2x">
-                    <i class="sds fa-pentagon fa-stack-2x text-primary-light fa-1x"></i>
-                    <i class="sds fa-check-circle fa-stack-1x text-base fa-2x"></i>
-                  </span>
+                  <!-- REPLACE ICON -->
+                  <sds-icon [icon]="['bs', 'check-2-circle']" [size]="'2x'"></sds-icon>
                   <span class="sds-button--icon__title">Check Registration Status</span>
                 </button>
               </div>
@@ -155,21 +147,21 @@
               <div class="grid-col">
                 <ul class="sds-list sds-list--unstyled sds-list--flex">
                   <li>
-                    <i class="sds fa-video-square"></i>
+                    <sds-icon [icon]="['bs', 'video']" [size]="'sm'"></sds-icon>
                     <span class="sr-only"></span>
                     <a class="usa-link" [routerLink]="['/help/results']" [queryParams]="{type: 'video'}">
                       Videos
                     </a>
                   </li>
                   <li>
-                    <i class="sds fa-book"></i>
+                    <sds-icon [icon]="['bs', 'book']" [size]="'sm'"></sds-icon>
                     <span class="sr-only"></span>
                     <a class="usa-link" [routerLink]="['/help/results']" [queryParams]="{type: 'term'}">
                       Glossary Terms
                     </a>
                   </li>
                   <li>
-                    <i class="sds fa-document-pdf"></i>
+                    <sds-icon [icon]="['bs', 'file-earmark-text']" [size]="'sm'"></sds-icon>
                     <span class="sr-only"></span>
                     <a class="usa-link" [routerLink]="['/help/results']" [queryParams]="{type: 'qsd'}">
                       Quick Start Guides
@@ -187,28 +179,28 @@
             <span>Frequently Asked Questions</span>
             <ul class="sds-list sds-list--unstyled sds-list--flex">
               <li>
-                <i class="sds fa-question-circle"></i>
+                <sds-icon [icon]="['bs', 'question-circle']" [size]="'sm'"></sds-icon>
                 <span class="sr-only"></span>
                 <a class="usa-link" href=" ">
                   Do I need a user account?
                 </a>
               </li>
               <li>
-                <i class="sds fa-question-circle"></i>
+                <sds-icon [icon]="['bs', 'question-circle']" [size]="'sm'"></sds-icon>
                 <span class="sr-only"></span>
                 <a class="usa-link" href=" ">
                   What's the difference between signing up and registering?
                 </a>
               </li>
               <li>
-                <i class="sds fa-question-circle"></i>
+                <sds-icon [icon]="['bs', 'question-circle']" [size]="'sm'"></sds-icon>
                 <span class="sr-only"></span>
                 <a class="usa-link" href=" ">
                   What if I already have a login.gov account?
                 </a>
               </li>
               <li>
-                <i class="sds fa-question-circle"></i>
+                <sds-icon [icon]="['bs', 'question-circle']" [size]="'sm'"></sds-icon>
                 <span class="sr-only"></span>
                 <a class="usa-link" href=" ">
                   What do I need to register my entity?

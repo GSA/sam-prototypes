@@ -40,11 +40,11 @@
 								</ul>
 							</div>
 		                <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-		                  <button *ngIf="!model.signedIn" 
+		                  <button *ngIf="!model.signedIn"
 		                        class="usa-button width-full margin-top-2"
 		                        [routerLink]="['/workspace']"
 		                        [queryParams]="{signin: true}">Sign in to get started</button>
-		                  <button *ngIf="model.signedIn" 
+		                  <button *ngIf="model.signedIn"
 		                        class="usa-button width-full margin-top-2"
 		                        [routerLink]="['/workspace']">Go to workspace</button>
 		                </div>
@@ -71,7 +71,7 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Create an office</a>
@@ -79,7 +79,7 @@
               </li>
 							<li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Edit an office</a>
@@ -87,7 +87,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">End date an office</a>
@@ -95,7 +95,7 @@
               </li>
 				<li>
 					<span class="sds-list__item-icon">
-						<i class="sds fa-document"></i>
+						<sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
 					</span>
 					<span class="sds-list__item-content">
 						<a href="#" class="usa-link">Move an office</a>
@@ -116,7 +116,7 @@
             <ul class="sds-list sds-list--icon">
                 <li>
                   <span class="sds-list__item-icon">
-                    <i class="sds fa-document-pdf"></i>
+                    <sds-icon [icon]="['bs', 'file-earmark-text']" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">Department change request form</a>
@@ -124,7 +124,7 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <i class="sds fa-document-pdf"></i>
+                    <sds-icon [icon]="['bs', 'file-earmark-text']" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">Subtier change request form</a>
@@ -132,7 +132,7 @@
                 </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document-pdf fa-fw"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark-text']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Office change request form</a>
@@ -140,7 +140,7 @@
               </li>
 				<li>
 					<span class="sds-list__item-icon">
-						<i class="sds fa-document-pdf fa-fw"></i>
+						<sds-icon [icon]="['bs', 'file-earmark-text']" [size]="'xs'"></sds-icon>
 					</span>
 					<span class="sds-list__item-content">
 						<a href="#" class="usa-link">Quick start guide for change requests</a>
@@ -162,7 +162,7 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Administrative reports for federal hierarchy</a>
@@ -170,7 +170,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                  <sds-icon [icon]="['bs', 'chevron-right']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Go to administrative reports</a>
@@ -191,7 +191,7 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-question-circle"></i>
+                  <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Frequently Asked Questions</a>
@@ -199,7 +199,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-book fa-fw"></i>
+                  <sds-icon [icon]="['bs', 'book']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Glossary Terms</a>
@@ -207,7 +207,7 @@
               </li>
 							<li>
 								<span class="sds-list__item-icon">
-									<i class="sds fa-video-square fa-fw"></i>
+									<sds-icon [icon]="['bs', 'camera-reels']" [size]="'xs'"></sds-icon>
 								</span>
 								<span class="sds-list__item-content">
 									<a href="#" class="usa-link">Videos</a>

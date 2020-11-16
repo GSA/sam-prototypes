@@ -4,7 +4,8 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import {
-  SdsSearchModule
+  SdsSearchModule,
+  SdsIconModule
 } from '@gsa-sam/components';
 
 import { SdsAccordionModule } from '@gsa-sam/sam-material-extensions';
@@ -20,7 +21,8 @@ import { IntegrityLandingComponent } from './integrity-landing.component';
     FormsModule,
     SdsSearchModule,
     SdsAccordionModule,
-    IntegrityLandingRoutingModule
+    IntegrityLandingRoutingModule,
+    SdsIconModule
   ],
   exports: [IntegrityLandingComponent]
 })
