@@ -8,8 +8,10 @@ import { SdsSubheaderModule } from '@gsa-sam/layouts';
 import { SdsSideNavigationModule, 
          SdsToolbarModule, 
          SdsSearchModule,
-         SdsAccordionModule,
          SdsVideoPlayerModule } from '@gsa-sam/components';
+
+
+import { SdsAccordionModule } from '@gsa-sam/sam-material-extensions';
 
 import { WagesLandingRoutingModule } from './wages-landing-routing.module';
 import { WagesLandingComponent } from './wages-landing.component';
@@ -27,9 +29,9 @@ import { WagesSubMenuModule } from './wages-sub-menu/wages-sub-menu.module';
     SdsSideNavigationModule,
     SdsToolbarModule,
     SdsSearchModule,
-    SdsAccordionModule,
     SdsSubheaderModule,
     SdsVideoPlayerModule,
+    SdsAccordionModule,
     FontAwesomeModule,
     WagesSubMenuModule,
     WagesLandingRoutingModule

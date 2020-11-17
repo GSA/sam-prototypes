@@ -14,7 +14,7 @@
           <div class="grid-col-12">
             <div class="sds-card sds-card--bordered shadow-none">
                 <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-                  <h2>Help me find a wage determination</h2>
+                  <h2>Search wage determination</h2>
                 </div>
                 <div class="sds-card__body bg-white">
                   <div class="grid-row grid-gap">
@@ -67,287 +67,334 @@
       </div>
     </div>
   </div>
-    <div class="grid-row">
+
+  <!-- ACCORDION SECTION -->
+  <div class="grid-row">
       <div class="tablet:grid-col-10 tablet:grid-offset-1">
-        <div class="usa-accordion usa-accordion--bordered" aria-multiselectable="false">
-          <h3 class="usa-accordion__heading sds-accordion__heading-bordered">
-            <button class="usa-accordion__button border-top-1px border-base-light" aria-expanded="false" aria-controls="a1">
-              Get started searching wage determinations
-            </button>
-          </h3>
-            <div id="a1" class="usa-accordion__content usa-prose" hidden>
-            <!-- Get started links -->
-            <h4>Get started searching entities</h4>
-              <ul class="sds-list sds-list--icon padding-0">
+          <sds-accordion-next multi="multi" #sdsAccordionDemo>
+            <sds-accordion-item>
+              <sds-accordion-title><h3>Getting started searching wage determinations</h3></sds-accordion-title>
+              <sds-accordion-content>
+              <ul class="sds-list sds-list--icon">
                 <li>
                   <span class="sds-list__item-icon">
-                    <i class="sds fa-new-note"></i>
+                    <i class="sds fa-document"></i>
                   </span>
                   <span class="sds-list__item-content">
-                    <a href="#" class="usa-link">Search entity registrations</a>
+                    <a href="#" class="usa-link">Search wage determinations by ID</a>
                   </span>
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <i class="sds fa-new-note"></i>
+                    <i class="sds fa-document"></i>
                   </span>
                   <span class="sds-list__item-content">
-                    <a href="#" class="usa-link">Search disaster response registry</a>
+                    <a href="#" class="usa-link">Search construction wage determinations using the DBA workflow</a>
                   </span>
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <i class="sds fa-new-note"></i>
+                    <i class="sds fa-document"></i>
                   </span>
                   <span class="sds-list__item-content">
-                    <a href="#" class="usa-link">Save my searches</a>
+                    <a href="#" class="usa-link">Search service wage determinations using the SCA workflow</a>
                   </span>
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <i class="sds fa-new-note"></i>
+                    <i class="sds fa-document"></i>
                   </span>
                   <span class="sds-list__item-content">
-                    <a href="#" class="usa-link">Use the interested vendors list</a>
+                    <a href="#" class="usa-link">Search collective bargaining agreements</a>
                   </span>
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <i class="sds fa-document-pdf"></i>
+                    <i class="sds fa-document"></i>
                   </span>
                   <span class="sds-list__item-content">
-                    <a href="#" class="usa-link">Quick Start Guide for Contractors</a>
+                    <a href="#" class="usa-link">Follow a wage determination</a>
                   </span>
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <i class="sds fa-video-square"></i>
+                    <i class="sds fa-document"></i>
                   </span>
                   <span class="sds-list__item-content">
-                    <a href="#" class="usa-link">Video - Use contract opportunities to do business with the government</a>
+                    <a href="#" class="usa-link">Save searches</a>
                   </span>
                 </li>
               </ul>
+              </sds-accordion-content>
+            </sds-accordion-item>            
+            <sds-accordion-item>
+              <sds-accordion-title><h3>Learn about the Davis-Bacon Act</h3></sds-accordion-title>
+              <sds-accordion-content>
+              <ul class="sds-list sds-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">What is the Davis-Bacon Act?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">How do I know if the Davis-Bacon Act applies to my contract?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">What are the requirements for a DBA/DBRA contract?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">What are the requirements for paying fringe benefits for a DBA-covered contract?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">What if I can't find a rate for the DBA classification of work I need?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">What is a conformance request?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">What is Standard Form 308 (SF 308)?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">How do I submit a DBA conformance request?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">How do I appeal a conformance request decision?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">How do I find the Department of Labor DBA advisor for my location?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">As an agency contracting officer, who may I contact for more information on labor standards for a DBA-covered contract?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">How should an employee file a DBA-related laborer complaint?</a>
+                  </span>
+                </li>
+              </ul>
+                <h4>External DBA Resources</h4>
+                <ul class="sds-list">
+                  <li>
+                    <span class="sds-list__item-content">
+                      <a class="usa-link"  target="_blank" href="https://www.dol.gov/agencies/whd/government-contracts/construction">Davis-Bacon and Related Acts (Department of Labor) <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i></a>
+                    </span>
+                  </li>
+                </ul>
+              </sds-accordion-content>
+            </sds-accordion-item>           
+            <sds-accordion-item>
+              <sds-accordion-title><h3>Learn about the Service Contract Act</h3></sds-accordion-title>
+              <sds-accordion-content>
+              <ul class="sds-list sds-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">What is the Service Contract Act?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">How do I know if the Service Contract Act applies to my contract?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">What are the requirements for paying fringe benefits for a SCA-covered contract?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">What if I can't find a rate for the SCA classification of work I need?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">What is a conformance request?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">What is Standard Form 1444 (SF 1444)?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">When filing an SF-1444, how should a "reasonable relationship" determined?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">How do I submit an SCA conformance request?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">How do I appeal a conformance request decision?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">How do I find the Department of Labor DBA advisor for my location?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">As an agency contracting officer, who may I contact for more information on labor standards for a DBA-covered contract?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">How should an employee file a DBA-related laborer complaint?</a>
+                  </span>
+                </li>
+              </ul>
+                <h4>External DBA Resources</h4>
+                <ul class="sds-list">
+                  <li>
+                    <span class="sds-list__item-content">
+                      <a class="usa-link"  target="_blank" href="https://www.dol.gov/agencies/whd/government-contracts/construction">Davis-Bacon and Related Acts (Department of Labor) <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i></a>
+                    </span>
+                  </li>
+                </ul>
+              </sds-accordion-content>
+            </sds-accordion-item>
+          </sds-accordion-next>
+      </div>
+  </div>
+
+    <!-- CARDS -->
+
+    <div class="grid-row grid-gap flex-wrap margin-top-4 padding-x-3 desktop:padding-0">
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a [routerLink]="['news']" class="sds-card__link">
+              <h2 class="sds-card__title">DBA Resources</h2>
+            </a>
           </div>
-          <h3 class="usa-accordion__heading sds-accordion__heading-bordered">
-            <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="a2">
-              Learn about wage determinations
-            </button>
-          </h3>
-          <div id="a2" class="usa-accordion__content usa-prose" hidden>
-            <p>Wage determinations (WD) are categorized under either Davis-Bacon Act (DBA) or the Service Contract Act (SCA). The DBA applies to contracts involving the construction, alteration, and/or repair (including painting or decorating) of public buildings or public works. It is intended to protect communities and workers from the economic disruption caused by competition arising from non-local contractors coming into an area and obtaining federal construction contracts by underbidding local wage levels. The SCA applies to federal and District of Columbia contracts that provide services. It establishes standards for wage rates and safety and health protections for employees performing work on covered contracts.</p>
-            <!-- specialist/officer links -->
-            <ul class="sds-list sds-list--icon padding-0">
+          <div class="sds-card__body">
+            <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-note"></i>
+                  <i class="fas fa-chevron-circle-right"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">About Wage Determinations</a>
+                  <a href="#" class="usa-link">DBA Conformances</a>
                 </span>
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-question-circle"></i>
+                  <i class="fas fa-chevron-circle-right"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">How does the Department of Labor categorize wage determinations for SCA and DBA contracts?</a>
+                  <a href="#" class="usa-link">DBAs to be Revised</a>
                 </span>
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <i class="fas fa-chevron-circle-right"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Set-Asides for small businesses</a>
+                  <a href="#" class="usa-link">DBA Rollover Crosswalk</a>
                 </span>
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
+                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Using NAICS Codes</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Using PCS Codes</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Search by place of performance</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Vendor collaboration opportunities</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Small business events</a>
-                </span>
-              </li>
-            </ul>
-          </div>
-          <h3 class="usa-accordion__heading sds-accordion__heading-bordered">
-            <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="a3">
-              Davis-Bacon Act (DBA) wage determinations
-            </button>
-          </h3>
-          <div id="a3" class="usa-accordion__content usa-prose" hidden>
-            <!-- specialist/officer links -->
-            <ul class="sds-list sds-list--icon padding-0">
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Changing search filters</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Understanding notice types</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Set-Asides for small businesses</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Using NAICS Codes</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Using PCS Codes</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Search by place of performance</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Vendor collaboration opportunities</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Small business events</a>
-                </span>
-              </li>
-            </ul>
-          </div>
-          <h3 class="usa-accordion__heading sds-accordion__heading-bordered">
-            <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="a4">
-              Service Contract Act (SCA) wage determinations
-            </button>
-          </h3>
-          <div id="a4" class="usa-accordion__content usa-prose" hidden>
-            <!-- specialist/officer links -->
-            <ul class="sds-list sds-list--icon padding-0">
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Changing search filters</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Understanding notice types</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Set-Asides for small businesses</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Using NAICS Codes</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Using PCS Codes</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Search by place of performance</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Vendor collaboration opportunities</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-new-note"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Small business events</a>
+                  <a href="#" class="usa-link">Go to assistance listings data</a>
                 </span>
               </li>
             </ul>
@@ -356,7 +403,6 @@
       </div>
     </div>
 
-    <!-- CARDS -->
     <div class="grid-row grid-gap flex-wrap padding-3 flex-justify-center">
       <div class="tablet:grid-col-5 desktop:grid-col padding-1">
           <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
