@@ -40,11 +40,11 @@
 								</ul>
 							</div>
                 <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-                  <button *ngIf="!model.signedIn" 
+                  <button *ngIf="!model.signedIn"
                         class="usa-button width-full margin-top-2"
                         [routerLink]="['/workspace']"
                         [queryParams]="{signin: true}">Sign in to get started</button>
-                  <button *ngIf="model.signedIn" 
+                  <button *ngIf="model.signedIn"
                         class="usa-button width-full margin-top-2"
                         [routerLink]="['/workspace']">Go to workspace</button>
                 </div>
@@ -71,7 +71,7 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Create and post contract opportunities</a>
@@ -79,7 +79,7 @@
               </li>
 							<li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Add, remove, and secure attachments</a>
@@ -87,7 +87,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Manage the interested vendor list</a>
@@ -95,7 +95,7 @@
               </li>
 							<li>
 								<span class="sds-list__item-icon">
-									<i class="sds fa-document"></i>
+									<sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
 								</span>
 								<span class="sds-list__item-content">
 									<a href="#" class="usa-link">Deactivate or reactivate a contract opportunity</a>
@@ -116,7 +116,7 @@
             <ul class="sds-list sds-list--icon">
                 <li>
                   <span class="sds-list__item-icon">
-                    <i class="sds fa-document"></i>
+                    <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">Assign roles</a>
@@ -124,7 +124,7 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <i class="sds fa-document"></i>
+                    <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">Respond to role requests</a>
@@ -132,7 +132,7 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <i class="sds fa-document"></i>
+                    <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">Search the user directory</a>
@@ -140,7 +140,7 @@
                 </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document-pdf fa-fw"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark-text']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Quick Start Guide for role management</a>
@@ -148,7 +148,7 @@
               </li>
 							<li>
 								<span class="sds-list__item-icon">
-									<i class="sds fa-video-square fa-fw"></i>
+									<sds-icon [icon]="['bs', 'camera-reels']" [size]="'xs'"></sds-icon>
 								</span>
 								<span class="sds-list__item-content">
 									<a href="#" class="usa-link">Video - Role Management</a>
@@ -169,7 +169,7 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Creating a system account</a>
@@ -177,7 +177,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Renewing a system account</a>
@@ -185,7 +185,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document-pdf fa-fw"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark-text']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Quick Start Guide for system accounts</a>
@@ -193,7 +193,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-video-square fa-fw"></i>
+                  <sds-icon [icon]="['bs', 'camera-reels']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Video - System Accounts</a>
@@ -201,7 +201,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                  <sds-icon [icon]="['bs', 'chevron-right']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Go to opportunity management API</a>
@@ -222,7 +222,7 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Administrative reports for contract opportunities</a>
@@ -230,7 +230,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                  <sds-icon [icon]="['bs', 'chevron-right']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Go to administrative reports</a>
@@ -251,7 +251,7 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-question-circle"></i>
+                  <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Frequently Asked Questions</a>
@@ -259,7 +259,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-book fa-fw"></i>
+                  <sds-icon [icon]="['bs', 'book']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Glossary Terms</a>
@@ -267,7 +267,7 @@
               </li>
 							<li>
 								<span class="sds-list__item-icon">
-									<i class="sds fa-video-square fa-fw"></i>
+									<sds-icon [icon]="['bs', 'camera-reels']" [size]="'xs'"></sds-icon>
 								</span>
 								<span class="sds-list__item-content">
 									<a href="#" class="usa-link">Videos</a>

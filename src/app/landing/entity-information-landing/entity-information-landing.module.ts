@@ -4,7 +4,8 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import {
-  SdsSearchModule
+  SdsSearchModule,
+  SdsIconModule
 } from '@gsa-sam/components';
 
 import { EntityInformationLandingRoutingModule } from './entity-information-landing-routing.module';
@@ -17,7 +18,8 @@ import { EntityInformationLandingComponent } from './entity-information-landing.
     RouterModule,
     FormsModule,
     SdsSearchModule,
-    EntityInformationLandingRoutingModule
+    EntityInformationLandingRoutingModule,
+    SdsIconModule
   ],
   exports: [EntityInformationLandingComponent]
 })

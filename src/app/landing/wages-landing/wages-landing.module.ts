@@ -5,11 +5,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 
 import { SdsSubheaderModule } from '@gsa-sam/layouts';
-import { SdsSideNavigationModule, 
-         SdsToolbarModule, 
+import { SdsSideNavigationModule,
+         SdsToolbarModule,
          SdsSearchModule,
-         SdsVideoPlayerModule } from '@gsa-sam/components';
-
+         SdsDirectivesModule,
+         SdsVideoPlayerModule,
+         SdsIconModule } from '@gsa-sam/components';
 
 import { SdsAccordionModule } from '@gsa-sam/sam-material-extensions';
 
@@ -32,9 +33,11 @@ import { WagesSubMenuModule } from './wages-sub-menu/wages-sub-menu.module';
     SdsSubheaderModule,
     SdsVideoPlayerModule,
     SdsAccordionModule,
+    SdsDirectivesModule,
     FontAwesomeModule,
     WagesSubMenuModule,
-    WagesLandingRoutingModule
+    WagesLandingRoutingModule,
+    SdsIconModule
   ],
   exports: [WagesLandingComponent, WagesSubPagesComponent]
 })

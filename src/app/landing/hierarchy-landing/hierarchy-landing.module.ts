@@ -5,7 +5,8 @@ import { RouterModule } from '@angular/router';
 
 import {
   SdsSearchModule,
-  SdsVideoPlayerModule
+  SdsVideoPlayerModule,
+  SdsIconModule
 } from '@gsa-sam/components';
 
 import { SdsAccordionModule } from '@gsa-sam/sam-material-extensions';
@@ -21,7 +22,8 @@ import { HierarchyLandingComponent } from './hierarchy-landing.component';
     FormsModule,
     SdsSearchModule,
     SdsAccordionModule,
-    HierarchyLandingRoutingModule
+    HierarchyLandingRoutingModule,
+    SdsIconModule
   ],
   exports: [HierarchyLandingComponent]
 })

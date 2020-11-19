@@ -6,16 +6,18 @@ import { SdsFiltersModule } from '@gsa-sam/sam-formly';
 
 import { StatusTrackerRoutingModule } from './status-tracker-routing.module';
 import { StatusTrackerComponent } from './status-tracker.component';
+import { SdsIconModule } from '@gsa-sam/components';
 
 @NgModule({
   declarations: [StatusTrackerComponent],
   imports: [
-    CommonModule,        
+    CommonModule,
     ReactiveFormsModule,
     SdsFiltersModule,
     FormsModule,
     FormlyModule.forRoot(),
-    StatusTrackerRoutingModule
+    StatusTrackerRoutingModule,
+    SdsIconModule
   ],
   exports: [StatusTrackerComponent]
 })

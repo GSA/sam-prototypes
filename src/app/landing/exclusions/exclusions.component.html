@@ -37,12 +37,12 @@
               </div>
               <div class="desktop:flex-column flex-justify-center grid-row grid-gap margin-top-2">
                 <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12">
-                  <button *ngIf="!model.signedIn" class="usa-button width-full" 
-                        [routerLink]="['/workspace']" 
+                  <button *ngIf="!model.signedIn" class="usa-button width-full"
+                        [routerLink]="['/workspace']"
                         [queryParams]="{signin: true}">
                       Sign in to get started
                   </button>
-                  <button *ngIf="model.signedIn" class="usa-button width-full" 
+                  <button *ngIf="model.signedIn" class="usa-button width-full"
                         [routerLink]="['/workspace']">
                         Go to workspace
                   </button>
@@ -90,12 +90,12 @@
           <p class="text-base-dark">Getting started for federal exclusions managers.</p>
           <div class="desktop:flex-column flex-justify-center grid-row grid-gap margin-top-2">
             <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12">
-              <button *ngIf="!model.signedIn" class="usa-button width-full" 
-                    [routerLink]="['/workspace']" 
+              <button *ngIf="!model.signedIn" class="usa-button width-full"
+                    [routerLink]="['/workspace']"
                     [queryParams]="{signin: true}">
                   Sign in to get started
               </button>
-              <button *ngIf="model.signedIn" class="usa-button width-full" 
+              <button *ngIf="model.signedIn" class="usa-button width-full"
                     [routerLink]="['/workspace']">
                     Go to workspace
               </button>
@@ -121,7 +121,7 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Types of exclusions</a>
@@ -129,7 +129,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Legacy CT Codes</a>
@@ -137,7 +137,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Agency exclusions points of contact</a>
@@ -156,7 +156,7 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Downloading exclusions files</a>
@@ -164,7 +164,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document-pdf"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark-text']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Understanding the exclusions extract</a>
@@ -172,7 +172,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                  <sds-icon [icon]="['bs', 'chevron-right']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Go to exclusions downloads</a>
@@ -191,7 +191,7 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">How to use data services</a>
@@ -199,7 +199,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document-pdf"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark-text']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Data services quick start guide</a>
@@ -207,7 +207,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-video-square"></i>
+                  <sds-icon [icon]="['bs', 'camera-reels']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Video: Using data services</a>
@@ -215,7 +215,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                  <sds-icon [icon]="['bs', 'chevron-right']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Go to public exclusions API</a>
@@ -236,7 +236,7 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-question-circle"></i>
+                  <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a [routerLink]="['/help']" class="usa-link">Frequently Asked Questions</a>
@@ -244,7 +244,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-book"></i>
+                  <sds-icon [icon]="['bs', 'book']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Glossary Terms</a>
@@ -252,7 +252,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-video-square"></i>
+                  <sds-icon [icon]="['bs', 'camera-reels']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Videos</a>

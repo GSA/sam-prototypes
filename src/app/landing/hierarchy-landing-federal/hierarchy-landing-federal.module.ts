@@ -4,7 +4,8 @@ import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import {
-  SdsSearchModule
+  SdsSearchModule,
+  SdsIconModule
 } from '@gsa-sam/components';
 
 import { HierarchyLandingFederalRoutingModule } from './hierarchy-landing-federal-routing.module';
@@ -18,7 +19,8 @@ import { HierarchyLandingFederalComponent } from './hierarchy-landing-federal.co
     FontAwesomeModule,
     FormsModule,
     SdsSearchModule,
-    HierarchyLandingFederalRoutingModule
+    HierarchyLandingFederalRoutingModule,
+    SdsIconModule
   ],
   exports: [HierarchyLandingFederalComponent]
 })

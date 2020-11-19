@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { LocationStrategy } from '@angular/common';
+import {allIcons} from 'ngx-bootstrap-icons';
 
 @Component({
   selector: 'app-partners',

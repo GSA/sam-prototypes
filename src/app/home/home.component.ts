@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
-
+import {allIcons} from 'ngx-bootstrap-icons';
 import { NewsData } from '../news/news-data/news.model';
 import { NewsList } from '../news/news-data/news.data';
 

@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {allIcons} from 'ngx-bootstrap-icons';
 
 @Component({
   selector: 'app-disaster-response-landing',

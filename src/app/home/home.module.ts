@@ -7,7 +7,8 @@ import { SdsSubheaderModule } from '@gsa-sam/layouts';
 
 import {
   SdsSearchModule,
-  SdsVideoPlayerModule
+  SdsVideoPlayerModule,
+  SdsIconModule
 } from '@gsa-sam/components';
 
 import { HomeRoutingModule } from './home-routing.module';
@@ -21,7 +22,8 @@ import { HomeComponent } from './home.component';
     SdsSearchModule,
     SdsVideoPlayerModule,
     SdsSubheaderModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    SdsIconModule
   ],
   declarations: [HomeComponent]
 })
