@@ -52,3 +52,21 @@ $wcag-target: 'A';
     font-weight: bold;
   }
 }
+
+.sds-list--icon svg {
+
+    display: block !important;
+}
+sds-icon.action-icon > * > * {
+  background-color:	#70e17b;
+  color: white;
+  border: none;
+  border-radius: 50%;
+}
+
+sds-icon.external-link > * > * {
+  font-size: inherit;
+  margin-left: 0.25rem;
+  vertical-align: top;
+  display: inline !important;
+}
