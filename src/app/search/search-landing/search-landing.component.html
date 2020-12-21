@@ -1,0 +1,123 @@
+<main id="main-content">
+  <div class="grid-container">
+    <div class="grid-row sds-hero sds-hero--image">
+      <div class="desktop:grid-offset-1 desktop:grid-col-10">
+        <!-- HERO SECTION -->
+        <div class="grid-row padding-x-3 grid-gap-6">
+          <div class="desktop:grid-col-7 margin-y-4">
+              <h1>Search</h1>
+				<p class="text-base-dark">Search by id or keyword with our simple search; or select a domain from the drop down to one of our more advanced searches.
+				</p> 
+
+                <div class="grid-col-auto">
+                <a class="usa-link text-bold" [routerLink]="['/search']" [queryParams]="{index: 'assistancelist'}">Advanced Search</a>
+	              <div class="grid-row margin-top-1">
+	                <div class="grid-col">
+	                  <sds-search name="opps-search" [(ngModel)]="searchModel" (ngModelChange)="search()" [searchSettings]="searchSettings">
+	                  </sds-search>
+	                </div>
+	              </div>
+	              <div class="grid-row">
+	                <div class="usa-checkbox grid-col-fill">
+	                    <input class="usa-checkbox__input" id="activeOnly" type="checkbox" name="activeOnly" value="activeOnly" checked="checked">
+	                    <label class="usa-checkbox__label" for="activeOnly">Active Only</label>
+	                </div>
+	              </div>
+				</div>
+        	</div>
+		</div>
+	  </div>
+	</div>
+		<!-- CARDS -->
+		<div class="grid-row grid-gap flex-wrap margin-top-4 padding-x-3 desktop:padding-0">
+			<div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+  			<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a [routerLink]="['news']" class="sds-card__link">
+              <h2 class="sds-card__title">Authenticated Search</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+          	<p>You must sign in to search the following Entity Information</p>
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-search"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Entity Registrations</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-search"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Exclusions</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+			</div>
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a [routerLink]="['news']" class="sds-card__link">
+              <h2 class="sds-card__title">Help</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-question-circle"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a [routerLink]="['/help']" class="usa-link">Frequently Asked Questions</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-book"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Glossary Terms</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-video-square"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Videos</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-document-pdf"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Quick start guide for creating a login.gov account</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a [routerLink]="['news']" class="sds-card__link">
+              <h2 class="sds-card__title">Search Overview</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <sds-video-player [VPConfiguration]="videoConfiguration"></sds-video-player>
+          </div>
+        </div>
+      </div>
+	</div>
+  </div>
+</main>
+

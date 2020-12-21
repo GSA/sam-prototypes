@@ -12,9 +12,7 @@ import { HelpFiltersService } from './help/help-filters/help-filters.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { SdsCollapseModule,
-  SdsIconModule
-  } from '@gsa-sam/components';
+import { SdsCollapseModule, SdsDirectivesModule, SdsIconModule } from '@gsa-sam/components';
 import { SdsHeaderModule, SdsFooterModule } from '@gsa-sam/layouts';
 import { FormlyModule } from '@ngx-formly/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -38,6 +36,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
     SdsHeaderModule,
     SdsFooterModule,
     SdsCollapseModule,
+    SdsDirectivesModule,
     FormlyModule,
     FontAwesomeModule,
     SdsIconModule
