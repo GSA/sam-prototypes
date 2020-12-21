@@ -8,7 +8,8 @@ import {
   SdsToolbarModule,
   SdsAccordionModule,
   SdsPageModule,
-  SdsSearchModule
+  SdsSearchModule,
+  SdsIconModule
 } from '@gsa-sam/components';
 import { SdsFiltersModule, SDSFormlyUpdateComunicationService } from '@gsa-sam/sam-formly';
 import { SdsSubheaderModule, SearchListServiceModule } from '@gsa-sam/layouts';
@@ -34,8 +35,10 @@ import { DatabankComponent } from './databank.component';
     SdsSideNavigationModule,
     SdsAccordionModule,
     SdsSubheaderModule,
-    SdsFiltersModule, 
-  	DatabankRoutingModule],
+    SdsFiltersModule,
+    DatabankRoutingModule,
+    SdsIconModule
+  ],
   declarations: [DatabankComponent]
 })
 export class DatabankModule {}
