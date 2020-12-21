@@ -8,8 +8,8 @@
             <div class="display-flex flex-justify-space-between">
               <h1>Data Services</h1>
             </div>
-            <p class="text-base-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum consectetur libero id faucibus nisl tincidunt. 
-            </p>            
+            <p class="text-base-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum consectetur libero id faucibus nisl tincidunt.
+            </p>
             <h2 class="margin-bottom-1">Downloads</h2>
             <sds-search *ngIf="false" name="opps-search" [(ngModel)]="searchModel" (ngModelChange)="search()" [searchSettings]="searchSettings">
             </sds-search>
@@ -47,11 +47,13 @@
                 <ul class="sds-list sds-list--icon">
                   <li>
                     <span class="sds-list__item-icon">
-                      <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                      <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180">
+                      </sds-icon>
                     </span>
                     <span class="sds-list__item-content">
-                      <a href="https://open.gsa.gov" target="_blank" class="usa-link">Go to Open GSA 
-                        <sds-icon [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon></a>
+                      <a href="https://open.gsa.gov" target="_blank" class="usa-link">Go to Open GSA
+                        <sds-icon [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon>
+                      </a>
                     </span>
                   </li>
                 </ul>
@@ -116,8 +118,8 @@
             </a>
           </div>
           <div class="sds-card__body">
-            <p class="text-base-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            </p>  
+            <p class="text-base-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
@@ -140,7 +142,7 @@
           </div>
           <div class="sds-card__body">
             <p class="text-base-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>  
+            </p>
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
@@ -232,7 +234,7 @@
                   USA.gov Government Benefits, Grants, and Loans.
                   <sds-icon [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon>
                 </a> Learn about affordable housing, grants, loans, and other assistance for individuals and organizations.</span>
-              </li>    
+              </li>
             </ul>
           </div>
         </div>
