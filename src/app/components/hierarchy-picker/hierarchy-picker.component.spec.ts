@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { DatabankReportsComponent } from './databank-reports.component';
+import { HierarchyPickerComponent } from './hierarchy-picker.component';
 
-describe('DatabankReportsComponent', () => {
-  let component: DatabankReportsComponent;
-  let fixture: ComponentFixture<DatabankReportsComponent>;
+describe('HierarchyPickerComponent', () => {
+  let component: HierarchyPickerComponent;
+  let fixture: ComponentFixture<HierarchyPickerComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ DatabankReportsComponent ]
+      declarations: [ HierarchyPickerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DatabankReportsComponent);
+    fixture = TestBed.createComponent(HierarchyPickerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

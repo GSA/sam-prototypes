@@ -3,7 +3,7 @@ import { Location } from '@angular/common';
 import { ActivatedRoute, Router, NavigationEnd, UrlSegment, NavigationStart, NavigationExtras } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
-
+import {allIcons} from 'ngx-bootstrap-icons';
 import { FormGroup } from '@angular/forms';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 import { CdkAccordionItem } from "@angular/cdk/accordion";
@@ -50,13 +50,13 @@ export class SearchComponent implements OnInit {
       { id: 'saveAsAction', icon: 'bars', text: 'Save As' }
     ]
   };
-  
+
   @ViewChild('resultList', { static: true }) resultList;
 
   parentDomain: any;
   domain: any;
   form = new FormGroup({});
-  filterModel;
+  filterModel = {};
   fields: FormlyFieldConfig[] = [];
   showAdvancedFilters: boolean = false;
 
@@ -96,11 +96,11 @@ export class SearchComponent implements OnInit {
     private disasterFilterService: DisasterResponseFiltersService,
     private exclusionFilterService: ExclusionFiltersService,
     private contractDataFilterService:  ContractDataFiltersService,
-    private scaFilterService: ScaFilterService) { 
+    private scaFilterService: ScaFilterService) {
 
   }
 
-  ngOnInit() {    
+  ngOnInit() {
     let domain = this.route.snapshot.queryParamMap.get('index');
     this.domain = this.getDomain(this.navigationModel.navigationLinks, domain ? domain : 'all');
     this.service.setDomain(this.domain.id);
@@ -111,7 +111,7 @@ export class SearchComponent implements OnInit {
     this.setFilters();
   }
 
-  ngAfterViewInit() {      
+  ngAfterViewInit() {
     this.route.queryParams.subscribe(
       data => {
         this.filtersExpanded = true;

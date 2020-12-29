@@ -5,7 +5,8 @@ import { FormsModule } from '@angular/forms';
 
 import {
   SdsSearchModule,
-  SdsVideoPlayerModule
+  SdsVideoPlayerModule,
+  SdsIconModule
 } from '@gsa-sam/components';
 
 import { SdsAccordionModule } from '@gsa-sam/sam-material-extensions';
@@ -22,7 +23,8 @@ import { ExclusionsComponent } from './exclusions.component';
     SdsSearchModule,
     SdsVideoPlayerModule,
     SdsAccordionModule,
-    ExclusionsRoutingModule
+    ExclusionsRoutingModule,
+    SdsIconModule
   ],
   exports: [ExclusionsComponent]
 })

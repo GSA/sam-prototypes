@@ -1,0 +1,94 @@
+
+<div class="grid-row grid-gap">
+	<div *ngIf="showSideFilters" class="grid-col-3">		
+	  	<div class="grid-row margin-bottom-2">
+		   	<div class="grid-col margin-top-6">
+				<label>Department</label>
+				<sds-autocomplete [service]="departmentService" (ngModelChange)="autocompleteChanges($event)" [(ngModel)]="departmentModel" [configuration]="departmentSettings">
+				</sds-autocomplete>
+			</div>
+		</div>
+	  	<div class="grid-row margin-bottom-2">
+		   	<div class="grid-col">
+			    <label>Subtier</label>
+				<sds-autocomplete [service]="subtierService" (ngModelChange)="autocompleteChanges($event)" [(ngModel)]="subtierModel" [configuration]="subtierSettings">
+				</sds-autocomplete>
+			</div>
+		</div>
+	  	<div class="grid-row margin-bottom-2">
+		   	<div class="grid-col">
+			    <label>Majcom</label>
+				<sds-autocomplete [service]="majcomService" (ngModelChange)="autocompleteChanges($event)" [(ngModel)]="majcomModel" [configuration]="majcomSettings">
+				</sds-autocomplete>
+			</div>
+		</div>
+	  	<div class="grid-row margin-bottom-2">
+		   	<div class="grid-col">
+			    <label>Subcommand</label>
+				<sds-autocomplete [service]="subcommandService" (ngModelChange)="autocompleteChanges($event)" [(ngModel)]="subcommandModel" [configuration]="subcommandSettings">
+				</sds-autocomplete>
+			</div>
+		</div>
+	  	<div class="grid-row margin-bottom-2">
+		   	<div class="grid-col">
+				<label>Office</label>
+				<sds-autocomplete [service]="officeService" (ngModelChange)="autocompleteChanges($event)" [(ngModel)]="officeModel" [configuration]="officeSettings">
+				</sds-autocomplete>
+			</div>
+		</div>
+	</div>
+	<div class="grid-col-fill">
+		<div class="display-flex flex-row flex-align-center">
+				<button *ngIf="!showSideFilters" class="usa-button sds-button--circle sds-button--white margin-right-1" (click)="toggleSideFilters()">
+					<i class="sds fa-angle-right fa-2x" aria-hidden="true" title="Screen reader description"></i>
+			        <span class="sr-only">Open side filter options</span>
+				</button>
+				<button *ngIf="showSideFilters" class="usa-button sds-button--circle sds-button--white margin-right-1" (click)="toggleSideFilters()">
+					<i class="sds fa-angle-left fa-2x" aria-hidden="true" title="Screen reader description"></i>
+			        <span class="sr-only">Close side filter options</span>
+				</button>
+				<form *ngIf="!showSideFilters" name="breadcrumbs-form" class="usa-form margin-bottom-1">
+			    <label class="usa-label sr-only" for="options">Breadcrumbs</label>
+			    <select #breadcrumbsSelect class="usa-select sds-breadcrumbs" name="options" id="options" (change)="breadcrumbSelected(breadcrumbsSelect.value)" >
+			    	<option *ngFor="let crumb of breadcrumbs; let last = last;" [selected]="last" [id]="crumb.id" [value]="crumb.id">{{crumb.name}}</option>
+			  	</select>
+			  </form>
+			  <div class="width-full"></div>
+			  <div class="sds-search-dialog">
+				<sds-autocomplete class="width-full" [service]="autocompleteService" (ngModelChange)="autocompleteChanges($event)" [(ngModel)]="autocompleteModel" [configuration]="autocompleteSettings"></sds-autocomplete>
+			</div>
+				
+		</div>
+		<div class="grid-row grid-gap margin-bottom-1">
+			<div class="grid-col-fill">
+				<sds-table [data]="data" class="width-full sds-table-dialog-height">
+				  <sds-table-column sdsColumnName="fpdsCode">
+				    <ng-template #sdsHeaderCell>Code</ng-template>
+				    <ng-template #sdsCell let-element="element">
+				      <div class="usa-checkbox">
+				           <input class="usa-checkbox__input" [id]="element.key" type="checkbox" [name]="element.key" [value]="element.key">
+				           <label class="usa-checkbox__label" [for]="element.key">{{ element.fpdsCode }}</label>
+				      </div>
+				  	</ng-template>
+				  </sds-table-column>
+				  <sds-table-column sdsColumnName="name">
+				    <ng-template #sdsHeaderCell>{{level}}</ng-template>
+				    <ng-template #sdsCell let-element="element"><button [name]="element.key" class="usa-button usa-button--unstyled" (click)="navigate($event);">{{ element.name }}</button></ng-template>
+				  </sds-table-column>
+				  <sds-header-row [displayedColumns]="displayedColumns"></sds-header-row>
+				  <sds-row [displayedColumns]="displayedColumns"></sds-row>
+
+				</sds-table>
+				</div>
+		</div>
+		<div class="display-flex flex-row flex-align-center">
+			<label class="text-bold margin-right-1">Selected: </label>
+			<span *ngFor="let selected of selectedNodes" class="sds-tag sds-tag--chip margin-right-1">
+			  	{{selected.name}}
+			  <button class="sds-tag__close">
+			    <span class="fas fa-times" aria-hidden="true"></span>
+			</button>
+			</span>
+		</div>
+	</div>
+</div>

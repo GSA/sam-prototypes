@@ -37,24 +37,15 @@
 							<p class="text-base-dark">Register your entity to get started doing business with the federal government.</p>
 							<div class="desktop:flex-column flex-justify-center grid-row">
                   <button class="sds-button sds-button--icon margin-bottom-1" [routerLink]="['/home/registration-entity']">
-                    <span class="fa-stack fa-2x">
-                      <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
-                      <i class="sds fa-folder fa-stack-1x text-base fa-2x"></i>
-                    </span>
+                    <sds-icon [icon]="['bs', 'folder-check']" [size]="'2x'"></sds-icon>
                     <span class="sds-button--icon__title">Get Started</span>
                   </button>
                   <button class="sds-button sds-button--icon margin-bottom-1">
-                    <span class="fa-stack fa-2x">
-                      <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
-                      <i class="sds fa-folder fa-stack-1x text-base fa-2x"></i>
-                    </span>
+                    <sds-icon [icon]="['bs', 'folder-check']" [size]="'2x'"></sds-icon>
                     <span class="sds-button--icon__title">Renew Entity</span>
                   </button>
                   <button class="sds-button sds-button--icon">
-                    <span class="fa-stack fa-2x">
-                      <i class="sds fa-pentagon fa-stack-2x text-primary-lighter fa-1x"></i>
-                      <i class="sds fa-check-circle fa-stack-1x text-base fa-2x"></i>
-                    </span>
+                    <sds-icon [icon]="['bs', 'check-2-circle']" [size]="'2x'"></sds-icon>
                     <span class="sds-button--icon__title">Check Registration Status</span>
                   </button>
 							</div>
@@ -94,24 +85,15 @@
 					<p class="text-base-dark">Register your entity to get started doing business with the federal government.</p>
           <div class="grid-row grid-gap display-flex flex-justify-center">
               <button class="sds-button sds-button--icon margin-bottom-1" [routerLink]="['/home/registration-entity']">
-                <span class="fa-stack fa-2x">
-                  <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
-                  <i class="sds fa-folder fa-stack-1x text-base fa-2x"></i>
-                </span>
+                <sds-icon [icon]="['bs', 'check-2-circle']" [size]="'2x'"></sds-icon>
                 <span class="sds-button--icon__title">Get Started</span>
               </button>
               <button class="sds-button sds-button--icon margin-bottom-1">
-                <span class="fa-stack fa-2x">
-                  <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
-                  <i class="sds fa-folder fa-stack-1x text-base fa-2x"></i>
-                </span>
+                <sds-icon [icon]="['bs', 'check-2-circle']" [size]="'2x'"></sds-icon>
                 <span class="sds-button--icon__title">Renew Entity</span>
               </button>
               <button class="sds-button sds-button--icon margin-bottom-1">
-                <span class="fa-stack fa-2x">
-                  <i class="sds fa-pentagon fa-stack-2x text-primary-lighter fa-1x"></i>
-                  <i class="sds fa-check-circle fa-stack-1x text-base fa-2x"></i>
-                </span>
+                <sds-icon [icon]="['bs', 'check-2-circle']" [size]="'2x'"></sds-icon>
                 <span class="sds-button--icon__title">Check Registration Status</span>
               </button>
           </div>
@@ -131,7 +113,7 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">How to use entity registration data files</a>
@@ -139,7 +121,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                  <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Go to entity registration data</a>
@@ -160,7 +142,7 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">How to use data services</a>
@@ -168,7 +150,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document-pdf"></i>
+	                  <sds-icon [icon]="['sds', 'document-pdf']"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Data services quick start guide</a>
@@ -176,7 +158,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-video-square"></i>
+                  <sds-icon [icon]="['bs', 'camera-reels']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Video: Using data services</a>
@@ -184,7 +166,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                  <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Go to public entity registration API</a>
@@ -206,28 +188,28 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                 <a class="usa-link" target="_blank" href="http://www.dla.mil/HQ/SmallBusiness/PTAP.aspx">
                   Procurement Technical Assistance Program
-                  <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i>
+                  <sds-icon class="external-link" [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon>
                 </a></span>
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">SBA Dynamic Small Business Search (DSBS)<i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i></a>
+                  <a href="#" class="usa-link">SBA Dynamic Small Business Search (DSBS)<sds-icon class="external-link" [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon></a>
                 </span>
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-document"></i>
+                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">NAICS Classification System<i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i></a>
+                  <a href="#" class="usa-link">NAICS Classification System<sds-icon class="external-link" [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon></a>
                 </span>
               </li>
             </ul>
@@ -245,7 +227,7 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-question-circle"></i>
+                  <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Frequently Asked Questions</a>
@@ -253,7 +235,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-book fa-fw"></i>
+                  <sds-icon [icon]="['bs', 'book']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Glossary Terms</a>
@@ -261,7 +243,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-video-square fa-fw"></i>
+              		<sds-icon [icon]="['bs', 'camera-reels']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Videos</a>

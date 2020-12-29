@@ -8,6 +8,7 @@ import {
 import { SamModelService } from "./model/sam-model.service";
 import { filter, map } from "rxjs/operators";
 import { LocationStrategy } from '@angular/common';
+import {allIcons} from 'ngx-bootstrap-icons';
 
 @Component({
   selector: "app-root",

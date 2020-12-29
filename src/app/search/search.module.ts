@@ -7,7 +7,8 @@ import {
   SdsToolbarModule,
   SdsPageModule,
   SdsCollapseModule,
-  SdsSearchModule
+  SdsSearchModule,
+  SdsIconModule
 } from '@gsa-sam/components';
 import { SdsFiltersModule, SDSFormlyUpdateComunicationService } from '@gsa-sam/sam-formly';
 import { SdsSubheaderModule, SearchListServiceModule } from '@gsa-sam/layouts';
@@ -79,7 +80,8 @@ import { SearchComponent } from './search.component';
     WageFiltersModule,
     SearchServiceModule,
     SearchRoutingModule,
-    AdvancedFiltersModule
+    AdvancedFiltersModule,
+    SdsIconModule
   ],
   exports: [SearchComponent]
 })

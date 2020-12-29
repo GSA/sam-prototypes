@@ -9,6 +9,10 @@ const routes: Routes = [
 		component: SearchComponent
 	},
 	{
+		path: 'search-home',
+		loadChildren: () => import('./search-landing/search-landing.module').then(m => m.SearchLandingModule)
+	},
+	{
 		path: 'saved-search',
 		loadChildren: () => import('./search-save/search-save.module').then(m => m.SearchSaveModule)
 	},

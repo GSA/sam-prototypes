@@ -35,11 +35,11 @@
 					</ul>
 				</div>
 				<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-                  <button *ngIf="!model.signedIn" 
+                  <button *ngIf="!model.signedIn"
                         class="usa-button width-full margin-top-2"
                         [routerLink]="['/workspace']"
                         [queryParams]="{signin: true}">Sign in to get started</button>
-                  <button *ngIf="model.signedIn" 
+                  <button *ngIf="model.signedIn"
                         class="usa-button width-full margin-top-2"
                         [routerLink]="['/workspace']">Go to workspace</button>
                 </div>
@@ -66,7 +66,7 @@
 		            <ul class="sds-list sds-list--icon">
 		              <li>
 		                <span class="sds-list__item-icon">
-		                  <i class="sds fa-document"></i>
+		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
 		                </span>
 		                <span class="sds-list__item-content">
 		                  <a href="#" class="usa-link">Meet your annual update requirements</a>
@@ -74,7 +74,7 @@
 		              </li>
 		              <li>
 		                <span class="sds-list__item-icon">
-		                  <i class="sds fa-document"></i>
+		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
 		                </span>
 		                <span class="sds-list__item-content">
 		                  <a href="#" class="usa-link">Create and post assistance listings</a>
@@ -82,7 +82,7 @@
 		              </li>
 		              <li>
 		                <span class="sds-list__item-icon">
-		                  <i class="sds fa-document"></i>
+		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
 		                </span>
 		                <span class="sds-list__item-content">
 		                  <a href="#" class="usa-link">Give your listing a new title</a>
@@ -90,7 +90,7 @@
 		              </li>
 		              <li>
 		                <span class="sds-list__item-icon">
-		                  <i class="sds fa-document"></i>
+		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
 		                </span>
 		                <span class="sds-list__item-content">
 		                  <a href="#" class="usa-link">Assign your listing a new CFDA number</a>
@@ -98,7 +98,7 @@
 		              </li>
 		              <li>
 		                <span class="sds-list__item-icon">
-		                  <i class="sds fa-document"></i>
+		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
 		                </span>
 		                <span class="sds-list__item-content">
 		                  <a href="#" class="usa-link">Move your listing to a new organization</a>
@@ -119,7 +119,7 @@
 		            <ul class="sds-list sds-list--icon">
 		              <li>
 		                <span class="sds-list__item-icon">
-		                  <i class="sds fa-document"></i>
+		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
 		                </span>
 		                <span class="sds-list__item-content">
 		                  <a href="#" class="usa-link">Manage your CFDA numbers</a>
@@ -127,7 +127,7 @@
 		              </li>
 		              <li>
 		                <span class="sds-list__item-icon">
-		                  <i class="sds fa-document"></i>
+		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
 		                </span>
 		                <span class="sds-list__item-content">
 		                  <a href="#" class="usa-link">Manage your regional locations</a>
@@ -148,7 +148,7 @@
 		            <ul class="sds-list sds-list--icon">
 		              <li>
 		                <span class="sds-list__item-icon">
-		                  <i class="sds fa-document"></i>
+		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
 		                </span>
 		                <span class="sds-list__item-content">
 		                  <a href="#" class="usa-link">Assign roles</a>
@@ -156,7 +156,7 @@
 		              </li>
 		              <li>
 		                <span class="sds-list__item-icon">
-		                  <i class="sds fa-document"></i>
+		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
 		                </span>
 		                <span class="sds-list__item-content">
 		                  <a href="#" class="usa-link">Respond to role requests</a>
@@ -164,7 +164,7 @@
 		              </li>
 		              <li>
 		                <span class="sds-list__item-icon">
-		                  <i class="sds fa-document"></i>
+		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
 		                </span>
 		                <span class="sds-list__item-content">
 		                  <a href="#" class="usa-link">Search the user directory</a>
@@ -172,7 +172,7 @@
 		              </li>
 		              <li>
 		                <span class="sds-list__item-icon">
-		                  <i class="sds fa-document-pdf"></i>
+		                  <sds-icon [icon]="['sds', 'document-pdf']"></sds-icon>
 		                </span>
 		                <span class="sds-list__item-content">
 		                  <a href="#" class="usa-link">Quick Start Guide for role management</a>
@@ -180,7 +180,7 @@
 		              </li>
 		              <li>
 		                <span class="sds-list__item-icon">
-		                  <i class="sds fa-video-square"></i>
+		                  <sds-icon [icon]="['bs', 'camera-reels']" [size]="'xs'"></sds-icon>
 		                </span>
 		                <span class="sds-list__item-content">
 		                  <a href="#" class="usa-link">Video: Role management</a>
@@ -189,7 +189,7 @@
 		            </ul>
 		          </div>
 		        </div>
-			</div>			
+			</div>
 			<div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
   				<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
 		          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
@@ -201,7 +201,7 @@
 		            <ul class="sds-list sds-list--icon">
 		              <li>
 		                <span class="sds-list__item-icon">
-		                  <i class="sds fa-document"></i>
+		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
 		                </span>
 		                <span class="sds-list__item-content">
 		                  <a href="#" class="usa-link">How to run an administrative report</a>
@@ -209,7 +209,7 @@
 		              </li>
 		              <li>
 		                <span class="sds-list__item-icon">
-		                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+		                  <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180"></sds-icon>
 		                </span>
 		                <span class="sds-list__item-content">
 		                  <a href="#" class="usa-link">Go to administrative reports</a>
@@ -218,7 +218,7 @@
 		            </ul>
 		          </div>
 		        </div>
-			</div>     
+			</div>
 	      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
 	        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
 	          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
@@ -232,7 +232,7 @@
 	                <span class="sds-list__item-content">
 	                <a class="usa-link text-semibold" target="_blank" href="https://www.cfo.gov/grants-training/">
 	                  Chief Financial Officers Council Grants Training.
-	                  <i class="fas fa-external-link-alt fa-xs usa-link__external-icon"></i>
+	                  <sds-icon [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon>
 	                </a> Explore training modules on grants and cooperative agreements for federal officials.</span>
 	              </li>
 	            </ul>
@@ -250,7 +250,7 @@
 	            <ul class="sds-list sds-list--icon">
 	              <li>
 	                <span class="sds-list__item-icon">
-	                  <i class="sds fa-question-circle"></i>
+	                  <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
 	                </span>
 	                <span class="sds-list__item-content">
 	                  <a [routerLink]="['/help']" class="usa-link">Frequently Asked Questions</a>
@@ -258,7 +258,7 @@
 	              </li>
 	              <li>
 	                <span class="sds-list__item-icon">
-	                  <i class="sds fa-book"></i>
+	                  <sds-icon [icon]="['bs', 'book']" [size]="'xs'"></sds-icon>
 	                </span>
 	                <span class="sds-list__item-content">
 	                  <a href="#" class="usa-link">Glossary Terms</a>
@@ -266,7 +266,7 @@
 	              </li>
 	              <li>
 	                <span class="sds-list__item-icon">
-	                  <i class="sds fa-video-square"></i>
+	                  <sds-icon [icon]="['bs', 'camera-reels']" [size]="'xs'"></sds-icon>
 	                </span>
 	                <span class="sds-list__item-content">
 	                  <a href="#" class="usa-link">Videos</a>
@@ -275,7 +275,7 @@
 	            </ul>
 	          </div>
 	        </div>
-	      </div> 
+	      </div>
 	   </div>
 	</div>
 </main>

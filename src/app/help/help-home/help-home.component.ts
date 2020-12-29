@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
+import {allIcons} from 'ngx-bootstrap-icons';
 
 @Component({
   selector: 'app-help-home',

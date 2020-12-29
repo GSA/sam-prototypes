@@ -4,8 +4,8 @@
       <div class="desktop:grid-offset-1 desktop:grid-col-10">
         <!-- HERO SECTION -->
         <div class="grid-row padding-x-3 desktop:padding-0">
-          <div class="desktop:grid-col-7 margin-bottom-4 desktop:margin-0 tablet:padding-right-3">
-              <h1>DataBank</h1>
+          <div class="desktop:grid-col-7 margin-y-4">
+              <h1><a [routerLink]="['databank-search']">DataBank</a></h1>
               <p class="maxw-full text-base-dark">DataBank is an analysis and visualization tool that allows you to query and generate tables of time series data on a variety of topics.</p>
 
               <p>You must sign up for a user account to access reports. Some reports are available to public users, but you must be signed in.</p>
@@ -32,27 +32,29 @@
     <!-- Tile -->
     <div class="grid-row desktop:display-none">
       <div class="grid-col-11 margin-x-auto">
-        <div class="sds-tile--outline">
-          <h2>Federal Users Get Started Here:</h2>
-          <p class="text-base-dark">Manage federal funding and awarding organizations as a hierarchy administrator.</p>
-          <div class="desktop:flex-column flex-justify-center grid-row grid-gap">
-            <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-              <button class="usa-button usa-button--secondary width-full">Federal Hierarchy for Federal Users</button>
-            </div>
-            <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-              <button class="usa-button width-full">Sign in to Get Started</button>
+        <div  *ngIf="!model.signedIn" class="desktop:grid-col-5 display-none desktop:display-flex">
+            <div class="sds-tile--outline display-flex flex-column flex-justify height-full">
+              <div>
+                <h2>Sign in to get started</h2>
+                <p class="text-base-dark">You must be signed in to run DataBank reports.</p>
+              </div>
+              <div class="desktop:flex-column flex-justify-center grid-row grid-gap">
+                <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
+                  <button class="usa-button width-full">Sign in to run reports</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     <!-- CARDS -->
     <div class="grid-row grid-gap flex-wrap padding-x-3 desktop:padding-0">
+
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
         <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
             <a class="sds-card__link">
-              <h2 class="sds-card__title">Opportunities Report</h2>
+              <h2 class="sds-card__title">Standard Reports</h2>
             </a>
           </div>
           <div class="sds-card__body">
@@ -67,7 +69,8 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                  <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180">
+</sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Go to DataBank Reports</a>
@@ -75,14 +78,13 @@
               </li>
             </ul>
           </div>
-        </div>
       </div>
+    </div>
+
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
         <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a class="sds-card__link">
-              <h2 class="sds-card__title">Download Data Files</h2>
-            </a>
+            <h2>Administrative Reports</h2>
           </div>
           <div class="sds-card__body">
             <ul class="sds-list sds-list--icon">
@@ -96,7 +98,8 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                  <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180">
+</sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Connect to data APIs</a>
@@ -106,11 +109,12 @@
           </div>
         </div>
       </div>
+
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
         <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
             <a class="sds-card__link">
-              <h2 class="sds-card__title">Connect to Data Services</h2>
+              <h2 class="sds-card__title">Ad Hoc Reports</h2>
             </a>
           </div>
           <div class="sds-card__body">
@@ -141,7 +145,8 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                  <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180">
+</sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Connect to data APIs</a>
@@ -151,44 +156,30 @@
           </div>
         </div>
       </div>
+
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
         <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
             <a class="sds-card__link">
-              <h2 class="sds-card__title">Do I need a user account?</h2>
+              <h2 class="sds-card__title">Static Reports</h2>
             </a>
           </div>
           <div class="sds-card__body">
-            <p class="margin-bottom-2">Connect to one of our partner sites to review policy, learn about the grants lifecycle, and find information about eligibility for different types of federal assistance.</p>
-            <ul class="sds-list sds-list--unstyled sds-list--flex">
+            <p class="margin-bottom-2">Static reports are downloadable files, typically CSV or PDF files, that have already been run.  Static Reports may be found with file extracts in our Data Services.</p>
+             <ul class="sds-list sds-list--icon">
               <li>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Chief Financial Officers Council Grants Training
-                </a>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Go to Contract Data Static Reports</a>
+                </span>
               </li>
-              <li>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Grants.gov Learning Center
-                </a>
-              </li>
-              <li>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Benefits.gov Benefit Finder
-                </a>
-              </li>
-              <li>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  USA.gov Government Benefits, Grants, and Loans
-                </a>
-              </li>
-            </ul>
+            </ul>           
           </div>
         </div>
       </div>
+
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
         <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
@@ -224,7 +215,8 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                  <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180">
+</sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Connect to data APIs</a>
@@ -234,11 +226,12 @@
           </div>
         </div>
       </div>
+
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
         <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
             <a class="sds-card__link">
-              <h2 class="sds-card__title">Featured Video Title</h2>
+              <h2 class="sds-card__title">Databank Overview</h2>
             </a>
           </div>
           <div class="sds-card__body">
@@ -247,6 +240,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </main>
