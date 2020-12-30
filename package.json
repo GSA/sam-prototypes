@@ -31,7 +31,7 @@
         "@gsa-sam/layouts": "^10.0.0-beta.0",
         "@gsa-sam/sam-formly": "^10.0.0-beta.0",
         "@gsa-sam/sam-material-extensions": "^10.0.0-beta.0",
-        "@gsa-sam/sam-styles": "0.0.88",
+        "@gsa-sam/sam-styles": "0.0.92",
         "@ngrx/effects": "^10.0.1",
         "@ngrx/entity": "^10.0.1",
         "@ngrx/router-store": "^10.0.1",
@@ -45,11 +45,13 @@
         "lodash-es": "^4.17.15",
         "ngx-highlightjs": "^4.1.2",
         "ngx-markdown": "^10.1.1",
+        "ngx-toastr": "^10.2.0",
         "node-sass": "^4.14.1",
         "qs": "^6.9.4",
         "rxjs": "~6.6.3",
         "ts-md5": "^1.2.7",
         "tslib": "^2.0.0",
+        "typescript": "^4.0.3",
         "zone.js": "^0.11.2"
     },
     "devDependencies": {
@@ -71,7 +73,6 @@
         "karma-jasmine-html-reporter": "^1.5.0",
         "protractor": "~7.0.0",
         "ts-node": "^9.0.0",
-        "tslint": "~6.1.0",
-        "typescript": "~4.0.5"
+        "tslint": "~6.1.0"
     }
 }
