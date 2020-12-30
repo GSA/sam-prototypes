@@ -10,26 +10,25 @@
   </span>
 
   <!-- =============== SEARCH =============== -->
-  <sds-search name="keyword-search" [(ngModel)]="subheaderSearchModel" (ngModelChange)="search()" [searchSettings]="subheaderSearchSettings">
+  <sds-search name="keyword-search" [(ngModel)]="subheaderSearchModel" (ngModelChange)="search()"
+    [searchSettings]="subheaderSearchSettings">
   </sds-search>
   <ng-container subheader-buttons-container>
     <ul class="sds-button-group--secondary sds-button-group--segmented">
       <li class="sds-button-group__item">
-          <button class="usa-button" [routerLink]="['/search']">Search</button>
+        <button class="usa-button" [routerLink]="['/search']">Search</button>
       </li>
       <li class="sds-button-group__item">
-          <button class="usa-button usa-button--outline" [routerLink]="['/search/search-builder']">Search Builder</button>
+        <button class="usa-button usa-button--outline" [routerLink]="['/search/search-builder']">Search Builder</button>
       </li>
       <li class="sds-button-group__item">
-          <button class="usa-button usa-button--outline" [routerLink]="['/search/saved-search']">Saved Search</button>
+        <button class="usa-button usa-button--outline" [routerLink]="['/search/saved-search']">Saved Search</button>
       </li>
     </ul>
   </ng-container>
 
   <!-- =============== ACTIONS BUTTONS =============== -->
-  <sds-subheader-actions
-    [model]="subheaderActions"
-    (clicks)="log($event)">
+  <sds-subheader-actions [model]="subheaderActions" (clicks)="log($event)">
   </sds-subheader-actions>
 </sds-subheader>
 <main>
@@ -37,68 +36,66 @@
     <div class="grid-container">
       <div class="grid-row grid-gap">
         <div class="grid-col-3">
-            <div class="grid-row flex-column">
-              <div class="grid-col">
-                  <button type="button"
-                    class="sds-button sds-button--icon-lg padding-x-2 text-left width-full height-full"
-                    [attr.aria-expanded]="domainExpanded"
-                    aria-controls="domainsID"
-                    (click)="domainExpanded = !domainExpanded"
-                    >
-                    <div class="grid-row flex-column width-full">
-                        <div class="grid-col text-normal padding-bottom-1">Select Domain</div>
-                        <div class="grid-col">{{parentDomain ? parentDomain.text : domain.text}}</div>
-                     </div>
-                  </button>
-              </div>
-              <div id="domainsID" [sdsCollapse]="!domainExpanded" class="grid-col bg-accent-cool-lighter border-base-light border-1px padding-x-2 padding-bottom-2">
-                    <ul class="sds-list sds-list--no-bullets">
-                        <li *ngFor="let domain of navigationModel.navigationLinks"><a class="usa-link" [routerLink]="['/search']" 
-                            [queryParams]="{ index: domain.id }">{{domain.text}}</a></li>
-                    </ul>  
-              </div>
-              <div *ngIf="parentDomain && parentDomain.children" class="grid-col bg-accent-cool-lighter border-base-light border-1px padding-x-2 padding-bottom-2">
-                  <ul class="sds-list sds-list--no-bullets">
-                      <li *ngFor="let subdomain of parentDomain.children">
-                          <a *ngIf="subdomain.id != domain.id" class="usa-link" [routerLink]="['/search']" 
-                          [queryParams]="{ index: subdomain.id }">{{subdomain.text}}</a>
-                          <span *ngIf="subdomain.id == domain.id" class="text-semibold">{{subdomain.text}}</span>
-                      </li>
-                  </ul>
-              </div>
-              <div class="grid-col">
-                  <button type="button"
-                    class="sds-button sds-button--icon-lg padding-x-2 text-left width-full height-full"
-                    [attr.aria-expanded]="filtersExpanded"
-                    aria-controls="filterID"
-                    (click)="filtersExpanded = !filtersExpanded"
-                    >
-                    <div class="grid-row flex-column width-full">
-                        <div class="grid-col">Filter By</div>
-                     </div>
-                  </button>
-              </div>
-              <div id="filterID" [sdsCollapse]="!filtersExpanded" class="grid-col bg-accent-cool-lighter border-base-light border-1px padding-x-1 padding-bottom-2">
-                  <sds-filters [form]="form" [fields]="fields" [model]="filterModel" [isHistoryEnable]="true" 
-                      [advancedFilters]="showAdvancedFilters" [getCleanModel]="true" (filterChange)="filterChange$.next($event)">
-                  </sds-filters>
-              </div>
+          <div class="grid-row flex-column">
+            <div class="grid-col">
+              <button type="button" class="sds-button sds-button--icon-lg padding-x-2 text-left width-full height-full"
+                [attr.aria-expanded]="domainExpanded" aria-controls="domainsID"
+                (click)="domainExpanded = !domainExpanded">
+                <div class="grid-row flex-column width-full">
+                  <div class="grid-col text-normal padding-bottom-1">Select Domain</div>
+                  <div class="grid-col">{{parentDomain ? parentDomain.text : domain.text}}</div>
+                </div>
+              </button>
+            </div>
+            <div id="domainsID" [sdsCollapse]="!domainExpanded"
+              class="grid-col bg-accent-cool-lighter border-base-light border-1px padding-x-2 padding-bottom-2">
+              <ul class="sds-list sds-list--no-bullets">
+                <li *ngFor="let domain of navigationModel.navigationLinks"><a class="usa-link"
+                    [routerLink]="['/search']" [queryParams]="{ index: domain.id }">{{domain.text}}</a></li>
+              </ul>
+            </div>
+            <div *ngIf="parentDomain && parentDomain.children"
+              class="grid-col bg-accent-cool-lighter border-base-light border-1px padding-x-2 padding-bottom-2">
+              <ul class="sds-list sds-list--no-bullets">
+                <li *ngFor="let subdomain of parentDomain.children">
+                  <a *ngIf="subdomain.id != domain.id" class="usa-link" [routerLink]="['/search']"
+                    [queryParams]="{ index: subdomain.id }">{{subdomain.text}}</a>
+                  <span *ngIf="subdomain.id == domain.id" class="text-semibold">{{subdomain.text}}</span>
+                </li>
+              </ul>
+            </div>
+            <div class="grid-col">
+              <button type="button" class="sds-button sds-button--icon-lg padding-x-2 text-left width-full height-full"
+                [attr.aria-expanded]="filtersExpanded" aria-controls="filterID"
+                (click)="filtersExpanded = !filtersExpanded">
+                <div class="grid-row flex-column width-full">
+                  <div class="grid-col">Filter By</div>
+                </div>
+              </button>
+            </div>
+            <div id="filterID" [sdsCollapse]="!filtersExpanded"
+              class="grid-col bg-accent-cool-lighter border-base-light border-1px padding-x-1 padding-bottom-2">
+              <sds-filters [form]="form" [fields]="fields" [model]="filterModel" [advancedFilters]="showAdvancedFilters"
+                [getCleanModel]="true" (filterChange)="filterChange$.next($event)">
+              </sds-filters>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="grid-col-9">
-         <search-list-layout #resultList [service]="service" [configuration]="listModel">
-              <ng-template #resultContent let-item>
-                  <div>
-                      <assistance-result *ngIf="item._type == 'assistanceListing'" [model]="item"></assistance-result>
-                      <contract-opportunity-result *ngIf="item._type == 'opportunity'" [model]="item"></contract-opportunity-result>
-                      <entity-registration-result *ngIf="item._type == 'entity'" [model]="item"></entity-registration-result>
-                      <exclusion-result *ngIf="item._type == 'exclusion'" [model]="item"></exclusion-result>
-                      <dba-result *ngIf="item._type == 'wdDBRA'" [model]="item"></dba-result>
-                      <sca-result *ngIf="item._type == 'wdSCA'" [model]="item"></sca-result>
-                      <contract-data-result *ngIf="item._type == 'award'" [model]="item"></contract-data-result>
-                      <integrity-result *ngIf="item._type == 'integrity'" [model]="item"></integrity-result>
-                  </div>
-              </ng-template>                
+        <div class="grid-col-9">
+          <search-list-layout #resultList [service]="service" [configuration]="listModel">
+            <ng-template #resultContent let-item>
+              <div>
+                <assistance-result *ngIf="item._type == 'assistanceListing'" [model]="item"></assistance-result>
+                <contract-opportunity-result *ngIf="item._type == 'opportunity'" [model]="item">
+                </contract-opportunity-result>
+                <entity-registration-result *ngIf="item._type == 'entity'" [model]="item"></entity-registration-result>
+                <exclusion-result *ngIf="item._type == 'exclusion'" [model]="item"></exclusion-result>
+                <dba-result *ngIf="item._type == 'wdDBRA'" [model]="item"></dba-result>
+                <sca-result *ngIf="item._type == 'wdSCA'" [model]="item"></sca-result>
+                <contract-data-result *ngIf="item._type == 'award'" [model]="item"></contract-data-result>
+                <integrity-result *ngIf="item._type == 'integrity'" [model]="item"></integrity-result>
+              </div>
+            </ng-template>
           </search-list-layout>
         </div>
       </div>
