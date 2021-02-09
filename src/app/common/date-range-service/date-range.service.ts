@@ -20,7 +20,7 @@ let dateRanges = [
 ];
 
 @Injectable()
-export class DateRangeService implements SDSAutocompleteServiceInterface {
+export class DateRangeService {
   public model: SDSSelectedItemModel = new SDSSelectedItemModel();
   public settings: SDSAutocompletelConfiguration = new SDSAutocompletelConfiguration();
 

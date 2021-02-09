@@ -1,33 +1,34 @@
-import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Injectable } from "@angular/core";
+import { Observable, of } from "rxjs";
+import { map } from "rxjs/operators";
 
-import { SDSHiercarchicalServiceResult } from '@gsa-sam/components';
-import { SDSAutocompleteServiceInterface } from '@gsa-sam/components';
-import { AgencyPickerModule } from '../agency-picker/agency-picker.module';
-import { HierarchyData } from './hierarchy-data';
-import { TheFederalHierarchy } from './fh.data';
+import { SDSHiercarchicalServiceResult } from "@gsa-sam/components";
+import { SDSAutocompleteServiceInterface } from "@gsa-sam/components";
+import { AgencyPickerModule } from "../agency-picker/agency-picker.module";
+import { HierarchyData } from "./hierarchy-data";
+import { TheFederalHierarchy } from "./fh.data";
 
 @Injectable()
-export class HierarchyService implements SDSAutocompleteServiceInterface {
-
+export class HierarchyService {
   public level: number = 0;
-
 
   public filter: any;
   /**
-   * 
-   * @param currentItems 
-   * @param searchValue 
+   *
+   * @param currentItems
+   * @param searchValue
    */
-  getDataByText(currentItems: number, searchValue?: string): Observable<SDSHiercarchicalServiceResult> {
+  getDataByText(currentItems: number, searchValue?: string): Observable<any> {
     let itemIncrease = 25;
     let result: HierarchyData[] = [];
     let source = this.determineSource();
     if (searchValue) {
       for (let i = 0; i < source.length; i++) {
         let item = source[i];
-        if (item.name.indexOf(searchValue.toUpperCase()) !== -1 || item.id.indexOf(searchValue) !== -1) {
+        if (
+          item.name.indexOf(searchValue.toUpperCase()) !== -1 ||
+          item.id.indexOf(searchValue) !== -1
+        ) {
           result.push(item);
         }
       }
@@ -46,12 +47,16 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
 
     let returnItem = {
       items: subItemsitems,
-      totalItems: totalItemCount
+      totalItems: totalItemCount,
     };
     return of(returnItem);
   }
 
-  getDataSearchTerms(filterParams: any, currentItems: number, searchValue?: string): Observable<SDSHiercarchicalServiceResult> {
+  getDataSearchTerms(
+    filterParams: any,
+    currentItems: number,
+    searchValue?: string
+  ): Observable<SDSHiercarchicalServiceResult> {
     this.filter = filterParams;
 
     let itemIncrease = 25;
@@ -61,7 +66,10 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
     if (searchValue) {
       for (let i = 0; i < source.length; i++) {
         let item = source[i];
-        if (item.name.indexOf(searchValue.toUpperCase()) !== -1 || item.id.indexOf(searchValue) !== -1) {
+        if (
+          item.name.indexOf(searchValue.toUpperCase()) !== -1 ||
+          item.id.indexOf(searchValue) !== -1
+        ) {
           result.push(item);
         }
       }
@@ -80,10 +88,9 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
 
     let returnItem = {
       items: subItemsitems,
-      totalItems: totalItemCount
+      totalItems: totalItemCount,
     };
     return of(returnItem);
-
   }
   private determineFilteredSource() {
     let matchedItems = [];
@@ -94,9 +101,10 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
           if (tempFilter.items.length > 0) {
             for (let j = 0; j < tempFilter.items.length; j++) {
               let item = tempFilter.items[j];
-              matchedItems = matchedItems.concat(this.findItemsDecendents(item));
+              matchedItems = matchedItems.concat(
+                this.findItemsDecendents(item)
+              );
             }
-
           }
         }
       }
@@ -105,7 +113,6 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
       matchedItems = this.flatData;
     }
     return matchedItems;
-
   }
 
   private determineSource() {
@@ -115,7 +122,6 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
         source = this.flatData;
         break;
       case 1:
-
         source = this.level1Items;
         break;
       case 2:
@@ -142,21 +148,17 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
       }
     }
     return source;
-
   }
   private flatData: HierarchyData[] = [];
 
   findItemsFromAboveLevel() {
-
     let matchedItems = [];
     if (this.filter) {
       for (let i = this.level; i > 0 && matchedItems.length === 0; i--) {
         let tempFilter = this.filter[i];
 
         if (tempFilter !== undefined) {
-
           if (tempFilter.items.length > 0) {
-
             for (let j = 0; j < tempFilter.items.length; j++) {
               let item = tempFilter.items[j];
               let children = this.parentChildren[item.id];
@@ -184,7 +186,7 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
 
   findChildrenOfLevel(children: HierarchyData[]) {
     let foundChildren = [];
-    if(!children) {
+    if (!children) {
       return foundChildren;
     }
     for (let i = 0; i < children.length; i++) {
@@ -204,13 +206,9 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
           }
         }
       }
-
     }
     return foundChildren;
   }
-
-
-
 
   // level0: HierarchyData;
   // level1: HierarchyData[];
@@ -245,16 +243,10 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
 
   private loadData() {
     let fh = TheFederalHierarchy.children;
-    let parentId: string = '0000';
+    let parentId: string = "0000";
     let children = fh;
     this.processChildren(children, parentId);
   }
-
-
-
-
-
-
 
   private processChildren(children: HierarchyData[], parentId: string) {
     for (let i = 0; i < children.length; i++) {
@@ -279,11 +271,10 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
           this.level7Items.push(item);
           break;
         default:
-          console.log('Unknown Item');
+          console.log("Unknown Item");
           console.log(item.name);
           break;
       }
-
 
       if (!this.parentChildren[parentId]) {
         this.parentChildren[parentId] = [];
@@ -359,12 +350,11 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
 
   sort(a: HierarchyData, b: HierarchyData): number {
     if (a.level - b.level == 0) {
-      return (a.name < b.name) ? -1 : 1;
+      return a.name < b.name ? -1 : 1;
     } else {
       return a.level - b.level;
     }
   }
-
 
   // getDataByText(level: number, currentItems: number, searchValue?: string): Observable<SDSHiercarchicalServiceResult> {
   //   let itemIncrease = 25;
@@ -407,6 +397,4 @@ export class HierarchyService implements SDSAutocompleteServiceInterface {
   //   return of(returnItem);
 
   // }
-
-
 }
