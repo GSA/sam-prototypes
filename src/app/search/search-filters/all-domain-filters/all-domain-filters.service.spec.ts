@@ -6,7 +6,7 @@ describe('AllDomainFiltersService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: AllDomainFiltersService = TestBed.get(AllDomainFiltersService);
+    const service: AllDomainFiltersService = TestBed.inject(AllDomainFiltersService);
     expect(service).toBeTruthy();
   });
 });

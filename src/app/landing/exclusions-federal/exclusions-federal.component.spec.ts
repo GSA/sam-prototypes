@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ExclusionsFederalComponent } from './exclusions-federal.component';
 
@@ -6,7 +6,7 @@ describe('ExclusionsFederalComponent', () => {
   let component: ExclusionsFederalComponent;
   let fixture: ComponentFixture<ExclusionsFederalComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ExclusionsFederalComponent ]
     })

@@ -6,7 +6,7 @@ describe('DateRangeService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: DateRangeService = TestBed.get(DateRangeService);
+    const service: DateRangeService = TestBed.inject(DateRangeService);
     expect(service).toBeTruthy();
   });
 });

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { IntegrityLandingComponent } from './integrity-landing.component';
 
@@ -6,7 +6,7 @@ describe('IntegrityLandingComponent', () => {
   let component: IntegrityLandingComponent;
   let fixture: ComponentFixture<IntegrityLandingComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ IntegrityLandingComponent ]
     })

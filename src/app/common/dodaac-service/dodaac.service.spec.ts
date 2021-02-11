@@ -6,7 +6,7 @@ describe('DodaacService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: DodaacService = TestBed.get(DodaacService);
+    const service: DodaacService = TestBed.inject(DodaacService);
     expect(service).toBeTruthy();
   });
 });

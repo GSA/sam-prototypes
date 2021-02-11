@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { OpportunitiesWsItemComponent } from './opportunities-ws-item.component';
 
@@ -6,7 +6,7 @@ describe('OpportunitiesWsItemComponent', () => {
   let component: OpportunitiesWsItemComponent;
   let fixture: ComponentFixture<OpportunitiesWsItemComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ OpportunitiesWsItemComponent ]
     })

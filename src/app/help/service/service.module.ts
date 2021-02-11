@@ -9,7 +9,7 @@ import { HelpService } from './help.service';
   ]
 })
 export class HelpServiceModule { 
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<HelpServiceModule> {
     return {
       ngModule: HelpServiceModule,
       providers: [ HelpService ]

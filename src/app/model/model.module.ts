@@ -9,7 +9,7 @@ import { SamModelService } from './sam-model.service';
   declarations: []
 })
 export class SamModelModule { 
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<SamModelModule> {
     return {
       ngModule: SamModelModule,
       providers: [ SamModelService ]

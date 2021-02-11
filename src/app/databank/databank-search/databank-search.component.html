@@ -10,18 +10,21 @@
   </span>
 
   <!-- =============== SEARCH =============== -->
-  <sds-search name="keyword-search" [(ngModel)]="subheaderSearchModel" (ngModelChange)="search()" [searchSettings]="subheaderSearchSettings">
+  <sds-search name="keyword-search" [(ngModel)]="subheaderSearchModel" (ngModelChange)="search()"
+    [searchSettings]="subheaderSearchSettings">
   </sds-search>
   <ng-container subheader-buttons-container>
     <ul class="sds-button-group--secondary sds-button-group--segmented">
       <li class="sds-button-group__item">
-          <button class="usa-button">Databank</button>
+        <button class="usa-button">Databank</button>
       </li>
       <li class="sds-button-group__item">
-          <button class="usa-button usa-button--outline" [routerLink]="['/databank/databank-history']">Report History</button>
+        <button class="usa-button usa-button--outline" [routerLink]="['/databank/databank-history']">Report
+          History</button>
       </li>
       <li class="sds-button-group__item">
-          <button class="usa-button usa-button--outline" [routerLink]="['/databank/scheduled-reports']">Scheduled Reports</button>
+        <button class="usa-button usa-button--outline" [routerLink]="['/databank/scheduled-reports']">Scheduled
+          Reports</button>
       </li>
     </ul>
   </ng-container>
@@ -32,23 +35,23 @@
     <div class="grid-container">
       <div class="grid-row grid-gap">
         <div class="grid-col-3">
-              <div id="filterID" class="grid-col bg-accent-cool-lighter border-base-light border-1px padding-x-1 padding-bottom-2">
-                  <sds-filters [form]="form" [fields]="fields" [model]="filterModel" [isHistoryEnable]="true" 
-                      [advancedFilters]="false" [getCleanModel]="true" (filterChange)="filterChange$.next($event)">
-                  </sds-filters>
-              </div>
+          <div id="filterID"
+            class="grid-col bg-accent-cool-lighter border-base-light border-1px padding-x-1 padding-bottom-2">
+            <sds-filters [form]="form" [fields]="fields" [model]="filterModel" [advancedFilters]="false"
+              [getCleanModel]="true" (filterChange)="filterChange$.next($event)">
+            </sds-filters>
+          </div>
         </div>
         <div class="grid-col-9">
-           <search-list-layout #resultList [service]="service" [configuration]="listModel">
-                <ng-template #resultContent let-item>
-                    <div>
-                      <databank-search-item [model]="item"></databank-search-item>
-                    </div>
-                </ng-template>                
-            </search-list-layout>
+          <search-list-layout #resultList [service]="service" [configuration]="listModel">
+            <ng-template #resultContent let-item>
+              <div>
+                <databank-search-item [model]="item"></databank-search-item>
+              </div>
+            </ng-template>
+          </search-list-layout>
         </div>
       </div>
     </div>
   </div>
 </main>
-

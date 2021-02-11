@@ -9,7 +9,7 @@ const routes: Routes = [
 	},
 	{
 		path: 'check-status',
-		loadChildren: './check-status/check-status.module#CheckStatusModule',
+		loadChildren: () => import('./check-status/check-status.module').then(m => m.CheckStatusModule),
 	}
 ];
 

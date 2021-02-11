@@ -6,28 +6,28 @@ import { PoliciesComponent } from './policies.component';
 const routes: Routes = [
 	{
 		path: 'privacy',
-		loadChildren: './privacy-policy/privacy-policy.module#PrivacyPolicyModule',
+		loadChildren: () => import('./privacy-policy/privacy-policy.module').then(m => m.PrivacyPolicyModule),
 		data: {
 		  id: "home"
 		}
 	},
 	{
 		path: 'disclaimers',
-		loadChildren: './disclaimers/disclaimers.module#DisclaimersModule',
+		loadChildren: () => import('./disclaimers/disclaimers.module').then(m => m.DisclaimersModule),
 		data: {
 		  id: "home"
 		}
 	},	
 	{
 		path: 'accessibility',
-		loadChildren: './accessibility/accessibility.module#AccessibilityModule',
+		loadChildren: () => import('./accessibility/accessibility.module').then(m => m.AccessibilityModule),
 		data: {
 		  id: "home"
 		}
 	},	
 	{
 		path: 'logo',
-		loadChildren: './logo-policy/logo-policy.module#LogoPolicyModule',
+		loadChildren: () => import('./logo-policy/logo-policy.module').then(m => m.LogoPolicyModule),
 		data: {
 		  id: "home"
 		}

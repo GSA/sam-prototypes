@@ -8,11 +8,11 @@ import { HelpFiltersService } from './help-filters.service';
     CommonModule
   ]
 })
-export class HelpFiltersModule { 
-  static forRoot(): ModuleWithProviders {
+export class HelpFiltersModule {
+  static forRoot(): ModuleWithProviders<HelpFiltersModule> {
     return {
       ngModule: HelpFiltersModule,
-      providers: [ HelpFiltersService ]
+      providers: [HelpFiltersService]
     };
   }
 

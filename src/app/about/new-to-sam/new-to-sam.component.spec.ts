@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { NewToSamComponent } from './new-to-sam.component';
 
@@ -6,7 +6,7 @@ describe('NewToSamComponent', () => {
   let component: NewToSamComponent;
   let fixture: ComponentFixture<NewToSamComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ NewToSamComponent ]
     })

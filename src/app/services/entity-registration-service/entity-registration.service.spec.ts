@@ -6,7 +6,7 @@ describe('EntityRegistrationService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: EntityRegistrationService = TestBed.get(EntityRegistrationService);
+    const service: EntityRegistrationService = TestBed.inject(EntityRegistrationService);
     expect(service).toBeTruthy();
   });
 });

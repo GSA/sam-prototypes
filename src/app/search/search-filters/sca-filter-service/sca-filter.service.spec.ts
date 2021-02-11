@@ -6,7 +6,7 @@ describe('ScaFilterService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ScaFilterService = TestBed.get(ScaFilterService);
+    const service: ScaFilterService = TestBed.inject(ScaFilterService);
     expect(service).toBeTruthy();
   });
 });
