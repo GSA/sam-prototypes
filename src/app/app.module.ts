@@ -19,10 +19,12 @@ import {
 } from "@gsa-sam/components";
 import { SdsHeaderModule, SdsFooterModule } from "@gsa-sam/layouts";
 import { FormlyModule } from "@ngx-formly/core";
-import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
 import { sds } from "@gsa-sam/sam-styles/src/icons/";
 import { fas } from "@fortawesome/free-solid-svg-icons";
+import {
+  FontAwesomeModule,
+  FaIconLibrary,
+} from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [AppComponent],
@@ -52,7 +54,7 @@ export class AppModule {
       providers: [SamModelService, HelpService, HelpFiltersService],
     };
   }
-  constructor() {
-    library.add(fas, sds);
+  constructor(library: FaIconLibrary) {
+    library.addIconPacks(fas, sds);
   }
 }

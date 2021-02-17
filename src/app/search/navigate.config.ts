@@ -4,7 +4,7 @@ export let navigationConfig: SideNavigationModel = {
     navigationLinks: [
         { id: 'all', text: 'All Domains', mode: NavigationMode.INTERNAL, route: '/search' },
         { id: 'opportunities', text: 'Contract Opportunities', mode: NavigationMode.INTERNAL, route: '/search', queryParams: { 'index' : 'opportunities'}},
-        { id: 'contractData', text: 'Contract Data', mode: NavigationMode.INTERNAL, route: '/search', queryParams: { 'index' : 'contractdata'}},
+        { id: 'contractdata', text: 'Contract Data', mode: NavigationMode.INTERNAL, route: '/search', queryParams: { 'index' : 'contractdata'}},
         {
             id: 'assistancelist', mode: NavigationMode.INTERNAL,
             route: '/search', queryParams: { 'index' : 'assistancelist'}, text: 'Assistance Listings'
@@ -38,10 +38,10 @@ export let navigationConfig: SideNavigationModel = {
             text: 'Federal Hierarchy'
         },
         {
-            id: 'wageDeterminations', route: '/search', queryParams: { 'index' : 'wdid'}, mode: NavigationMode.INTERNAL,
+            id: 'wdid', route: '/search', queryParams: { 'index' : 'wdid'}, mode: NavigationMode.INTERNAL,
             text: 'Wage Determinations', children: [
                 {
-                    id: 'searchWdByID', mode: NavigationMode.INTERNAL,
+                    id: 'wdid', mode: NavigationMode.INTERNAL,
                     route: '/search', queryParams: { 'index' : 'wdid'}, text: 'By Wage Determination ID'
                 },
                 {
