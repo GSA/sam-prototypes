@@ -224,6 +224,7 @@ export class SearchComponent implements OnInit {
     this.domain = {...$event};
     this.filtersExpanded = true;
     this.domainExpanded = false;
+    this.service.setDomain(this.domain.id);
     this.listModel = resultsListConfigMap.get(this.domain.id) ? resultsListConfigMap.get(this.domain.id) : resultsListConfigMap.get('all');
     this.setFilters();
     if(this.resultList) {
