@@ -1,0 +1,12 @@
+<div class="grid-row">
+	<div class="tablet:grid-col-10 tablet:grid-offset-1">
+      <sds-accordion-next [(multi)]="multi" #landingAccordion>
+      	<sds-accordion-item *ngFor="let item of items">
+      		<sds-accordion-title>{{item.label}}</sds-accordion-title>
+      		<sds-accordion-content>
+      			
+      		</sds-accordion-content>
+      	</sds-accordion-item>
+	  </sds-accordion-next>
+	</div>
+</div>

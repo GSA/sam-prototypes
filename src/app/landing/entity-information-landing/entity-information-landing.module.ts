@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 import {
-  SdsSearchModule,
   SdsIconModule
 } from '@gsa-sam/components';
 
@@ -17,9 +17,9 @@ import { EntityInformationLandingComponent } from './entity-information-landing.
     CommonModule,
     RouterModule,
     FormsModule,
-    SdsSearchModule,
     EntityInformationLandingRoutingModule,
-    SdsIconModule
+    SdsIconModule,
+    SharedModule
   ],
   exports: [EntityInformationLandingComponent]
 })

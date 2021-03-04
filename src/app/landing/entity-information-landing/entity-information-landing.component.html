@@ -1,239 +1,60 @@
-<main>
-  <div class="n-sds-page">
-    <div class="grid-container">
-      <!-- HERO SECTION -->
-      <section>
-        <div class="n-sds-hero">
-          <div class="grid-row">
-            <div class="tablet:grid-col-fill">
-              <h1>Entity Information</h1>
-              <p class="usa-prose usa-intro">An entity is any person or organization that is registered to do business
-                with the federal government. You must have an active entity registration in SAM to receive a federal
-                contract or federal
-                assistance.</p>
-            </div>
-          </div>
-          <div class="grid-row">
-            <div class="tablet:grid-col-7">
-              <h2 class="font-sans-lg margin-top-4 text-ink text-semibold">Search Entities and Exclusions</h2>
-              <div class="maxw-tablet">
-                <form #searchForm="ng-form" class="usa-search usa-search--big" (ngSubmit)="search(searchForm);"
-                  role="search">
-                  <label class="usa-sr-only" for="search-field-big">Search</label>
-                  <input #searchBar class="usa-input" id="search-field-big" type="search" name="search"
-                    placeholder="Enter an entity ID, name, or keyword">
-                  <button class="usa-button" type="submit">
-                    <span class="usa-sr-only">Search</span>
-                  </button>
-                </form>
-              </div>
-            </div>
-            <div class="desktop:grid-col-5 grid-row">
-              <div class="grid-col-12 margin-bottom-1">
-                <label class="text-bold">New to SAM.gov</label>
-                <div class="sds-button--outline">
-                  <a [routerLink]="['/home/new-to-sam']" class="sds-button sds-button--icon text-center">
-                    <span class="fa-stack fa-2x">
-                      <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
-                      <i class="sds fa-video-circle fa-stack-1x text-base fa-2x"></i>
-                    </span>
-                    <span class="usa-link">Help Me Get Started</span>
-                  </a>
+<main id="main-content">
+  <div class="grid-container">
+      <landing-hero>
+          <h1>Entity Information</h1>
+          <div>
+            <p class="usa-prose usa-intro">An entity is any person or organization that is registered to do business
+                  with the federal government. You must have an active entity registration in SAM to receive a federal
+                  contract or federal assistance.
+            </p>
+            <landing-alert>
+                <div class="grid-row">
+                  <div class="grid-col-fill">
+                    You must be signed in to search for entity registrations
+                  </div>
+                  <div class="grid-col-auto">
+                    <button class="usa-button usa-button--secondary">
+                      Sign In
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <div class="grid-col-12 ">
-                <label class="text-bold">Ready to Register?</label>
-                <div class="sds-button--outline">
-                  <a [routerLink]="['/home/registration']" class="sds-button sds-button--icon text-center">
-                    <span class="fa-stack fa-2x">
-                      <i class="sds fa-triangle fa-stack-2x text-accent-cool-light fa-1x"></i>
-                      <i class="sds fa-video-circle fa-stack-1x text-base fa-2x"></i>
-                    </span>
-                    <span class="usa-link">Go to Entity Registration</span>
-                  </a>
+            </landing-alert>
+          </div>
+          <landing-search domain="entity-info">
+            <h2>Search Registrations</h2>
+            <p>Enter a Unique Entity ID, CAGE/NCAGE or entity name to start searching.  Click <b>Advanced Search</b> to start searching with the advanced filters.</p>
+          </landing-search>
+          <landing-tile>
+            <h2>Register Your Entity</h2>
+            <p>Register your entity to get started doing business with the federal government.</p>
+            <div class="display-flex flex-column flex-align-stretch text-align-left">
+              <button class="sds-button sds-button--icon margin-bottom-1">
+                <div class="sds-stack sds-1x">
+                  <sds-icon class="sds-stack-icon text-primary-lighter" [size]="'2x'" [icon]="['bs', 'square-fill']"></sds-icon>
+                  <sds-icon class="sds-stack-icon text-base-darker" [size]="'md'" [icon]="['bs', 'plus-square']"></sds-icon>
                 </div>
-              </div>
+                <span class="sds-button--icon__title">Get started</span>
+              </button>
+              <button class="sds-button sds-button--icon margin-bottom-1">
+                <div class="sds-stack sds-1x">
+                  <sds-icon class="sds-stack-icon text-accent-cool-lighter" [size]="'2x'" [icon]="['bs', 'square-fill']"></sds-icon>
+                  <sds-icon class="sds-stack-icon text-base-darker" [size]="'md'" [icon]="['bs', 'pencil-square']"></sds-icon>
+                </div>
+                <span class="sds-button--icon__title">Renew entity</span>
+              </button>
+              <button class="sds-button sds-button--icon margin-bottom-1">
+                <div class="sds-stack sds-1x">
+                  <sds-icon class="sds-stack-icon text-accent-warm-lighter" [size]="'2x'" [icon]="['bs', 'square-fill']"></sds-icon>
+                  <sds-icon class="sds-stack-icon text-base-darker" [size]="'md'" [icon]="['bs', 'check-square']"></sds-icon>
+                </div>
+                <span class="sds-button--icon__title">Check registration status</span>
+              </button>
             </div>
-          </div>
-        </div>
-      </section>
+          </landing-tile>
+      </landing-hero>
 
-      <!-- accordion & links -->
-      <div class="grid-row">
-        <div class="tablet:grid-col-10 tablet:grid-offset-1">
-          <div class="usa-accordion usa-accordion--bordered" aria-multiselectable="false">
-            <h3 class="usa-accordion__heading sds-accordion__heading-bordered">
-              <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="a1">How to
-                search entity registrations
-              </button>
-            </h3>
-            <div id="a1" class="usa-accordion__content usa-prose" hidden>
+      <landing-accordion [items]="accordionContent"></landing-accordion>
 
-              <!-- Get started links -->
-              <h4>Get started searching entities</h4>
-              <div class="padding-x-2 display-flex flex-column">
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['/help/2003']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Search entity registrations</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['/help/2004']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Search the disaster response registry</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['/help/1992']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Save my searches</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['/help/2005']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Follow an entity</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['/help/2006']">
-                  <i class="sds fa-video-square text-base-dark margin-right-1"></i>
-                  <span>Video - Searching entities</span>
-                </a>
-              </div>
-
-              <!-- additional filters links -->
-              <h4>Use additional filters to find entities</h4>
-              <div class="padding-x-2 display-flex flex-column">
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['/help/2007']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Search by entity type</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['/help/2008']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Search by entity location</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['/help/2009']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Search by socio-economic status</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['/help/2010']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Search by product and service codes (NAICS and PSC)</span>
-                </a>
-              </div>
-            </div>
-            <h3 class="usa-accordion__heading sds-accordion__heading-bordered">
-              <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="a4">How to
-                search exclusions
-              </button>
-            </h3>
-            <div id="a4" class="usa-accordion__content usa-prose" hidden>
-              <!-- specialist/officer links -->
-              <h4 class="text-ink text-semibold font-sans-md">Getting started</h4>
-              <div class="padding-x-2 display-flex flex-column">
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Quick start guide for searching exclusions</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Save my searches</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['news']">
-                  <i class="sds fa-video-square text-base-dark margin-right-1"></i>
-                  <span>Video - Searching exclusions</span>
-                </a>
-              </div>
-              <h4>Search by exclusion classification</h4>
-              <div class="padding-x-2 display-flex flex-column">
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Search exclusions for individuals</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Search exclusions for firms</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Search exclusions for vessels</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Search exclusions for special entity designations</span>
-                </a>
-              </div>
-            </div>
-            <h3 class="usa-accordion__heading sds-accordion__heading-bordered">
-              <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="a2">
-                I am a federal user researching an entity
-              </button>
-            </h3>
-            <div id="a2" class="usa-accordion__content usa-prose" hidden>
-              <!-- specialist/officer links -->
-              <h4 class="text-ink text-semibold font-sans-md">As a Contracting Officer or Contracting Specialist, you
-                may:</h4>
-              <div class="padding-x-2 display-flex flex-column">
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Finding small business information in SAM.gov</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Identifying excluded entities in SAM.gov</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Identifying entities registered for contracts</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Quick start guide for federal users</span>
-                </a>
-              </div>
-            </div>
-            <h3 class="usa-accordion__heading sds-accordion__heading-bordered">
-              <button class="usa-accordion__button usa-accordion__block" aria-expanded="false" aria-controls="a3">I am a
-                federal user who manages exclusions for my agency
-              </button>
-            </h3>
-            <div id="a3" class="usa-accordion__content usa-prose" hidden>
-              <!-- specialist/officer links -->
-              <h4 class="text-ink text-semibold font-sans-md">Introduction to Exclusions Functionality</h4>
-              <div class="padding-x-2 display-flex flex-column">
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Quick start guide for federal exclusions users</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Gain access to exclusions functionality</span>
-                </a>
-                <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
-                  [routerLink]="['news']">
-                  <i class="sds fa-file text-base-dark margin-right-1"></i>
-                  <span>Manage exclusions in SAM.gov</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <!-- reports/data & user account sections -->
       <div class="grid-row grid-gap margin-top-8">
@@ -390,6 +211,5 @@
           </div>
         </div>
       </div>
-    </div>
   </div>
 </main>

@@ -1,0 +1,12 @@
+<ng-content select="h2"></ng-content>
+<ng-content></ng-content>
+<div class="grid-row">
+  <div class="grid-col-fill">
+  </div>
+  <div class="grid-col-auto">
+    <a class="usa-link text-bold" [routerLink]="['/search']" [queryParams]="{index: 'assistancelist'}">Advanced Search</a>
+  </div>
+</div>
+<form [formGroup]="form">
+  <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+</form>
