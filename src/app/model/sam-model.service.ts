@@ -132,6 +132,8 @@ export class SamModelService {
   signIn(redirectUrl?: string) {
     this.signedIn = true;
     if (redirectUrl) {
+      this.router.navigateByUrl(redirectUrl);
+    } else {
       this.router.navigateByUrl('/workspace');
     }
   }

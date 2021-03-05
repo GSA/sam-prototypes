@@ -1,6 +1,6 @@
 import { SideNavigationModel, NavigationMode } from '@gsa-sam/components';
 
-export let aboutSideNavigationData: SideNavigationModel = {
+export let selectionPanelConfig: SideNavigationModel = {
     navigationLinks: [
         { id: 'about', text: 'About This Site', mode: NavigationMode.INTERNAL, route: '/about/about' },
         { id: 'contact', text: 'Contact', mode: NavigationMode.INTERNAL, route: '/about/contact' },

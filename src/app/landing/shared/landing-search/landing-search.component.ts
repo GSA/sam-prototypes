@@ -12,7 +12,9 @@ export class LandingSearchComponent implements OnInit {
 
   @Input() domain: string;
 
-  model: any = {};
+  model: any = {
+  	isactive: true
+  };
   form = new FormGroup({});
   options: FormlyFormOptions = {};
 
@@ -21,6 +23,9 @@ export class LandingSearchComponent implements OnInit {
   		key: 'keyword',
   		type: 'search',
   		templateOptions: {
+            submitHandler: this.search,
+            router: this.router,
+            model: this.model,
   			searchSettings: {
   			  id: 'keyword',
   			  size: 'large'
@@ -37,14 +42,14 @@ export class LandingSearchComponent implements OnInit {
   	}
   ];
 
-  constructor(private router: Router) {
+  constructor(public router: Router) {
   }
 
   ngOnInit(): void {
 
   }
 
-  search(searchForm) {
+  search(searchTerms) {
      this.router.navigate(['/search'], { queryParams: { index: this.domain } });
   }
 

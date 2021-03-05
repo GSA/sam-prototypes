@@ -1,4 +1,11 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Directive, ChangeDetectionStrategy } from '@angular/core';
+
+@Directive({
+  selector: '[landingTile]'
+})
+export class LandingTileDirective {
+  constructor() { }
+}
 
 @Component({
   selector: 'landing-tile',

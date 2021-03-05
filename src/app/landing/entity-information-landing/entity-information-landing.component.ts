@@ -10,7 +10,6 @@ import { entityContent } from './entity-information.content';
 @Component({
   selector: 'app-entity-information-landing',
   templateUrl: './entity-information-landing.component.html',
-  styleUrls: ['./entity-information-landing.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EntityInformationLandingComponent extends LandingBaseComponent implements OnInit {
@@ -39,7 +38,4 @@ export class EntityInformationLandingComponent extends LandingBaseComponent impl
 
   }
 
-  search(searchForm) {
-     this.router.navigate(['/search'], { queryParams: { index: 'entityinfo' } });
-  }
 }

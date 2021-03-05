@@ -99,7 +99,36 @@ export let entityContent = [
 		key: "cardContents",
 		contents: [
 			{
-				label: "Getting started searching entity information",
+				label: "Download Data Files",
+				links: [
+					{
+						label: "How to use file extracts",
+						url: "https://fsd.gov",
+						external: true,
+						type: {
+							name: "FAQ"
+						}
+					},
+					{
+						label: "Go to entity registration data files",
+						url: "dataservices",
+						external: false,
+						type: {
+							name: "FAQ"
+						}
+					},
+					{
+						label: "Go to exclusions data files",
+						url: "dataservices",
+						external: false,
+						type: {
+							name: "FAQ"
+						}
+					}
+				]
+			},
+			{
+				label: "Connect to Data Services",
 				links: [
 					{
 						label: "",
@@ -120,7 +149,28 @@ export let entityContent = [
 				]
 			},
 			{
-				label: "Using entity information advanced search",
+				label: "External Resources",
+				links: [
+					{
+						label: "",
+						url: "",
+						external: false,
+						type: {
+							name: "FAQ"
+						}
+					},
+					{
+						label: "",
+						url: "",
+						external: false,
+						type: {
+							name: "FAQ"
+						}
+					}
+				]
+			},
+			{
+				label: "Help",
 				links: [
 					{
 						label: "",

@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import {
-  SdsSideNavigationModule,
-  SdsToolbarModule,
-  SdsAccordionModule,
-  SdsPageModule
+  SdsSelectionPanelModule
 } from '@gsa-sam/components';
 
-import { SdsSubheaderModule } from '@gsa-sam/layouts';
+import { SdsSubheaderModule, SideToolbarModule } from '@gsa-sam/layouts';
 
 import { AboutRoutingModule } from './about-routing.module';
 import { AboutComponent } from './about.component';
@@ -17,11 +15,10 @@ import { AboutComponent } from './about.component';
   declarations: [AboutComponent],
   imports: [
     CommonModule,
-	SdsSideNavigationModule,
-	SdsToolbarModule,
-	SdsAccordionModule,
-	SdsPageModule,
-	SdsSubheaderModule,    
+    FontAwesomeModule,
+    SdsSubheaderModule,    
+    SdsSelectionPanelModule,
+    SideToolbarModule,
     AboutRoutingModule
   ],
   exports: [AboutComponent]

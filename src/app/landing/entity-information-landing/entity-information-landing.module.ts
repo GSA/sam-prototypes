@@ -10,9 +10,11 @@ import {
 
 import { EntityInformationLandingRoutingModule } from './entity-information-landing-routing.module';
 import { EntityInformationLandingComponent } from './entity-information-landing.component';
+import { SplashTileComponent } from './splash-tile.component';
+import { SplashAlertComponent } from './splash-alert.component';
 
 @NgModule({
-  declarations: [EntityInformationLandingComponent],
+  declarations: [EntityInformationLandingComponent, SplashTileComponent, SplashAlertComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -21,6 +23,6 @@ import { EntityInformationLandingComponent } from './entity-information-landing.
     SdsIconModule,
     SharedModule
   ],
-  exports: [EntityInformationLandingComponent]
+  exports: [EntityInformationLandingComponent, SplashAlertComponent]
 })
 export class EntityInformationLandingModule { }
