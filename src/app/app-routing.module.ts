@@ -116,6 +116,11 @@ const routes: Routes = [
     loadChildren: () => import('./integrity/integrity.module').then(m => m.IntegrityModule)
   },
   {
+    path: 'signout',
+    pathMatch: 'full',
+    redirectTo: '/'
+  },
+  {
     path: '*',
     redirectTo: '/',
     pathMatch: 'full',
