@@ -1,8 +1,8 @@
 <main>
-  <div class="grid-container">
+  <div class="grid-container margin-top-3 desktop:margin-top-5 margin-bottom-9">
     <div class="sds-page">
       <div class="grid-row grid-gap flex-wrap">
-        <div class="grid-col-12 tablet:grid-col-4">
+        <div class="grid-col-12 tablet:grid-col-3">
           <sds-side-toolbar (responsiveDialog)="onDialogOpen($event)" (responsiveView)="isMobileMode = $event;" [responsiveButtonText]="'Navigate To'">
             <ng-template #toolbarContent>
 
@@ -17,14 +17,17 @@
                   </div>
                 </div>
               </div>
-              <sds-selection-panel 
-                [model]="selectionPanelModel"
-                [navigateOnClick]="true">
-              </sds-selection-panel>
+              <div class="sds-accordion__item--expanded padding-2">
+                <sds-selection-panel
+                  [model]="selectionPanelModel"
+                  [navigateOnClick]="true"
+                  (panelSelected)="navigateTo($event)">
+                </sds-selection-panel>
+              </div>
             </ng-template>
           </sds-side-toolbar>
         </div>
-        <div class="grid-col-12 tablet:grid-col-8">
+        <div class="grid-col-12 tablet:grid-col-9">
           <router-outlet></router-outlet>
         </div>
       </div>

@@ -31,4 +31,12 @@ export class AboutComponent implements OnInit {
     this.mobileDialog = undefined;
   }
 
+  navigateTo(navigationLink) {
+    if(this.mobileDialog) {
+      this.mobileDialog.close();
+      this.mobileDialog = undefined;
+    }
+    this.router.navigate([navigationLink.route]);
+  }
+
 }
