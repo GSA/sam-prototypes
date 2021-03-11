@@ -36,7 +36,7 @@
     <div class="grid-container">
       <div class="grid-row grid-gap">
         <div class="desktop:grid-col-3 tablet-lg:grid-col-12 mobile-lg:grid-col-12 margin-bottom-3">
-          <sds-side-toolbar (responsiveDialog)="onDialogChange($event)" (responsiveView)="isMobileMode = $event;" [responsiveButtonText]="'Advanced Search'">
+          <sds-side-toolbar (responsiveDialog)="onDialogChange($event)" (responsiveView)="onResponsiveViewChange($event)" [responsiveButtonText]="'Advanced Search'">
             <ng-template #toolbarContent>
               <div class="sds-card" *ngIf="isMobileMode">
                 <div class="sds-card__header sds-card__header--accent-cool grid-row">
@@ -50,13 +50,36 @@
                 </div>
               </div>
 
-            <sds-selection-panel 
-              [model]="navigationModel"
-              [currentSelection]="initialDomain"
-              [title]="'Select Domain'"
-              [navigateOnClick]="!isMobileMode"
-              (panelSelected)="onPanelSelection($event)">
-            </sds-selection-panel>
+
+            <div class="sds-card sds-card--collapsible" [ngClass]="{'sds-card--collapsed': !domainExpanded}">
+              <div role="button" class="sds-card__header sds-card__header--action" [attr.aria-expanded]="domainExpanded"
+              aria-controls="panelBody" tabindex="0" aria-label="Select Domain"
+              (click)="domainExpanded = !domainExpanded"
+              (keyup.enter)="domainExpanded = !domainExpanded">
+                <div class="sds-card__title">Select Domain<br />
+                  <span class="sds-card__subtitle">
+                    {{domain?.text}}
+                  </span>
+                </div>
+
+                <div class="sds-card__action sds-card__collapse"></div>
+              </div>
+
+              <div class="sds-card__body sds-card__body--accent-cool" id="panelBody">
+                <sds-selection-panel 
+                [model]="navigationModel"
+                [currentSelection]="initialDomain"
+                (panelSelected)="onPanelSelection($event)">
+              </sds-selection-panel>
+              </div>
+            </div>
+
+            <div class="sds-card" *ngIf="domain && domain.children">
+              <div class="sds-card__body sds-card__body--accent-cool">
+                <sds-sub-panel [model]="domain.children" (subPanelClicked)="subDomainSelected($event)"></sds-sub-panel>
+              </div>
+            </div>
+
             
               <div class="sds-card sds-card--collapsible"
                 [ngClass]="{'sds-card--collapsed': !filtersExpanded}">
@@ -70,6 +93,7 @@
                 <div class="sds-card__body sds-card__body--accent-cool" id="filtersBody">
                   <sds-filters #filters
                     [advancedFilters]="showAdvancedFilters" [form]="form"
+                    [defaultModel]="defaultFilterModel"
                     [fields]="fields" [model]="filterModel" (filterChange)="filterChange$.next($event)">
                   </sds-filters>
                 </div>
@@ -84,7 +108,9 @@
           </sds-side-toolbar>
         </div>
         <div class="desktop:grid-col-9 tablet-lg:grid-col-12 mobile-lg:grid-col-12">
-          <search-list-layout #resultList [service]="service" [configuration]="listModel">
+          <search-list-layout #resultList [service]="service" [configuration]="listModel"
+            [isHistoryEnabled]="!responsiveDialog"
+            [enableApiCall]="!responsiveDialog">
             <ng-template #resultContent let-item>
               <div>
                 <assistance-result *ngIf="item._type == 'assistanceListing'" [model]="item"></assistance-result>

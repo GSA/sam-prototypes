@@ -1,6 +1,6 @@
-import { SideNavigationModel, NavigationMode } from '@gsa-sam/components';
+import { NavigationMode, SelectionPanelModel } from '@gsa-sam/components';
 
-export let navigationConfig: SideNavigationModel = {
+export let navigationConfig: SelectionPanelModel = {
     navigationLinks: [
         { id: 'all', text: 'All Domains', mode: NavigationMode.INTERNAL, route: '/search' },
         { id: 'opportunities', text: 'Contract Opportunities', mode: NavigationMode.INTERNAL, route: '/search', queryParams: { 'index' : 'opportunities'}},
@@ -59,7 +59,8 @@ export let navigationConfig: SideNavigationModel = {
                 }
             ]
         }
-    ]
+    ],
+    selectionMode: 'SELECTION',
 };
 
 

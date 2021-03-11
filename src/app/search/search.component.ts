@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
 import { FormGroup } from '@angular/forms';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 
-import { SideNavigationModel, SdsDialogService, SdsDialogRef } from '@gsa-sam/components';
+import { SideNavigationModel, SdsDialogService, SdsDialogRef, SelectionPanelModel, NavigationLink } from '@gsa-sam/components';
 import { SearchListConfiguration, SearchListLayoutComponent } from '@gsa-sam/layouts';
 
 import { SearchService } from '../services/search-service/search.service';
@@ -57,6 +57,9 @@ export class SearchComponent implements OnInit {
   filterModel = {};
   fields: FormlyFieldConfig[] = [];
   showAdvancedFilters: boolean = false;
+  defaultFilterModel = {status: {
+    Active: true
+  }};
 
   domainLabelMap: Map<string, string> = new Map<string, string>([
     ['opportunities', 'Contract Opportunities'],
@@ -75,7 +78,6 @@ export class SearchComponent implements OnInit {
   domainExpanded: boolean = false;
   subdomainExpanded: boolean = false;
   filtersExpanded: boolean = true;
-
   isMobileMode: boolean;
   responsiveDialog: SdsDialogRef<any>;
   
@@ -117,7 +119,7 @@ export class SearchComponent implements OnInit {
     this.initialDomain = this.domain;
     this.service.setDomain(this.domain.id);
     this.listModel = resultsListConfigMap.get(this.domain.id) ? resultsListConfigMap.get(this.domain.id) : resultsListConfigMap.get('all');
-    this.setFilters();
+    this.setFilters(this.domain);
 
     this.filterChange$.subscribe((res) => {
       this.filterModel = res;
@@ -125,14 +127,14 @@ export class SearchComponent implements OnInit {
     });
   }
 
-  setFilters() {
-      let filterService = this.filterServiceMap.get(this.domain.id);
+  setFilters(domain: NavigationLink) {
+      let filterService = this.filterServiceMap.get(domain.id);
       if(filterService) {
           this.fields = filterService.filters;
       } else {
           this.fields = this.filterServiceMap.get('all').filters;
       }
-      this.showAdvancedFilters = (this.domain.id === 'opportunities') ? true : false;
+      this.showAdvancedFilters = (domain.id === 'opportunities') ? true : false;
   }
 
   subheaderActionClicked(event) {
@@ -199,7 +201,7 @@ export class SearchComponent implements OnInit {
      this.router.navigate(['/search'], { queryParams: { index: this.service.domain, keyword: 'hello' } });
   }
 
-  public navigationModel: SideNavigationModel = navigationConfig;
+  public navigationModel: SelectionPanelModel = navigationConfig;
   public listModel: SearchListConfiguration;
   public filterServiceMap = new Map([
       ['all', this.allDomainFiltersService],
@@ -226,9 +228,41 @@ export class SearchComponent implements OnInit {
     this.domainExpanded = false;
     this.service.setDomain(this.domain.id);
     this.listModel = resultsListConfigMap.get(this.domain.id) ? resultsListConfigMap.get(this.domain.id) : resultsListConfigMap.get('all');
-    this.setFilters();
-    if(this.resultList) {
-      this.resultList.updateSearchResultsModel({filterModel: this.filterModel});
+    this.setFilters(this.domain);
+
+    if (!this.isMobileMode) {
+      // Perform domain navigation first, then the filter update. This way one route navigation does not cancel the other
+      this.router.navigate([], {
+        queryParams: this.domain.queryParams,
+        relativeTo: this.route,
+      }).then(() => {
+        if(this.resultList) {
+          // Reset filter values except keyword on domain change
+          this.filterModel = {keyword: this.filterModel['keyword'] ? this.filterModel['keyword'] : null};
+          this.resultList.updateSearchResultsModel({filterModel: this.filterModel});
+        }
+      });
+    }
+
+  }
+
+  subDomainSelected(subDomain: NavigationLink) {
+    this.service.setDomain(subDomain.id);
+    this.listModel = resultsListConfigMap.get(subDomain.id) ? resultsListConfigMap.get(subDomain.id) : resultsListConfigMap.get('all');
+    this.setFilters(subDomain);
+
+    if (!this.isMobileMode) {
+      // Perform domain navigation first, then the filter update. This way one route navigation does not cancel the other
+      this.router.navigate([], {
+        queryParams: subDomain.queryParams,
+        relativeTo: this.route,
+      }).then(() => {
+        if(this.resultList) {
+          // Reset filter values except keyword on domain change
+          this.filterModel = {keyword: this.filterModel['keyword'] ? this.filterModel['keyword'] : null};
+          this.resultList.updateSearchResultsModel({filterModel: this.filterModel});
+        }
+      });
     }
   }
 
@@ -242,19 +276,22 @@ export class SearchComponent implements OnInit {
    * @param $event - reference of the opened dialog. Undefined if closed
    */
   onDialogChange($event: SdsDialogRef<any>) {
+    
+    if (this.responsiveDialog === $event) {
+      return;
+    }
     this.responsiveDialog = $event;
     if ($event) {
       // Let the dialog completely open and initialize values before taking snapshot of state
       $event.afterOpened().toPromise().then(() => {
-        this.preResponsiveDialogOpenSnapshot.filterModel = {...this.filterModel};
+        this.preResponsiveDialogOpenSnapshot.filterModel = JSON.parse(JSON.stringify(this.filterModel));
         this.preResponsiveDialogOpenSnapshot.domain = {...this.domain};
-      })
+      });
 
     } else {
       // Dialog closed due to window resize - reset state
       this.filterModel = this.preResponsiveDialogOpenSnapshot.filterModel;
       this.domain = this.preResponsiveDialogOpenSnapshot.domain;
-
       // Programatically reset domain for selection panel
       this.initialDomain = this.domain;
       this.resultList.updateSearchResultsModel({filterModel: this.filterModel});
@@ -268,7 +305,6 @@ export class SearchComponent implements OnInit {
   onApplyFilter() {
 
     this.responsiveDialog.close();
-
     this.responsiveDialog = undefined;
 
     // Perform domain navigation first, then the filter update. This way one route navigation does not cancel the other
@@ -276,9 +312,9 @@ export class SearchComponent implements OnInit {
       queryParams: this.domain.queryParams,
       relativeTo: this.route
     }).then(() => {
-      // Internally does a route navigation
       this.resultList.updateSearchResultsModel({filterModel: this.filterModel});
-    });
+    })
+
   }
 
   /**
@@ -287,11 +323,24 @@ export class SearchComponent implements OnInit {
   onCancelClicked() {
     this.filterModel = this.preResponsiveDialogOpenSnapshot.filterModel;
     this.domain = this.preResponsiveDialogOpenSnapshot.domain;
+
     this.responsiveDialog.close();
     this.responsiveDialog = undefined;
 
     this.resultList.updateSearchResultsModel({filterModel: this.filterModel});
 
+  }
+
+  onResponsiveViewChange($event) {
+    this.isMobileMode = $event;
+
+    if (!this.isMobileMode && this.responsiveDialog) {
+      this.responsiveDialog.close();
+      this.responsiveDialog = undefined;
+      this.onDialogChange(this.responsiveDialog);
+    } else {
+      this.resultList.updateSearchResultsModel({filterModel: this.filterModel});
+    }
   }
 
 }
