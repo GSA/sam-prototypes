@@ -59,6 +59,10 @@ const routes: Routes = [
 	    }
 	},
 	{
+		path: 'entity-information',
+		loadChildren: () => import('./entity-information-landing/entity-information-landing.module').then(m => m.EntityInformationLandingModule)
+	}, 
+	{
 		path: 'registration',
 		loadChildren: () => import('./registration-landing/registration-landing.module').then(m => m.RegistrationLandingModule),
 	    data: {

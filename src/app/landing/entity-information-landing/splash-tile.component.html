@@ -1,0 +1,27 @@
+<landing-tile>
+	<h2>Register Your Entity</h2>
+	<p>Register your entity to get started doing business with the federal government.</p>
+	<div class="display-flex flex-column flex-align-stretch text-align-left">
+	  <button class="sds-button sds-button--icon margin-bottom-1">
+	    <div class="sds-stack sds-1x">
+	      <sds-icon class="sds-stack-icon text-primary-lighter" [size]="'2x'" [icon]="['bs', 'square-fill']"></sds-icon>
+	      <sds-icon class="sds-stack-icon text-base-darker" [size]="'md'" [icon]="['bs', 'plus-square']"></sds-icon>
+	    </div>
+	    <span class="sds-button--icon__title">Get started</span>
+	  </button>
+	  <button class="sds-button sds-button--icon margin-bottom-1" [routerLink]="['/workspace']" [queryParams]="{signin: true}">
+	    <div class="sds-stack sds-1x">
+	      <sds-icon class="sds-stack-icon text-accent-cool-lighter" [size]="'2x'" [icon]="['bs', 'square-fill']"></sds-icon>
+	      <sds-icon class="sds-stack-icon text-base-darker" [size]="'md'" [icon]="['bs', 'pencil-square']"></sds-icon>
+	    </div>
+	    <span class="sds-button--icon__title">Renew entity</span>
+	  </button>
+	  <button class="sds-button sds-button--icon margin-bottom-1">
+	    <div class="sds-stack sds-1x">
+	      <sds-icon class="sds-stack-icon text-accent-warm-lighter" [size]="'2x'" [icon]="['bs', 'square-fill']"></sds-icon>
+	      <sds-icon class="sds-stack-icon text-base-darker" [size]="'md'" [icon]="['bs', 'check-square']"></sds-icon>
+	    </div>
+	    <span class="sds-button--icon__title">Check registration status</span>
+	  </button>
+	</div>
+</landing-tile>

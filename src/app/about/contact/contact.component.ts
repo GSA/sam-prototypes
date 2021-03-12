@@ -17,7 +17,7 @@ import {
 import { filter, map } from 'rxjs/operators';
 
 import { SideNavigationModel, NavigationMode } from '@gsa-sam/components';
-import { aboutSideNavigationData } from '../navigation/navigation.data';
+import { selectionPanelConfig } from '../navigation/navigation.data';
 
 @Component({
   selector: 'app-contact',
@@ -70,6 +70,6 @@ export class ContactComponent implements OnInit {
     this.change.detectChanges(); 
   }
 
-  public sideNavModel: SideNavigationModel = aboutSideNavigationData;
+  public sideNavModel: SideNavigationModel = selectionPanelConfig;
 
 }

@@ -46,6 +46,7 @@ import {
   ],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [],
 })
 export class AppModule {
   static forRoot(): ModuleWithProviders<AppModule> {

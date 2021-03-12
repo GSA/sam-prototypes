@@ -1,0 +1,26 @@
+<div class="grid-row sds-hero sds-hero--image">
+    <div class="desktop:grid-offset-1 desktop:grid-col-10">
+        <!-- HERO SECTION -->
+        <div class="grid-row padding-x-3 grid-gap-6">
+          <div class="desktop:grid-col-8 margin-y-4">
+            <div class="display-flex flex-justify-space-between margin-bottom-1">
+              <ng-content select="h1"></ng-content>
+              <div class="display-flex flex-column text-center margin-top-0">
+                <ng-content select="legacy-icon"></ng-content>
+              </div>
+            </div>
+            <ng-content>
+            </ng-content>
+            <div class="grid-row margin-top-1">
+                <div class="grid-col">
+                  <ng-content select="landing-search"></ng-content>
+                </div>
+            </div>
+		  </div>
+
+          <div class="desktop:grid-col-4 display-none desktop:display-flex height-full">
+               <ng-content select="[landingTile]"></ng-content>
+          </div>
+        </div>
+	</div>
+</div>

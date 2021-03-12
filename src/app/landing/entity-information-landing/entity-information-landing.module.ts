@@ -2,25 +2,27 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 import {
-  SdsSearchModule,
   SdsIconModule
 } from '@gsa-sam/components';
 
 import { EntityInformationLandingRoutingModule } from './entity-information-landing-routing.module';
 import { EntityInformationLandingComponent } from './entity-information-landing.component';
+import { SplashTileComponent } from './splash-tile.component';
+import { SplashAlertComponent } from './splash-alert.component';
 
 @NgModule({
-  declarations: [EntityInformationLandingComponent],
+  declarations: [EntityInformationLandingComponent, SplashTileComponent, SplashAlertComponent],
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
-    SdsSearchModule,
     EntityInformationLandingRoutingModule,
-    SdsIconModule
+    SdsIconModule,
+    SharedModule
   ],
-  exports: [EntityInformationLandingComponent]
+  exports: [EntityInformationLandingComponent, SplashAlertComponent]
 })
 export class EntityInformationLandingModule { }
