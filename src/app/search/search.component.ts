@@ -6,7 +6,7 @@ import { FormGroup } from '@angular/forms';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 
 import { SideNavigationModel, SdsDialogService, SdsDialogRef, SelectionPanelModel, NavigationLink } from '@gsa-sam/components';
-import { SearchListConfiguration, SearchListLayoutComponent } from '@gsa-sam/layouts';
+import { Page, SearchListConfiguration, SearchListLayoutComponent, SearchParameters, SearchResult } from '@gsa-sam/layouts';
 
 import { SearchService } from '../services/search-service/search.service';
 
@@ -24,6 +24,7 @@ import { ExclusionFiltersService } from './search-filters/exclusion-filters/excl
 import { ContractDataFiltersService } from './search-filters/contract-data-filters/contract-data-filters.service';
 import { IntegrityFiltersService } from './search-filters/integrity-filters/integrity-filters.service';
 import { ScaFilterService } from './search-filters/sca-filter-service/sca-filter.service';
+import { SearchHistoryService } from '../services/search-history/search-history.service';
 
 @Component({
   selector: 'app-search',
@@ -87,11 +88,24 @@ export class SearchComponent implements OnInit {
    * back should the user decide to cancel
    */
   preResponsiveDialogOpenSnapshot = {
-    filterModel: undefined,
+    filterModel: {},
     domain: undefined
   };
 
-  public filterChange$ = new Subject<object>();
+  isLoadingData: boolean = false;
+  searchResults: SearchResult = {
+    items: [],
+    totalItems: 0
+  };
+
+  page = {
+    pageNumber: 1,
+    pageSize: 25,
+    totalPages: 0,
+    default: true,
+  };
+  sortField: string;
+
 
   constructor(
     public service: SearchService,
@@ -118,12 +132,53 @@ export class SearchComponent implements OnInit {
     this.domain = this.getDomain(this.navigationModel.navigationLinks, domain ? domain : 'all');
     this.initialDomain = this.domain;
     this.service.setDomain(this.domain.id);
+
     this.listModel = resultsListConfigMap.get(this.domain.id) ? resultsListConfigMap.get(this.domain.id) : resultsListConfigMap.get('all');
+
     this.setFilters(this.domain);
 
-    this.filterChange$.subscribe((res) => {
-      this.filterModel = res;
-      this.resultList.updateFilter(res);
+    this.updateSearchParametersFromUrl();
+    this.navigateWithCurrentFilters();
+
+    this.route.queryParams.subscribe(() => {
+      this.updateSearchParametersFromUrl();
+      const searchParameters = {
+        filter: this.filterModel,
+        page: this.page,
+        sortField: this.sortField
+      };
+      this.fetchData(searchParameters);
+    });
+  }
+
+  updateSearchParametersFromUrl() {
+    const searchParams = SearchHistoryService.getHistoryModelFromUrl();
+    this.filterModel = searchParams.filter;
+    this.page = {
+      pageNumber: searchParams.page.pageNumber,
+      pageSize: this.listModel.pageSize,
+      totalPages: 0,
+      default: false,
+    };
+    this.sortField = searchParams.sortField ? searchParams.sortField : this.sortField;
+
+    this.sortField = this.listModel.defaultSortValue;
+  }
+
+  navigateWithCurrentFilters() {
+    const searchParameters = {
+      filter: this.filterModel,
+      page: this.page,
+      sortField: this.sortField
+    };
+
+    let queryParams = SearchHistoryService.getNavigationQueryParams(searchParameters);
+
+    queryParams['index'] = this.domain.queryParams ? this.domain.queryParams.index : 'all'; 
+
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: queryParams
     });
   }
 
@@ -216,6 +271,27 @@ export class SearchComponent implements OnInit {
       ['sca', this.scaFilterService]
   ]);
 
+  onPageChange(page: Page) {
+    this.page = page as any;
+    this.navigateWithCurrentFilters();
+  }
+
+  onSortFieldChange($event) {
+    this.page.pageNumber = 1;
+    this.sortField = $event;
+    this.navigateWithCurrentFilters();
+  }
+
+  onFilterChange(filterData) {
+    this.filterModel = filterData;
+
+    if (this.responsiveDialog) {
+      return;
+    }
+
+    this.navigateWithCurrentFilters();
+  }
+
   /**
    * Emitted by sds-selection-panel component anytime there is a change
    * in navigation item. For us, this means there is a change in domain, 
@@ -229,21 +305,16 @@ export class SearchComponent implements OnInit {
     this.service.setDomain(this.domain.id);
     this.listModel = resultsListConfigMap.get(this.domain.id) ? resultsListConfigMap.get(this.domain.id) : resultsListConfigMap.get('all');
     this.setFilters(this.domain);
+    this.filterModel = {keyword: this.filterModel['keyword'] ? this.filterModel['keyword'] : null};
 
-    if (!this.isMobileMode) {
-      // Perform domain navigation first, then the filter update. This way one route navigation does not cancel the other
-      this.router.navigate([], {
-        queryParams: this.domain.queryParams,
-        relativeTo: this.route,
-      }).then(() => {
-        if(this.resultList) {
-          // Reset filter values except keyword on domain change
-          this.filterModel = {keyword: this.filterModel['keyword'] ? this.filterModel['keyword'] : null};
-          this.resultList.updateSearchResultsModel({filterModel: this.filterModel});
-        }
-      });
+    if (this.responsiveDialog) {
+      return;
     }
 
+    this.page.pageNumber = 1;
+    this.sortField = this.listModel.defaultSortValue;
+
+    this.navigateWithCurrentFilters();
   }
 
   subDomainSelected(subDomain: NavigationLink) {
@@ -251,19 +322,14 @@ export class SearchComponent implements OnInit {
     this.listModel = resultsListConfigMap.get(subDomain.id) ? resultsListConfigMap.get(subDomain.id) : resultsListConfigMap.get('all');
     this.setFilters(subDomain);
 
-    if (!this.isMobileMode) {
-      // Perform domain navigation first, then the filter update. This way one route navigation does not cancel the other
-      this.router.navigate([], {
-        queryParams: subDomain.queryParams,
-        relativeTo: this.route,
-      }).then(() => {
-        if(this.resultList) {
-          // Reset filter values except keyword on domain change
-          this.filterModel = {keyword: this.filterModel['keyword'] ? this.filterModel['keyword'] : null};
-          this.resultList.updateSearchResultsModel({filterModel: this.filterModel});
-        }
-      });
+    if (this.responsiveDialog) {
+      return;
     }
+
+    this.page.pageNumber = 1;
+    this.sortField = this.listModel.defaultSortValue;
+    this.filterModel = {keyword: this.filterModel['keyword'] ? this.filterModel['keyword'] : null};
+    this.navigateWithCurrentFilters();
   }
 
   /**
@@ -292,9 +358,12 @@ export class SearchComponent implements OnInit {
       // Dialog closed due to window resize - reset state
       this.filterModel = this.preResponsiveDialogOpenSnapshot.filterModel;
       this.domain = this.preResponsiveDialogOpenSnapshot.domain;
+
+      this.service.setDomain(this.domain.id);
+      this.listModel = resultsListConfigMap.get(this.domain.id) ? resultsListConfigMap.get(this.domain.id) : resultsListConfigMap.get('all');
+      this.setFilters(this.domain);
       // Programatically reset domain for selection panel
       this.initialDomain = this.domain;
-      this.resultList.updateSearchResultsModel({filterModel: this.filterModel});
     }
   }
 
@@ -307,14 +376,26 @@ export class SearchComponent implements OnInit {
     this.responsiveDialog.close();
     this.responsiveDialog = undefined;
 
+    const searchParams: SearchParameters = {
+      filter: this.filterModel,
+      sortField: this.sortField,
+      page: this.page
+    };
+
+    const filterParams = SearchHistoryService.getNavigationQueryParams(searchParams);
+
+    if (this.domain != this.preResponsiveDialogOpenSnapshot.domain) {
+      this.page.pageNumber = 1;
+      this.sortField = this.listModel.defaultSortValue;
+    }
+
+    filterParams['index'] = this.domain.queryParams? this.domain.queryParams.index : 'all';
+
     // Perform domain navigation first, then the filter update. This way one route navigation does not cancel the other
     this.router.navigate([], {
-      queryParams: this.domain.queryParams,
+      queryParams: filterParams,
       relativeTo: this.route
-    }).then(() => {
-      this.resultList.updateSearchResultsModel({filterModel: this.filterModel});
-    })
-
+    });
   }
 
   /**
@@ -324,11 +405,12 @@ export class SearchComponent implements OnInit {
     this.filterModel = this.preResponsiveDialogOpenSnapshot.filterModel;
     this.domain = this.preResponsiveDialogOpenSnapshot.domain;
 
+    this.service.setDomain(this.domain.id);
+    this.listModel = resultsListConfigMap.get(this.domain.id) ? resultsListConfigMap.get(this.domain.id) : resultsListConfigMap.get('all');
+    this.setFilters(this.domain);
+
     this.responsiveDialog.close();
     this.responsiveDialog = undefined;
-
-    this.resultList.updateSearchResultsModel({filterModel: this.filterModel});
-
   }
 
   onResponsiveViewChange($event) {
@@ -338,9 +420,18 @@ export class SearchComponent implements OnInit {
       this.responsiveDialog.close();
       this.responsiveDialog = undefined;
       this.onDialogChange(this.responsiveDialog);
-    } else {
-      this.resultList.updateSearchResultsModel({filterModel: this.filterModel});
     }
+  }
+
+  private fetchData(queryModel: SearchParameters) {
+    this.isLoadingData = true;
+    this.service.getData(queryModel).toPromise().then(results => {
+      this.searchResults = results;
+      this.page.totalPages = Math.ceil(
+        results.totalItems / this.page.pageSize
+      );
+    }).catch(error => this.searchResults = {} as SearchResult)
+    .finally(() => this.isLoadingData = false);
   }
 
 }

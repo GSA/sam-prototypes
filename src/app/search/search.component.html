@@ -94,7 +94,7 @@
                   <sds-filters #filters
                     [advancedFilters]="showAdvancedFilters" [form]="form"
                     [defaultModel]="defaultFilterModel"
-                    [fields]="fields" [model]="filterModel" (filterChange)="filterChange$.next($event)">
+                    [fields]="fields" [model]="filterModel" (filterChange)="onFilterChange($event)">
                   </sds-filters>
                 </div>
               </div>
@@ -108,7 +108,7 @@
           </sds-side-toolbar>
         </div>
         <div class="desktop:grid-col-9 tablet-lg:grid-col-12 mobile-lg:grid-col-12">
-          <search-list-layout #resultList [service]="service" [configuration]="listModel"
+          <!-- <search-list-layout #resultList [service]="service" [configuration]="listModel"
             [isHistoryEnabled]="!responsiveDialog"
             [enableApiCall]="!responsiveDialog">
             <ng-template #resultContent let-item>
@@ -124,7 +124,30 @@
                 <integrity-result *ngIf="item._type == 'integrity'" [model]="item"></integrity-result>
               </div>
             </ng-template>
-          </search-list-layout>
+          </search-list-layout> -->
+          <sam-search-content 
+            [configuration]="listModel"
+            [loading]="isLoadingData"
+            [searchResults]="searchResults"
+            [page]="page"
+            (pageChange)="onPageChange($event)" 
+            (sortFieldChange)="onSortFieldChange($event)">
+          
+            <ng-template #resultContent let-item>
+              <div>
+                <assistance-result *ngIf="item._type == 'assistanceListing'" [model]="item"></assistance-result>
+                <contract-opportunity-result *ngIf="item._type == 'opportunity'" [model]="item">
+                </contract-opportunity-result>
+                <entity-registration-result *ngIf="item._type == 'entity'" [model]="item"></entity-registration-result>
+                <exclusion-result *ngIf="item._type == 'exclusion'" [model]="item"></exclusion-result>
+                <dba-result *ngIf="item._type == 'wdDBRA'" [model]="item"></dba-result>
+                <sca-result *ngIf="item._type == 'wdSCA'" [model]="item"></sca-result>
+                <contract-data-result *ngIf="item._type == 'award'" [model]="item"></contract-data-result>
+                <integrity-result *ngIf="item._type == 'integrity'" [model]="item"></integrity-result>
+              </div>
+            </ng-template>
+          
+          </sam-search-content>
         </div>
       </div>
     </div>

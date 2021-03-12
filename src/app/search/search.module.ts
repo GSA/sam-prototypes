@@ -10,6 +10,8 @@ import {
   SdsSearchModule,
   SdsIconModule,
   SdsSelectionPanelModule,
+  SdsSearchResultListModule,
+  PaginationModule,
 } from '@gsa-sam/components';
 import { SdsFiltersModule, SDSFormlyUpdateComunicationService } from '@gsa-sam/sam-formly';
 import { SdsSubheaderModule, SearchListServiceModule, SideToolbarModule } from '@gsa-sam/layouts';
@@ -42,9 +44,13 @@ import { SearchServiceModule } from '../services/search-service/search-service.m
 import { AdvancedFiltersModule } from './search-filters/advanced-filters/advanced-filters.module'
 import { SearchRoutingModule } from './search-routing.module';
 import { SearchComponent } from './search.component';
+import { SearchContentComponent } from './search-content.component';
 
 @NgModule({
-  declarations: [SearchComponent],
+  declarations: [
+    SearchComponent,
+    SearchContentComponent,
+  ],
   imports: [
     CommonModule,
     FormlyModule,
@@ -85,6 +91,8 @@ import { SearchComponent } from './search.component';
     SdsIconModule,
     SdsSelectionPanelModule,
     SideToolbarModule,
+    SdsSearchResultListModule,
+    PaginationModule,
   ],
   exports: [SearchComponent]
 })

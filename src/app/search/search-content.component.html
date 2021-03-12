@@ -1,0 +1,64 @@
+<div class="grid-row" *ngIf="items?.length">
+  <div class="grid-col">
+    <div class="grid-row">
+      <div class="grid-col-auto">
+        <sds-pagination class="tablet:grid-col display-block margin-top-3 padding-top-3" [paginationConfiguration]="top"
+          [(page)]="page" (pageChange)="onPageChange($event)" displayMode='results' [totalItems]="totalItems">
+        </sds-pagination>
+      </div>
+      <div class="grid-col-fill"></div>
+      <div class="grid-col-auto float-right">
+        <div class="margin-left-1">
+          <label class="usa-label font-sans-3xs text-italic text-base margin-top-1" for="options">
+            Sort by
+          </label>
+          <select (change)="onSelectChange()" [(ngModel)]="sortField"
+            class="usa-select usa-select--small sds-min-width-160 border-base-light" id="options">
+            <option *ngFor="let item of configuration.sortList" [ngValue]="item.value">
+              {{ item.text }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="grid-row">
+  <div class="grid-col-12">
+    <sds-search-result-list [model]="items" [customResultsTemplate]="customResultsTemplate">
+      <ng-container>
+        <ng-template #resultContent let-item>
+          <div *ngIf="loading">
+            <ng-container *ngTemplateOutlet="loadingScreen"></ng-container>
+          </div>
+          <div *ngIf="!loading">
+            <ng-container *ngTemplateOutlet="resultContentTemplate, context: { $implicit: item }">
+            </ng-container>
+          </div>
+        </ng-template>
+      </ng-container>
+    </sds-search-result-list>
+    <sds-pagination *ngIf="!loading && items?.length" [paginationConfiguration]="bottom" [(page)]="page"
+      (pageChange)="onPageChange($event)">
+    </sds-pagination>
+  </div>
+</div>
+
+<ng-template #loadingScreen>
+  <div *ngFor="let a of loadingArray">
+    <hr>
+    <div class="grid-container">
+      <div class="sds-load grid-row">
+        <div class="grid-col-5 sds-load__title"></div>
+        <div class="grid-col-auto sds-load__circle"></div>
+      </div>
+      <div class="sds-load grid-row">
+        <div class="tablet:grid-col-fill sds-load__content"></div>
+        <div class="tablet:grid-col-fill sds-load__content"></div>
+        <div class="tablet:grid-col-2 grid-col sds-load__element"></div>
+        <div class="tablet:grid-col-2 grid-col sds-load__element"></div>
+      </div>
+    </div>
+  </div>
+  <hr>
+</ng-template>
