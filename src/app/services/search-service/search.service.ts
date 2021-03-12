@@ -101,10 +101,17 @@ export class SearchService {
 
         if(this.data) {
             this.filterData(search);
-            this.sortItems(this.data, search);
+
+            // only do keyword search for demo purpose
+            let filteredData = this.data;
+            if (search.filter && search.filter.keyword) {
+                filteredData = this.data.filter(data => JSON.stringify(data).includes(search.filter.keyword));
+            }
+
+            this.sortItems(filteredData, search);
             return of({
-                items: this.getPage(this.data, search.page.pageNumber-1, search.page.pageSize),
-                totalItems: this.data.length
+                items: this.getPage(filteredData, search.page.pageNumber-1, search.page.pageSize),
+                totalItems: filteredData.length
             }); 
         } else {
             return of({

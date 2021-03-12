@@ -8,10 +8,11 @@ import {
   SdsPageModule,
   SdsCollapseModule,
   SdsSearchModule,
-  SdsIconModule
+  SdsIconModule,
+  SdsSelectionPanelModule,
 } from '@gsa-sam/components';
 import { SdsFiltersModule, SDSFormlyUpdateComunicationService } from '@gsa-sam/sam-formly';
-import { SdsSubheaderModule, SearchListServiceModule } from '@gsa-sam/layouts';
+import { SdsSubheaderModule, SearchListServiceModule, SideToolbarModule } from '@gsa-sam/layouts';
 import { SdsAccordionModule } from '@gsa-sam/sam-material-extensions';
 
 import { FormlyModule } from '@ngx-formly/core';
@@ -81,7 +82,9 @@ import { SearchComponent } from './search.component';
     SearchServiceModule,
     SearchRoutingModule,
     AdvancedFiltersModule,
-    SdsIconModule
+    SdsIconModule,
+    SdsSelectionPanelModule,
+    SideToolbarModule,
   ],
   exports: [SearchComponent]
 })
