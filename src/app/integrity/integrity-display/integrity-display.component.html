@@ -1,7 +1,7 @@
 <sds-subheader>
   <!-- =============== BACK BUTTON =============== -->
   <button class="sds-button sds-button--circular" (click)="back();">
-    <fa-icon [icon]="['fas', 'chevron-left']" [fixedWidth]="true"></fa-icon>
+    <sds-icon [icon]="['bs', 'chevron-left']"></sds-icon>
   </button>
 
   <!-- =============== TITLE =============== -->
@@ -9,228 +9,239 @@
     Integrity Record
   </span>
 
-  <sds-subheader-actions
-    [model]="subheaderActions"
-    (clicks)="log($event)">
+  <sds-subheader-actions [model]="subheaderActions" (clicks)="log($event)">
   </sds-subheader-actions>
 
 </sds-subheader>
 <main>
   <div class="sds-page">
     <div class="grid-container width-desktop">
-    	<h1 class="margin-top-8">{{record.awardeeName}}</h1>
-	    <div class="grid-row padding-top-2 padding-bottom-2 margin-bottom-2 border-bottom-1 border-base-light">
-	    	<div class="grid-col-3">
-	    		<div class="sds-field sds-field--stacked sds-field--large">
-			        <div class="sds-field__name"><span class="usa-tag sds-tag--info-purple">DUNS</span>Unique Entity ID</div>
-			        <div class="sds-field__value padding-top-1 font-sans-md">{{ record.DUNS }}</div>
-			    </div>
-	    	</div>
-	    	<div class="grid-col-fill">
-	    		<div class="sds-field sds-field--stacked sds-field--large">
-			        <div class="sds-field__name">CAGE/NCAGE</div>
-			        <div class="sds-field__value padding-top-1 font-sans-md">{{ record.cage ? record.cage : "(blank)" }}</div>
-			    </div>
-	        </div>
-	        <div class="grid-col-auto">
-	        	<span class="sds-type--label-title">Record Date</span>
-	        	<span class="sds-tag sds-tag--outline flex-justify-center width-auto font-sans-md">{{ record.recordDate | date }}</span>
-	        </div>
-	        <div class="grid-col-auto">
-	        	<span class="sds-type--label-title">Record Type</span>
-	       	    <span class="sds-tag sds-tag--outline flex-justify-center width-auto font-sans-md">{{ record.recordType }}</span>
-	        </div>
-	      </div>
-
-	      <div class="grid-row grid-gap">
-	      	<div class="grid-col-5">
-	      		<div class="radius-lg bg-accent-cool-lighter border-1px border-accent-cool padding-2">
-	      			<div class="sds-field sds-field--stacked sds-field--large">
-			        	<div class="sds-field__name">Address</div>
-	      				<div class="sds-field__value padding-top-05 font-sans-md">{{record.ADDRESS1}}</div>
-	      				<div *ngIf="record.ADDRESS2" class="sds-field__value">{{record.ADDRESS2}}</div>
-	      				<div class="sds-field__value font-sans-md">{{record.CITY + ", " + record.STATE + ' ' + record.zipCode}}</div>
-	      				<div class="sds-field__value font-sans-md">{{record.COUNTRY}}</div>
-	      			</div>
-	      		</div>
-	        </div>
-	        <div class="grid-col-7">
-	        	<div class="grid-row grid-gap margin-y-2">
-			    	<div class="grid-col-6">
-			    		<div class="sds-field sds-field--stacked sds-field--large">
-					        <div class="sds-field__name"><span class="usa-tag sds-tag--info-white">SAM</span>Unique Entity ID</div>
-					        <div class="sds-field__value padding-top-05 font-sans-md">{{ record.UEI ? record.UEI : '(blank)'}}</div>
-					    </div>
-					</div>
-			    	<div class="grid-col-6">
-			    		<div class="sds-field sds-field--stacked sds-field--large">
-					        <div class="sds-field__name">Record Type</div>
-					        <div class="sds-field__value padding-top-05 font-sans-md">{{ record.recordType}}</div>
-					    </div>
-			    	</div>
-			    </div>
-	        	<div class="grid-row grid-gap margin-bottom-2">
-			    	<div class="grid-col-6">
-			    		<div class="sds-field sds-field--stacked sds-field--large">
-					        <div class="sds-field__name">Contract/Grant Number</div>
-					        <div class="sds-field__value padding-top-05 font-sans-md">{{ record.awardNumber ? record.awardNumber : '(blank)'}}</div>
-					    </div>
-			    	</div>
-			    	<div class="grid-col-6">
-			    		<div class="sds-field sds-field--stacked sds-field--large">
-					        <div class="sds-field__name">Referenced IDV</div>
-					        <div class="sds-field__value padding-top-05 font-sans-md">{{ record.referencedNumber ? (record.referencedNumber | date) : '(blank)'}}</div>
-					    </div>
-			    	</div>
-			    </div>
-	        </div>
-      	</div>
-      	<h2 class="padding-top-2 border-bottom-2px border-base"><i class="fas fa-square fa-sm text-secondary"></i> 
-      		AWARDEE INFORMATION
-      	</h2>
-      	<div class="grid-row">
-      		<div class="grid-col-4">
-				<div class="sds-field sds-field--stacked">
-			        <div class="sds-field__name">Awardee</div>
-			        <div class="sds-field__value padding-top-05">{{record.awardeeName}}</div>
-			    </div>  
-			</div>  
-      		<div class="grid-col-4">
-				<div class="sds-field sds-field--stacked">
-			        <div class="sds-field__name">Termination Type</div>
-			        <div class="sds-field__value padding-top-05">{{record.terminationType}}</div>
-			    </div>
-      		</div>  		
-			 <div class="grid-col-4">
-				<div class="sds-field sds-field--stacked">
-			        <div class="sds-field__name">NAICS Code</div>
-			        <div class="sds-field__value padding-top-05">{{record.NAICS ? record.NAICS : '(blank)'}}</div>
-			    </div>
-      		</div>
-      	</div>
-
-        <div class="grid-row margin-top-2">
-      		<div class="grid-col-4">
-				<div class="sds-field sds-field--stacked">
-			        <div class="sds-field__name">Doing Business As</div>
-			        <div class="sds-field__value padding-top-05">{{'(blank)'}}</div>
-			    </div>  
-			 </div>    		
-			 <div class="grid-col-4">
-				<div class="sds-field sds-field--stacked">
-			        <div class="sds-field__name">Termination Date</div>
-			        <div class="sds-field__value padding-top-05">{{record.terminationDate ? (record.terminationDate | date) : '(blank)'}}
-			        </div>
-			    </div>
-      		</div>		
-			 <div class="grid-col-4">
-				<div class="sds-field sds-field--stacked">
-			        <div class="sds-field__name">Product/Service Code</div>
-			        <div class="sds-field__value padding-top-05">{{record.FSC ? record.FSC : '(blank)'}}</div>
-			    </div>
-      		</div>
-      	</div>
-
-      	<h2 class="padding-top-2 border-bottom-2px border-base"><i class="fas fa-square fa-sm text-secondary"></i>
-      		OFFICIAL REPORTING AGENCY INFORMATION
-      	</h2>
-      	<div class="grid-row">
-      		<div class="grid-col-4">
-				<div class="sds-field sds-field--stacked">
-			        <div class="sds-field__name">Department / Ind. Agency</div>
-			        <div class="sds-field__value padding-top-05">{{record.AGENCY}}</div>
-			    </div>  
-			</div>  
-      		<div class="grid-col-4">
-				<div class="sds-field sds-field--stacked">
-			        <div class="sds-field__name">Contracting Officer Name</div>
-			        <div class="sds-field__value padding-top-05">{{record.officialName}}</div>
-			    </div>
-      		</div>  		
-			 <div class="grid-col-4">
-				<div class="sds-field sds-field--stacked">
-			        <div class="sds-field__name">Phone Number</div>
-			        <div class="sds-field__value padding-top-05">{{record.officialPhone}}</div>
-			    </div>
-      		</div>
-      	</div>
-
-        <div class="grid-row margin-top-2">
-      		<div class="grid-col-4">
-				<div class="sds-field sds-field--stacked">
-			        <div class="sds-field__name">Contracting Office</div>
-			        <div class="sds-field__value padding-top-05">{{'(blank)'}}</div>
-			    </div>  
-			 </div>    		
-			 <div class="grid-col-4">
-				<div class="sds-field sds-field--stacked">
-			        <div class="sds-field__name">Email Address</div>
-			        <div class="sds-field__value padding-top-05">{{record.officialEmail}}
-			        </div>
-			    </div>
-      		</div>  		
-			 <div class="grid-col-4">
-				<div class="sds-field sds-field--stacked">
-			        <div class="sds-field__name">Fax Number</div>
-			        <div class="sds-field__value padding-top-05">{{'(blank)'}}
-			        </div>
-			    </div>
-      		</div>
-      	</div>
-
-
-      	<h2 class="padding-top-2 border-bottom-2px border-base"><i class="fas fa-square fa-sm text-secondary"></i> 
-      		HISTORICAL RECORD OF PREVIOUS COMMENTS
-      	</h2>
-      	    <div class="bg-base-lighter padding-y-2 padding-x-4 width-full">
-      		<h3>Notice</h3>
-		   <p class="measure-none">
-		   	Actions posted here by a federal government official prior to April 15, 2011, and any information you provide in this section for this specific record, will only be subject to release in accordance with the Freedom of Information Act procedures at 5 U.S.C. Â§ 552, including, where appropriate, procedures promulgated under E.O. 12600, Predisclosure notification procedures for confidential commercial information.
-			</p>
-		   <p class="measure-none">
-		   	Actions posted by the government in FAPIIS on or after April 15, 2011, as well as any information you provide in this section for this specific record, will be available to the public, as required by section 3010 of Pub. L. 111-212.
-			</p>
-		   <p class="measure-none">
-		   	Awardees who wish to comment on their records may access their records through the FAPIIS module in the PPIRS system at www.ppirs.gov
-			</p>
-		   <p class="measure-none">
-			As these records and your comments are publicly accessible it is imperative that past performance on government contracts/grants are not discussed in this forum.</p>
-		</div>
-		<div class="padding-y-2 padding-x-4">
-			<h3>Comment</h3>
-			<div *ngIf="record.COMMENTS" class="grid-row grid-gap-lg">
-
-			<div class="grid-col-auto">
-				<div class="sds-field sds-field--stacked">
-			        <div class="sds-field__name"></div>
-			        <div class="sds-field__value padding-top-05">{{record.recordDate | date}}</div>
-			    </div>  
-			 </div> 
-      		<div class="grid-col-auto">
-				<div class="sds-field sds-field--stacked">
-			        <div class="sds-field__name"></div>
-			        <div class="sds-field__value padding-top-05">{{record.USER}}</div>
-			    </div>  
-			 </div>  		
-			 <div class="grid-col-auto">
-				<div class="sds-field sds-field--stacked">
-			        <div class="sds-field__name">Phone Number</div>
-			        <div class="sds-field__value padding-top-05">{{record.PHONE}}
-			        </div>
-			    </div>
-      		</div>  		
-			 <div class="grid-col-fill">
-				<div class="sds-field sds-field--stacked">
-			        <div class="sds-field__name">Email Address</div>
-			        <div class="sds-field__value padding-top-05">{{record.EMAIL}}
-			        </div>
-			    </div>
-      		</div>  
-      	</div>
-      	<p *ngIf="record.COMMENTS" class="measure-none">{{record.COMMENTS}}</p>
-      	<p *ngIf="!record.COMMENTS" class="text-italic">No comments</p>
-
+      <h1 class="margin-top-8">{{record.awardeeName}}</h1>
+      <div class="grid-row padding-top-2 padding-bottom-2 margin-bottom-2 border-bottom-1 border-base-light">
+        <div class="grid-col-3">
+          <div class="sds-field sds-field--stacked sds-field--large">
+            <div class="sds-field__name"><span class="usa-tag sds-tag--info-purple">DUNS</span>Unique Entity ID</div>
+            <div class="sds-field__value padding-top-1 font-sans-md">{{ record.DUNS }}</div>
+          </div>
         </div>
+        <div class="grid-col-fill">
+          <div class="sds-field sds-field--stacked sds-field--large">
+            <div class="sds-field__name">CAGE/NCAGE</div>
+            <div class="sds-field__value padding-top-1 font-sans-md">{{ record.cage ? record.cage : "(blank)" }}</div>
+          </div>
+        </div>
+        <div class="grid-col-auto">
+          <span class="sds-type--label-title">Record Date</span>
+          <span
+            class="sds-tag sds-tag--outline flex-justify-center width-auto font-sans-md">{{ record.recordDate | date }}</span>
+        </div>
+        <div class="grid-col-auto">
+          <span class="sds-type--label-title">Record Type</span>
+          <span
+            class="sds-tag sds-tag--outline flex-justify-center width-auto font-sans-md">{{ record.recordType }}</span>
+        </div>
+      </div>
+
+      <div class="grid-row grid-gap">
+        <div class="grid-col-5">
+          <div class="radius-lg bg-accent-cool-lighter border-1px border-accent-cool padding-2">
+            <div class="sds-field sds-field--stacked sds-field--large">
+              <div class="sds-field__name">Address</div>
+              <div class="sds-field__value padding-top-05 font-sans-md">{{record.ADDRESS1}}</div>
+              <div *ngIf="record.ADDRESS2" class="sds-field__value">{{record.ADDRESS2}}</div>
+              <div class="sds-field__value font-sans-md">{{record.CITY + ", " + record.STATE + ' ' + record.zipCode}}
+              </div>
+              <div class="sds-field__value font-sans-md">{{record.COUNTRY}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-col-7">
+          <div class="grid-row grid-gap margin-y-2">
+            <div class="grid-col-6">
+              <div class="sds-field sds-field--stacked sds-field--large">
+                <div class="sds-field__name"><span class="usa-tag sds-tag--info-white">SAM</span>Unique Entity ID</div>
+                <div class="sds-field__value padding-top-05 font-sans-md">{{ record.UEI ? record.UEI : '(blank)'}}</div>
+              </div>
+            </div>
+            <div class="grid-col-6">
+              <div class="sds-field sds-field--stacked sds-field--large">
+                <div class="sds-field__name">Record Type</div>
+                <div class="sds-field__value padding-top-05 font-sans-md">{{ record.recordType}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-row grid-gap margin-bottom-2">
+            <div class="grid-col-6">
+              <div class="sds-field sds-field--stacked sds-field--large">
+                <div class="sds-field__name">Contract/Grant Number</div>
+                <div class="sds-field__value padding-top-05 font-sans-md">
+                  {{ record.awardNumber ? record.awardNumber : '(blank)'}}</div>
+              </div>
+            </div>
+            <div class="grid-col-6">
+              <div class="sds-field sds-field--stacked sds-field--large">
+                <div class="sds-field__name">Referenced IDV</div>
+                <div class="sds-field__value padding-top-05 font-sans-md">
+                  {{ record.referencedNumber ? (record.referencedNumber | date) : '(blank)'}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="padding-top-2 border-bottom-2px border-base"><i class="fas fa-square fa-sm text-secondary"></i>
+        AWARDEE INFORMATION
+      </h2>
+      <div class="grid-row">
+        <div class="grid-col-4">
+          <div class="sds-field sds-field--stacked">
+            <div class="sds-field__name">Awardee</div>
+            <div class="sds-field__value padding-top-05">{{record.awardeeName}}</div>
+          </div>
+        </div>
+        <div class="grid-col-4">
+          <div class="sds-field sds-field--stacked">
+            <div class="sds-field__name">Termination Type</div>
+            <div class="sds-field__value padding-top-05">{{record.terminationType}}</div>
+          </div>
+        </div>
+        <div class="grid-col-4">
+          <div class="sds-field sds-field--stacked">
+            <div class="sds-field__name">NAICS Code</div>
+            <div class="sds-field__value padding-top-05">{{record.NAICS ? record.NAICS : '(blank)'}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-row margin-top-2">
+        <div class="grid-col-4">
+          <div class="sds-field sds-field--stacked">
+            <div class="sds-field__name">Doing Business As</div>
+            <div class="sds-field__value padding-top-05">{{'(blank)'}}</div>
+          </div>
+        </div>
+        <div class="grid-col-4">
+          <div class="sds-field sds-field--stacked">
+            <div class="sds-field__name">Termination Date</div>
+            <div class="sds-field__value padding-top-05">
+              {{record.terminationDate ? (record.terminationDate | date) : '(blank)'}}
+            </div>
+          </div>
+        </div>
+        <div class="grid-col-4">
+          <div class="sds-field sds-field--stacked">
+            <div class="sds-field__name">Product/Service Code</div>
+            <div class="sds-field__value padding-top-05">{{record.FSC ? record.FSC : '(blank)'}}</div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="padding-top-2 border-bottom-2px border-base"><i class="fas fa-square fa-sm text-secondary"></i>
+        OFFICIAL REPORTING AGENCY INFORMATION
+      </h2>
+      <div class="grid-row">
+        <div class="grid-col-4">
+          <div class="sds-field sds-field--stacked">
+            <div class="sds-field__name">Department / Ind. Agency</div>
+            <div class="sds-field__value padding-top-05">{{record.AGENCY}}</div>
+          </div>
+        </div>
+        <div class="grid-col-4">
+          <div class="sds-field sds-field--stacked">
+            <div class="sds-field__name">Contracting Officer Name</div>
+            <div class="sds-field__value padding-top-05">{{record.officialName}}</div>
+          </div>
+        </div>
+        <div class="grid-col-4">
+          <div class="sds-field sds-field--stacked">
+            <div class="sds-field__name">Phone Number</div>
+            <div class="sds-field__value padding-top-05">{{record.officialPhone}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-row margin-top-2">
+        <div class="grid-col-4">
+          <div class="sds-field sds-field--stacked">
+            <div class="sds-field__name">Contracting Office</div>
+            <div class="sds-field__value padding-top-05">{{'(blank)'}}</div>
+          </div>
+        </div>
+        <div class="grid-col-4">
+          <div class="sds-field sds-field--stacked">
+            <div class="sds-field__name">Email Address</div>
+            <div class="sds-field__value padding-top-05">{{record.officialEmail}}
+            </div>
+          </div>
+        </div>
+        <div class="grid-col-4">
+          <div class="sds-field sds-field--stacked">
+            <div class="sds-field__name">Fax Number</div>
+            <div class="sds-field__value padding-top-05">{{'(blank)'}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <h2 class="padding-top-2 border-bottom-2px border-base"><i class="fas fa-square fa-sm text-secondary"></i>
+        HISTORICAL RECORD OF PREVIOUS COMMENTS
+      </h2>
+      <div class="bg-base-lighter padding-y-2 padding-x-4 width-full">
+        <h3>Notice</h3>
+        <p class="measure-none">
+          Actions posted here by a federal government official prior to April 15, 2011, and any information you provide
+          in this section for this specific record, will only be subject to release in accordance with the Freedom of
+          Information Act procedures at 5 U.S.C. Â§ 552, including, where appropriate, procedures promulgated under E.O.
+          12600, Predisclosure notification procedures for confidential commercial information.
+        </p>
+        <p class="measure-none">
+          Actions posted by the government in FAPIIS on or after April 15, 2011, as well as any information you provide
+          in this section for this specific record, will be available to the public, as required by section 3010 of Pub.
+          L. 111-212.
+        </p>
+        <p class="measure-none">
+          Awardees who wish to comment on their records may access their records through the FAPIIS module in the PPIRS
+          system at www.ppirs.gov
+        </p>
+        <p class="measure-none">
+          As these records and your comments are publicly accessible it is imperative that past performance on
+          government contracts/grants are not discussed in this forum.</p>
+      </div>
+      <div class="padding-y-2 padding-x-4">
+        <h3>Comment</h3>
+        <div *ngIf="record.COMMENTS" class="grid-row grid-gap-lg">
+
+          <div class="grid-col-auto">
+            <div class="sds-field sds-field--stacked">
+              <div class="sds-field__name"></div>
+              <div class="sds-field__value padding-top-05">{{record.recordDate | date}}</div>
+            </div>
+          </div>
+          <div class="grid-col-auto">
+            <div class="sds-field sds-field--stacked">
+              <div class="sds-field__name"></div>
+              <div class="sds-field__value padding-top-05">{{record.USER}}</div>
+            </div>
+          </div>
+          <div class="grid-col-auto">
+            <div class="sds-field sds-field--stacked">
+              <div class="sds-field__name">Phone Number</div>
+              <div class="sds-field__value padding-top-05">{{record.PHONE}}
+              </div>
+            </div>
+          </div>
+          <div class="grid-col-fill">
+            <div class="sds-field sds-field--stacked">
+              <div class="sds-field__name">Email Address</div>
+              <div class="sds-field__value padding-top-05">{{record.EMAIL}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <p *ngIf="record.COMMENTS" class="measure-none">{{record.COMMENTS}}</p>
+        <p *ngIf="!record.COMMENTS" class="text-italic">No comments</p>
+
+      </div>
     </div>
   </div>
 </main>

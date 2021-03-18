@@ -1,23 +1,22 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
 
-import { SdsSubheaderModule } from '@gsa-sam/layouts';
+import { SdsSubheaderModule } from "@gsa-sam/layouts";
 
-import { DatabankScheduledReportsRoutingModule } from './databank-scheduled-reports-routing.module';
-import { DatabankScheduledReportsComponent } from './databank-scheduled-reports.component';
+import { DatabankScheduledReportsRoutingModule } from "./databank-scheduled-reports-routing.module";
+import { DatabankScheduledReportsComponent } from "./databank-scheduled-reports.component";
+import { SdsIconModule } from "@gsa-sam/components";
 
 @NgModule({
   declarations: [DatabankScheduledReportsComponent],
   imports: [
     CommonModule,
     RouterModule,
-    FontAwesomeModule,
+    SdsIconModule,
     SdsSubheaderModule,
-    DatabankScheduledReportsRoutingModule
+    DatabankScheduledReportsRoutingModule,
   ],
-  exports: [DatabankScheduledReportsComponent]
+  exports: [DatabankScheduledReportsComponent],
 })
-export class DatabankScheduledReportsModule { }
+export class DatabankScheduledReportsModule {}

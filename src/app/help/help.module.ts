@@ -1,25 +1,29 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { FormsModule } from '@angular/forms';
-import { FormlyModule } from '@ngx-formly/core';
-import { FormlySelectModule } from '@ngx-formly/core/select';
-import { SdsSubheaderModule, SearchListServiceModule } from '@gsa-sam/layouts';  
+import { NgModule } from "@angular/core";
+import { RouterModule } from "@angular/router";
+import { CommonModule } from "@angular/common";
+
+import { FormsModule } from "@angular/forms";
+import { FormlyModule } from "@ngx-formly/core";
+import { FormlySelectModule } from "@ngx-formly/core/select";
+import { SdsSubheaderModule, SearchListServiceModule } from "@gsa-sam/layouts";
 
 import {
-    SdsSideNavigationModule,
-    SdsToolbarModule,
-    SdsAccordionModule,
-    SdsPageModule,
-    SdsSearchModule
-  } from '@gsa-sam/components';
-import { SdsFiltersModule, SDSFormlyUpdateComunicationService } from '@gsa-sam/sam-formly';
+  SdsSideNavigationModule,
+  SdsToolbarModule,
+  SdsAccordionModule,
+  SdsPageModule,
+  SdsSearchModule,
+  SdsIconModule,
+} from "@gsa-sam/components";
+import {
+  SdsFiltersModule,
+  SDSFormlyUpdateComunicationService,
+} from "@gsa-sam/sam-formly";
 
-import { HelpRoutingModule } from './help-routing.module';
-import { HelpComponent } from './help.component';
-import { HelpItemModule } from './help-item/help-item.module';
-import { HelpServiceModule } from './service/service.module';
+import { HelpRoutingModule } from "./help-routing.module";
+import { HelpComponent } from "./help.component";
+import { HelpItemModule } from "./help-item/help-item.module";
+import { HelpServiceModule } from "./service/service.module";
 
 @NgModule({
   declarations: [HelpComponent],
@@ -27,10 +31,10 @@ import { HelpServiceModule } from './service/service.module';
     CommonModule,
     RouterModule,
     FormsModule,
-    FontAwesomeModule,
+    SdsIconModule,
     FormlyModule,
     FormlySelectModule,
-    SdsFiltersModule, 
+    SdsFiltersModule,
     SdsSubheaderModule,
     SdsSideNavigationModule,
     SdsToolbarModule,
@@ -40,9 +44,9 @@ import { HelpServiceModule } from './service/service.module';
     SearchListServiceModule,
     HelpItemModule,
     HelpServiceModule,
-    HelpRoutingModule
+    HelpRoutingModule,
   ],
   exports: [HelpComponent],
-  providers: [SDSFormlyUpdateComunicationService]
+  providers: [SDSFormlyUpdateComunicationService],
 })
-export class HelpModule { }
+export class HelpModule {}

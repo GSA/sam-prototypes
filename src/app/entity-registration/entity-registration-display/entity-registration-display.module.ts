@@ -1,32 +1,31 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
 
 import {
+  SdsIconModule,
   SdsSideNavigationModule,
-  SdsToolbarModule
-} from '@gsa-sam/components';
-import { SdsSubheaderModule } from '@gsa-sam/layouts';
+  SdsToolbarModule,
+} from "@gsa-sam/components";
+import { SdsSubheaderModule } from "@gsa-sam/layouts";
 
-import { EntityRegistrationServiceModule } from '../../services/entity-registration-service/entity-registration-service.module';
+import { EntityRegistrationServiceModule } from "../../services/entity-registration-service/entity-registration-service.module";
 
-
-import { EntityRegistrationDisplayRoutingModule } from './entity-registration-display-routing.module';
-import { EntityRegistrationDisplayComponent } from './entity-registration-display.component';
+import { EntityRegistrationDisplayRoutingModule } from "./entity-registration-display-routing.module";
+import { EntityRegistrationDisplayComponent } from "./entity-registration-display.component";
 
 @NgModule({
   declarations: [EntityRegistrationDisplayComponent],
   imports: [
     CommonModule,
     RouterModule,
-    FontAwesomeModule,
+    SdsIconModule,
     SdsSideNavigationModule,
     SdsToolbarModule,
     SdsSubheaderModule,
     EntityRegistrationServiceModule,
-    EntityRegistrationDisplayRoutingModule
+    EntityRegistrationDisplayRoutingModule,
   ],
-  exports: [EntityRegistrationDisplayComponent]
+  exports: [EntityRegistrationDisplayComponent],
 })
-export class EntityRegistrationDisplayModule { }
+export class EntityRegistrationDisplayModule {}

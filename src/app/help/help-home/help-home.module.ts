@@ -1,17 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
+import { RouterModule } from "@angular/router";
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SdsSearchModule, SdsIconModule } from "@gsa-sam/components";
 
-import {
-    SdsSearchModule,
-    SdsIconModule
-  } from '@gsa-sam/components';
-
-import { HelpHomeRoutingModule } from './help-home-routing.module';
-import { HelpHomeComponent } from './help-home.component';
+import { HelpHomeRoutingModule } from "./help-home-routing.module";
+import { HelpHomeComponent } from "./help-home.component";
 
 @NgModule({
   declarations: [HelpHomeComponent],
@@ -19,11 +14,11 @@ import { HelpHomeComponent } from './help-home.component';
     CommonModule,
     RouterModule,
     FormsModule,
-    FontAwesomeModule,
+
     SdsSearchModule,
     HelpHomeRoutingModule,
-    SdsIconModule
+    SdsIconModule,
   ],
-  exports: [HelpHomeComponent]
+  exports: [HelpHomeComponent],
 })
-export class HelpHomeModule { }
+export class HelpHomeModule {}

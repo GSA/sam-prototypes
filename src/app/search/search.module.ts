@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
 import {
   SdsSideNavigationModule,
@@ -10,38 +9,45 @@ import {
   SdsSearchModule,
   SdsIconModule,
   SdsSelectionPanelModule,
-} from '@gsa-sam/components';
-import { SdsFiltersModule, SDSFormlyUpdateComunicationService } from '@gsa-sam/sam-formly';
-import { SdsSubheaderModule, SearchListServiceModule, SideToolbarModule } from '@gsa-sam/layouts';
-import { SdsAccordionModule } from '@gsa-sam/sam-material-extensions';
+} from "@gsa-sam/components";
+import {
+  SdsFiltersModule,
+  SDSFormlyUpdateComunicationService,
+} from "@gsa-sam/sam-formly";
+import {
+  SdsSubheaderModule,
+  SearchListServiceModule,
+  SideToolbarModule,
+} from "@gsa-sam/layouts";
+import { SdsAccordionModule } from "@gsa-sam/sam-material-extensions";
 
-import { FormlyModule } from '@ngx-formly/core';
-import { FormsModule } from '@angular/forms';
+import { FormlyModule } from "@ngx-formly/core";
+import { FormsModule } from "@angular/forms";
 
-import { AssistanceResultModule } from './search-results/assistance-result/assistance-result.module';
-import { ContractOpportunityResultModule } from './search-results/contract-opportunity-result/contract-opportunity-result.module';
-import { ContractDataResultModule } from './search-results/contract-data-result/contract-data-result.module';
-import { EntityRegistrationResultModule } from './search-results/entity-registration-result/entity-registration-result.module';
-import { ExclusionResultModule } from './search-results/exclusion-result/exclusion-result.module';
-import { HierarchyResultModule } from './search-results/hierarchy-result/hierarchy-result.module';
-import { IntegrityResultModule } from './search-results/integrity-result/integrity-result.module';
-import { WageResultModule } from './search-results/wage-result/wage-result.module';
+import { AssistanceResultModule } from "./search-results/assistance-result/assistance-result.module";
+import { ContractOpportunityResultModule } from "./search-results/contract-opportunity-result/contract-opportunity-result.module";
+import { ContractDataResultModule } from "./search-results/contract-data-result/contract-data-result.module";
+import { EntityRegistrationResultModule } from "./search-results/entity-registration-result/entity-registration-result.module";
+import { ExclusionResultModule } from "./search-results/exclusion-result/exclusion-result.module";
+import { HierarchyResultModule } from "./search-results/hierarchy-result/hierarchy-result.module";
+import { IntegrityResultModule } from "./search-results/integrity-result/integrity-result.module";
+import { WageResultModule } from "./search-results/wage-result/wage-result.module";
 
-import { AllDomainFiltersModule } from './search-filters/all-domain-filters/all-domain-filters.module';
-import { AssistanceFiltersModule } from './search-filters/assistance-filters/assistance-filters.module';
-import { ContractOpportunityFiltersModule } from './search-filters/contract-opportunity-filters/contract-opportunity-filters.module';
-import { ContractDataFiltersModule } from './search-filters/contract-data-filters/contract-data-filters.module';
-import { EntityRegistrationFiltersModule } from './search-filters/entity-registration-filters/entity-registration-filters.module';
-import { EntityInformationFiltersModule } from './search-filters/entity-information-filters/entity-information-filters.module';
-import { DisasterResponseFiltersModule } from './search-filters/disaster-response-filters/disaster-response-filters.module';
-import { ExclusionFiltersModule } from './search-filters/exclusion-filters/exclusion-filters.module';
-import { IntegrityFiltersModule } from './search-filters/integrity-filters/integrity-filters.module';
-import { WageFiltersModule } from './search-filters/wage-filters/wage-filters.module';
+import { AllDomainFiltersModule } from "./search-filters/all-domain-filters/all-domain-filters.module";
+import { AssistanceFiltersModule } from "./search-filters/assistance-filters/assistance-filters.module";
+import { ContractOpportunityFiltersModule } from "./search-filters/contract-opportunity-filters/contract-opportunity-filters.module";
+import { ContractDataFiltersModule } from "./search-filters/contract-data-filters/contract-data-filters.module";
+import { EntityRegistrationFiltersModule } from "./search-filters/entity-registration-filters/entity-registration-filters.module";
+import { EntityInformationFiltersModule } from "./search-filters/entity-information-filters/entity-information-filters.module";
+import { DisasterResponseFiltersModule } from "./search-filters/disaster-response-filters/disaster-response-filters.module";
+import { ExclusionFiltersModule } from "./search-filters/exclusion-filters/exclusion-filters.module";
+import { IntegrityFiltersModule } from "./search-filters/integrity-filters/integrity-filters.module";
+import { WageFiltersModule } from "./search-filters/wage-filters/wage-filters.module";
 
-import { SearchServiceModule } from '../services/search-service/search-service.module';
-import { AdvancedFiltersModule } from './search-filters/advanced-filters/advanced-filters.module'
-import { SearchRoutingModule } from './search-routing.module';
-import { SearchComponent } from './search.component';
+import { SearchServiceModule } from "../services/search-service/search-service.module";
+import { AdvancedFiltersModule } from "./search-filters/advanced-filters/advanced-filters.module";
+import { SearchRoutingModule } from "./search-routing.module";
+import { SearchComponent } from "./search.component";
 
 @NgModule({
   declarations: [SearchComponent],
@@ -49,7 +55,7 @@ import { SearchComponent } from './search.component';
     CommonModule,
     FormlyModule,
     FormsModule,
-    FontAwesomeModule,
+
     SdsSideNavigationModule,
     SdsToolbarModule,
     SdsAccordionModule,
@@ -86,6 +92,6 @@ import { SearchComponent } from './search.component';
     SdsSelectionPanelModule,
     SideToolbarModule,
   ],
-  exports: [SearchComponent]
+  exports: [SearchComponent],
 })
-export class SearchModule { }
+export class SearchModule {}

@@ -1,7 +1,7 @@
 <sds-subheader>
   <!-- =============== BACK BUTTON =============== -->
   <button class="sds-button sds-button--circular" (click)="back();">
-    <fa-icon [icon]="['fas', 'chevron-left']" [fixedWidth]="true"></fa-icon>
+    <sds-icon [icon]="['bs', 'chevron-left']"></sds-icon>
   </button>
 
   <!-- =============== TITLE =============== -->
@@ -9,49 +9,50 @@
     Entity Registration
   </span>
 
-  <sds-subheader-actions
-    [model]="subheaderActions"
-    (clicks)="log($event)">
+  <sds-subheader-actions [model]="subheaderActions" (clicks)="log($event)">
   </sds-subheader-actions>
 
 </sds-subheader>
 <main>
   <div class="sds-page">
     <div class="grid-container">
-    	<div class="grid-row grid-gap">
-    		<div class="grid-col-12 tablet:grid-col-3 margin-top-4 padding-1 bg-accent-cool-lighter border-accent-cool border-1px">
-    			<div class="bg-white padding-05">
-					<sds-side-navigation #sideNav [model]="navigationData"></sds-side-navigation>
-				</div>
-    		</div>
-    		<div class="grid-col-12 tablet:grid-col-9">
-    			<h1 class="margin-top-4">{{record.title}}</h1>
-			    <div class="grid-row grid-gap padding-bottom-1 margin-bottom-2 border-bottom-05 border-base-light">
-			    	<div class="grid-col-3">
-			    		<div class="sds-field sds-field--stacked sds-field--large">
-					        <div class="sds-field__name"><span class="usa-tag sds-tag--info-purple">DUNS</span>Unique Entity ID</div>
-					        <div class="sds-field__value">{{ record.dunsNumber }}</div>
-					    </div>
-			    	</div>
-			    	<div class="grid-col-fill">
-			    		<div class="sds-field sds-field--stacked sds-field--large">
-					        <div class="sds-field__name">CAGE/NCAGE</div>
-					        <div class="sds-field__value">{{ record.cageCode ? record.cageCode : "(blank)" }}</div>
-					    </div>
-			        </div>
-			        <div class="grid-col-auto">
-			        	<span class="sds-type--label-title">Expiration Date</span>
-			        	<span class="sds-tag sds-tag--outline flex-justify-center width-auto">{{ record.registrationExpirationDate | date }}</span>
-			        </div>
-			        <div class="grid-col-auto">
-			        	<span class="sds-type--label-title">Status</span>
-			       	    <span class="sds-tag sds-tag--outline flex-justify-center width-auto">Active</span>
-			        </div>
-			      </div>
-			      <router-outlet>
-			      </router-outlet>
-			  </div>
-		</div>
+      <div class="grid-row grid-gap">
+        <div
+          class="grid-col-12 tablet:grid-col-3 margin-top-4 padding-1 bg-accent-cool-lighter border-accent-cool border-1px">
+          <div class="bg-white padding-05">
+            <sds-side-navigation #sideNav [model]="navigationData"></sds-side-navigation>
+          </div>
+        </div>
+        <div class="grid-col-12 tablet:grid-col-9">
+          <h1 class="margin-top-4">{{record.title}}</h1>
+          <div class="grid-row grid-gap padding-bottom-1 margin-bottom-2 border-bottom-05 border-base-light">
+            <div class="grid-col-3">
+              <div class="sds-field sds-field--stacked sds-field--large">
+                <div class="sds-field__name"><span class="usa-tag sds-tag--info-purple">DUNS</span>Unique Entity ID
+                </div>
+                <div class="sds-field__value">{{ record.dunsNumber }}</div>
+              </div>
+            </div>
+            <div class="grid-col-fill">
+              <div class="sds-field sds-field--stacked sds-field--large">
+                <div class="sds-field__name">CAGE/NCAGE</div>
+                <div class="sds-field__value">{{ record.cageCode ? record.cageCode : "(blank)" }}</div>
+              </div>
+            </div>
+            <div class="grid-col-auto">
+              <span class="sds-type--label-title">Expiration Date</span>
+              <span
+                class="sds-tag sds-tag--outline flex-justify-center width-auto">{{ record.registrationExpirationDate | date }}</span>
+            </div>
+            <div class="grid-col-auto">
+              <span class="sds-type--label-title">Status</span>
+              <span class="sds-tag sds-tag--outline flex-justify-center width-auto">Active</span>
+            </div>
+          </div>
+          <router-outlet>
+          </router-outlet>
+        </div>
+      </div>
     </div>
   </div>
 </main>

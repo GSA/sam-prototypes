@@ -1,28 +1,29 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { SdsSubheaderModule, SearchListServiceModule  } from '@gsa-sam/layouts';  
+import { NgModule } from "@angular/core";
+import { RouterModule } from "@angular/router";
+import { CommonModule } from "@angular/common";
+import { SdsSubheaderModule, SearchListServiceModule } from "@gsa-sam/layouts";
 
 import {
-  	SdsToolbarModule,
-  	SdsAccordionModule,
-  	SdsPageModule,
-  	SdsSearchModule
-  } from '@gsa-sam/components';
+  SdsToolbarModule,
+  SdsAccordionModule,
+  SdsPageModule,
+  SdsSearchModule,
+  SdsIconModule,
+} from "@gsa-sam/components";
 
-import { NewsDataModule } from './news-data/news-data.module';
-import { NewsItemModule } from './news-item/news-item.module';
-import { NewsRoutingModule } from './news-routing.module';
-import { NewsComponent } from './news.component';
+import { NewsDataModule } from "./news-data/news-data.module";
+import { NewsItemModule } from "./news-item/news-item.module";
+import { NewsRoutingModule } from "./news-routing.module";
+import { NewsComponent } from "./news.component";
 
 @NgModule({
   declarations: [NewsComponent],
   imports: [
     CommonModule,
+    SdsIconModule,
     RouterModule,
-    FontAwesomeModule,
-    SdsSubheaderModule, 
+
+    SdsSubheaderModule,
     SearchListServiceModule,
     SdsToolbarModule,
     SdsAccordionModule,
@@ -30,8 +31,8 @@ import { NewsComponent } from './news.component';
     SdsSearchModule,
     NewsDataModule,
     NewsItemModule,
-    NewsRoutingModule
+    NewsRoutingModule,
   ],
-  exports: [NewsComponent]
+  exports: [NewsComponent],
 })
-export class NewsModule { }
+export class NewsModule {}

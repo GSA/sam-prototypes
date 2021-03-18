@@ -1,30 +1,29 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
+import { RouterModule } from "@angular/router";
 
 import {
   SdsSearchModule,
   SdsVideoPlayerModule,
-  SdsIconModule
-} from '@gsa-sam/components';
+  SdsIconModule,
+} from "@gsa-sam/components";
 
-import { OpportunitiesLandingFederalRoutingModule } from './opportunities-landing-federal-routing.module';
-import { OpportunitiesLandingFederalComponent } from './opportunities-landing-federal.component';
+import { OpportunitiesLandingFederalRoutingModule } from "./opportunities-landing-federal-routing.module";
+import { OpportunitiesLandingFederalComponent } from "./opportunities-landing-federal.component";
 
 @NgModule({
   declarations: [OpportunitiesLandingFederalComponent],
   imports: [
     CommonModule,
     RouterModule,
-    FontAwesomeModule,
+
     FormsModule,
     SdsSearchModule,
     SdsVideoPlayerModule,
     OpportunitiesLandingFederalRoutingModule,
-    SdsIconModule
+    SdsIconModule,
   ],
-  exports: [OpportunitiesLandingFederalComponent]
+  exports: [OpportunitiesLandingFederalComponent],
 })
-export class OpportunitiesLandingFederalModule { }
+export class OpportunitiesLandingFederalModule {}

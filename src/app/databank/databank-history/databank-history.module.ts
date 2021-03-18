@@ -1,13 +1,13 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
+import { FormsModule } from "@angular/forms";
 
-import { SdsSubheaderModule } from '@gsa-sam/layouts';
+import { SdsSubheaderModule } from "@gsa-sam/layouts";
 
-import { DatabankHistoryRoutingModule } from './databank-history-routing.module';
-import { DatabankHistoryComponent } from './databank-history.component';
+import { DatabankHistoryRoutingModule } from "./databank-history-routing.module";
+import { DatabankHistoryComponent } from "./databank-history.component";
+import { SdsIconModule } from "@gsa-sam/components";
 
 @NgModule({
   declarations: [DatabankHistoryComponent],
@@ -15,10 +15,10 @@ import { DatabankHistoryComponent } from './databank-history.component';
     CommonModule,
     RouterModule,
     FormsModule,
-    FontAwesomeModule,
+    SdsIconModule,
     SdsSubheaderModule,
-    DatabankHistoryRoutingModule
+    DatabankHistoryRoutingModule,
   ],
-  exports: [DatabankHistoryComponent]
+  exports: [DatabankHistoryComponent],
 })
-export class DatabankHistoryModule { }
+export class DatabankHistoryModule {}
