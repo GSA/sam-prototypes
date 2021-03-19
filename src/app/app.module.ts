@@ -14,10 +14,12 @@ import {
   SdsIconModule,
 } from "@gsa-sam/components";
 
-import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
 import { sds } from "@gsa-sam/sam-styles/src/icons/";
 import { fas } from "@fortawesome/free-solid-svg-icons";
+import {
+  FontAwesomeModule,
+  FaIconLibrary,
+} from '@fortawesome/angular-fontawesome';
 
 import { AppLayoutModule } from './app-layout/app-layout.module';
 import { AppService } from './services/app-service/app.service';
@@ -48,7 +50,7 @@ export class AppModule {
       providers: [SamModelService, AppService],
     };
   }
-  constructor() {
-    library.add(fas, sds);
+  constructor(library: FaIconLibrary) {
+    library.addIconPacks(fas, sds);
   }
 }
