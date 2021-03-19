@@ -34,10 +34,11 @@ export class AppFooterComponent implements OnInit {
 
   model = {
     footerLogo: {
-      text: 'General Services Administration',
+      agencyName: 'General Services Administration',
       imageSourcePath: this.locationStrategy.getBaseHref() + 'assets/img/logo-gsa.svg',
       imageAltText: 'GSA Logo'
     },
+    disclaimer: `This is a U.S. General Services Administration Federal Government computer system that is <strong>"FOR OFFICIAL USE ONLY."</strong> This system is subject to monitoring. Individuals found performing unauthorized activities are subject to disciplinary action including criminal prosecution.`,
     linkSections: [
       {
         text: 'About beta.SAM.gov', links: [

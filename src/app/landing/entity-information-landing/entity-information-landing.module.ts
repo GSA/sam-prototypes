@@ -4,9 +4,8 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 
-import {
-  SdsIconModule
-} from '@gsa-sam/components';
+import { SdsIconModule } from '@gsa-sam/components';
+
 
 import { EntityInformationLandingRoutingModule } from './entity-information-landing-routing.module';
 import { EntityInformationLandingComponent } from './entity-information-landing.component';

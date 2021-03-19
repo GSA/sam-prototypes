@@ -7,12 +7,8 @@
         <div class="grid-row padding-y-3">
           <div class="sds-logo height-7 grid-col-fill">
           </div>
-          <div class="sds-seal grid-col-auto">
-            <sds-icon class="text-secondary" [icon]="['bs', 'flag-fill']" [size]="'2x'"></sds-icon>
-            <div class="sds-seal__content">
-              Official U.S. Government Website
-              <span>100% Free</span>
-            </div>
+          <div class="grid-col-auto">
+            <home-seal></home-seal>
           </div>
         </div>
         <!-- tiles -->
@@ -115,22 +111,7 @@
             </a>
           </div>
           <div class="sds-card__body">
-            <div class="sds-feed">
-              <div *ngFor="let news of newsList" class="event margin-0">
-                <div class="content">
-                  <div class="summary">
-                    <div class="date">{{news.publishDate | date:news.dateFormat }}</div>
-                    <a class="action">{{news.title}}</a>
-                  </div>
-                  <div class="meta">
-                    <em>{{news.shortDescription}}</em>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="padding-2 text-right more-news-link">
-            <a class="usa-link" [routerLink]="['news']">More Announcements</a>
+            <landing-feed [service]="announcementsService"></landing-feed>
           </div>
         </div>
       </div>

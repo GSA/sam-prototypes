@@ -5,6 +5,8 @@ import {allIcons} from 'ngx-bootstrap-icons';
 import { NewsData } from '../news/news-data/news.model';
 import { NewsList } from '../news/news-data/news.data';
 
+import { AnnouncementsService } from '../services/knowledge-services/announcements.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -33,7 +35,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
     }
   };
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public announcementsService: AnnouncementsService) {
   }
 
   ngOnInit() {

@@ -11,8 +11,14 @@ import {
   SdsIconModule
 } from '@gsa-sam/components';
 
+
+import { SharedModule } from '../landing/shared/shared.module';
+import { KnowledgeServicesModule } from '../services/knowledge-services/knowledge-services.module';
+
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+import { HomeSealComponent } from './home-seal/home-seal.component';
+import { HomeLogoComponent } from './home-logo/home-logo.component';
 
 @NgModule({
   imports: [
@@ -22,9 +28,12 @@ import { HomeComponent } from './home.component';
     SdsSearchModule,
     SdsVideoPlayerModule,
     SdsSubheaderModule,
+    KnowledgeServicesModule,
+    SharedModule,
     HomeRoutingModule,
     SdsIconModule
   ],
-  declarations: [HomeComponent]
+  declarations: [HomeComponent, HomeSealComponent, HomeLogoComponent],
+  exports: [HomeSealComponent, HomeLogoComponent]
 })
 export class HomeModule { }
