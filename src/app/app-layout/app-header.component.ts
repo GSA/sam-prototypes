@@ -68,7 +68,7 @@ export class AppHeaderComponent implements OnInit {
                 { text: 'Federal Hierarchy', mode: NavigationMode.INTERNAL, route: '/home/hierarchy' },
                 { text: 'Assistance Listings', mode: NavigationMode.INTERNAL, route: '/home/assistance' }
             ] },
-            { text: 'Search', route: '/search', mode: NavigationMode.INTERNAL, id: 'search' },
+            { text: 'Search', route: '/search/search-home', mode: NavigationMode.INTERNAL, id: 'search' },
             { text: 'Databank', route: '/databank', mode: NavigationMode.INTERNAL, id: 'databank' },
             { text: 'Data Services', route: '/dataservices', mode: NavigationMode.INTERNAL, id: 'dataService' },
             { text: 'Help', route: '/help', mode: NavigationMode.INTERNAL, id: 'help' }
