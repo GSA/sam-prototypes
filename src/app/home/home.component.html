@@ -5,7 +5,8 @@
       <div class="grid-col">
         <!-- logo & seal -->
         <div class="grid-row padding-y-3">
-          <div class="sds-logo height-7 grid-col-fill">
+          <div class="grid-col-fill">
+            <home-logo></home-logo>
           </div>
           <div class="grid-col-auto">
             <home-seal></home-seal>
@@ -14,79 +15,14 @@
         <!-- tiles -->
         <div class="grid-row grid-gap flex-align-center desktop:flex-align-start margin-top-3">
           <div class="desktop:grid-col-6 desktop:grid-offset-1 desktop:order-1">
-            <div class="sds-tile--outline">
-              <h3 class="margin-y-1">The Official U.S. Government System for:</h3>
-              <div class="grid-row">
-                <div class="grid-col">
-                  <ul class="sds-list  sds-list--unstyled sds-list-link">
-                    <li>
-                      <a [routerLink]="['home/opportunities']" class="usa-link display-block">Contract Opportunities</a>
-                      (was fbo.gov)
-                    </li>
-                    <li>
-                      <a [routerLink]="['home/contract-data']" class="usa-link display-block">Contract Data</a>
-                      (Reports ONLY from fpds.gov)
-                    </li>
-                    <li>
-                      <a [routerLink]="['home/wages']" class="usa-link display-block">Wage Determinations</a>
-                      (was wdol.gov)
-                    </li>
-                    <li>
-                      <a [routerLink]="['home/hierarchy']" class="usa-link display-block">Federal Hierarchy</a>
-                      Departments and Subtiers
-                    </li>
-                  </ul>
-                </div>
-                <div class="grid-col">
-                  <ul class="sds-list  sds-list--unstyled sds-list-link">
-                    <li>
-                      <a [routerLink]="['home/assistance']" class="usa-link display-block">Assistance Listing</a>
-                      (was cfda.gov)
-                    </li>
-                    <li>
-                      <a [routerLink]="['home/registration']" class="usa-link display-block">Entity Registration</a>
-                      Including Disaster Response Registry
-                    </li>
-                    <li>
-                      <a [routerLink]="['home/entity-compliance']" class="usa-link display-block">Entity Compliance</a>
-                      SCR and Bio-Preferred Reporting
-                    </li>
-                    <li>
-                      <a [routerLink]="['home/exclusions']" class="usa-link display-block">Exclusions</a>
-                      
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+              <home-splash-tile></home-splash-tile>
           </div>
           <div class="desktop:grid-col-6 desktop:grid-offset-1 padding-3 desktop:order-3">
-            <section aria-label="Small search component with select">
-              <h2>Already know what you want to find?</h2>
-              <sds-search name="home-search" [(ngModel)]="searchModel" (ngModelChange)="search()" [searchSettings]="searchSettings">
-              </sds-search>
-            </section>
+              <h2 class="margin-bottom-1">Already know what you want to find?</h2>
+              <home-search-bar></home-search-bar>
           </div>
           <div class="desktop:grid-col-4 desktop:order-2">
-            <div class="sds-tile--outline">
-              <h3>Register Your Entity</h3>
-              <p>Register your entity to get started doing business with the federal government.</p>
-              <div class="desktop:flex-column flex-justify-center grid-row">
-                <button class="sds-button sds-button--icon desktop:width-full margin-y-1">
-                  <sds-icon [icon]="['bs', 'folder']" [size]="'2x'"></sds-icon>
-                  <span class="sds-button--icon__title">Get Started</span>
-                </button>
-                <button class="sds-button sds-button--icon desktop:width-full margin-y-1">
-                  <sds-icon [icon]="['bs', 'folder']" [size]="'2x'"></sds-icon>
-                  <span class="sds-button--icon__title">Renew Entity</span>
-                </button>
-                <button class="sds-button sds-button--icon desktop:width-full margin-top-1">
-                  <!-- REPLACE ICON -->
-                  <sds-icon [icon]="['bs', 'check-2-circle']" [size]="'2x'"></sds-icon>
-                  <span class="sds-button--icon__title">Check Registration Status</span>
-                </button>
-              </div>
-            </div>
+              <home-register-tile></home-register-tile>
           </div>
         </div>
       </div>
@@ -94,94 +30,19 @@
 
     <!-- homepage video and news list section-->
     <div class="grid-row width-full flex-nowrap">
-      <!-- news list -->
+
+      <!-- Announcements Card -->
       <div class="tablet:grid-col padding-1">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">Announcements</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <landing-feed [service]="announcementsService"></landing-feed>
-          </div>
-        </div>
+        <landing-card title="Announcements">
+          <landing-feed [service]="announcementsService"></landing-feed>
+        </landing-card>
       </div>
+
       <!-- homepage video and freq. q's -->
       <div class="tablet:grid-col padding-1">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">Have Questions About SAM.Gov?</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <div class="grid-row">
-              <div class="grid-col">
-                <ul class="sds-list sds-list--icon">
-                  <li>
-                    <sds-icon [icon]="['bs', 'camera-reels']" [size]="'sm'"></sds-icon>
-                    <span class="sr-only"></span>
-                    <a class="usa-link" [routerLink]="['/help/results']" [queryParams]="{type: 'video'}">
-                      Videos
-                    </a>
-                  </li>
-                  <li>
-                    <sds-icon [icon]="['bs', 'book']" [size]="'sm'"></sds-icon>
-                    <span class="sr-only"></span>
-                    <a class="usa-link" [routerLink]="['/help/results']" [queryParams]="{type: 'term'}">
-                      Glossary Terms
-                    </a>
-                  </li>
-                  <li>
-                  <sds-icon [icon]="['sds', 'document-pdf']"></sds-icon>
-                    <span class="sr-only"></span>
-                    <a class="usa-link" [routerLink]="['/help/results']" [queryParams]="{type: 'qsd'}">
-                      Quick Start Guides
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <!-- paste video code here -->
-              <div class="grid-col padding-top-2 text-center">
-                <div class="video-code" style="height: 120px; width: 200px; margin: auto; background-image: url('assets/img/home-video.png'); background-size: cover; background-repeat: no-repeat; background-position: center;">
-                </div>
-                <span class="text-semibold text-base">Watch our welcome video</span>
-              </div>
-            </div>
-            <span>Frequently Asked Questions</span>
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <sds-icon [icon]="['bs', 'question-circle']" [size]="'sm'"></sds-icon>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  Do I need a user account?
-                </a>
-              </li>
-              <li>
-                <sds-icon [icon]="['bs', 'question-circle']" [size]="'sm'"></sds-icon>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  What's the difference between signing up and registering?
-                </a>
-              </li>
-              <li>
-                <sds-icon [icon]="['bs', 'question-circle']" [size]="'sm'"></sds-icon>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  What if I already have a login.gov account?
-                </a>
-              </li>
-              <li>
-                <sds-icon [icon]="['bs', 'question-circle']" [size]="'sm'"></sds-icon>
-                <span class="sr-only"></span>
-                <a class="usa-link" href=" ">
-                  What do I need to register my entity?
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <landing-card title="Have Questions about SAM.gov?">
+          <home-help></home-help>
+        </landing-card>
       </div>
     </div>
   </div>

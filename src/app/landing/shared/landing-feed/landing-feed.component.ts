@@ -40,4 +40,21 @@ export class LandingFeedComponent implements OnInit {
       this.url = this.service.getKnowledgeBaseUrl();
   }
 
+  setFormat() {
+  /*
+      let today:Date = new Date();
+      for(let i=0; i<this.newsList.length; i++) {
+          let publishDate = new Date(this.newsList[i].publishDate);
+          if(publishDate.getDate() == today.getDate() && publishDate.getMonth() == today.getMonth() && publishDate.getFullYear() == today.getFullYear())
+          {
+            this.newsList[i].dateFormat = 'shortTime';
+          } else if(publishDate.getFullYear() == today.getFullYear()) {
+            this.newsList[i].dateFormat = 'MMM d';
+          } else {
+            this.newsList[i].dateFormat = 'mediumDate';
+          }
+      }
+      */
+  }
+
 }
