@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { LocationStrategy } from '@angular/common';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { filter, map } from "rxjs/operators";
@@ -17,7 +17,7 @@ import { AppService } from '../services/app-service/app.service';
 		    </div>
 		  </div>
 	  </div>
-      <sds-header #header [model]="model" [showTopBanner]="false" [showHeaderLogo]="!isHomePage" (linkEvent)="navigateTo($event)"></sds-header>
+    <sds-header #header [model]="model" [showTopBanner]="false" [showHeaderLogo]="!isHomePage" (linkEvent)="navigateTo($event)"></sds-header>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -53,7 +53,13 @@ export class AppHeaderComponent implements OnInit {
         text: 'Sign Out', route: '/signout', id: 'signOut'
       }];
 
-  constructor(public appService: AppService, public router: Router, public route: ActivatedRoute, public locationStrategy: LocationStrategy) { 
+  constructor(
+    public appService: AppService, 
+    public router: Router, 
+    public route: ActivatedRoute, 
+    public locationStrategy: LocationStrategy,
+    private cdr: ChangeDetectorRef,
+  ) { 
 
        this.model = {
           secondaryLinks: [ this.signInItem ],
@@ -89,9 +95,8 @@ export class AppHeaderComponent implements OnInit {
       this.router.events
       .pipe(
         filter(event => event instanceof NavigationEnd),
-        map(() => {
-
-          // this.isHomePage = (event.url == '/');
+        map((event: NavigationEnd) => {
+          this.isHomePage = event.url == '/';
 
           let itemCode = 'id';
           let child = this.route.firstChild;
@@ -114,6 +119,7 @@ export class AppHeaderComponent implements OnInit {
       )
       .subscribe((customData: any) => {
         this.header.select(customData);
+        this.cdr.detectChanges();
       });
   }
 
