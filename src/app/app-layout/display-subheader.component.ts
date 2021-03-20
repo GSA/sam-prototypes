@@ -31,8 +31,11 @@ export class DisplaySubheaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  actionClicked(event) {
-
+  actionClicked(buttonId) {
+    if (buttonId == 'download') {
+      this.download.emit(null);
+    } else if(buttonId == 'follow') {
+      this.follow.emit(null);
+    }
   }
-
 }
