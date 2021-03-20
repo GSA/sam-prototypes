@@ -26,7 +26,6 @@ import { HomeSplashTileComponent } from './home-splash-tile/home-splash-tile.com
 import { HomeSearchBarComponent } from './home-search-bar/home-search-bar.component';
 import { HomeRegisterTileComponent } from './home-register-tile/home-register-tile.component';
 import { HomeHelpComponent } from './home-help/home-help.component';
-import { HomeHeroComponent } from './home-hero/home-hero.component';
 
 @NgModule({
   imports: [
@@ -44,7 +43,7 @@ import { HomeHeroComponent } from './home-hero/home-hero.component';
     HomeRoutingModule,
     SdsIconModule
   ],
-  declarations: [HomeComponent, HomeSealComponent, HomeLogoComponent, HomeSplashTileComponent, HomeSearchBarComponent, HomeRegisterTileComponent, HomeHelpComponent, HomeHeroComponent],
-  exports: [HomeSealComponent, HomeLogoComponent, HomeSplashTileComponent, HomeSearchBarComponent, HomeRegisterTileComponent, HomeHelpComponent, HomeHeroComponent]
+  declarations: [HomeComponent, HomeSealComponent, HomeLogoComponent, HomeSplashTileComponent, HomeSearchBarComponent, HomeRegisterTileComponent, HomeHelpComponent],
+  exports: [HomeSealComponent, HomeLogoComponent, HomeSplashTileComponent, HomeSearchBarComponent, HomeRegisterTileComponent, HomeHelpComponent]
 })
 export class HomeModule { }

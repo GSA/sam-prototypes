@@ -37,7 +37,7 @@ form = new FormGroup({});
         	    { value: 'all', label: 'Select Domain...' },
         	    { value: 'assistancelist', label: 'AssistanceListings'},
         	    { value: 'opportunities', label: 'Contract Opportunities '},
-        	    { value: 'entityinfo', label: 'Entity Information' },
+        	    { value: 'entity-info', label: 'Entity Information' },
         	    { value: 'federalHierarchy', label: 'Federal Hierarchy'},
         	    { value: 'wdid', label: 'Wage Determinations'}
         	  ]
