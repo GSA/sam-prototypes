@@ -8,18 +8,17 @@ import { EntityRegistrationService } from '../../services/entity-registration-se
 @Component({
   selector: 'app-entity-registration-display',
   templateUrl: './entity-registration-display.component.html',
-  styleUrls: ['./entity-registration-display.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EntityRegistrationDisplayComponent implements OnInit {
 
   public record: any;
 
-  public subheaderActions = {
+  public subheader = {
     buttons: [],
     actions: [
-      { id: 'followAction', icon: 'bars', text: 'Follow' },
-      { id: 'downloadAction', icon: 'bars', text: 'Download' }
+      { id: 'DownloadBtn', icon: 'bars', text: 'Download' },
+      { id: 'FollowBtn', icon: 'bars', text: 'Follow' }
     ]
   };
   
@@ -42,12 +41,12 @@ export class EntityRegistrationDisplayComponent implements OnInit {
     this.record = this.registrationService.getRecord(uei);
   }
 
-  back() {
-      this.location.back();
+  onDownload(event) {
+    console.log("Downloading...");
   }
 
-  log(event) {
-
+  onFollow(event) {
+      console.log("Following...");
   }
 
 }

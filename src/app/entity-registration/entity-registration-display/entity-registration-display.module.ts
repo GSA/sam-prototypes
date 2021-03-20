@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import {
   SdsSideNavigationModule,
@@ -9,8 +8,10 @@ import {
 } from '@gsa-sam/components';
 import { SdsSubheaderModule } from '@gsa-sam/layouts';
 
-import { EntityRegistrationServiceModule } from '../../services/entity-registration-service/entity-registration-service.module';
+import { AppLayoutModule } from '../../app-layout/app-layout.module';
+import { ComponentsModule } from '../../components/components.module';
 
+import { EntityRegistrationServiceModule } from '../../services/entity-registration-service/entity-registration-service.module';
 
 import { EntityRegistrationDisplayRoutingModule } from './entity-registration-display-routing.module';
 import { EntityRegistrationDisplayComponent } from './entity-registration-display.component';
@@ -20,7 +21,8 @@ import { EntityRegistrationDisplayComponent } from './entity-registration-displa
   imports: [
     CommonModule,
     RouterModule,
-    FontAwesomeModule,
+    AppLayoutModule,
+    ComponentsModule,
     SdsSideNavigationModule,
     SdsToolbarModule,
     SdsSubheaderModule,
