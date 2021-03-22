@@ -1,7 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';  
-import { SideNavigationModel, NavigationMode } from '@gsa-sam/components';
+import { SideNavigationModel, NavigationMode} from '@gsa-sam/components';
 import { EntityRegistrationService } from '../../services/entity-registration-service/entity-registration.service';
 
 
@@ -13,28 +12,27 @@ import { EntityRegistrationService } from '../../services/entity-registration-se
 export class EntityRegistrationDisplayComponent implements OnInit {
 
   public record: any;
-
-  public subheader = {
-    buttons: [],
-    actions: [
-      { id: 'DownloadBtn', icon: 'bars', text: 'Download' },
-      { id: 'FollowBtn', icon: 'bars', text: 'Follow' }
-    ]
-  };
   
-  navigationData: SideNavigationModel = {
+  navigationModel: SideNavigationModel = {
     navigationLinks: [
         { id: 'registration', text: 'Entity Registration', mode: NavigationMode.INTERNAL, route: 'core-data', children: [
-	        { id: 'core-data', text: 'Core Data', mode: NavigationMode.INTERNAL, route: 'core-data' },
+	        { id: 'core-data', text: 'Core Data', mode: NavigationMode.INTERNAL, route: 'core-data',
+              children: [
+                { id: 'business-info', text: 'Business Information', mode: NavigationMode.INTERNAL, route: 'core-data#business-information'},
+                { id: 'entity-types', text: 'Entity Types', mode: NavigationMode.INTERNAL, route: 'core-data#entity-types'},
+                { id: 'financial-info', text: 'Financial Information', mode: NavigationMode.INTERNAL, route: 'core-data#financial-information'},
+                { id: 'pocs', text: 'Points of Contact', mode: NavigationMode.INTERNAL, route: 'core-data#points-of-contact'},
+                { id: 'security-info', text: 'Security Information', mode: NavigationMode.INTERNAL, route: 'core-data#security-information'},
+              ] },
 	        { id: 'assertions', text: 'Assertions', mode: NavigationMode.INTERNAL, route: 'assertions' },
 	        { id: 'reps-certs', text: 'Reps and Certs', mode: NavigationMode.INTERNAL, route: 'reps-certs' }
         ]},
-        { id: 'ex-int', text: 'Exclusions and Integrity', mode: NavigationMode.INTERNAL, route: 'integrity' },
+        { id: 'respqual', text: 'Responsibility/Qualification', mode: NavigationMode.INTERNAL, route: 'integrity' },
         { id: 'hierarchy', text: 'Entity Hierarchy', mode: NavigationMode.INTERNAL, route: 'exclusions' }
     ]
-};
+  };
 
-  constructor(private location: Location, private route: ActivatedRoute, private registrationService: EntityRegistrationService) { }
+  constructor(private route: ActivatedRoute, private registrationService: EntityRegistrationService) { }
 
   ngOnInit() {  
     let uei = this.route.snapshot.paramMap.get('id');
