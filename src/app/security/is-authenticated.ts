@@ -11,13 +11,15 @@ export class IsAuthenticated implements CanActivate {
   }
  
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    if(!this.model.signedIn) {
-        if(route.queryParams.signin) {
-        	this.model.signIn();
-        } else {
-    		this.router.navigate(['/']);
+    if(route.routeConfig.path == 'workspace') {
+         if(!this.model.signedIn) {
+          this.model.signIn();
+         }
+    } else if(route.routeConfig.path == 'signout') {
+        if(this.model.signedIn) {
+          this.model.signOut();
         }
     }
-    return this.model.signedIn;
+    return true;
   }
 }
