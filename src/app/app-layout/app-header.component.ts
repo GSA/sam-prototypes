@@ -17,13 +17,13 @@ import { AppService } from '../services/app-service/app.service';
 		    </div>
 		  </div>
 	  </div>
-    <sds-header #header [model]="model" [showTopBanner]="false" [showHeaderLogo]="!isHomePage" (linkEvent)="navigateTo($event)"></sds-header>
+    <sds-header #header [model]="model" [showTopBanner]="false" [showHeaderLogo]="showHeaderLogo" (linkEvent)="navigateTo($event)"></sds-header>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppHeaderComponent implements OnInit {
 
-  isHomePage: boolean = true;
+  showHeaderLogo: boolean = true;
   @ViewChild("header", {static: true}) header;
 
   model: any;
@@ -91,12 +91,12 @@ export class AppHeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.showHeaderLogo = this.router.url != '/';
       this.router.events
       .pipe(
         filter(event => event instanceof NavigationEnd),
         map((event: NavigationEnd) => {
-          this.isHomePage = event.url == '/';
+          this.showHeaderLogo = event.url != '/';
 
           let itemCode = 'id';
           let child = this.route.firstChild;
