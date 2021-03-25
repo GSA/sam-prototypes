@@ -5,277 +5,279 @@
         <!-- HERO SECTION -->
         <div class="grid-row padding-x-3 grid-gap-6">
           <div class="desktop:grid-col-7 margin-y-4">
-				<h1>Assistance Listings for Federal Users</h1>
-				<p class="maxw-full text-base-dark">This site is the official source of public descriptions of federal assistance listings. Federal users with an assistance user or assistance administrator role can use the features on this page to manage assistance listings.
-				</p>
-				<h2>Search assistance listings</h2>
-				<form class="usa-form usa-search usa-search--big desktop:padding-right-2" role="search">
-					<label class="usa-sr-only" for="search-field">Search</label>
-					<input class="usa-input" id="search-field" type="search" name="search" placeholder="Enter CFDA number or keyword">
-					<button class="usa-button" type="submit">
-						<span class="usa-sr-only">Search</span>
-					</button>
-				</form>
-				<form>
-					<fieldset class="usa-fieldset">
-								<div class="usa-checkbox">
-										<input class="usa-checkbox__input" id="truth" type="checkbox" name="historical-figures-1" value="truth" checked="checked">
-										<label class="usa-checkbox__label" for="truth">Show active only</label>
-								</div>
-						</fieldset>
-				</form>
-		</div>
-		<div class="desktop:grid-col-5">
-			<div class="sds-tile--outline display-flex flex-column flex-justify margin-top-2">
-				<div>
-					<p class="text-base-dark">The  Assistance Listings workspace provides additional information and features including:</p>
-					<ul class="sds-list">
-				    <li>A dashboard to track the status of your listings.</li>
-				    <li>Tools to create, update, and manage listings.</li>
-					</ul>
-				</div>
-				<div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-                  <button *ngIf="!model.signedIn"
-                        class="usa-button width-full margin-top-2"
-                        [routerLink]="['/workspace']"
-                        [queryParams]="{signin: true}">Sign in to get started</button>
-                  <button *ngIf="model.signedIn"
-                        class="usa-button width-full margin-top-2"
-                        [routerLink]="['/workspace']">Go to workspace</button>
+            <h1>Assistance Listings for Federal Users</h1>
+            <p class="maxw-full text-base-dark">This site is the official source of public descriptions of federal
+              assistance listings. Federal users with an assistance user or assistance administrator role can use the
+              features on this page to manage assistance listings.
+            </p>
+            <h2>Search assistance listings</h2>
+            <form class="usa-form usa-search usa-search--big desktop:padding-right-2" role="search">
+              <label class="usa-sr-only" for="search-field">Search</label>
+              <input class="usa-input" id="search-field" type="search" name="search"
+                placeholder="Enter CFDA number or keyword">
+              <button class="usa-button" type="submit">
+                <span class="usa-sr-only">Search</span>
+              </button>
+            </form>
+            <form>
+              <fieldset class="usa-fieldset">
+                <div class="usa-checkbox">
+                  <input class="usa-checkbox__input" id="truth" type="checkbox" name="historical-figures-1"
+                    value="truth" checked="checked">
+                  <label class="usa-checkbox__label" for="truth">Show active only</label>
                 </div>
-                <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-                  <button class="usa-button usa-button--secondary width-full" [routerLink]="['/home/assistance']">
-                    Go to assistance listings home
-                  </button>
-                </div>
-    		</div>
-		  </div>
-		</div>
-	  </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="desktop:grid-col-5">
+            <div class="sds-tile--outline display-flex flex-column flex-justify margin-top-2">
+              <div>
+                <p class="text-base-dark">The Assistance Listings workspace provides additional information and features
+                  including:</p>
+                <ul class="sds-list">
+                  <li>A dashboard to track the status of your listings.</li>
+                  <li>Tools to create, update, and manage listings.</li>
+                </ul>
+              </div>
+              <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
+                <button *ngIf="!model.signedIn" class="usa-button width-full margin-top-2" [routerLink]="['/workspace']"
+                  [queryParams]="{signin: true}">Sign in to get started</button>
+                <button *ngIf="model.signedIn" class="usa-button width-full margin-top-2"
+                  [routerLink]="['/workspace']">Go to workspace</button>
+              </div>
+              <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
+                <button class="usa-button usa-button--secondary width-full" [routerLink]="['/home/assistance']">
+                  Go to assistance listings home
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-		<!-- CARDS -->
-		<div class="grid-row grid-gap flex-wrap margin-top-4 padding-x-3 desktop:padding-0">
-			<div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-  				<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-		          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-		            <a [routerLink]="['news']" class="sds-card__link">
-		              <h2 class="sds-card__title">Manage Listings</h2>
-		            </a>
-		          </div>
-		          <div class="sds-card__body">
-		            <ul class="sds-list sds-list--icon">
-		              <li>
-		                <span class="sds-list__item-icon">
-		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
-		                </span>
-		                <span class="sds-list__item-content">
-		                  <a href="#" class="usa-link">Meet your annual update requirements</a>
-		                </span>
-		              </li>
-		              <li>
-		                <span class="sds-list__item-icon">
-		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
-		                </span>
-		                <span class="sds-list__item-content">
-		                  <a href="#" class="usa-link">Create and post assistance listings</a>
-		                </span>
-		              </li>
-		              <li>
-		                <span class="sds-list__item-icon">
-		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
-		                </span>
-		                <span class="sds-list__item-content">
-		                  <a href="#" class="usa-link">Give your listing a new title</a>
-		                </span>
-		              </li>
-		              <li>
-		                <span class="sds-list__item-icon">
-		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
-		                </span>
-		                <span class="sds-list__item-content">
-		                  <a href="#" class="usa-link">Assign your listing a new CFDA number</a>
-		                </span>
-		              </li>
-		              <li>
-		                <span class="sds-list__item-icon">
-		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
-		                </span>
-		                <span class="sds-list__item-content">
-		                  <a href="#" class="usa-link">Move your listing to a new organization</a>
-		                </span>
-		              </li>
-		            </ul>
-		          </div>
-		        </div>
-			</div>
-			<div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-  				<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-		          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-		            <a [routerLink]="['news']" class="sds-card__link">
-		              <h2 class="sds-card__title">Manage Numbers and Locations</h2>
-		            </a>
-		          </div>
-		          <div class="sds-card__body">
-		            <ul class="sds-list sds-list--icon">
-		              <li>
-		                <span class="sds-list__item-icon">
-		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
-		                </span>
-		                <span class="sds-list__item-content">
-		                  <a href="#" class="usa-link">Manage your CFDA numbers</a>
-		                </span>
-		              </li>
-		              <li>
-		                <span class="sds-list__item-icon">
-		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
-		                </span>
-		                <span class="sds-list__item-content">
-		                  <a href="#" class="usa-link">Manage your regional locations</a>
-		                </span>
-		              </li>
-		            </ul>
-		          </div>
-		        </div>
-			</div>
-			<div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-  				<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-		          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-		            <a [routerLink]="['news']" class="sds-card__link">
-		              <h2 class="sds-card__title">Manage Users and Roles</h2>
-		            </a>
-		          </div>
-		          <div class="sds-card__body">
-		            <ul class="sds-list sds-list--icon">
-		              <li>
-		                <span class="sds-list__item-icon">
-		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
-		                </span>
-		                <span class="sds-list__item-content">
-		                  <a href="#" class="usa-link">Assign roles</a>
-		                </span>
-		              </li>
-		              <li>
-		                <span class="sds-list__item-icon">
-		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
-		                </span>
-		                <span class="sds-list__item-content">
-		                  <a href="#" class="usa-link">Respond to role requests</a>
-		                </span>
-		              </li>
-		              <li>
-		                <span class="sds-list__item-icon">
-		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
-		                </span>
-		                <span class="sds-list__item-content">
-		                  <a href="#" class="usa-link">Search the user directory</a>
-		                </span>
-		              </li>
-		              <li>
-		                <span class="sds-list__item-icon">
-		                  <sds-icon [icon]="['sds', 'document-pdf']"></sds-icon>
-		                </span>
-		                <span class="sds-list__item-content">
-		                  <a href="#" class="usa-link">Quick Start Guide for role management</a>
-		                </span>
-		              </li>
-		              <li>
-		                <span class="sds-list__item-icon">
-		                  <sds-icon [icon]="['bs', 'camera-reels']" [size]="'xs'"></sds-icon>
-		                </span>
-		                <span class="sds-list__item-content">
-		                  <a href="#" class="usa-link">Video: Role management</a>
-		                </span>
-		              </li>
-		            </ul>
-		          </div>
-		        </div>
-			</div>
-			<div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-  				<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-		          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-		            <a [routerLink]="['news']" class="sds-card__link">
-		              <h2 class="sds-card__title">Run Administrative Reports</h2>
-		            </a>
-		          </div>
-		          <div class="sds-card__body">
-		            <ul class="sds-list sds-list--icon">
-		              <li>
-		                <span class="sds-list__item-icon">
-		                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
-		                </span>
-		                <span class="sds-list__item-content">
-		                  <a href="#" class="usa-link">How to run an administrative report</a>
-		                </span>
-		              </li>
-		              <li>
-		                <span class="sds-list__item-icon">
-		                  <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180"></sds-icon>
-		                </span>
-		                <span class="sds-list__item-content">
-		                  <a href="#" class="usa-link">Go to administrative reports</a>
-		                </span>
-		              </li>
-		            </ul>
-		          </div>
-		        </div>
-			</div>
-	      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-	        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-	          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-	            <a [routerLink]="['news']" class="sds-card__link">
-	              <h2 class="sds-card__title">External Resources</h2>
-	            </a>
-	          </div>
-	          <div class="sds-card__body">
-	            <ul class="sds-list">
-	              <li>
-	                <span class="sds-list__item-content">
-	                <a class="usa-link text-semibold" target="_blank" href="https://www.cfo.gov/grants-training/">
-	                  Chief Financial Officers Council Grants Training.
-	                  <sds-icon [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon>
-	                </a> Explore training modules on grants and cooperative agreements for federal officials.</span>
-	              </li>
-	            </ul>
-	          </div>
-	        </div>
-	      </div>
-	      	      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-	        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-	          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-	            <a class="sds-card__link">
-	              <h2 class="sds-card__title">Help</h2>
-	            </a>
-	          </div>
-	          <div class="sds-card__body">
-	            <ul class="sds-list sds-list--icon">
-	              <li>
-	                <span class="sds-list__item-icon">
-	                  <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
-	                </span>
-	                <span class="sds-list__item-content">
-	                  <a [routerLink]="['/help']" class="usa-link">Frequently Asked Questions</a>
-	                </span>
-	              </li>
-	              <li>
-	                <span class="sds-list__item-icon">
-	                  <sds-icon [icon]="['bs', 'book']" [size]="'xs'"></sds-icon>
-	                </span>
-	                <span class="sds-list__item-content">
-	                  <a href="#" class="usa-link">Glossary Terms</a>
-	                </span>
-	              </li>
-	              <li>
-	                <span class="sds-list__item-icon">
-	                  <sds-icon [icon]="['bs', 'camera-reels']" [size]="'xs'"></sds-icon>
-	                </span>
-	                <span class="sds-list__item-content">
-	                  <a href="#" class="usa-link">Videos</a>
-	                </span>
-	              </li>
-	            </ul>
-	          </div>
-	        </div>
-	      </div>
-	   </div>
-	</div>
+    <!-- CARDS -->
+    <div class="grid-row grid-gap flex-wrap margin-top-4 padding-x-3 desktop:padding-0">
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a [routerLink]="['news']" class="sds-card__link">
+              <h2 class="sds-card__title">Manage Listings</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Meet your annual update requirements</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Create and post assistance listings</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Give your listing a new title</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Assign your listing a new CFDA number</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Move your listing to a new organization</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a [routerLink]="['news']" class="sds-card__link">
+              <h2 class="sds-card__title">Manage Numbers and Locations</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Manage your CFDA numbers</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Manage your regional locations</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a [routerLink]="['news']" class="sds-card__link">
+              <h2 class="sds-card__title">Manage Users and Roles</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Assign roles</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Respond to role requests</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Search the user directory</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="['document-pdf']"></sds-icon>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Quick Start Guide for role management</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="['camera-reels']" [size]="'xs'"></sds-icon>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Video: Role management</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a [routerLink]="['news']" class="sds-card__link">
+              <h2 class="sds-card__title">Run Administrative Reports</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">How to run an administrative report</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Go to administrative reports</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a [routerLink]="['news']" class="sds-card__link">
+              <h2 class="sds-card__title">External Resources</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <ul class="sds-list">
+              <li>
+                <span class="sds-list__item-content">
+                  <a class="usa-link text-semibold" target="_blank" href="https://www.cfo.gov/grants-training/">
+                    Chief Financial Officers Council Grants Training.
+                    <sds-icon [icon]="['box-arrow-up-right']" [size]="'xs'"></sds-icon>
+                  </a> Explore training modules on grants and cooperative agreements for federal officials.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a class="sds-card__link">
+              <h2 class="sds-card__title">Help</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
+                </span>
+                <span class="sds-list__item-content">
+                  <a [routerLink]="['/help']" class="usa-link">Frequently Asked Questions</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="['book']" [size]="'xs'"></sds-icon>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Glossary Terms</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="['camera-reels']" [size]="'xs'"></sds-icon>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Videos</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>

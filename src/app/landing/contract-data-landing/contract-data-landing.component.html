@@ -7,13 +7,20 @@
         <div class="grid-row padding-x-3 desktop:padding-0">
           <div class="desktop:grid-col-fill margin-bottom-4 margin-y-4">
             <h1>Contract Data</h1>
-            <p class="text-bold">The FPDS reports transition is complete and the <a class="usa-link" [routerLink]="['/reports/awards/standard']">DataBank</a> is the only place to go to create and run contract data reports. If you are searching for contract data (i.e., searching for specific contracts), you must do so at <a class="usa-link" href="FPDS.gov">FPDS.gov <sds-icon [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon></a>, which remains the authoritative source for contract data.</p>
-            <p class="text-base-dark">Contract data provides detailed information on all contract actions that are required to be reported by federal agencies.  These are actions with an estimated value of $10,000 or more. </p>
+            <p class="text-bold">The FPDS reports transition is complete and the <a class="usa-link"
+                [routerLink]="['/reports/awards/standard']">DataBank</a> is the only place to go to create and run
+              contract data reports. If you are searching for contract data (i.e., searching for specific contracts),
+              you must do so at <a class="usa-link" href="FPDS.gov">FPDS.gov <sds-icon [icon]="['box-arrow-up-right']"
+                  [size]="'xs'"></sds-icon></a>, which remains the authoritative source for contract data.</p>
+            <p class="text-base-dark">Contract data provides detailed information on all contract actions that are
+              required to be reported by federal agencies.  These are actions with an estimated value of $10,000 or
+              more. </p>
           </div>
           <div class="desktop:grid-col-auto display-flex flex-column text-center">
             <span class="text-base padding-bottom-1">Legacy Website</span>
             <img src="assets/img/fpds.jpg" class="height-4">
-            <p><a class="usa-link text-bold" href="FPDS.gov" target="_blank">Go to FPDS.gov <sds-icon [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon></a></p>
+            <p><a class="usa-link text-bold" href="FPDS.gov" target="_blank">Go to FPDS.gov <sds-icon
+                  [icon]="['box-arrow-up-right']" [size]="'xs'"></sds-icon></a></p>
           </div>
         </div>
       </div>
@@ -22,23 +29,23 @@
     <!-- ACCORDION -->
     <div class="grid-row">
       <div class="tablet:grid-col-10 tablet:grid-offset-1">
-          <sds-accordion-next multi="multi" #sdsAccordionDemo>
-            <sds-accordion-item *ngFor="let help of reportsTraining" #first>
-              <sds-accordion-title>{{help.title}}</sds-accordion-title>
-              <sds-accordion-content>
-                <ul class="sds-list sds-list--icon padding-0">
-                  <li *ngFor="let article of help.articles">
-                    <span class="sds-list__item-icon">
-                      <i [ngClass]="article.icon"></i>
-                    </span>
-                    <span class="sds-list__item-content">
-                      <a class="usa-link" [routerLink]="[article.link]">{{article.title}}</a>
-                    </span>
-                  </li>
-                </ul>
-              </sds-accordion-content>
-            </sds-accordion-item>
-          </sds-accordion-next>
+        <sds-accordion-next multi="multi" #sdsAccordionDemo>
+          <sds-accordion-item *ngFor="let help of reportsTraining" #first>
+            <sds-accordion-title>{{help.title}}</sds-accordion-title>
+            <sds-accordion-content>
+              <ul class="sds-list sds-list--icon padding-0">
+                <li *ngFor="let article of help.articles">
+                  <span class="sds-list__item-icon">
+                    <i [ngClass]="article.icon"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a class="usa-link" [routerLink]="[article.link]">{{article.title}}</a>
+                  </span>
+                </li>
+              </ul>
+            </sds-accordion-content>
+          </sds-accordion-item>
+        </sds-accordion-next>
       </div>
     </div>
 
@@ -52,11 +59,12 @@
             </a>
           </div>
           <div class="sds-card__body">
-            <p>Standard reports contain information about contract activity formatted to meet the needs of both government and public users. There are 36 standard contract data reports in the DataBank.</p>
+            <p>Standard reports contain information about contract activity formatted to meet the needs of both
+              government and public users. There are 36 standard contract data reports in the DataBank.</p>
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Quick start guide for standard reports</a>
@@ -64,7 +72,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Reference guide for standard reports</a>
@@ -72,7 +80,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180"></sds-icon>
+                  <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Go to Standard Reports</a>
@@ -90,11 +98,13 @@
             </a>
           </div>
           <div class="sds-card__body">
-            <p>Ad hoc reports are created with an advanced tool that lets you design reports with data fields and filters you choose. We recommend that you become familiar with the contract data fields and have some knowledge of business intelligence tools before working with it..</p>
+            <p>Ad hoc reports are created with an advanced tool that lets you design reports with data fields and
+              filters you choose. We recommend that you become familiar with the contract data fields and have some
+              knowledge of business intelligence tools before working with it..</p>
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Quick start guide for ad hoc reports</a>
@@ -102,7 +112,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Reference guide for ad hoc reports</a>
@@ -110,7 +120,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180"></sds-icon>
+                  <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Go to Ad Hoc Reports</a>
@@ -128,11 +138,13 @@
             </a>
           </div>
           <div class="sds-card__body">
-            <p>Administrative reports are accessible only by federal users who are assigned an administrative role for contract data in SAM.gov. These reports contain “For Official Use Only” data or other sensitive information. There are currently 6 administrative contract data reports represented in the DataBank.</p>
+            <p>Administrative reports are accessible only by federal users who are assigned an administrative role for
+              contract data in SAM.gov. These reports contain “For Official Use Only” data or other sensitive
+              information. There are currently 6 administrative contract data reports represented in the DataBank.</p>
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Quick start guide for adminstrative reports</a>
@@ -140,7 +152,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Reference guide for administrative reports</a>
@@ -148,7 +160,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180"></sds-icon>
+                  <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Go to Administrative Reports</a>
@@ -166,11 +178,12 @@
             </a>
           </div>
           <div class="sds-card__body">
-            <p>Static reports have been prepared on a fiscal year basis for the public and aggregate data across the Federal Government. The following reports are available for download.</p>
+            <p>Static reports have been prepared on a fiscal year basis for the public and aggregate data across the
+              Federal Government. The following reports are available for download.</p>
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Quick start guide for static reports</a>
@@ -178,7 +191,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Reference guide for static reports</a>
@@ -186,7 +199,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180"></sds-icon>
+                  <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href=" " class="usa-link">National Interest Action / Other Reports</a>
@@ -194,7 +207,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180"></sds-icon>
+                  <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href=" " class="usa-link">Small Business Goaling Reports</a>
@@ -202,7 +215,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180"></sds-icon>
+                  <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href=" " class="usa-link">Top 100 Contractors Reports</a>
@@ -210,7 +223,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180"></sds-icon>
+                  <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href=" " class="usa-link">Federal Procurement Reports</a>
@@ -228,11 +241,12 @@
             </a>
           </div>
           <div class="sds-card__body">
-            <p>You must sign up for a user account to access the contract data standard and ad hoc reports. All users including public users can run these reports, but you must be signed in.</p>
+            <p>You must sign up for a user account to access the contract data standard and ad hoc reports. All users
+              including public users can run these reports, but you must be signed in.</p>
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Quick start guide for creating a login.gov account</a>
@@ -240,18 +254,19 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180"></sds-icon>
+                  <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Sign up at login.gov</a>
                 </span>
               </li>
             </ul>
-            <p><b>Government users:</b> We encourage you to request a contract data role if you need access to restricted data such as DoD’s 90-day award data.</p>
+            <p><b>Government users:</b> We encourage you to request a contract data role if you need access to
+              restricted data such as DoD’s 90-day award data.</p>
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Request a federal role</a>
@@ -274,7 +289,7 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Frequently asked questions</a>
@@ -282,7 +297,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['bs', 'book']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="['book']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Glossary Terms</a>
@@ -290,7 +305,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['bs', 'camera-reels']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="['camera-reels']" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Videos</a>

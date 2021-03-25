@@ -1,18 +1,18 @@
 <ul class="sds-list sds-list--icon">
-	<li *ngFor="let item of links">
-		<span class="sds-list__item-content">
-			<a *ngIf="item.external" class="usa-link text-semibold" [href]="item.url">
-				<div class="display-flex flex-row flex-align-center">
-					<sds-icon [icon]="['bs', 'file-text']" [size]="'xs'"></sds-icon>
-					<span>{{item.label}}</span>
-				</div>
-			</a>
-			<a *ngIf="!item.external" class="usa-link text-semibold" [routerLink]="[item.url]">
-				<div class="display-flex flex-row flex-align-center">
-					<sds-icon [icon]="['bs', 'file-text']" [size]="'xs'"></sds-icon>
-					<span>{{item.label}}</span>
-				</div>
-			</a>
-		</span>
-	</li>
+  <li *ngFor="let item of links">
+    <span class="sds-list__item-content">
+      <a *ngIf="item.external" class="usa-link text-semibold" [href]="item.url">
+        <div class="display-flex flex-row flex-align-center">
+          <sds-icon [icon]="['file-text']" [size]="'xs'"></sds-icon>
+          <span>{{item.label}}</span>
+        </div>
+      </a>
+      <a *ngIf="!item.external" class="usa-link text-semibold" [routerLink]="[item.url]">
+        <div class="display-flex flex-row flex-align-center">
+          <sds-icon [icon]="['file-text']" [size]="'xs'"></sds-icon>
+          <span>{{item.label}}</span>
+        </div>
+      </a>
+    </span>
+  </li>
 </ul>

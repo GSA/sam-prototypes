@@ -21,8 +21,8 @@
     </div>
     <button #usaNavOpen class="usa-menu-btn" (click)="openMobileNav()">
       <!-- <fa-layers [fixedWidth]="true" size="3x"> -->
-      <sds-icon [icon]="['bs', 'square']"></sds-icon>
-      <sds-icon [icon]="['sds', 'bars']" transform="shrink-6"></sds-icon>
+      <sds-icon [icon]="['square']"></sds-icon>
+      <sds-icon [icon]="['bars']" transform="shrink-6"></sds-icon>
       <!-- <fa-layers-counter
       *ngIf="model.signedIn"
       [classes]="['icon-layers-counter']"
@@ -36,8 +36,8 @@
     <div class="usa-nav__inner">
       <button #usaNavClose class="usa-nav__close" (click)="closeMobileNav()">
         <!-- <fa-layers [fixedWidth]="true" size="lg"> -->
-        <sds-icon [icon]="['bs', 'circle']" transform="grow-2"></sds-icon>
-        <sds-icon [icon]="['bs', 'times']" transform="shrink-6"></sds-icon>
+        <sds-icon [icon]="['circle']" transform="grow-2"></sds-icon>
+        <sds-icon [icon]="['times']" transform="shrink-6"></sds-icon>
         <span class="usa-sr-only">Close</span>
         <!-- </fa-layers> -->
       </button>
@@ -126,7 +126,7 @@
             <a [attr.id]="'requests'" [routerLink]="['/requests']"
               [attr.class]="sectionId == 'requests' ? 'usa-current' : ''">
               <!-- <fa-layers [fixedWidth]="true"> -->
-              <sds-icon [icon]="['sds', 'request']"></sds-icon>
+              <sds-icon [icon]="['request']"></sds-icon>
               <!-- <fa-layers-counter
               [classes]="['icon-layers-counter']"
             ></fa-layers-counter>
@@ -138,7 +138,7 @@
             <a [attr.id]="'messages'" [routerLink]="['/messages']"
               [attr.class]="sectionId == 'messages' ? 'usa-current' : ''">
 
-              <sds-icon [icon]="['sds', 'messages']"></sds-icon>
+              <sds-icon [icon]="['messages']"></sds-icon>
 
               <span class="sds-nav__secondary-item-text">Notifications</span>
             </a>
@@ -147,7 +147,7 @@
             <a [attr.id]="'workspace'" [routerLink]="['/workspace']"
               [attr.class]="sectionId == 'workspace' ? 'usa-current' : ''">
 
-              <sds-icon [icon]="['sds', 'workspace']"></sds-icon>
+              <sds-icon [icon]="['workspace']"></sds-icon>
 
               <span class="sds-nav__secondary-item-text">Workspace</span>
             </a>
@@ -155,7 +155,7 @@
           <li *ngIf="!model.signedIn" class="usa-nav__secondary-item">
             <a [attr.id]="'signIn'" href="javascript:void(0)" (click)="model.signIn('/workspace')">
 
-              <sds-icon [icon]="['sds', 'log-in']"></sds-icon>
+              <sds-icon [icon]="['log-in']"></sds-icon>
 
               <span class="sds-nav__secondary-item-text">Sign In</span>
             </a>
@@ -163,7 +163,7 @@
           <li *ngIf="model.signedIn" class="usa-nav__secondary-item">
             <a [attr.id]="'signOut'" href="javascript:void(0)" (click)="model.signOut()">
 
-              <sds-icon [icon]="['sds', 'log-out']"></sds-icon>
+              <sds-icon [icon]="['log-out']"></sds-icon>
 
               <span class="sds-nav__secondary-item-text">Sign Out</span>
             </a>
@@ -182,7 +182,7 @@
     <h2 class="sr-only">Feedback</h2>
     <button type="button" class="sds-feedback__button simple-toggle" [attr.aria-expanded]="!isCollapsedContent"
       aria-controls="collapseID" (click)="isCollapsedContent = !isCollapsedContent">
-      <sds-icon [icon]="isCollapsedContent?['bs', 'arrow-down']: ['bs', 'arrow-up']"></sds-icon>
+      <sds-icon [icon]="isCollapsedContent?['arrow-down']: ['arrow-up']"></sds-icon>
       <span class="sds-feedback__title">Feedback</span>
     </button>
     <div id="collapseID" [sdsCollapse]="isCollapsedContent" class="sds-feedback__response">
