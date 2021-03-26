@@ -6,7 +6,6 @@ import { A11yModule } from "@angular/cdk/a11y";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
-
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
 import {
@@ -19,11 +18,11 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import {
   FontAwesomeModule,
   FaIconLibrary,
-} from '@fortawesome/angular-fontawesome';
+} from "@fortawesome/angular-fontawesome";
 
-import { AppLayoutModule } from './app-layout/app-layout.module';
-import { AppService } from './services/app-service/app.service';
-import { SamModelService } from './model/sam-model.service';
+import { AppLayoutModule } from "./app-layout/app-layout.module";
+import { AppService } from "./services/app-service/app.service";
+import { SamModelService } from "./model/sam-model.service";
 
 @NgModule({
   declarations: [AppComponent],

@@ -1,142 +1,164 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { IsAuthenticated } from './security/is-authenticated';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { IsAuthenticated } from "./security/is-authenticated";
 
 const routes: Routes = [
   {
-    path: 'hierarchy',
-    loadChildren: () => import('./hierarchy/hierarchy.module').then(m => m.HierarchyModule),
+    path: "hierarchy",
+    loadChildren: () =>
+      import("./hierarchy/hierarchy.module").then((m) => m.HierarchyModule),
     data: {
-      id: "home"
-    }
+      id: "home",
+    },
   },
   {
-    path: '',
-    loadChildren: () => import ('./home/home.module').then(m => m.HomeModule),
+    path: "",
+    loadChildren: () => import("./home/home.module").then((m) => m.HomeModule),
     data: {
-      id: "home"
-    }
+      id: "home",
+    },
   },
   {
-    path: 'home',
-    loadChildren: () => import ('./landing/landing.module').then(m => m.LandingModule),
+    path: "home",
+    loadChildren: () =>
+      import("./landing/landing.module").then((m) => m.LandingModule),
     data: {
-      id: "home"
-    }
+      id: "home",
+    },
   },
   {
-    path: 'workspace',
-    loadChildren: () => import ('./workspace/workspace.module').then(m => m.WorkspaceModule),
-    canActivate: [IsAuthenticated], 
+    path: "workspace",
+    loadChildren: () =>
+      import("./workspace/workspace.module").then((m) => m.WorkspaceModule),
+    canActivate: [IsAuthenticated],
     data: {
-      id: "workspace"
-    }
+      id: "workspace",
+    },
+  },
+  {
+    path: "requests",
+    loadChildren: () =>
+      import("./request/request.module").then((m) => m.RequestModule),
+    data: {
+      id: "requests",
+    },
+  },
+  {
+    path: "news",
+    loadChildren: () => import("./news/news.module").then((m) => m.NewsModule),
+    data: {
+      id: "home",
+    },
+  },
+  {
+    path: "alerts",
+    loadChildren: () =>
+      import("./alerts/alerts.module").then((m) => m.AlertsModule),
+    data: {
+      id: "home",
+    },
+  },
+  {
+    path: "messages",
+    loadChildren: () => import("./feed/feed.module").then((m) => m.FeedModule),
+    data: {
+      id: "messages",
+    },
+  },
+  {
+    path: "search",
 
-  },
-  {
-    path: 'requests',
-    loadChildren: () => import('./request/request.module').then(m => m.RequestModule),
+    loadChildren: () =>
+      import("./search/search.module").then((m) => m.SearchModule),
     data: {
-      id: "requests"
-    }
+      id: "search",
+    },
   },
   {
-    path: 'news',
-    loadChildren: () => import('./news/news.module').then(m => m.NewsModule),
+    path: "databank",
+    loadChildren: () =>
+      import("./databank/databank.module").then((m) => m.DatabankModule),
     data: {
-      id: "home"
-    }
+      id: "databank",
+    },
   },
   {
-    path: 'alerts',
-    loadChildren: () => import('./alerts/alerts.module').then(m => m.AlertsModule),
+    path: "dataservices",
+    loadChildren: () =>
+      import("./data-services/data-services.module").then(
+        (m) => m.DataServicesModule
+      ),
     data: {
-      id: "home"
-    }
+      id: "dataservices",
+    },
   },
   {
-    path: 'messages',
-    loadChildren: () => import('./feed/feed.module').then(m => m.FeedModule),
+    path: "help",
+    loadChildren: () => import("./help/help.module").then((m) => m.HelpModule),
     data: {
-      id: "messages"
-    }
+      id: "help",
+    },
   },
   {
-    path: 'search',
-
-    loadChildren: () => import('./search/search.module').then(m => m.SearchModule),
+    path: "about",
+    loadChildren: () =>
+      import("./about/about.module").then((m) => m.AboutModule),
     data: {
-      id: "search"
-    }
+      id: "help",
+    },
   },
   {
-    path: 'databank',
-    loadChildren: () => import('./databank/databank.module').then(m => m.DatabankModule),
+    path: "profile",
+    loadChildren: () =>
+      import("./profile/profile.module").then((m) => m.ProfileModule),
     data: {
-      id: "databank"
-    }
+      id: "workspace",
+    },
   },
   {
-    path: 'dataservices',
-    loadChildren: () => import('./data-services/data-services.module').then(m => m.DataServicesModule),
+    path: "entity-registration",
+    loadChildren: () =>
+      import("./entity-registration/entity-registration.module").then(
+        (m) => m.EntityRegistrationModule
+      ),
     data: {
-      id: "dataservices"
-    }
+      id: "workspace",
+    },
   },
   {
-    path: 'help',
-    loadChildren: () => import ('./help/help.module').then(m => m.HelpModule),
+    path: "integrity",
+    loadChildren: () =>
+      import("./integrity/integrity.module").then((m) => m.IntegrityModule),
+  },
+  {
+    path: "dataentry",
+    loadChildren: () =>
+      import("./data-entry/data-entry.module").then((m) => m.DataEntryModule),
+  },
+  {
+    path: "signout",
+    pathMatch: "full",
+    redirectTo: "/",
+  },
+  {
+    path: "*",
+    redirectTo: "/",
+    pathMatch: "full",
     data: {
-      id: "help"
-    }
+      id: "",
+    },
   },
-  {
-    path: 'about',
-    loadChildren: () => import('./about/about.module').then(m => m.AboutModule),
-    data: {
-      id: "help"
-    }
-  },
-  {
-    path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule),
-    data: {
-      id: "workspace"
-    }
-  },
-  {
-    path: 'entity-registration',
-    loadChildren: () => import('./entity-registration/entity-registration.module').then(m => m.EntityRegistrationModule),
-    data: {
-      id: "workspace"
-    }
-  },
-  {
-    path: 'integrity',
-    loadChildren: () => import('./integrity/integrity.module').then(m => m.IntegrityModule)
-  },
-  {
-    path: 'signout',
-    pathMatch: 'full',
-    redirectTo: '/'
-  },
-  {
-    path: '*',
-    redirectTo: '/',
-    pathMatch: 'full',
-    data: {
-      id: ""
-    }
-  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    scrollPositionRestoration: 'enabled',
-    useHash: true,
-    anchorScrolling: 'enabled',
-    relativeLinkResolution: 'legacy'
-})],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: "enabled",
+      useHash: true,
+      anchorScrolling: "enabled",
+      relativeLinkResolution: "legacy",
+    }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
