@@ -42,7 +42,9 @@ import _ from "lodash-es";
     SdsIconModule,
     FormlyModule.forRoot(),
     SearchListServiceModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
   ],
   declarations: [OpportunitiesComponent],
   exports: [OpportunitiesComponent],

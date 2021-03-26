@@ -25,6 +25,8 @@ import { HelpComponent } from "./help.component";
 import { HelpItemModule } from "./help-item/help-item.module";
 import { HelpServiceModule } from "./service/service.module";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [HelpComponent],
@@ -43,7 +45,9 @@ import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
     SdsPageModule,
     SdsSearchModule,
     SearchListServiceModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
     HelpItemModule,
     HelpServiceModule,
     HelpRoutingModule,

@@ -49,6 +49,8 @@ import { AdvancedFiltersModule } from "./search-filters/advanced-filters/advance
 import { SearchRoutingModule } from "./search-routing.module";
 import { SearchComponent } from "./search.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [SearchComponent],
@@ -92,7 +94,9 @@ import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
     SdsIconModule,
     SdsSelectionPanelModule,
     SideToolbarModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
   ],
   exports: [SearchComponent],
 })

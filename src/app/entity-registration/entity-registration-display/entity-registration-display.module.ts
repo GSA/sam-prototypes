@@ -14,6 +14,8 @@ import { EntityRegistrationServiceModule } from "../../services/entity-registrat
 import { EntityRegistrationDisplayRoutingModule } from "./entity-registration-display-routing.module";
 import { EntityRegistrationDisplayComponent } from "./entity-registration-display.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [EntityRegistrationDisplayComponent],
@@ -26,7 +28,9 @@ import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
     SdsSubheaderModule,
     EntityRegistrationServiceModule,
     EntityRegistrationDisplayRoutingModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
   ],
   exports: [EntityRegistrationDisplayComponent],
 })

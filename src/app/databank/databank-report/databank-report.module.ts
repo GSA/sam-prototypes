@@ -13,6 +13,8 @@ import { DatabankReportRoutingModule } from "./databank-report-routing.module";
 import { DatabankReportComponent } from "./databank-report.component";
 import { SdsIconModule } from "@gsa-sam/components";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [DatabankReportComponent],
@@ -25,7 +27,9 @@ import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
     HierarchyNavPickerModule,
     DatabankServiceModule,
     DatabankReportRoutingModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
   ],
   exports: [DatabankReportComponent],
 })

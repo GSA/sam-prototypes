@@ -24,6 +24,8 @@ import { AssistancelistRoutingModule } from "./assistancelist-routing.module";
 import { AssistancelistComponent } from "./assistancelist.component";
 import { AssistancelistItemModule } from "./assistancelist-item/assistancelist-item.module";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [AssistancelistComponent],
@@ -42,7 +44,9 @@ import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
     SearchListServiceModule,
     AssistancelistItemModule,
     FormlyModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
   ],
   exports: [AssistancelistComponent],
   providers: [SDSFormlyUpdateComunicationService],

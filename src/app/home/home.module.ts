@@ -26,6 +26,8 @@ import { HomeSearchBarComponent } from "./home-search-bar/home-search-bar.compon
 import { HomeRegisterTileComponent } from "./home-register-tile/home-register-tile.component";
 import { HomeHelpComponent } from "./home-help/home-help.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   imports: [
@@ -42,7 +44,9 @@ import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
     SharedModule,
     HomeRoutingModule,
     SdsIconModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
   ],
   declarations: [
     HomeComponent,

@@ -28,6 +28,8 @@ import { SearchSaveServiceModule } from "./search-save-service/search-save-servi
 
 import { SearchSaveResultModule } from "./search-save-result/search-save-result.module";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [SearchSaveComponent],
@@ -53,7 +55,9 @@ import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
     SearchSaveRoutingModule,
     SearchSaveServiceModule,
     SearchSaveResultModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
   ],
 })
 export class SearchSaveModule {}

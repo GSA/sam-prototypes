@@ -9,6 +9,8 @@ import { DatabankHistoryRoutingModule } from "./databank-history-routing.module"
 import { DatabankHistoryComponent } from "./databank-history.component";
 import { SdsIconModule } from "@gsa-sam/components";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [DatabankHistoryComponent],
@@ -18,7 +20,9 @@ import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
     FormsModule,
     SdsIconModule,
     SdsSubheaderModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
 
     DatabankHistoryRoutingModule,
   ],

@@ -11,6 +11,8 @@ import { EntityInformationLandingComponent } from "./entity-information-landing.
 import { SplashTileComponent } from "./splash-tile.component";
 import { SplashAlertComponent } from "./splash-alert.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
     EntityInformationLandingRoutingModule,
     SdsIconModule,
     SharedModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
   ],
   exports: [EntityInformationLandingComponent, SplashAlertComponent],
 })

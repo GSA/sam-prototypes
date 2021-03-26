@@ -23,6 +23,8 @@ import { DatabankSearchItemModule } from "./databank-search-item/databank-search
 import { DatabankSearchRoutingModule } from "./databank-search-routing.module";
 import { DatabankSearchComponent } from "./databank-search.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [DatabankSearchComponent],
@@ -43,7 +45,9 @@ import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
     SdsFiltersModule,
     DatabankSearchItemModule,
     SearchListServiceModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
     DatabankServiceModule,
     DatabankSearchRoutingModule,
   ],

@@ -11,6 +11,8 @@ import { SdsAccordionModule } from "@gsa-sam/sam-material-extensions";
 import { OpportunitiesLandingRoutingModule } from "./opportunities-landing-routing.module";
 import { OpportunitiesLandingComponent } from "./opportunities-landing.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [OpportunitiesLandingComponent],
@@ -23,7 +25,9 @@ import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
     RouterModule,
     OpportunitiesLandingRoutingModule,
     SdsIconModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
   ],
   exports: [OpportunitiesLandingComponent],
 })

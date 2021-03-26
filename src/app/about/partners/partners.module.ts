@@ -5,14 +5,17 @@ import { PartnersRoutingModule } from "./partners-routing.module";
 import { PartnersComponent } from "./partners.component";
 import { SdsIconModule } from "@gsa-sam/components";
 import { NgxBootstrapIconsModule, allIcons } from "ngx-bootstrap-icons";
-
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 @NgModule({
   declarations: [PartnersComponent],
   imports: [
     CommonModule,
     PartnersRoutingModule,
     SdsIconModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
   ],
   exports: [PartnersComponent],
 })

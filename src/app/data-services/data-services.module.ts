@@ -8,13 +8,16 @@ import { SdsSearchModule, SdsIconModule } from "@gsa-sam/components";
 import { DataServicesRoutingModule } from "./data-services-routing.module";
 import { DataServicesComponent } from "./data-services.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
     SdsSearchModule,
     DataServicesRoutingModule,
     SdsIconModule,

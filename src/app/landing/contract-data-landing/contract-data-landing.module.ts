@@ -7,6 +7,8 @@ import { ContractDataLandingRoutingModule } from "./contract-data-landing-routin
 import { ContractDataLandingComponent } from "./contract-data-landing.component";
 import { SdsIconModule } from "@gsa-sam/components";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [ContractDataLandingComponent],
@@ -15,7 +17,9 @@ import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
     SdsAccordionModule,
     ContractDataLandingRoutingModule,
     SdsIconModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
   ],
   exports: [ContractDataLandingComponent],
 })

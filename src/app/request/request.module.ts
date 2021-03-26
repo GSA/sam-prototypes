@@ -24,6 +24,8 @@ import { RequestServiceModule } from "./service/service.module";
 import { RequestItemModule } from "./request-item/request-item.module";
 import { RequestComponent } from "./request.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   imports: [
@@ -45,7 +47,9 @@ import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
     RequestServiceModule,
     RequestItemModule,
 
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
   ],
   declarations: [RequestComponent],
 })

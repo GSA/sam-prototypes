@@ -21,6 +21,8 @@ import {
 import { SdsSubheaderModule, SearchListServiceModule } from "@gsa-sam/layouts";
 import { FormlyModule } from "@ngx-formly/core";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   imports: [
@@ -39,7 +41,9 @@ import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
     FormlyModule.forRoot(),
     EntitiesRoutingModule,
     SearchListServiceModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
   ],
   declarations: [EntityListComponent],
   exports: [EntityListComponent],

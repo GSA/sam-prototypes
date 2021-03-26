@@ -14,6 +14,8 @@ import { SdsAccordionModule } from "@gsa-sam/sam-material-extensions";
 import { ExclusionsRoutingModule } from "./exclusions-routing.module";
 import { ExclusionsComponent } from "./exclusions.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [ExclusionsComponent],
@@ -26,7 +28,9 @@ import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
     SdsAccordionModule,
     ExclusionsRoutingModule,
     SdsIconModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
   ],
   exports: [ExclusionsComponent],
 })

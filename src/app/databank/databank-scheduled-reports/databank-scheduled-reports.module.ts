@@ -8,6 +8,8 @@ import { DatabankScheduledReportsRoutingModule } from "./databank-scheduled-repo
 import { DatabankScheduledReportsComponent } from "./databank-scheduled-reports.component";
 import { SdsIconModule } from "@gsa-sam/components";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [DatabankScheduledReportsComponent],
@@ -17,7 +19,9 @@ import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
     SdsIconModule,
     SdsSubheaderModule,
     DatabankScheduledReportsRoutingModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
   ],
   exports: [DatabankScheduledReportsComponent],
 })

@@ -21,6 +21,8 @@ import { WagesLandingComponent } from "./wages-landing.component";
 import { WagesSubPagesComponent } from "./wages-sub-pages.component";
 import { WagesSubMenuModule } from "./wages-sub-menu/wages-sub-menu.module";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [WagesLandingComponent, WagesSubPagesComponent],
@@ -34,7 +36,9 @@ import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
     SdsSubheaderModule,
     SdsVideoPlayerModule,
     SdsAccordionModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
     SdsExternalLinkDirectivesModule,
 
     WagesSubMenuModule,

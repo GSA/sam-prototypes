@@ -24,7 +24,8 @@ import { FeedServiceModule } from "./service/feed-service.module";
 import { FeedItemModule } from "./feed-item/feed-item.module";
 import { FeedComponent } from "./feed.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 @NgModule({
   imports: [
     CommonModule,
@@ -37,7 +38,9 @@ import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
     SdsPageModule,
     SdsSearchModule,
     SdsSideNavigationModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
     SdsAccordionModule,
     SdsSubheaderModule,
     SdsFiltersModule,

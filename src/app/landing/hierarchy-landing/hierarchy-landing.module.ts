@@ -14,6 +14,8 @@ import { SdsAccordionModule } from "@gsa-sam/sam-material-extensions";
 import { HierarchyLandingRoutingModule } from "./hierarchy-landing-routing.module";
 import { HierarchyLandingComponent } from "./hierarchy-landing.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [HierarchyLandingComponent],
@@ -25,7 +27,9 @@ import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
     SdsAccordionModule,
     HierarchyLandingRoutingModule,
     SdsIconModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
   ],
   exports: [HierarchyLandingComponent],
 })

@@ -17,14 +17,17 @@ import { AlertItemModule } from "./alert-item/alert-item.module";
 import { AlertsRoutingModule } from "./alerts-routing.module";
 import { AlertsComponent } from "./alerts.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 @NgModule({
   declarations: [AlertsComponent],
   imports: [
     CommonModule,
     SdsIconModule,
     RouterModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
     SdsSubheaderModule,
     SearchListServiceModule,
     SdsToolbarModule,

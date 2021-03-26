@@ -9,6 +9,8 @@ import { SdsIconModule, SdsSearchModule } from "@gsa-sam/components";
 import { DownloadsRoutingModule } from "./downloads-routing.module";
 import { DownloadsComponent } from "./downloads.component";
 import { NgxBootstrapIconsModule, allIcons } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [DownloadsComponent],
@@ -19,7 +21,9 @@ import { NgxBootstrapIconsModule, allIcons } from "ngx-bootstrap-icons";
     SdsIconModule,
     SdsSubheaderModule,
     SdsSearchModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
     DownloadsRoutingModule,
   ],
   exports: [DownloadsComponent],

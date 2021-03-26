@@ -12,13 +12,17 @@ import {
 import { OpportunitiesLandingFederalRoutingModule } from "./opportunities-landing-federal-routing.module";
 import { OpportunitiesLandingFederalComponent } from "./opportunities-landing-federal.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [OpportunitiesLandingFederalComponent],
   imports: [
     CommonModule,
     RouterModule,
-    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
     FormsModule,
     SdsSearchModule,
     SdsVideoPlayerModule,
