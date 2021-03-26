@@ -19,9 +19,11 @@ import { LandingBaseComponent } from './landing-base/landing-base.component';
 import { LandingAccordionComponent } from './landing-accordion/landing-accordion.component';
 import { LandingListComponent } from './landing-list/landing-list.component';
 import { LandingCardComponent } from './landing-card/landing-card.component';
+import { LandingFeedComponent } from './landing-feed/landing-feed.component';
+import { NavigateComponent } from './navigate/navigate.component';
 
 @NgModule({
-  declarations: [LandingSearchComponent, LandingHeroComponent, LandingTileDirective, LandingTileComponent, LandingAlertComponent, LandingBaseComponent, LandingAccordionComponent, LandingListComponent, LandingCardComponent],
+  declarations: [LandingSearchComponent, LandingHeroComponent, LandingTileDirective, LandingTileComponent, LandingAlertComponent, LandingBaseComponent, LandingAccordionComponent, LandingListComponent, LandingCardComponent, LandingFeedComponent, NavigateComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -33,6 +35,6 @@ import { LandingCardComponent } from './landing-card/landing-card.component';
     ReactiveFormsModule,
     SdsFormlyModule
   ],
-  exports: [LandingSearchComponent, LandingHeroComponent, LandingTileDirective, LandingTileComponent, LandingAlertComponent, LandingBaseComponent, LandingAccordionComponent, LandingListComponent, LandingCardComponent]
+  exports: [LandingSearchComponent, LandingHeroComponent, LandingTileDirective, LandingTileComponent, LandingAlertComponent, LandingBaseComponent, LandingAccordionComponent, LandingListComponent, LandingCardComponent, LandingFeedComponent, NavigateComponent]
 })
 export class SharedModule { }

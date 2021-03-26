@@ -1,0 +1,13 @@
+<div class="sds-tile--outline">
+  <h3 class="margin-y-1">The Official U.S. Government System for:</h3>
+  <div class="grid-row">
+    <div *ngFor="let list of landingPages" class="grid-col">
+      <ul class="sds-list  sds-list--unstyled sds-list-link">
+        <li *ngFor="let link of list" class="margin-bottom-105">
+          <a [routerLink]="[link.route]" class="usa-link display-block">{{link.text}}</a>
+          {{link.subtext}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

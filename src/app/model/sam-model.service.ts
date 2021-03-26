@@ -16,18 +16,18 @@ export class SamModelService {
 
   signInItem =
     {
-      imageClassPrefix: imageClass: 'log-out', mode: NavigationMode.INTERNAL,
-      text: 'Sign In', route: '/', id: 'signin'
+      imageClassPrefix: 'sds', imageClass: 'log-out', mode: NavigationMode.INTERNAL,
+      text: 'Sign In', route: '/workspace', id: 'signin'
     };
   signOutItem =
     {
-      imageClassPrefix: imageClass: 'log-out', mode: NavigationMode.INTERNAL,
-      text: 'Sign Out', route: '/', id: 'signOut'
+      imageClassPrefix: 'sds', imageClass: 'log-out', mode: NavigationMode.INTERNAL,
+      text: 'Sign Out', route: '/signout', id: 'signOut'
     };
 
   secondaryLinksSignedOut = [{
-      imageClassPrefix: imageClass: 'log-out', mode: NavigationMode.INTERNAL,
-      text: 'Sign Out', route: '/', id: 'signOut' 
+      imageClassPrefix: 'sds', imageClass: 'log-out', mode: NavigationMode.INTERNAL,
+      text: 'Sign In', route: '/signout', id: 'signOut' 
   }]
 
   secondaryLinksSignedIn = [{
@@ -53,7 +53,7 @@ export class SamModelService {
   ];
 
   modelHeader = {
-    secondaryLinks: this.secondaryLinksSignedIn.concat([this.signOutItem]),
+    secondaryLinks: [ this.signInItem ],
     navigationLinks: [
       { text: 'Home', id: 'home', children: [
           { text: 'Home Page', mode: NavigationMode.INTERNAL, route: '/' },
@@ -79,49 +79,6 @@ export class SamModelService {
     }
   };
 
-  modelFooter = {
-    footerLogo: {
-      text: 'General Services Administration',
-      imageSourcePath: this.locationStrategy.getBaseHref() + 'assets/img/logo-gsa.svg',
-      imageAltText: 'GSA Logo'
-    },
-    linkSections: [
-      {
-        text: 'About beta.SAM.gov', links: [
-          { text: 'About This Website', mode: NavigationMode.INTERNAL, route: '/about/about-sam' },
-          { text: 'Release Notes', mode: NavigationMode.INTERNAL, route: '/about/release-notes' },
-          { text: 'Alerts', mode: NavigationMode.INTERNAL, route: '/alerts' },
-          { text: 'News', mode: NavigationMode.INTERNAL, route: '/news' }
-        ]
-      },
-      {
-        text: 'Our Partners', links: [
-          { text: 'Aquisition.gov', mode: NavigationMode.EXTERNAL, route: '/' },
-          { text: 'USASpending.gov', mode: NavigationMode.EXTERNAL, route: '/' },
-          { text: 'Grants.gov', mode: NavigationMode.EXTERNAL, route: '/' },
-          { text: 'More Partners', mode: NavigationMode.EXTERNAL, route: '/' }
-        ]
-      },
-      {
-        text: 'Policies', links: [
-          { text: 'Privacy Policy', mode: NavigationMode.INTERNAL, route: '/about/policies/privacy' },
-          { text: 'Disclaimers', mode: NavigationMode.INTERNAL, route: '/about/policies/disclaimers' },
-          { text: 'Freedom of Information Act', mode: NavigationMode.EXTERNAL, route: '' },
-          { text: 'Accessibility', mode: NavigationMode.INTERNAL, route: '/about/policies/accessibility' }
-        ]
-      },
-      {
-        text: 'Customer Service', links: [
-          { text: 'Help', mode: NavigationMode.INTERNAL, route: '/help' },
-          { text: 'Federal Service Desk', mode: NavigationMode.EXTERNAL, route: 'fsd.gov' },
-          { text: 'Our Community', mode: NavigationMode.EXTERNAL, route: '/about/fsd' },
-          { text: 'External Resources', mode: NavigationMode.INTERNAL, route: '/about/external-resources' },
-          { text: 'Contact', mode: NavigationMode.INTERNAL, route: '/about/contact' }
-        ]
-      }
-    ]
-  };
-
 
   /**
    * Constructor
@@ -131,6 +88,7 @@ export class SamModelService {
 
   signIn(redirectUrl?: string) {
     this.signedIn = true;
+    this.modelHeader.secondaryLinks = this.secondaryLinksSignedIn.concat([this.signOutItem]);
     if (redirectUrl) {
       this.router.navigateByUrl(redirectUrl);
     } else {
@@ -140,6 +98,7 @@ export class SamModelService {
 
   signOut(redirectUrl?: string) {
     this.signedIn = false;
+    this.modelHeader.secondaryLinks = [ this.signInItem ];
     if (!redirectUrl) {
       this.router.navigateByUrl('/');
     } else {
