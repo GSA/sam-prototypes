@@ -15,6 +15,7 @@ import {
 } from "@gsa-sam/components";
 import { SdsHeaderModule, SdsFooterModule } from "@gsa-sam/layouts";
 import { FormlyModule } from "@ngx-formly/core";
+import _ from "lodash-es";
 
 import { AppLayoutModule } from "./app-layout/app-layout.module";
 import { AppService } from "./services/app-service/app.service";
@@ -35,7 +36,9 @@ import { allIcons as sdsAllIcons } from "@gsa-sam/components";
     SdsExternalLinkDirectivesModule,
     FormlyModule,
     SdsIconModule,
-    NgxBootstrapIconsModule.pick({ logOut }),
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
   ],
   providers: [],
   bootstrap: [AppComponent],
