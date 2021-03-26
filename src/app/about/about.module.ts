@@ -7,9 +7,8 @@ import { SdsSubheaderModule, SideToolbarModule } from "@gsa-sam/layouts";
 
 import { AboutRoutingModule } from "./about-routing.module";
 import { AboutComponent } from "./about.component";
-import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-import { allIcons as sdsAllIcons } from "@gsa-sam/components";
-import _ from "lodash-es";
+import { chevronLeft, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+
 @NgModule({
   declarations: [AboutComponent],
   imports: [
@@ -20,9 +19,7 @@ import _ from "lodash-es";
     SideToolbarModule,
     SdsIconModule,
     AboutRoutingModule,
-    NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
-    ),
+    NgxBootstrapIconsModule.pick({ chevronLeft }),
   ],
   exports: [AboutComponent],
 })

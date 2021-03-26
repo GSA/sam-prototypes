@@ -24,9 +24,7 @@ import { HelpRoutingModule } from "./help-routing.module";
 import { HelpComponent } from "./help.component";
 import { HelpItemModule } from "./help-item/help-item.module";
 import { HelpServiceModule } from "./service/service.module";
-import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-import { allIcons as sdsAllIcons } from "@gsa-sam/components";
-import _ from "lodash-es";
+import { chevronLeft, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [HelpComponent],
@@ -45,9 +43,7 @@ import _ from "lodash-es";
     SdsPageModule,
     SdsSearchModule,
     SearchListServiceModule,
-    NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
-    ),
+    NgxBootstrapIconsModule.pick({ chevronLeft }),
     HelpItemModule,
     HelpServiceModule,
     HelpRoutingModule,
