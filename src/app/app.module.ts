@@ -9,6 +9,7 @@ import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
 import {
+  logOut,
   SdsExternalLinkDirectivesModule,
   SdsIconModule,
 } from "@gsa-sam/components";
@@ -18,6 +19,8 @@ import { FormlyModule } from "@ngx-formly/core";
 import { AppLayoutModule } from "./app-layout/app-layout.module";
 import { AppService } from "./services/app-service/app.service";
 import { SamModelService } from "./model/sam-model.service";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,6 +35,7 @@ import { SamModelService } from "./model/sam-model.service";
     SdsExternalLinkDirectivesModule,
     FormlyModule,
     SdsIconModule,
+    NgxBootstrapIconsModule.pick({ logOut }),
   ],
   providers: [],
   bootstrap: [AppComponent],
