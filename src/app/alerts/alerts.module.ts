@@ -16,6 +16,7 @@ import { AlertDataModule } from "./alert-data/alert-data.module";
 import { AlertItemModule } from "./alert-item/alert-item.module";
 import { AlertsRoutingModule } from "./alerts-routing.module";
 import { AlertsComponent } from "./alerts.component";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [AlertsComponent],
@@ -23,7 +24,7 @@ import { AlertsComponent } from "./alerts.component";
     CommonModule,
     SdsIconModule,
     RouterModule,
-
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
     SdsSubheaderModule,
     SearchListServiceModule,
     SdsToolbarModule,

@@ -1,18 +1,16 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { SdsIconModule } from '@gsa-sam/components';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
+import { RouterModule } from "@angular/router";
+import { SdsIconModule } from "@gsa-sam/components";
 
-import {
-  SdsSearchModule,
-  SdsVideoPlayerModule
-} from '@gsa-sam/components';
+import { SdsSearchModule, SdsVideoPlayerModule } from "@gsa-sam/components";
 
-import { SdsAccordionModule } from '@gsa-sam/sam-material-extensions';
+import { SdsAccordionModule } from "@gsa-sam/sam-material-extensions";
 
-import { OpportunitiesLandingRoutingModule } from './opportunities-landing-routing.module';
-import { OpportunitiesLandingComponent } from './opportunities-landing.component';
+import { OpportunitiesLandingRoutingModule } from "./opportunities-landing-routing.module";
+import { OpportunitiesLandingComponent } from "./opportunities-landing.component";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [OpportunitiesLandingComponent],
@@ -24,8 +22,9 @@ import { OpportunitiesLandingComponent } from './opportunities-landing.component
     SdsAccordionModule,
     RouterModule,
     OpportunitiesLandingRoutingModule,
-    SdsIconModule
+    SdsIconModule,
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
   ],
-  exports: [OpportunitiesLandingComponent]
+  exports: [OpportunitiesLandingComponent],
 })
-export class OpportunitiesLandingModule { }
+export class OpportunitiesLandingModule {}

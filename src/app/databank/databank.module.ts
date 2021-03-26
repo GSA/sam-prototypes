@@ -21,13 +21,14 @@ import { FormsModule } from "@angular/forms";
 
 import { DatabankRoutingModule } from "./databank-routing.module";
 import { DatabankComponent } from "./databank.component";
+import { NgxBootstrapIconsModule, allIcons } from "ngx-bootstrap-icons";
 
 @NgModule({
   imports: [
     CommonModule,
     FormlyModule,
     FormsModule,
-
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
     SdsSideNavigationModule,
     SdsToolbarModule,
     SdsAccordionModule,

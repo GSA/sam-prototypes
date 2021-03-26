@@ -7,6 +7,7 @@ import { SdsSubheaderModule, SideToolbarModule } from "@gsa-sam/layouts";
 
 import { AboutRoutingModule } from "./about-routing.module";
 import { AboutComponent } from "./about.component";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [AboutComponent],
@@ -18,6 +19,7 @@ import { AboutComponent } from "./about.component";
     SideToolbarModule,
     SdsIconModule,
     AboutRoutingModule,
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
   ],
   exports: [AboutComponent],
 })

@@ -6,6 +6,7 @@ import { SearchResultListEntityDataItemComponent } from "./search-list-item-enti
 
 import { SdsActionsMenuModule } from "@gsa-sam/layouts";
 import { SdsIconModule } from "@gsa-sam/components";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [SearchResultListEntityDataItemComponent],
@@ -15,6 +16,7 @@ import { SdsIconModule } from "@gsa-sam/components";
     FormsModule,
     SdsActionsMenuModule,
     SdsIconModule,
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
   ],
   exports: [SearchResultListEntityDataItemComponent],
 })

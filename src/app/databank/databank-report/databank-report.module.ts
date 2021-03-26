@@ -12,6 +12,7 @@ import { DatabankServiceModule } from "../../services/databank-service/databank-
 import { DatabankReportRoutingModule } from "./databank-report-routing.module";
 import { DatabankReportComponent } from "./databank-report.component";
 import { SdsIconModule } from "@gsa-sam/components";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [DatabankReportComponent],
@@ -24,6 +25,7 @@ import { SdsIconModule } from "@gsa-sam/components";
     HierarchyNavPickerModule,
     DatabankServiceModule,
     DatabankReportRoutingModule,
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
   ],
   exports: [DatabankReportComponent],
 })

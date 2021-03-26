@@ -7,13 +7,14 @@ import { SdsSearchModule, SdsIconModule } from "@gsa-sam/components";
 
 import { DataServicesRoutingModule } from "./data-services-routing.module";
 import { DataServicesComponent } from "./data-services.component";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
-
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
     SdsSearchModule,
     DataServicesRoutingModule,
     SdsIconModule,

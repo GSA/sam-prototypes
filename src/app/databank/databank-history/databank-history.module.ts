@@ -8,6 +8,7 @@ import { SdsSubheaderModule } from "@gsa-sam/layouts";
 import { DatabankHistoryRoutingModule } from "./databank-history-routing.module";
 import { DatabankHistoryComponent } from "./databank-history.component";
 import { SdsIconModule } from "@gsa-sam/components";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [DatabankHistoryComponent],
@@ -17,6 +18,8 @@ import { SdsIconModule } from "@gsa-sam/components";
     FormsModule,
     SdsIconModule,
     SdsSubheaderModule,
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
+
     DatabankHistoryRoutingModule,
   ],
   exports: [DatabankHistoryComponent],

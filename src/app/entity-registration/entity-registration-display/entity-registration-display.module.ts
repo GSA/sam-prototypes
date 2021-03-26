@@ -13,6 +13,7 @@ import { EntityRegistrationServiceModule } from "../../services/entity-registrat
 
 import { EntityRegistrationDisplayRoutingModule } from "./entity-registration-display-routing.module";
 import { EntityRegistrationDisplayComponent } from "./entity-registration-display.component";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [EntityRegistrationDisplayComponent],
@@ -25,6 +26,7 @@ import { EntityRegistrationDisplayComponent } from "./entity-registration-displa
     SdsSubheaderModule,
     EntityRegistrationServiceModule,
     EntityRegistrationDisplayRoutingModule,
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
   ],
   exports: [EntityRegistrationDisplayComponent],
 })

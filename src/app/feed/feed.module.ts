@@ -23,6 +23,7 @@ import { FeedRoutingModule } from "./feed-routing.module";
 import { FeedServiceModule } from "./service/feed-service.module";
 import { FeedItemModule } from "./feed-item/feed-item.module";
 import { FeedComponent } from "./feed.component";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import { FeedComponent } from "./feed.component";
     SdsPageModule,
     SdsSearchModule,
     SdsSideNavigationModule,
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
     SdsAccordionModule,
     SdsSubheaderModule,
     SdsFiltersModule,

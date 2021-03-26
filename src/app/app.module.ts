@@ -15,11 +15,11 @@ import {
 } from "@gsa-sam/components";
 import { SdsHeaderModule, SdsFooterModule } from "@gsa-sam/layouts";
 import { FormlyModule } from "@ngx-formly/core";
-import _ from "lodash-es";
 
 import { AppLayoutModule } from "./app-layout/app-layout.module";
 import { AppService } from "./services/app-service/app.service";
 import { SamModelService } from "./model/sam-model.service";
+import _ from "lodash-es";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 

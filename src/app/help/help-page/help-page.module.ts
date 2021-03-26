@@ -11,6 +11,7 @@ import {
 
 import { HelpPageRoutingModule } from "./help-page-routing.module";
 import { HelpPageComponent } from "./help-page.component";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [HelpPageComponent],
@@ -21,6 +22,7 @@ import { HelpPageComponent } from "./help-page.component";
     SdsPageModule,
     SdsSearchModule,
     HelpPageRoutingModule,
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
   ],
   exports: [HelpPageComponent],
 })

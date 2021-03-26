@@ -7,6 +7,7 @@ import { SdsSearchModule, SdsIconModule } from "@gsa-sam/components";
 
 import { HelpHomeRoutingModule } from "./help-home-routing.module";
 import { HelpHomeComponent } from "./help-home.component";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [HelpHomeComponent],
@@ -14,7 +15,7 @@ import { HelpHomeComponent } from "./help-home.component";
     CommonModule,
     RouterModule,
     FormsModule,
-
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
     SdsSearchModule,
     HelpHomeRoutingModule,
     SdsIconModule,

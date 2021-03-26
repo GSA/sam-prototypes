@@ -11,13 +11,14 @@ import {
 
 import { ExclusionsFederalRoutingModule } from "./exclusions-federal-routing.module";
 import { ExclusionsFederalComponent } from "./exclusions-federal.component";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [ExclusionsFederalComponent],
   imports: [
     CommonModule,
     RouterModule,
-
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
     FormsModule,
     SdsSearchModule,
     SdsVideoPlayerModule,

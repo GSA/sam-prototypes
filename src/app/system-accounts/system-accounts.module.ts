@@ -1,14 +1,16 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
-import { SystemAccountsRoutingModule } from './system-accounts-routing.module';
+import { SystemAccountsRoutingModule } from "./system-accounts-routing.module";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    SystemAccountsRoutingModule
+    SystemAccountsRoutingModule,
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
   ],
-  exports: []
+  exports: [],
 })
-export class SystemAccountsModule { }
+export class SystemAccountsModule {}

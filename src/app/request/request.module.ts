@@ -23,6 +23,7 @@ import { RequestRoutingModule } from "./request-routing.module";
 import { RequestServiceModule } from "./service/service.module";
 import { RequestItemModule } from "./request-item/request-item.module";
 import { RequestComponent } from "./request.component";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   imports: [
@@ -43,6 +44,8 @@ import { RequestComponent } from "./request.component";
     RequestRoutingModule,
     RequestServiceModule,
     RequestItemModule,
+
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
   ],
   declarations: [RequestComponent],
 })

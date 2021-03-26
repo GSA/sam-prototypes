@@ -24,6 +24,7 @@ import { HelpRoutingModule } from "./help-routing.module";
 import { HelpComponent } from "./help.component";
 import { HelpItemModule } from "./help-item/help-item.module";
 import { HelpServiceModule } from "./service/service.module";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [HelpComponent],
@@ -42,6 +43,7 @@ import { HelpServiceModule } from "./service/service.module";
     SdsPageModule,
     SdsSearchModule,
     SearchListServiceModule,
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
     HelpItemModule,
     HelpServiceModule,
     HelpRoutingModule,

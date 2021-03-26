@@ -21,6 +21,10 @@ import { FormlyModule } from "@ngx-formly/core";
 import { OpportunitiesComponent } from "./opportunities.component";
 import { OpportunitiesRoutingModule } from "./opportunities-routing.module";
 
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
+
 @NgModule({
   imports: [
     CommonModule,
@@ -38,6 +42,7 @@ import { OpportunitiesRoutingModule } from "./opportunities-routing.module";
     SdsIconModule,
     FormlyModule.forRoot(),
     SearchListServiceModule,
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
   ],
   declarations: [OpportunitiesComponent],
   exports: [OpportunitiesComponent],

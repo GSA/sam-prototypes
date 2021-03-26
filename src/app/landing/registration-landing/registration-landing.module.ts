@@ -1,18 +1,19 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
+import { RouterModule } from "@angular/router";
 
 import {
   SdsSearchModule,
   SdsVideoPlayerModule,
-  SdsIconModule
-} from '@gsa-sam/components';
+  SdsIconModule,
+} from "@gsa-sam/components";
 
-import { SdsAccordionModule } from '@gsa-sam/sam-material-extensions';
+import { SdsAccordionModule } from "@gsa-sam/sam-material-extensions";
 
-import { RegistrationLandingRoutingModule } from './registration-landing-routing.module';
-import { RegistrationLandingComponent } from './registration-landing.component';
+import { RegistrationLandingRoutingModule } from "./registration-landing-routing.module";
+import { RegistrationLandingComponent } from "./registration-landing.component";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [RegistrationLandingComponent],
@@ -24,8 +25,9 @@ import { RegistrationLandingComponent } from './registration-landing.component';
     SdsAccordionModule,
     SdsVideoPlayerModule,
     RegistrationLandingRoutingModule,
-    SdsIconModule
+    SdsIconModule,
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
   ],
-  exports: [RegistrationLandingComponent]
+  exports: [RegistrationLandingComponent],
 })
-export class RegistrationLandingModule { }
+export class RegistrationLandingModule {}

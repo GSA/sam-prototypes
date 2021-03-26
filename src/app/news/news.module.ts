@@ -15,6 +15,7 @@ import { NewsDataModule } from "./news-data/news-data.module";
 import { NewsItemModule } from "./news-item/news-item.module";
 import { NewsRoutingModule } from "./news-routing.module";
 import { NewsComponent } from "./news.component";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [NewsComponent],
@@ -22,7 +23,7 @@ import { NewsComponent } from "./news.component";
     CommonModule,
     SdsIconModule,
     RouterModule,
-
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
     SdsSubheaderModule,
     SearchListServiceModule,
     SdsToolbarModule,

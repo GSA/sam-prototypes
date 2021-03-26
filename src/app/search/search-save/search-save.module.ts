@@ -27,6 +27,7 @@ import { FormlySelectModule } from "@ngx-formly/core/select";
 import { SearchSaveServiceModule } from "./search-save-service/search-save-service.module";
 
 import { SearchSaveResultModule } from "./search-save-result/search-save-result.module";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [SearchSaveComponent],
@@ -52,6 +53,7 @@ import { SearchSaveResultModule } from "./search-save-result/search-save-result.
     SearchSaveRoutingModule,
     SearchSaveServiceModule,
     SearchSaveResultModule,
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
   ],
 })
 export class SearchSaveModule {}

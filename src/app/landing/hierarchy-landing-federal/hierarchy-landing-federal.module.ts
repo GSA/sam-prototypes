@@ -7,13 +7,14 @@ import { SdsSearchModule, SdsIconModule } from "@gsa-sam/components";
 
 import { HierarchyLandingFederalRoutingModule } from "./hierarchy-landing-federal-routing.module";
 import { HierarchyLandingFederalComponent } from "./hierarchy-landing-federal.component";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [HierarchyLandingFederalComponent],
   imports: [
     CommonModule,
     RouterModule,
-
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
     FormsModule,
     SdsSearchModule,
     HierarchyLandingFederalRoutingModule,

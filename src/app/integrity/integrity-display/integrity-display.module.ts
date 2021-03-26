@@ -13,6 +13,7 @@ import { IntegrityServiceModule } from "../../services/integrity-service/integri
 
 import { IntegrityDisplayRoutingModule } from "./integrity-display-routing.module";
 import { IntegrityDisplayComponent } from "./integrity-display.component";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [IntegrityDisplayComponent],
@@ -25,6 +26,7 @@ import { IntegrityDisplayComponent } from "./integrity-display.component";
     SdsSubheaderModule,
     IntegrityServiceModule,
     IntegrityDisplayRoutingModule,
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
   ],
   exports: [IntegrityDisplayComponent],
 })

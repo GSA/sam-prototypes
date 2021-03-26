@@ -20,6 +20,7 @@ import {
 } from "@gsa-sam/sam-formly";
 import { SdsSubheaderModule, SearchListServiceModule } from "@gsa-sam/layouts";
 import { FormlyModule } from "@ngx-formly/core";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   imports: [
@@ -38,6 +39,7 @@ import { FormlyModule } from "@ngx-formly/core";
     FormlyModule.forRoot(),
     EntitiesRoutingModule,
     SearchListServiceModule,
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
   ],
   declarations: [EntityListComponent],
   exports: [EntityListComponent],

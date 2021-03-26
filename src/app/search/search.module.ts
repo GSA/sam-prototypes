@@ -48,6 +48,7 @@ import { SearchServiceModule } from "../services/search-service/search-service.m
 import { AdvancedFiltersModule } from "./search-filters/advanced-filters/advanced-filters.module";
 import { SearchRoutingModule } from "./search-routing.module";
 import { SearchComponent } from "./search.component";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [SearchComponent],
@@ -91,6 +92,7 @@ import { SearchComponent } from "./search.component";
     SdsIconModule,
     SdsSelectionPanelModule,
     SideToolbarModule,
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
   ],
   exports: [SearchComponent],
 })

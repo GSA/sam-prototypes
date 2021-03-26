@@ -23,6 +23,7 @@ import { FormlyModule } from "@ngx-formly/core";
 import { AssistancelistRoutingModule } from "./assistancelist-routing.module";
 import { AssistancelistComponent } from "./assistancelist.component";
 import { AssistancelistItemModule } from "./assistancelist-item/assistancelist-item.module";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [AssistancelistComponent],
@@ -41,6 +42,7 @@ import { AssistancelistItemModule } from "./assistancelist-item/assistancelist-i
     SearchListServiceModule,
     AssistancelistItemModule,
     FormlyModule,
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
   ],
   exports: [AssistancelistComponent],
   providers: [SDSFormlyUpdateComunicationService],

@@ -8,6 +8,7 @@ import { SdsIconModule, SdsSearchModule } from "@gsa-sam/components";
 
 import { DownloadsRoutingModule } from "./downloads-routing.module";
 import { DownloadsComponent } from "./downloads.component";
+import { NgxBootstrapIconsModule, allIcons } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [DownloadsComponent],
@@ -18,6 +19,7 @@ import { DownloadsComponent } from "./downloads.component";
     SdsIconModule,
     SdsSubheaderModule,
     SdsSearchModule,
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
     DownloadsRoutingModule,
   ],
   exports: [DownloadsComponent],

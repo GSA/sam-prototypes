@@ -22,6 +22,7 @@ import { DatabankSearchItemModule } from "./databank-search-item/databank-search
 
 import { DatabankSearchRoutingModule } from "./databank-search-routing.module";
 import { DatabankSearchComponent } from "./databank-search.component";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [DatabankSearchComponent],
@@ -42,6 +43,7 @@ import { DatabankSearchComponent } from "./databank-search.component";
     SdsFiltersModule,
     DatabankSearchItemModule,
     SearchListServiceModule,
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
     DatabankServiceModule,
     DatabankSearchRoutingModule,
   ],

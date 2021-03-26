@@ -12,6 +12,7 @@ import { SdsSubheaderModule } from "@gsa-sam/layouts";
 
 import { ProfileRoutingModule } from "./profile-routing.module";
 import { ProfileComponent } from "./profile.component";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [ProfileComponent],
@@ -24,6 +25,7 @@ import { ProfileComponent } from "./profile.component";
     SdsAccordionModule,
     SdsSubheaderModule,
     ProfileRoutingModule,
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
   ],
   exports: [ProfileComponent],
 })

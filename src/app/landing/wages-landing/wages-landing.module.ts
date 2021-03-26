@@ -20,6 +20,7 @@ import { WagesLandingRoutingModule } from "./wages-landing-routing.module";
 import { WagesLandingComponent } from "./wages-landing.component";
 import { WagesSubPagesComponent } from "./wages-sub-pages.component";
 import { WagesSubMenuModule } from "./wages-sub-menu/wages-sub-menu.module";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [WagesLandingComponent, WagesSubPagesComponent],
@@ -33,6 +34,7 @@ import { WagesSubMenuModule } from "./wages-sub-menu/wages-sub-menu.module";
     SdsSubheaderModule,
     SdsVideoPlayerModule,
     SdsAccordionModule,
+    NgxBootstrapIconsModule.pick(Object.assign(allIcons)),
     SdsExternalLinkDirectivesModule,
 
     WagesSubMenuModule,
