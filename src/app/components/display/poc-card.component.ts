@@ -5,16 +5,17 @@ import { IAddress } from '../../services/location-service/location.service';
   selector: 'poc-card',
   template: `
     <div class="sds-card margin-bottom-1">
-        <div class="sds-card__header sds-card__header--left">
-            <div class="sds-card__title ">{{name}} <span *ngIf="isPrimary" class="sds-tag sds-tag--outline">Primary</span></div>
-        </div>
         <div class="sds-card__body">
+            <div class="grid-row grid-gap margin-bottom-1">
+                <div class="grid-col-auto">
+					<div class="sds-card__title ">{{name + ' (' + title + ')'}}</div>
+                </div>
+                <div class="grid-col-fill" *ngIf="isPrimary">
+                	<span class="usa-tag sds-tag--info-white">Primary</span>
+                </div>
+            </div>
+
           	<div class="display-row">
-          		<div class="display-col">
-	      		  <display-field label="Title">
-	      		  	{{title}}
-	      		  </display-field>
-	      		</div>
 	      		<div class="display-col">
 	      		  <display-field label="Email Address">
 	      		  	{{email}}

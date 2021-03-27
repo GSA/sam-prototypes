@@ -20,12 +20,12 @@ const routes: Routes = [
 				loadChildren: () => import('./entity-reps-certs/entity-reps-certs.module').then(m => m.EntityRepsCertsModule)
 			},
 			{
-				path: 'exclusions',
-				loadChildren: () => import('./entity-exclusions/entity-exclusions.module').then(m => m.EntityExclusionsModule)
+				path: 'responsibility-qualification',
+				loadChildren: () => import('./responsibility-qualification/responsibility-qualification.module').then(m => m.ResponsibilityQualificationModule)
 			},
 			{
-				path: 'integrity',
-				loadChildren: () => import('./entity-integrity/entity-integrity.module').then(m => m.EntityIntegrityModule)
+				path: 'history',
+				loadChildren: () => import('./entity-history-display/entity-history-display.module').then(m => m.EntityHistoryDisplayModule)
 			}
 		]
 	}

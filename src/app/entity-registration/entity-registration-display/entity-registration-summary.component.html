@@ -1,6 +1,6 @@
 <h1 class="margin-top-4">{{record.title}}</h1>
 <div class="grid-row grid-gap padding-bottom-1 margin-bottom-2 border-bottom-05 border-base-light">
-	<div class="grid-col-3">
+	<div class="grid-col-6 tablet:grid-col-3">
 		<div class="sds-field sds-field--stacked sds-field--large">
 	        <div class="sds-field__name"><span class="usa-tag sds-tag--info-purple">DUNS</span>Unique Entity ID</div>
 	        <div class="sds-field__value">{{ record.dunsNumber }}</div>
@@ -12,11 +12,11 @@
 	        <div class="sds-field__value">{{ record.cageCode ? record.cageCode : "(blank)" }}</div>
 	    </div>
     </div>
-    <div class="grid-col-auto">
+    <div class="grid-col-6 tablet:grid-col-auto">
     	<span class="sds-type--label-title">Expiration Date</span>
     	<span class="sds-tag sds-tag--outline flex-justify-center width-auto">{{ record.registrationExpirationDate | date }}</span>
     </div>
-    <div class="grid-col-auto">
+    <div class="grid-col-6 tablet:grid-col-auto">
     	<span class="sds-type--label-title">Status</span>
    	    <span class="sds-tag sds-tag--outline flex-justify-center width-auto">Active</span>
     </div>

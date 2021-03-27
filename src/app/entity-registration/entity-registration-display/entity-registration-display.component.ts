@@ -27,8 +27,8 @@ export class EntityRegistrationDisplayComponent implements OnInit {
 	        { id: 'assertions', text: 'Assertions', mode: NavigationMode.INTERNAL, route: 'assertions' },
 	        { id: 'reps-certs', text: 'Reps and Certs', mode: NavigationMode.INTERNAL, route: 'reps-certs' }
         ]},
-        { id: 'respqual', text: 'Responsibility/Qualification', mode: NavigationMode.INTERNAL, route: 'integrity' },
-        { id: 'hierarchy', text: 'Entity Hierarchy', mode: NavigationMode.INTERNAL, route: 'exclusions' }
+        { id: 'respqual', text: 'Responsibility/Qualification', mode: NavigationMode.INTERNAL, route: 'responsibility-qualification' },
+        { id: 'history', text: 'History', mode: NavigationMode.INTERNAL, route: 'history' }
     ]
   };
 
