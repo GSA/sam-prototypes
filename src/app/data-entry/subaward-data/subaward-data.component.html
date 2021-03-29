@@ -1,1 +1,17 @@
-<p>subaward-data works!</p>
+<sds-expandable-card #inputsCard [id]="'subawardcard'" [title]="'Subaward'" [showContent]="'true'"
+  [isExpandable]="true">
+  <ng-container sds-card-title-group-action>
+    <ng-container>
+      <sds-actions-menu size="sm" [model]="menu"></sds-actions-menu>
+    </ng-container>
+
+  </ng-container>
+  <ng-container sds-card-content>
+    <p>Content line1</p>
+    <p>Shilpa</p>
+    <p> Sandhya</p>
+  </ng-container>
+  <ng-container sds-card-footer>
+    <h1>footer</h1>
+  </ng-container>
+</sds-expandable-card>

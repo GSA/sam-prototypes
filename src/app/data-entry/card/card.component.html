@@ -1,1 +1,31 @@
-<p>card works!</p>
+<div class="sds-card border-width-0 margin-2" [id]="id"
+  [ngClass]="{ 'sds-card-expandable': isExpandable, 'display-with-dividers': displayWithDividers }">
+  <div class="sds-card__header sds-card__header--action" *ngIf="title" [id]="id + 'TitleGroup'">
+    <div>
+      <button [id]="id + 'ExpansionInd'" *ngIf="isExpandable"
+        class="sds-expansion-indicator usa-button usa-button--unstyled ml-1" [disabled]="expansionIndicatorDisabled"
+        (click)="toggleContent()">
+        <sds-icon class="padding-right-1" [icon]="['bs', 'chevron-down']" [rotate]="showContent ? 180 : 0" [size]="'1x'"
+          [@expansionIndicatorRotate]="showContent ? 'expanded' : 'collapsed'">
+        </sds-icon>
+        <span class="sr-only">Screen reader description</span>
+      </button>
+      <h2 [id]="id + 'Title'" class="sds-card__title ">{{ title }}</h2>
+    </div>
+
+    <div class="sds-card__action">
+      <ng-content select="ng-container[sds-card-title-group-action]"></ng-content>
+    </div>
+  </div>
+  <ng-container *ngIf="showContent">
+    <div class="sds-card__body" [id]="id + 'Content'">
+      <ng-content select="ng-container[sds-card-content]"></ng-content>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="showFooter && showContent">
+    <div *ngIf="displayWithDividers"></div>
+    <div [id]="id + 'Footer'" class="sds-card-footer">
+      <ng-content select="ng-container[sds-card-footer]"></ng-content>
+    </div>
+  </ng-container>
+</div>

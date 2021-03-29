@@ -7,6 +7,18 @@ import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SubawardDataComponent implements OnInit {
+  menu = {
+    trigger: {
+      type: "plain", // plain | primary
+      shadow: true,
+    },
+    actions: [
+      { id: "DownloadBtn", text: "Download" },
+      { id: "FollowBtn", text: "Follow" },
+      { id: "ShareBtn", text: "Share" },
+    ],
+  };
+
   constructor() {}
 
   ngOnInit(): void {}

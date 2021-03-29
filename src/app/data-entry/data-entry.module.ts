@@ -1,11 +1,10 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { SubawardDataModule } from "./subaward-data/subaward-data.module";
-import { CardComponent } from './card/card.component';
 
 @NgModule({
-  declarations: [CardComponent],
+  declarations: [],
   imports: [CommonModule, SubawardDataModule],
-  exports: [CardComponent],
+  exports: [],
 })
 export class DataEntryModule {}

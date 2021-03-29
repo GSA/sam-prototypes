@@ -1,6 +1,15 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+
+// Material
+import { MatCardModule } from "@angular/material/card";
+import { MatDividerModule } from "@angular/material/divider";
+import { MatIconModule } from "@angular/material/icon";
+import { MatButtonModule } from "@angular/material/button";
 import { CardComponent } from "./card.component";
+import { SdsIconModule } from "@gsa-sam/components";
+
+// Component
 
 @NgModule({
   declarations: [CardComponent],
@@ -10,6 +19,7 @@ import { CardComponent } from "./card.component";
     MatButtonModule,
     MatDividerModule,
     MatIconModule,
+    SdsIconModule,
   ],
   exports: [CardComponent],
 })
