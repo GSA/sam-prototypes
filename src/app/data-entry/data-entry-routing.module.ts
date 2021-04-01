@@ -23,6 +23,13 @@ const routes: Routes = [
         (m) => m.ReviewDetailsModule
       ),
   },
+  {
+    path: "data-entry-home",
+    loadChildren: () =>
+      import("./data-entry-home/data-entry-home.module").then(
+        (m) => m.DataEntryHomeModule
+      ),
+  },
 ];
 
 @NgModule({
