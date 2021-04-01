@@ -1,11 +1,17 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { SubawardDataModule } from "./subaward-data/subaward-data.module";
-import { ReviewContractComponent } from './review-contract/review-contract.component';
+import { ReviewDetailsModule } from "./review-details/review-details.module";
+import { ReviewContractModule } from "./review-contract/review-contract.module";
 
 @NgModule({
-  declarations: [ReviewContractComponent],
-  imports: [CommonModule, SubawardDataModule],
-  exports: [ReviewContractComponent],
+  declarations: [],
+  imports: [
+    CommonModule,
+    SubawardDataModule,
+    ReviewDetailsModule,
+    ReviewContractModule,
+  ],
+  exports: [],
 })
 export class DataEntryModule {}

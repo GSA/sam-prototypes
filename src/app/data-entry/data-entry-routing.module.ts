@@ -8,9 +8,6 @@ const routes: Routes = [
       import("./subaward-data/subaward-data.module").then(
         (m) => m.SubawardDataModule
       ),
-    data: {
-      id: "dataentry",
-    },
   },
   {
     path: "review-contract",
@@ -18,9 +15,13 @@ const routes: Routes = [
       import("./review-contract/review-contract.module").then(
         (m) => m.ReviewContractModule
       ),
-    data: {
-      id: "dataentry",
-    },
+  },
+  {
+    path: "review-details",
+    loadChildren: () =>
+      import("./review-details/review-details.module").then(
+        (m) => m.ReviewDetailsModule
+      ),
   },
 ];
 
