@@ -4,7 +4,7 @@ import { ReviewContractComponent } from "./review-contract.component";
 
 const routes: Routes = [
   {
-    path: "",
+    path: "review-contract",
     component: ReviewContractComponent,
   },
 ];

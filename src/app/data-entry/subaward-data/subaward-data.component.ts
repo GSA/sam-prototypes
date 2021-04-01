@@ -25,46 +25,7 @@ export class SubawardDataComponent implements OnInit {
     ],
   };
 
-  navigationLinks = [
-    {
-      text: "Review Contract",
-      route: "/dataentry",
-      id: "reviewContract",
-      queryParams: { type: "reviewContract" },
-      mode: NavigationMode.INTERNAL,
-    },
-    {
-      text: "Report Details",
-      route: "/dataentry",
-      id: "reportDetails",
-      queryParams: { type: "reportDetails" },
-      mode: NavigationMode.INTERNAL,
-    },
-    {
-      text: "Subawardee Data",
-      route: "/dataentry",
-      id: "subawardeeData",
-      queryParams: { type: "subawardeeData" },
-      mode: NavigationMode.INTERNAL,
-    },
-    {
-      text: "Review and Submit",
-      route: "/dataentry",
-      id: "reviewAndSubmit",
-      queryParams: { type: "reviewAndSubmit" },
-      mode: NavigationMode.INTERNAL,
-    },
-  ];
-  selectionPanelModel: SelectionPanelModel = {
-    navigationLinks: this.navigationLinks,
-    selectionMode: "SELECTION",
-  };
-  constructor(private route: ActivatedRoute, public router: Router) {}
+  constructor() {}
 
   ngOnInit(): void {}
-  onPanelSelected(ev: NavigationLink) {
-    this.router.navigate(["/dataentry"], {
-      queryParams: ev.queryParams,
-    });
-  }
 }

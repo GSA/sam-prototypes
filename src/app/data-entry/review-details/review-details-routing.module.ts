@@ -4,7 +4,7 @@ import { ReviewDetailsComponent } from "./review-details.component";
 
 const routes: Routes = [
   {
-    path: "",
+    path: "review-details",
     component: ReviewDetailsComponent,
   },
 ];
