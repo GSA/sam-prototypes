@@ -4,7 +4,7 @@ import { SubawardDataComponent } from "./subaward-data.component";
 import { SubawardRoutingModule } from "./subaward-routing.module";
 import { CardModule } from "../card/card.module";
 import { SdsActionsMenuModule } from "@gsa-sam/layouts";
-import { SdsIconModule } from "@gsa-sam/components";
+import { SdsIconModule, SdsSelectionPanelModule } from "@gsa-sam/components";
 
 @NgModule({
   declarations: [SubawardDataComponent],
@@ -14,6 +14,7 @@ import { SdsIconModule } from "@gsa-sam/components";
     CardModule,
     SdsActionsMenuModule,
     SdsIconModule,
+    SdsSelectionPanelModule,
   ],
   exports: [SubawardDataComponent],
 })

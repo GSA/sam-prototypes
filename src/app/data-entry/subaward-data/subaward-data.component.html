@@ -1,17 +1,30 @@
-<sds-expandable-card #inputsCard [id]="'subawardcard'" [title]="'Subaward'" [showContent]="'true'"
-  [isExpandable]="true">
-  <ng-container sds-card-title-group-action>
-    <ng-container>
-      <sds-actions-menu size="sm" [model]="menu"></sds-actions-menu>
-    </ng-container>
+<div class="sds-page condensed margin-top-2">
+  <div class="grid-container grid-row grid-gap">
+    <div class="desktop:grid-col-4 tablet-lg:grid-col-12 mobile-lg:grid-col-12 margin-bottom-3">
+      <div class="sds-card">
+        <div class="sds-card__body sds-card__body--accent-cool">
+          <div class="sds-card__header">FSRS New Report</div>
+          <sds-selection-panel [model]="selectionPanelModel" (panelSelected)="onPanelSelected($event)">
+          </sds-selection-panel>
+        </div>
+      </div>
+    </div>
 
-  </ng-container>
-  <ng-container sds-card-content>
-    <p>Content line1</p>
-    <p>Shilpa</p>
-    <p> Sandhya</p>
-  </ng-container>
-  <ng-container sds-card-footer>
-    <h1>footer</h1>
-  </ng-container>
-</sds-expandable-card>
+    <div class="desktop:grid-col-8 tablet-lg:grid-col-12 mobile-lg:grid-col-12">
+      <sds-expandable-card #inputsCard [id]="'subawardcard'" [title]="'Subaward'" [showContent]="'true'"
+        [isExpandable]="true">
+        <ng-container sds-card-title-group-action>
+          <ng-container>
+            <sds-actions-menu size="sm" [model]="menu"></sds-actions-menu>
+          </ng-container>
+
+        </ng-container>
+        <ng-container sds-card-content>
+          <p>Content line1</p>
+
+        </ng-container>
+      </sds-expandable-card>
+
+    </div>
+  </div>
+</div>
