@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { EntityExclusionsComponent } from './entity-exclusions.component';
+import { ResponsibilityQualificationComponent } from './responsibility-qualification.component';
 
 const routes: Routes = [
 	{
 		path: '',
-		component: EntityExclusionsComponent
+		component: ResponsibilityQualificationComponent
 	}
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class EntityExclusionsRoutingModule { }
+export class ResponsibilityQualificationRoutingModule { }

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { EntityIntegrityComponent } from './entity-integrity.component';
+import { EntityHistoryDisplayComponent } from './entity-history-display.component';
 
 const routes: Routes = [
 	{
 		path: '',
-		component: EntityIntegrityComponent
+		component: EntityHistoryDisplayComponent
 	}
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class EntityIntegrityRoutingModule { }
+export class EntityHistoryDisplayRoutingModule { }
