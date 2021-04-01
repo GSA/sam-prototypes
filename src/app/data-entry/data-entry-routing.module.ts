@@ -12,6 +12,16 @@ const routes: Routes = [
       id: "dataentry",
     },
   },
+  {
+    path: "review-contract",
+    loadChildren: () =>
+      import("./review-contract/review-contract.module").then(
+        (m) => m.ReviewContractModule
+      ),
+    data: {
+      id: "dataentry",
+    },
+  },
 ];
 
 @NgModule({
