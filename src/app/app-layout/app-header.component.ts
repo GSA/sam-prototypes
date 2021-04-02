@@ -17,7 +17,7 @@ import { AppService } from '../services/app-service/app.service';
 		    </div>
 		  </div>
 	  </div>
-    <sds-header #header [model]="model" [showTopBanner]="false" [showHeaderLogo]="!isHomePage" (linkEvent)="navigateTo($event)"></sds-header>
+    <sds-header #header [model]="model" [showTopBanner]="false" [showHeaderLogo]="!isHomePage" (linkEvent)="menuItemSelected($event)"></sds-header>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -30,7 +30,7 @@ export class AppHeaderComponent implements OnInit {
 
   signInItem =
   {
-      imageClassPrefix: 'sds', imageClass: 'log-out', mode: NavigationMode.INTERNAL,
+      imageClassPrefix: 'sds', imageClass: 'log-out', mode: NavigationMode.EVENT,
       text: 'Sign In', route: '/workspace', id: 'signin'
   };
 
@@ -49,8 +49,8 @@ export class AppHeaderComponent implements OnInit {
         text: 'Workspace', route: '/workspace', id: 'workspace'
       },
       {
-        imageClassPrefix: 'sds', imageClass: 'log-out', mode: NavigationMode.INTERNAL,
-        text: 'Sign Out', route: '/signout', id: 'signOut'
+        imageClassPrefix: 'sds', imageClass: 'log-out', mode: NavigationMode.EVENT,
+        text: 'Sign Out', route: '/signout', id: 'signout'
       }];
 
   constructor(
@@ -60,6 +60,10 @@ export class AppHeaderComponent implements OnInit {
     public locationStrategy: LocationStrategy,
     private cdr: ChangeDetectorRef,
   ) { 
+       
+       this.appService.signInChange$.subscribe((value) => {
+          this.signInOutEvent(value);
+       });
 
        this.model = {
           secondaryLinks: [ this.signInItem ],
@@ -123,7 +127,22 @@ export class AppHeaderComponent implements OnInit {
       });
   }
 
-  navigateTo(navigationLink) {
-    console.log('Navigation to...');
+  signInOutEvent(signedIn: boolean) {
+    if(!this.model) {
+      return;
+    }
+    if(signedIn) {
+      this.model.secondaryLinks = this.secondaryLinksSignedIn;
+    } else {
+      this.model.secondaryLinks = [this.signInItem];
+    }
+  }
+
+  menuItemSelected(link) {
+    if(link.id == "signin") {
+      this.appService.signIn();
+    } else if (link.id == "signout") {
+      this.appService.signOut();
+    }
   }
 }
