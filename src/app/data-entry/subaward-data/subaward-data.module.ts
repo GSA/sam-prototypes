@@ -4,7 +4,10 @@ import { SubawardDataComponent } from "./subaward-data.component";
 import { SubawardRoutingModule } from "./subaward-routing.module";
 import { CardModule } from "../card/card.module";
 import { SdsActionsMenuModule } from "@gsa-sam/layouts";
-import { SdsIconModule, SdsSelectionPanelModule } from "@gsa-sam/components";
+import { SdsDialogModule, SdsIconModule } from "@gsa-sam/components";
+import { SdsFormlyDialogModule, SdsFormlyModule } from "@gsa-sam/sam-formly";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FormlyModule } from "@ngx-formly/core";
 
 @NgModule({
   declarations: [SubawardDataComponent],
@@ -12,9 +15,15 @@ import { SdsIconModule, SdsSelectionPanelModule } from "@gsa-sam/components";
     CommonModule,
     SubawardRoutingModule,
     CardModule,
+    FormsModule,
     SdsActionsMenuModule,
     SdsIconModule,
-    SdsSelectionPanelModule,
+    ReactiveFormsModule,
+    SdsFormlyModule,
+    FormsModule,
+    SdsFormlyDialogModule,
+    SdsDialogModule,
+    FormlyModule.forRoot(),
   ],
   exports: [SubawardDataComponent],
 })

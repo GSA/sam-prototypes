@@ -1,13 +1,25 @@
-<sds-expandable-card #inputsCard [id]="'subawardcard'" [title]="'Subaward'" [showContent]="'true'"
-  [isExpandable]="true">
-  <ng-container sds-card-title-group-action>
-    <ng-container>
-      <sds-actions-menu size="sm" [model]="menu"></sds-actions-menu>
+<div class="grid-container">
+  <h3>Add Subawardee</h3>
+  <form [formGroup]="form">
+    <div class="grid-row">
+      <formly-form class="grid-col-6 padding-right-2" [model]="model" [fields]="fields" [options]="options"
+        [form]="form"></formly-form>
+      <button class="usa-button grid-col-4" type="button" (click)="addSubawardee()">Auto-fill Vendor
+        Information</button>
+    </div>
+  </form>
+
+
+  <sds-expandable-card #inputsCard [id]="'subawardcard'" [title]="'Subaward'" [showContent]="'true'"
+    [isExpandable]="true">
+    <ng-container sds-card-title-group-action>
+      <ng-container>
+        <sds-actions-menu size="sm" [model]="menu"></sds-actions-menu>
+      </ng-container>
+
     </ng-container>
-
-  </ng-container>
-  <ng-container sds-card-content>
-    <p>Content line1</p>
-
-  </ng-container>
-</sds-expandable-card>
+    <ng-container sds-card-content>
+      <p>Content line1</p>
+    </ng-container>
+  </sds-expandable-card>
+</div>
