@@ -1,10 +1,12 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import {
   NavigationLink,
   NavigationMode,
   SelectionPanelModel,
 } from "@gsa-sam/components";
+import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 
 @Component({
   selector: "app-subaward-data",
@@ -28,4 +30,7 @@ export class SubawardDataComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+  preFill() {
+    console.log("test");
+  }
 }

@@ -5,8 +5,8 @@
       <button [id]="id + 'ExpansionInd'" *ngIf="isExpandable"
         class="sds-expansion-indicator usa-button usa-button--unstyled ml-1" [disabled]="expansionIndicatorDisabled"
         (click)="toggleContent()">
-        <sds-icon [icon]="showContent? ['bs', 'dash']: ['bs', 'plus']" [size]="'2x'"
-          [@expansionIndicatorRotate]="showContent ? 'expanded' : 'collapsed'">
+        <sds-icon class="padding-right-1 padding-top-1" [icon]="showContent? ['bs', 'dash']: ['bs', 'plus']"
+          [size]="'2x'" [@expansionIndicatorRotate]="showContent ? 'expanded' : 'collapsed'">
         </sds-icon>
         <span class="sr-only">Screen reader description</span>
       </button>
