@@ -136,6 +136,11 @@ const routes: Routes = [
       import("./data-entry/data-entry.module").then((m) => m.DataEntryModule),
   },
   {
+    path: "entity-reporting",
+    loadChildren: () =>
+      import("./entity-reporting/entity-reporting.module").then((m) => m.EntityReportingModule),
+  },
+  {
     path: "signout",
     pathMatch: "full",
     redirectTo: "/",
