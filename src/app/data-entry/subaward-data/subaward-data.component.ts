@@ -1,18 +1,16 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
-import { FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import {
   NavigationLink,
   NavigationMode,
   SelectionPanelModel,
 } from "@gsa-sam/components";
-import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 
 @Component({
   selector: "app-subaward-data",
   templateUrl: "./subaward-data.component.html",
   styleUrls: ["./subaward-data.component.scss"],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SubawardDataComponent implements OnInit {
   menu = {
@@ -30,7 +28,4 @@ export class SubawardDataComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  preFill() {
-    console.log("test");
-  }
 }

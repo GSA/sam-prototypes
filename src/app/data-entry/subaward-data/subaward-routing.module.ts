@@ -4,7 +4,7 @@ import { SubawardDataComponent } from "./subaward-data.component";
 
 const routes: Routes = [
   {
-    path: "/subaward",
+    path: '',
     component: SubawardDataComponent,
   },
 ];

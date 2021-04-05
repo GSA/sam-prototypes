@@ -7,12 +7,12 @@ import {
 } from "@gsa-sam/components";
 
 @Component({
-  selector: "app-data-entry-home",
-  templateUrl: "./data-entry-home.component.html",
-  styleUrls: ["./data-entry-home.component.scss"],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: "app-data-entry",
+  templateUrl: "./data-entry.component.html",
+  styleUrls: [],
+//   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DataEntryHomeComponent implements OnInit {
+export class DataEntryComponent implements OnInit {
   templateName = "subaward";
   menu = {
     trigger: {
@@ -29,30 +29,26 @@ export class DataEntryHomeComponent implements OnInit {
   navigationLinks = [
     {
       text: "Review Contract",
-      route: "/dataentry",
+      route: "review-contract",
       id: "reviewContract",
-      queryParams: { type: "reviewContract" },
       mode: NavigationMode.INTERNAL,
     },
     {
       text: "Report Details",
-      route: "/dataentry",
+      route: "review-details",
       id: "reportDetails",
-      queryParams: { type: "reportDetails" },
       mode: NavigationMode.INTERNAL,
     },
     {
       text: "Subawardee Data",
-      route: "/dataentry",
+      route: "subaward",
       id: "subawardeeData",
-      queryParams: { type: "subawardeeData" },
       mode: NavigationMode.INTERNAL,
     },
     {
       text: "Review and Submit",
-      route: "/dataentry",
+      route: "reviewSubmit",   //change it to new route
       id: "reviewAndSubmit",
-      queryParams: { type: "reviewAndSubmit" },
       mode: NavigationMode.INTERNAL,
     },
   ];
@@ -64,8 +60,6 @@ export class DataEntryHomeComponent implements OnInit {
 
   ngOnInit(): void {}
   onPanelSelected(ev: NavigationLink) {
-    this.router.navigate(["/dataentry"], {
-      queryParams: ev.queryParams,
-    });
+    this.router.navigate([ev.route], { relativeTo: this.route });
   }
 }
