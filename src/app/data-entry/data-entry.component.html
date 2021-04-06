@@ -1,39 +1,19 @@
 <div class="sds-page condensed margin-top-2">
-    <div class="grid-container grid-row grid-gap">
-      <div class="desktop:grid-col-4 tablet-lg:grid-col-12 mobile-lg:grid-col-12 margin-bottom-3">
-        <div class="sds-card">
-          <div class="sds-card__body sds-card__body--accent-cool">
-            <div class="sds-card__header">FSRS New Report</div>
-            <sds-selection-panel [model]="selectionPanelModel" (panelSelected)="onPanelSelected($event)">
-            </sds-selection-panel>
-          </div>
+  <div class="grid-container grid-row grid-gap">
+    <div class="desktop:grid-col-4 tablet-lg:grid-col-12 mobile-lg:grid-col-12 margin-bottom-3">
+      <div class="sds-card">
+        <div class="sds-card__body sds-card__body--accent-cool">
+          <div class="sds-card__header">FSRS New Report</div>
+          <sds-selection-panel [model]="selectionPanelModel" (panelSelected)="onPanelSelected($event)">
+          </sds-selection-panel>
         </div>
       </div>
-  
-      <div class="desktop:grid-col-8 tablet-lg:grid-col-12 mobile-lg:grid-col-12">
-        <div>Content</div>
-        <router-outlet></router-outlet>
-        <!-- <div *ngIf="templateName == 'subaward'">
-          <ng-container *ngTemplateOutlet="subaward">
-          </ng-container>
-        </div>
-   -->
-      </div>
-     </div>
+    </div>
+
+    <div class="desktop:grid-col-8 tablet-lg:grid-col-12 mobile-lg:grid-col-12">
+
+      <router-outlet></router-outlet>
+
+    </div>
   </div>
-  
-  <!-- <ng-container>
-  
-  </ng-container>
-  <ng-template #subaward>
-    <app-subaward-data></app-subaward-data>
-  </ng-template>
-  
-  <ng-template #reviewContract>
-    <app-review-contract></app-review-contract>
-  </ng-template>
-  
-  <ng-template #reviewDetails>
-    <app-review-details></app-review-details>
-  </ng-template>
-   -->
+</div>

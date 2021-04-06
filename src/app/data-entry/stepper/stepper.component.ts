@@ -26,7 +26,7 @@ export class StepperComponent extends CdkStepper {
     return !(this.steps.length === this.selectedIndex + 1);
   }
   isPreviousButtonHidden() {
-    return this.steps.length === this.selectedIndex - 1;
+    return this.selectedIndex !== 0;
   }
   onClick(index: number): void {
     this.selectedIndex = index;

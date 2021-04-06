@@ -1,5 +1,5 @@
 <div class="usa-step-indicator usa-step-indicator--counters-sm" aria-label="progress">
-  <ol class="usa-step-indicator__segments">
+  <ol class="usa-step-indicator__segments" *ngIf="steps.length>1">
     <ng-container *ngFor="let step of steps; let i = index;">
       <li class="usa-step-indicator__segment"
         [ngClass]="(selectedIndex === i) ? 'usa-step-indicator__segment--current' : ''">
@@ -32,12 +32,17 @@
   </div>
 
   <div class="sds-button-row">
-    <button *ngIf="isPreviousButtonHidden()" cdkStepperPrevious
-      class="usa-button usa-button--secondary">Previous</button>
-    <button *ngFor="let step of steps; let i = index;" (click)="onClick(i)"
-      class="usa-button usa-button--secondary">Step {{i + 1}}</button>
-    <button *ngIf="isNextButtonHidden()" cdkStepperNext class="usa-button usa-button--secondary">Next</button>
-
+    <button *ngIf="isPreviousButtonHidden()" cdkStepperPrevious class="usa-button sds-button--circle">
+      <sds-icon [icon]="['bs', 'chevron-left']"></sds-icon>
+    </button>
+    <button *ngIf="isNextButtonHidden() && isPreviousButtonHidden()" class="usa-button sds-button--circle">
+      <sds-icon [icon]="['bs', 'x']"></sds-icon>
+    </button>
+    <!-- <button *ngFor="let step of steps; let i = index;" (click)="onClick(i)"
+      class="usa-button usa-button--secondary">Step {{i + 1}}</button> -->
+    <button *ngIf="isNextButtonHidden()" cdkStepperNext class="usa-button sds-button--circle">
+      <sds-icon [icon]="['bs', 'chevron-right']"></sds-icon>
+    </button>
   </div>
 
 </div>

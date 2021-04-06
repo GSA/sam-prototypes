@@ -14,14 +14,7 @@ import { CdkStepperModule } from "@angular/cdk/stepper";
 
 @NgModule({
   declarations: [StepperComponent],
-  imports: [
-    CommonModule,
-    MatCardModule,
-    MatButtonModule,
-    MatDividerModule,
-    SdsIconModule,
-    CdkStepperModule,
-  ],
+  imports: [CommonModule, SdsIconModule, CdkStepperModule],
   exports: [StepperComponent],
 })
 export class StepperModule {}

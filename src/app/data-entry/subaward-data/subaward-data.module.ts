@@ -8,6 +8,7 @@ import { SdsDialogModule, SdsIconModule } from "@gsa-sam/components";
 import { SdsFormlyDialogModule, SdsFormlyModule } from "@gsa-sam/sam-formly";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FormlyModule } from "@ngx-formly/core";
+import { PrototypeFormlyModule } from "../formly/formly-module";
 
 @NgModule({
   declarations: [SubawardDataComponent],
@@ -20,10 +21,10 @@ import { FormlyModule } from "@ngx-formly/core";
     SdsIconModule,
     ReactiveFormsModule,
     SdsFormlyModule,
-    FormsModule,
     SdsFormlyDialogModule,
     SdsDialogModule,
     FormlyModule.forRoot(),
+    PrototypeFormlyModule,
   ],
   exports: [SubawardDataComponent],
 })
