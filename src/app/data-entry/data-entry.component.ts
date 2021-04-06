@@ -59,10 +59,15 @@ export class DataEntryComponent implements OnInit {
     navigationLinks: this.navigationLinks,
     selectionMode: "SELECTION",
   };
+  currentSelectedPanel = this.selectionPanelModel.navigationLinks[0];
   constructor(private route: ActivatedRoute, public router: Router) {}
 
   ngOnInit(): void {}
   onPanelSelected(ev: NavigationLink) {
+    this.currentSelectedPanel = {
+      ...ev,
+    };
+
     this.currentPageIndex = this.navigationLinks.indexOf(ev);
     this.router.navigate([ev.route], { relativeTo: this.route });
   }
