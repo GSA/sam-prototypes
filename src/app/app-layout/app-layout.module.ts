@@ -28,9 +28,12 @@ import { BackButtonComponent } from './back-button.component';
 import { DisplayNavigationComponent } from './display-navigation/display-navigation.component';
 import { DisplaySectionComponent } from './display-section.component';
 import { DisplaySubsectionComponent } from './display-subsection.component';
+import { SubheaderButtonsComponent } from './subheader-buttons.component';
+import { ResponsiveSidebarComponent } from './responsive-sidebar.component';
+import { SearchResultComponent } from './search-result.component';
 
 @NgModule({
-  declarations: [AppHeaderComponent, AppFooterComponent, AppFeedbackComponent, AppAlertsComponent, DisplaySubheaderComponent, SubheaderTitleComponent, BackButtonComponent, DisplayNavigationComponent, DisplaySectionComponent, DisplaySubsectionComponent],
+  declarations: [AppHeaderComponent, AppFooterComponent, AppFeedbackComponent, AppAlertsComponent, DisplaySubheaderComponent, SubheaderTitleComponent, BackButtonComponent, DisplayNavigationComponent, DisplaySectionComponent, DisplaySubsectionComponent, SubheaderButtonsComponent, ResponsiveSidebarComponent, SearchResultComponent],
   imports: [
     CommonModule,
     SdsHeaderModule,
@@ -44,6 +47,6 @@ import { DisplaySubsectionComponent } from './display-subsection.component';
     SdsExternalLinkDirectivesModule,
     SdsIconModule
   ],
-  exports: [AppHeaderComponent, AppFooterComponent, AppFeedbackComponent, AppAlertsComponent, DisplaySubheaderComponent, SubheaderTitleComponent, BackButtonComponent, DisplayNavigationComponent, DisplaySectionComponent, DisplaySubsectionComponent]
+  exports: [AppHeaderComponent, AppFooterComponent, AppFeedbackComponent, AppAlertsComponent, DisplaySubheaderComponent, SubheaderTitleComponent, BackButtonComponent, DisplayNavigationComponent, DisplaySectionComponent, DisplaySubsectionComponent, SubheaderButtonsComponent, ResponsiveSidebarComponent, SearchResultComponent]
 })
 export class AppLayoutModule { }
