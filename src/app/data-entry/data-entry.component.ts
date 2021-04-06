@@ -10,7 +10,7 @@ import {
   selector: "app-data-entry",
   templateUrl: "./data-entry.component.html",
   styleUrls: [],
-//   changeDetection: ChangeDetectionStrategy.OnPush,
+  //   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DataEntryComponent implements OnInit {
   templateName = "subaward";
@@ -26,6 +26,9 @@ export class DataEntryComponent implements OnInit {
     ],
   };
 
+  currentPageIndex = 0;
+  previousPage: string;
+  nextPage: string;
   navigationLinks = [
     {
       text: "Review Contract",
@@ -47,7 +50,7 @@ export class DataEntryComponent implements OnInit {
     },
     {
       text: "Review and Submit",
-      route: "reviewSubmit",   //change it to new route
+      route: "reviewSubmit", //change it to new route
       id: "reviewAndSubmit",
       mode: NavigationMode.INTERNAL,
     },
@@ -60,6 +63,7 @@ export class DataEntryComponent implements OnInit {
 
   ngOnInit(): void {}
   onPanelSelected(ev: NavigationLink) {
+    this.currentPageIndex = this.navigationLinks.indexOf(ev);
     this.router.navigate([ev.route], { relativeTo: this.route });
   }
 }

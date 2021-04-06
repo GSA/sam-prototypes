@@ -11,8 +11,36 @@
     </div>
 
     <div class="desktop:grid-col-8 tablet-lg:grid-col-12 mobile-lg:grid-col-12">
-
+      <div>Content</div>
       <router-outlet></router-outlet>
+
+      <div class="sds-button-row">
+        <button (click)="onPanelSelected(navigationLinks[currentPageIndex - 1])" *ngIf="currentPageIndex > 0"
+          class="usa-button">
+          Go back to
+          {{ (navigationLinks[currentPageIndex - 1]).text }}
+        </button>
+        <button class="usa-button">
+          Help
+        </button>
+        <button class="usa-button">
+          Cancel
+        </button>
+        <!-- <button *ngFor="let step of steps; let i = index;" (click)="onClick(i)"
+          class="usa-button usa-button--secondary">Step {{i + 1}}</button> -->
+        <button (click)="onPanelSelected(navigationLinks[currentPageIndex + 1])" class="usa-button">
+          Go to
+          {{ (navigationLinks[currentPageIndex + 1]).text }}
+        </button>
+      </div>
+
+
+      <!-- <button (click)="onPanelSelected(navigationLinks[currentPageIndex - 1])" *ngIf="currentPageIndex > 0">go back to
+        {{ (navigationLinks[currentPageIndex - 1 ]).text }}</button>
+      <button>Close</button>
+      <button>Help</button>
+      <button (click)="onPanelSelected(navigationLinks[currentPageIndex + 1])" *ngIf="currentPageIndex < 3">go to
+        {{ (navigationLinks[currentPageIndex + 1]).text }}</button> -->
 
     </div>
   </div>
