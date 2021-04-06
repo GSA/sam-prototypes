@@ -9,20 +9,21 @@
     </div>
   </form>
 
+  <div *ngFor="let item of items">
+    <sds-expandable-card #inputsCard [id]="'subawardcard'" [title]="'Subaward'" [showContent]="'false'"
+      [isExpandable]="true">
+      <ng-container sds-card-title-group-action>
+        <ng-container>
+          <sds-actions-menu size="sm" [model]="menu"></sds-actions-menu>
+        </ng-container>
 
-  <sds-expandable-card #inputsCard [id]="'subawardcard'" [title]="'Subaward'" [showContent]="'true'"
-    [isExpandable]="true">
-    <ng-container sds-card-title-group-action>
-      <ng-container>
-        <sds-actions-menu size="sm" [model]="menu"></sds-actions-menu>
       </ng-container>
+      <ng-container sds-card-content>
+        <child-item-sample></child-item-sample>
+      </ng-container>
+      <ng-container sds-card-title-group-action>
 
-    </ng-container>
-    <ng-container sds-card-content>
-      <p>Content line1</p>
-    </ng-container>
-    <ng-container sds-card-title-group-action>
-
-    </ng-container>
-  </sds-expandable-card>
+      </ng-container>
+    </sds-expandable-card>
+  </div>
 </div>

@@ -9,9 +9,10 @@ import { SdsFormlyDialogModule, SdsFormlyModule } from "@gsa-sam/sam-formly";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FormlyModule } from "@ngx-formly/core";
 import { PrototypeFormlyModule } from "../formly/formly-module";
+import { ResultListItemChildSampleComponent } from "./child-item.component";
 
 @NgModule({
-  declarations: [SubawardDataComponent],
+  declarations: [SubawardDataComponent, ResultListItemChildSampleComponent],
   imports: [
     CommonModule,
     SubawardRoutingModule,
@@ -26,6 +27,6 @@ import { PrototypeFormlyModule } from "../formly/formly-module";
     FormlyModule.forRoot(),
     PrototypeFormlyModule,
   ],
-  exports: [SubawardDataComponent],
+  exports: [SubawardDataComponent, ResultListItemChildSampleComponent],
 })
 export class SubawardDataModule {}

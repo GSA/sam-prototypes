@@ -1,13 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { FormGroup } from "@angular/forms";
-import { ActivatedRoute, Router } from "@angular/router";
-import {
-  NavigationLink,
-  NavigationMode,
-  SdsDialogService,
-  SelectionPanelModel,
-} from "@gsa-sam/components";
-import { FormlyJsonschema } from "@ngx-formly/core/json-schema";
+import { SdsDialogService } from "@gsa-sam/components";
 
 import { SdsFormlyDialogComponent } from "@gsa-sam/sam-formly";
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
@@ -23,9 +16,18 @@ export interface StepType {
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SubawardDataComponent implements OnInit {
+  itemsDefault = [
+    { title: "First", id: 1 },
+    { title: "Second", id: 2 },
+    { title: "Third", id: 3 },
+    { title: "Fourth", id: 4 },
+    { title: "Fifth", id: 5, hasNewerData: true },
+  ];
+
+  items = this.itemsDefault;
   menu = {
     trigger: {
-      type: "plain", // plain | primary
+      type: "plain",
       shadow: true,
     },
     actions: [
@@ -51,81 +53,20 @@ export class SubawardDataComponent implements OnInit {
   subawardeeModel: any = {};
   subawardeemodel: any = {};
   subawardeeoptions: FormlyFormOptions;
+
   subawardeefields: FormlyFieldConfig[] = [
-    {
-      key: "subawardee",
-      templateOptions: {
-        label: "Entity Information",
-        group: "panel",
-      },
-      fieldGroup: [
-        {
-          key: "number",
-          type: "input",
-          templateOptions: {
-            label: "Subawardee Number",
-          },
-        },
-        {
-          key: "name",
-          type: "input",
-          templateOptions: {
-            label: "Subawardee Name",
-          },
-        },
-        {
-          key: "date",
-          type: "datepicker",
-          templateOptions: {
-            label: "Subawardee Date",
-            placeholder:
-              "eg: " +
-              new Date().toLocaleString("en-US", {
-                month: "short",
-                day: "numeric",
-                year: "numeric",
-              }),
-          },
-        },
-        {
-          key: "description",
-          type: "textarea",
-          templateOptions: {
-            label:
-              "Description of the overall purpose and expected outcomes, OR results of the contract, including significant deliverables and, if appropriate, associated units of measure. (Optional)",
-          },
-        },
-        {
-          key: "subcontract",
-          type: "radio",
-          templateOptions: {
-            label:
-              "As provided to you by your subcontractor, in your subcontractor's business or organization's preceding completed fiscal year, did its business or organization (the legal entity to which the DUNS number it provided belongs) receive (1) 80 percent or more of its annual gross revenues in U.S. federal contracts, subcontracts, loans, grants, subgrants, and/or cooperative agreements; and (2) $25,000,000 or more in annual gross revenues from U.S. federal contracts, subcontracts, loans, grants, subgrants, and/or cooperative agreements?*:",
-
-            options: [
-              {
-                key: "yes",
-                value: "Yes",
-              },
-              {
-                key: "no",
-                value: "No",
-              },
-            ],
-          },
-        },
-      ],
-    },
-  ];
-
-  stepperFields: FormlyFieldConfig[] = [
     {
       type: "stepper",
       // key: 'step',      // added key => crash
       fieldGroup: [
+        {
+          templateOptions: { label: "Review Subawardee" },
+          template: "<child-item-sample></child-item-sample>",
+        },
+
         // step 1
         {
-          templateOptions: { label: "Step 1" },
+          templateOptions: { label: "Input Details" },
           fieldGroup: [
             {
               key: "number",
@@ -186,7 +127,7 @@ export class SubawardDataComponent implements OnInit {
 
         // step 2
         {
-          templateOptions: { label: "Step 2" },
+          templateOptions: { label: "Input Place of Performance" },
           fieldGroup: [
             {
               fieldGroupClassName: "grid-row",
@@ -414,13 +355,10 @@ export class SubawardDataComponent implements OnInit {
       ],
     },
   ];
-  constructor(
-    public dialog: SdsDialogService,
-    private formlyJsonschema: FormlyJsonschema
-  ) {}
+  constructor(public dialog: SdsDialogService) {}
   addSubawardee() {
     const data: any = {
-      fields: this.stepperFields,
+      fields: this.subawardeefields,
       model: this.model,
       submit: "Submit",
       title: "Add Subawardee",
