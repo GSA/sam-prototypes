@@ -1,10 +1,12 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import {
   NavigationLink,
   NavigationMode,
   SelectionPanelModel,
 } from "@gsa-sam/components";
+import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 
 @Component({
   selector: "app-data-entry",
@@ -14,6 +16,45 @@ import {
 })
 export class DataEntryComponent implements OnInit {
   templateName = "subaward";
+
+  form = new FormGroup({});
+  model: any = {};
+  options: FormlyFormOptions = {};
+  fields: FormlyFieldConfig[] = [
+    {
+      key: "addsubawardee",
+      type: "input",
+      templateOptions: {
+        //label: "Entity Name",
+        placeholder: "Input Unique Entity ID",
+      },
+    },
+    {
+      key: "dataentry",
+      templateOptions: { group: "panel" },
+      fieldGroup: [
+        {
+          type: "contract",
+          templateOptions: {
+            label: "contract",
+          },
+        },
+        {
+          type: "details",
+          templateOptions: {
+            label: "details",
+          },
+        },
+        {
+          type: "subaward",
+          templateOptions: {
+            label: "subaward",
+          },
+        },
+      ],
+    },
+  ];
+
   menu = {
     trigger: {
       type: "plain", // plain | primary

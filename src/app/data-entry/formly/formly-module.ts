@@ -7,10 +7,14 @@ import { FormlyModule } from "@ngx-formly/core";
 import { FormlyFieldStepperComponent } from "./formly-stepper";
 import { StepperModule } from "../stepper/stepper.module";
 import { CdkStepperModule } from "@angular/cdk/stepper";
-//import { AgencyModalModule } from '../agency-picker/agency-modal/agency-modal.module';
+import { FormlyDetailsComponent } from "./formly-details";
+import { FormlySubawardComponent } from "./formly-subaward";
+import { FormlyContractComponent } from "./formly-contract";
+import { SdsIconModule } from "@gsa-sam/components";
+import { ReviewDetailsComponent } from "../review-details/review-details.component";
 
 @NgModule({
-  declarations: [FormlyFieldStepperComponent],
+  declarations: [FormlyFieldStepperComponent, ReviewDetailsComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -18,12 +22,29 @@ import { CdkStepperModule } from "@angular/cdk/stepper";
     CdkStepperModule,
     ReactiveFormsModule,
     SdsFormlyModule,
-    FormlyModule.forRoot(),
+    SdsIconModule,
+    FormlyModule,
+
     SdsFormlyModule.forChild({
       types: [
         {
           name: "stepper",
           component: FormlyFieldStepperComponent,
+          wrappers: sdsWrappers,
+        },
+        {
+          name: "details",
+          component: FormlyDetailsComponent,
+          wrappers: sdsWrappers,
+        },
+        {
+          name: "subaward",
+          component: FormlySubawardComponent,
+          wrappers: sdsWrappers,
+        },
+        {
+          name: "contract",
+          component: FormlyContractComponent,
           wrappers: sdsWrappers,
         },
       ],

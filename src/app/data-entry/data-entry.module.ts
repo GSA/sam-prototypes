@@ -7,6 +7,9 @@ import { SdsActionsMenuModule } from "@gsa-sam/layouts";
 import { SdsIconModule, SdsSelectionPanelModule } from "@gsa-sam/components";
 import { ReviewSubmitComponent } from "./review-submit/review-submit.component";
 import { StepperModule } from "./stepper/stepper.module";
+import { SdsFormlyModule } from "@gsa-sam/sam-formly";
+import { FormlyModule } from "@ngx-formly/core";
+import { PrototypeFormlyModule } from "./formly/formly-module";
 
 @NgModule({
   declarations: [DataEntryComponent, ReviewSubmitComponent],
@@ -18,6 +21,9 @@ import { StepperModule } from "./stepper/stepper.module";
     SdsSelectionPanelModule,
     StepperModule,
     DataEntryRoutingModule,
+    SdsFormlyModule,
+    FormlyModule.forRoot(),
+    PrototypeFormlyModule,
   ],
   exports: [ReviewSubmitComponent, DataEntryComponent],
 })
