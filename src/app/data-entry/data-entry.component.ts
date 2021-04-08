@@ -21,6 +21,14 @@ export class DataEntryComponent implements OnInit {
   model: any = {};
   options: FormlyFormOptions = {};
 
+  itemsDefault = [
+    { title: "First", id: 1 },
+    { title: "Second", id: 2 },
+    { title: "Third", id: 3, hasNewerData: true },
+  ];
+
+  items = this.itemsDefault;
+
   menu = {
     trigger: {
       type: "plain", // plain | primary
@@ -43,7 +51,7 @@ export class DataEntryComponent implements OnInit {
               key: "contract",
               type: "contract",
               templateOptions: {
-                label: "contract",
+                items: this.items,
               },
             },
           ],
@@ -56,9 +64,7 @@ export class DataEntryComponent implements OnInit {
             {
               key: "details",
               type: "details",
-              templateOptions: {
-                label: "details",
-              },
+              templateOptions: {},
             },
           ],
         },
@@ -69,9 +75,7 @@ export class DataEntryComponent implements OnInit {
             {
               key: "subaward",
               type: "subaward",
-              templateOptions: {
-                label: "subaward",
-              },
+              templateOptions: {},
             },
           ],
         },
