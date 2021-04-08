@@ -20,40 +20,6 @@ export class DataEntryComponent implements OnInit {
   form = new FormGroup({});
   model: any = {};
   options: FormlyFormOptions = {};
-  fields: FormlyFieldConfig[] = [
-    {
-      key: "addsubawardee",
-      type: "input",
-      templateOptions: {
-        //label: "Entity Name",
-        placeholder: "Input Unique Entity ID",
-      },
-    },
-    {
-      key: "dataentry",
-      templateOptions: { group: "panel" },
-      fieldGroup: [
-        {
-          type: "contract",
-          templateOptions: {
-            label: "contract",
-          },
-        },
-        {
-          type: "details",
-          templateOptions: {
-            label: "details",
-          },
-        },
-        {
-          type: "subaward",
-          templateOptions: {
-            label: "subaward",
-          },
-        },
-      ],
-    },
-  ];
 
   menu = {
     trigger: {
@@ -66,6 +32,52 @@ export class DataEntryComponent implements OnInit {
       { id: "ShareBtn", text: "Share" },
     ],
   };
+  fields: FormlyFieldConfig[] = [
+    {
+      type: "stepper",
+      fieldGroup: [
+        {
+          templateOptions: { label: "Report Contract" },
+          fieldGroup: [
+            {
+              key: "contract",
+              type: "contract",
+              templateOptions: {
+                label: "contract",
+              },
+            },
+          ],
+        },
+
+        // step 2
+        {
+          templateOptions: { label: "Report Details" },
+          fieldGroup: [
+            {
+              key: "details",
+              type: "details",
+              templateOptions: {
+                label: "details",
+              },
+            },
+          ],
+        },
+        // step 3
+        {
+          templateOptions: { label: "Subawardee Details" },
+          fieldGroup: [
+            {
+              key: "subaward",
+              type: "subaward",
+              templateOptions: {
+                label: "subaward",
+              },
+            },
+          ],
+        },
+      ],
+    },
+  ];
 
   currentPageIndex = 0;
   previousPage: string;

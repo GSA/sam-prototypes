@@ -12,13 +12,29 @@ import { FormlySubawardComponent } from "./formly-subaward";
 import { FormlyContractComponent } from "./formly-contract";
 import { SdsIconModule } from "@gsa-sam/components";
 import { ReviewDetailsComponent } from "../review-details/review-details.component";
+import { SubawardDataComponent } from "../subaward-data/subaward-data.component";
+import { ReviewContractComponent } from "../review-contract/review-contract.component";
+import { ReviewListItemChildSampleComponent } from "../review-contract/child-item.component";
+import { ResultListItemChildSampleComponent } from "../subaward-data/child-item.component";
+import { CardModule } from "../card/card.module";
 
 @NgModule({
-  declarations: [FormlyFieldStepperComponent, ReviewDetailsComponent],
+  declarations: [
+    FormlyFieldStepperComponent,
+    FormlyDetailsComponent,
+    FormlyContractComponent,
+    FormlySubawardComponent,
+    ReviewDetailsComponent,
+    SubawardDataComponent,
+    ReviewContractComponent,
+    ReviewListItemChildSampleComponent,
+    ResultListItemChildSampleComponent,
+  ],
   imports: [
     CommonModule,
     FormsModule,
     StepperModule,
+    CardModule,
     CdkStepperModule,
     ReactiveFormsModule,
     SdsFormlyModule,
