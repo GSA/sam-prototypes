@@ -1,25 +1,24 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
 
-import { SdsSubheaderModule } from '@gsa-sam/layouts';
+import { SdsSubheaderModule } from "@gsa-sam/layouts";
 
-import { WagesSubMenuModule } from '../wages-sub-menu/wages-sub-menu.module';
+import { WagesSubMenuModule } from "../wages-sub-menu/wages-sub-menu.module";
 
-import { WagesDbaConformancesRoutingModule } from './wages-dba-conformances-routing.module';
-import { WagesDbaConformancesComponent } from './wages-dba-conformances.component';
+import { WagesDbaConformancesRoutingModule } from "./wages-dba-conformances-routing.module";
+import { WagesDbaConformancesComponent } from "./wages-dba-conformances.component";
 
 @NgModule({
   declarations: [WagesDbaConformancesComponent],
   imports: [
     CommonModule,
     RouterModule,
-    FontAwesomeModule,
+
     SdsSubheaderModule,
     WagesSubMenuModule,
-    WagesDbaConformancesRoutingModule
+    WagesDbaConformancesRoutingModule,
   ],
-  exports: [WagesDbaConformancesComponent]
+  exports: [WagesDbaConformancesComponent],
 })
-export class WagesDbaConformancesModule { }
+export class WagesDbaConformancesModule {}

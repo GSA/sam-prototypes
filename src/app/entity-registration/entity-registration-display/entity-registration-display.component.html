@@ -1,4 +1,3 @@
-
 <display-subheader title="Entity Registration" (download)="onDownload($event)" (follow)="onFollow($event)">
 </display-subheader>
 
@@ -7,14 +6,13 @@
     <div class="grid-container">
       <div class="grid-row grid-gap">
         <div class="desktop:grid-col-3 tablet-lg:grid-col-12 mobile-lg:grid-col-12 margin-bottom-3">
-            <display-navigation [model]="navigationModel"></display-navigation>
+          <display-navigation [model]="navigationModel"></display-navigation>
         </div>
         <div class="desktop:grid-col-9 tablet-lg:grid-col-12 mobile-lg:grid-col-12">
-			<entity-registration-summary [record]="record"></entity-registration-summary>
-		    <router-outlet></router-outlet>
+          <entity-registration-summary [record]="record"></entity-registration-summary>
+          <router-outlet></router-outlet>
         </div>
       </div>
     </div>
   </div>
 </main>
-

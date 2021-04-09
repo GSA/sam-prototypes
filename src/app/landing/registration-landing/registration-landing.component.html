@@ -1,106 +1,113 @@
 <main id="main-content">
-	<div class="grid-container">
-		<div class="grid-row sds-hero sds-hero--image">
-			<div class="desktop:grid-offset-1 desktop:grid-col-10">
-				<!-- HERO SECTION -->
-				<div class="grid-row padding-x-3 desktop:padding-0">
-					<div class="desktop:grid-col-7 margin-bottom-4 desktop:margin-0 tablet:padding-right-3">
-						<div class="display-flex flex-justify-space-between">
+  <div class="grid-container">
+    <div class="grid-row sds-hero sds-hero--image">
+      <div class="desktop:grid-offset-1 desktop:grid-col-10">
+        <!-- HERO SECTION -->
+        <div class="grid-row padding-x-3 desktop:padding-0">
+          <div class="desktop:grid-col-7 margin-bottom-4 desktop:margin-0 tablet:padding-right-3">
+            <div class="display-flex flex-justify-space-between">
               <h1>Entity Registrations</h1>
             </div>
-						<p class="maxw-full text-base-dark">An entity is any person who or organization that is registered to do business with the federal government. You must have an active entity registration in SAM.gov to receive a federal contract or federal assistance.
-						</p>
+            <p class="maxw-full text-base-dark">An entity is any person who or organization that is registered to do
+              business with the federal government. You must have an active entity registration in SAM.gov to receive a
+              federal contract or federal assistance.
+            </p>
             <div class="grid-row margin-top-4">
               <div class="grid-col-fill">
                 <h2>Search entity registrations</h2>
               </div>
               <div class="grid-col-auto">
-                <a class="usa-link text-bold" [routerLink]="['/search']" [queryParams]="{index: 'registrations'}">Advanced Search</a>
+                <a class="usa-link text-bold" [routerLink]="['/search']"
+                  [queryParams]="{index: 'registrations'}">Advanced Search</a>
               </div>
             </div>
-              <div class="grid-row margin-top-1">
-                <div class="grid-col">
-                  <sds-search name="opps-search" [(ngModel)]="searchModel" (ngModelChange)="search()" [searchSettings]="searchSettings">
-                  </sds-search>
-                </div>
+            <div class="grid-row margin-top-1">
+              <div class="grid-col">
+                <sds-search name="opps-search" [(ngModel)]="searchModel" (ngModelChange)="search()"
+                  [searchSettings]="searchSettings">
+                </sds-search>
               </div>
-              <div class="grid-row">
-                <div class="usa-checkbox grid-col-fill">
-                    <input class="usa-checkbox__input" id="activeOnly" type="checkbox" name="activeOnly" value="activeOnly" checked="checked">
-                    <label class="usa-checkbox__label" for="activeOnly">Active Only</label>
-                </div>
+            </div>
+            <div class="grid-row">
+              <div class="usa-checkbox grid-col-fill">
+                <input class="usa-checkbox__input" id="activeOnly" type="checkbox" name="activeOnly" value="activeOnly"
+                  checked="checked">
+                <label class="usa-checkbox__label" for="activeOnly">Active Only</label>
               </div>
-					</div>
-					<div class="desktop:grid-col-5 display-none desktop:display-flex">
-						<div class="sds-tile--outline">
+            </div>
+          </div>
+          <div class="desktop:grid-col-5 display-none desktop:display-flex">
+            <div class="sds-tile--outline">
               <h2>Register your entity</h2>
-							<p class="text-base-dark">Register your entity to get started doing business with the federal government.</p>
-							<div class="desktop:flex-column flex-justify-center grid-row">
-                  <button class="sds-button sds-button--icon margin-bottom-1" [routerLink]="['/home/registration-entity']">
-                    <sds-icon [icon]="['bs', 'folder-check']" [size]="'2x'"></sds-icon>
-                    <span class="sds-button--icon__title">Get Started</span>
-                  </button>
-                  <button class="sds-button sds-button--icon margin-bottom-1">
-                    <sds-icon [icon]="['bs', 'folder-check']" [size]="'2x'"></sds-icon>
-                    <span class="sds-button--icon__title">Renew Entity</span>
-                  </button>
-                  <button class="sds-button sds-button--icon">
-                    <sds-icon [icon]="['bs', 'check-2-circle']" [size]="'2x'"></sds-icon>
-                    <span class="sds-button--icon__title">Check Registration Status</span>
-                  </button>
-							</div>
+              <p class="text-base-dark">Register your entity to get started doing business with the federal government.
+              </p>
+              <div class="desktop:flex-column flex-justify-center grid-row">
+                <button class="sds-button sds-button--icon margin-bottom-1"
+                  [routerLink]="['/home/registration-entity']">
+                  <sds-icon [icon]="'folder-check'" [size]="'2x'"></sds-icon>
+                  <span class="sds-button--icon__title">Get Started</span>
+                </button>
+                <button class="sds-button sds-button--icon margin-bottom-1">
+                  <sds-icon [icon]="'folder-check'" [size]="'2x'"></sds-icon>
+                  <span class="sds-button--icon__title">Renew Entity</span>
+                </button>
+                <button class="sds-button sds-button--icon">
+                  <sds-icon [icon]="'check-2-circle'" [size]="'2x'"></sds-icon>
+                  <span class="sds-button--icon__title">Check Registration Status</span>
+                </button>
+              </div>
             </div>
-					</div>
-				</div>
-			</div>
-		</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ACCORDION -->
     <div class="grid-row">
       <div class="tablet:grid-col-10 tablet:grid-offset-1">
-          <sds-accordion-next multi="multi" #sdsAccordionDemo>
-            <sds-accordion-item *ngFor="let help of searchHelp" #first>
-              <sds-accordion-title>{{help.title}}</sds-accordion-title>
-              <sds-accordion-content>
-                <ul class="sds-list sds-list--icon padding-0">
-                  <li *ngFor="let article of help.articles">
-                    <span class="sds-list__item-icon">
-                      <i [ngClass]="article.icon"></i>
-                    </span>
-                    <span class="sds-list__item-content">
-                      <a class="usa-link" [routerLink]="[article.link]">{{article.title}}</a>
-                    </span>
-                  </li>
-                </ul>
-              </sds-accordion-content>
-            </sds-accordion-item>
-          </sds-accordion-next>
+        <sds-accordion-next multi="multi" #sdsAccordionDemo>
+          <sds-accordion-item *ngFor="let help of searchHelp" #first>
+            <sds-accordion-title>{{help.title}}</sds-accordion-title>
+            <sds-accordion-content>
+              <ul class="sds-list sds-list--icon padding-0">
+                <li *ngFor="let article of help.articles">
+                  <span class="sds-list__item-icon">
+                    <i [ngClass]="article.icon"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a class="usa-link" [routerLink]="[article.link]">{{article.title}}</a>
+                  </span>
+                </li>
+              </ul>
+            </sds-accordion-content>
+          </sds-accordion-item>
+        </sds-accordion-next>
       </div>
     </div>
-		<!-- Tile -->
-		<div class="grid-row desktop:display-none mrgin-y-2">
-			<div class="grid-col-11 margin-x-auto margin-top-2">
-				<div class="sds-tile--outline">
-					<h2>Register your entity</h2>
-					<p class="text-base-dark">Register your entity to get started doing business with the federal government.</p>
+    <!-- Tile -->
+    <div class="grid-row desktop:display-none mrgin-y-2">
+      <div class="grid-col-11 margin-x-auto margin-top-2">
+        <div class="sds-tile--outline">
+          <h2>Register your entity</h2>
+          <p class="text-base-dark">Register your entity to get started doing business with the federal government.</p>
           <div class="grid-row grid-gap display-flex flex-justify-center">
-              <button class="sds-button sds-button--icon margin-bottom-1" [routerLink]="['/home/registration-entity']">
-                <sds-icon [icon]="['bs', 'check-2-circle']" [size]="'2x'"></sds-icon>
-                <span class="sds-button--icon__title">Get Started</span>
-              </button>
-              <button class="sds-button sds-button--icon margin-bottom-1">
-                <sds-icon [icon]="['bs', 'check-2-circle']" [size]="'2x'"></sds-icon>
-                <span class="sds-button--icon__title">Renew Entity</span>
-              </button>
-              <button class="sds-button sds-button--icon margin-bottom-1">
-                <sds-icon [icon]="['bs', 'check-2-circle']" [size]="'2x'"></sds-icon>
-                <span class="sds-button--icon__title">Check Registration Status</span>
-              </button>
+            <button class="sds-button sds-button--icon margin-bottom-1" [routerLink]="['/home/registration-entity']">
+              <sds-icon [icon]="'check-2-circle'" [size]="'2x'"></sds-icon>
+              <span class="sds-button--icon__title">Get Started</span>
+            </button>
+            <button class="sds-button sds-button--icon margin-bottom-1">
+              <sds-icon [icon]="'check-2-circle'" [size]="'2x'"></sds-icon>
+              <span class="sds-button--icon__title">Renew Entity</span>
+            </button>
+            <button class="sds-button sds-button--icon margin-bottom-1">
+              <sds-icon [icon]="'check-2-circle'" [size]="'2x'"></sds-icon>
+              <span class="sds-button--icon__title">Check Registration Status</span>
+            </button>
           </div>
-				</div>
-			</div>
-		</div>
-  <!-- CARDS -->
+        </div>
+      </div>
+    </div>
+    <!-- CARDS -->
     <div class="grid-row grid-gap flex-wrap padding-3 flex-justify-center">
       <div class="grid-row tablet:grid-col-6 desktop:grid-col-3 padding-1">
         <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
@@ -109,11 +116,11 @@
               <h2 class="sds-card__title">Download Data Files</h2>
             </a>
           </div>
-      <div class="sds-card__body">
+          <div class="sds-card__body">
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="'file-earmark'" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">How to use entity registration data files</a>
@@ -121,7 +128,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180"></sds-icon>
+                  <sds-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Go to entity registration data</a>
@@ -130,9 +137,9 @@
             </ul>
           </div>
         </div>
-  </div>
-  <div class="grid-row tablet:grid-col-6 desktop:grid-col-3 padding-1">
-    <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+      </div>
+      <div class="grid-row tablet:grid-col-6 desktop:grid-col-3 padding-1">
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
             <a class="sds-card__link">
               <h2 class="sds-card__title">Connect to Data Services</h2>
@@ -142,7 +149,7 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="'file-earmark'" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">How to use data services</a>
@@ -150,7 +157,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-	                  <sds-icon [icon]="['sds', 'document-pdf']"></sds-icon>
+                  <sds-icon [icon]="'document-pdf'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Data services quick start guide</a>
@@ -158,7 +165,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['bs', 'camera-reels']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="'camera-reels'" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Video: Using data services</a>
@@ -166,7 +173,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180"></sds-icon>
+                  <sds-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Go to public entity registration API</a>
@@ -175,9 +182,9 @@
             </ul>
           </div>
         </div>
-    </div>
+      </div>
 
-    <div class="grid-row tablet:grid-col-6 desktop:grid-col-3 padding-1">
+      <div class="grid-row tablet:grid-col-6 desktop:grid-col-3 padding-1">
         <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
           <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
             <a class="sds-card__link">
@@ -188,28 +195,30 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="'file-earmark'" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
-                <a class="usa-link" target="_blank" href="http://www.dla.mil/HQ/SmallBusiness/PTAP.aspx">
-                  Procurement Technical Assistance Program
-                  <sds-icon class="external-link" [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon>
-                </a></span>
+                  <a class="usa-link" target="_blank" href="http://www.dla.mil/HQ/SmallBusiness/PTAP.aspx">
+                    Procurement Technical Assistance Program
+                    <sds-icon class="external-link" [icon]="'box-arrow-up-right'" [size]="'xs'"></sds-icon>
+                  </a></span>
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="'file-earmark'" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">SBA Dynamic Small Business Search (DSBS)<sds-icon class="external-link" [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon></a>
+                  <a href="#" class="usa-link">SBA Dynamic Small Business Search (DSBS)<sds-icon class="external-link"
+                      [icon]="'box-arrow-up-right'" [size]="'xs'"></sds-icon></a>
                 </span>
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="'file-earmark'" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">NAICS Classification System<sds-icon class="external-link" [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon></a>
+                  <a href="#" class="usa-link">NAICS Classification System<sds-icon class="external-link"
+                      [icon]="'box-arrow-up-right'" [size]="'xs'"></sds-icon></a>
                 </span>
               </li>
             </ul>
@@ -227,7 +236,7 @@
             <ul class="sds-list sds-list--icon">
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Frequently Asked Questions</a>
@@ -235,7 +244,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['bs', 'book']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="'book'" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Glossary Terms</a>
@@ -243,7 +252,7 @@
               </li>
               <li>
                 <span class="sds-list__item-icon">
-              		<sds-icon [icon]="['bs', 'camera-reels']" [size]="'xs'"></sds-icon>
+                  <sds-icon [icon]="'camera-reels'" [size]="'xs'"></sds-icon>
                 </span>
                 <span class="sds-list__item-content">
                   <a href="#" class="usa-link">Videos</a>
@@ -254,5 +263,5 @@
         </div>
       </div>
     </div>
-	</div>
+  </div>
 </main>

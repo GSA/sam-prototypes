@@ -1,15 +1,16 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
+import { FormsModule } from "@angular/forms";
 
+import { SdsSubheaderModule } from "@gsa-sam/layouts";
+import { SdsIconModule, SdsSearchModule } from "@gsa-sam/components";
 
-import { SdsSubheaderModule } from '@gsa-sam/layouts';
-import { SdsSearchModule } from '@gsa-sam/components';
-
-import { DownloadsRoutingModule } from './downloads-routing.module';
-import { DownloadsComponent } from './downloads.component';
+import { DownloadsRoutingModule } from "./downloads-routing.module";
+import { DownloadsComponent } from "./downloads.component";
+import { NgxBootstrapIconsModule, allIcons } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [DownloadsComponent],
@@ -17,11 +18,14 @@ import { DownloadsComponent } from './downloads.component';
     CommonModule,
     RouterModule,
     FormsModule,
-    FontAwesomeModule,
+    SdsIconModule,
     SdsSubheaderModule,
     SdsSearchModule,
-    DownloadsRoutingModule
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
+    DownloadsRoutingModule,
   ],
-  exports: [DownloadsComponent]
+  exports: [DownloadsComponent],
 })
-export class DownloadsModule { }
+export class DownloadsModule {}

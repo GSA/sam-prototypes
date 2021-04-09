@@ -1,17 +1,15 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
+import { RouterModule } from "@angular/router";
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SdsSearchModule, SdsIconModule } from "@gsa-sam/components";
 
-import {
-    SdsSearchModule,
-    SdsIconModule
-  } from '@gsa-sam/components';
-
-import { HelpHomeRoutingModule } from './help-home-routing.module';
-import { HelpHomeComponent } from './help-home.component';
+import { HelpHomeRoutingModule } from "./help-home-routing.module";
+import { HelpHomeComponent } from "./help-home.component";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [HelpHomeComponent],
@@ -19,11 +17,13 @@ import { HelpHomeComponent } from './help-home.component';
     CommonModule,
     RouterModule,
     FormsModule,
-    FontAwesomeModule,
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
     SdsSearchModule,
     HelpHomeRoutingModule,
-    SdsIconModule
+    SdsIconModule,
   ],
-  exports: [HelpHomeComponent]
+  exports: [HelpHomeComponent],
 })
-export class HelpHomeModule { }
+export class HelpHomeModule {}

@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
-import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+
 import { FormsModule } from "@angular/forms";
 
 import { SdsSubheaderModule } from "@gsa-sam/layouts";
@@ -20,6 +20,9 @@ import { WagesLandingRoutingModule } from "./wages-landing-routing.module";
 import { WagesLandingComponent } from "./wages-landing.component";
 import { WagesSubPagesComponent } from "./wages-sub-pages.component";
 import { WagesSubMenuModule } from "./wages-sub-menu/wages-sub-menu.module";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [WagesLandingComponent, WagesSubPagesComponent],
@@ -33,8 +36,11 @@ import { WagesSubMenuModule } from "./wages-sub-menu/wages-sub-menu.module";
     SdsSubheaderModule,
     SdsVideoPlayerModule,
     SdsAccordionModule,
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
     SdsExternalLinkDirectivesModule,
-    FontAwesomeModule,
+
     WagesSubMenuModule,
     WagesLandingRoutingModule,
     SdsIconModule,

@@ -1,28 +1,31 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { sds } from '@gsa-sam/sam-styles/src/icons/';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { SdsActionsMenuModule } from '@gsa-sam/layouts';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
+import { SdsActionsMenuModule } from "@gsa-sam/layouts";
 
 import {
   SdsSideNavigationModule,
   SdsToolbarModule,
   SdsAccordionModule,
   SdsPageModule,
-  SdsSearchModule
-} from '@gsa-sam/components';
+  SdsSearchModule,
+  SdsIconModule,
+} from "@gsa-sam/components";
 
-import { SdsFiltersModule, SDSFormlyUpdateComunicationService } from '@gsa-sam/sam-formly';
-import { SdsSubheaderModule, SearchListServiceModule } from '@gsa-sam/layouts';
-import { FormlyModule } from '@ngx-formly/core';
+import {
+  SdsFiltersModule,
+  SDSFormlyUpdateComunicationService,
+} from "@gsa-sam/sam-formly";
+import { SdsSubheaderModule, SearchListServiceModule } from "@gsa-sam/layouts";
+import { FormlyModule } from "@ngx-formly/core";
 
-import { AssistancelistRoutingModule } from './assistancelist-routing.module';
-import { AssistancelistComponent } from './assistancelist.component';
-import { AssistancelistItemModule } from './assistancelist-item/assistancelist-item.module';
+import { AssistancelistRoutingModule } from "./assistancelist-routing.module";
+import { AssistancelistComponent } from "./assistancelist.component";
+import { AssistancelistItemModule } from "./assistancelist-item/assistancelist-item.module";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [AssistancelistComponent],
@@ -30,7 +33,7 @@ import { AssistancelistItemModule } from './assistancelist-item/assistancelist-i
     CommonModule,
     AssistancelistRoutingModule,
     FormsModule,
-    FontAwesomeModule,
+    SdsIconModule,
     SdsSideNavigationModule,
     SdsToolbarModule,
     SdsAccordionModule,
@@ -40,9 +43,12 @@ import { AssistancelistItemModule } from './assistancelist-item/assistancelist-i
     SdsSubheaderModule,
     SearchListServiceModule,
     AssistancelistItemModule,
-    FormlyModule
+    FormlyModule,
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
   ],
   exports: [AssistancelistComponent],
-  providers: [SDSFormlyUpdateComunicationService]
+  providers: [SDSFormlyUpdateComunicationService],
 })
-export class AssistancelistModule { }
+export class AssistancelistModule {}

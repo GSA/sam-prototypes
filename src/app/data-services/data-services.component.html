@@ -8,83 +8,85 @@
             <div class="display-flex flex-justify-space-between">
               <h1>Data Services</h1>
             </div>
-            <p class="text-base-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum consectetur libero id faucibus nisl tincidunt.
+            <p class="text-base-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Interdum consectetur libero id faucibus nisl tincidunt.
             </p>
             <h2 class="margin-bottom-1">Downloads</h2>
-            <sds-search *ngIf="false" name="opps-search" [(ngModel)]="searchModel" (ngModelChange)="search()" [searchSettings]="searchSettings">
+            <sds-search *ngIf="false" name="opps-search" [(ngModel)]="searchModel" (ngModelChange)="search()"
+              [searchSettings]="searchSettings">
             </sds-search>
             <ul class="sds-list sds-list--icon">
-                  <li>
-                    <span class="sds-list__item-icon">
-                      <i class="sds fa-download"></i>
-                    </span>
-                    <span class="sds-list__item-content">
-                      <a href="#" class="usa-link">Go to all downloads</a>
-                    </span>
-                  </li>
-                  <li>
-                    <span class="sds-list__item-icon">
-                      <i class="sds fa-download"></i>
-                    </span>
-                    <span class="sds-list__item-content">
-                      <a href="#" class="usa-link">Contract data downloads</a>
-                    </span>
-                  </li>
-                  <li>
-                    <span class="sds-list__item-icon">
-                      <i class="sds fa-download"></i>
-                    </span>
-                    <span class="sds-list__item-content">
-                      <a href="#" class="usa-link">Assistance Listings downloads</a>
-                    </span>
-                  </li>
-                </ul>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-download"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Go to all downloads</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-download"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Contract data downloads</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <i class="sds fa-download"></i>
+                </span>
+                <span class="sds-list__item-content">
+                  <a href="#" class="usa-link">Assistance Listings downloads</a>
+                </span>
+              </li>
+            </ul>
           </div>
           <div class="desktop:grid-col-5 display-none desktop:display-flex height-full">
             <div class="sds-tile--outline display-flex flex-column flex-justify margin-top-2">
-                <h2>APIs</h2>
-                <p class="text-base-dark">Explore our API documentation.</p>
-                <ul class="sds-list sds-list--icon">
-                  <li>
-                    <span class="sds-list__item-icon">
-                      <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180">
-                      </sds-icon>
-                    </span>
-                    <span class="sds-list__item-content">
-                      <a href="https://open.gsa.gov" target="_blank" class="usa-link">Go to Open GSA
-                        <sds-icon [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon>
-                      </a>
-                    </span>
-                  </li>
-                </ul>
+              <h2>APIs</h2>
+              <p class="text-base-dark">Explore our API documentation.</p>
+              <ul class="sds-list sds-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <sds-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
+                    </sds-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="https://open.gsa.gov" target="_blank" class="usa-link">Go to Open GSA
+                      <sds-icon [icon]="'box-arrow-up-right'" [size]="'xs'"></sds-icon>
+                    </a>
+                  </span>
+                </li>
+              </ul>
 
-                <p class="text-base-dark">To access controlled APIs, request a system account.</p>
-                <ul class="sds-list sds-list--icon">
-                  <li>
-                    <span class="sds-list__item-icon">
-                      <i class="sds fa-document"></i>
-                    </span>
-                    <span class="sds-list__item-content">
-                      <a href="#" class="usa-link">Do I need a system account?</a>
-                    </span>
-                  </li>
-                  <li>
-                    <span class="sds-list__item-icon">
-                      <i class="sds fa-document"></i>
-                    </span>
-                    <span class="sds-list__item-content">
-                      <a href="#" class="usa-link">How to request a system account</a>
-                    </span>
-                  </li>
-                  <li>
-                    <span class="sds-list__item-icon">
-                      <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
-                    </span>
-                    <span class="sds-list__item-content">
-                      <a [routerLink]="['/']" class="usa-link">Request a system account</a>
-                    </span>
-                  </li>
-                </ul>
+              <p class="text-base-dark">To access controlled APIs, request a system account.</p>
+              <ul class="sds-list sds-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-document"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Do I need a system account?</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-document"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">How to request a system account</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a [routerLink]="['/']" class="usa-link">Request a system account</a>
+                  </span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -118,7 +120,8 @@
             </a>
           </div>
           <div class="sds-card__body">
-            <p class="text-base-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            <p class="text-base-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
             </p>
             <ul class="sds-list sds-list--icon">
               <li>
@@ -141,7 +144,8 @@
             </a>
           </div>
           <div class="sds-card__body">
-            <p class="text-base-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            <p class="text-base-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
             </p>
             <ul class="sds-list sds-list--icon">
               <li>
@@ -216,24 +220,26 @@
             <ul class="sds-list">
               <li>
                 <span class="sds-list__item-content">
-                <a class="usa-link text-semibold" target="_blank" href="https://www.grants.gov/web/grants/learn-grants.html">
-                  Grants.gov Learning Center.
-                  <sds-icon [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon>
-                </a> Learn and navigate the grants lifecycle from online application through post-award.</span>
+                  <a class="usa-link text-semibold" target="_blank"
+                    href="https://www.grants.gov/web/grants/learn-grants.html">
+                    Grants.gov Learning Center.
+                    <sds-icon [icon]="'box-arrow-up-right'" [size]="'xs'"></sds-icon>
+                  </a> Learn and navigate the grants lifecycle from online application through post-award.</span>
               </li>
               <li>
                 <span class="sds-list__item-content">
-                <a class="usa-link text-semibold" target="_blank" href="https://usaspending.gov">
-                  USASpending.gov
-                  <sds-icon [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon>
-                </a> Visit the official open data source of federal spending information.</span>
+                  <a class="usa-link text-semibold" target="_blank" href="https://usaspending.gov">
+                    USASpending.gov
+                    <sds-icon [icon]="'box-arrow-up-right'" [size]="'xs'"></sds-icon>
+                  </a> Visit the official open data source of federal spending information.</span>
               </li>
               <li>
                 <span class="sds-list__item-content">
-                <a class="usa-link text-semibold" target="_blank" href="https://www.usa.gov/benefits-grants-loans">
-                  USA.gov Government Benefits, Grants, and Loans.
-                  <sds-icon [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon>
-                </a> Learn about affordable housing, grants, loans, and other assistance for individuals and organizations.</span>
+                  <a class="usa-link text-semibold" target="_blank" href="https://www.usa.gov/benefits-grants-loans">
+                    USA.gov Government Benefits, Grants, and Loans.
+                    <sds-icon [icon]="'box-arrow-up-right'" [size]="'xs'"></sds-icon>
+                  </a> Learn about affordable housing, grants, loans, and other assistance for individuals and
+                  organizations.</span>
               </li>
             </ul>
           </div>
@@ -252,7 +258,9 @@
           <div class="grid-row">
             <div class="tablet:grid-col-fill">
               <h1>Data Services</h1>
-              <p class="usa-prose usa-intro">This site is the official source of contracting opportunities from the federal government. Anyone interested in doing business with the government can use this system to research active opportunities.</p>
+              <p class="usa-prose usa-intro">This site is the official source of contracting opportunities from the
+                federal government. Anyone interested in doing business with the government can use this system to
+                research active opportunities.</p>
             </div>
           </div>
           <div class="grid-row">
@@ -267,21 +275,25 @@
                   </div>
                   <div class="grid-row">
                     <div class="tablet-lg:grid-col-6">
-                      <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['downloads']">
+                      <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
+                        [routerLink]="['downloads']">
                         <i class="sds fa-angle-right n-sds-circle-secondary text-base-dark margin-right-1"></i>
                         <span>Entity Information</span>
                       </a>
-                      <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['downloads']">
+                      <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
+                        [routerLink]="['downloads']">
                         <i class="sds fa-angle-right n-sds-circle-secondary text-base-dark margin-right-1"></i>
                         <span>Assistance Listings</span>
                       </a>
                     </div>
                     <div class="tablet-lg:grid-col-6">
-                      <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['downloads']">
+                      <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
+                        [routerLink]="['downloads']">
                         <i class="sds fa-angle-right n-sds-circle-secondary text-base-dark margin-right-1"></i>
                         <span>Contract Opportunities</span>
                       </a>
-                      <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center" [routerLink]="['downloads']">
+                      <a class="usa-link text-semibold margin-y-1 display-flex flex-row flex-align-center"
+                        [routerLink]="['downloads']">
                         <i class="sds fa-angle-right n-sds-circle-secondary text-base-dark margin-right-1"></i>
                         <span>Contract Data</span>
                       </a>

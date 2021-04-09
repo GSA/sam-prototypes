@@ -1,26 +1,33 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { SdsSubheaderModule } from '@gsa-sam/layouts';  
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+
+import { SdsSubheaderModule } from "@gsa-sam/layouts";
 
 import {
-    SdsPageModule,
-    SdsSearchModule
-  } from '@gsa-sam/components';
+  SdsIconModule,
+  SdsPageModule,
+  SdsSearchModule,
+} from "@gsa-sam/components";
 
-import { HelpPageRoutingModule } from './help-page-routing.module';
-import { HelpPageComponent } from './help-page.component';
+import { HelpPageRoutingModule } from "./help-page-routing.module";
+import { HelpPageComponent } from "./help-page.component";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [HelpPageComponent],
   imports: [
     CommonModule,
-    FontAwesomeModule,
+    SdsIconModule,
     SdsSubheaderModule,
     SdsPageModule,
     SdsSearchModule,
-    HelpPageRoutingModule
+    HelpPageRoutingModule,
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
   ],
-  exports: [HelpPageComponent]
+  exports: [HelpPageComponent],
 })
-export class HelpPageModule { }
+export class HelpPageModule {}

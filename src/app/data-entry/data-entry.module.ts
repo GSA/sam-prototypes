@@ -10,6 +10,12 @@ import { StepperModule } from "./stepper/stepper.module";
 import { SdsFormlyModule } from "@gsa-sam/sam-formly";
 import { FormlyModule } from "@ngx-formly/core";
 import { PrototypeFormlyModule } from "./formly/formly-module";
+import {
+  NgxBootstrapIconsModule,
+  chevronLeft,
+  chevronRight,
+  x,
+} from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [DataEntryComponent, ReviewSubmitComponent],
@@ -24,6 +30,7 @@ import { PrototypeFormlyModule } from "./formly/formly-module";
     SdsFormlyModule,
     FormlyModule.forRoot(),
     PrototypeFormlyModule,
+    NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, x }),
   ],
   exports: [ReviewSubmitComponent, DataEntryComponent],
 })

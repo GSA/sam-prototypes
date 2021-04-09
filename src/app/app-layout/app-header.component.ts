@@ -29,7 +29,7 @@ import { AppService } from "../services/app-service/app.service";
       [model]="model"
       [showTopBanner]="false"
       [showHeaderLogo]="!isHomePage"
-      (linkEvent)="navigateTo($event)"
+      (linkEvent)="menuItemSelected($event)"
     ></sds-header>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -43,7 +43,7 @@ export class AppHeaderComponent implements OnInit {
   signInItem = {
     imageClassPrefix: "sds",
     imageClass: "log-out",
-    mode: NavigationMode.INTERNAL,
+    mode: NavigationMode.EVENT,
     text: "Sign In",
     route: "/workspace",
     id: "signin",
@@ -80,10 +80,10 @@ export class AppHeaderComponent implements OnInit {
     {
       imageClassPrefix: "sds",
       imageClass: "log-out",
-      mode: NavigationMode.INTERNAL,
+      mode: NavigationMode.EVENT,
       text: "Sign Out",
       route: "/signout",
-      id: "signOut",
+      id: "signout",
     },
   ];
 
@@ -94,6 +94,10 @@ export class AppHeaderComponent implements OnInit {
     public locationStrategy: LocationStrategy,
     private cdr: ChangeDetectorRef
   ) {
+    this.appService.signInChange$.subscribe((value) => {
+      this.signInOutEvent(value);
+    });
+
     this.model = {
       secondaryLinks: [this.signInItem],
       navigationLinks: [
@@ -158,12 +162,6 @@ export class AppHeaderComponent implements OnInit {
           id: "dataService",
         },
         {
-          text: "Data Entry",
-          route: "/dataentry",
-          mode: NavigationMode.INTERNAL,
-          id: "dataEntry",
-        },
-        {
           text: "Help",
           route: "/help",
           mode: NavigationMode.INTERNAL,
@@ -212,7 +210,22 @@ export class AppHeaderComponent implements OnInit {
       });
   }
 
-  navigateTo(navigationLink) {
-    console.log("Navigation to...");
+  signInOutEvent(signedIn: boolean) {
+    if (!this.model) {
+      return;
+    }
+    if (signedIn) {
+      this.model.secondaryLinks = this.secondaryLinksSignedIn;
+    } else {
+      this.model.secondaryLinks = [this.signInItem];
+    }
+  }
+
+  menuItemSelected(link) {
+    if (link.id == "signin") {
+      this.appService.signIn();
+    } else if (link.id == "signout") {
+      this.appService.signOut();
+    }
   }
 }

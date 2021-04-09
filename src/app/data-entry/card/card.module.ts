@@ -8,18 +8,15 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { CardComponent } from "./card.component";
 import { SdsIconModule } from "@gsa-sam/components";
-
+import { NgxBootstrapIconsModule, dash, plus, x } from "ngx-bootstrap-icons";
 // Component
 
 @NgModule({
   declarations: [CardComponent],
   imports: [
     CommonModule,
-    MatCardModule,
-    MatButtonModule,
-    MatDividerModule,
-    MatIconModule,
     SdsIconModule,
+    NgxBootstrapIconsModule.pick({ dash, plus, x }),
   ],
   exports: [CardComponent],
 })
