@@ -28,9 +28,17 @@ import { EntityReportingServiceModule } from "../../services/entity-reporting-se
 import { AwardWorkspaceRoutingModule } from "./award-workspace-routing.module";
 import { AwardWorkspaceComponent } from "./award-workspace.component";
 import { AwardItemComponent } from "./award-item.component";
+import { ResponsiveSidebarComponent } from "../../app-layout/responsive-sidebar.component";
+import { SearchResultComponent } from "../../app-layout/search-result.component";
+//"../../../../../app-layout/responsive-sidebar.component";
 
 @NgModule({
-  declarations: [AwardWorkspaceComponent, AwardItemComponent],
+  declarations: [
+    AwardWorkspaceComponent,
+    AwardItemComponent,
+    ResponsiveSidebarComponent,
+    SearchResultComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule,
