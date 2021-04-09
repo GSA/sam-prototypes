@@ -1,7 +1,9 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: "review-child-item-sample",
+  selector: "review-contract-item",
   templateUrl: "./child-item.component.html",
 })
-export class ReviewListItemChildSampleComponent {}
+export class ReviewListItemChildSampleComponent {
+  @Input() item: any;
+}

@@ -11,7 +11,7 @@ import { FormlyDetailsComponent } from "./formly-details";
 import { FormlySubawardComponent } from "./formly-subaward";
 import { FormlyContractComponent } from "./formly-contract";
 import { SdsIconModule } from "@gsa-sam/components";
-import { ReviewDetailsComponent } from "../review-details/review-details.component";
+import { ReportDetailsComponent } from "../report-details/report-details.component";
 import { SubawardDataComponent } from "../subaward-data/subaward-data.component";
 import { ReviewContractComponent } from "../review-contract/review-contract.component";
 import { ReviewListItemChildSampleComponent } from "../review-contract/child-item.component";
@@ -24,7 +24,7 @@ import { CardModule } from "../card/card.module";
     FormlyDetailsComponent,
     FormlyContractComponent,
     FormlySubawardComponent,
-    ReviewDetailsComponent,
+    ReportDetailsComponent,
     SubawardDataComponent,
     ReviewContractComponent,
     ReviewListItemChildSampleComponent,

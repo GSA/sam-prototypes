@@ -4,11 +4,11 @@ import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 
 @Component({
   selector: "app-review-details",
-  templateUrl: "./review-details.component.html",
-  styleUrls: ["./review-details.component.scss"],
+  templateUrl: "./report-details.component.html",
+  styleUrls: ["./report-details.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ReviewDetailsComponent implements OnInit {
+export class ReportDetailsComponent implements OnInit {
   constructor() {}
   form = new FormGroup({});
   model: any = {};

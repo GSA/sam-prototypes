@@ -6,12 +6,15 @@ import {
   NavigationMode,
   SelectionPanelModel,
 } from "@gsa-sam/components";
+import { SearchParameters } from "@gsa-sam/layouts";
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
+import { EntityReportingService } from "../services/entity-reporting-service/entity-reporting.service";
 
 @Component({
   selector: "app-data-entry",
   templateUrl: "./data-entry.component.html",
   styleUrls: [],
+  providers: [EntityReportingService],
   //   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DataEntryComponent implements OnInit {
@@ -21,13 +24,9 @@ export class DataEntryComponent implements OnInit {
   model: any = {};
   options: FormlyFormOptions = {};
 
-  itemsDefault = [
-    { title: "First", id: 1 },
-    { title: "Second", id: 2 },
-    { title: "Third", id: 3, hasNewerData: true },
-  ];
+  items: any[] = [];
 
-  items = this.itemsDefault;
+  // items = this.itemsDefault;
 
   menu = {
     trigger: {
@@ -52,6 +51,7 @@ export class DataEntryComponent implements OnInit {
               type: "contract",
               templateOptions: {
                 items: this.items,
+                service: this.service,
               },
             },
           ],
@@ -117,7 +117,23 @@ export class DataEntryComponent implements OnInit {
     selectionMode: "SELECTION",
   };
   currentSelectedPanel = this.selectionPanelModel.navigationLinks[0];
-  constructor(private route: ActivatedRoute, public router: Router) {}
+  constructor(
+    private route: ActivatedRoute,
+    public router: Router,
+    public service: EntityReportingService
+  ) {
+    const searchParameters: SearchParameters = {
+      page: {
+        pageNumber: 0,
+        pageSize: 25,
+        totalPages: 4,
+      },
+      sortField: "",
+      filter: {},
+    };
+    this.items = this.service.getSortedFilteredData(searchParameters);
+    console.log(this.items);
+  }
 
   ngOnInit(): void {}
   onPanelSelected(ev: NavigationLink) {
