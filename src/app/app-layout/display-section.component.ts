@@ -1,28 +1,33 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 
 @Component({
-  selector: 'display-section',
+  selector: "display-section",
   template: `
-  	<section>
-  	    <div [id]="id" class="display-flex flex-row flex-align-center border-top-2px border-base-light padding-top-05">
-  	  		<sds-icon class="text-secondary" [icon]="['bs', 'stop-fill']"></sds-icon>
-  	  		<h2 class="margin-top-0 margin-left-1">{{title}}</h2>
-  		</div>
-  		<div class="padding-top-1 padding-bottom-2">
-    		<ng-content></ng-content>
-    	</div>
+    <section>
+      <div
+        [id]="id"
+        class="display-flex flex-row flex-align-center border-top-2px border-base-light padding-top-05"
+      >
+        <sds-icon class="text-secondary" [icon]="'stop-fill'"></sds-icon>
+        <h2 class="margin-top-0 margin-left-1">{{ title }}</h2>
+      </div>
+      <div class="padding-top-1 padding-bottom-2">
+        <ng-content></ng-content>
+      </div>
     </section>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DisplaySectionComponent implements OnInit {
-
   @Input() title: string;
   @Input() id: string;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

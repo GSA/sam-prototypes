@@ -1,7 +1,7 @@
 <sds-subheader>
   <!-- =============== BACK BUTTON =============== -->
   <button class="sds-button sds-button--circular">
-    <fa-icon [icon]="['fas', 'chevron-left']" [fixedWidth]="true"></fa-icon>
+    <sds-icon [icon]="'chevron-left'"></sds-icon>
   </button>
 
   <!-- =============== TITLE =============== -->
@@ -10,18 +10,12 @@
   </h1>
 
   <!-- =============== SEARCH =============== -->
-  <sds-search
-    (term)="log($event)"
-    parentSelector=".grid-row"
-    placeholder="Enter a keyword"
-    inputClass="width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block"
-  >
+  <sds-search (term)="log($event)" parentSelector=".grid-row" placeholder="Enter a keyword"
+    inputClass="width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block">
   </sds-search>
 
   <!-- =============== ACTIONS BUTTONS =============== -->
-  <sds-subheader-actions
-    [model]="subheader"
-    (clicks)="log($event)">
+  <sds-subheader-actions [model]="subheader" (clicks)="log($event)">
   </sds-subheader-actions>
 </sds-subheader>
 
@@ -29,13 +23,12 @@
   <sds-page-options class="sam-page__options">
     <div class="sds-page__content tablet:grid-col margin-0">
       <search-list-layout [service]="service" [configuration]="service.configuration">
-          <ng-template #resultContent let-item>
-              <div>
-                  <alert-item [model]="item"></alert-item>
-              </div>
-          </ng-template>
+        <ng-template #resultContent let-item>
+          <div>
+            <alert-item [model]="item"></alert-item>
+          </div>
+        </ng-template>
       </search-list-layout>
     </div>
   </sds-page-options>
 </sds-page>
-
