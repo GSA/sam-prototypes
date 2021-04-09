@@ -4,12 +4,11 @@ import { RouterModule } from '@angular/router';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import {
-  SdsSideNavigationModule,
-  SdsToolbarModule,
-  SdsAccordionModule
-} from '@gsa-sam/components';
+import { SdsSideNavigationModule } from '@gsa-sam/components';
+
 import { SdsSubheaderModule } from '@gsa-sam/layouts';
+
+import { AppLayoutModule } from '../app-layout/app-layout.module';
 
 import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileComponent } from './profile.component';
@@ -21,9 +20,8 @@ import { ProfileComponent } from './profile.component';
     RouterModule,
     FontAwesomeModule,
     SdsSideNavigationModule,
-    SdsToolbarModule,
-    SdsAccordionModule,
     SdsSubheaderModule,
+    AppLayoutModule,
     ProfileRoutingModule
   ],
   exports: [ProfileComponent]

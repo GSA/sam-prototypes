@@ -1,0 +1,41 @@
+<h1 class="margin-bottom-2">Data Services</h1>
+
+<display-section title="DATA SERVICE AGREEMENTS" id="data-service-agreements">
+<sds-table [data]="user.dataServiceAgreements" [tableName]="'basicTable'">
+
+  <sds-table-column sdsColumnName="document">
+    <ng-template #sdsHeaderCell>Document</ng-template>
+    <ng-template #sdsCell let-element="element">{{ element.document }}</ng-template>
+  </sds-table-column>
+  <sds-table-column sdsColumnName="domain">
+    <ng-template #sdsHeaderCell>Domain</ng-template>
+    <ng-template #sdsCell let-element="element">{{ element.domain }}</ng-template>
+  </sds-table-column>
+  <sds-table-column sdsColumnName="dateSigned">
+    <ng-template #sdsHeaderCell>Date Signed</ng-template>
+    <ng-template #sdsCell let-element="element">{{ element.dateSigned }}</ng-template>
+  </sds-table-column>
+  <sds-table-column sdsColumnName="actions">
+    <ng-template #sdsHeaderCell>Actions</ng-template>
+    <ng-template #sdsCell let-element="element" let-actions="agreementActions" let-actionClicked="actionClicked">
+    	<sds-actions-menu
+  			[model]="actions"
+  			(clicks)="actionClicked(element.document)">
+  		</sds-actions-menu>
+    </ng-template>
+  </sds-table-column>
+
+  <sds-header-row [displayedColumns]="displayedColumns"></sds-header-row>
+  <sds-row [displayedColumns]="displayedColumns"></sds-row>
+
+</sds-table>
+</display-section>
+
+
+<display-section title="PUBLIC API KEY" id="public-api-key">
+<p>A public application programming interface (API) key is required to access and use available APIs
+on beta.SAM.gov</p>
+<p>Only request an API key if your profile will individually access SAM.gov data via an API. If you are
+just entering through the front end or from an agency system, then you do not need an API key.</p>
+<button class="usa-button">Request API Key</button>
+</display-section>

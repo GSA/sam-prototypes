@@ -1,5 +1,6 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { user } from './user.data';
 
 @Injectable({
   providedIn: 'root'
@@ -7,12 +8,19 @@ import { Router } from '@angular/router';
 export class AppService {
 
   private _signedIn: boolean = false;
+  private _user = user;
+
+  public backButtonTest: (route: ActivatedRouteSnapshot) => boolean;
 
   /**
    * event for event based
    */
   @Output()
   signedInEvent = new EventEmitter<boolean>();
+
+  get user(): any {
+  	return this._user;
+  }
   
   get signedIn(): boolean {
     return this._signedIn;

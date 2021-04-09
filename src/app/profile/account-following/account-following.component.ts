@@ -1,15 +1,15 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-account-history',
-  templateUrl: './account-history.component.html',
+  selector: 'app-account-following',
+  templateUrl: './account-following.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AccountHistoryComponent implements OnInit {
+export class AccountFollowingComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

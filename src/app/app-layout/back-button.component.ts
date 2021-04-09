@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
@@ -13,13 +14,15 @@ import { Location } from '@angular/common';
 })
 export class BackButtonComponent implements OnInit {
 
-  constructor(private location: Location) { }
+  @Input() route: string;
+
+  constructor(private router: Router, private location: Location) { }
 
   ngOnInit(): void {
   }
 
   back() {
-      this.location.back();
+	  this.location.back();
   }
 
 }

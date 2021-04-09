@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormlyModule } from "@ngx-formly/core";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { 
 	SdsCollapseModule, 
@@ -36,6 +37,7 @@ import { SearchResultComponent } from './search-result.component';
   declarations: [AppHeaderComponent, AppFooterComponent, AppFeedbackComponent, AppAlertsComponent, DisplaySubheaderComponent, SubheaderTitleComponent, BackButtonComponent, DisplayNavigationComponent, DisplaySectionComponent, DisplaySubsectionComponent, SubheaderButtonsComponent, ResponsiveSidebarComponent, SearchResultComponent],
   imports: [
     CommonModule,
+    FontAwesomeModule,
     SdsHeaderModule,
     SdsFooterModule,
     SdsSubheaderModule,

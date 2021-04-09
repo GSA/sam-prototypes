@@ -32,6 +32,34 @@ const routes: Routes = [
 				data: {
 					id: "workspace"
 				}
+			},
+			{
+				path: 'email-settings',
+				loadChildren: () => import('./account-email-settings/account-email-settings.module').then(m => m.AccountEmailSettingsModule),
+				data: {
+					id: "workspace"
+				}
+			},
+			{
+				path: 'following',
+				loadChildren: () => import('./account-following/account-following.module').then(m => m.AccountFollowingModule),
+				data: {
+					id: "workspace"
+				}
+			},
+			{
+				path: 'data-services',
+				loadChildren: () => import('./account-data-services/account-data-services.module').then(m => m.AccountDataServicesModule),
+				data: {
+					id: "workspace"
+				}
+			},
+			{
+				path: 'downloads',
+				loadChildren: () => import('./account-downloads/account-downloads.module').then(m => m.AccountDownloadsModule),
+				data: {
+					id: "workspace"
+				}
 			}
 		]
 	}

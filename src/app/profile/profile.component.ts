@@ -4,16 +4,28 @@ import { profileNavigationData } from './navigation.data';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProfileComponent implements OnInit {
 
-  public navigationData = profileNavigationData;
+  public navigationData;
 
-  constructor() { }
+  public subheaderActions = {
+    actions: [
+      { id: 'download', icon: 'bars', text: 'Download' }
+    ]
+  };
+
+  constructor() { 
+	  this.navigationData = profileNavigationData;
+  }
 
   ngOnInit() {
+    
+  }
+
+  actionClicked(action) {
+
   }
 
 }
