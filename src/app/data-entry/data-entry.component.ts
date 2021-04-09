@@ -20,10 +20,8 @@ import { EntityReportingService } from "../services/entity-reporting-service/ent
 export class DataEntryComponent implements OnInit {
   templateName = "subaward";
 
-  form = new FormGroup({});
-  model: any = {};
-  options: FormlyFormOptions = {};
   items: any[] = [];
+  // Report details formly configurations
   reportForm = new FormGroup({});
   reportModel: any = {};
   reportOptions: FormlyFormOptions = {};
@@ -270,6 +268,10 @@ export class DataEntryComponent implements OnInit {
       { id: "ShareBtn", text: "Share" },
     ],
   };
+  // Data entry formly configurations
+  form = new FormGroup({});
+  model: any = {};
+  options: FormlyFormOptions = {};
   fields: FormlyFieldConfig[] = [
     {
       type: "stepper",
@@ -309,7 +311,9 @@ export class DataEntryComponent implements OnInit {
             {
               key: "subaward",
               type: "subaward",
-              templateOptions: {},
+              templateOptions: {
+                data: [],
+              },
             },
           ],
         },
