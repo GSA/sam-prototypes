@@ -36,7 +36,8 @@
             ],
             "scripts": [
               "node_modules/uswds/dist/js/uswds.min.js"
-            ]
+            ],
+            "preserveSymlinks": true
           },
           "configurations": {
             "production": {
