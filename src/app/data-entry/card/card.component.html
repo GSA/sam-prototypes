@@ -1,20 +1,25 @@
 <div class="sds-card border-width-0 margin-2" [id]="id"
   [ngClass]="{ 'sds-card-expandable': isExpandable, 'display-with-dividers': displayWithDividers }">
-  <div class="sds-card__header sds-card__header--action" *ngIf="title" [id]="id + 'TitleGroup'">
-    <div>
+  <div class="sds-card__header" *ngIf="title" [id]="id + 'TitleGroup'">
+    <div class="grid-row margin-y-2">
       <button [id]="id + 'ExpansionInd'" *ngIf="isExpandable"
-        class="sds-expansion-indicator usa-button usa-button--unstyled margin-top-1"
-        [disabled]="expansionIndicatorDisabled" (click)="toggleContent()">
-        <sds-icon class="padding-right-1 padding-top-1" [icon]="showContent? ['bs', 'dash']: ['bs', 'plus']"
-          [size]="'2x'" [@expansionIndicatorRotate]="showContent ? 'expanded' : 'collapsed'">
+        class="sds-expansion-indicator usa-button usa-button--unstyled" [disabled]="expansionIndicatorDisabled"
+        (click)="toggleContent()">
+        <sds-icon c [icon]="showContent? ['bs', 'dash']: ['bs', 'plus']" [size]="'lg'"
+          [@expansionIndicatorRotate]="showContent ? 'expanded' : 'collapsed'">
         </sds-icon>
         <span class="sr-only">Screen reader description</span>
       </button>
-      <div class="sds-card__title margin-bottom-1" [id]="id + 'Title'">{{ title }}</div>
+      <h3 class="sds-card__title" [id]="id + 'Title'">{{ title }}</h3>
+
     </div>
 
     <div class="sds-card__action">
       <ng-content select="ng-container[sds-card-title-group-action]"></ng-content>
+    </div>
+
+    <div>
+      <ng-content select="ng-container[sds-card-header-content]"></ng-content>
     </div>
   </div>
   <ng-container *ngIf="showContent">
