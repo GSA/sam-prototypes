@@ -27,3 +27,23 @@
     }
   }
 }
+
+.alt-event{
+  padding-bottom: 1em;
+  border: 1px solid transparent;
+  &:hover{
+    border: 1px dashed black;
+  }
+  .alt-date{
+    display: inline;
+    padding-right: 1em;
+  }
+  .alt-meta{
+    text-align: center;
+  }
+  .alt-action{
+    color: black;
+    text-decoration: none;
+    font-style: italic;
+  }
+}
