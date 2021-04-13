@@ -1,6 +1,8 @@
 <div class="grid-container">
   <h3>Add Subawardee</h3>
 
+  Subaward-list {{subawardeeList |json}}
+
   <div *ngFor="let item of items">
     <sds-expandable-card #inputsCard [id]="'subawardcard'" [title]="item.title" [showContent]="'false'"
       [isExpandable]="true">

@@ -17,21 +17,6 @@ export interface SdsContractServiceInterface {
 })
 export class ReviewContractComponent {
   @Input() items: any = [];
-  @Input() service: SdsContractServiceInterface;
-  results = [];
-  constructor(private entityReportingService: EntityReportingService) {
-    const searchParameters: any = {
-      page: {
-        pageNumber: 0,
-        pageSize: 25,
-        totalPages: 4,
-      },
-      sortField: "",
-      filter: {},
-    };
-    this.results = this.entityReportingService.getSortedFilteredData(
-      searchParameters
-    );
-    console.log(this.results, "test results");
-  }
+
+  constructor() {}
 }

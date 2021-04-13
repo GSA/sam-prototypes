@@ -326,7 +326,7 @@ export class DataEntryComponent implements OnInit {
               key: "dataentry.subawarddetails",
               type: "subaward",
               templateOptions: {
-                data: [],
+                subawardeeList: this.items,
               },
             },
           ],
@@ -335,7 +335,25 @@ export class DataEntryComponent implements OnInit {
     },
   ];
 
-  constructor(public router: Router, private service: EntityReportingService) {}
+  constructor(
+    public router: Router,
+    private entityReportingService: EntityReportingService
+  ) {
+    const searchParameters: any = {
+      page: {
+        pageNumber: 0,
+        pageSize: 25,
+        totalPages: 4,
+      },
+      sortField: "",
+      filter: {},
+    };
+    const results = this.entityReportingService.getSortedFilteredData(
+      searchParameters
+    );
+    this.items = results;
+    console.log(results, "data entry results");
+  }
   addSubawardee() {
     console.log("adding sub awardee");
   }

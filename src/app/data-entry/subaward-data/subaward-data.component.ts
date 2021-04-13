@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 import { SdsDialogService } from "@gsa-sam/components";
 
@@ -11,6 +11,7 @@ import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
   styleUrls: ["./subaward-data.component.scss"],
 })
 export class SubawardDataComponent implements OnInit {
+  @Input() subawardeeList: any[] = [];
   itemsDefault = [
     { title: "First", id: 1 },
     { title: "Second", id: 2 },
@@ -30,9 +31,7 @@ export class SubawardDataComponent implements OnInit {
   };
 
   subawardeeModel: any = {};
-
   subawardeeOptions: FormlyFormOptions;
-
   subawardeefields: FormlyFieldConfig[] = [
     {
       type: "stepper",
