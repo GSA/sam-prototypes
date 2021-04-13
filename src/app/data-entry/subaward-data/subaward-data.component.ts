@@ -4,16 +4,11 @@ import { SdsDialogService } from "@gsa-sam/components";
 
 import { SdsFormlyDialogComponent } from "@gsa-sam/sam-formly";
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
-export interface StepType {
-  label: string;
-  fields: FormlyFieldConfig[];
-}
 
 @Component({
   selector: "app-subaward-data",
   templateUrl: "./subaward-data.component.html",
   styleUrls: ["./subaward-data.component.scss"],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SubawardDataComponent implements OnInit {
   itemsDefault = [
@@ -33,34 +28,19 @@ export class SubawardDataComponent implements OnInit {
       { id: "ShareBtn", text: "Share" },
     ],
   };
-  form = new FormGroup({});
-  model: any = {};
-  options: FormlyFormOptions = {};
-  fields: FormlyFieldConfig[] = [
-    {
-      key: "addsubawardee",
-      type: "input",
-      templateOptions: {
-        //label: "Entity Name",
-        placeholder: "Input Unique Entity ID",
-      },
-    },
-  ];
 
   subawardeeModel: any = {};
-  subawardeemodel: any = {};
-  subawardeeoptions: FormlyFormOptions;
+
+  subawardeeOptions: FormlyFormOptions;
 
   subawardeefields: FormlyFieldConfig[] = [
     {
       type: "stepper",
-      // key: 'step',      // added key => crash
-      fieldGroup: [
-        {
-          templateOptions: { label: "Review Subawardee" },
-          template: "<child-item-sample></child-item-sample>",
-        },
+      templateOptions: {
+        hideSidePannel: true,
+      },
 
+      fieldGroup: [
         // step 1
         {
           templateOptions: { label: "Input Details" },
@@ -356,10 +336,10 @@ export class SubawardDataComponent implements OnInit {
   addSubawardee() {
     const data: any = {
       fields: this.subawardeefields,
-      model: this.model,
+      model: this.subawardeeModel,
       submit: "Submit",
       title: "Add Subawardee",
-      options: this.options,
+      options: this.subawardeeOptions,
       cancel: "No thanks",
     };
 

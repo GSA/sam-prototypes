@@ -296,7 +296,34 @@ export class DataEntryComponent implements OnInit {
           templateOptions: { label: "Subawardee Details" },
           fieldGroup: [
             {
-              key: "dataentry.subaward",
+              key: "dataentry.addsubawardee",
+              fieldGroupClassName: "grid-row grid-gap-2",
+              fieldGroup: [
+                {
+                  className: "grid-col-6",
+                  key: "add",
+                  type: "input",
+                  templateOptions: {
+                    placeholder: "Input Unique Entity ID",
+                    hideOptional: true,
+                  },
+                },
+                {
+                  className: "grid-col-4 usa-button",
+                  key: "button-test",
+                  type: "button",
+                  templateOptions: {
+                    text: "Auto-fill Vendor Information",
+
+                    onClick: ($event) => {
+                      console.log("button clicked");
+                    },
+                  },
+                },
+              ],
+            },
+            {
+              key: "dataentry.subawarddetails",
               type: "subaward",
               templateOptions: {
                 data: [],
@@ -309,6 +336,8 @@ export class DataEntryComponent implements OnInit {
   ];
 
   constructor(public router: Router, private service: EntityReportingService) {}
-
+  addSubawardee() {
+    console.log("adding sub awardee");
+  }
   ngOnInit(): void {}
 }

@@ -34,21 +34,4 @@ export class ReviewContractComponent {
     );
     console.log(this.results, "test results");
   }
-  // constructor(
-  //   private route: ActivatedRoute,
-  //   public router: Router,
-  //   public service: EntityReportingService
-  // ) {
-  //   const searchParameters: SearchParameters = {
-  //     page: {
-  //       pageNumber: 0,
-  //       pageSize: 25,
-  //       totalPages: 4,
-  //     },
-  //     sortField: "",
-  //     filter: {},
-  //   };
-  //   this.items = this.service.getSortedFilteredData(searchParameters);
-  //   console.log(this.items);
-  // }
 }

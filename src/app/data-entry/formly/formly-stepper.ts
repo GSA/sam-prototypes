@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { FieldType, FormlyFieldConfig } from "@ngx-formly/core";
 
 @Component({
-  template: ` <app-stepper linear>
+  template: ` <app-stepper linear [hideSidePannel]="to.hideSidePannel">
     <cdk-step
       *ngFor="let step of field.fieldGroup; let index = index; let last = last"
       [stepControl]="getStepForm(index, step)"
