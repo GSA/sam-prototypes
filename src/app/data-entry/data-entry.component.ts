@@ -19,7 +19,7 @@ import { EntityReportingService } from "../services/entity-reporting-service/ent
 })
 export class DataEntryComponent implements OnInit {
   templateName = "subaward";
-  items: any[] = [];
+  // items: any[] = [];
 
   form = new FormGroup({});
   model: any = {};
@@ -35,7 +35,7 @@ export class DataEntryComponent implements OnInit {
               key: "dataentry.contract",
               type: "contract",
               templateOptions: {
-                items: this.items,
+                items: this.getData(),
               },
             },
             {
@@ -326,7 +326,7 @@ export class DataEntryComponent implements OnInit {
               key: "dataentry.subawarddetails",
               type: "subaward",
               templateOptions: {
-                subawardeeList: this.items,
+                subawardeeList: this.getData(),
               },
             },
           ],
@@ -338,7 +338,9 @@ export class DataEntryComponent implements OnInit {
   constructor(
     public router: Router,
     private entityReportingService: EntityReportingService
-  ) {
+  ) {}
+
+  getData() {
     const searchParameters: any = {
       page: {
         pageNumber: 0,
@@ -351,11 +353,12 @@ export class DataEntryComponent implements OnInit {
     const results = this.entityReportingService.getSortedFilteredData(
       searchParameters
     );
-    this.items = results;
-    console.log(results, "data entry results");
+    return results;
   }
+
   addSubawardee() {
     console.log("adding sub awardee");
   }
+
   ngOnInit(): void {}
 }
