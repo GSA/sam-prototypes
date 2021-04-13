@@ -1,21 +1,17 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 import { SdsDialogService } from "@gsa-sam/components";
 
 import { SdsFormlyDialogComponent } from "@gsa-sam/sam-formly";
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
-export interface StepType {
-  label: string;
-  fields: FormlyFieldConfig[];
-}
 
 @Component({
   selector: "app-subaward-data",
   templateUrl: "./subaward-data.component.html",
   styleUrls: ["./subaward-data.component.scss"],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SubawardDataComponent implements OnInit {
+  @Input() subawardeeList: any[] = [];
   itemsDefault = [
     { title: "First", id: 1 },
     { title: "Second", id: 2 },
@@ -33,34 +29,17 @@ export class SubawardDataComponent implements OnInit {
       { id: "ShareBtn", text: "Share" },
     ],
   };
-  form = new FormGroup({});
-  model: any = {};
-  options: FormlyFormOptions = {};
-  fields: FormlyFieldConfig[] = [
-    {
-      key: "addsubawardee",
-      type: "input",
-      templateOptions: {
-        //label: "Entity Name",
-        placeholder: "Input Unique Entity ID",
-      },
-    },
-  ];
 
   subawardeeModel: any = {};
-  subawardeemodel: any = {};
-  subawardeeoptions: FormlyFormOptions;
-
+  subawardeeOptions: FormlyFormOptions;
   subawardeefields: FormlyFieldConfig[] = [
     {
       type: "stepper",
-      // key: 'step',      // added key => crash
-      fieldGroup: [
-        {
-          templateOptions: { label: "Review Subawardee" },
-          template: "<child-item-sample></child-item-sample>",
-        },
+      templateOptions: {
+        hideSidePannel: true,
+      },
 
+      fieldGroup: [
         // step 1
         {
           templateOptions: { label: "Input Details" },
@@ -162,7 +141,8 @@ export class SubawardDataComponent implements OnInit {
               className: "grid-col-4",
               type: "input",
               key: "zip",
-              hideExpression: (model) => this.model.country === "canada",
+              hideExpression: (model) =>
+                this.subawardeeModel.country === "canada",
               templateOptions: {
                 type: "number",
                 label: "ZIP Code (+ 4)",
@@ -175,7 +155,8 @@ export class SubawardDataComponent implements OnInit {
               className: "grid-col-4",
               type: "input",
               key: "postal",
-              hideExpression: (model) => this.model.country === "united_states",
+              hideExpression: (model) =>
+                this.subawardeeModel.country === "united_states",
               templateOptions: {
                 label: "Postal Code",
                 maxLength: 6,
@@ -196,7 +177,8 @@ export class SubawardDataComponent implements OnInit {
               key: "state",
               type: "select",
               defaultValue: "None",
-              hideExpression: (model) => this.model.country === "canada",
+              hideExpression: (model) =>
+                this.subawardeeModel.country === "canada",
               templateOptions: {
                 label: "State",
 
@@ -300,7 +282,8 @@ export class SubawardDataComponent implements OnInit {
               className: "grid-col-4",
               type: "select",
               key: "province",
-              hideExpression: (model) => this.model.country === "united_states",
+              hideExpression: (model) =>
+                this.subawardeeModel.country === "united_states",
               templateOptions: {
                 label: "State/Province",
 
@@ -342,7 +325,8 @@ export class SubawardDataComponent implements OnInit {
               className: "grid-col-4",
               type: "input",
               key: "congressional_district",
-              hideExpression: (model) => this.model.country === "canada",
+              hideExpression: (model) =>
+                this.subawardeeModel.country === "canada",
               templateOptions: {
                 label: "Congressional District",
               },
@@ -356,10 +340,10 @@ export class SubawardDataComponent implements OnInit {
   addSubawardee() {
     const data: any = {
       fields: this.subawardeefields,
-      model: this.model,
+      model: this.subawardeeModel,
       submit: "Submit",
       title: "Add Subawardee",
-      options: this.options,
+      options: this.subawardeeOptions,
       cancel: "No thanks",
     };
 

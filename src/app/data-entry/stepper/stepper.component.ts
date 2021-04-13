@@ -17,7 +17,7 @@ import {
 })
 export class StepperComponent extends CdkStepper {
   ngOnInit(): void {}
-
+  @Input() hideSidePannel: boolean = false;
   constructor(dir: Directionality, cdr: ChangeDetectorRef) {
     super(dir, cdr);
   }

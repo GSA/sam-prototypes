@@ -7,33 +7,27 @@ import { FormlyModule } from "@ngx-formly/core";
 import { FormlyFieldStepperComponent } from "./formly-stepper";
 import { StepperModule } from "../stepper/stepper.module";
 import { CdkStepperModule } from "@angular/cdk/stepper";
-import { FormlyDetailsComponent } from "./formly-details";
 import { FormlySubawardComponent } from "./formly-subaward";
 import { FormlyContractComponent } from "./formly-contract";
 import { SdsIconModule } from "@gsa-sam/components";
-import { ReportDetailsComponent } from "../report-details/report-details.component";
 import { SubawardDataComponent } from "../subaward-data/subaward-data.component";
 import { ReviewContractComponent } from "../review-contract/review-contract.component";
-import { ReviewListItemChildSampleComponent } from "../review-contract/child-item.component";
-import { ResultListItemChildSampleComponent } from "../subaward-data/child-item.component";
 import { CardModule } from "../card/card.module";
+import { SdsActionsMenuModule } from "@gsa-sam/layouts";
 
 @NgModule({
   declarations: [
     FormlyFieldStepperComponent,
-    FormlyDetailsComponent,
     FormlyContractComponent,
     FormlySubawardComponent,
-    ReportDetailsComponent,
     SubawardDataComponent,
     ReviewContractComponent,
-    ReviewListItemChildSampleComponent,
-    ResultListItemChildSampleComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     StepperModule,
+    SdsActionsMenuModule,
     CardModule,
     CdkStepperModule,
     ReactiveFormsModule,
@@ -48,11 +42,7 @@ import { CardModule } from "../card/card.module";
           component: FormlyFieldStepperComponent,
           wrappers: sdsWrappers,
         },
-        {
-          name: "details",
-          component: FormlyDetailsComponent,
-          wrappers: sdsWrappers,
-        },
+
         {
           name: "subaward",
           component: FormlySubawardComponent,
