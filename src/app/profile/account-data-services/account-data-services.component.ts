@@ -7,7 +7,7 @@ import { AppService } from '../../services/app-service/app.service';
 })
 export class AccountDataServicesComponent implements OnInit {
   
-  displayedColumns: string[] = ['document', 'domain', 'dateSigned', 'actions'];
+  displayedColumns: string[] = ['document', 'domain', 'dateSigned'];
 
   public agreementActions = {
     actions: [
@@ -15,10 +15,10 @@ export class AccountDataServicesComponent implements OnInit {
     ]
   };
 
-  public user: any;
+  public dataServiceAgreements: [];
 
   constructor(private appService: AppService) { 
-  	this.user = this.appService.user;
+  	this.dataServiceAgreements = this.appService.user.dataServiceAgreements;
   }
 
   ngOnInit(): void {

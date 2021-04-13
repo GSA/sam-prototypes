@@ -1,30 +1,23 @@
 <sds-subheader>
   <!-- BACK BUTTON -->
   <button class="sds-button sds-button--circular">
-    <fa-icon [icon]="['fas', 'chevron-left']" [fixedWidth]="true"></fa-icon>
+    <sds-icon [icon]="'chevron-left'"></sds-icon>
   </button>
 
   <!-- TITLE -->
   <h1 class="font-heading-md text-semibold tablet-lg:width-mobile">Entity Registrations</h1>
 
   <!-- SEARCH (OPTIONAL) -->
-  <sds-search
-    (term)="newSearch($event)"
-    parentSelector=".grid-row"
-    placeholder="Enter an ID, name, or keyword"
-    inputClass="width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block"
-  ></sds-search>
+  <sds-search (term)="newSearch($event)" parentSelector=".grid-row" placeholder="Enter an ID, name, or keyword"
+    inputClass="width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block"></sds-search>
 
   <!-- PRIMARY/SECONDARY BUTTONS (OPTIONAL) -->
   <ng-container subheader-buttons-container>
-    <button class="usa-button margin-top-05 tablet:margin-top-0" 
-		(click)="newAccount($event)">Register Entity</button>
+    <button class="usa-button margin-top-05 tablet:margin-top-0" (click)="newAccount($event)">Register Entity</button>
   </ng-container>
 
   <!-- ACTIONS BUTTONS (OPTIONAL) -->
-  <sds-subheader-actions
-    [model]="subheader"
-    (clicks)="subheaderActionClicked($event)">
+  <sds-subheader-actions [model]="subheader" (clicks)="subheaderActionClicked($event)">
   </sds-subheader-actions>
 </sds-subheader>
 <sds-page>
@@ -37,20 +30,19 @@
         </sds-accordion-item>
         <sds-accordion-item [expanded]="true">
           <sds-accordion-item-header>Filter By</sds-accordion-item-header>
-          <sds-filters [form]="form" [fields]="filters" [model]="model" 
-          		(filterChange)="filterChange$.next($event)">
+          <sds-filters [form]="form" [fields]="filters" [model]="model" (filterChange)="filterChange$.next($event)">
           </sds-filters>
         </sds-accordion-item>
       </sds-accordion>
     </sds-toolbar>
-  <div class="sds-page__content tablet:grid-col-fill margin-0">
-	<search-list-layout [service]="service" [configuration]="configuration">
-	    <ng-template #resultContent let-item>
-	        <div>
-	            <search-result-list-item-entity [model]="item"></search-result-list-item-entity>
-	        </div>
-	    </ng-template>
-	</search-list-layout>
-  </div> 
+    <div class="sds-page__content tablet:grid-col-fill margin-0">
+      <search-list-layout [service]="service" [configuration]="configuration">
+        <ng-template #resultContent let-item>
+          <div>
+            <search-result-list-item-entity [model]="item"></search-result-list-item-entity>
+          </div>
+        </ng-template>
+      </search-list-layout>
+    </div>
   </sds-page-options>
 </sds-page>

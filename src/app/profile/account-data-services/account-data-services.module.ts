@@ -18,6 +18,7 @@ import { AccountDataServicesComponent } from './account-data-services.component'
     AppLayoutModule,
     AccountDataServicesRoutingModule
   ],
-  exports: [AccountDataServicesComponent]
+  exports: [AccountDataServicesComponent],
+  bootstrap: [AccountDataServicesComponent]
 })
 export class AccountDataServicesModule { }

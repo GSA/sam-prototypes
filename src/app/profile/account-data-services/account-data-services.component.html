@@ -1,7 +1,7 @@
 <h1 class="margin-bottom-2">Data Services</h1>
 
 <display-section title="DATA SERVICE AGREEMENTS" id="data-service-agreements">
-<sds-table [data]="user.dataServiceAgreements" [tableName]="'basicTable'">
+<sds-table [data]="dataServiceAgreements" [tableName]="'basicTable'">
 
   <sds-table-column sdsColumnName="document">
     <ng-template #sdsHeaderCell>Document</ng-template>
@@ -14,15 +14,6 @@
   <sds-table-column sdsColumnName="dateSigned">
     <ng-template #sdsHeaderCell>Date Signed</ng-template>
     <ng-template #sdsCell let-element="element">{{ element.dateSigned }}</ng-template>
-  </sds-table-column>
-  <sds-table-column sdsColumnName="actions">
-    <ng-template #sdsHeaderCell>Actions</ng-template>
-    <ng-template #sdsCell let-element="element" let-actions="agreementActions" let-actionClicked="actionClicked">
-    	<sds-actions-menu
-  			[model]="actions"
-  			(clicks)="actionClicked(element.document)">
-  		</sds-actions-menu>
-    </ng-template>
   </sds-table-column>
 
   <sds-header-row [displayedColumns]="displayedColumns"></sds-header-row>

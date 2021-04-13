@@ -1,27 +1,30 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
 import {
   SdsSideNavigationModule,
   SdsToolbarModule,
   SdsPageModule,
   SdsCollapseModule,
-  SdsSearchModule
-} from '@gsa-sam/components';
-import { SdsFiltersModule } from '@gsa-sam/sam-formly';
-import { SdsSubheaderModule, SearchListServiceModule } from '@gsa-sam/layouts';
-import { SdsAccordionModule } from '@gsa-sam/sam-material-extensions';
+  SdsSearchModule,
+  SdsIconModule,
+} from "@gsa-sam/components";
+import { SdsFiltersModule } from "@gsa-sam/sam-formly";
+import { SdsSubheaderModule, SearchListServiceModule } from "@gsa-sam/layouts";
+import { SdsAccordionModule } from "@gsa-sam/sam-material-extensions";
 
-import { FormlyModule } from '@ngx-formly/core';
-import { FormsModule } from '@angular/forms';
+import { FormlyModule } from "@ngx-formly/core";
+import { FormsModule } from "@angular/forms";
 
-import { DatabankServiceModule } from '../../services/databank-service/databank-service.module';
+import { DatabankServiceModule } from "../../services/databank-service/databank-service.module";
 
-import { DatabankSearchItemModule } from './databank-search-item/databank-search-item.module';
+import { DatabankSearchItemModule } from "./databank-search-item/databank-search-item.module";
 
-import { DatabankSearchRoutingModule } from './databank-search-routing.module';
-import { DatabankSearchComponent } from './databank-search.component';
+import { DatabankSearchRoutingModule } from "./databank-search-routing.module";
+import { DatabankSearchComponent } from "./databank-search.component";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [DatabankSearchComponent],
@@ -29,7 +32,7 @@ import { DatabankSearchComponent } from './databank-search.component';
     CommonModule,
     FormlyModule,
     FormsModule,
-    FontAwesomeModule,
+    SdsIconModule,
     SdsSideNavigationModule,
     SdsToolbarModule,
     SdsAccordionModule,
@@ -39,13 +42,16 @@ import { DatabankSearchComponent } from './databank-search.component';
     SdsSideNavigationModule,
     SdsAccordionModule,
     SdsSubheaderModule,
-    SdsFiltersModule, 
+    SdsFiltersModule,
     DatabankSearchItemModule,
     SearchListServiceModule,
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
     DatabankServiceModule,
-    DatabankSearchRoutingModule
+    DatabankSearchRoutingModule,
   ],
   exports: [DatabankSearchComponent],
-  providers: []
+  providers: [],
 })
-export class DatabankSearchModule { }
+export class DatabankSearchModule {}

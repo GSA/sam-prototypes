@@ -12,17 +12,15 @@ import {
   SdsExternalLinkDirectivesModule,
   SdsIconModule,
 } from "@gsa-sam/components";
-
-import { sds } from "@gsa-sam/sam-styles/src/icons/";
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import {
-  FontAwesomeModule,
-  FaIconLibrary,
-} from "@fortawesome/angular-fontawesome";
+import { SdsHeaderModule, SdsFooterModule } from "@gsa-sam/layouts";
+import { FormlyModule } from "@ngx-formly/core";
 
 import { AppLayoutModule } from "./app-layout/app-layout.module";
 import { AppService } from "./services/app-service/app.service";
 import { SamModelService } from "./model/sam-model.service";
+import _ from "lodash-es";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,8 +33,11 @@ import { SamModelService } from "./model/sam-model.service";
     AppRoutingModule,
     AppLayoutModule,
     SdsExternalLinkDirectivesModule,
-    FontAwesomeModule,
+    FormlyModule,
     SdsIconModule,
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -49,7 +50,5 @@ export class AppModule {
       providers: [SamModelService, AppService],
     };
   }
-  constructor(library: FaIconLibrary) {
-    library.addIconPacks(fas, sds);
-  }
+  constructor() {}
 }

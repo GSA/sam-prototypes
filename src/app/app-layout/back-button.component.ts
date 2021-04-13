@@ -3,14 +3,14 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'back-button',
+  selector: "back-button",
   template: `
-  	  <button class="sds-button sds-button--circular" (click)="back()">
-        <sds-icon [icon]="['bs', 'chevron-left']"></sds-icon>
-        <span class="usa-sr-only">Go Back</span>
-      </button>
+    <button class="sds-button sds-button--circular" (click)="back()">
+      <sds-icon [icon]="'chevron-left'"></sds-icon>
+      <span class="usa-sr-only">Go Back</span>
+    </button>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BackButtonComponent implements OnInit {
 
@@ -24,5 +24,4 @@ export class BackButtonComponent implements OnInit {
   back() {
 	  this.location.back();
   }
-
 }

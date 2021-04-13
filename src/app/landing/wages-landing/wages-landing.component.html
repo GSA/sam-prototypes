@@ -6,75 +6,81 @@
         <div class="grid-row padding-x-3 desktop:padding-0">
           <div class="desktop:grid-col-7 margin-bottom-4 desktop:margin-0">
             <h1>Wage Determinations</h1>
-            <p class="maxw-full text-base-dark">A wage determination (WD) is a listing of wage rates and fringe benefit rates for each labor category of workers which the U.S. department of labor has determined to be
-                prevailing in a given area</p>
+            <p class="maxw-full text-base-dark">A wage determination (WD) is a listing of wage rates and fringe benefit
+              rates for each labor category of workers which the U.S. department of labor has determined to be
+              prevailing in a given area</p>
           </div>
         </div>
         <div class="grid-row">
           <div class="grid-col-12">
             <div class="sds-card sds-card--bordered shadow-none">
-                <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-                  <h2>Search wage determination</h2>
-                </div>
-                <div class="sds-card__body bg-white">
-                  <div class="grid-row grid-gap">
-                    <div class="tablet:grid-col-6">
-                      <h3>I know the WD number</h3>
-                        <div class="display-flex flex-row flex-align-center padding-bottom-2">
-                          <sds-icon [icon]="['bs', 'search']" [size]="'lg'"></sds-icon>
-                          <span class="padding-left-1">Search by WD Number</span>
-                        </div>
-                        <sds-search [(ngModel)]="model" (ngModelChange)="search()" [searchSettings]="searchSettings" placeholder="Ex: PA200001 or 2015-4045">
-                        </sds-search>
+              <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+                <h2>Search wage determination</h2>
+              </div>
+              <div class="sds-card__body bg-white">
+                <div class="grid-row grid-gap">
+                  <div class="tablet:grid-col-6">
+                    <h3>I know the WD number</h3>
+                    <div class="display-flex flex-row flex-align-center padding-bottom-2">
+                      <sds-icon [icon]="'search'" [size]="'lg'"></sds-icon>
+                      <span class="padding-left-1">Search by WD Number</span>
                     </div>
-                    <div class="tablet:grid-col-6">
-                      <h3>I do not know the number</h3>
-                      <div class="display-flex flex-row flex-align-center padding-bottom-2">
-                          <sds-icon [icon]="['bs', 'search']" [size]="'lg'"></sds-icon>
-                          <span class="padding-left-1">Start your search by selecting a category</span>
-                        </div>
-                        <div class="grid-row grid-gap">
-                          <div class="tablet:grid-col-6">
-                            <button class="sds-button sds-button--icon-lg" [routerLink]="['/search']" [queryParams]="{index: 'sca'}">
-                              <div class="sds-button__header">
-                                <h4>Public Building or Works</h4>
-                                <sds-icon [icon]="['bs', 'check-2-circle']" [size]="'2x'"></sds-icon>
-                              </div>
-                              <p>Wage rates for laborers and mechanics</p>
-                              <span>Davis-Bacon Act (DBA)</span>
-                            </button>
+                    <sds-search [(ngModel)]="model" (ngModelChange)="search()" [searchSettings]="searchSettings"
+                      placeholder="Ex: PA200001 or 2015-4045">
+                    </sds-search>
+                  </div>
+                  <div class="tablet:grid-col-6">
+                    <h3>I do not know the number</h3>
+                    <div class="display-flex flex-row flex-align-center padding-bottom-2">
+                      <sds-icon [icon]="'search'" [size]="'lg'"></sds-icon>
+                      <span class="padding-left-1">Start your search by selecting a category</span>
+                    </div>
+                    <div class="grid-row grid-gap">
+                      <div class="tablet:grid-col-6">
+                        <button class="sds-button sds-button--icon-lg" [routerLink]="['/search']"
+                          [queryParams]="{index: 'sca'}">
+                          <div class="sds-button__header">
+                            <h4>Public Building or Works</h4>
+                            <sds-icon [icon]="'check-2-circle'" [size]="'2x'"></sds-icon>
                           </div>
-                          <div class="tablet:grid-col-6">
-                            <button class="sds-button sds-button--icon-lg" [routerLink]="['/search']" [queryParams]="{index: 'dba'}">
-                              <div class="sds-button__header">
-                                <h4>Service Contracts</h4>
-                                <sds-icon [icon]="['bs', 'check-2-circle']" [size]="'2x'"></sds-icon>
-                              </div>
-                              <p>Wage rates for service employees</p>
-                              <span>Service Contract Act (SCA)</span>
-                            </button>
+                          <p>Wage rates for laborers and mechanics</p>
+                          <span>Davis-Bacon Act (DBA)</span>
+                        </button>
+                      </div>
+                      <div class="tablet:grid-col-6">
+                        <button class="sds-button sds-button--icon-lg" [routerLink]="['/search']"
+                          [queryParams]="{index: 'dba'}">
+                          <div class="sds-button__header">
+                            <h4>Service Contracts</h4>
+                            <sds-icon [icon]="'check-2-circle'" [size]="'2x'"></sds-icon>
                           </div>
-                        </div>
+                          <p>Wage rates for service employees</p>
+                          <span>Service Contract Act (SCA)</span>
+                        </button>
+                      </div>
                     </div>
                   </div>
-               </div>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- ACCORDION SECTION -->
-  <div class="grid-row">
+    <!-- ACCORDION SECTION -->
+    <div class="grid-row">
       <div class="tablet:grid-col-10 tablet:grid-offset-1">
-          <sds-accordion-next multi="multi" #sdsAccordionDemo>
-            <sds-accordion-item>
-              <sds-accordion-title><h3>Getting started searching wage determinations</h3></sds-accordion-title>
-              <sds-accordion-content>
+        <sds-accordion-next multi="multi" #sdsAccordionDemo>
+          <sds-accordion-item>
+            <sds-accordion-title>
+              <h3>Getting started searching wage determinations</h3>
+            </sds-accordion-title>
+            <sds-accordion-content>
               <ul class="sds-list sds-list--icon">
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'info-square']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'info-square'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">Search wage determinations by ID</a>
@@ -82,7 +88,7 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'info-square']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'info-square'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">Search construction wage determinations using the DBA workflow</a>
@@ -90,7 +96,7 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'info-square']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'info-square'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">Search service wage determinations using the SCA workflow</a>
@@ -98,7 +104,7 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'info-square']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'info-square'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">Search collective bargaining agreements</a>
@@ -106,7 +112,7 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                  <sds-icon [icon]="['sds', 'document-pdf']"></sds-icon>
+                    <sds-icon [icon]="'document-pdf'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">Follow a wage determination</a>
@@ -114,22 +120,24 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'info-square']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'info-square'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">Save searches</a>
                   </span>
                 </li>
               </ul>
-              </sds-accordion-content>
-            </sds-accordion-item>            
-            <sds-accordion-item>
-              <sds-accordion-title><h3>Learn about the Davis-Bacon Act</h3></sds-accordion-title>
-              <sds-accordion-content>
+            </sds-accordion-content>
+          </sds-accordion-item>
+          <sds-accordion-item>
+            <sds-accordion-title>
+              <h3>Learn about the Davis-Bacon Act</h3>
+            </sds-accordion-title>
+            <sds-accordion-content>
               <ul class="sds-list sds-list--icon">
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">What is the Davis-Bacon Act?</a>
@@ -137,7 +145,7 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">How do I know if the Davis-Bacon Act applies to my contract?</a>
@@ -145,7 +153,7 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">What are the requirements for a DBA/DBRA contract?</a>
@@ -153,23 +161,25 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
-                    <a href="#" class="usa-link">What are the requirements for paying fringe benefits for a DBA-covered contract?</a>
+                    <a href="#" class="usa-link">What are the requirements for paying fringe benefits for a DBA-covered
+                      contract?</a>
                   </span>
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
-                    <a href="#" class="usa-link">What if I can't find a rate for the DBA classification of work I need?</a>
+                    <a href="#" class="usa-link">What if I can't find a rate for the DBA classification of work I
+                      need?</a>
                   </span>
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">What is a conformance request?</a>
@@ -177,7 +187,7 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">What is Standard Form 308 (SF 308)?</a>
@@ -185,7 +195,7 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">How do I submit a DBA conformance request?</a>
@@ -193,7 +203,7 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">How do I appeal a conformance request decision?</a>
@@ -201,7 +211,7 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">How do I find the Department of Labor DBA advisor for my location?</a>
@@ -209,15 +219,16 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
-                    <a href="#" class="usa-link">As an agency contracting officer, who may I contact for more information on labor standards for a DBA-covered contract?</a>
+                    <a href="#" class="usa-link">As an agency contracting officer, who may I contact for more
+                      information on labor standards for a DBA-covered contract?</a>
                   </span>
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">How should an employee file a DBA-related laborer complaint?</a>
@@ -225,22 +236,26 @@
                 </li>
               </ul>
               <h4>External DBA Resources</h4>
-                <ul class="sds-list">
-                  <li>
-                    <span class="sds-list__item-content">
-                      <a class="usa-link"  target="_blank" href="https://www.dol.gov/agencies/whd/government-contracts/construction">Davis-Bacon and Related Acts (Department of Labor) <sds-icon [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon></a>
-                    </span>
-                  </li>
-                </ul>
-              </sds-accordion-content>
-            </sds-accordion-item>           
-            <sds-accordion-item>
-              <sds-accordion-title><h3>Learn about the Service Contract Act</h3></sds-accordion-title>
-              <sds-accordion-content>
+              <ul class="sds-list">
+                <li>
+                  <span class="sds-list__item-content">
+                    <a class="usa-link" target="_blank"
+                      href="https://www.dol.gov/agencies/whd/government-contracts/construction">Davis-Bacon and Related
+                      Acts (Department of Labor) <sds-icon [icon]="'box-arrow-up-right'" [size]="'xs'"></sds-icon></a>
+                  </span>
+                </li>
+              </ul>
+            </sds-accordion-content>
+          </sds-accordion-item>
+          <sds-accordion-item>
+            <sds-accordion-title>
+              <h3>Learn about the Service Contract Act</h3>
+            </sds-accordion-title>
+            <sds-accordion-content>
               <ul class="sds-list sds-list--icon">
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">What is the Service Contract Act?</a>
@@ -248,7 +263,7 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">How do I know if the Service Contract Act applies to my contract?</a>
@@ -256,23 +271,25 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
-                    <a href="#" class="usa-link">What are the requirements for paying fringe benefits for a SCA-covered contract?</a>
+                    <a href="#" class="usa-link">What are the requirements for paying fringe benefits for a SCA-covered
+                      contract?</a>
                   </span>
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
-                    <a href="#" class="usa-link">What if I can't find a rate for the SCA classification of work I need?</a>
+                    <a href="#" class="usa-link">What if I can't find a rate for the SCA classification of work I
+                      need?</a>
                   </span>
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">What is a conformance request?</a>
@@ -280,23 +297,25 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
-                    <a href="#" class="usa-link">What is the difference between an e-98 form and Standard Form 1444 (SF 1444)?</a>
+                    <a href="#" class="usa-link">What is the difference between an e-98 form and Standard Form 1444 (SF
+                      1444)?</a>
                   </span>
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
-                    <a href="#" class="usa-link">When filing an SF-1444, how should a "reasonable relationship" determined?</a>
+                    <a href="#" class="usa-link">When filing an SF-1444, how should a "reasonable relationship"
+                      determined?</a>
                   </span>
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">How do I submit an SCA conformance request (SF 1444)?</a>
@@ -304,7 +323,7 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">How do I appeal an SCA conformance request decision?</a>
@@ -312,7 +331,7 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">How do I find the Department of Labor DBA advisor for my location?</a>
@@ -320,218 +339,220 @@
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
-                    <a href="#" class="usa-link">As an agency contracting officer, who may I contact for more information on labor standards for a DBA-covered contract?</a>
+                    <a href="#" class="usa-link">As an agency contracting officer, who may I contact for more
+                      information on labor standards for a DBA-covered contract?</a>
                   </span>
                 </li>
                 <li>
                   <span class="sds-list__item-icon">
-                    <sds-icon [icon]="['bs', 'question-circle']" [size]="'xs'"></sds-icon>
+                    <sds-icon [icon]="'question-circle'" [size]="'xs'"></sds-icon>
                   </span>
                   <span class="sds-list__item-content">
                     <a href="#" class="usa-link">How should an employee file a DBA-related laborer complaint?</a>
                   </span>
                 </li>
               </ul>
-              </sds-accordion-content>
-            </sds-accordion-item>
-          </sds-accordion-next>
+            </sds-accordion-content>
+          </sds-accordion-item>
+        </sds-accordion-next>
       </div>
-  </div>
+    </div>
 
     <!-- CARDS -->
 
     <div class="grid-row grid-gap flex-wrap padding-3 flex-justify-center">
       <div class="tablet:grid-col-5 desktop:grid-col padding-1">
-          <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-            <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-              <a [routerLink]="['news']" class="sds-card__link">
-                <h2 class="sds-card__title">DBA Resources</h2>
-              </a>
-            </div>
-            <div class="sds-card__body">
-                <ul class="sds-list sds-list--icon">
-                  <li>
-                    <span class="sds-list__item-icon">
-                      <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180">
-</sds-icon>
-                    </span>
-                    <a class="usa-link" [routerLink]="['/home/wages/resources/dba-conformances']">DBA Conformances</a>
-                  </li>
-                  <li>
-                    <span class="sds-list__item-icon">
-                      <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180">
-</sds-icon>
-                    </span>
-                    <a class="usa-link" [routerLink]="['/home/wages/resources/dbas-tobe-revised']">
-                      DBAs to be Revised
-                    </a>
-                  </li>
-                  <li>
-                    <span class="sds-list__item-icon">
-                      <sds-icon [icon]="['bs', 'file-earmark']" [size]="'sm'"></sds-icon>
-                    </span>
-                    <a class="usa-link" [routerLink]="['/home/wages/resources/sca-conformances']">
-                      DBA Rollover Crosswalk
-                    </a>
-                  </li>
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a [routerLink]="['news']" class="sds-card__link">
+              <h2 class="sds-card__title">DBA Resources</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
+                  </sds-icon>
+                </span>
+                <a class="usa-link" [routerLink]="['/home/wages/resources/dba-conformances']">DBA Conformances</a>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
+                  </sds-icon>
+                </span>
+                <a class="usa-link" [routerLink]="['/home/wages/resources/dbas-tobe-revised']">
+                  DBAs to be Revised
+                </a>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="'file-earmark'" [size]="'sm'"></sds-icon>
+                </span>
+                <a class="usa-link" [routerLink]="['/home/wages/resources/sca-conformances']">
+                  DBA Rollover Crosswalk
+                </a>
+              </li>
 
-                  <li>
-                    <span class="sds-list__item-icon">
-                      <sds-icon [icon]="['bs', 'file-earmark']" [size]="'sm'"></sds-icon>
-                    </span>
-                    <a class="usa-link" href="https://www.dol.gov/agencies/whd/government-contracts/state-assignments">
-                      Department of Labor DBA analysts by state <sds-icon [icon]="['bs', 'box-arrow-up-right']" [size]="'xs'"></sds-icon>
-                    </a>
-                  </li>
-                  
-                </ul>
-            </div>
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="'file-earmark'" [size]="'sm'"></sds-icon>
+                </span>
+                <a class="usa-link" href="https://www.dol.gov/agencies/whd/government-contracts/state-assignments">
+                  Department of Labor DBA analysts by state <sds-icon [icon]="'box-arrow-up-right'" [size]="'xs'">
+                  </sds-icon>
+                </a>
+              </li>
+
+            </ul>
           </div>
+        </div>
       </div>
       <div class="tablet:grid-col-5 desktop:grid-col padding-1">
-          <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-            <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-              <a [routerLink]="['news']" class="sds-card__link">
-                <h2 class="sds-card__title">SCA Resources</h2>
-              </a>
-            </div>
-            <div class="sds-card__body">
-                <ul class="sds-list sds-list--icon">
-                  <li>
-                    <span class="sds-list__item-icon">
-                      <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180">
-                      </sds-icon>
-                    </span>
-                    <a class="usa-link" [routerLink]="['/home/wages/resources/sca-conformances']">
-                      SCA Conformances
-                    </a>
-                  </li>
-                </ul>
-            </div>
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a [routerLink]="['news']" class="sds-card__link">
+              <h2 class="sds-card__title">SCA Resources</h2>
+            </a>
           </div>
+          <div class="sds-card__body">
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
+                  </sds-icon>
+                </span>
+                <a class="usa-link" [routerLink]="['/home/wages/resources/sca-conformances']">
+                  SCA Conformances
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="tablet:grid-col-5 desktop:grid-col padding-1">
-          <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-            <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-              <a [routerLink]="['news']" class="sds-card__link">
-                <h2 class="sds-card__title">Other Resources</h2>
-              </a>
-            </div>
-            <div class="sds-card__body">
-                <ul class="sds-list sds-list--icon">
-                  <li>
-                    <span class="sds-list__item-icon">
-                      <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180">
-                      </sds-icon>
-                    </span>
-                    <a class="usa-link" [routerLink]="['/home/wages/resources/labor-advisors']">
-                      Labor Advisors
-                    </a>
-                  </li>
-                  <li>
-                    <span class="sds-list__item-icon">
-                      <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180">
-                      </sds-icon>
-                    </span>
-                    <a class="usa-link" [routerLink]="['/home/wages/resources/all-agency-memos']">
-                      All Agency Memorandums
-                    </a>
-                  </li>
-                  <li>
-                    <span class="sds-list__item-icon">
-                      <sds-icon class="action-icon" [icon]="['sds', 'angle-circle']" [rotate]="180">
-                      </sds-icon>
-                    </span>
-                    <a class="usa-link" [routerLink]="['/home/wages/resources/cross-index']">
-                      Cross Index for Contract Labor Standards
-                    </a>
-                  </li>
-                </ul>
-            </div>
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a [routerLink]="['news']" class="sds-card__link">
+              <h2 class="sds-card__title">Other Resources</h2>
+            </a>
           </div>
+          <div class="sds-card__body">
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
+                  </sds-icon>
+                </span>
+                <a class="usa-link" [routerLink]="['/home/wages/resources/labor-advisors']">
+                  Labor Advisors
+                </a>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
+                  </sds-icon>
+                </span>
+                <a class="usa-link" [routerLink]="['/home/wages/resources/all-agency-memos']">
+                  All Agency Memorandums
+                </a>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
+                  </sds-icon>
+                </span>
+                <a class="usa-link" [routerLink]="['/home/wages/resources/cross-index']">
+                  Cross Index for Contract Labor Standards
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
     <div class="grid-row grid-gap flex-wrap padding-3 flex-justify-center">
       <div class="grid-row tablet:grid-col-4 desktop:grid-col padding-1">
-      <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-        <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-          <a [routerLink]="['news']" class="sds-card__link">
-            <h2 class="sds-card__title">Forms</h2>
-          </a>
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a [routerLink]="['news']" class="sds-card__link">
+              <h2 class="sds-card__title">Forms</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="'file-earmark'" [size]="'xs'"></sds-icon>
+                </span>
+                <span class="sds-list__item-content">
+                  <a class="usa-link" href=" ">SF308 - Request For Wage Determination And Response To Request (DBA)</a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="'file-earmark'" [size]="'xs'"></sds-icon>
+                </span>
+                <span class="sds-list__item-content">
+                  <a class="usa-link" href=" ">
+                    E98 - Notice of Intention to Make a Service Contract and Response to Notice (SCA)
+                  </a>
+                </span>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="'file-earmark'" [size]="'xs'"></sds-icon>
+                </span>
+                <span class="sds-list__item-content">
+                  <a class="usa-link" href=" ">
+                    SF1444 - Request for Authorization of Additional Classification and Rate
+                  </a>
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="sds-card__body">
-          <ul class="sds-list sds-list--icon">
-            <li>
-              <span class="sds-list__item-icon">
-                <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
-              </span>
-              <span class="sds-list__item-content">
-                <a class="usa-link" href=" ">SF308 - Request For Wage Determination And Response To Request (DBA)</a>
-              </span>
-            </li>
-            <li>
-              <span class="sds-list__item-icon">
-                <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
-              </span>
-              <span class="sds-list__item-content">
-                <a class="usa-link" href=" ">
-                  E98 - Notice of Intention to Make a Service Contract and Response to Notice (SCA)
-                </a>
-              </span>
-            </li>
-            <li>
-              <span class="sds-list__item-icon">
-                <sds-icon [icon]="['bs', 'file-earmark']" [size]="'xs'"></sds-icon>
-              </span>
-              <span class="sds-list__item-content">
-                <a class="usa-link" href=" ">
-                  SF1444 - Request for Authorization of Additional Classification and Rate
-                </a>
-              </span>
-            </li>
-          </ul>
-        </div>
-      </div>
       </div>
       <div class="grid-row tablet:grid-col-4 desktop:grid-col padding-1">
-      <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-        <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-          <a [routerLink]="['news']" class="sds-card__link">
-            <h2 class="sds-card__title">Help</h2>
-          </a>
+        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
+          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
+            <a [routerLink]="['news']" class="sds-card__link">
+              <h2 class="sds-card__title">Help</h2>
+            </a>
+          </div>
+          <div class="sds-card__body">
+            <ul class="sds-list sds-list--icon">
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="'question-circle'" [size]="'sm'"></sds-icon>
+                </span>
+                <a class="usa-link" [routerLink]="['']">
+                  Frequently Asked Questions
+                </a>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="'book'" [size]="'sm'"></sds-icon>
+                </span>
+                <a class="usa-link" [routerLink]="['']">
+                  Glossary Terms
+                </a>
+              </li>
+              <li>
+                <span class="sds-list__item-icon">
+                  <sds-icon [icon]="'camera-reels'" [size]="'sm'"></sds-icon>
+                </span>
+                <a class="usa-link" [routerLink]="['']">
+                  Videos
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="sds-card__body">
-          <ul class="sds-list sds-list--icon">
-            <li>
-              <span class="sds-list__item-icon">
-                <sds-icon [icon]="['bs', 'question-circle']" [size]="'sm'"></sds-icon>
-              </span>
-              <a class="usa-link" [routerLink]="['']">
-                Frequently Asked Questions
-              </a>
-            </li>
-            <li>
-              <span class="sds-list__item-icon">
-                <sds-icon [icon]="['bs', 'book']" [size]="'sm'"></sds-icon>
-              </span>
-              <a class="usa-link" [routerLink]="['']">
-                Glossary Terms
-              </a>
-            </li>
-            <li>
-              <span class="sds-list__item-icon">
-                <sds-icon [icon]="['bs', 'camera-reels']" [size]="'sm'"></sds-icon>
-              </span>
-              <a class="usa-link" [routerLink]="['']">
-                Videos
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
       </div>
       <div class="grid-row tablet:grid-col-4 desktop:grid-col padding-1">
         <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">

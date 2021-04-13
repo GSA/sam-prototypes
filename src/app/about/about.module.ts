@@ -1,26 +1,26 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
-import {
-  SdsSelectionPanelModule
-} from '@gsa-sam/components';
+import { SdsIconModule, SdsSelectionPanelModule } from "@gsa-sam/components";
 
-import { SdsSubheaderModule, SideToolbarModule } from '@gsa-sam/layouts';
+import { SdsSubheaderModule, SideToolbarModule } from "@gsa-sam/layouts";
 
-import { AboutRoutingModule } from './about-routing.module';
-import { AboutComponent } from './about.component';
+import { AboutRoutingModule } from "./about-routing.module";
+import { AboutComponent } from "./about.component";
+import { chevronLeft, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [AboutComponent],
   imports: [
     CommonModule,
-    FontAwesomeModule,
-    SdsSubheaderModule,    
+
+    SdsSubheaderModule,
     SdsSelectionPanelModule,
     SideToolbarModule,
-    AboutRoutingModule
+    SdsIconModule,
+    AboutRoutingModule,
+    NgxBootstrapIconsModule.pick({ chevronLeft }),
   ],
-  exports: [AboutComponent]
+  exports: [AboutComponent],
 })
-export class AboutModule { }
+export class AboutModule {}

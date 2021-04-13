@@ -1,10 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
 
-import { SearchSaveRoutingModule } from './search-save-routing.module';
-import { SearchSaveComponent } from './search-save.component';
+import { SearchSaveRoutingModule } from "./search-save-routing.module";
+import { SearchSaveComponent } from "./search-save.component";
 
 import {
   SdsSideNavigationModule,
@@ -12,26 +11,32 @@ import {
   SdsAccordionModule,
   SdsPageModule,
   SdsSearchModule,
-  SdsDialogModule
-} from '@gsa-sam/components';
-import { SdsFiltersModule, SDSFormlyUpdateComunicationService } from '@gsa-sam/sam-formly';
-import { SdsSubheaderModule, SearchListServiceModule } from '@gsa-sam/layouts';
+  SdsDialogModule,
+  SdsIconModule,
+} from "@gsa-sam/components";
+import {
+  SdsFiltersModule,
+  SDSFormlyUpdateComunicationService,
+} from "@gsa-sam/sam-formly";
+import { SdsSubheaderModule, SearchListServiceModule } from "@gsa-sam/layouts";
 
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { FormlyModule } from '@ngx-formly/core';
-import { FormlySelectModule } from '@ngx-formly/core/select';
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { FormlyModule } from "@ngx-formly/core";
+import { FormlySelectModule } from "@ngx-formly/core/select";
 
-import { SearchSaveServiceModule } from './search-save-service/search-save-service.module';
+import { SearchSaveServiceModule } from "./search-save-service/search-save-service.module";
 
-import { SearchSaveResultModule } from './search-save-result/search-save-result.module';
-
+import { SearchSaveResultModule } from "./search-save-result/search-save-result.module";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [SearchSaveComponent],
-  imports: [    
+  imports: [
     CommonModule,
     RouterModule,
-    FontAwesomeModule,
+    SdsIconModule,
     SdsSideNavigationModule,
     SdsToolbarModule,
     SdsAccordionModule,
@@ -49,7 +54,10 @@ import { SearchSaveResultModule } from './search-save-result/search-save-result.
     FormlyModule,
     SearchSaveRoutingModule,
     SearchSaveServiceModule,
-    SearchSaveResultModule
-  ]
+    SearchSaveResultModule,
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
+  ],
 })
-export class SearchSaveModule { }
+export class SearchSaveModule {}

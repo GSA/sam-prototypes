@@ -1,4 +1,13 @@
-import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { Component, ChangeDetectionStrategy, Input } from "@angular/core";
+import { Observable } from "rxjs";
+import { EntityReportingService } from "src/app/services/entity-reporting-service/entity-reporting.service";
+export interface SdsContractServiceInterface {
+  /**
+   *
+   * @param searchValue
+   */
+  getSortedFilteredData(searchParameters: any): any;
+}
 
 @Component({
   selector: "app-review-contract",
@@ -7,13 +16,39 @@ import { Component, ChangeDetectionStrategy } from "@angular/core";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ReviewContractComponent {
-  itemsDefault = [
-    { title: "First", id: 1 },
-    { title: "Second", id: 2 },
-    { title: "Third", id: 3 },
-    { title: "Fourth", id: 4 },
-    { title: "Fifth", id: 5, hasNewerData: true },
-  ];
-
-  items = this.itemsDefault;
+  @Input() items: any = [];
+  @Input() service: SdsContractServiceInterface;
+  results = [];
+  constructor(private entityReportingService: EntityReportingService) {
+    const searchParameters: any = {
+      page: {
+        pageNumber: 0,
+        pageSize: 25,
+        totalPages: 4,
+      },
+      sortField: "",
+      filter: {},
+    };
+    this.results = this.entityReportingService.getSortedFilteredData(
+      searchParameters
+    );
+    console.log(this.results, "test results");
+  }
+  // constructor(
+  //   private route: ActivatedRoute,
+  //   public router: Router,
+  //   public service: EntityReportingService
+  // ) {
+  //   const searchParameters: SearchParameters = {
+  //     page: {
+  //       pageNumber: 0,
+  //       pageSize: 25,
+  //       totalPages: 4,
+  //     },
+  //     sortField: "",
+  //     filter: {},
+  //   };
+  //   this.items = this.service.getSortedFilteredData(searchParameters);
+  //   console.log(this.items);
+  // }
 }

@@ -33,15 +33,15 @@
 
   <div class="sds-button-row">
     <button [disabled]="!isPreviousButtonHidden()" cdkStepperPrevious class="usa-button sds-button--circle">
-      <sds-icon [icon]="['bs', 'chevron-left']"></sds-icon>
+      <sds-icon [icon]="'chevron-left'"></sds-icon>
     </button>
     <button *ngIf="!isNextButtonHidden() && !isPreviousButtonHidden()" class="usa-button sds-button--circle">
-      <sds-icon [icon]="['bs', 'x']"></sds-icon>
+      <sds-icon [icon]="'x'"></sds-icon>
     </button>
     <!-- <button *ngFor="let step of steps; let i = index;" (click)="onClick(i)"
       class="usa-button usa-button--secondary">Step {{i + 1}}</button> -->
     <button [disabled]="!isNextButtonHidden()" cdkStepperNext class="usa-button sds-button--circle">
-      <sds-icon [icon]="['bs', 'chevron-right']"></sds-icon>
+      <sds-icon [icon]="'chevron-right'"></sds-icon>
     </button>
   </div>
 

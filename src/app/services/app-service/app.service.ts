@@ -1,6 +1,7 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { user } from './user.data';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,12 +16,11 @@ export class AppService {
   /**
    * event for event based
    */
-  @Output()
-  signedInEvent = new EventEmitter<boolean>();
-
   get user(): any {
   	return this._user;
   }
+
+  public signInChange$ = new BehaviorSubject<boolean>(false);
   
   get signedIn(): boolean {
     return this._signedIn;
@@ -30,21 +30,21 @@ export class AppService {
 
   signIn(redirectUrl?: string) {
     this._signedIn = true;
+    this.signInChange$.next(true);
     if (redirectUrl) {
       this.router.navigateByUrl(redirectUrl);
     } else {
       this.router.navigateByUrl('/workspace');
     }
-    this.signedInEvent.emit(true);
   }
 
   signOut(redirectUrl?: string) {
     this._signedIn = false;
+    this.signInChange$.next(false);
     if (!redirectUrl) {
       this.router.navigateByUrl('/');
     } else {
       this.router.navigateByUrl(redirectUrl);
     }
-    this.signedInEvent.emit(false);
   }
 }

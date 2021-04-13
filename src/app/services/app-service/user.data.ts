@@ -14,6 +14,7 @@ export let user:any = {
 	],
 	dataServiceAgreements: [
 		{
+		    id: 'af1a1e60-c03d-4a8e-bbd0-50f0c5afd511',
 			document: 'Entity Registration Terms of Use',
 			domain: 'Entity Registration',
 			dateSigned: 'Mar 3, 2021'

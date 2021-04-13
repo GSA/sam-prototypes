@@ -1,14 +1,20 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
-import { SystemAccountsRoutingModule } from './system-accounts-routing.module';
+import { SystemAccountsRoutingModule } from "./system-accounts-routing.module";
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    SystemAccountsRoutingModule
+    SystemAccountsRoutingModule,
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    ),
   ],
-  exports: []
+  exports: [],
 })
-export class SystemAccountsModule { }
+export class SystemAccountsModule {}
