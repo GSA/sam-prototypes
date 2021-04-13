@@ -13,7 +13,7 @@ import { SdsIconModule } from "@gsa-sam/components";
 import { SubawardDataComponent } from "../subaward-data/subaward-data.component";
 import { ReviewContractComponent } from "../review-contract/review-contract.component";
 import { CardModule } from "../card/card.module";
-import { ResultListItemChildSampleComponent } from "../subaward-data/child-item.component";
+import { SdsActionsMenuModule } from "@gsa-sam/layouts";
 
 @NgModule({
   declarations: [
@@ -22,12 +22,12 @@ import { ResultListItemChildSampleComponent } from "../subaward-data/child-item.
     FormlySubawardComponent,
     SubawardDataComponent,
     ReviewContractComponent,
-    ResultListItemChildSampleComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     StepperModule,
+    SdsActionsMenuModule,
     CardModule,
     CdkStepperModule,
     ReactiveFormsModule,

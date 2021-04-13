@@ -142,7 +142,8 @@ export class SubawardDataComponent implements OnInit {
               className: "grid-col-4",
               type: "input",
               key: "zip",
-              hideExpression: (model) => this.model.country === "canada",
+              hideExpression: (model) =>
+                this.subawardeeModel.country === "canada",
               templateOptions: {
                 type: "number",
                 label: "ZIP Code (+ 4)",
@@ -155,7 +156,8 @@ export class SubawardDataComponent implements OnInit {
               className: "grid-col-4",
               type: "input",
               key: "postal",
-              hideExpression: (model) => this.model.country === "united_states",
+              hideExpression: (model) =>
+                this.subawardeeModel.country === "united_states",
               templateOptions: {
                 label: "Postal Code",
                 maxLength: 6,
@@ -176,7 +178,8 @@ export class SubawardDataComponent implements OnInit {
               key: "state",
               type: "select",
               defaultValue: "None",
-              hideExpression: (model) => this.model.country === "canada",
+              hideExpression: (model) =>
+                this.subawardeeModel.country === "canada",
               templateOptions: {
                 label: "State",
 
@@ -280,7 +283,8 @@ export class SubawardDataComponent implements OnInit {
               className: "grid-col-4",
               type: "select",
               key: "province",
-              hideExpression: (model) => this.model.country === "united_states",
+              hideExpression: (model) =>
+                this.subawardeeModel.country === "united_states",
               templateOptions: {
                 label: "State/Province",
 
@@ -322,7 +326,8 @@ export class SubawardDataComponent implements OnInit {
               className: "grid-col-4",
               type: "input",
               key: "congressional_district",
-              hideExpression: (model) => this.model.country === "canada",
+              hideExpression: (model) =>
+                this.subawardeeModel.country === "canada",
               templateOptions: {
                 label: "Congressional District",
               },
