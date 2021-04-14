@@ -353,7 +353,7 @@ export class DataEntryComponent implements OnInit {
     const results = this.entityReportingService.getSortedFilteredData(
       searchParameters
     );
-    return results;
+    return results[0];
   }
 
   addSubawardee() {

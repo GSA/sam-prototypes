@@ -1,8 +1,10 @@
 <h2>Contract Details</h2>
 <div class="sds-field__name">Review the following contract details to ensure that they are correct. Reach out to your
   federal point of contact if you see any errors.</div>
+<pre>
+  {{items | json}}
+</pre>
 
-<!-- {{items | json}} -->
 <div class="margin-top-2 sds-card  sds-card--collapsible">
 
   <div class="sds-card__body sds-card__body sds-card__body--accent-cool">
@@ -17,14 +19,14 @@
         <div class="grid-row margin-y-2">
           <div class="sds-field sds-field--stacked sds-field--small">
             <div class="sds-field__name">Contract Number:</div>
-            <div class="sds-field__value">N6600103D2501</div>
+            <div class="sds-field__value">{{items.identifiers[0].piid}}</div>
           </div>
         </div>
 
         <div class="grid-row margin-y-2">
           <div class="sds-field sds-field--stacked sds-field--small">
             <div class="sds-field__name">Doing Business As Name:</div>
-            <div class="sds-field__value">Simplicity Corperation</div>
+            <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[0].name}}</div>
           </div>
         </div>
 
@@ -41,7 +43,7 @@
           <div class="grid-col">
             <div class="sds-field sds-field--small">
               <div class="sds-field__name has-usa-tag">Unique Entity ID:</div>
-              <div class="sds-field__value left-align">902930291</div>
+              <div class="sds-field__value left-align"> {{items.vendor.dunsNumber}} </div>
             </div>
           </div>
         </div>
@@ -56,7 +58,7 @@
           <div class="grid-col">
             <div class="sds-field sds-field--small">
               <div class="sds-field__name has-usa-tag">Unique Entity ID:</div>
-              <div class="sds-field__value left-align">1A23B45C67D89E</div>
+              <div class="sds-field__value left-align">{{items.vendor.dunsNumber}}</div>
             </div>
           </div>
         </div>
@@ -91,7 +93,7 @@
         <div class="grid-row margin-y-2">
           <div class="sds-field sds-field--stacked sds-field--small">
             <div class="sds-field__name">Date Signed (Base Award):</div>
-            <div class="sds-field__value">Feb 20, 2019</div>
+            <div class="sds-field__value">{{items.contract.signedDate | date: 'yyyy-MM-dd'}} </div>
           </div>
         </div>
 
@@ -100,8 +102,11 @@
           <div class="sds-field sds-field--stacked sds-field--small">
             <div class="sds-field__name">Physical Address:</div>
             <div class="sds-field__value sds-results-child--hilite">
-              <div>123456 George Washington Boulevard, Suite 4a</div>
-              <div>Ashburn, VA 20147 United States</div>
+              <div>{{items.vendor.address.streetAddress}}</div>
+              <div>
+                {{items.vendor.address.city}}, {{items.vendor.address.state.name}} {{items.vendor.address.zip}}
+                {{items.vendor.address.country.name}}
+              </div>
             </div>
           </div>
         </div>
