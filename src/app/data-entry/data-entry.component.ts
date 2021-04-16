@@ -331,6 +331,11 @@ export class DataEntryComponent implements OnInit {
             },
           ],
         },
+        {
+          templateOptions: {
+            label: 'Review and Submit'
+          }
+        }
       ],
     },
   ];
