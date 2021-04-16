@@ -4,13 +4,27 @@ export let user:any = {
 		id: 'af1a1e60-c03d-4a8e-bbd0-50f0c5afd511',
 		firstName: 'Alexandria',
 		lastName: 'Witherspoon',
-		businessPhone: '202 555-1212'
+		email: 'alexandria.witherspoon@usda.gov',
+		businessPhone: '202 555-1212',
+		department: 'Department of Agriculture',
+		subtier: 'Farm Service Agency'
 	},
 	security: {
 		ial2: true
 	},
 	following: [
 
+	],
+	roles: [
+		{
+			organization: 'Farm Service Agency',
+			role: 'Administrator',
+			domains: [
+				'Contracting',
+				'Federal Assistance'
+			],
+			status: 'Active'
+		}
 	],
 	dataServiceAgreements: [
 		{

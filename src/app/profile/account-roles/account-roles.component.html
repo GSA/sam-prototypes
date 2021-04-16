@@ -1,1 +1,28 @@
 <h1>Roles</h1>
+<display-section title="Roles">
+
+	<sds-table [data]="roles" [pagination]="true" sort [sortFn]="customSort" [tableName]="'fullTable'">
+
+	    <sds-table-column sdsColumnName="organization">
+	        <ng-template #sdsHeaderCell>Federal Hierarchy</ng-template>
+	        <ng-template #sdsCell let-element="element">{{ element.organization }}</ng-template>
+	    </sds-table-column>
+	    <sds-table-column sdsColumnName="role">
+	        <ng-template #sdsHeaderCell>Role</ng-template>
+	        <ng-template #sdsCell let-element="element">{{ element.role }}</ng-template>
+
+	    </sds-table-column>
+	    <sds-table-column sdsColumnName="domains">
+	        <ng-template #sdsHeaderCell>Domains</ng-template>
+	        <ng-template #sdsCell let-element="element">{{ element.domains.join(', ') }}</ng-template>
+
+	    </sds-table-column>
+	    <sds-table-column sdsColumnName="status">
+	        <ng-template #sdsHeaderCell>Status</ng-template>
+	        <ng-template #sdsCell let-element="element">{{ element.status }}</ng-template>
+	    </sds-table-column>
+
+	    <sds-header-row [displayedColumns]="displayedColumns" [sticky]="false"></sds-header-row>
+	    <sds-row [displayedColumns]="displayedColumns" [expandOnClick]="false"></sds-row>
+	</sds-table>
+</display-section>

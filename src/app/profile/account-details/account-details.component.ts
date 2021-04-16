@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { AppService } from '../../services/app-service/app.service';
 
 @Component({
   selector: 'app-account-details',
@@ -7,7 +8,11 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class AccountDetailsComponent implements OnInit {
 
-  constructor() { }
+  user: any;
+
+  constructor(private appService: AppService) { 
+  	this.user = appService.user;
+  }
 
   ngOnInit() {
   }

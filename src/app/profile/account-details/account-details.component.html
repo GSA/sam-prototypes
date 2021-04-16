@@ -1,1 +1,48 @@
 <h1>Account Details</h1>
+
+<display-section title="Identity" id="identity">
+ 	<div class="grid-row">
+ 		<div class="grid-col-auto margin-right-3">
+ 			<div class="width-10 height-10 bg-base-lightest">
+ 				
+ 			</div>
+ 		</div>
+ 		<div class="grid-col-6">
+ 			<div class="sds-card sds-card--list">
+	            <div class="sds-card__header sds-card__header--base sds-card__header--left">
+	                <h2 class="sds-card__title ">{{ user.details.firstName + ' ' + user.details.lastName }}</h2>
+	            </div>
+	            <div class="sds-card__body sds-table-container">
+	            	<table class="sds-table">
+				        <tbody>
+				            <tr class="sds-table__row">
+				                <td>First Name</td>
+				                <td class="text-semibold">{{ user.details.firstName }} </td>
+				            </tr>
+				            <tr class="sds-table__row">
+				                <td>Last Name</td>
+				                <td class="text-semibold">{{ user.details.lastName }} </td>
+				            </tr>
+				            <tr class="sds-table__row">
+				                <td>Email</td>
+				                <td class="text-semibold">{{ user.details.email }}</td>
+				            </tr>
+				            <tr class="sds-table__row">
+				                <td>Business Phone</td>
+				                <td class="text-semibold"> {{ user.details.businessPhone }}</td>
+				            </tr>
+				            <tr class="sds-table__row">
+				                <td>Department</td>
+				                <td class="text-semibold"><a class="usa-link" href=""> {{ user.details.department }}</a></td>
+				            </tr>
+				            <tr class="sds-table__row">
+				                <td>Subtier</td>
+				                <td class="text-semibold"><a class="usa-link" href=""> {{ user.details.subtier }}</a></td>
+				            </tr>
+				        </tbody>
+				    </table>
+	            </div>
+	        </div>
+ 		</div>
+ 	</div>
+</display-section>

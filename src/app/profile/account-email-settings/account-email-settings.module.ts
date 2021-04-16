@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SdsTableModule } from '@gsa-sam/sam-material-extensions';
 
 import { AppLayoutModule } from '../../app-layout/app-layout.module';
 
@@ -12,6 +13,7 @@ import { AccountEmailSettingsComponent } from './account-email-settings.componen
   imports: [
     CommonModule,
     AppLayoutModule,
+    SdsTableModule,
     AccountEmailSettingsRoutingModule
   ],
   exports: [AccountEmailSettingsComponent]

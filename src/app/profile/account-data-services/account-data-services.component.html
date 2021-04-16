@@ -5,15 +5,15 @@
 
   <sds-table-column sdsColumnName="document">
     <ng-template #sdsHeaderCell>Document</ng-template>
-    <ng-template #sdsCell let-element="element">{{ element.document }}</ng-template>
+    <ng-template #sdsCell let-element="element">{{element.document}}</ng-template>
   </sds-table-column>
   <sds-table-column sdsColumnName="domain">
     <ng-template #sdsHeaderCell>Domain</ng-template>
-    <ng-template #sdsCell let-element="element">{{ element.domain }}</ng-template>
+    <ng-template #sdsCell let-element="element">{{element.domain}}</ng-template>
   </sds-table-column>
   <sds-table-column sdsColumnName="dateSigned">
     <ng-template #sdsHeaderCell>Date Signed</ng-template>
-    <ng-template #sdsCell let-element="element">{{ element.dateSigned }}</ng-template>
+    <ng-template #sdsCell let-element="element">{{element.dateSigned}}</ng-template>
   </sds-table-column>
 
   <sds-header-row [displayedColumns]="displayedColumns"></sds-header-row>

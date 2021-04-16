@@ -10,6 +10,9 @@ export class AccountEmailSettingsComponent implements OnInit {
 
   public user: any;
 
+  displayedColumns: string[] = ['title', 'frequency'];
+
+
   constructor(private appService: AppService) { 
   	this.user = this.appService.user;
   }
