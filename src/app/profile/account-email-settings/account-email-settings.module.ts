@@ -16,6 +16,7 @@ import { AccountEmailSettingsComponent } from './account-email-settings.componen
     SdsTableModule,
     AccountEmailSettingsRoutingModule
   ],
-  exports: [AccountEmailSettingsComponent]
+  exports: [AccountEmailSettingsComponent],
+  bootstrap: [AccountEmailSettingsComponent]
 })
 export class AccountEmailSettingsModule { }

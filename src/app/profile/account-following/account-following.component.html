@@ -1,1 +1,63 @@
 <h1>Following</h1>
+
+<div class="display-flex flex-row flex-align-end flex-wrap margin-bottom-2">
+	<div class="flex-auto margin-right-2">
+		<label for="keyword" class="sds-field--small">Keyword</label>
+	    <input class="usa-input" type="text" id="keyword">
+	</div>
+	<div class="flex-auto">
+		<label for="domain" class="sds-field--small">Domain</label>
+	    <select class="usa-select" name="options" id="domain">
+				 <option value="contracting">Contracting</option>
+			 <option value="daily">Federal Assistance</option>
+			</select>
+	</div>
+	<div class="flex-fill">
+	</div>
+	<div class="flex-auto">
+		<label for="sort" class="sds-field--small">Sort by</label>
+	    <select class="usa-select" name="options" id="sort">
+		     <option value="titleasc">Title: A - Z</option>
+		     <option value="titledesc">Title: Z - A</option>
+			 <option value="datenew">Follow Date: Newest First</option>
+			 <option value="dateold">Follow Date: Oldest First</option>
+		</select>
+	</div>
+</div>
+<div class="grid-row sds-field margin-bottom-1">
+	<div class="grid-col-auto sds-field__value">{{ pagingText }}</div>
+</div>
+<div *ngFor="let following of followings" class="sds-card margin-bottom-1">
+	<div class="sds-card__body">
+		<h2><a class="usa-link" href="">{{following.title}}</a><i class="sds-status sds-status--sm sds-status--green margin-left-3"></i><span class="sds-field--small">{{ following.status }}</span></h2>
+
+		<div [ngSwitch]="domain">
+		  <div *ngSwitchCase="Contract Opportunities">
+		    <ng-container *ngTemplateOutlet="contractOpportunitiesDetails; context: {following: following}"></ng-container>
+		  </div>
+		  <div *ngSwitchDefault>
+		    <ng-container *ngTemplateOutlet="defaultDetails; context: {following: following}"></ng-container>
+		  </div>
+		</div>
+
+	</div>
+</div>
+
+
+<ng-template #contractOpportunitiesDetails let-following="following">
+    <div class="display-row">
+		<div class="display-col">
+			<display-field label="Notice ID">{{following.noticeId}}</display-field>
+		</div>
+		<div class="display-col">
+			<display-field label="Department">{{following.department}}</display-field>
+		</div>
+		<div class="display-col">
+			<display-field label="Publish Date">{{following.publishDate}}</display-field>
+		</div>
+		<div class="display-col">
+			<display-field label="Current Response Due Date">{{following.responseDate}}</display-field>
+		</div>
+	</div>
+</ng-template>
+<ng-template #defaultDetails let-following="following"></ng-template>

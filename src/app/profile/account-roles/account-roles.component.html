@@ -1,5 +1,25 @@
 <h1>Roles</h1>
-<display-section title="Roles">
+
+	<div class="display-flex flex-row flex-align-end flex-wrap margin-bottom-2">
+		<div class="flex-auto margin-right-2">
+			<label for="organizations" class="sds-field--small">Organization</label>
+		    <select class="usa-select" name="options" id="organizations">
+   				 <option value="immediately">Farm Service Agency</option>
+  			</select>
+		</div>
+		<div class="flex-auto">
+			<label for="domains" class="sds-field--small">Domain</label>
+		    <select class="usa-select" name="options" id="domains">
+   				 <option value="immediately">Contracting</option>
+    			 <option value="daily">Federal Assistance</option>
+  			</select>
+		</div>
+		<div class="flex-fill">
+		</div>
+		<div class="flex-auto">
+			<button class="usa-button usa-button--secondary">Request Role</button>
+		</div>
+	</div>
 
 	<sds-table [data]="roles" [pagination]="true" sort [sortFn]="customSort" [tableName]="'fullTable'">
 
@@ -19,10 +39,10 @@
 	    </sds-table-column>
 	    <sds-table-column sdsColumnName="status">
 	        <ng-template #sdsHeaderCell>Status</ng-template>
-	        <ng-template #sdsCell let-element="element">{{ element.status }}</ng-template>
+	        <ng-template #sdsCell let-element="element"><i class="sds-status sds-status--sm sds-status--green"></i>{{ element.status }}</ng-template>
 	    </sds-table-column>
 
 	    <sds-header-row [displayedColumns]="displayedColumns" [sticky]="false"></sds-header-row>
 	    <sds-row [displayedColumns]="displayedColumns" [expandOnClick]="false"></sds-row>
 	</sds-table>
-</display-section>
+

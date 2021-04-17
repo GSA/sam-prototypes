@@ -12,7 +12,37 @@ export let user:any = {
 	security: {
 		ial2: true
 	},
-	following: [
+	followings: [
+		{
+			domain: 'Contract Opportunities',
+			followDate: 'May 12, 2020',
+			title: '4310--Supply: medical vacuum pump system',
+			noticeId: '36C24820Q0633',
+			department: 'DEPARTMENT OF VETERANS AFFAIRS',
+			responseDate: 'Jun 12, 2021',
+			publishDate: 'May 16, 2021',
+			status: 'Active'
+		},
+		{
+			domain: 'Contract Opportunities',
+			followDate: 'May 13, 2020',
+			title: 'Airport Fire Fighting Vehicles',
+			noticeId: 'W56HZV15R0265',
+			department: 'DEPT OF DEFENSE',
+			responseDate: 'Feb 26, 2021',
+			publishDate: 'Dec 16, 2021',
+			status: 'Active'
+		},
+		{
+			domain: 'Contract Opportunities',
+			followDate: 'May 16, 2020',
+			title: 'Airport Crash and Rescue Vehicles',
+			noticeId: 'W56HZV16R0153',
+			department: 'DEPT OF DEFENSE',
+			responseDate: 'Jun 22, 2021',
+			publishDate: 'Apr 11, 2021',
+			status: 'Active'
+		}
 
 	],
 	roles: [

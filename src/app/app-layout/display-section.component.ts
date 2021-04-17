@@ -20,8 +20,7 @@ import {
         <ng-content></ng-content>
       </div>
     </section>
-  `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  `
 })
 export class DisplaySectionComponent implements OnInit {
   @Input() title: string;

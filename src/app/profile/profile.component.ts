@@ -1,10 +1,10 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { profileNavigationData } from './navigation.data';
+
+import { AppService } from '../services/app-service/app.service';
 
 @Component({
   selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  templateUrl: './profile.component.html'
 })
 export class ProfileComponent implements OnInit {
 
@@ -16,8 +16,8 @@ export class ProfileComponent implements OnInit {
     ]
   };
 
-  constructor() { 
-	  this.navigationData = profileNavigationData;
+  constructor(private appService: AppService) { 
+	  this.navigationData = appService.workspaceMenu;
   }
 
   ngOnInit() {

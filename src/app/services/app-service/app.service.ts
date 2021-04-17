@@ -1,7 +1,11 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { SideNavigationModel } from '@gsa-sam/components';
+import { Observable, of, BehaviorSubject } from 'rxjs';
+
+
 import { user } from './user.data';
-import { BehaviorSubject } from 'rxjs';
+import { workspaceNavigationData } from './workspace-navigation.data';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +14,13 @@ export class AppService {
 
   private _signedIn: boolean = false;
   private _user = user;
+  private _workspaceMenu = workspaceNavigationData;
 
   public backButtonTest: (route: ActivatedRouteSnapshot) => boolean;
+
+  get workspaceMenu(): SideNavigationModel {
+  	return this._workspaceMenu;
+  }
 
   /**
    * event for event based
@@ -27,6 +36,14 @@ export class AppService {
   }
 
   constructor(public router: Router) { }
+
+  getEmailSettings(): Observable<any[]> {
+      return of(this.user.emailSettings);
+  }
+
+  getFollowings(): Observable<any[]> {
+      return of(this.user.followings);
+  }
 
   signIn(redirectUrl?: string) {
     this._signedIn = true;

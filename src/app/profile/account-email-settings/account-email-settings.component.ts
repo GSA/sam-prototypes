@@ -1,23 +1,29 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { AppService } from '../../services/app-service/app.service';
 
 @Component({
   selector: 'app-account-email-settings',
-  templateUrl: './account-email-settings.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  templateUrl: './account-email-settings.component.html'
 })
 export class AccountEmailSettingsComponent implements OnInit {
 
-  public user: any;
+  public emailSettings: any[];
 
   displayedColumns: string[] = ['title', 'frequency'];
 
 
-  constructor(private appService: AppService) { 
-  	this.user = this.appService.user;
+  constructor(private changeDetectRef:ChangeDetectorRef, private appService: AppService) { 	  	
+
   }
 
   ngOnInit(): void {
+    	this.appService.getEmailSettings().subscribe((settings: any[]) => { 
+			this.emailSettings = settings;
+			this.changeDetectRef.detectChanges();
+		});
+  }
+
+  ngAfterViewInit() {
   }
 
 }
