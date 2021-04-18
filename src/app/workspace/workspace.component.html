@@ -1,118 +1,37 @@
 <main>
   <div class="sds-page">
-    <div class="grid-container">        
+    <div class="grid-container padding-top-2">        
       <h1>Workspace</h1>
       <div class="grid-row grid-gap">
 
         <div class="tablet:grid-col-7 margin-right-2">
-          <!-- Contract Opportunities Card -->
-          <div class="sds-card">
-            <div class="sds-card__header sds-card__header--flex">
-                <a  class="usa-link" [routerLink]="['opportunities']"><h2 class="sds-card__title ">Contract Opportunities</h2></a>
-                <div class="sds-card__buttons">
-                    <button class="usa-button usa-button--outline">Create Opportunity</button>
-                </div>
-            </div>
-            <div class="sds-card__body">
-              <div class="sds-statistics">
-                <a class="usa-link" [routerLink]="['opportunities']" class="green statistic" style="text-decoration: none;">
-                  <div class="value"><span class="circular">15</span></div>
-                  <div class="label">Active</div>
-                </a>
-                <a class="usa-link" [routerLink]="['opportunities']" class="blue statistic" style="text-decoration: none;">
-                  <div class="value"><span class="circular">0</span></div>
-                  <div class="label">Draft</div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <!-- Entity Information Card -->
-          <div class="sds-card" *ngIf="false">
-            <div class="sds-card__header">
-              <div class="grid-row grid-gap-md">
-                <div class="grid-col-fill">
-                  <h2 class="padding-top-1"><a [routerLink]="['registrations']" class="usa-link" style="text-decoration: none;">Entity Registrations</a></h2>
-                </div>
+        
+          <workspace-card *ngIf="entityRegistration" [title]="entityRegistration.title" [route]="entityRegistration.route">
+            <button class="usa-button usa-button--outline">Register</button>
+            <workspace-statistics [model]="entityRegistration.statisticsGroups[0]"></workspace-statistics>
+          </workspace-card>
+
+          <workspace-card *ngIf="opportunities" [title]="opportunities.title" [route]="opportunities.route">
+            <button class="usa-button usa-button--outline">Create Opportunity</button>
+            <workspace-statistics [model]="opportunities.statisticsGroups[0]"></workspace-statistics>
+          </workspace-card>
+
+          <workspace-card *ngIf="assistanceListings" [title]="assistanceListings.title" [route]="assistanceListings.route">
+            <button class="usa-button usa-button--outline">Create Listing</button>
+              <div class="grid-row grid-gap">
                 <div class="grid-col-auto">
-                  <button class="usa-button usa-button--outline" [routerLink]="['/entity-registration/register']">Register Entity</button>
+                  <workspace-statistics [model]="assistanceListings.statisticsGroups[0]"></workspace-statistics>
                 </div>
-              </div>
-            </div>
-            <div class="sds-card__content tablet:display-block padding-4">
-              <div class="sds-statistics">
-                <a class="usa-link" [routerLink]="['registrations']" class="green statistic" style="text-decoration: none;">
-                  <div class="value"><span class="circular">15</span></div>
-                  <div class="label">Active</div>
-                </a>
-                <a class="usa-link" [routerLink]="['registrations']" class="grey statistic" style="text-decoration: none;">
-                  <div class="value"><span class="circular">0</span></div>
-                  <div class="label">Draft</div>
-                </a>
-                <a class="usa-link" [routerLink]="['registrations']" class="blue statistic" style="text-decoration: none;">
-                  <div class="value"><span class="circular">1</span></div>
-                  <div class="label">Work in Progress</div>
-                </a>
-                <a class="usa-link" [routerLink]="['registrations']" class="yellow statistic" style="text-decoration: none;">
-                  <div class="value"><span class="circular">2</span></div>
-                  <div class="label">Submitted</div>
-                </a>
-                <a class="usa-link" [routerLink]="['registrations']" class="red statistic" style="text-decoration: none;">
-                  <div class="value"><span class="circular">2</span></div>
-                  <div class="label">Expired</div>
-                </a>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Assistance Listing Card -->
-          <div class="sds-card margin-top-4">            
-            <div class="sds-card__header sds-card__header--flex">
-                <a  class="usa-link" [routerLink]="['assistancelist']"><h2 class="sds-card__title ">Assistance Listings</h2></a>
-                <div class="sds-card__buttons">
-                    <button class="usa-button usa-button--outline">Create Listing</button>
-                </div>
-            </div>
-            <div class="sds-card__body">
-              <div class="sds-statistics">
-                <a class="green statistic">
-                  <div class="value"><span class="circular">15</span></div>
-                  <div class="label">Published</div>
-                </a>
-                <a class="blue statistic">
-                  <div class="value"><span class="circular">0</span></div>
-                  <div class="label">Draft</div>
-                </a>
-                <a class="red statistic">
-                  <div class="value"><span class="circular">1</span></div>
-                  <div class="label">Rejected</div>
-                </a>
-                <a class="orange statistic">
-                  <div class="value"><span class="circular">2</span></div>
-                  <div class="label">Overdue</div>
-                </a>
-              </div>
-              <div class="grid-row">
-                <div class="grid-col">
+                <div class="grid-col-fill margin-right-1">
                   <ul>
-                    <li>
-                      <a href="">
-                        Download Assistance Listing Template
-                        <i class="fa fa-file-word margin-left-05" aria-hidden="true"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="grid-col">
-                  <ul>
-                    <li>
-                      <a href="">Regional Assistance Locations</a>
-                    </li>
+                    <li><a class="usa-link" [routerLink]="['/workspace']">Assistance Listing Template</a></li>
+                    <li><a class="usa-link" [routerLink]="['/workspace']">Regional Assistance Locations</a></li>
+                    <li><a class="usa-link" [routerLink]="['/workspace']">CFDA Numbers</a></li>
                   </ul>
                 </div>
               </div>
-            </div>
-          </div>
+          </workspace-card>
+
 
           <!-- Collective Bargaining Agreements Card -->
           <div class="sds-card" *ngIf="false">
