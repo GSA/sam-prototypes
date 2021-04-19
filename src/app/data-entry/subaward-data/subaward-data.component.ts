@@ -29,7 +29,7 @@ export class SubawardDataComponent implements OnInit {
 
   itemsDefault = [
     { title: "First", id: 1 },
-    { title: "Second", id: 2 },
+    //  { title: "Second", id: 2 },
   ];
 
   items = this.itemsDefault;

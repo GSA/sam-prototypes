@@ -14,6 +14,7 @@ import { SubawardDataComponent } from "../subaward-data/subaward-data.component"
 import { ReviewContractComponent } from "../review-contract/review-contract.component";
 import { CardModule } from "../card/card.module";
 import { SdsActionsMenuModule } from "@gsa-sam/layouts";
+import { RepeatTypeComponent } from "./repeat-section";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SdsActionsMenuModule } from "@gsa-sam/layouts";
     FormlySubawardComponent,
     SubawardDataComponent,
     ReviewContractComponent,
+    RepeatTypeComponent,
   ],
   imports: [
     CommonModule,
@@ -51,6 +53,11 @@ import { SdsActionsMenuModule } from "@gsa-sam/layouts";
         {
           name: "contract",
           component: FormlyContractComponent,
+          wrappers: sdsWrappers,
+        },
+        {
+          name: "repeat",
+          component: RepeatTypeComponent,
           wrappers: sdsWrappers,
         },
       ],
