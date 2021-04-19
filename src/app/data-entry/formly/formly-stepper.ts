@@ -7,7 +7,18 @@ import { FieldType, FormlyFieldConfig } from "@ngx-formly/core";
       *ngFor="let step of field.fieldGroup; let index = index; let last = last"
       [stepControl]="getStepForm(index, step)"
     >
-      <ng-template cdkStepLabel>{{ step.templateOptions.label }}</ng-template>
+      <ng-template cdkStepLabel>
+        <span *ngIf="form.valid" class="usa-button sds-button--circle">
+          <sds-icon [icon]="'check'"></sds-icon>
+        </span>
+        <span
+          *ngIf="!form.valid"
+          class="usa-button sds-button--circle sds-button--danger"
+        >
+          <sds-icon [icon]="'x'"></sds-icon>
+        </span>
+        {{ step.templateOptions.label }}
+      </ng-template>
       <div *ngIf="!step.template">
         <formly-field [field]="step"></formly-field>
       </div>

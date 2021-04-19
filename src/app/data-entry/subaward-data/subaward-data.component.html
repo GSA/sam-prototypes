@@ -1,5 +1,14 @@
 <div class="grid-container">
   <h3>Add Subawardee</h3>
+
+  <form [formGroup]="form">
+    <div class="grid-row">
+      <formly-form class="grid-col-6 padding-right-2" [model]="model" [fields]="fields" [options]="options"
+        [form]="form"></formly-form>
+      <button class="usa-button grid-col-4" type="button" (click)="addSubawardee()">Auto-fill Vendor
+        Information</button>
+    </div>
+  </form>
   <!-- 
   Subaward-list {{subawardeeList |json}} -->
 

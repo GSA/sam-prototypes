@@ -46,6 +46,7 @@ export class DataEntryComponent implements OnInit {
               key: "dataentry.certificate",
               type: "checkbox",
               templateOptions: {
+                required: true,
                 description:
                   "The FFATA Report can only be submitted by prime awardees. Only continue with this submission if you are the prime awardee for this contract.",
                 label:
