@@ -19,15 +19,15 @@ import { FieldArrayType, FormlyFormBuilder } from "@ngx-formly/core";
       <button class="usa-button" type="button" (click)="addSubawardee()">
         {{ field.fieldArray.templateOptions.btnText }}
       </button>
-
-      <!-- <button class="usa-button" type="button" (click)="add()">
-        {{ field.fieldArray.templateOptions.btnText }}
-      </button> -->
     </div>
     <div *ngFor="let field of field.fieldGroup; let i = index">
       <formly-group [field]="field" [options]="options" [form]="formControl">
         <div class="col-sm-2 d-flex align-items-center">
-          <button class="btn btn-danger" type="button" (click)="remove(i)">
+          <button
+            class="usa-button sds-danger"
+            type="button"
+            (click)="remove(i)"
+          >
             Remove
           </button>
         </div>
@@ -40,9 +40,12 @@ export class RepeatTypeComponent extends FieldArrayType {
     super(builder);
   }
   addSubawardee() {
+    const model1 = this.field.fieldArray.templateOptions.getDetails;
+    console.log("model1", model1);
     const data: any = {
       fields: this.field.fieldArray.templateOptions.subawardeefields,
-      model: this.field.fieldArray.templateOptions.subawardeeModel,
+      model: this.field.fieldArray.templateOptions.getDetails,
+      //  model: this.field.fieldArray.templateOptions.subawardeeModel,
       submit: "Submit",
       title: "Add Subawardee",
       //options: this.subawardeeOptions,
@@ -57,7 +60,7 @@ export class RepeatTypeComponent extends FieldArrayType {
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.to.subawardeeModel = result;
-        console.log(result);
+        this.field.fieldArray.fieldGroup[0].templateOptions.subawardItem = result;
         this.add();
       }
     });

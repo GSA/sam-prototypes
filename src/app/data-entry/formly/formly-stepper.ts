@@ -8,7 +8,7 @@ import { FieldType, FormlyFieldConfig } from "@ngx-formly/core";
       [stepControl]="getStepForm(index, step)"
     >
       <ng-template cdkStepLabel>
-        <span *ngIf="form.valid" class="usa-button sds-button--circle">
+        <!-- <span *ngIf="form.valid" class="usa-button sds-button--circle">
           <sds-icon [icon]="'check'"></sds-icon>
         </span>
         <span
@@ -16,7 +16,7 @@ import { FieldType, FormlyFieldConfig } from "@ngx-formly/core";
           class="usa-button sds-button--circle sds-button--danger"
         >
           <sds-icon [icon]="'x'"></sds-icon>
-        </span>
+        </span> -->
         {{ step.templateOptions.label }}
       </ng-template>
       <div *ngIf="!step.template">

@@ -12,7 +12,7 @@ import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 })
 export class SubawardDataComponent implements OnInit {
   @Input() subawardeeList: any[] = [];
-
+  @Input() subawardItem: any = {};
   form = new FormGroup({});
   model: any = {};
   options: FormlyFormOptions = {};

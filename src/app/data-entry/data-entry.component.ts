@@ -338,39 +338,41 @@ export class DataEntryComponent implements OnInit {
       type: "stepper",
       fieldGroup: [
         {
-          templateOptions: { label: "Sub Contract" },
+          templateOptions: { label: "Subaward with repeater" },
           fieldGroup: [
             {
-              key: "investments",
+              key: "addAwardee",
               type: "repeat",
               //hideExpression: () => this.model.fixedDate !== 2,
-              validators: {
-                investment: {
-                  expression: (control: FormControl) => {
-                    const investments = control.value;
+              // validators: {
+              //   investment: {
+              //     expression: (control: FormControl) => {
+              //       const investments = control.value;
 
-                    return investments && investments.length >= 2;
-                  },
-                  message: (error, field: FormlyFieldConfig) =>
-                    `You have to add at leat one investments.`,
-                },
-              },
+              //       return investments && investments.length >= 2;
+              //     },
+              //     message: (error, field: FormlyFieldConfig) =>
+              //       `You have to add at leat one investments.`,
+              //   },
+              // },
               fieldArray: {
                 fieldGroupClassName: "row",
                 templateOptions: {
                   required: true,
                   subawardeeModel: this.subawardeeModel,
                   subawardeefields: this.subawardeefields,
-
+                  getDetails: this.getAwardeeDetails(),
                   btnText: "Auto-fill Vendor Information",
                 },
                 fieldGroup: [
                   {
                     className: "col-sm-4",
 
-                    key: "investmentName",
+                    key: "subawards",
                     type: "subaward",
                     templateOptions: {
+                      testData: 1,
+                      subawardItem: {},
                       subawardeeList: this.getData(),
                     },
                   },
@@ -383,40 +385,6 @@ export class DataEntryComponent implements OnInit {
         {
           templateOptions: { label: "Report Contract" },
           fieldGroup: [
-            {
-              key: "investments",
-              type: "repeat",
-              //hideExpression: () => this.model.fixedDate !== 2,
-              validators: {
-                investment: {
-                  expression: (control: FormControl) => {
-                    const investments = control.value;
-
-                    return investments && investments.length >= 2;
-                  },
-                  message: (error, field: FormlyFieldConfig) =>
-                    `You have to add at leat one investments.`,
-                },
-              },
-              fieldArray: {
-                fieldGroupClassName: "row",
-                templateOptions: {
-                  required: true,
-                  btnText: "Add another investment",
-                },
-                fieldGroup: [
-                  {
-                    className: "col-sm-4",
-
-                    key: "investmentName",
-                    type: "subaward",
-                    templateOptions: {
-                      subawardeeList: this.getData(),
-                    },
-                  },
-                ],
-              },
-            },
             {
               key: "dataentry.contract",
               type: "contract",
@@ -432,7 +400,6 @@ export class DataEntryComponent implements OnInit {
               key: "dataentry.certificate",
               type: "checkbox",
               templateOptions: {
-                required: true,
                 description:
                   "The FFATA Report can only be submitted by prime awardees. Only continue with this submission if you are the prime awardee for this contract.",
                 label:
@@ -745,8 +712,9 @@ export class DataEntryComponent implements OnInit {
     return results[0];
   }
 
-  addSubawardee1() {
-    console.log("adding sub awardee");
+  getAwardeeDetails() {
+    console.log(this.subawardeeModel, "modelvalue");
+    return { number: 12345677, name: "test1" };
   }
 
   addSubawardee() {

@@ -13,6 +13,10 @@
   Subaward-list {{subawardeeList |json}} -->
 
   <!-- <div *ngFor="let item of items"> -->
+
+  {{subawardItem | json}}
+
+
   <sds-expandable-card #inputsCard [id]="'subawardcard'" [title]="'item.title'" [showContent]="'false'"
     [isExpandable]="true">
     <ng-container sds-card-title-group-action>
