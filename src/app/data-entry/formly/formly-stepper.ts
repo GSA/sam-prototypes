@@ -5,18 +5,20 @@ import { FieldType, FormlyFieldConfig } from "@ngx-formly/core";
   template: ` <app-stepper linear [hideSidePannel]="to.hideSidePannel">
     <cdk-step
       *ngFor="let step of field.fieldGroup; let index = index; let last = last"
-      [stepControl]="getStepForm(index, step)"
     >
       <ng-template cdkStepLabel>
-        <!-- <span *ngIf="form.valid" class="usa-button sds-button--circle">
+        <span
+          *ngIf="isValid(step) && step.formControl.dirty"
+          class="usa-button sds-button--circle"
+        >
           <sds-icon [icon]="'check'"></sds-icon>
         </span>
         <span
-          *ngIf="!form.valid"
+          *ngIf="!isValid(step) && step.formControl.dirty"
           class="usa-button sds-button--circle sds-button--danger"
         >
           <sds-icon [icon]="'x'"></sds-icon>
-        </span> -->
+        </span>
         {{ step.templateOptions.label }}
       </ng-template>
       <div *ngIf="!step.template">
@@ -35,7 +37,6 @@ export class FormlyFieldStepperComponent extends FieldType {
     } else {
       isValid = this.isValid(field);
     }
-
     return { invalid: !isValid, valid: isValid };
   }
 

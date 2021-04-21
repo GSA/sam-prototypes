@@ -1,13 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
-import { ActivatedRoute, Router } from "@angular/router";
-import {
-  NavigationLink,
-  NavigationMode,
-  SdsDialogService,
-  SelectionPanelModel,
-} from "@gsa-sam/components";
-import { SearchParameters } from "@gsa-sam/layouts";
+import { FormGroup } from "@angular/forms";
+import { Router } from "@angular/router";
+import { SdsDialogService } from "@gsa-sam/components";
 import { SdsFormlyDialogComponent } from "@gsa-sam/sam-formly";
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 import { EntityReportingService } from "../services/entity-reporting-service/entity-reporting.service";
@@ -17,12 +11,9 @@ import { EntityReportingService } from "../services/entity-reporting-service/ent
   templateUrl: "./data-entry.component.html",
   styleUrls: [],
   providers: [EntityReportingService],
-  //   changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DataEntryComponent implements OnInit {
-  templateName = "subaward";
-  // items: any[] = [];
-
   subawardeeModel: any = {};
   subawardeeOptions: FormlyFormOptions;
   subawardeefields: FormlyFieldConfig[] = [
@@ -31,7 +22,6 @@ export class DataEntryComponent implements OnInit {
       templateOptions: {
         hideSidePannel: true,
       },
-
       fieldGroup: [
         // step 1
         {
@@ -338,51 +328,6 @@ export class DataEntryComponent implements OnInit {
       type: "stepper",
       fieldGroup: [
         {
-          templateOptions: { label: "Subaward with repeater" },
-          fieldGroup: [
-            {
-              key: "addAwardee",
-              type: "repeat",
-              //hideExpression: () => this.model.fixedDate !== 2,
-              // validators: {
-              //   investment: {
-              //     expression: (control: FormControl) => {
-              //       const investments = control.value;
-
-              //       return investments && investments.length >= 2;
-              //     },
-              //     message: (error, field: FormlyFieldConfig) =>
-              //       `You have to add at leat one investments.`,
-              //   },
-              // },
-              fieldArray: {
-                fieldGroupClassName: "row",
-                templateOptions: {
-                  required: true,
-                  subawardeeModel: this.subawardeeModel,
-                  subawardeefields: this.subawardeefields,
-                  getDetails: this.getAwardeeDetails(),
-                  btnText: "Auto-fill Vendor Information",
-                },
-                fieldGroup: [
-                  {
-                    className: "col-sm-4",
-
-                    key: "subawards",
-                    type: "subaward",
-                    templateOptions: {
-                      testData: 1,
-                      subawardItem: {},
-                      subawardeeList: this.getData(),
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-        },
-
-        {
           templateOptions: { label: "Report Contract" },
           fieldGroup: [
             {
@@ -427,9 +372,9 @@ export class DataEntryComponent implements OnInit {
                       className: "grid-col-8",
                       key: "month",
                       type: "select",
-
                       templateOptions: {
                         label: "Report Month",
+                        required: true,
                         hideOptional: true,
                         options: [
                           { label: "Jan", value: "01" },
@@ -443,9 +388,9 @@ export class DataEntryComponent implements OnInit {
                       className: "grid-col-4 margin-top-5",
                       key: "year",
                       type: "select",
-
                       templateOptions: {
                         //label: "year",
+                        required: true,
                         hideLable: true,
                         hideOptional: true,
                         options: [
@@ -464,6 +409,7 @@ export class DataEntryComponent implements OnInit {
                   type: "input",
                   key: "title",
                   templateOptions: {
+                    required: true,
                     label: "Program or Project Title (Optional)",
                   },
                 },
@@ -477,6 +423,7 @@ export class DataEntryComponent implements OnInit {
                   key: "cityName",
                   templateOptions: {
                     label: "City",
+                    required: true,
                     hideOptional: true,
                   },
                 },
@@ -645,43 +592,34 @@ export class DataEntryComponent implements OnInit {
             },
           ],
         },
-
         {
-          templateOptions: { label: "Subawardee Details" },
+          templateOptions: { label: "Subaward with repeater" },
           fieldGroup: [
             {
-              key: "dataentry.addsubawardee",
-              fieldGroupClassName: "grid-row grid-gap-2",
-              fieldGroup: [
-                {
-                  className: "grid-col-6",
-                  key: "add",
-                  type: "input",
-                  templateOptions: {
-                    placeholder: "Input Unique Entity ID",
-                    hideOptional: true,
-                  },
+              key: "addAwardee",
+              type: "repeat",
+              fieldArray: {
+                fieldGroupClassName: "row",
+                templateOptions: {
+                  required: true,
+                  subawardeeModel: this.subawardeeModel,
+                  subawardeefields: this.subawardeefields,
+                  getDetails: this.getAwardeeDetails,
+                  btnText: "Auto-fill Vendor Information",
+                  inputPlaceHolder: "Input Unique Entity ID",
                 },
-                {
-                  className: "grid-col-4 usa-button",
-                  key: "button-test",
-                  type: "button",
-                  templateOptions: {
-                    text: "Auto-fill Vendor Information",
-
-                    onClick: ($event) => {
-                      this.addSubawardee();
-                      console.log("button clicked");
+                fieldGroup: [
+                  {
+                    className: "col-sm-4",
+                    key: "subawards",
+                    type: "subaward",
+                    templateOptions: {
+                      testData: 1,
+                      subawardItem: {},
+                      subawardeeList: this.getData(),
                     },
                   },
-                },
-              ],
-            },
-            {
-              key: "dataentry.subawarddetails",
-              type: "subaward",
-              templateOptions: {
-                subawardeeList: this.getData(),
+                ],
               },
             },
           ],
@@ -712,9 +650,8 @@ export class DataEntryComponent implements OnInit {
     return results[0];
   }
 
-  getAwardeeDetails() {
-    console.log(this.subawardeeModel, "modelvalue");
-    return { number: 12345677, name: "test1" };
+  getAwardeeDetails(id) {
+    return { number: id, name: "test1" };
   }
 
   addSubawardee() {

@@ -6,17 +6,20 @@ import { FieldArrayType, FormlyFormBuilder } from "@ngx-formly/core";
 @Component({
   selector: "formly-repeat-section",
   template: `
-    <div style="margin:30px 0;">
-      <label class="usa-label" for="input-type-text"
-        >Input Unique Entity ID</label
-      >
+    <div class="row">
       <input
+        #input
         class="usa-input"
         id="input-type-text"
         name="input-type-text"
+        [placeholder]="field.fieldArray.templateOptions.inputPlaceHolder"
         type="text"
       />
-      <button class="usa-button" type="button" (click)="addSubawardee()">
+      <button
+        class="usa-button"
+        type="button"
+        (click)="addSubawardee(input.value)"
+      >
         {{ field.fieldArray.templateOptions.btnText }}
       </button>
     </div>
@@ -39,16 +42,14 @@ export class RepeatTypeComponent extends FieldArrayType {
   constructor(builder: FormlyFormBuilder, public dialog: SdsDialogService) {
     super(builder);
   }
-  addSubawardee() {
-    const model1 = this.field.fieldArray.templateOptions.getDetails;
+  addSubawardee(id) {
+    const model1 = this.field.fieldArray.templateOptions.getDetails(id);
     console.log("model1", model1);
     const data: any = {
       fields: this.field.fieldArray.templateOptions.subawardeefields,
-      model: this.field.fieldArray.templateOptions.getDetails,
-      //  model: this.field.fieldArray.templateOptions.subawardeeModel,
+      model: model1,
       submit: "Submit",
       title: "Add Subawardee",
-      //options: this.subawardeeOptions,
       cancel: "No thanks",
     };
 
@@ -59,9 +60,10 @@ export class RepeatTypeComponent extends FieldArrayType {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        this.to.subawardeeModel = result;
         this.field.fieldArray.fieldGroup[0].templateOptions.subawardItem = result;
         this.add();
+        this.model[this.model.length - 1] = result;
+        console.log(this.model, "model repeater");
       }
     });
   }
