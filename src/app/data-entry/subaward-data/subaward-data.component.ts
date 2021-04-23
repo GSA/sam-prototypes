@@ -12,9 +12,24 @@ import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 })
 export class SubawardDataComponent implements OnInit {
   @Input() subawardeeList: any[] = [];
+  @Input() subawardItem: any = {};
+  form = new FormGroup({});
+  model: any = {};
+  options: FormlyFormOptions = {};
+  fields: FormlyFieldConfig[] = [
+    {
+      key: "addsubawardee",
+      type: "input",
+      templateOptions: {
+        //label: "Entity Name",
+        placeholder: "Input Unique Entity ID",
+      },
+    },
+  ];
+
   itemsDefault = [
     { title: "First", id: 1 },
-    { title: "Second", id: 2 },
+    //  { title: "Second", id: 2 },
   ];
 
   items = this.itemsDefault;

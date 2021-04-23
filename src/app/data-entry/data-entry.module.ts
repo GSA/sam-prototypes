@@ -15,6 +15,7 @@ import {
   chevronLeft,
   chevronRight,
   x,
+  check,
 } from "ngx-bootstrap-icons";
 
 @NgModule({
@@ -30,7 +31,7 @@ import {
     SdsFormlyModule,
     FormlyModule.forRoot(),
     PrototypeFormlyModule,
-    NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, x }),
+    NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, x, check }),
   ],
   exports: [ReviewSubmitComponent, DataEntryComponent],
 })
