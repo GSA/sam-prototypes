@@ -7,6 +7,7 @@ import { FieldArrayType, FormlyFormBuilder } from "@ngx-formly/core";
   selector: "formly-repeat-section",
   template: `
     <div class="row">
+      <h3>Add Subawardee</h3>
       <input
         #input
         class="usa-input"
@@ -23,7 +24,10 @@ import { FieldArrayType, FormlyFormBuilder } from "@ngx-formly/core";
         {{ field.fieldArray.templateOptions.btnText }}
       </button>
     </div>
-    <div *ngFor="let field of field.fieldGroup; let i = index">
+    <div
+      *ngFor="let field of field.fieldGroup; let i = index"
+      class="margin-top-2"
+    >
       <formly-group [field]="field" [options]="options" [form]="formControl">
         <div class="col-sm-2 d-flex align-items-center">
           <button
@@ -44,7 +48,6 @@ export class RepeatTypeComponent extends FieldArrayType {
   }
   addSubawardee(id) {
     const model1 = this.field.fieldArray.templateOptions.getDetails(id);
-    console.log("model1", model1);
     const data: any = {
       fields: this.field.fieldArray.templateOptions.subawardeefields,
       model: model1,

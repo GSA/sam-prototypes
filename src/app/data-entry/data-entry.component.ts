@@ -605,6 +605,7 @@ export class DataEntryComponent implements OnInit {
                   subawardeeModel: this.subawardeeModel,
                   subawardeefields: this.subawardeefields,
                   getDetails: this.getAwardeeDetails,
+                  // self: this,
                   btnText: "Auto-fill Vendor Information",
                   inputPlaceHolder: "Input Unique Entity ID",
                 },
