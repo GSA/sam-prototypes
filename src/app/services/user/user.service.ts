@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
+import { UserModule } from './user.module';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: UserModule
 })
 export class UserService {
 
-  constructor() { 
+  constructor() { }
 
-  }
 }

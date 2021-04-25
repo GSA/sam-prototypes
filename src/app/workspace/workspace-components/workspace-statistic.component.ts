@@ -1,26 +1,44 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
-import { StatisticsGroup } from '../../services/workspace-service/workspace.service';
+import { Statistic } from '../../services/interfaces/public-apis';
 
 @Component({
-  selector: 'workspace-statistics',
+  selector: 'workspace-statistic',
   template: `
-     <div class="sds-statistics">
-      	<button  *ngFor="let item of model.statistics" [routerLink]="[item.route]" [ngClass]="[item.colorClass, 'statistic']">
-    		<div class="value">
-      			<span class="circular">{{item.value}}</span></div>
-    		<div class="label">{{item.label}}</div>
-  		</button>
-     </div>
-  `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+      <button [routerLink]="[route]" [queryParams]="queryParams" [ngClass]="[color, 'statistic']">
+        <div class="value">
+            <span class="circular">{{value}}</span></div>
+        <div class="label">{{label}}</div>
+      </button>
+  `
 })
 export class WorkspaceStatisticComponent implements OnInit {
 
-  @Input() model: StatisticsGroup;
+  @Input() color: string;
+  @Input() value: number;
+  @Input() label: string;
+  @Input() route: string;
+  @Input() queryParams: string[];
 
   constructor() { }
 
   ngOnInit(): void {
   }
+}
 
+@Component({
+  selector: 'workspace-statistics',
+  template: `
+     <div class="sds-statistics">
+      	<ng-content select="workspace-statistic"></ng-content>
+     </div>
+  `
+})
+export class WorkspaceStatisticsComponent implements OnInit {
+
+  @Input() model: Statistic[];
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 }

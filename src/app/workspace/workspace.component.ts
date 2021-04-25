@@ -1,50 +1,84 @@
-import { OnInit, Component, ChangeDetectionStrategy } from '@angular/core';
-import { WorkspaceSummary, WorkspaceService } from '../services/workspace-service/workspace.service';
+import { OnInit, Component, ViewChild, TemplateRef, ChangeDetectionStrategy } from '@angular/core';
+import { WorkspaceSummary } from '../services/interfaces/public-apis';
+import { WorkspaceService } from '../services/workspace-service/workspace.service';
 
 @Component({
   selector: 'workspace',
   templateUrl: './workspace.component.html',
-  styleUrls: ['_styles.scss'],
-  changeDetection: ChangeDetectionStrategy.Default
 })
 export class WorkspaceComponent implements OnInit {
   title: string = 'Workspace';
 
-  opportunities: WorkspaceSummary;
-  assistanceListings: WorkspaceSummary;
-  userDirectory: WorkspaceSummary;
-  systemAccounts: WorkspaceSummary;
-  entityRegistration: WorkspaceSummary;
+  @ViewChild('assistanceListingsTemplate', { static: false })
+  assistanceListingsTemplate: TemplateRef<any>;
+
+  @ViewChild('contractOpportunitiesTemplate', { static: false })
+  contractOpportunitiesTemplate: TemplateRef<any>;
+
+  @ViewChild('entityRegistrationTemplate', { static: false })
+  entityRegistrationTemplate: TemplateRef<any>;
+
+  @ViewChild('cbaTemplate', { static: false })
+  cbaTemplate: TemplateRef<any>;
+
+  @ViewChild('systemAccountsTemplate', { static: false })
+  systemAccountsTemplate: TemplateRef<any>;
+
+  @ViewChild('federalHierarchyTemplate', { static: false })
+  federalHierarchyTemplate: TemplateRef<any>;
+
+  @ViewChild('userDirectoryTemplate', { static: false })
+  userDirectoryTemplate: TemplateRef<any>;
+
+  @ViewChild('entityReportingTemplate', { static: false })
+  entityReportingTemplate: TemplateRef<any>;
+
+  workspaces: WorkspaceSummary[];
 
   constructor(private workspaceService: WorkspaceService) {
-  }
-
-  ngOnInit() {
-      this.workspaceService.workspaces.subscribe( (workspaces: WorkspaceSummary[]) =>
+        this.workspaceService.workspaces.subscribe( (workspaces: WorkspaceSummary[]) =>
         {
-          this.initWorkspaces(workspaces);
+          this.workspaces = workspaces;
         });
   }
 
-  initWorkspaces(workspaces) {
-    for(let i=0; i<workspaces.length; i++) {
-        switch(workspaces[i].domain) {
-          case 'opportunities': {
-            this.opportunities = workspaces[i];
-            break;
-          }
-          case 'assistanceListings': {
-            this.assistanceListings = workspaces[i];
-            break;
-          }
-          case 'entityRegistration': {
-            this.entityRegistration = workspaces[i];
-          }
-          default: {
-            break;
-          }
+  ngOnInit() {
+
+  }
+
+  getTemplate(domain) {
+      switch(domain) {
+        case 'opportunities': {
+          return this.contractOpportunitiesTemplate;
+          break;
         }
-    }
+        case 'assistanceListings': {
+          return this.assistanceListingsTemplate;
+          break;
+        }
+        case 'entityRegistration': {
+          return this.entityRegistrationTemplate;
+        }
+        case 'cba': {
+          return this.cbaTemplate;
+        }
+        case 'systemAccounts': {
+           return this.systemAccountsTemplate;
+        }
+        case 'federalHierarchy': {
+          return this.federalHierarchyTemplate;
+        }
+        case 'userDirectory': {
+          return this.userDirectoryTemplate;
+        }
+        case 'entityReporting': {
+          return this.entityReportingTemplate;
+        }
+        default: {
+          return null;
+          break;
+        }
+      }
   }
 
   log(value) {
