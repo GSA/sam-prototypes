@@ -1,10 +1,10 @@
-import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SdsDialogRef } from '@gsa-sam/components';
 
 @Component({
   selector: 'responsive-sidebar',
   template: `
-          <sds-side-toolbar (responsiveDialog)="onDialogChange($event)" (responsiveView)="onResponsiveViewChange($event)" [responsiveButtonText]="title">
+          <sds-side-toolbar (responsiveDialog)="onDialogChange($event)" (responsiveView)="isMobileMode = $event;" [responsiveButtonText]="title">
             <ng-template #toolbarContent>
               <div class="sds-card" *ngIf="isMobileMode">
                 <div class="sds-card__header sds-card__header--accent-cool grid-row">
@@ -13,29 +13,28 @@ import { SdsDialogRef } from '@gsa-sam/components';
                     <fa-icon [icon]="['fas', 'chevron-left']" [fixedWidth]="true"></fa-icon>
                   </button>
                   <div class="margin-x-auto">
-                    <h2 class="sds-card__title margin-top-1 margin-left-neg-2">title</h2>
+                    <h2 class="sds-card__title margin-top-1 margin-left-neg-2">{{title}}</h2>
                   </div>
                 </div>
               </div>
               <ng-content></ng-content>
-    
-              <div class="sds-card" *ngIf="isMobileMode">
+              <div class="sds-card" *ngIf="isMobileMode && showApply">
                 <div class="sds-card__body sds-card__body--accent-cool">
                   <button class="usa-button" id="applyButton" aria-label="Apply" (click)="onApplyFilter()">Apply</button>
                 </div>
               </div>
             </ng-template>
           </sds-side-toolbar>
-  `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  `
 })
 export class ResponsiveSidebarComponent implements OnInit {
 
-  isMobileMode: boolean = false;
+  isMobileMode: boolean;
 
   responsiveDialog: SdsDialogRef<any>;
 
   @Input() title: string;
+  @Input() showApply: boolean = true;
 
   @Output() onCancel: EventEmitter<any> = new EventEmitter();
   @Output() onApply: EventEmitter<any> = new EventEmitter();
@@ -80,6 +79,7 @@ export class ResponsiveSidebarComponent implements OnInit {
   }
 
   onDialogChange(dialog) {
+      this.responsiveDialog = dialog;
       this.onChange.emit(dialog);
   }
 

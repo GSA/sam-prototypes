@@ -16,12 +16,11 @@ import {
         <sds-icon class="text-secondary" [icon]="'stop-fill'"></sds-icon>
         <h2 class="margin-top-0 margin-left-1">{{ title }}</h2>
       </div>
-      <div class="padding-top-1 padding-bottom-2">
+      <div class="padding-top-1 padding-bottom-4">
         <ng-content></ng-content>
       </div>
     </section>
-  `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  `
 })
 export class DisplaySectionComponent implements OnInit {
   @Input() title: string;

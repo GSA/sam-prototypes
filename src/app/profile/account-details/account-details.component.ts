@@ -1,14 +1,18 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { AppService } from '../../services/app-service/app.service';
 
 @Component({
   selector: 'app-account-details',
   templateUrl: './account-details.component.html',
-  styleUrls: ['./account-details.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AccountDetailsComponent implements OnInit {
 
-  constructor() { }
+  user: any;
+
+  constructor(private appService: AppService) { 
+  	this.user = appService.user;
+  }
 
   ngOnInit() {
   }

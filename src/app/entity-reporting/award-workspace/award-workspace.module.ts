@@ -36,13 +36,11 @@ import { SearchResultComponent } from "../../app-layout/search-result.component"
   declarations: [
     AwardWorkspaceComponent,
     AwardItemComponent,
-    ResponsiveSidebarComponent,
     SearchResultComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
-
     FormlyModule,
     FormsModule,
     AppLayoutModule,

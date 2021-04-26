@@ -1,314 +1,13 @@
 <main>
   <div class="sds-page">
-    <div class="grid-container">        
+    <div class="grid-container padding-top-2">        
       <h1>Workspace</h1>
       <div class="grid-row grid-gap">
 
         <div class="tablet:grid-col-7 margin-right-2">
-          <!-- Contract Opportunities Card -->
-          <div class="sds-card">
-            <div class="sds-card__header sds-card__header--flex">
-                <a  class="usa-link" [routerLink]="['opportunities']"><h2 class="sds-card__title ">Contract Opportunities</h2></a>
-                <div class="sds-card__buttons">
-                    <button class="usa-button usa-button--outline">Create Opportunity</button>
-                </div>
-            </div>
-            <div class="sds-card__body">
-              <div class="sds-statistics">
-                <a class="usa-link" [routerLink]="['opportunities']" class="green statistic" style="text-decoration: none;">
-                  <div class="value"><span class="circular">15</span></div>
-                  <div class="label">Active</div>
-                </a>
-                <a class="usa-link" [routerLink]="['opportunities']" class="blue statistic" style="text-decoration: none;">
-                  <div class="value"><span class="circular">0</span></div>
-                  <div class="label">Draft</div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <!-- Entity Information Card -->
-          <div class="sds-card" *ngIf="false">
-            <div class="sds-card__header">
-              <div class="grid-row grid-gap-md">
-                <div class="grid-col-fill">
-                  <h2 class="padding-top-1"><a [routerLink]="['registrations']" class="usa-link" style="text-decoration: none;">Entity Registrations</a></h2>
-                </div>
-                <div class="grid-col-auto">
-                  <button class="usa-button usa-button--outline" [routerLink]="['/entity-registration/register']">Register Entity</button>
-                </div>
-              </div>
-            </div>
-            <div class="sds-card__content tablet:display-block padding-4">
-              <div class="sds-statistics">
-                <a class="usa-link" [routerLink]="['registrations']" class="green statistic" style="text-decoration: none;">
-                  <div class="value"><span class="circular">15</span></div>
-                  <div class="label">Active</div>
-                </a>
-                <a class="usa-link" [routerLink]="['registrations']" class="grey statistic" style="text-decoration: none;">
-                  <div class="value"><span class="circular">0</span></div>
-                  <div class="label">Draft</div>
-                </a>
-                <a class="usa-link" [routerLink]="['registrations']" class="blue statistic" style="text-decoration: none;">
-                  <div class="value"><span class="circular">1</span></div>
-                  <div class="label">Work in Progress</div>
-                </a>
-                <a class="usa-link" [routerLink]="['registrations']" class="yellow statistic" style="text-decoration: none;">
-                  <div class="value"><span class="circular">2</span></div>
-                  <div class="label">Submitted</div>
-                </a>
-                <a class="usa-link" [routerLink]="['registrations']" class="red statistic" style="text-decoration: none;">
-                  <div class="value"><span class="circular">2</span></div>
-                  <div class="label">Expired</div>
-                </a>
-              </div>
-            </div>
-          </div>
 
-
-          <!-- Assistance Listing Card -->
-          <div class="sds-card margin-top-4">            
-            <div class="sds-card__header sds-card__header--flex">
-                <a  class="usa-link" [routerLink]="['assistancelist']"><h2 class="sds-card__title ">Assistance Listings</h2></a>
-                <div class="sds-card__buttons">
-                    <button class="usa-button usa-button--outline">Create Listing</button>
-                </div>
-            </div>
-            <div class="sds-card__body">
-              <div class="sds-statistics">
-                <a class="green statistic">
-                  <div class="value"><span class="circular">15</span></div>
-                  <div class="label">Published</div>
-                </a>
-                <a class="blue statistic">
-                  <div class="value"><span class="circular">0</span></div>
-                  <div class="label">Draft</div>
-                </a>
-                <a class="red statistic">
-                  <div class="value"><span class="circular">1</span></div>
-                  <div class="label">Rejected</div>
-                </a>
-                <a class="orange statistic">
-                  <div class="value"><span class="circular">2</span></div>
-                  <div class="label">Overdue</div>
-                </a>
-              </div>
-              <div class="grid-row">
-                <div class="grid-col">
-                  <ul>
-                    <li>
-                      <a href="">
-                        Download Assistance Listing Template
-                        <i class="fa fa-file-word margin-left-05" aria-hidden="true"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="grid-col">
-                  <ul>
-                    <li>
-                      <a href="">Regional Assistance Locations</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Collective Bargaining Agreements Card -->
-          <div class="sds-card" *ngIf="false">
-            <div class="sds-card__header">
-              <div class="grid-row grid-gap-md">
-                <div class="grid-col-fill">
-                  <h2><a class="usa-link">Collective Bargaining Agreements</a></h2>
-                </div>
-                <div class="grid-col-fill">
-                  <div class="sds-card__header-actions">
-                    <button class="usa-button usa-button--outline">Create CBA</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="grid-row">
-              <ul>
-                <li>
-                  <a href="">
-                    Revise existing CBA
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- User Directory Card -->
-          <div class="sds-card margin-top-4">
-            <div class="sds-card__header">
-              <h2><a class="usa-link">User Directory</a></h2>
-              <div class="sds-card__header-actions" *ngIf="false">
-                <button class="usa-button usa-button--outline">Role Definitions</button>
-                <button class="usa-button usa-button--outline">Bulk Update</button>
-              </div>
-            </div>
-            <div class="sds-card__content tablet:display-block">
-              <div class="grid-row padding-left-4 padding-y-4 flex-no-wrap">
-                <div class="grid-col-fill">
-                  <!-- Search  -->
-                  <label class="usa-label margin-0" for="options">Who are you looking for?</label>
-                  <div class="sds-search">
-                    <form class="usa-search usa-search--small">
-                      <select class="usa-select" name="options" id="options">
-                        <option value="value">Select</option>
-                        <option value="value1">Option A</option>
-                        <option value="value2">Option B</option>
-                        <option value="value3">Option C</option>
-                      </select>
-                      <div role="search" class="search">
-                        <input class="usa-input" id="search-field-small" type="search" name="search">
-                        <button class="usa-button" type="submit">
-                          <span class="usa-sr-only">Search</span>
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- System Accounts Card -->
-          <div class="sds-card" *ngIf="false">
-            <div class="sds-card__header">
-              <h2><a [routerLink]="['/workspace/system-accounts']" class="usa-link">Systems Accounts</a></h2>
-            </div>
-            <div class="sds-card__content tablet:display-block">
-              <div class="sds-statistics">
-                <a class="green statistic">
-                  <div class="value"><span class="circular">15</span></div>
-                  <div class="label">Active</div>
-                </a>
-                <a class="blue statistic">
-                  <div class="value"><span class="circular">0</span></div>
-                  <div class="label">Draft</div>
-                </a>
-                <a class="red statistic">
-                  <div class="value"><span class="circular">1</span></div>
-                  <div class="label">Rejected</div>
-                </a>
-                <a class="yellow statistic">
-                  <div class="value"><span class="circular">2</span></div>
-                  <div class="label">Pending</div>
-                </a>
-                <a class="orange statistic">
-                  <div class="value"><span class="circular">2</span></div>
-                  <div class="label">Expired</div>
-                </a>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Content Management Card -->
-          <div class="sds-card" *ngIf="false">
-            <div class="sds-card__header">
-              <h2><a class="usa-link">Content Management</a></h2>
-            </div>
-            <div class="sds-card__content tablet:display-block">
-              <div class="display-flex flex-direction-row flex-justify padding-x-4">
-                <a class="text-center" style="color:#3F57A6;">
-                  <i class="fa fa-book fa-3x"></i>
-                  <div class="label">Glossary</div>
-                </a>
-                <a class="text-center" style="color:#3F57A6;">
-                  <i class="fa fa-question fa-3x"></i>
-                  <div class="label">FAQs</div>
-                </a>
-                <a class="text-center" style="color:#3F57A6;">
-                  <i class="fa fa-video fa-3x"></i>
-                  <div class="label">Videos</div>
-                </a>
-                <a class="text-center" style="color:#3F57A6;">
-                  <i class="fa fa-file-alt fa-3x"></i>
-                  <div class="label">Release Notes</div>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Federal Hierarchy Card -->
-          <div class="sds-card" *ngIf="false">
-            <div class="sds-card__header">
-              <h2><a class="usa-link">Federal Hierarchy</a></h2>
-            </div>
-            <div class="sds-card__content tablet:display-block">
-              <div class="grid-row margin-x-2">
-                <div class="grid-col">
-                  <!-- Search  -->
-                  <label class="usa-label margin-0" for="options">What Organization are you looking for?</label>
-                  <div class="sds-search">
-                    <form class="usa-search usa-search--small">
-                      <div role="search" class="search width-full">
-                        <input class="usa-input" id="search-field-small" type="search" name="search">
-                        <button class="usa-button" type="submit">
-                          <span class="usa-sr-only">Search</span>
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-
-              <!-- KPI -->
-              <div class="grid-row margin-top-2 flex-justify">
-                <div class="grid-col-auto">
-                  <div class="text-center">
-                    Events in the <strong>Last 90 Days</strong>
-                  </div>
-                  <div class="margin-x-2 display-flex">
-                    <div class="sds-statistics--alt">
-                      <button class="statistic-alt">
-                        <div class="value">18</div>
-                        <div class="label">Statistic Label</div>
-                      </button>
-                    </div>
-                    <div class="sds-statistics--alt">
-                      <button class="statistic-alt">
-                        <div class="value">45</div>
-                        <div class="label">Statistic Label</div>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="grid-col-auto">
-                  <div class="text-center">
-                    Events in the <strong>Next 90 Days</strong>
-                  </div>
-                  <div class="margin-x-2 display-flex">
-                    <div class="sds-statistics--alt">
-                      <button class="statistic-alt">
-                        <div class="value">18</div>
-                        <div class="label">Statistic Label</div>
-                      </button>
-                    </div>
-                    <div class="sds-statistics--alt">
-                      <button class="statistic-alt">
-                        <div class="value">45</div>
-                        <div class="label">Statistic Label</div>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Activity Address Code Card -->
-          <div class="sds-card" *ngIf="false">
-            <div class="sds-card__header">
-              <h2><a class="usa-link">Activity Address Code (AACs)</a></h2>
-            </div>
-            <div class="sds-card__content display-block btn-update">
-              <button class="usa-button">Upload AAC</button>
-            </div>
+          <div *ngFor="let workspace of workspaces">
+              <ng-container [ngTemplateOutlet]="getTemplate(workspace.key)"></ng-container>
           </div>
 
         </div>
@@ -486,7 +185,7 @@
             </p>
 
             <form class=" maxw-none usa-form">
-              <select class="usa-select" name="options" id="options">
+              <select class="usa-select" name="options" id="role-filter">
                 <option value="contracting specialist">Contracting Specialist</option>
                 <option value="role1">Role 1</option>
                 <option value="role2">Role 2</option>
@@ -506,3 +205,39 @@
     </div>
   </div>
 </main>
+
+<ng-template #contractOpportunitiesTemplate>
+  <contract-opportunities-dashboard></contract-opportunities-dashboard>
+</ng-template>
+
+<ng-template #assistanceListingsTemplate>
+  <assistance-listings-dashboard></assistance-listings-dashboard>
+</ng-template>
+
+<ng-template #entityRegistrationTemplate>
+  <entity-registration-dashboard></entity-registration-dashboard>
+</ng-template>
+
+<ng-template #cbaTemplate>
+  <cba-dashboard></cba-dashboard>
+</ng-template>
+
+<ng-template #userDirectoryTemplate>
+  <user-directory-dashboard></user-directory-dashboard>
+</ng-template>
+
+<ng-template #federalHierarchyTemplate>
+  <federal-hierarchy-dashboard></federal-hierarchy-dashboard>
+</ng-template>
+
+<ng-template #systemAccountsTemplate>
+  <system-accounts-dashboard></system-accounts-dashboard>
+</ng-template>
+
+<ng-template #entityReportingTemplate>
+  <entity-reporting-dashboard></entity-reporting-dashboard>
+</ng-template>
+
+
+
+

@@ -3,17 +3,65 @@ import { Observable, of } from 'rxjs';
 import { SDSHiercarchicalServiceResult } from '@gsa-sam/components';
 import { HierarchyServiceModule } from './hierarchy-service.module';
 import { hierarchyData } from './hierarchy.data';
+import { Statistic, StatisticsGroup, StatisticsService } from '../interfaces/public-apis';
 
 @Injectable({
   providedIn: HierarchyServiceModule
 })
-export class HierarchyService {
+export class HierarchyService implements StatisticsService {
+
+    private statistics: StatisticsGroup[] = [
+      {
+      	key: 'last90days',
+      	label: 'Events in the last 90 days',
+      	color: 'na',
+      	value: -1,
+      	statistics: [
+			{
+				key: 'started',
+				label: 'Started',
+				color: 'green',
+				value: 4
+			},
+			{
+				key: 'Expiring',
+				label: 'Expiring',
+				color: 'red',
+				value: 6
+			}	
+		]
+	  },
+	  {
+      	key: 'next90days',
+      	label: 'Events in the next 90 days',
+      	color: 'na',
+      	value: -1,
+      	statistics: [
+			{
+				key: 'started',
+				label: 'Started',
+				color: 'green',
+				value: 3
+			},
+			{
+				key: 'Expiring',
+				label: 'Expiring',
+				color: 'red',
+				value: 2
+			}	
+		]
+	  }
+    ];
 
   	data: any[] = hierarchyData;
 
   	constructor() { 
         this.initData();
   	}
+  	
+  	getStatistics(key?: string): Observable<Statistic[]> {
+  	    return of(this.statistics);
+    }
 
   	getParentKey(org: any): string {
   		let path = org.fullParentPath.split(".");
