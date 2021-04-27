@@ -1,22 +1,4 @@
 <div class="grid-container">
-
-  <!-- 
-  <form [formGroup]="form">
-    <div class="grid-row">
-      <formly-form class="grid-col-6 padding-right-2" [model]="model" [fields]="fields" [options]="options"
-        [form]="form"></formly-form>
-      <button class="usa-button grid-col-4" type="button" (click)="addSubawardee()">Auto-fill Vendor
-        Information</button>
-    </div>
-  </form> -->
-  <!-- 
-  Subaward-list {{subawardeeList |json}} -->
-
-  <!-- <div *ngFor="let item of items"> -->
-
-  {{subawardItem | json}}
-
-
   <sds-expandable-card #inputsCard [id]="'subawardcard'" [title]="'item.title'" [showContent]="'false'"
     [isExpandable]="true">
     <ng-container sds-card-title-group-action>
