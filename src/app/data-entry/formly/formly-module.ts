@@ -42,7 +42,6 @@ import { RepeatTypeComponent } from "./repeat-section";
         {
           name: "stepper",
           component: FormlyFieldStepperComponent,
-          wrappers: sdsWrappers,
         },
 
         {
