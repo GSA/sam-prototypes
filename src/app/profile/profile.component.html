@@ -1,30 +1,18 @@
 <sds-subheader>
-  <!-- =============== BACK BUTTON =============== -->
-  <button id="backbutton" class="sds-button sds-button--circular" aria-label="Back to Workspace Home"
-    [routerLink]="['/workspace']">
-    <sds-icon [icon]="'chevron-left'"></sds-icon>
-  </button>
-
-
-  <!-- =============== TITLE =============== -->
-  <span class="font-heading-lg text-semibold">
-    Profile
-  </span>
+  <back-button></back-button>
+  <subheader-title title="Profile"></subheader-title>
+  <sds-subheader-actions [model]="subheaderActions" (clicks)="actionClicked($event)">
+  </sds-subheader-actions>
 </sds-subheader>
+
 <main>
-  <div class="grid-container">
-    <div class="sds-page">
+  <div class="sds-page">
+    <div class="grid-container">
       <div class="grid-row grid-gap">
-        <div class="grid-auto">
-          <sds-toolbar class="tablet:grid-col-auto" #toolbar="sdsToolbar" [expanded]="true">
-            <sds-accordion>
-              <sds-accordion-item [expanded]="true">
-                <sds-side-navigation #sideNav [model]="navigationData"></sds-side-navigation>
-              </sds-accordion-item>
-            </sds-accordion>
-          </sds-toolbar>
+        <div class="desktop:grid-col-3 tablet-lg:grid-col-12 mobile-lg:grid-col-12 margin-bottom-3">
+          <display-navigation [model]="navigationData"></display-navigation>
         </div>
-        <div class="tablet:grid-col-fill">
+        <div class="desktop:grid-col-9 tablet-lg:grid-col-12 mobile-lg:grid-col-12">
           <router-outlet></router-outlet>
         </div>
       </div>
