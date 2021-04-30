@@ -14,8 +14,8 @@ import {
   SdsIconModule,
 } from "@gsa-sam/components";
 
-import { SharedModule } from "../landing/shared/shared.module";
-import { KnowledgeServicesModule } from "../services/knowledge-services/knowledge-services.module";
+import { LandingLayoutModule } from "../app-layout/landing-layout/landing-layout.module";
+import { FeedServicesModule } from "../services/feed-services/feed-services.module";
 
 import { HomeRoutingModule } from "./home-routing.module";
 import { HomeComponent } from "./home.component";
@@ -40,8 +40,8 @@ import _ from "lodash-es";
     SdsSearchModule,
     SdsVideoPlayerModule,
     SdsSubheaderModule,
-    KnowledgeServicesModule,
-    SharedModule,
+    FeedServicesModule,
+    LandingLayoutModule,
     HomeRoutingModule,
     SdsIconModule,
     NgxBootstrapIconsModule.pick(

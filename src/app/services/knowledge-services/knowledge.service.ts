@@ -1,23 +1,6 @@
 import { Observable, of } from 'rxjs';
 import { SearchParameters, SearchResult } from '@gsa-sam/layouts';
-import { INavigationLink, NavigationMode } from '@gsa-sam/components';
-
-export enum ArticleType {
-  Alert = 1,
-  Announcement,
-  FAQ,
-  Article,
-  Video,
-  Term
-}
-
-export interface KnowledgeArticle extends INavigationLink {
-  id: string,
-  type: ArticleType,
-  publishDate: Date,
-  displayDescription: string,
-  fullDescription?: string;
-}
+import { KnowledgeArticle } from '../interfaces/public-apis';
 
 export abstract class KnowledgeService {
 

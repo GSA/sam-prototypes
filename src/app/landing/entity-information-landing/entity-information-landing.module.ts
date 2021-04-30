@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
-import { SharedModule } from "../shared/shared.module";
+import { LandingLayoutModule } from "../../app-layout/landing-layout/landing-layout.module";
 
 import { SdsIconModule } from "@gsa-sam/components";
 
@@ -26,7 +26,7 @@ import _ from "lodash-es";
     FormsModule,
     EntityInformationLandingRoutingModule,
     SdsIconModule,
-    SharedModule,
+    LandingLayoutModule,
     NgxBootstrapIconsModule.pick(
       Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
     ),

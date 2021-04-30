@@ -5,11 +5,11 @@ import { SystemAccountModule } from './system-account/system-account.module';
 
 const routes: Routes = [
 	{
-		path: '',
+		path: 'workspace',
 		loadChildren: () => import('./system-accounts-workspace/system-accounts-workspace.module').then(m => m.SystemAccountsWorkspaceModule)
 	},
 	{
-		path: 'account-detail',
+		path: 'profile',
 		loadChildren: () => import('./system-account/system-account.module').then(m => m.SystemAccountModule)
 	}
 ];

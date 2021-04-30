@@ -9,6 +9,7 @@ import { SdsIconModule } from "@gsa-sam/components";
 
 import { MatExpansionModule } from "@angular/material/expansion";
 import { SdsAccordionModule } from "@gsa-sam/sam-material-extensions";
+import { LayoutComponentsModule } from '../layout-components/layout-components.module';
 
 import { LandingSearchComponent } from "./landing-search/landing-search.component";
 import { LandingHeroComponent } from "./landing-hero/landing-hero.component";
@@ -21,7 +22,7 @@ import { LandingBaseComponent } from "./landing-base/landing-base.component";
 import { LandingAccordionComponent } from "./landing-accordion/landing-accordion.component";
 import { LandingListComponent } from "./landing-list/landing-list.component";
 import { LandingCardComponent } from "./landing-card/landing-card.component";
-import { LandingFeedComponent } from "./landing-feed/landing-feed.component";
+import { LandingFeedComponent } from "./landing-feed.component";
 import { NavigateComponent } from "./navigate/navigate.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import { allIcons as sdsAllIcons } from "@gsa-sam/components";
@@ -51,6 +52,7 @@ import _ from "lodash-es";
     SdsIconModule,
     ReactiveFormsModule,
     SdsFormlyModule,
+    LayoutComponentsModule,
     NgxBootstrapIconsModule.pick(
       Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
     ),
@@ -69,4 +71,4 @@ import _ from "lodash-es";
     NavigateComponent,
   ],
 })
-export class SharedModule {}
+export class LandingLayoutModule {}

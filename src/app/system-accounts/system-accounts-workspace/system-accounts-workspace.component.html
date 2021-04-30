@@ -13,7 +13,7 @@
 
   <!-- PRIMARY/SECONDARY BUTTONS (OPTIONAL) -->
   <ng-container subheader-buttons-container>
-    <button class="usa-button margin-top-05 tablet:margin-top-0" (click)="newAccount($event)">Create Account</button>
+    <button class="usa-button margin-top-05 tablet:margin-top-0" [routerLink]="['/system-accounts/profile/new']">Create Account</button>
   </ng-container>
 
   <!-- ACTIONS BUTTONS (OPTIONAL) -->

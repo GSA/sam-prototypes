@@ -49,72 +49,16 @@
           </div>
 
           <!-- PENDING REQUESTS -->
-          <div class="display-flex flex-justify flex-align-center">
-            <h3>
-              <a class="usa-link" href="javascript:void(0);">Pending Requests</a>
-            </h3>
-            <span class="sds-circular red label tablet:display-none">5</span>
-          </div>
 
-          <div class="sds-feed display-block m_B-6x">
-            <div class="event">
-              <div class="content">
-                <div class="summary">
-                  <div class="date">10:11 am</div>
-                  <a class="action">Assign Role</a> to K. Litchfield
-                </div>
-                <div class="meta">
-                  <em>Type of role and name of organization</em>
-                </div>
-              </div>
-            </div>
-            <div class="event">
-              <div class="content">
-                <div class="summary">
-                  <div class="date">Yesterday</div>
-                  <a class="action">Assign Role</a> to M. Sanchez
-                </div>
-                <div class="meta">
-                  <em>Type of role and name of organization</em>
-                </div>
-              </div>
-            </div>
-            <div class="event">
-              <div class="content">
-                <div class="summary">
-                  <div class="date">2 days ago</div>
-                  <a class="action">Delete Opportunity</a> for A. Lewis
-                </div>
-                <div class="meta">
-                  <em>Details and name of organization</em>
-                </div>
-              </div>
-            </div>
-            <div class="event">
-              <div class="content">
-                <div class="summary">
-                  <div class="date">4 days ago</div>
-                  <a class="action">Assign Role</a> to J. Wong
-                </div>
-                <div class="meta">
-                  <em>Type of role and name of organization</em>
-                </div>
-              </div>
-            </div>
-            <div class="event">
-              <div class="content">
-                <div class="summary">
-                  <div class="date">10 days ago</div>
-                  <a class="action">Approve Sub-Award Report</a> for A. Peterson
-                </div>
-                <div class="meta">
-                  <em>Details and name of organization</em>
-                </div>
-              </div>
-            </div>
-          </div>
+          <workspace-card title="Pending Requests" [routerLink]="['/']">
+            <landing-feed [model]="requests" [moreLink]="moreRequestsLink"></landing-feed>
+          </workspace-card>
 
           <!-- NOTIFICATIONS -->
+          <workspace-card title="Notifications" [routerLink]="['/']">
+            <landing-feed [model]="notifications" [moreLink]="moreNotificationsLink"></landing-feed>
+          </workspace-card>
+
           <h3>
             <a class="usa-link" href="javascript:void(0);">Notifications</a>
           </h3>

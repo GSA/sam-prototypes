@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
-import { NavigationMode } from '@gsa-sam/components';
-import { KnowledgeService, KnowledgeArticle } from '../../../services/knowledge-services/knowledge.service';
+import { INavigationLink, NavigationMode } from '@gsa-sam/components';
+import { FeedItem } from '../../services/interfaces/public-apis';
 
 @Component({
   selector: 'landing-feed',
@@ -10,34 +10,31 @@ import { KnowledgeService, KnowledgeArticle } from '../../../services/knowledge-
         <navigate [item]="item">
 	        <div class="content">
 	          <div class="summary">
-	            <div class="date">{{item.publishDate | date:item.dateFormat }}</div>
-	            <a class="action">{{item.text}}</a>
+	            <div class="date">{{item.date | date:item.dateFormat }}</div>
+	            <a class="action" [innerHTML]="item.text"></a>
 	          </div>
 	          <div class="meta">
-	            <em>{{item.displayDescription}}</em>
+	            <em [innerHTML]="item.description"></em>
 	          </div>
 	        </div>
 	    </navigate>
       </div>
     </div>
     <div class="padding-2 text-right more-news-link">
-        <a class="usa-link" [href]="url">More Announcements</a>
+      <navigation-link [link]="moreLink"></navigation-link>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LandingFeedComponent implements OnInit {
 
-  @Input() service: KnowledgeService;
-  public model: KnowledgeArticle[];
-  public url: string;
+  @Input() model: FeedItem[];
+  @Input() moreLink: INavigationLink;
 
   constructor() { 
   }
 
   ngOnInit(): void {
-      this.model = this.service.getData();
-      this.url = this.service.getKnowledgeBaseUrl();
   }
 
   setFormat() {

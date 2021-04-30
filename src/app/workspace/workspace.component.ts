@@ -1,6 +1,10 @@
 import { OnInit, Component, ViewChild, TemplateRef, ChangeDetectionStrategy } from '@angular/core';
+import { INavigationLink, NavigationMode } from '@gsa-sam/components';
 import { WorkspaceSummary } from '../services/interfaces/public-apis';
 import { WorkspaceService } from '../services/workspace-service/workspace.service';
+import { NotificationsService } from '../services/feed-services/notifications.service';
+import { RequestsService } from '../services/feed-services/requests.service';
+import { FeedItem } from '../services/interfaces/public-apis';
 
 @Component({
   selector: 'workspace',
@@ -34,16 +38,39 @@ export class WorkspaceComponent implements OnInit {
   entityReportingTemplate: TemplateRef<any>;
 
   workspaces: WorkspaceSummary[];
+  requests: FeedItem[];
+  notifications: FeedItem[];
 
-  constructor(private workspaceService: WorkspaceService) {
-        this.workspaceService.workspaces.subscribe( (workspaces: WorkspaceSummary[]) =>
+  moreNotificationsLink: INavigationLink = {
+    text: "More Notifications",
+    route: "https://fsd.gov/",
+    mode: NavigationMode.EXTERNAL
+  };
+
+  moreRequestsLink: INavigationLink = {
+    text: "More Requests",
+    route: "https://fsd.gov/",
+    mode: NavigationMode.EXTERNAL
+  };
+
+  constructor(private workspaceService: WorkspaceService, 
+    public requestsService: RequestsService,
+    public notificationsService: NotificationsService) {
+    this.workspaceService.workspaces.subscribe( (workspaces: WorkspaceSummary[]) =>
         {
           this.workspaces = workspaces;
         });
   }
 
   ngOnInit() {
-
+    this.requestsService.getFeedItems().subscribe((requests: FeedItem[]) =>
+      {
+        this.requests = requests;
+      });
+    this.notificationsService.getFeedItems().subscribe((notifications: FeedItem[]) =>
+      {
+        this.notifications = notifications;
+      });
   }
 
   getTemplate(domain) {

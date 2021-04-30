@@ -142,6 +142,14 @@ const routes: Routes = [
       import("./entity-reporting/entity-reporting.module").then((m) => m.EntityReportingModule),
   },
   {
+    path: "system-accounts",
+    loadChildren: () =>
+      import("./system-accounts/system-accounts.module").then((m) => m.SystemAccountsModule),
+    data: {
+      id: "workspace",
+    },
+  },
+  {
     path: "signout",
     pathMatch: "full",
     redirectTo: "/",
