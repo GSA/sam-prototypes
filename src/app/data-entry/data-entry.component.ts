@@ -14,7 +14,7 @@ import { EntityReportingService } from "../services/entity-reporting-service/ent
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DataEntryComponent implements OnInit {
-  //subAwardeeeService: any;
+  subAwardeeeService: any;
   subawardeeModel: any = {};
   subawardeeOptions: FormlyFormOptions;
   subawardeefields: FormlyFieldConfig[] = [
