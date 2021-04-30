@@ -21,11 +21,7 @@ export class EntityReportingService extends AbstractSearchableService {
   }
 
   getFilteredDataById(id) {
-    console.log(this.data);
-    let filteredData = this.data.find(
-      (item) => item.vendor.globalDunsNumber === id
-    );
-    console.log(filteredData);
+    let filteredData = this.data.find((item) => item._id === id);
     return filteredData;
   }
 }
