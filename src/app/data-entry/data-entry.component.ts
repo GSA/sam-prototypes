@@ -14,7 +14,6 @@ import { EntityReportingService } from "../services/entity-reporting-service/ent
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DataEntryComponent implements OnInit {
-  subAwardeeeService: any;
   subawardeeModel: any = {};
   subawardeeOptions: FormlyFormOptions;
   subawardeefields: FormlyFieldConfig[] = [
@@ -606,7 +605,6 @@ export class DataEntryComponent implements OnInit {
                   subawardeeModel: this.subawardeeModel,
                   subawardeefields: this.subawardeefields,
                   getDetails: this.getAwardeeDetails,
-                  subAwardeeeService: this,
                   btnText: "Auto-fill Vendor Information",
                   inputPlaceHolder: "Input Unique Entity ID",
                 },
@@ -617,7 +615,6 @@ export class DataEntryComponent implements OnInit {
                     type: "subaward",
                     templateOptions: {
                       subawardItem: {},
-                      // subawardeeList: this.getData,
                     },
                   },
                 ],
@@ -652,10 +649,10 @@ export class DataEntryComponent implements OnInit {
   }
 
   getAwardeeDetails(id) {
-    return this.subAwardeeeService.entityReportingService.getFilteredDataById(
-      id
-    );
-    //return { number: id, name: "test1" };
+    // return this.subAwardeeeService.entityReportingService.getFilteredDataById(
+    //   id
+    // );
+    return { number: id, name: "test1" };
   }
 
   addSubawardee() {
