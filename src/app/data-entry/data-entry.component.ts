@@ -13,7 +13,7 @@ import { EntityReportingService } from "../services/entity-reporting-service/ent
   providers: [EntityReportingService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DataEntryComponent implements OnInit {
+export class DataEntryComponent {
   service: any;
   constructor(
     public router: Router,
@@ -546,7 +546,7 @@ export class DataEntryComponent implements OnInit {
         },
 
         {
-          templateOptions: { label: "Subaward with repeater" },
+          templateOptions: { label: "Subaward" },
           fieldGroup: [
             {
               key: "addAwardee",
@@ -575,6 +575,12 @@ export class DataEntryComponent implements OnInit {
             },
           ],
         },
+
+        {
+          templateOptions: {
+            label: "Review and Submit",
+          },
+        },
       ],
     },
   ];
@@ -598,29 +604,4 @@ export class DataEntryComponent implements OnInit {
   getAwardeeDetails(id) {
     return this.service.getFilteredDataById(id);
   }
-
-  addSubawardee() {
-    const data: any = {
-      fields: this.subawardeefields,
-      model: this.subawardeeModel,
-      submit: "Submit",
-      title: "Add Subawardee",
-      options: this.subawardeeOptions,
-      cancel: "No thanks",
-    };
-
-    const dialogRef = this.dialog.open(SdsFormlyDialogComponent, {
-      width: "medium",
-      data: data,
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result) {
-        this.subawardeeModel = result;
-        console.log(result);
-      }
-    });
-  }
-
-  ngOnInit(): void {}
 }
