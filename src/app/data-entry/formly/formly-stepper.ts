@@ -28,25 +28,26 @@ import { FieldType, FormlyFieldConfig } from "@ngx-formly/core";
         {{ step.templateOptions.label }}
       </ng-template>
       <div *ngIf="!step.template">
-        <h1>{{ step.templateOptions.label }}</h1>
-        <hr />
-        <div class="padding-top-3">
-          <!-- <formly-field [field]="step"></formly-field> -->
-          <div
-            *ngIf="
-              selectedIndex != field.fieldGroup.length - 1;
-              else reviewStep
-            "
-          >
-            <formly-field [field]="step"></formly-field>
-          </div>
-          <ng-template #reviewStep>
-            <ng-container *ngFor="let stepField of field.fieldGroup">
-              <formly-field #reviewAll [field]="stepField"></formly-field>
-            </ng-container>
-          </ng-template>
+        <div class="padding-bottom-3" *ngIf="step.templateOptions.hasHeader">
+          <h1>
+            {{ step.templateOptions.label }}
+          </h1>
+          <hr />
         </div>
+
+        <!-- <formly-field [field]="step"></formly-field> -->
+        <div
+          *ngIf="selectedIndex != field.fieldGroup.length - 1; else reviewStep"
+        >
+          <formly-field [field]="step"></formly-field>
+        </div>
+        <ng-template #reviewStep>
+          <ng-container *ngFor="let stepField of field.fieldGroup">
+            <formly-field #reviewAll [field]="stepField"></formly-field>
+          </ng-container>
+        </ng-template>
       </div>
+
       <div *ngIf="step.template"></div>
     </cdk-step>
   </app-stepper>`,

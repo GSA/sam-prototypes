@@ -280,7 +280,7 @@ export class DataEntryComponent {
       type: "stepper",
       fieldGroup: [
         {
-          templateOptions: { label: "Report Contract" },
+          templateOptions: { label: "Report Contract", hasHeader: true },
           fieldGroup: [
             {
               key: "dataentry.contract",
@@ -307,7 +307,7 @@ export class DataEntryComponent {
         },
 
         {
-          templateOptions: { label: "Report Details" },
+          templateOptions: { label: "Report Details", hasHeader: true },
           fieldGroup: [
             {
               key: "dataentry.details",
@@ -546,7 +546,7 @@ export class DataEntryComponent {
         },
 
         {
-          templateOptions: { label: "Subaward" },
+          templateOptions: { label: "Subaward", hasHeader: true },
           fieldGroup: [
             {
               key: "addAwardee",
