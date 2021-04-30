@@ -13,8 +13,13 @@ import { EntityReportingService } from "../services/entity-reporting-service/ent
   providers: [EntityReportingService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DataEntryComponent implements OnInit {
-  subAwardeeeService: any;
+export class DataEntryComponent {
+  service: any;
+  constructor(
+    public router: Router,
+    public dialog: SdsDialogService,
+    private entityReportingService: EntityReportingService
+  ) {}
   subawardeeModel: any = {};
   subawardeeOptions: FormlyFormOptions;
   subawardeefields: FormlyFieldConfig[] = [
@@ -135,19 +140,7 @@ export class DataEntryComponent implements OnInit {
                 pattern: "\\d{5}",
               },
             },
-            {
-              className: "grid-col-4",
-              type: "input",
-              key: "postal",
-              hideExpression: (model) =>
-                this.subawardeeModel.country === "united_states",
-              templateOptions: {
-                label: "Postal Code",
-                maxLength: 6,
-                min: 0,
-                pattern: "\\d{5}",
-              },
-            },
+
             {
               className: "grid-col-8",
               type: "input",
@@ -262,49 +255,7 @@ export class DataEntryComponent implements OnInit {
                 ],
               },
             },
-            {
-              className: "grid-col-4",
-              type: "select",
-              key: "province",
-              hideExpression: (model) =>
-                this.subawardeeModel.country === "united_states",
-              templateOptions: {
-                label: "State/Province",
 
-                options: [
-                  { id: "1", label: "Alberta", value: "Alberta" },
-                  {
-                    id: "2",
-                    label: "British Columbia",
-                    value: "British Columbia",
-                  },
-                  { id: "3", label: "Manitoba", value: "Manitoba" },
-                  {
-                    id: "4",
-                    label: "New Brunswick",
-                    value: "New Brunswick",
-                  },
-                  {
-                    id: "5",
-                    label: "Newfoundland and Labrador",
-                    value: "Newfoundland and Labrador",
-                  },
-                  { id: "6", label: "Nova Scotia", value: "Nova Scotia" },
-                  { id: "7", label: "Ontario", value: "Ontario" },
-                  {
-                    id: "8",
-                    label: "Prince Edward Island",
-                    value: "Prince Edward Island",
-                  },
-                  { id: "9", label: "Quebec", value: "Quebec" },
-                  {
-                    id: "10",
-                    label: "Saskatchewan",
-                    value: "Saskatchewan",
-                  },
-                ],
-              },
-            },
             {
               className: "grid-col-4",
               type: "input",
@@ -593,8 +544,9 @@ export class DataEntryComponent implements OnInit {
             },
           ],
         },
+
         {
-          templateOptions: { label: "Subaward with repeater" },
+          templateOptions: { label: "Subaward" },
           fieldGroup: [
             {
               key: "addAwardee",
@@ -602,11 +554,10 @@ export class DataEntryComponent implements OnInit {
               fieldArray: {
                 fieldGroupClassName: "row",
                 templateOptions: {
-                  required: true,
                   subawardeeModel: this.subawardeeModel,
                   subawardeefields: this.subawardeefields,
+                  service: this.entityReportingService,
                   getDetails: this.getAwardeeDetails,
-                  subAwardeeeService: this,
                   btnText: "Auto-fill Vendor Information",
                   inputPlaceHolder: "Input Unique Entity ID",
                 },
@@ -616,9 +567,7 @@ export class DataEntryComponent implements OnInit {
                     key: "subawards",
                     type: "subaward",
                     templateOptions: {
-                      testData: 1,
                       subawardItem: {},
-                      subawardeeList: this.getData(),
                     },
                   },
                 ],
@@ -626,15 +575,15 @@ export class DataEntryComponent implements OnInit {
             },
           ],
         },
+
+        {
+          templateOptions: {
+            label: "Review and Submit",
+          },
+        },
       ],
     },
   ];
-
-  constructor(
-    public router: Router,
-    public dialog: SdsDialogService,
-    private entityReportingService: EntityReportingService
-  ) {}
 
   getData() {
     const searchParameters: any = {
@@ -653,34 +602,6 @@ export class DataEntryComponent implements OnInit {
   }
 
   getAwardeeDetails(id) {
-    return this.subAwardeeeService.entityReportingService.getFilteredDataById(
-      id
-    );
-    // return { number: id, name: "test1" };
+    return this.service.getFilteredDataById(id);
   }
-
-  addSubawardee() {
-    const data: any = {
-      fields: this.subawardeefields,
-      model: this.subawardeeModel,
-      submit: "Submit",
-      title: "Add Subawardee",
-      options: this.subawardeeOptions,
-      cancel: "No thanks",
-    };
-
-    const dialogRef = this.dialog.open(SdsFormlyDialogComponent, {
-      width: "medium",
-      data: data,
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result) {
-        this.subawardeeModel = result;
-        console.log(result);
-      }
-    });
-  }
-
-  ngOnInit(): void {}
 }

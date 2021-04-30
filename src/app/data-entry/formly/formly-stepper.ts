@@ -1,13 +1,19 @@
+import { StepperSelectionEvent } from "@angular/cdk/stepper";
 import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { FormlyUtilsService } from "@gsa-sam/sam-formly";
 import { FieldType, FormlyFieldConfig } from "@ngx-formly/core";
 
 @Component({
-  template: ` <app-stepper linear [hideSidePannel]="to.hideSidePannel">
+  template: ` <app-stepper
+    linear
+    [hideSidePannel]="to.hideSidePannel"
+    (selectionChange)="onStepChange($event)"
+  >
     <cdk-step
       *ngFor="let step of field.fieldGroup; let index = index; let last = last"
     >
       <ng-template cdkStepLabel>
-        <span
+        <!-- <span
           *ngIf="isValid(step) && step.formControl.dirty"
           class="usa-button sds-button--circle"
         >
@@ -18,11 +24,28 @@ import { FieldType, FormlyFieldConfig } from "@ngx-formly/core";
           class="usa-button sds-button--circle sds-button--danger"
         >
           <sds-icon [icon]="'x'"></sds-icon>
-        </span>
+        </span> -->
         {{ step.templateOptions.label }}
       </ng-template>
       <div *ngIf="!step.template">
-        <formly-field [field]="step"></formly-field>
+        <h1>{{ step.templateOptions.label }}</h1>
+        <hr />
+        <div class="padding-top-3">
+          <!-- <formly-field [field]="step"></formly-field> -->
+          <div
+            *ngIf="
+              selectedIndex != field.fieldGroup.length - 1;
+              else reviewStep
+            "
+          >
+            <formly-field [field]="step"></formly-field>
+          </div>
+          <ng-template #reviewStep>
+            <ng-container *ngFor="let stepField of field.fieldGroup">
+              <formly-field #reviewAll [field]="stepField"></formly-field>
+            </ng-container>
+          </ng-template>
+        </div>
       </div>
       <div *ngIf="step.template"></div>
     </cdk-step>
@@ -30,6 +53,7 @@ import { FieldType, FormlyFieldConfig } from "@ngx-formly/core";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormlyFieldStepperComponent extends FieldType {
+  selectedIndex;
   getStepForm(i, field: FormlyFieldConfig) {
     let isValid = false;
     if (field.template) {
@@ -41,9 +65,21 @@ export class FormlyFieldStepperComponent extends FieldType {
   }
 
   isValid(field: FormlyFieldConfig) {
-    if (field.key) {
+    if (field.key || !field.fieldGroup) {
       return field.formControl.valid;
     }
     return field.fieldGroup.every((f) => this.isValid(f));
+  }
+
+  onStepChange($event: StepperSelectionEvent) {
+    this.selectedIndex = $event.selectedIndex;
+    if ($event.selectedIndex === this.field.fieldGroup.length - 1) {
+      FormlyUtilsService.setReadonlyMode(true, this.field.fieldGroup);
+    } else if (
+      $event.previouslySelectedIndex ===
+      this.field.fieldGroup.length - 1
+    ) {
+      FormlyUtilsService.setReadonlyMode(false, this.field.fieldGroup);
+    }
   }
 }

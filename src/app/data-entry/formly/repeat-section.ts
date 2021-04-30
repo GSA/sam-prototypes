@@ -6,24 +6,31 @@ import { FieldArrayType, FormlyFormBuilder } from "@ngx-formly/core";
 @Component({
   selector: "formly-repeat-section",
   template: `
-    <div class="row">
-      <h3>Add Subawardee</h3>
-      <input
-        #input
-        class="usa-input"
-        id="input-type-text"
-        name="input-type-text"
-        [placeholder]="field.fieldArray.templateOptions.inputPlaceHolder"
-        type="text"
-      />
-      <button
-        class="usa-button"
-        type="button"
-        (click)="addSubawardee(input.value)"
-      >
-        {{ field.fieldArray.templateOptions.btnText }}
-      </button>
+    <div class="grid-col">
+      <div class="grid-row">
+        <div class="grid-col">
+          <h3>Add Subawardee</h3>
+          <input
+            #input
+            class="usa-input"
+            id="input-type-text"
+            name="input-type-text"
+            [placeholder]="field.fieldArray.templateOptions.inputPlaceHolder"
+            type="text"
+          />
+        </div>
+        <div class="grid-col padding-3">
+          <button
+            class="usa-button"
+            type="button"
+            (click)="addSubawardee(input.value)"
+          >
+            {{ field.fieldArray.templateOptions.btnText }}
+          </button>
+        </div>
+      </div>
     </div>
+
     <div
       *ngFor="let field of field.fieldGroup; let i = index"
       class="margin-top-2"
