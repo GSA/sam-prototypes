@@ -22,7 +22,11 @@ import { FieldType, FormlyFieldConfig } from "@ngx-formly/core";
         {{ step.templateOptions.label }}
       </ng-template>
       <div *ngIf="!step.template">
-        <formly-field [field]="step"></formly-field>
+        <h1>{{ step.templateOptions.label }}</h1>
+        <hr />
+        <div class="padding-top-3">
+          <formly-field [field]="step"></formly-field>
+        </div>
       </div>
       <div *ngIf="step.template"></div>
     </cdk-step>
