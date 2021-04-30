@@ -345,19 +345,12 @@ form = new FormGroup({});
             },
             {
               key: "test",
-              template: `<h3 class="margin-top-2">Certifications</h3>`,
-            },
-            {
-              key: "dataentry.certificate",
-              type: "checkbox",
+              type: 'checkbox',
               templateOptions: {
-                description:
-                  "The FFATA Report can only be submitted by prime awardees. Only continue with this submission if you are the prime awardee for this contract.",
-                label:
-                  "I verify that I am the prime awardee for this contract.",
-              },
-            },
-          ],
+                label: 'I confirm that I am the authorizing official for the requested system account and certify that all of the information provided above is current and accurate.'
+              }
+            }
+          ]
         }
       ]
     }
