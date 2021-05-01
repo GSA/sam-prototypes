@@ -10,7 +10,7 @@ import { CdkStepperModule } from "@angular/cdk/stepper";
 
 import { SdsIconModule } from "@gsa-sam/components";
 
-import { CardModule } from "../card/card.module";
+import { ExpandableCardModule } from "../card/card.module";
 import { SdsActionsMenuModule } from "@gsa-sam/layouts";
 import { RepeatTypeComponent } from "./repeat-section";
 
@@ -21,7 +21,7 @@ import { RepeatTypeComponent } from "./repeat-section";
     FormsModule,
     StepperModule,
     SdsActionsMenuModule,
-    CardModule,
+    ExpandableCardModule,
     CdkStepperModule,
     ReactiveFormsModule,
     SdsFormlyModule,

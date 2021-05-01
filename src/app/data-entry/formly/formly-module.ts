@@ -11,8 +11,9 @@ import { FormlyContractComponent } from "./formly-contract";
 import { SdsIconModule } from "@gsa-sam/components";
 import { SubawardDataComponent } from "../subaward-data/subaward-data.component";
 import { ReviewContractComponent } from "../review-contract/review-contract.component";
-import { CardModule } from "../card/card.module";
+
 import { SdsActionsMenuModule } from "@gsa-sam/layouts";
+import { ExpandableCardModule } from "../../app-layout/card/card.module";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { SdsActionsMenuModule } from "@gsa-sam/layouts";
     FormsModule,
     StepperModule,
     SdsActionsMenuModule,
-    CardModule,
+    ExpandableCardModule,
     CdkStepperModule,
     ReactiveFormsModule,
     SdsFormlyModule,

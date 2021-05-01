@@ -20,4 +20,4 @@ import { NgxBootstrapIconsModule, dash, plus, x } from "ngx-bootstrap-icons";
   ],
   exports: [CardComponent],
 })
-export class CardModule {}
+export class ExpandableCardModule {}
