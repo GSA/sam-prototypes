@@ -9,7 +9,7 @@ import { ReviewSubmitComponent } from "./review-submit/review-submit.component";
 import { StepperModule } from "./stepper/stepper.module";
 import { SdsFormlyModule } from "@gsa-sam/sam-formly";
 import { FormlyModule } from "@ngx-formly/core";
-import { PrototypeFormlyModule } from "./formly/formly-module";
+import { DataEntryFormlyModule } from "./formly/formly-module";
 import {
   NgxBootstrapIconsModule,
   chevronLeft,
@@ -17,6 +17,7 @@ import {
   x,
   check,
 } from "ngx-bootstrap-icons";
+import { AppLayoutFormlyModule } from "../app-layout/formly/formly-module";
 
 @NgModule({
   declarations: [DataEntryComponent, ReviewSubmitComponent],
@@ -30,7 +31,8 @@ import {
     DataEntryRoutingModule,
     SdsFormlyModule,
     FormlyModule.forRoot(),
-    PrototypeFormlyModule,
+    DataEntryFormlyModule,
+    AppLayoutFormlyModule,
     NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, x, check }),
   ],
   exports: [ReviewSubmitComponent, DataEntryComponent],

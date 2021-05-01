@@ -4,7 +4,6 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { SdsFormlyModule, sdsWrappers } from "@gsa-sam/sam-formly";
 import { FormlyModule } from "@ngx-formly/core";
 
-import { FormlyFieldStepperComponent } from "./formly-stepper";
 import { StepperModule } from "../stepper/stepper.module";
 import { CdkStepperModule } from "@angular/cdk/stepper";
 import { FormlySubawardComponent } from "./formly-subaward";
@@ -14,16 +13,13 @@ import { SubawardDataComponent } from "../subaward-data/subaward-data.component"
 import { ReviewContractComponent } from "../review-contract/review-contract.component";
 import { CardModule } from "../card/card.module";
 import { SdsActionsMenuModule } from "@gsa-sam/layouts";
-import { RepeatTypeComponent } from "./repeat-section";
 
 @NgModule({
   declarations: [
-    FormlyFieldStepperComponent,
     FormlyContractComponent,
     FormlySubawardComponent,
     SubawardDataComponent,
     ReviewContractComponent,
-    RepeatTypeComponent,
   ],
   imports: [
     CommonModule,
@@ -40,11 +36,6 @@ import { RepeatTypeComponent } from "./repeat-section";
     SdsFormlyModule.forChild({
       types: [
         {
-          name: "stepper",
-          component: FormlyFieldStepperComponent,
-        },
-
-        {
           name: "subaward",
           component: FormlySubawardComponent,
           wrappers: sdsWrappers,
@@ -54,13 +45,8 @@ import { RepeatTypeComponent } from "./repeat-section";
           component: FormlyContractComponent,
           wrappers: sdsWrappers,
         },
-        {
-          name: "repeat",
-          component: RepeatTypeComponent,
-          wrappers: sdsWrappers,
-        },
       ],
     }),
   ],
 })
-export class PrototypeFormlyModule {}
+export class DataEntryFormlyModule {}

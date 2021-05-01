@@ -1,17 +1,17 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
 
 import { FormlyModule } from "@ngx-formly/core";
 
 import { SdsFormlyModule } from "@gsa-sam/sam-formly";
 import { StepperModule } from "../../data-entry/stepper/stepper.module";
-import { PrototypeFormlyModule } from "../../data-entry/formly/formly-module";
 
-import { DataEntryLayoutModule } from '../../app-layout/data-entry-layout/data-entry-layout.module';
+import { DataEntryLayoutModule } from "../../app-layout/data-entry-layout/data-entry-layout.module";
 
-import { SystemAccountRoutingModule } from './system-account-routing.module';
-import { SystemAccountComponent } from './system-account.component';
+import { SystemAccountRoutingModule } from "./system-account-routing.module";
+import { SystemAccountComponent } from "./system-account.component";
+import { AppLayoutFormlyModule } from "src/app/app-layout/formly/formly-module";
 
 @NgModule({
   declarations: [SystemAccountComponent],
@@ -21,10 +21,10 @@ import { SystemAccountComponent } from './system-account.component';
     SdsFormlyModule,
     FormlyModule,
     StepperModule,
-    PrototypeFormlyModule,
+    AppLayoutFormlyModule,
     DataEntryLayoutModule,
-    SystemAccountRoutingModule
+    SystemAccountRoutingModule,
   ],
-  exports: [SystemAccountComponent]
+  exports: [SystemAccountComponent],
 })
-export class SystemAccountModule { }
+export class SystemAccountModule {}
