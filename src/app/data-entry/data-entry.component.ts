@@ -287,9 +287,8 @@ export class DataEntryComponent {
     {
       type: "stepper",
       templateOptions: {
-        hideSidePannel: true,
+        // hideSidePannel: true,
         selectedIndex: 1,
-        // selectedIndex: this.currentPageIndex,
       },
       expressionProperties: {
         selectedIndex: "model.selectedIndex",
@@ -601,9 +600,7 @@ export class DataEntryComponent {
       ],
     },
   ];
-  getIndex() {
-    return this.currentPageIndex;
-  }
+
   onSelectionChange(index) {
     this.model["selectedIndex"] = index;
     this.currentPageIndex = index;

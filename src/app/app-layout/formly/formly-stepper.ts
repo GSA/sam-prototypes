@@ -2,6 +2,7 @@ import { StepperSelectionEvent } from "@angular/cdk/stepper";
 import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { FormlyUtilsService } from "@gsa-sam/sam-formly";
 import { FieldType, FormlyFieldConfig } from "@ngx-formly/core";
+import { find } from "rxjs/operators";
 
 @Component({
   template: ` <app-stepper
@@ -15,13 +16,13 @@ import { FieldType, FormlyFieldConfig } from "@ngx-formly/core";
     >
       <ng-template cdkStepLabel>
         <span
-          *ngIf="isTouched(step) && isValid(step)"
+          *ngIf="validateSuccessStepForm(step, index)"
           class="usa-button sds-button--circle"
         >
           <sds-icon [icon]="'check'"></sds-icon>
         </span>
         <span
-          *ngIf="isTouched(step) && !isValid(step)"
+          *ngIf="validateFailureStepForm(step, index)"
           class="usa-button sds-button--circle sds-button--danger"
         >
           <sds-icon [icon]="'x'"></sds-icon>
@@ -66,15 +67,6 @@ export class FormlyFieldStepperComponent extends FieldType {
     return { invalid: !isValid, valid: isValid };
   }
 
-  isTouched(field: FormlyFieldConfig) {
-    console.log(field);
-    if (field.fieldGroup) {
-      let element =
-        field.fieldGroup.length > 1 ? field.fieldGroup[2] : field.fieldGroup[0];
-      return element.formControl.touched;
-    }
-  }
-
   isValid(field: FormlyFieldConfig) {
     if (field.key || !field.fieldGroup) {
       return field.formControl.valid;
@@ -84,19 +76,49 @@ export class FormlyFieldStepperComponent extends FieldType {
 
   onStepChange($event: StepperSelectionEvent) {
     this.selectedIndex = $event.selectedIndex;
-    if ($event.selectedIndex === this.field.fieldGroup.length - 1) {
-      this.field.fieldGroup.every((f) => {
-        if (f.key === "contract") {
-          FormlyUtilsService.setReadonlyMode(false, f.fieldGroup);
-        } else {
-          FormlyUtilsService.setReadonlyMode(true, f.fieldGroup);
-        }
-      });
+    const findField = this.field.fieldGroup[$event.selectedIndex];
+    if (findField.templateOptions.reviewMode) {
+      FormlyUtilsService.setReadonlyMode(true, this.field.fieldGroup);
     } else if (
       $event.previouslySelectedIndex ===
       this.field.fieldGroup.length - 1
     ) {
       FormlyUtilsService.setReadonlyMode(false, this.field.fieldGroup);
     }
+  }
+  validateSuccessStepForm(field: FormlyFieldConfig, index: number) {
+    let isvalid = false;
+    if (field.fieldGroup && field.fieldGroup.length > 0) {
+      field.fieldGroup.forEach((element) => {
+        if (!isvalid)
+          if (element.formControl.untouched) {
+            isvalid = false;
+            return isvalid;
+          }
+
+        if (element.formControl.valid) {
+          isvalid = true;
+        }
+      });
+    }
+    return isvalid;
+  }
+
+  validateFailureStepForm(field: FormlyFieldConfig, index: number) {
+    let isvalid = false;
+    if (field.fieldGroup && field.fieldGroup.length > 0) {
+      field.fieldGroup.forEach((element) => {
+        if (!isvalid) {
+          if (element.formControl.untouched) {
+            isvalid = false;
+            return isvalid;
+          }
+        }
+        if (element.formControl.invalid) {
+          isvalid = true;
+        }
+      });
+    }
+    return isvalid;
   }
 }
