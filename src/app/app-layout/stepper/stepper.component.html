@@ -5,7 +5,7 @@
         <div class="sds-card__body sds-card__body--accent-cool">
           <ul class="usa-sidenav usa-sidenav--styled">
             <li *ngFor="let step of steps; let i = index;" class="usa-sidenav__item"
-              [ngClass]="{'usa-current': selectedIndex && selectedIndex === i }">
+              [ngClass]="{'usa-current':  selectedIndex === i }">
               <a href="javascript:void(0);" (click)="selectedIndex = i">
                 <ng-container *ngIf="step.stepLabel; else showLabelText" [ngTemplateOutlet]="step.stepLabel.template">
                 </ng-container>

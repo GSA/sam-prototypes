@@ -1,9 +1,15 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormGroup } from "@angular/forms";
-import { Router } from "@angular/router";
-import { SdsDialogService } from "@gsa-sam/components";
+import { ActivatedRoute, Router } from "@angular/router";
+import {
+  NavigationLink,
+  NavigationMode,
+  SdsDialogService,
+  SelectionPanelModel,
+} from "@gsa-sam/components";
 import { SdsFormlyDialogComponent } from "@gsa-sam/sam-formly";
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
+import { BehaviorSubject } from "rxjs";
 import { EntityReportingService } from "../services/entity-reporting-service/entity-reporting.service";
 
 @Component({
@@ -15,7 +21,9 @@ import { EntityReportingService } from "../services/entity-reporting-service/ent
 })
 export class DataEntryComponent {
   service: any;
+  currentPageIndex = 0;
   constructor(
+    private route: ActivatedRoute,
     public router: Router,
     public dialog: SdsDialogService,
     private entityReportingService: EntityReportingService
@@ -278,6 +286,14 @@ export class DataEntryComponent {
   fields: FormlyFieldConfig[] = [
     {
       type: "stepper",
+      templateOptions: {
+        hideSidePannel: true,
+        selectedIndex: 1,
+        // selectedIndex: this.currentPageIndex,
+      },
+      expressionProperties: {
+        selectedIndex: "model.selectedIndex",
+      },
       fieldGroup: [
         {
           templateOptions: { label: "Report Contract", hasHeader: true },
@@ -579,12 +595,19 @@ export class DataEntryComponent {
         {
           templateOptions: {
             label: "Review and Submit",
+            reviewMode: true,
           },
         },
       ],
     },
   ];
-
+  getIndex() {
+    return this.currentPageIndex;
+  }
+  onSelectionChange(index) {
+    this.model["selectedIndex"] = index;
+    this.currentPageIndex = index;
+  }
   getData() {
     const searchParameters: any = {
       page: {

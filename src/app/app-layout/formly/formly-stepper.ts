@@ -7,24 +7,25 @@ import { FieldType, FormlyFieldConfig } from "@ngx-formly/core";
   template: ` <app-stepper
     linear
     [hideSidePannel]="to.hideSidePannel"
+    [selectedIndex]="model.selectedIndex"
     (selectionChange)="onStepChange($event)"
   >
     <cdk-step
       *ngFor="let step of field.fieldGroup; let index = index; let last = last"
     >
       <ng-template cdkStepLabel>
-        <!-- <span
-          *ngIf="isValid(step) && step.formControl.dirty"
+        <span
+          *ngIf="isTouched(step) && isValid(step)"
           class="usa-button sds-button--circle"
         >
           <sds-icon [icon]="'check'"></sds-icon>
         </span>
         <span
-          *ngIf="!isValid(step) && step.formControl.dirty"
+          *ngIf="isTouched(step) && !isValid(step)"
           class="usa-button sds-button--circle sds-button--danger"
         >
           <sds-icon [icon]="'x'"></sds-icon>
-        </span> -->
+        </span>
         {{ step.templateOptions.label }}
       </ng-template>
       <div *ngIf="!step.template">
@@ -65,6 +66,15 @@ export class FormlyFieldStepperComponent extends FieldType {
     return { invalid: !isValid, valid: isValid };
   }
 
+  isTouched(field: FormlyFieldConfig) {
+    console.log(field);
+    if (field.fieldGroup) {
+      let element =
+        field.fieldGroup.length > 1 ? field.fieldGroup[2] : field.fieldGroup[0];
+      return element.formControl.touched;
+    }
+  }
+
   isValid(field: FormlyFieldConfig) {
     if (field.key || !field.fieldGroup) {
       return field.formControl.valid;
@@ -75,7 +85,13 @@ export class FormlyFieldStepperComponent extends FieldType {
   onStepChange($event: StepperSelectionEvent) {
     this.selectedIndex = $event.selectedIndex;
     if ($event.selectedIndex === this.field.fieldGroup.length - 1) {
-      FormlyUtilsService.setReadonlyMode(true, this.field.fieldGroup);
+      this.field.fieldGroup.every((f) => {
+        if (f.key === "contract") {
+          FormlyUtilsService.setReadonlyMode(false, f.fieldGroup);
+        } else {
+          FormlyUtilsService.setReadonlyMode(true, f.fieldGroup);
+        }
+      });
     } else if (
       $event.previouslySelectedIndex ===
       this.field.fieldGroup.length - 1
