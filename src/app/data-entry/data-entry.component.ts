@@ -287,7 +287,7 @@ export class DataEntryComponent {
     {
       type: "stepper",
       templateOptions: {
-        // hideSidePannel: true,
+        hideSidePannel: true,
         selectedIndex: 1,
       },
       expressionProperties: {
@@ -623,5 +623,40 @@ export class DataEntryComponent {
 
   getAwardeeDetails(id) {
     return this.service.getFilteredDataById(id);
+  }
+  validateSuccessStepForm(field: FormlyFieldConfig, index: number) {
+    let isvalid = false;
+    if (field.fieldGroup && field.fieldGroup.length > 0) {
+      field.fieldGroup.forEach((element) => {
+        if (!isvalid)
+          if (element.formControl.untouched) {
+            isvalid = false;
+            return isvalid;
+          }
+
+        if (element.formControl.valid) {
+          isvalid = true;
+        }
+      });
+    }
+    return isvalid;
+  }
+
+  validateFailureStepForm(field: FormlyFieldConfig, index: number) {
+    let isvalid = false;
+    if (field.fieldGroup && field.fieldGroup.length > 0) {
+      field.fieldGroup.forEach((element) => {
+        if (!isvalid) {
+          if (element.formControl.untouched) {
+            isvalid = false;
+            return isvalid;
+          }
+        }
+        if (element.formControl.invalid) {
+          isvalid = true;
+        }
+      });
+    }
+    return isvalid;
   }
 }
