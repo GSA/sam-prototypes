@@ -4,7 +4,6 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { SdsFormlyModule, sdsWrappers } from "@gsa-sam/sam-formly";
 import { FormlyModule } from "@ngx-formly/core";
 
-import { StepperModule } from "../stepper/stepper.module";
 import { CdkStepperModule } from "@angular/cdk/stepper";
 import { FormlySubawardComponent } from "./formly-subaward";
 import { FormlyContractComponent } from "./formly-contract";
@@ -14,6 +13,7 @@ import { ReviewContractComponent } from "../review-contract/review-contract.comp
 
 import { SdsActionsMenuModule } from "@gsa-sam/layouts";
 import { ExpandableCardModule } from "../../app-layout/card/card.module";
+import { StepperModule } from "../../app-layout/stepper/stepper.module";
 
 @NgModule({
   declarations: [
