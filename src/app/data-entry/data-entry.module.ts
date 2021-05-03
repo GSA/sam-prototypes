@@ -19,6 +19,7 @@ import {
 } from "ngx-bootstrap-icons";
 import { AppLayoutFormlyModule } from "../app-layout/formly/formly-module";
 import { ExpandableCardModule } from "../app-layout/card/card.module";
+import { DataEntryLayoutModule } from "../app-layout/data-entry-layout/data-entry-layout.module";
 
 @NgModule({
   declarations: [DataEntryComponent, ReviewSubmitComponent],
@@ -31,6 +32,7 @@ import { ExpandableCardModule } from "../app-layout/card/card.module";
     StepperModule,
     DataEntryRoutingModule,
     SdsFormlyModule,
+    DataEntryLayoutModule,
     FormlyModule.forRoot(),
     DataEntryFormlyModule,
     AppLayoutFormlyModule,
