@@ -9,6 +9,9 @@
         <div class="sds-card">
           <div class="sds-card__body sds-card__body--accent-cool">
             <ul class="usa-sidenav usa-sidenav--styled">
+              <li class="usa-sidenav__item padding-1 padding-left-2 text-bold">
+                FSRS Report
+              </li>
               <li *ngFor="let step of fields[0].fieldGroup; let i = index;" class="usa-sidenav__item"
                 [ngClass]="{'usa-current':  currentPageIndex === i }">
                 <a href="javascript:void(0);" (click)="onSelectionChange(i)">

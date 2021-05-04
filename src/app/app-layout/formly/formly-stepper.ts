@@ -10,6 +10,7 @@ import { find } from "rxjs/operators";
     [hideSidePannel]="to.hideSidePannel"
     [selectedIndex]="model.selectedIndex"
     (selectionChange)="onStepChange($event)"
+    [stepInfoList]="stepInfoList"
   >
     <cdk-step
       *ngFor="let step of field.fieldGroup; let index = index; let last = last"
@@ -56,7 +57,17 @@ import { find } from "rxjs/operators";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormlyFieldStepperComponent extends FieldType {
+  stepInfoList: any[] = [];
   selectedIndex;
+  ngOnInit() {
+    this.field.fieldGroup.forEach((x, index) => {
+      let names: any = {};
+      names.index = index;
+      names.label = x.templateOptions.label;
+      this.stepInfoList.push(names);
+    });
+  }
+
   getStepForm(i, field: FormlyFieldConfig) {
     let isValid = false;
     if (field.template) {
@@ -68,7 +79,7 @@ export class FormlyFieldStepperComponent extends FieldType {
   }
 
   isValid(field: FormlyFieldConfig) {
-    if (field.key || !field.fieldGroup) {
+    if (field.key) {
       return field.formControl.valid;
     }
     return field.fieldGroup.every((f) => this.isValid(f));
