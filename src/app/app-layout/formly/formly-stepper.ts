@@ -105,6 +105,8 @@ export class FormlyFieldStepperComponent extends FieldType {
           if (element.formControl.untouched) {
             isvalid = false;
             return isvalid;
+          } else {
+            element.formControl.markAllAsTouched();
           }
 
         if (element.formControl.valid) {
@@ -123,6 +125,8 @@ export class FormlyFieldStepperComponent extends FieldType {
           if (element.formControl.untouched) {
             isvalid = false;
             return isvalid;
+          } else {
+            element.formControl.markAllAsTouched();
           }
         }
         if (element.formControl.invalid) {
