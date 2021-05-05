@@ -61,7 +61,18 @@ export class FormlyUtilsService {
     }
 
     if (field.templateOptions) {
-      field.templateOptions.readonlyMode = readonlyMode;
+      const isSdsFieldType = Object.values(SdsFormlyTypes).includes(
+        field.type as any
+      );
+      if (isSdsFieldType) {
+        field.templateOptions.readonlyMode = readonlyMode;
+      } else {
+        if (field.type === "contract") {
+          field.templateOptions.readonlyMode = false;
+        } else if (field.type === "repeat") {
+          console.log(field, "fiels");
+        }
+      }
     }
   }
 

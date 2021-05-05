@@ -1,6 +1,6 @@
 import { StepperSelectionEvent } from "@angular/cdk/stepper";
 import { Component, ChangeDetectionStrategy } from "@angular/core";
-import { FormlyUtilsService } from "@gsa-sam/sam-formly";
+import { FormlyUtilsService } from "./formly-utils.service";
 import { FieldType, FormlyFieldConfig } from "@ngx-formly/core";
 import { find } from "rxjs/operators";
 
