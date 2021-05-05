@@ -67,10 +67,10 @@ export class FormlyUtilsService {
       if (isSdsFieldType) {
         field.templateOptions.readonlyMode = readonlyMode;
       } else {
-        if (field.type === "contract") {
+        if (field.type === "repeat") {
+          console.log("repeater");
+        } else {
           field.templateOptions.readonlyMode = false;
-        } else if (field.type === "repeat") {
-          console.log(field, "fiels");
         }
       }
     }

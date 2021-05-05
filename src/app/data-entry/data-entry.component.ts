@@ -632,6 +632,8 @@ export class DataEntryComponent {
           if (element.formControl.untouched) {
             isvalid = false;
             return isvalid;
+          } else {
+            element.formControl.markAllAsTouched();
           }
 
         if (element.formControl.valid) {
@@ -650,6 +652,8 @@ export class DataEntryComponent {
           if (element.formControl.untouched) {
             isvalid = false;
             return isvalid;
+          } else {
+            element.formControl.markAllAsTouched();
           }
         }
         if (element.formControl.invalid) {
