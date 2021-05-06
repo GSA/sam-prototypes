@@ -56,6 +56,9 @@ export class FormlyUtilsService {
   ) {
     if (field.fieldGroup) {
       field.fieldGroup.forEach((innerField) => {
+        if (innerField.type === "repeat") {
+          console.log(field, "innerField");
+        }
         this._setReadonlyMode(readonlyMode, innerField);
       });
     }
@@ -67,11 +70,7 @@ export class FormlyUtilsService {
       if (isSdsFieldType) {
         field.templateOptions.readonlyMode = readonlyMode;
       } else {
-        if (field.type === "repeat") {
-          console.log("repeater");
-        } else {
-          field.templateOptions.readonlyMode = false;
-        }
+        field.templateOptions.readonlyMode = false;
       }
     }
   }

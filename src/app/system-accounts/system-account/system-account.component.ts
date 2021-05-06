@@ -10,7 +10,7 @@ import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 export class SystemAccountComponent implements OnInit {
   currentPageIndex = 0;
   form = new FormGroup({});
-  model: any = {};
+  model: any = { selectedIndex: 0 };
   options: FormlyFormOptions = {};
   fields: FormlyFieldConfig[] = [
     {

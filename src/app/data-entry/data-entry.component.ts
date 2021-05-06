@@ -281,7 +281,9 @@ export class DataEntryComponent {
   ];
 
   form = new FormGroup({});
-  model: any = {};
+  model: any = {
+    selectedIndex: 0,
+  };
   options: FormlyFormOptions = {};
   fields: FormlyFieldConfig[] = [
     {

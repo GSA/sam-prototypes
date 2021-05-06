@@ -27,30 +27,30 @@
         </div> -->
 <div class="grid-container grid-row grid-gap">
   <div class="sds-button-row">
-    <div style="margin:8px" *ngIf="isPreviousButtonHidden()">
+    <div class="text-right margin-right-1" *ngIf="isPreviousButtonHidden()">
       <button cdkStepperPrevious class="usa-button sds-button--circle">
         <sds-icon [icon]="'chevron-left'"></sds-icon>
       </button>
-      <p [innerHTML]="getBacklabel()"></p>
+      <p class="text-right" [innerHTML]="getBacklabel()"></p>
     </div>
-    <div style="margin:8px">
+    <div class="margin-right-1">
       <button class="usa-button sds-button--circle" (click)="closeback();">
         <sds-icon [icon]="'x'"></sds-icon>
       </button>
-      <p> Close</p>
+      <p class="text-right"> Close</p>
     </div>
-    <div style="margin:8px">
+    <div class="margin-right-1">
       <button class="usa-button sds-button--circle">
         <sds-icon [icon]="'question'"></sds-icon>
       </button>
-      <p>Help</p>
+      <p class="text-right">Help</p>
     </div>
 
-    <div style="margin:8px" *ngIf="isNextButtonHidden()">
+    <div class="margin-right-1" *ngIf="isNextButtonHidden()">
       <button cdkStepperNext class="usa-button sds-button--circle">
         <sds-icon [icon]="'chevron-right'"></sds-icon>
       </button>
-      <p [innerHTML]="getNextlabel()"></p>
+      <p class="text-left" [innerHTML]="getNextlabel()"></p>
     </div>
   </div>
 </div>
