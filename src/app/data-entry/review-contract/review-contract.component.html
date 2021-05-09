@@ -58,7 +58,7 @@
           <div class="grid-col">
             <div class="sds-field sds-field--small">
               <div class="sds-field__name has-usa-tag">Unique Entity ID:</div>
-              <div class="sds-field__value left-align">{{items.vendor.dunsNumber}}</div>
+              <div class="sds-field__value left-align">Not Available</div>
             </div>
           </div>
         </div>
@@ -71,7 +71,7 @@
         <div class="grid-row margin-y-2">
           <div class="sds-field sds-field--stacked sds-field--small">
             <div class="sds-field__name">Award Amount:</div>
-            <div class="sds-field__value">6811525.00</div>
+            <div class="sds-field__value">{{items.contract.obligatedAmount}}</div>
           </div>
         </div>
 
@@ -79,8 +79,8 @@
           <div class="sds-field sds-field--stacked sds-field--small">
             <div class="sds-field__name">NAICS Code:</div>
             <div class="sds-field__value sds-results-child--hilite">
-              <div>237310 -- Highway, Street, and Bridge Construction</div>
-
+              <div>Not available</div>
+              <!-- <div>{{items.productOrService.naics[0].code}}--{{items.productOrService.naics[0].value}}</div> -->
             </div>
           </div>
         </div>
@@ -124,14 +124,14 @@
         <div class="grid-row margin-y-2">
           <div class="sds-field sds-field--stacked sds-field--small">
             <div class="sds-field__name">Contracting Subtier ID:</div>
-            <div class="sds-field__value">1700</div>
+            <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[0].organizationId}}</div>
           </div>
         </div>
 
         <div class="grid-row margin-y-2">
           <div class="sds-field sds-field--stacked sds-field--small">
             <div class="sds-field__name">Funding Subtier ID:</div>
-            <div class="sds-field__value">1700</div>
+            <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[0].organizationId}}</div>
           </div>
         </div>
 
@@ -142,14 +142,14 @@
         <div class="grid-row margin-y-2">
           <div class="sds-field sds-field--stacked sds-field--small">
             <div class="sds-field__name">Contracting Subtier Name:</div>
-            <div class="sds-field__value">SPAWAR NCCOSC NRAD</div>
+            <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[0].name}}</div>
           </div>
         </div>
 
         <div class="grid-row margin-y-2">
           <div class="sds-field sds-field--stacked sds-field--small">
             <div class="sds-field__name">Funding Subtier Name:</div>
-            <div class="sds-field__value">DEPT OF THE NAVY</div>
+            <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[0].name}}</div>
           </div>
         </div>
 
@@ -160,16 +160,16 @@
 
         <div class="grid-row margin-y-2">
           <div class="sds-field sds-field--stacked sds-field--small">
-            <div class="sds-field__name">Contracting Office ID:</div>
-            <div class="sds-field__value">D710D</div>
+            <div class="sds-field__name">Contracting Office ID:(Level2)</div>
+            <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[1].organizationId}}</div>
           </div>
         </div>
 
         <div class="grid-row margin-y-2">
           <div class="sds-field sds-field--stacked sds-field--small">
-            <div class="sds-field__name">Funding Office ID:</div>
+            <div class="sds-field__name">Funding Office ID:(Level2 )</div>
             <div class="sds-field__value sds-results-child--hilite">
-              <div class="sds-field__value">D710D</div>
+              <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[1].organizationId}}</div>
 
             </div>
           </div>
@@ -182,16 +182,16 @@
 
         <div class="grid-row margin-y-2">
           <div class="sds-field sds-field--stacked sds-field--small">
-            <div class="sds-field__name">Contracting Office Name:</div>
-            <div class="sds-field__value">SPAWAR NCCOSC NRAD</div>
+            <div class="sds-field__name">Contracting Office Name:(Level3 )</div>
+            <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[1].name}}</div>
           </div>
         </div>
 
 
         <div class="grid-row margin-y-2">
           <div class="sds-field sds-field--stacked sds-field--small">
-            <div class="sds-field__name">Funding Office Name:</div>
-            <div class="sds-field__value">SPAWAR NCCOSC NRAD</div>
+            <div class="sds-field__name">Funding Office Name: (Level3 )</div>
+            <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[1].name}}</div>
           </div>
         </div>
 
@@ -200,6 +200,6 @@
 
     <hr />
     <h3>Desciption of Requirement</h3>
-    <div class="sds-field__name">Preservation of adaptive immunity leads to HIV control upon treatment cessation.</div>
+    <div class="sds-field__name">{{items.desciption}}</div>
   </div>
 </div>

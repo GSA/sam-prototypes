@@ -32,20 +32,37 @@ import { FieldArrayType, FormlyFormBuilder } from "@ngx-formly/core";
     </div>
 
     <div
-      *ngFor="let field of field.fieldGroup; let i = index"
-      class="margin-top-2"
+      class="sds-card sds-card__body--accent-cool"
+      *ngIf="this.showNoresultFound"
     >
-      <formly-group [field]="field" [options]="options" [form]="formControl">
-        <div class="col-sm-2 d-flex align-items-center">
-          <button
-            class="usa-button sds-danger"
-            type="button"
-            (click)="remove(i)"
-          >
-            Remove
-          </button>
-        </div>
-      </formly-group>
+      <div class="sds-card__header sds-card__header--left">
+        <h2 class="sds-card__title ">No Subawardees</h2>
+      </div>
+      <div class="sds-card__body ">
+        <p>
+          To add a subawardee, begin by entering a subawardee Unique Entity ID
+          above.
+        </p>
+      </div>
+    </div>
+
+    <div *ngIf="!showNoresultFound">
+      <div
+        *ngFor="let field of field.fieldGroup; let i = index"
+        class="margin-top-2"
+      >
+        <formly-group [field]="field" [options]="options" [form]="formControl">
+          <div class="col-sm-2 d-flex align-items-center">
+            <button
+              class="usa-button sds-danger"
+              type="button"
+              (click)="removeItem(i)"
+            >
+              Remove
+            </button>
+          </div>
+        </formly-group>
+      </div>
     </div>
   `,
 })
@@ -53,6 +70,7 @@ export class RepeatTypeComponent extends FieldArrayType {
   constructor(builder: FormlyFormBuilder, public dialog: SdsDialogService) {
     super(builder);
   }
+  showNoresultFound: boolean = true;
   addSubawardee(id) {
     const model1 = this.field.fieldArray.templateOptions.getDetails(
       id.toString() + "+AWARD"
@@ -75,8 +93,13 @@ export class RepeatTypeComponent extends FieldArrayType {
         this.field.fieldArray.fieldGroup[0].templateOptions.subawardItem = result;
         this.add();
         this.model[this.model.length - 1] = result;
-        console.log(this.model, "model repeater");
+        this.showNoresultFound = this.model.length == 0 ? true : false;
       }
     });
+  }
+
+  removeItem(i): void {
+    this.remove(i);
+    this.showNoresultFound = this.model.length == 0 ? true : false;
   }
 }

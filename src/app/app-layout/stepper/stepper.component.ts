@@ -1,5 +1,7 @@
 import { Directionality } from "@angular/cdk/bidi";
 import { CdkStepper, StepperSelectionEvent } from "@angular/cdk/stepper";
+import { Location } from "@angular/common";
+
 import {
   Component,
   OnInit,
@@ -17,7 +19,12 @@ import {
 })
 export class StepperComponent extends CdkStepper {
   @Input() hideSidePannel: boolean = false;
-  constructor(dir: Directionality, cdr: ChangeDetectorRef) {
+  @Input() stepInfoList: any[] = [];
+  constructor(
+    dir: Directionality,
+    cdr: ChangeDetectorRef,
+    private location: Location
+  ) {
     super(dir, cdr);
   }
 
@@ -40,5 +47,19 @@ export class StepperComponent extends CdkStepper {
 
     this.selectedIndex = selectedIndex;
     this.selectionChange.emit(selectionChange);
+  }
+  getBacklabel(): string {
+    return this.selectedIndex !== 0
+      ? "Back to </br>" + this.stepInfoList[this.selectedIndex - 1].label
+      : " Back ";
+  }
+  getNextlabel(): string {
+    return !(this.steps.length === this.selectedIndex + 1)
+      ? "Go to </br>" + this.stepInfoList[this.selectedIndex + 1].label
+      : "Next";
+  }
+
+  closeback() {
+    this.location.back();
   }
 }

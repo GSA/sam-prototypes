@@ -1,9 +1,15 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormGroup } from "@angular/forms";
-import { Router } from "@angular/router";
-import { SdsDialogService } from "@gsa-sam/components";
+import { ActivatedRoute, Router } from "@angular/router";
+import {
+  NavigationLink,
+  NavigationMode,
+  SdsDialogService,
+  SelectionPanelModel,
+} from "@gsa-sam/components";
 import { SdsFormlyDialogComponent } from "@gsa-sam/sam-formly";
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
+import { BehaviorSubject } from "rxjs";
 import { EntityReportingService } from "../services/entity-reporting-service/entity-reporting.service";
 
 @Component({
@@ -15,7 +21,9 @@ import { EntityReportingService } from "../services/entity-reporting-service/ent
 })
 export class DataEntryComponent {
   service: any;
+  currentPageIndex = 0;
   constructor(
+    private route: ActivatedRoute,
     public router: Router,
     public dialog: SdsDialogService,
     private entityReportingService: EntityReportingService
@@ -273,14 +281,23 @@ export class DataEntryComponent {
   ];
 
   form = new FormGroup({});
-  model: any = {};
+  model: any = {
+    selectedIndex: 0,
+  };
   options: FormlyFormOptions = {};
   fields: FormlyFieldConfig[] = [
     {
       type: "stepper",
+      templateOptions: {
+        hideSidePannel: true,
+        selectedIndex: 1,
+      },
+      expressionProperties: {
+        selectedIndex: "model.selectedIndex",
+      },
       fieldGroup: [
         {
-          templateOptions: { label: "Report Contract" },
+          templateOptions: { label: "Report Contract", hasHeader: true },
           fieldGroup: [
             {
               key: "dataentry.contract",
@@ -307,7 +324,7 @@ export class DataEntryComponent {
         },
 
         {
-          templateOptions: { label: "Report Details" },
+          templateOptions: { label: "Report Details", hasHeader: true },
           fieldGroup: [
             {
               key: "dataentry.details",
@@ -546,7 +563,7 @@ export class DataEntryComponent {
         },
 
         {
-          templateOptions: { label: "Subaward" },
+          templateOptions: { label: "Subaward", hasHeader: true },
           fieldGroup: [
             {
               key: "addAwardee",
@@ -579,12 +596,17 @@ export class DataEntryComponent {
         {
           templateOptions: {
             label: "Review and Submit",
+            reviewMode: true,
           },
         },
       ],
     },
   ];
 
+  onSelectionChange(index) {
+    this.model["selectedIndex"] = index;
+    this.currentPageIndex = index;
+  }
   getData() {
     const searchParameters: any = {
       page: {
@@ -603,5 +625,44 @@ export class DataEntryComponent {
 
   getAwardeeDetails(id) {
     return this.service.getFilteredDataById(id);
+  }
+  validateSuccessStepForm(field: FormlyFieldConfig, index: number) {
+    let isvalid = false;
+    if (field.fieldGroup && field.fieldGroup.length > 0) {
+      field.fieldGroup.forEach((element) => {
+        if (!isvalid)
+          if (element.formControl.untouched) {
+            isvalid = false;
+            return isvalid;
+          } else {
+            element.formControl.markAllAsTouched();
+          }
+
+        if (element.formControl.valid) {
+          isvalid = true;
+        }
+      });
+    }
+    return isvalid;
+  }
+
+  validateFailureStepForm(field: FormlyFieldConfig, index: number) {
+    let isvalid = false;
+    if (field.fieldGroup && field.fieldGroup.length > 0) {
+      field.fieldGroup.forEach((element) => {
+        if (!isvalid) {
+          if (element.formControl.untouched) {
+            isvalid = false;
+            return isvalid;
+          } else {
+            element.formControl.markAllAsTouched();
+          }
+        }
+        if (element.formControl.invalid) {
+          isvalid = true;
+        }
+      });
+    }
+    return isvalid;
   }
 }
