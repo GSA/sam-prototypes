@@ -4,6 +4,7 @@
 <sds-autocomplete *ngIf="selectionMode==0" [service]="service" (ngModelChange)="change($event)" [(ngModel)]="selectModel"
 	[configuration]="settings" [suggestionTemplate]="selecttemp" [selectedItemTemplate]="single"></sds-autocomplete>
 
+
 <ng-template #temp let-item>
 	<div class="grid-row" style="line-height: 1.0">
 		<div class="grid-col-auto" style="font-weight: 600; font-size: .9em">{{item['id']}}</div>

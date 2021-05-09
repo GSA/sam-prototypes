@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormlyModule } from "@ngx-formly/core";
 import { FormsModule } from "@angular/forms";
+import { chevronLeft, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+
+import { SdsIconModule } from "@gsa-sam/components";
 
 import { SdsSearchModule } from '@gsa-sam/components';
 import { SdsSubheaderModule } from "@gsa-sam/layouts";
@@ -16,8 +19,10 @@ import { WorkspaceSubheaderComponent } from './workspace-subheader.component';
     RouterModule,
     FormlyModule,
     FormsModule,
+    SdsIconModule,
     SdsSearchModule,
-    SdsSubheaderModule
+    SdsSubheaderModule,
+    NgxBootstrapIconsModule.pick({ chevronLeft }),
   ],
   exports: [WorkspaceSubheaderComponent]
 })

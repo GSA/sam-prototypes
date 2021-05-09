@@ -5,14 +5,6 @@ import { GoBackTest } from './go-back-test';
 
 const routes: Routes = [
   {
-    path: "hierarchy",
-    loadChildren: () =>
-      import("./hierarchy/hierarchy.module").then((m) => m.HierarchyModule),
-    data: {
-      id: "home",
-    },
-  },
-  {
     path: "",
     loadChildren: () => import("./home/home.module").then((m) => m.HomeModule),
     data: {
@@ -60,10 +52,10 @@ const routes: Routes = [
     },
   },
   {
-    path: "messages",
-    loadChildren: () => import("./feed/feed.module").then((m) => m.FeedModule),
+    path: "notifications",
+    loadChildren: () => import("./notifications/notifications.module").then((m) => m.NotificationsModule),
     data: {
-      id: "messages",
+      id: "notifications",
     },
   },
   {
@@ -140,6 +132,14 @@ const routes: Routes = [
     path: "entity-reporting",
     loadChildren: () =>
       import("./entity-reporting/entity-reporting.module").then((m) => m.EntityReportingModule),
+  },
+  {
+    path: "responsibility-qualification",
+    loadChildren: () =>
+      import("./responsibility-qualification/responsibility-qualification.module").then((m) => m.ResponsibilityQualificationModule),
+    data: {
+      id: "workspace",
+    },
   },
   {
     path: "system-accounts",

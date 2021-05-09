@@ -1,0 +1,29 @@
+<workspace-subheader [title]="title" [placeholder]="placeholder">
+</workspace-subheader>
+<main>
+	<div class="sds-page">
+    	<div class="grid-container">
+		<div class="grid-row grid-gap">
+			<div class="desktop:grid-col-3 tablet-lg:grid-col-12 mobile-lg:grid-col-12 margin-bottom-3">
+				<responsive-sidebar title="Navigate To">
+					<div class="sds-card__body sds-card__body--accent-cool" id="panelBody">
+					    <notification-filters #filters></notification-filters>
+				    </div>
+				</responsive-sidebar>
+			</div>
+			<div class="desktop:grid-col-9 tablet-lg:grid-col-12 margin-bottom-3">
+				<search-list-layout #resultList [service]="service" [configuration]="service.configuration"
+			        [isHistoryEnabled]="false" [enableApiCall]="true">
+			        <ng-template #resultContent let-item>
+				        <h2><a class="usa-link" [innerHTML]="item.text"></a></h2>    
+				        <div class="grid-row grid-gap">   
+				            <div class="grid-col-10" [innerHTML]="item.description"></div>
+					        <div class="grid-col-2">{{item.date | date:item.dateFormat }}</div>    
+				    	</div>
+			        </ng-template>
+			      </search-list-layout>
+			</div> 
+		</div>
+	</div>
+	</div>
+</main>

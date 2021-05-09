@@ -1,7 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-workspace-subheader',
+  selector: 'workspace-subheader',
   template: `
       <sds-subheader>
       <!-- =============== BACK BUTTON =============== -->
@@ -12,7 +12,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
       <!-- =============== TITLE =============== -->
       <span class="sds-navbar__title">
-        Contract Opportunities
+        {{title}}
       </span>
 
       <!-- =============== SEARCH =============== -->
@@ -25,14 +25,13 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
       <!-- =============== BUTTON GROUP =============== -->
       <ng-container subheader-buttons-container>
-        <button class="usa-button usa-button--secondary grid-col-6">Button</button>
-        <button class="usa-button grid-col-6">Button</button>
+        <ng-content select="button"></ng-content>
       </ng-container>
 
       <!-- =============== ACTIONS BUTTONS =============== -->
       <sds-subheader-actions
-        [model]="subheader"
-        (clicks)="onActionMenuItem($event)"
+        [model]="actionsModel"
+        (clicks)="actionClicked($event)"
       ></sds-subheader-actions>
 
     </sds-subheader>
@@ -40,13 +39,43 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class WorkspaceSubheaderComponent implements OnInit {
 
+  @Input() title;
+  @Input() placeholder;
+
+  searchSettings;
+
+  searchModel: any = {}
+
+  @Output() download: EventEmitter<any> = new EventEmitter();
+
+  public actionsModel = {
+    actions: [
+      { id: 'download', icon: 'bars', text: 'Download' }
+    ]
+  };
+
   constructor() { }
 
   ngOnInit(): void {
+
+  	this.searchSettings = {
+  		placeholder: this.placeholder,   
+  		parentSelector: '.sds-subheader__content',
+    	inputClass: 'width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block',
+    	size: 'small',
+    	ariaLabel: 'Search Exclusions',
+    	dropdown: {}
+  	}
   }
 
   searchSubmit(keyword) {
-  
+
+  }
+
+  actionClicked(buttonId) {
+    if (buttonId == 'download') {
+      this.download.emit(null);
+    }
   }
 
 }

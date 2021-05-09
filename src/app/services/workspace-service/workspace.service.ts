@@ -28,6 +28,10 @@ export class WorkspaceService {
   		title: 'Entity Reporting'
   	},
   	{
+  		key: 'responsibilityQualification',
+  		title: 'Responsibility / Qualification'
+  	},
+  	{
   		key: 'cba',
   		title: 'Collective Bargaining Agreements'
   	},
