@@ -16,6 +16,9 @@ export class DataEntryComponent {
   initialFields: FormlyFieldConfig[];
   service: any;
   currentPageIndex = 0;
+  isFormValid: boolean = false;
+  previousFormValid: boolean = true;
+  formStepperCount: number = 0;
   constructor(
     private route: ActivatedRoute,
     public router: Router,
@@ -586,6 +589,7 @@ export class DataEntryComponent {
             },
           ],
         },
+
         {
           templateOptions: {
             label: "Review and Submit",
@@ -599,16 +603,6 @@ export class DataEntryComponent {
   onSelectionChange(index) {
     this.model["selectedIndex"] = index;
     this.currentPageIndex = index;
-    // if (index === 4) {
-    //   this.initialFields = this.fields;
-    //   const reviewFields = this.fields[0].fieldGroup;
-    //   FormlyUtilsService.setReadonlyMode(true, reviewFields, this.model);
-    //   this.fields = reviewFields;
-    // } else {
-    //   if (this.initialFields) {
-    //     this.fields = this.initialFields;
-    //   }
-    // }
   }
   getData() {
     const searchParameters: any = {
@@ -631,18 +625,50 @@ export class DataEntryComponent {
   }
   validateSuccessStepForm(field: FormlyFieldConfig, index: number) {
     let isvalid = false;
+    if (index == 0) {
+      this.formStepperCount = 0;
+    }
+    this.previousFormValid = this.isFormValid;
     if (field.fieldGroup && field.fieldGroup.length > 0) {
       field.fieldGroup.forEach((element) => {
         if (!isvalid)
-          if (element.formControl.untouched) {
+          if (element.formControl.untouched && this.currentPageIndex <= index) {
             isvalid = false;
-            return isvalid;
+            if (element.formControl.invalid) {
+              this.isFormValid = false;
+              this.formStepperCount =
+                this.formStepperCount == 0 ? 0 : this.formStepperCount - 1;
+            }
+            if (this.currentPageIndex < 2) {
+              return isvalid;
+            }
           } else {
             element.formControl.markAllAsTouched();
+            if (element.formControl.invalid) {
+              this.isFormValid = false;
+              this.formStepperCount =
+                this.formStepperCount == 0 ? 0 : this.formStepperCount - 1;
+            }
           }
 
         if (element.formControl.valid) {
           isvalid = true;
+          if (field.fieldGroup[0] == element) {
+            this.formStepperCount = this.formStepperCount + 1;
+          }
+          if (this.currentPageIndex == 2 && index == 2) {
+            if (this.model.addAwardee.length <= 0) {
+              this.formStepperCount =
+                this.formStepperCount <= 0 ? 0 : this.formStepperCount - 1;
+              this.isFormValid = false;
+            }
+          }
+        }
+
+        if (this.formStepperCount == this.fields[0].fieldGroup.length - 1) {
+          this.isFormValid = true;
+        } else {
+          this.isFormValid = false;
         }
       });
     }
@@ -654,8 +680,11 @@ export class DataEntryComponent {
     if (field.fieldGroup && field.fieldGroup.length > 0) {
       field.fieldGroup.forEach((element) => {
         if (!isvalid) {
-          if (element.formControl.untouched) {
+          if (element.formControl.untouched && this.currentPageIndex <= index) {
             isvalid = false;
+            if (element.formControl.invalid) {
+              this.isFormValid = false;
+            }
             return isvalid;
           } else {
             element.formControl.markAllAsTouched();
@@ -663,6 +692,7 @@ export class DataEntryComponent {
         }
         if (element.formControl.invalid) {
           isvalid = true;
+          this.isFormValid = false;
         }
       });
     }

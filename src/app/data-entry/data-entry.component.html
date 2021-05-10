@@ -1,6 +1,6 @@
 <data-entry-subheader title="FSRS New Report">
   <button class="usa-button usa-button--secondary">Discard Draft</button>
-  <button class="usa-button">Submit</button>
+  <button class="usa-button" [disabled]="!isFormValid">Submit</button>
 </data-entry-subheader>
 <main>
   <div class="sds-page margin-top-2">
