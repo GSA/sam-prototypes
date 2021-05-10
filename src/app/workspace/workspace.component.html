@@ -50,71 +50,14 @@
 
           <!-- PENDING REQUESTS -->
 
-          <workspace-card title="Pending Requests" [routerLink]="['/']">
+          <workspace-card title="Pending Requests" [routerLink]="['/']" [noBorder]="true">
             <landing-feed [model]="requests" [moreLink]="moreRequestsLink"></landing-feed>
           </workspace-card>
 
           <!-- NOTIFICATIONS -->
-          <workspace-card title="Notifications" [routerLink]="['/']">
+          <workspace-card title="Notifications" [routerLink]="['/']" [noBorder]="true">
             <landing-feed [model]="notifications" [moreLink]="moreNotificationsLink"></landing-feed>
           </workspace-card>
-
-          <h3>
-            <a class="usa-link" href="javascript:void(0);">Notifications</a>
-          </h3>
-          <div class="sds-feed display-flex">
-            <div class="event">
-              <div class="label">
-                <i class="fa fa-newspaper fa-2x fa-fw" style="color:#3F57A6;"></i>
-              </div>
-              <div class="content">
-                <div class="summary">
-                  <div class="date">10:11 am</div>
-                  Wage Determinations: <a class="action">CA09832498</a> has been
-                  updated.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="sds-feed display-flex">
-            <div class="event">
-              <div class="label">
-                <i class="fa fa-newspaper fa-2x fa-fw" style="color:#3F57A6;"></i>
-              </div>
-              <div class="content">
-                <div class="summary">
-                  <div class="date">Tuesday</div>
-                  Contract Opportunities:
-                  <a class="action">
-                    Z-Replacement and installation of an irrigation system
-                  </a>
-                  has been updated.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="sds-feed display-flex">
-            <div class="event">
-              <div class="label">
-                <i class="fa fa-exclamation-circle fa-2x fa-fw text-red"></i>
-              </div>
-              <div class="content">
-                <div class="summary">
-                  <div class="date">Sep 24</div>
-                  <a class="action">
-                    Planned System Downtime Sep 29, 2018 from 2am-3am
-                  </a>
-                </div>
-                <div class="meta">
-                  <em>
-                    Sep 24 8:55AM - SAM.gov will be performing routine system
-                    maintenance from 2am - 3am on Sat, Sep 29, 2018. The websitee will
-                    be unavailable during this window.
-                  </em>
-                </div>
-              </div>
-            </div>
-          </div>
 
 
           <!-- ADD NEW ROLE -->
@@ -180,6 +123,10 @@
 
 <ng-template #entityReportingTemplate>
   <entity-reporting-dashboard></entity-reporting-dashboard>
+</ng-template>
+
+<ng-template #responsibilityQualificationTemplate>
+  <responsibility-qualification-dashboard></responsibility-qualification-dashboard>
 </ng-template>
 
 

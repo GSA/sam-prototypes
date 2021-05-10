@@ -9,7 +9,6 @@ import {
     SDSAutocompletelConfiguration,
     SDSSelectedItemModel,
     SelectionMode,
-    SDSAutocompleteServiceInterface,
     SDSHiercarchicalServiceResult,
     SDSSelectedItemModelHelper
 } from '@gsa-sam/components';

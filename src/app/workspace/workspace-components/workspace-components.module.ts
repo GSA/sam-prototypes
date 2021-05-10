@@ -19,10 +19,11 @@ import { AssistanceServiceModule } from '../../services/assistance-service/assis
 import { SystemAccountsServiceModule } from '../../services/system-accounts-service/system-accounts-service.module';
 import { HierarchyServiceModule } from '../../services/hierarchy-service/hierarchy-service.module';
 import { WorkspaceStatisticSquareComponent, WorkspaceStatisticsSquareComponent } from './workspace-statistic-square.component';
+import { ResponsibilityQualificationDashboardComponent } from './responsibility-qualification-dashboard.component';
 
 
 @NgModule({
-  declarations: [WorkspaceCardComponent, WorkspaceStatisticComponent, WorkspaceStatisticsComponent, WorkspaceDashboardComponent, ContractOpportunitiesDashboardComponent, AssistanceListingsDashboardComponent, CbaDashboardComponent, EntityRegistrationDashboardComponent, UserDirectoryDashboardComponent, FederalHierarchyDashboardComponent, SystemAccountsDashboardComponent, EntityReportingDashboardComponent, WorkspaceStatisticSquareComponent, WorkspaceStatisticsSquareComponent],
+  declarations: [WorkspaceCardComponent, WorkspaceStatisticComponent, WorkspaceStatisticsComponent, WorkspaceDashboardComponent, ContractOpportunitiesDashboardComponent, AssistanceListingsDashboardComponent, CbaDashboardComponent, EntityRegistrationDashboardComponent, UserDirectoryDashboardComponent, FederalHierarchyDashboardComponent, SystemAccountsDashboardComponent, EntityReportingDashboardComponent, WorkspaceStatisticSquareComponent, WorkspaceStatisticsSquareComponent, ResponsibilityQualificationDashboardComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -32,6 +33,6 @@ import { WorkspaceStatisticSquareComponent, WorkspaceStatisticsSquareComponent }
     SystemAccountsServiceModule,
     HierarchyServiceModule
   ],
-  exports: [WorkspaceCardComponent, WorkspaceStatisticComponent, WorkspaceStatisticsComponent, WorkspaceDashboardComponent, ContractOpportunitiesDashboardComponent, AssistanceListingsDashboardComponent, CbaDashboardComponent, EntityRegistrationDashboardComponent, UserDirectoryDashboardComponent, FederalHierarchyDashboardComponent, SystemAccountsDashboardComponent, EntityReportingDashboardComponent, WorkspaceStatisticSquareComponent, WorkspaceStatisticsSquareComponent]
+  exports: [WorkspaceCardComponent, WorkspaceStatisticComponent, WorkspaceStatisticsComponent, WorkspaceDashboardComponent, ContractOpportunitiesDashboardComponent, AssistanceListingsDashboardComponent, CbaDashboardComponent, EntityRegistrationDashboardComponent, UserDirectoryDashboardComponent, FederalHierarchyDashboardComponent, SystemAccountsDashboardComponent, EntityReportingDashboardComponent, WorkspaceStatisticSquareComponent, WorkspaceStatisticsSquareComponent, ResponsibilityQualificationDashboardComponent]
 })
 export class WorkspaceComponentsModule { }
