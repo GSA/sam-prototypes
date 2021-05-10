@@ -1,15 +1,8 @@
-import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import {
-  NavigationLink,
-  NavigationMode,
-  SdsDialogService,
-  SelectionPanelModel,
-} from "@gsa-sam/components";
-import { SdsFormlyDialogComponent } from "@gsa-sam/sam-formly";
+import { SdsDialogService } from "@gsa-sam/components";
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
-import { BehaviorSubject } from "rxjs";
 import { EntityReportingService } from "../services/entity-reporting-service/entity-reporting.service";
 
 @Component({
@@ -20,6 +13,7 @@ import { EntityReportingService } from "../services/entity-reporting-service/ent
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DataEntryComponent {
+  initialFields: FormlyFieldConfig[];
   service: any;
   currentPageIndex = 0;
   constructor(
@@ -592,7 +586,6 @@ export class DataEntryComponent {
             },
           ],
         },
-
         {
           templateOptions: {
             label: "Review and Submit",
@@ -606,6 +599,16 @@ export class DataEntryComponent {
   onSelectionChange(index) {
     this.model["selectedIndex"] = index;
     this.currentPageIndex = index;
+    // if (index === 4) {
+    //   this.initialFields = this.fields;
+    //   const reviewFields = this.fields[0].fieldGroup;
+    //   FormlyUtilsService.setReadonlyMode(true, reviewFields, this.model);
+    //   this.fields = reviewFields;
+    // } else {
+    //   if (this.initialFields) {
+    //     this.fields = this.initialFields;
+    //   }
+    // }
   }
   getData() {
     const searchParameters: any = {

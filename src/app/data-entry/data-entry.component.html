@@ -15,18 +15,26 @@
               <li *ngFor="let step of fields[0].fieldGroup; let i = index;" class="usa-sidenav__item"
                 [ngClass]="{'usa-current':  model?.selectedIndex === i }">
                 <a href="javascript:void(0);" (click)="onSelectionChange(i)">
-                  <span *ngIf="validateSuccessStepForm(step, i)" class="usa-button sds-button--circle">
-                    <sds-icon [icon]="'check'"></sds-icon>
+                  <span *ngIf="!step.templateOptions.reviewMode">
+                    <span *ngIf="validateSuccessStepForm(step, i)" class="usa-button sds-button--circle">
+                      <sds-icon [icon]="'check'"></sds-icon>
+                    </span>
+                    <span *ngIf="validateFailureStepForm(step, i)"
+                      class="usa-button sds-button--circle sds-button--danger">
+                      <sds-icon [icon]="'x'"></sds-icon>
+                    </span>
                   </span>
-                  <span *ngIf="validateFailureStepForm(step, i)"
-                    class="usa-button sds-button--circle sds-button--danger">
-                    <sds-icon [icon]="'x'"></sds-icon>
-                  </span>
-
                   {{step.templateOptions.label}}
                 </a>
                 <span class="usa-sr-only">{{step.templateOptions.label}}</span>
               </li>
+              <!-- <li class="usa-sidenav__item" [ngClass]="{'usa-current':  model?.selectedIndex === 4 }">
+                <a href="javascript:void(0);" (click)="onSelectionChange(4)">
+                  Review and Submit
+                </a>
+                <span class="usa-sr-only"> Review and Submit</span>
+
+              </li> -->
             </ul>
           </div>
         </div>

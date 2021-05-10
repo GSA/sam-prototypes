@@ -39,9 +39,7 @@ import { find } from "rxjs/operators";
         </div>
 
         <!-- <formly-field [field]="step"></formly-field> -->
-        <div
-          *ngIf="selectedIndex != field.fieldGroup.length - 1; else reviewStep"
-        >
+        <div *ngIf="!step.templateOptions.reviewMode; else reviewStep">
           <formly-field [field]="step"></formly-field>
         </div>
         <ng-template #reviewStep>
@@ -90,7 +88,11 @@ export class FormlyFieldStepperComponent extends FieldType {
     this.selectedIndex = $event.selectedIndex;
     const findField = this.field.fieldGroup[$event.selectedIndex];
     if (findField.templateOptions.reviewMode) {
-      FormlyUtilsService.setReadonlyMode(true, this.field.fieldGroup);
+      FormlyUtilsService.setReadonlyMode(
+        true,
+        this.field.fieldGroup,
+        this.model
+      );
     }
     // if (
     //   $event.previouslySelectedIndex ===

@@ -16,10 +16,13 @@ export class FormlyUtilsService {
    * @param readonlyMode - if true, readonly mode will be turned on, if false, readonly mode will be turned off
    * @param fields - The list of fields to toggle readonly mode on
    */
+  private static utilitymodel: any;
   public static setReadonlyMode(
     readonlyMode: boolean,
-    fields: FormlyFieldConfig[]
+    fields: FormlyFieldConfig[],
+    model?: any
   ) {
+    this.utilitymodel = model;
     fields.forEach((field) => {
       this._setReadonlyMode(readonlyMode, field);
     });
@@ -50,16 +53,29 @@ export class FormlyUtilsService {
     return readonlyData;
   }
 
+  private static addRepeatSections(innerField: FormlyFieldConfig) {
+    console.log(innerField, "innerField");
+    console.log(this.utilitymodel, "repeater model");
+    const key = innerField.key[0];
+    // console.log(this.utilitymodel[key].length);
+    return innerField.fieldArray?.fieldGroup;
+  }
+
   private static _setReadonlyMode(
     readonlyMode: boolean,
     field: FormlyFieldConfig
   ) {
     if (field.fieldGroup) {
-      field.fieldGroup.forEach((innerField) => {
-        if (innerField.type === "repeat") {
+      field.fieldGroup.forEach((innerField: FormlyFieldConfig) => {
+        if (innerField.type === "repeat" && readonlyMode) {
+          field.fieldGroup.splice(field.fieldGroup.indexOf(innerField), 1);
+          const f = this.addRepeatSections(innerField);
+          field.fieldGroup = f;
+          this._setReadonlyMode(readonlyMode, innerField);
           console.log(field, "innerField");
+        } else {
+          this._setReadonlyMode(readonlyMode, innerField);
         }
-        this._setReadonlyMode(readonlyMode, innerField);
       });
     }
 
