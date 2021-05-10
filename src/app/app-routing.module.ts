@@ -132,6 +132,9 @@ const routes: Routes = [
     path: "entity-reporting",
     loadChildren: () =>
       import("./entity-reporting/entity-reporting.module").then((m) => m.EntityReportingModule),
+    data: {
+      id: "workspace"
+    }
   },
   {
     path: "responsibility-qualification",

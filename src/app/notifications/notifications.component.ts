@@ -48,6 +48,10 @@ export class NotificationsComponent implements OnInit, AfterViewInit {
     this.resultList.updateFilter(this.filters.filterModel);
   }
 
+  onApplyFilters() {
+	  this.resultList.updateSearchResultsModel({filterModel: this.filters.filterModel});
+  }
+
   log(value) {
     console.log(`%cLog: ${value}`, 'color: blue; font-weight: bold');
   }

@@ -15,16 +15,70 @@ export class NotificationsService extends BaseFeedService {
     		  mode: NavigationMode.EXTERNAL,
   			  id: "NOT0001",
   			  date: new Date(2021, 3, 8),
-  			  description: 'Your saved search, <b>Vehicle Repair</b> was updated.',
+  			  description: 'Your saved search, <b>Vehicle Repair</b> has new updates. Click <a class="usa-link">here</a> to view the new results.',
   			  domains: [ Domain.ContractOpportunities ]
     	},
     	{
-    	      text: "Wage Determination Updated",
+    		  text: "Saved Seach Notification - DHS Vehicle Reconstruction",
+    		  route: 'https://www.fsd.gov/gsafsd_sp?id=gsafsd_kb_articles&sys_id=e6eae1e41b0568d0d3ab404fe54bcb4d',
+    		  mode: NavigationMode.EXTERNAL,
+  			  id: "NOT0001",
+  			  date: new Date(2021, 4, 13),
+  			  description: 'Your saved search, <b>DHS Vehicle Reconstruction</b> has new updates. Click <a class="usa-link">here</a> to view the new results.',
+  			  domains: [ Domain.ContractOpportunities ]
+    	},
+    	{
+    		  text: "Saved Seach Notification - Vehicle Repair",
+    		  route: 'https://www.fsd.gov/gsafsd_sp?id=gsafsd_kb_articles&sys_id=e6eae1e41b0568d0d3ab404fe54bcb4d',
+    		  mode: NavigationMode.EXTERNAL,
+  			  id: "NOT0001",
+  			  date: new Date(2021, 5, 1),
+  			  description: 'Your saved search, <b>Vehicle Repair</b> has new updates. Click <a class="usa-link">here</a> to view the new results.',
+  			  domains: [ Domain.ContractOpportunities ]
+    	},
+    	{
+    		  text: "Saved Seach Notification - Vehicle Rentals",
+    		  route: 'https://www.fsd.gov/gsafsd_sp?id=gsafsd_kb_articles&sys_id=e6eae1e41b0568d0d3ab404fe54bcb4d',
+    		  mode: NavigationMode.EXTERNAL,
+  			  id: "NOT0001",
+  			  date: new Date(2021, 3, 8),
+  			  description: 'Your saved search, <b>Vehicle Rentals</b> has new updates. Click <a class="usa-link">here</a> to view the new results.',
+  			  domains: [ Domain.ContractOpportunities ]
+    	},
+    	{
+    	      text: "Wage Determination Updated - VA2021012",
+    		  route: 'https://www.fsd.gov/gsafsd_sp?id=gsafsd_kb_articles&sys_id=e6eae1e41b0568d0d3ab404fe54bcb4d',
+    		  mode: NavigationMode.EXTERNAL,
+  			  id: "NOT0002",
+  			  date: new Date(2021, 1, 14),
+  			  description: '<b>VA2021012</b> was updated on <b>Jan 14, 2021</b>',
+  			  domains: [ Domain.WageDeterminations ]
+    	},
+    	{
+    	      text: "Wage Determination Updated - VA2021042",
+    		  route: 'https://www.fsd.gov/gsafsd_sp?id=gsafsd_kb_articles&sys_id=e6eae1e41b0568d0d3ab404fe54bcb4d',
+    		  mode: NavigationMode.EXTERNAL,
+  			  id: "NOT0002",
+  			  date: new Date(2021, 4, 2),
+  			  description: '<b>VA2021042</b> was updated on <b>Apr 2, 2021</b>',
+  			  domains: [ Domain.WageDeterminations ]
+    	},
+    	{
+    	      text: "Wage Determination Updated - VA2021027",
+    		  route: 'https://www.fsd.gov/gsafsd_sp?id=gsafsd_kb_articles&sys_id=e6eae1e41b0568d0d3ab404fe54bcb4d',
+    		  mode: NavigationMode.EXTERNAL,
+  			  id: "NOT0002",
+  			  date: new Date(2021, 3, 31),
+  			  description: '<b>VA2021027</b> was updated on <b>Mar 31, 2021</b>',
+  			  domains: [ Domain.WageDeterminations ]
+    	},
+    	{
+    	      text: "Wage Determination Updated - VA2021035",
     		  route: 'https://www.fsd.gov/gsafsd_sp?id=gsafsd_kb_articles&sys_id=e6eae1e41b0568d0d3ab404fe54bcb4d',
     		  mode: NavigationMode.EXTERNAL,
   			  id: "NOT0002",
   			  date: new Date(2020, 12, 20),
-  			  description: '<b>VA2021027</b> was updated on <b>Jan 12, 2021</b>',
+  			  description: '<b>VA2021035</b> was updated on <b>Dec 20, 2020</b>',
   			  domains: [ Domain.WageDeterminations ]
     	},
     	{
@@ -69,16 +123,7 @@ export class NotificationsService extends BaseFeedService {
       		mode: NavigationMode.EXTERNAL,
   			id: "NOT0006",
   			date: new Date(2021, 4, 6),
-  			description: 'The contract opportunity USMC Southwest Region Transportation Fleet (SWRFT) Contractor Operated Parts Store (COPARS) with notice ID, 693JJ919RQ000461, was updated.',
-  			domains: [ Domain.ContractOpportunities ]
-    	},
-    	{
-      	    text: "Contract Opportunity Updated",
-      		route: 'https://www.fsd.gov/gsafsd_sp?id=gsafsd_kb_articles&sys_id=e6eae1e41b0568d0d3ab404fe54bcb4d',
-      		mode: NavigationMode.EXTERNAL,
-  			id: "NOT0006",
-  			date: new Date(2021, 3, 21),
-  			description: 'The contract opportunity USMC Southwest Region Transportation Fleet (SWRFT) Contractor Operated Parts Store (COPARS) with notice ID, 693JJ919RQ000461, was updated.',
+  			description: 'The contract opportunity <b>Beale AFB Vehicle Maintenance BPA</b> with notice ID, <b>RFQBealeMaintenanceBPA</b>, was updated.',
   			domains: [ Domain.ContractOpportunities ]
     	},
     	{
@@ -87,7 +132,7 @@ export class NotificationsService extends BaseFeedService {
       		mode: NavigationMode.EXTERNAL,
   			id: "NOT0006",
   			date: new Date(2021, 3, 16),
-  			description: 'The contract opportunity USMC Southwest Region Transportation Fleet (SWRFT) Contractor Operated Parts Store (COPARS) with notice ID, 693JJ919RQ000461, was updated.',
+  			description: 'The contract opportunity <b>Nissan Light Armored Vehicle Retrograde and Repair</b> with notice ID, <b>PAN410-21-P-0000-000485</b>, was updated.',
   			domains: [ Domain.ContractOpportunities ]
     	},
     	{
