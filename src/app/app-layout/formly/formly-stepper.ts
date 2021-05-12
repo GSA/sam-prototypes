@@ -86,21 +86,21 @@ export class FormlyFieldStepperComponent extends FieldType {
   onStepChange($event: StepperSelectionEvent) {
     this.model.selectedIndex = $event.selectedIndex;
     this.selectedIndex = $event.selectedIndex;
-    const findField = this.field.fieldGroup[$event.selectedIndex];
-    if (findField.templateOptions.reviewMode) {
-      FormlyUtilsService.setReadonlyMode(
-        true,
-        this.field.fieldGroup,
-        this.model
-      );
-    }
-    // if (
-    //   $event.previouslySelectedIndex ===
-    //   this.field.fieldGroup.length - 1
-    // )
-    else {
-      FormlyUtilsService.setReadonlyMode(false, this.field.fieldGroup);
-    }
+    // const findField = this.field.fieldGroup[$event.selectedIndex];
+    // if (findField.templateOptions.reviewMode) {
+    //   FormlyUtilsService.setReadonlyMode(
+    //     true,
+    //     this.field.fieldGroup,
+    //     this.model
+    //   );
+    // }
+    // // if (
+    // //   $event.previouslySelectedIndex ===
+    // //   this.field.fieldGroup.length - 1
+    // // )
+    // else {
+    //   FormlyUtilsService.setReadonlyMode(false, this.field.fieldGroup);
+    // }
   }
   validateSuccessStepForm(field: FormlyFieldConfig, index: number) {
     let isvalid = false;

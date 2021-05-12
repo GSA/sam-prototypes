@@ -4,7 +4,8 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { SdsDialogService } from "@gsa-sam/components";
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 import { EntityReportingService } from "../services/entity-reporting-service/entity-reporting.service";
-
+import _ from "lodash-es";
+import { FormlyUtilsService } from "../app-layout/formly/formly-utils.service";
 @Component({
   selector: "app-data-entry",
   templateUrl: "./data-entry.component.html",
@@ -13,7 +14,8 @@ import { EntityReportingService } from "../services/entity-reporting-service/ent
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DataEntryComponent {
-  initialFields: FormlyFieldConfig[];
+  isReviewMode: boolean = false;
+  reviewFields: FormlyFieldConfig[] = [];
   service: any;
   currentPageIndex = 0;
   isFormValid: boolean = false;
@@ -589,18 +591,12 @@ export class DataEntryComponent {
             },
           ],
         },
-
-        {
-          templateOptions: {
-            label: "Review and Submit",
-            reviewMode: true,
-          },
-        },
       ],
     },
   ];
 
   onSelectionChange(index) {
+    this.isReviewMode = false;
     this.model["selectedIndex"] = index;
     this.currentPageIndex = index;
   }
@@ -697,5 +693,11 @@ export class DataEntryComponent {
       });
     }
     return isvalid;
+  }
+
+  onReviewAndSubmit() {
+    this.isReviewMode = true;
+    this.reviewFields = _.cloneDeep(this.fields[0].fieldGroup);
+    FormlyUtilsService.setReadonlyMode(true, this.reviewFields, this.model);
   }
 }
