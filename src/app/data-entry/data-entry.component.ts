@@ -21,6 +21,7 @@ export class DataEntryComponent {
   isFormValid: boolean = false;
   previousFormValid: boolean = true;
   formStepperCount: number = 0;
+  previousPageIndex = -1;
   constructor(
     private route: ActivatedRoute,
     public router: Router,
@@ -391,7 +392,7 @@ export class DataEntryComponent {
                   key: "cityName",
                   templateOptions: {
                     label: "City",
-                    required: true,
+                    pattern: "^[s\t\r\n]*S+",
                     hideOptional: true,
                   },
                 },
@@ -619,80 +620,69 @@ export class DataEntryComponent {
   getAwardeeDetails(id) {
     return this.service.getFilteredDataById(id);
   }
-  validateSuccessStepForm(field: FormlyFieldConfig, index: number) {
-    let isvalid = false;
+
+  isTouched(field: FormlyFieldConfig, index: number) {
+    if (field.fieldGroup) {
+      let element =
+        field.fieldGroup.length > 1 ? field.fieldGroup[2] : field.fieldGroup[0];
+      // if (index == 2) {
+      //   element.formControl.markAsTouched();
+      //   if (this.model.addAwardee.length <= 0) {
+      //     return false;
+      //   } else {
+      //     return true;
+      //   }
+      // }
+      if ((this.currentPageIndex == 2 && index == 2) || index == 0) {
+        element.formControl.markAsTouched();
+      } else if (index == 1 && this.currentPageIndex > 1) {
+        element.formControl.markAllAsTouched();
+      }
+
+      this.previousPageIndex = index;
+      return element.formControl.touched;
+    }
+  }
+
+  isValid(field: FormlyFieldConfig, index: number) {
+    if (field.key || !field.fieldGroup) {
+      if (index == 2) {
+        if (this.model.addAwardee.length <= 0) {
+          return false;
+        } else {
+          return true;
+        }
+      } else {
+        return field.formControl.valid;
+      }
+    }
+    return field.fieldGroup.every((f) => this.isValid(f, index));
+  }
+
+  isFormSuccess(step: FormlyFieldConfig, index: number) {
     if (index == 0) {
       this.formStepperCount = 0;
     }
-    this.previousFormValid = this.isFormValid;
-    if (field.fieldGroup && field.fieldGroup.length > 0) {
-      field.fieldGroup.forEach((element) => {
-        if (!isvalid)
-          if (element.formControl.untouched && this.currentPageIndex <= index) {
-            isvalid = false;
-            if (element.formControl.invalid) {
-              this.isFormValid = false;
-              this.formStepperCount =
-                this.formStepperCount == 0 ? 0 : this.formStepperCount - 1;
-            }
-            if (this.currentPageIndex < 2) {
-              return isvalid;
-            }
-          } else {
-            element.formControl.markAllAsTouched();
-            if (element.formControl.invalid) {
-              this.isFormValid = false;
-              this.formStepperCount =
-                this.formStepperCount == 0 ? 0 : this.formStepperCount - 1;
-            }
-          }
 
-        if (element.formControl.valid) {
-          isvalid = true;
-          if (field.fieldGroup[0] == element) {
-            this.formStepperCount = this.formStepperCount + 1;
-          }
-          if (this.currentPageIndex == 2 && index == 2) {
-            if (this.model.addAwardee.length <= 0) {
-              this.formStepperCount =
-                this.formStepperCount <= 0 ? 0 : this.formStepperCount - 1;
-              this.isFormValid = false;
-            }
-          }
-        }
-
-        if (this.formStepperCount == this.fields[0].fieldGroup.length - 1) {
-          this.isFormValid = true;
-        } else {
-          this.isFormValid = false;
-        }
-      });
+    if (this.isTouched(step, index) && this.isValid(step, index)) {
+      this.formStepperCount = this.formStepperCount + 1;
+      if (this.formStepperCount == this.fields[0].fieldGroup.length) {
+        this.isFormValid = true;
+      } else {
+        this.isFormValid = false;
+      }
+      return true;
+    } else {
+      return false;
     }
-    return isvalid;
   }
 
-  validateFailureStepForm(field: FormlyFieldConfig, index: number) {
-    let isvalid = false;
-    if (field.fieldGroup && field.fieldGroup.length > 0) {
-      field.fieldGroup.forEach((element) => {
-        if (!isvalid) {
-          if (element.formControl.untouched && this.currentPageIndex <= index) {
-            isvalid = false;
-            if (element.formControl.invalid) {
-              this.isFormValid = false;
-            }
-            return isvalid;
-          } else {
-            element.formControl.markAllAsTouched();
-          }
-        }
-        if (element.formControl.invalid) {
-          isvalid = true;
-          this.isFormValid = false;
-        }
-      });
+  isFormError(step: FormlyFieldConfig, index: number) {
+    if (this.isTouched(step, index) && !this.isValid(step, index)) {
+      return true;
+    } else {
+      return false;
     }
-    return isvalid;
   }
 
   onReviewAndSubmit() {
