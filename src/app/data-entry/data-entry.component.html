@@ -18,15 +18,13 @@
                 [ngClass]="{'usa-current':  model?.selectedIndex === i }">
                 <!-- {{isTouched(step,i)}} {{isValid(step,i)}} -->
                 <a href="javascript:void(0);" (click)="onSelectionChange(i)">
-                  <span *ngIf="isFormSuccess(step,i)  && this.currentPageIndex != i"
-                    class="usa-button sds-button--circle">
+                  <span *ngIf="isFormSuccess(step,i)" class="usa-button sds-button--circle">
                     <sds-icon [icon]="'check'"></sds-icon>
                   </span>
-                  <span *ngIf="isFormError(step,i) && this.currentPageIndex != i"
-                    class="usa-button sds-button--circle sds-button--danger">
+                  <span *ngIf="isFormError(step,i)" class="usa-button sds-button--circle sds-button--danger">
                     <sds-icon [icon]="'x'"></sds-icon>
                   </span>
-                  <span *ngIf="!isFormSuccess(step,i) && !isFormError(step,i) || this.currentPageIndex == i">
+                  <span *ngIf="processNotCompleted(i)">
                     <sds-icon [icon]="'not-completed'"></sds-icon>
                   </span>
                   {{step.templateOptions.label}}

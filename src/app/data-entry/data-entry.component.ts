@@ -22,6 +22,12 @@ export class DataEntryComponent {
   previousFormValid: boolean = true;
   formStepperCount: number = 0;
   previousPageIndex = -1;
+  istaboneTouched: boolean = false;
+  istabtwoTouched: boolean = false;
+  istabthrTouched: boolean = false;
+  modelOption = "submit";
+  stepDefinition: FormlyFieldConfig[];
+
   constructor(
     private route: ActivatedRoute,
     public router: Router,
@@ -352,6 +358,9 @@ export class DataEntryComponent {
                           { label: "Apr", value: "04" },
                         ],
                       },
+                      modelOptions: {
+                        updateOn: "submit",
+                      },
                     },
                     {
                       className: "grid-col-4 margin-top-5",
@@ -369,6 +378,9 @@ export class DataEntryComponent {
                           { label: "2004", value: "04" },
                         ],
                       },
+                      modelOptions: {
+                        updateOn: "submit",
+                      },
                     },
                   ],
                 },
@@ -380,6 +392,9 @@ export class DataEntryComponent {
                   templateOptions: {
                     required: true,
                     label: "Program or Project Title (Optional)",
+                  },
+                  modelOptions: {
+                    updateOn: "submit",
                   },
                 },
                 {
@@ -600,7 +615,22 @@ export class DataEntryComponent {
     this.isReviewMode = false;
     this.model["selectedIndex"] = index;
     this.currentPageIndex = index;
+
+    if (index == 0) {
+      this.istaboneTouched = true;
+    } else if (index == 1) {
+      this.istaboneTouched = true;
+    }
+
+    if (index != 2 && this.istaboneTouched && this.istabtwoTouched) {
+      this.istabthrTouched = true;
+    }
+
+    if (index != 1 && this.istaboneTouched) {
+      this.istabtwoTouched = true;
+    }
   }
+
   getData() {
     const searchParameters: any = {
       page: {
@@ -652,7 +682,11 @@ export class DataEntryComponent {
         } else {
           return true;
         }
-      } else {
+      }
+      // else if (index == 1) {
+      //   field.formControl.markAsPristine({ onlySelf: true });
+      // }
+      else {
         return field.formControl.valid;
       }
     }
@@ -664,7 +698,11 @@ export class DataEntryComponent {
       this.formStepperCount = 0;
     }
 
-    if (this.isTouched(step, index) && this.isValid(step, index)) {
+    if (
+      this.isTouched(step, index) &&
+      this.isValid(step, index) &&
+      this.isStepperTouched(index)
+    ) {
       this.formStepperCount = this.formStepperCount + 1;
       if (this.formStepperCount == this.fields[0].fieldGroup.length) {
         this.isFormValid = true;
@@ -678,11 +716,51 @@ export class DataEntryComponent {
   }
 
   isFormError(step: FormlyFieldConfig, index: number) {
-    if (this.isTouched(step, index) && !this.isValid(step, index)) {
+    if (
+      this.isTouched(step, index) &&
+      !this.isValid(step, index) &&
+      this.isStepperTouched(index)
+    ) {
       return true;
     } else {
       return false;
     }
+  }
+
+  isStepperTouched(index: number) {
+    if (index == 0 && this.istaboneTouched) {
+      return true;
+    } else if (index == 1 && this.istabtwoTouched) {
+      return true;
+    } else if (index == 2 && this.istabthrTouched) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  processNotCompleted(index: number) {
+    if (index == 0 && !this.istaboneTouched && this.currentPageIndex == index) {
+      this.istaboneTouched = true;
+      return true;
+    } else if (
+      index == 1 &&
+      !this.istabtwoTouched &&
+      this.currentPageIndex == index
+    ) {
+      // this.istabtwoTouched = true;
+      return true;
+    } else if (
+      index == 2 &&
+      !this.istabthrTouched &&
+      this.currentPageIndex == index
+    ) {
+      return true;
+    }
+  }
+
+  ngOnInit() {
+    this.stepDefinition = this.fields[0].fieldGroup;
   }
 
   onReviewAndSubmit() {
