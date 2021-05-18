@@ -1,6 +1,6 @@
 <data-entry-subheader title="FSRS New Report">
   <button class="usa-button usa-button--secondary">Discard Draft</button>
-  <button class="usa-button">Submit</button>
+  <button class="usa-button" (click)="onReviewAndSubmit()" [disabled]="!isFormValid">Review & Submit</button>
 </data-entry-subheader>
 <main>
   <div class="sds-page margin-top-2">
@@ -8,33 +8,46 @@
       <div class="desktop:grid-col-4 tablet-lg:grid-col-12 mobile-lg:grid-col-12 margin-bottom-3">
         <div class="sds-card">
           <div class="sds-card__body sds-card__body--accent-cool">
+
             <ul class="usa-sidenav usa-sidenav--styled">
               <li class="usa-sidenav__item padding-1 padding-left-2 text-bold">
                 FSRS Report
               </li>
+
               <li *ngFor="let step of fields[0].fieldGroup; let i = index;" class="usa-sidenav__item"
                 [ngClass]="{'usa-current':  model?.selectedIndex === i }">
+                <!-- {{isTouched(step,i)}} {{isValid(step,i)}} -->
                 <a href="javascript:void(0);" (click)="onSelectionChange(i)">
-                  <span *ngIf="validateSuccessStepForm(step, i)" class="usa-button sds-button--circle">
+                  <span *ngIf="isFormSuccess(step,i)  && this.currentPageIndex != i"
+                    class="usa-button sds-button--circle">
                     <sds-icon [icon]="'check'"></sds-icon>
                   </span>
-                  <span *ngIf="validateFailureStepForm(step, i)"
+                  <span *ngIf="isFormError(step,i) && this.currentPageIndex != i"
                     class="usa-button sds-button--circle sds-button--danger">
                     <sds-icon [icon]="'x'"></sds-icon>
                   </span>
-
+                  <span *ngIf="!isFormSuccess(step,i) && !isFormError(step,i) || this.currentPageIndex == i">
+                    <sds-icon [icon]="'not-completed'"></sds-icon>
+                  </span>
                   {{step.templateOptions.label}}
                 </a>
                 <span class="usa-sr-only">{{step.templateOptions.label}}</span>
               </li>
+              <!-- <li class="usa-sidenav__item" [ngClass]="{'usa-current':  model?.selectedIndex === 4 }">
+                <a href="javascript:void(0);" (click)="onSelectionChange(4)">
+                  Review and Submit
+                </a>
+                <span class="usa-sr-only"> Review and Submit</span>
+
+              </li> -->
             </ul>
           </div>
         </div>
       </div>
 
       <div class="desktop:grid-col-8 tablet-lg:grid-col-12 mobile-lg:grid-col-12">
-        <formly-form class="grid-col-8 padding-right-2" [model]="model" [fields]="fields" [options]="options"
-          [form]="form"></formly-form>
+        <formly-form class="grid-col-8 padding-right-2" [model]="model" [fields]="isReviewMode ? reviewFields :fields"
+          [options]="options" [form]="form"></formly-form>
       </div>
     </div>
   </div>

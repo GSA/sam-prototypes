@@ -1,17 +1,11 @@
-import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import {
-  NavigationLink,
-  NavigationMode,
-  SdsDialogService,
-  SelectionPanelModel,
-} from "@gsa-sam/components";
-import { SdsFormlyDialogComponent } from "@gsa-sam/sam-formly";
+import { SdsDialogService } from "@gsa-sam/components";
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
-import { BehaviorSubject } from "rxjs";
 import { EntityReportingService } from "../services/entity-reporting-service/entity-reporting.service";
-
+import _ from "lodash-es";
+import { FormlyUtilsService } from "../app-layout/formly/formly-utils.service";
 @Component({
   selector: "app-data-entry",
   templateUrl: "./data-entry.component.html",
@@ -20,8 +14,14 @@ import { EntityReportingService } from "../services/entity-reporting-service/ent
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DataEntryComponent {
+  isReviewMode: boolean = false;
+  reviewFields: FormlyFieldConfig[] = [];
   service: any;
   currentPageIndex = 0;
+  isFormValid: boolean = false;
+  previousFormValid: boolean = true;
+  formStepperCount: number = 0;
+  previousPageIndex = -1;
   constructor(
     private route: ActivatedRoute,
     public router: Router,
@@ -392,7 +392,7 @@ export class DataEntryComponent {
                   key: "cityName",
                   templateOptions: {
                     label: "City",
-                    required: true,
+                    pattern: "^[s\t\r\n]*S+",
                     hideOptional: true,
                   },
                 },
@@ -592,18 +592,12 @@ export class DataEntryComponent {
             },
           ],
         },
-
-        {
-          templateOptions: {
-            label: "Review and Submit",
-            reviewMode: true,
-          },
-        },
       ],
     },
   ];
 
   onSelectionChange(index) {
+    this.isReviewMode = false;
     this.model["selectedIndex"] = index;
     this.currentPageIndex = index;
   }
@@ -626,43 +620,74 @@ export class DataEntryComponent {
   getAwardeeDetails(id) {
     return this.service.getFilteredDataById(id);
   }
-  validateSuccessStepForm(field: FormlyFieldConfig, index: number) {
-    let isvalid = false;
-    if (field.fieldGroup && field.fieldGroup.length > 0) {
-      field.fieldGroup.forEach((element) => {
-        if (!isvalid)
-          if (element.formControl.untouched) {
-            isvalid = false;
-            return isvalid;
-          } else {
-            element.formControl.markAllAsTouched();
-          }
 
-        if (element.formControl.valid) {
-          isvalid = true;
-        }
-      });
+  isTouched(field: FormlyFieldConfig, index: number) {
+    if (field.fieldGroup) {
+      let element =
+        field.fieldGroup.length > 1 ? field.fieldGroup[2] : field.fieldGroup[0];
+      // if (index == 2) {
+      //   element.formControl.markAsTouched();
+      //   if (this.model.addAwardee.length <= 0) {
+      //     return false;
+      //   } else {
+      //     return true;
+      //   }
+      // }
+      if ((this.currentPageIndex == 2 && index == 2) || index == 0) {
+        element.formControl.markAsTouched();
+      } else if (index == 1 && this.currentPageIndex > 1) {
+        element.formControl.markAllAsTouched();
+      }
+
+      this.previousPageIndex = index;
+      return element.formControl.touched;
     }
-    return isvalid;
   }
 
-  validateFailureStepForm(field: FormlyFieldConfig, index: number) {
-    let isvalid = false;
-    if (field.fieldGroup && field.fieldGroup.length > 0) {
-      field.fieldGroup.forEach((element) => {
-        if (!isvalid) {
-          if (element.formControl.untouched) {
-            isvalid = false;
-            return isvalid;
-          } else {
-            element.formControl.markAllAsTouched();
-          }
+  isValid(field: FormlyFieldConfig, index: number) {
+    if (field.key || !field.fieldGroup) {
+      if (index == 2) {
+        if (this.model.addAwardee.length <= 0) {
+          return false;
+        } else {
+          return true;
         }
-        if (element.formControl.invalid) {
-          isvalid = true;
-        }
-      });
+      } else {
+        return field.formControl.valid;
+      }
     }
-    return isvalid;
+    return field.fieldGroup.every((f) => this.isValid(f, index));
+  }
+
+  isFormSuccess(step: FormlyFieldConfig, index: number) {
+    if (index == 0) {
+      this.formStepperCount = 0;
+    }
+
+    if (this.isTouched(step, index) && this.isValid(step, index)) {
+      this.formStepperCount = this.formStepperCount + 1;
+      if (this.formStepperCount == this.fields[0].fieldGroup.length) {
+        this.isFormValid = true;
+      } else {
+        this.isFormValid = false;
+      }
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  isFormError(step: FormlyFieldConfig, index: number) {
+    if (this.isTouched(step, index) && !this.isValid(step, index)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  onReviewAndSubmit() {
+    this.isReviewMode = true;
+    this.reviewFields = _.cloneDeep(this.fields[0].fieldGroup);
+    FormlyUtilsService.setReadonlyMode(true, this.reviewFields, this.model);
   }
 }
