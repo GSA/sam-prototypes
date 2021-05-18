@@ -5,6 +5,7 @@ import { EntityInformationFiltersModule } from './entity-information-filters.mod
 import {
   SearchFiltersWrapperService 
 } from '../../../common/public-apis';
+import { keywordFilter } from '../common/keywordfilter';
 
 @Injectable({
   providedIn: EntityInformationFiltersModule
@@ -15,12 +16,7 @@ export class EntityInformationFiltersService implements SearchFiltersWrapperServ
   public model = {};
 
   public filters: FormlyFieldConfig[] = [
-	 {
-    key: 'keyword',
-    wrappers: ['filterwrapper'],
-    templateOptions: { label: 'Keyword' },
-    type: 'input'
-  },
+	 keywordFilter,
   {
       key: 'searchEntity',
       wrappers: ['accordionwrapper'],

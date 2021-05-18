@@ -1,0 +1,11 @@
+<div class="sds-filter-keywords">
+  <label [attr.for]="id" class="usa-label text-bold text-base-dark">{{to.label}}</label>
+  <p [innerHTML]="to.description"></p>
+
+  <sds-tabs [tabClass]="'sds-tabs--keyword'" *ngIf="field.fieldArray && field.fieldArray.fieldGroup">
+    <sds-tab-panel *ngFor="let fieldConfig of field.fieldArray.fieldGroup" [tabHeader]="fieldConfig.templateOptions?.label">
+      <formly-form [fields]="[fieldConfig]" [model]="_initialModel" (modelChange)="onModelChange($event)">
+      </formly-form>
+    </sds-tab-panel>
+  </sds-tabs>
+</div>

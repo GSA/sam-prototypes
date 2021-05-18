@@ -4,6 +4,7 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
 import { 
   SearchFiltersWrapperService 
 } from '../../../common/public-apis';
+import { keywordFilter } from '../common/keywordfilter';
 
 @Injectable()
 export class ContractDataFiltersService implements SearchFiltersWrapperService {
@@ -13,16 +14,7 @@ export class ContractDataFiltersService implements SearchFiltersWrapperService {
   public model = {};
 
   public filters: FormlyFieldConfig[] = [
-	  {
-	      key: 'keyword',
-	      wrappers: ['filterwrapper'],
-	      type: 'input',
-	      templateOptions: {
-	        type: 'text',
-	        label: 'Keyword',
-	        labelClass:'usa-sr-only'
-	      }
-	  },
+	  keywordFilter,
 	  {
 	    key: 'dateWrapper',
 	    wrappers: ['accordionwrapper'],

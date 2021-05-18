@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
+import { SdsFormlyTypes } from '@gsa-sam/sam-formly';
 import { FormlyFieldConfig } from '@ngx-formly/core';
-
+import { keywordFilter } from '../common/keywordfilter';
 import { 
   HierarchyService,
   SearchFiltersWrapperService 
@@ -15,14 +16,6 @@ export class AllDomainFiltersService implements SearchFiltersWrapperService {
   public model = {};
 
   public filters: FormlyFieldConfig[] = [
-	{
-	    key: 'keyword',
-	    type: 'input',
-	    templateOptions: {
-	        label: 'Keyword',
-            hideOptional: true
-	    }
-  	},
     {
 	    key: 'hierarchy',
 	    type: 'autocomplete',
@@ -35,6 +28,8 @@ export class AllDomainFiltersService implements SearchFiltersWrapperService {
 	      model: this.hierarchyService.model
 	    }
 	 },
+	 keywordFilter,
+
 	 {
 	    key: 'status',
 	    type: 'multicheckbox',
