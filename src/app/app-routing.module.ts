@@ -37,13 +37,6 @@ const routes: Routes = [
     },
   },
   {
-    path: "news",
-    loadChildren: () => import("./news/news.module").then((m) => m.NewsModule),
-    data: {
-      id: "home",
-    },
-  },
-  {
     path: "alerts",
     loadChildren: () =>
       import("./alerts/alerts.module").then((m) => m.AlertsModule),
@@ -106,6 +99,22 @@ const routes: Routes = [
       import("./profile/profile.module").then((m) => m.ProfileModule),    
     data: {
       id: "workspace",
+    },
+  },
+  {
+    path: "federal-hierarchy",
+    loadChildren: () =>
+      import("./federal-hierarchy/federal-hierarchy.module").then((m) => m.FederalHierarchyModule),    
+    data: {
+      id: "workspace",
+    },
+  },
+  {
+    path: "entity-360",
+    loadChildren: () =>
+      import("./entity-three-sixty/entity-three-sixty.module").then((m) => m.EntityThreeSixtyModule),    
+    data: {
+      id: "search",
     },
   },
   {

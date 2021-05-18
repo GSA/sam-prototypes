@@ -1,0 +1,21 @@
+<div *ngFor="let item of children">
+	<h2><a class="usa-link" [routerLink]="['/federal-hierarchy/editor/', item.key, 'children']">{{item.name}}</a></h2>
+</div>
+
+<search-list-layout #resultList [service]="service" [configuration]="service.configuration"
+    [isHistoryEnabled]="false" [enableApiCall]="true">
+    <ng-template #resultContent let-item>
+        <h2><a class="usa-link" [routerLink]="['/federal-hierarchy/editor/', item.key, 'children']">{{item.name}}</a></h2>
+		<div class="grid-row grid-gap">
+			<div class="grid-col-3 tablet:grid-col-2">
+				<workspace-field label="Agency Code">{{item.fpdsCode}}</workspace-field>
+			</div>
+			<div class="grid-col-3 tablet:grid-col-2">
+				<workspace-field label="CGAC">{{item.org.cgac}}</workspace-field>
+			</div>
+			<div class="grid-col-6  tablet:grid-col-2">
+				<workspace-field label="Level">{{item.levelLabel}}</workspace-field>
+			</div>
+		</div>  
+    </ng-template>
+</search-list-layout>

@@ -11,9 +11,10 @@ import { SdsSearchModule } from '@gsa-sam/components';
 import { SdsSubheaderModule } from "@gsa-sam/layouts";
 
 import { WorkspaceSubheaderComponent } from './workspace-subheader.component';
+import { WorkspaceFieldComponent } from './workspace-field.component';
 
 @NgModule({
-  declarations: [WorkspaceSubheaderComponent],
+  declarations: [WorkspaceSubheaderComponent, WorkspaceFieldComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -24,6 +25,6 @@ import { WorkspaceSubheaderComponent } from './workspace-subheader.component';
     SdsSubheaderModule,
     NgxBootstrapIconsModule.pick({ chevronLeft }),
   ],
-  exports: [WorkspaceSubheaderComponent]
+  exports: [WorkspaceSubheaderComponent, WorkspaceFieldComponent]
 })
 export class WorkspaceLayoutModule { }
