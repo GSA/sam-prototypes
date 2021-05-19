@@ -19,14 +19,15 @@ export class DataEntryComponent {
   service: any;
   currentPageIndex = 0;
   isFormValid: boolean = false;
-  previousFormValid: boolean = true;
+
+  stepDefinition: any[] = [
+    { index: 0, isTouched: false, isValid: null },
+    { index: 1, isTouched: false, isValid: null },
+    { index: 2, isTouched: false, isValid: null },
+  ];
+
   formStepperCount: number = 0;
-  previousPageIndex = -1;
-  istaboneTouched: boolean = false;
-  istabtwoTouched: boolean = false;
-  istabthrTouched: boolean = false;
-  modelOption = "submit";
-  stepDefinition: FormlyFieldConfig[];
+  previousPageIndex = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -335,9 +336,9 @@ export class DataEntryComponent {
             {
               key: "dataentry.details",
               templateOptions: {
-                //label: "Entity Name",
                 placeholder: "Input Unique Entity ID",
               },
+
               fieldGroup: [
                 {
                   key: "report",
@@ -349,7 +350,6 @@ export class DataEntryComponent {
                       type: "select",
                       templateOptions: {
                         label: "Report Month",
-                        required: true,
                         hideOptional: true,
                         options: [
                           { label: "Jan", value: "01" },
@@ -358,17 +358,15 @@ export class DataEntryComponent {
                           { label: "Apr", value: "04" },
                         ],
                       },
-                      modelOptions: {
-                        updateOn: "submit",
-                      },
+                      // modelOptions: {
+                      //   updateOn: "submit",
+                      // },
                     },
                     {
                       className: "grid-col-4 margin-top-5",
                       key: "year",
                       type: "select",
                       templateOptions: {
-                        //label: "year",
-                        required: true,
                         hideLable: true,
                         hideOptional: true,
                         options: [
@@ -378,9 +376,9 @@ export class DataEntryComponent {
                           { label: "2004", value: "04" },
                         ],
                       },
-                      modelOptions: {
-                        updateOn: "submit",
-                      },
+                      // modelOptions: {
+                      //   updateOn: "submit",
+                      // },
                     },
                   ],
                 },
@@ -407,7 +405,6 @@ export class DataEntryComponent {
                   key: "cityName",
                   templateOptions: {
                     label: "City",
-                    pattern: "^[s\t\r\n]*S+",
                     hideOptional: true,
                   },
                 },
@@ -612,22 +609,18 @@ export class DataEntryComponent {
   ];
 
   onSelectionChange(index) {
+    this.previousPageIndex = this.model["selectedIndex"];
+
     this.isReviewMode = false;
     this.model["selectedIndex"] = index;
     this.currentPageIndex = index;
 
-    if (index == 0) {
-      this.istaboneTouched = true;
-    } else if (index == 1) {
-      this.istaboneTouched = true;
-    }
-
-    if (index != 2 && this.istaboneTouched && this.istabtwoTouched) {
-      this.istabthrTouched = true;
-    }
-
-    if (index != 1 && this.istaboneTouched) {
-      this.istabtwoTouched = true;
+    if (index !== this.previousPageIndex) {
+      const valid = this.isValid(
+        this.fields[0].fieldGroup[this.previousPageIndex],
+        this.previousPageIndex
+      );
+      this.stepDefinition[this.previousPageIndex].isValid = valid;
     }
   }
 
@@ -653,28 +646,22 @@ export class DataEntryComponent {
 
   isTouched(field: FormlyFieldConfig, index: number) {
     if (field.fieldGroup) {
-      let element =
-        field.fieldGroup.length > 1 ? field.fieldGroup[2] : field.fieldGroup[0];
-      // if (index == 2) {
-      //   element.formControl.markAsTouched();
-      //   if (this.model.addAwardee.length <= 0) {
-      //     return false;
-      //   } else {
-      //     return true;
-      //   }
-      // }
-      if ((this.currentPageIndex == 2 && index == 2) || index == 0) {
-        element.formControl.markAsTouched();
-      } else if (index == 1 && this.currentPageIndex > 1) {
-        element.formControl.markAllAsTouched();
-      }
-
-      this.previousPageIndex = index;
-      return element.formControl.touched;
     }
   }
 
+  updateModelOption(field: FormlyFieldConfig, index: number) {
+    if (index == 1 && field.key && field.fieldGroup) {
+      field.fieldGroup.forEach((f) => this.updateModelOption(f, index));
+    }
+    if (field.key || !field.fieldGroup) {
+      if (field?.modelOptions?.updateOn) {
+        field.modelOptions.updateOn = "blur";
+      }
+    }
+  }
   isValid(field: FormlyFieldConfig, index: number) {
+    this.isTouched(field, index);
+
     if (field.key || !field.fieldGroup) {
       if (index == 2) {
         if (this.model.addAwardee.length <= 0) {
@@ -682,11 +669,7 @@ export class DataEntryComponent {
         } else {
           return true;
         }
-      }
-      // else if (index == 1) {
-      //   field.formControl.markAsPristine({ onlySelf: true });
-      // }
-      else {
+      } else {
         return field.formControl.valid;
       }
     }
@@ -698,11 +681,7 @@ export class DataEntryComponent {
       this.formStepperCount = 0;
     }
 
-    if (
-      this.isTouched(step, index) &&
-      this.isValid(step, index) &&
-      this.isStepperTouched(index)
-    ) {
+    if (this.isTouched(step, index) && this.isValid(step, index)) {
       this.formStepperCount = this.formStepperCount + 1;
       if (this.formStepperCount == this.fields[0].fieldGroup.length) {
         this.isFormValid = true;
@@ -716,51 +695,11 @@ export class DataEntryComponent {
   }
 
   isFormError(step: FormlyFieldConfig, index: number) {
-    if (
-      this.isTouched(step, index) &&
-      !this.isValid(step, index) &&
-      this.isStepperTouched(index)
-    ) {
+    if (this.isTouched(step, index) && !this.isValid(step, index)) {
       return true;
     } else {
       return false;
     }
-  }
-
-  isStepperTouched(index: number) {
-    if (index == 0 && this.istaboneTouched) {
-      return true;
-    } else if (index == 1 && this.istabtwoTouched) {
-      return true;
-    } else if (index == 2 && this.istabthrTouched) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  processNotCompleted(index: number) {
-    if (index == 0 && !this.istaboneTouched && this.currentPageIndex == index) {
-      this.istaboneTouched = true;
-      return true;
-    } else if (
-      index == 1 &&
-      !this.istabtwoTouched &&
-      this.currentPageIndex == index
-    ) {
-      // this.istabtwoTouched = true;
-      return true;
-    } else if (
-      index == 2 &&
-      !this.istabthrTouched &&
-      this.currentPageIndex == index
-    ) {
-      return true;
-    }
-  }
-
-  ngOnInit() {
-    this.stepDefinition = this.fields[0].fieldGroup;
   }
 
   onReviewAndSubmit() {
