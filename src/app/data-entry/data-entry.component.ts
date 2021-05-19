@@ -290,6 +290,7 @@ export class DataEntryComponent {
   form = new FormGroup({});
   model: any = {
     selectedIndex: 0,
+    check: false,
   };
   options: FormlyFormOptions = {};
   fields: FormlyFieldConfig[] = [
@@ -387,12 +388,12 @@ export class DataEntryComponent {
                   className: "desktop:grid-col-12 tablet:grid-col-12",
                   type: "input",
                   key: "title",
+
                   templateOptions: {
-                    required: true,
                     label: "Program or Project Title (Optional)",
                   },
-                  modelOptions: {
-                    updateOn: "submit",
+                  expressionProperties: {
+                    "templateOptions.required": "model.checked",
                   },
                 },
                 {
@@ -614,7 +615,8 @@ export class DataEntryComponent {
     this.isReviewMode = false;
     this.model["selectedIndex"] = index;
     this.currentPageIndex = index;
-
+    this.model["checked"] = true;
+    console.log(this.model);
     if (index !== this.previousPageIndex) {
       const valid = this.isValid(
         this.fields[0].fieldGroup[this.previousPageIndex],
@@ -622,6 +624,11 @@ export class DataEntryComponent {
       );
       this.stepDefinition[this.previousPageIndex].isValid = valid;
     }
+    const findStepValidIndex = this.stepDefinition.filter(
+      (x) => x.isValid === false || x.isValid === null
+    );
+    console.log(findStepValidIndex, "isv");
+    this.isFormValid = findStepValidIndex.length > 0 ? false : true;
   }
 
   getData() {
@@ -646,6 +653,13 @@ export class DataEntryComponent {
 
   isTouched(field: FormlyFieldConfig, index: number) {
     if (field.fieldGroup) {
+      let element =
+        field.fieldGroup.length > 1 ? field.fieldGroup[2] : field.fieldGroup[0];
+      if (index !== 2 && element && element.formControl) {
+        element.formControl.markAllAsTouched();
+      }
+
+      // return element.formControl.touched;
     }
   }
 
@@ -676,31 +690,31 @@ export class DataEntryComponent {
     return field.fieldGroup.every((f) => this.isValid(f, index));
   }
 
-  isFormSuccess(step: FormlyFieldConfig, index: number) {
-    if (index == 0) {
-      this.formStepperCount = 0;
-    }
+  // isFormSuccess(step: FormlyFieldConfig, index: number) {
+  //   if (index == 0) {
+  //     this.formStepperCount = 0;
+  //   }
 
-    if (this.isTouched(step, index) && this.isValid(step, index)) {
-      this.formStepperCount = this.formStepperCount + 1;
-      if (this.formStepperCount == this.fields[0].fieldGroup.length) {
-        this.isFormValid = true;
-      } else {
-        this.isFormValid = false;
-      }
-      return true;
-    } else {
-      return false;
-    }
-  }
+  //   if (this.isTouched(step, index) && this.isValid(step, index)) {
+  //     this.formStepperCount = this.formStepperCount + 1;
+  //     if (this.formStepperCount == this.fields[0].fieldGroup.length) {
+  //       this.isFormValid = true;
+  //     } else {
+  //       this.isFormValid = false;
+  //     }
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
-  isFormError(step: FormlyFieldConfig, index: number) {
-    if (this.isTouched(step, index) && !this.isValid(step, index)) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  // isFormError(step: FormlyFieldConfig, index: number) {
+  //   if (this.isTouched(step, index) && !this.isValid(step, index)) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
   onReviewAndSubmit() {
     this.isReviewMode = true;
