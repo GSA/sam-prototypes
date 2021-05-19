@@ -39,8 +39,17 @@ export class RequestsService implements FeedService {
       		mode: NavigationMode.EXTERNAL,
   			  id: "ANN0003",
   			  date: new Date(2020, 10, 16),
-  			  description: '<strong>Tom Jones</strong> has requested an <strong>Entity Administrator</strong> role for <strong>Entity Registration</strong>'
+  			  description: '<strong>Tom Jones</strong> has requested a <strong>Entity</strong> role for <strong>Entity Registration</strong>'
+    	},
+    	{
+      	  text: "Assign Role Request",
+      		route: 'https://www.fsd.gov/gsafsd_sp?id=gsafsd_kb_articles&sys_id=e6eae1e41b0568d0d3ab404fe54bcb4d',
+      		mode: NavigationMode.EXTERNAL,
+  			  id: "ANN0003",
+  			  date: new Date(2020, 10, 16),
+  			  description: '<strong>Jane Eyre</strong> has requested a <strong>Data Entry</strong> role for <strong>Entity Registration</strong>'
     	}
+
     ];
 
   constructor() { }

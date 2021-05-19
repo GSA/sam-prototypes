@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { SearchParameters, SearchListInterface, SearchResult, SearchListConfiguration } from '@gsa-sam/layouts';
 import { Statistic, StatisticsService } from '../interfaces/public-apis';
 
 import { EntityRegistrationServiceModule } from './entity-registration-service.module';
@@ -8,7 +9,15 @@ import { registrationData } from './registration.data';
 @Injectable({
   providedIn: EntityRegistrationServiceModule
 })
-export class EntityRegistrationService implements StatisticsService {
+export class EntityRegistrationService implements StatisticsService, SearchListInterface {
+
+  configuration: SearchListConfiguration = {
+      defaultSortValue: 'expirationAscending', pageSize: 25,
+      sortList: [{ text: 'Expiration Date: Closest', value: 'expirationAscending' }],
+      defaultFilterValue: {
+        dummy: false
+      }
+  };
 
   private statistics: Statistic[] = [
     {
@@ -53,6 +62,15 @@ export class EntityRegistrationService implements StatisticsService {
     return of(this.statistics);
   }
 
+    getData(search: SearchParameters): Observable<SearchResult> {
+       let registrationItems = this.data;
+
+       return of({
+         items: this.pagingFunction(registrationItems, search.page.pageNumber-1, search.page.pageSize),
+         totalItems: registrationItems.length
+       });
+    }
+
   public getRecord(uei): any {
      for(let i=0; i<this.data.length; i++) {
        if(this.data[i].dunsNumber == uei) {
@@ -64,6 +82,15 @@ export class EntityRegistrationService implements StatisticsService {
 
   private initData(data: any[]) {
   	this.data = data;
+  }
+
+  pagingFunction(data: any[], page: number, pageSize: number): any[] {
+      let startIndex: number = page * pageSize;
+      let endIndex = startIndex + (pageSize);
+      if(endIndex > (data.length)) {
+          endIndex = data.length;
+      }
+      return data.slice(startIndex, endIndex)
   }
 
 }

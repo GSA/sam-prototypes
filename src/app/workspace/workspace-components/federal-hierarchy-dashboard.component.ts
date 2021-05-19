@@ -39,7 +39,7 @@ export class FederalHierarchyDashboardComponent extends WorkspaceDashboardCompon
   constructor(public service: HierarchyService) { 
     super();
   	this.title = "Federal Hierarchy";
-  	this.route = "/federal-hierarchy/workspace";
+  	this.route = "/federal-hierarchy";
   }
 
   ngOnInit(): void {

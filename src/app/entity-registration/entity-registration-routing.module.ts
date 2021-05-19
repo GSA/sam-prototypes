@@ -3,19 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
 	{
-		path: 'register',
-		loadChildren: () => import('./register/register.module').then(m => m.RegisterModule),
-    	data: {
-    		id: 'workspace'
-    	}
-    },
-    {
-	    path: 'view',
-	    loadChildren: () => import('./entity-registration-display/entity-registration-display.module').then(m => m.EntityRegistrationDisplayModule),
-	    data: {
-	      id: "search"
-	    }
+		path: 'workspace',
+		loadChildren: () => import("./entity-registration-workspace/entity-registration-workspace.module").then((m) => m.EntityRegistrationWorkspaceModule) 
+	},
+	{
+		path: 'editor',
+		loadChildren: () => import("./entity-registration-editor/entity-registration-editor.module").then((m) => m.EntityRegistrationEditorModule) 
+	},
+	{
+		path: 'form',
+		loadChildren: () => import("./entity-registration-form/entity-registration-form.module").then((m) => m.EntityRegistrationFormModule) 
 	}
+
 ];
 
 @NgModule({
