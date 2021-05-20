@@ -391,9 +391,7 @@ export class DataEntryComponent {
 
                   templateOptions: {
                     label: "Program or Project Title (Optional)",
-                  },
-                  expressionProperties: {
-                    "templateOptions.required": "model.checked",
+                    required: true,
                   },
                 },
                 {
@@ -658,8 +656,6 @@ export class DataEntryComponent {
       if (index !== 2 && element && element.formControl) {
         element.formControl.markAllAsTouched();
       }
-
-      // return element.formControl.touched;
     }
   }
 
