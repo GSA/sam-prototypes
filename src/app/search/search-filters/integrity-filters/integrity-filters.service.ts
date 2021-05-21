@@ -4,6 +4,7 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
 import { 
   SearchFiltersWrapperService 
 } from '../../../common/public-apis';
+import { keywordFilter } from '../common/keywordfilter';
 
 import { IntegrityFiltersModule } from './integrity-filters.module';
 
@@ -15,14 +16,7 @@ export class IntegrityFiltersService implements SearchFiltersWrapperService {
   public model = {};
 
   public filters: FormlyFieldConfig[] = [
-	{
-      key: 'keyword',
-      type: 'input',
-      templateOptions: {
-        label: 'Keyword',
-        hideOptional: true
-      }
-  	},
+    keywordFilter,
     {
       key: 'entity',
       templateOptions: {

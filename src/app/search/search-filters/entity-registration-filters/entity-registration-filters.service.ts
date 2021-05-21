@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 
 import { SearchFiltersWrapperService } from '../../../common/public-apis';
+import { keywordFilter } from '../common/keywordfilter';
 
 @Injectable()
 export class EntityRegistrationFiltersService implements SearchFiltersWrapperService {
@@ -10,12 +11,7 @@ export class EntityRegistrationFiltersService implements SearchFiltersWrapperSer
   public model = {};
 
   public filters: FormlyFieldConfig[] = [
-  {
-    key: 'keyword',
-    wrappers: ['filterwrapper'],
-    templateOptions: { label: 'Keyword' },
-    type: 'input'
-  },
+  keywordFilter,
   {
       key: 'searchEntity',
       wrappers: ['accordionwrapper'],

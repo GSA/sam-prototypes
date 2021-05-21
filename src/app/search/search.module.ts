@@ -51,6 +51,7 @@ import { SearchComponent } from "./search.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
+import { SearchFormlyModule } from "./search-formly/search-formly.module";
 
 @NgModule({
   declarations: [SearchComponent],
@@ -97,6 +98,7 @@ import _ from "lodash-es";
     NgxBootstrapIconsModule.pick(
       Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
     ),
+    SearchFormlyModule,
   ],
   exports: [SearchComponent],
 })

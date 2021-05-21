@@ -11,6 +11,7 @@ import { opportunitiesData } from '../contract-opportunities-service/opportuniti
 import { contractData } from '../contract-data-service/contract-data.data';
 import { integrityData } from '../integrity-service/integrity.data';
 import { hierarchyData } from '../hierarchy-service/hierarchy.data';
+import { extractKeywords } from 'src/app/search/search-filters/common/keywordfilter';
 
 
 @Injectable({
@@ -98,14 +99,28 @@ export class SearchService {
     }
 
     getData(search: SearchParameters): Observable<SearchResult> {
-
         if(this.data) {
             this.filterData(search);
 
             // only do keyword search for demo purpose
-            let filteredData = this.data;
+            let filteredData = [];
             if (search.filter && search.filter.keyword) {
-                filteredData = this.data.filter(data => JSON.stringify(data).includes(search.filter.keyword));
+                let keyword = extractKeywords(search.filter.keyword);
+
+                if (!keyword) {
+                    filteredData = this.data;
+                } else {
+                    keyword.forEach(word => {
+                        const results = this.data.filter(data => JSON.stringify(data).includes(word));
+                        results.forEach(result => {
+                            const existsInFilteredData = filteredData.find(data => data === result);
+                            if (!existsInFilteredData) {
+                                filteredData.push(result);
+                            }
+                        })
+                    });
+                }
+
             }
 
             this.sortItems(filteredData, search);
