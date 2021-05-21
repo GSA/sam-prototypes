@@ -4,7 +4,7 @@ import { EntityRegistrationFormComponent } from './entity-registration-form.comp
 
 const routes: Routes = [
 	{
-		path: ':id',
+		path: '',
 		component: EntityRegistrationFormComponent
 	}
 ];

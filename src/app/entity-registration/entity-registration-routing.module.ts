@@ -9,10 +9,6 @@ const routes: Routes = [
 	{
 		path: 'editor',
 		loadChildren: () => import("./entity-registration-editor/entity-registration-editor.module").then((m) => m.EntityRegistrationEditorModule) 
-	},
-	{
-		path: 'form',
-		loadChildren: () => import("./entity-registration-form/entity-registration-form.module").then((m) => m.EntityRegistrationFormModule) 
 	}
 
 ];

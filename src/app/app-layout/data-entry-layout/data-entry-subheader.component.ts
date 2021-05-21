@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { NavigationLink } from '@gsa-sam/components';
 
 @Component({
   selector: 'data-entry-subheader',
@@ -6,6 +8,13 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   	<sds-subheader>
       <back-button></back-button>
 	  <subheader-title [title]="title"></subheader-title>
+    <ng-container subheader-buttongroup-container>
+        <sds-button-group [mode]="'radio'" class="sds-button-group sds-button-group--secondary" (change)="subpageClicked($event)">
+           <sds-button-group-option *ngFor="let page of subpages" [value]="page.id" [checked]="page.selected" [aria-label]="'page.text'">
+              {{page.text}}
+           </sds-button-group-option>
+        </sds-button-group>
+    </ng-container>
 	  <ng-container subheader-buttons-container>
         <ng-content select="button"></ng-content>
       </ng-container>
@@ -18,7 +27,11 @@ export class DataEntrySubheaderComponent implements OnInit {
 
   @Input() title: string;
 
+  @Input() subpages: NavigationLink[];
+
   @Output() download: EventEmitter<any> = new EventEmitter();
+
+  url: string;
 
   public actionsModel = {
     actions: [
@@ -26,9 +39,29 @@ export class DataEntrySubheaderComponent implements OnInit {
     ]
   };
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.parent.url.subscribe(
+      url => this.url = url[0].path
+    );
+  }
+
+  subpageClicked($event) {
+    console.log($event);
+    let route: string = null;
+    let queryParams: any = null;
+    for(let i=0; i<this.subpages.length; i++) {
+       if(this.subpages[i].id == $event.value) {
+          route = this.subpages[i].route;
+          if(this.subpages[i].queryParams)
+          queryParams = this.subpages[i].queryParams;
+       }
+    }
+
+    if(route) {
+      this.router.navigate([route], { relativeTo: this.route });
+    }
   }
 
   actionClicked(buttonId) {
