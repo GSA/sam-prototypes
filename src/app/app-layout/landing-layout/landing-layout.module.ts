@@ -5,11 +5,10 @@ import { RouterModule } from "@angular/router";
 import { FormlyModule } from "@ngx-formly/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SdsFormlyModule } from "@gsa-sam/sam-formly";
-import { SdsIconModule } from "@gsa-sam/components";
 
 import { MatExpansionModule } from "@angular/material/expansion";
 import { SdsAccordionModule } from "@gsa-sam/sam-material-extensions";
-import { LayoutComponentsModule } from '../layout-components/layout-components.module';
+import { LayoutComponentsModule } from "../layout-components/layout-components.module";
 
 import { LandingSearchComponent } from "./landing-search/landing-search.component";
 import { LandingHeroComponent } from "./landing-hero/landing-hero.component";
@@ -49,7 +48,6 @@ import _ from "lodash-es";
     FormsModule,
     MatExpansionModule,
     SdsAccordionModule,
-    SdsIconModule,
     ReactiveFormsModule,
     SdsFormlyModule,
     LayoutComponentsModule,

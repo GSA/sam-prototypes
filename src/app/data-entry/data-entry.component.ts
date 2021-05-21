@@ -19,9 +19,16 @@ export class DataEntryComponent {
   service: any;
   currentPageIndex = 0;
   isFormValid: boolean = false;
-  previousFormValid: boolean = true;
+
+  stepDefinition: any[] = [
+    { index: 0, isTouched: false, isValid: null },
+    { index: 1, isTouched: false, isValid: null },
+    { index: 2, isTouched: false, isValid: null },
+  ];
+
   formStepperCount: number = 0;
-  previousPageIndex = -1;
+  previousPageIndex = 0;
+
   constructor(
     private route: ActivatedRoute,
     public router: Router,
@@ -150,7 +157,6 @@ export class DataEntryComponent {
             },
 
             {
-              className: "grid-col-8",
               type: "input",
               key: "cityName",
               templateOptions: {
@@ -284,7 +290,13 @@ export class DataEntryComponent {
   model: any = {
     selectedIndex: 0,
   };
-  options: FormlyFormOptions = {};
+
+  options: FormlyFormOptions = {
+    formState: {
+      showValidation: false,
+    },
+  };
+
   fields: FormlyFieldConfig[] = [
     {
       type: "stepper",
@@ -329,9 +341,9 @@ export class DataEntryComponent {
             {
               key: "dataentry.details",
               templateOptions: {
-                //label: "Entity Name",
                 placeholder: "Input Unique Entity ID",
               },
+
               fieldGroup: [
                 {
                   key: "report",
@@ -343,7 +355,6 @@ export class DataEntryComponent {
                       type: "select",
                       templateOptions: {
                         label: "Report Month",
-                        required: true,
                         hideOptional: true,
                         options: [
                           { label: "Jan", value: "01" },
@@ -352,14 +363,18 @@ export class DataEntryComponent {
                           { label: "Apr", value: "04" },
                         ],
                       },
+                      validation: {
+                        show: true,
+                      },
+                      expressionProperties: {
+                        "templateOptions.required": "formState.showValidation",
+                      },
                     },
                     {
                       className: "grid-col-4 margin-top-5",
                       key: "year",
                       type: "select",
                       templateOptions: {
-                        //label: "year",
-                        required: true,
                         hideLable: true,
                         hideOptional: true,
                         options: [
@@ -369,6 +384,12 @@ export class DataEntryComponent {
                           { label: "2004", value: "04" },
                         ],
                       },
+                      validation: {
+                        show: true,
+                      },
+                      expressionProperties: {
+                        "templateOptions.required": "formState.showValidation",
+                      },
                     },
                   ],
                 },
@@ -377,9 +398,15 @@ export class DataEntryComponent {
                   className: "desktop:grid-col-12 tablet:grid-col-12",
                   type: "input",
                   key: "title",
+
                   templateOptions: {
-                    required: true,
                     label: "Program or Project Title (Optional)",
+                  },
+                  validation: {
+                    show: true,
+                  },
+                  expressionProperties: {
+                    "templateOptions.required": "formState.showValidation",
                   },
                 },
                 {
@@ -392,7 +419,6 @@ export class DataEntryComponent {
                   key: "cityName",
                   templateOptions: {
                     label: "City",
-                    pattern: "^[s\t\r\n]*S+",
                     hideOptional: true,
                   },
                 },
@@ -595,12 +621,34 @@ export class DataEntryComponent {
       ],
     },
   ];
-
+  modelChanges(ev) {
+    console.log(ev, "model");
+  }
   onSelectionChange(index) {
+    this.previousPageIndex = this.model["selectedIndex"];
+
     this.isReviewMode = false;
     this.model["selectedIndex"] = index;
     this.currentPageIndex = index;
+
+    if (index !== this.previousPageIndex) {
+      if (this.stepDefinition[this.previousPageIndex].isValid != null) {
+        this.options.formState.showValidation = true;
+      }
+
+      const valid = this.isValid(
+        this.fields[0].fieldGroup[this.previousPageIndex],
+        this.previousPageIndex
+      );
+      this.stepDefinition[this.previousPageIndex].isValid = valid;
+    }
+    const findStepValidIndex = this.stepDefinition.filter(
+      (x) => x.isValid === false || x.isValid === null
+    );
+
+    this.isFormValid = findStepValidIndex.length > 0 ? false : true;
   }
+
   getData() {
     const searchParameters: any = {
       page: {
@@ -625,26 +673,25 @@ export class DataEntryComponent {
     if (field.fieldGroup) {
       let element =
         field.fieldGroup.length > 1 ? field.fieldGroup[2] : field.fieldGroup[0];
-      // if (index == 2) {
-      //   element.formControl.markAsTouched();
-      //   if (this.model.addAwardee.length <= 0) {
-      //     return false;
-      //   } else {
-      //     return true;
-      //   }
-      // }
-      if ((this.currentPageIndex == 2 && index == 2) || index == 0) {
-        element.formControl.markAsTouched();
-      } else if (index == 1 && this.currentPageIndex > 1) {
+      if (index !== 2 && element && element.formControl) {
         element.formControl.markAllAsTouched();
       }
-
-      this.previousPageIndex = index;
-      return element.formControl.touched;
     }
   }
 
+  updateModelOption(field: FormlyFieldConfig, index: number) {
+    if (index == 1 && field.key && field.fieldGroup) {
+      field.fieldGroup.forEach((f) => this.updateModelOption(f, index));
+    }
+    if (field.key || !field.fieldGroup) {
+      if (field?.modelOptions?.updateOn) {
+        field.modelOptions.updateOn = "blur";
+      }
+    }
+  }
   isValid(field: FormlyFieldConfig, index: number) {
+    this.isTouched(field, index);
+
     if (field.key || !field.fieldGroup) {
       if (index == 2) {
         if (this.model.addAwardee.length <= 0) {
@@ -659,31 +706,31 @@ export class DataEntryComponent {
     return field.fieldGroup.every((f) => this.isValid(f, index));
   }
 
-  isFormSuccess(step: FormlyFieldConfig, index: number) {
-    if (index == 0) {
-      this.formStepperCount = 0;
-    }
+  // isFormSuccess(step: FormlyFieldConfig, index: number) {
+  //   if (index == 0) {
+  //     this.formStepperCount = 0;
+  //   }
 
-    if (this.isTouched(step, index) && this.isValid(step, index)) {
-      this.formStepperCount = this.formStepperCount + 1;
-      if (this.formStepperCount == this.fields[0].fieldGroup.length) {
-        this.isFormValid = true;
-      } else {
-        this.isFormValid = false;
-      }
-      return true;
-    } else {
-      return false;
-    }
-  }
+  //   if (this.isTouched(step, index) && this.isValid(step, index)) {
+  //     this.formStepperCount = this.formStepperCount + 1;
+  //     if (this.formStepperCount == this.fields[0].fieldGroup.length) {
+  //       this.isFormValid = true;
+  //     } else {
+  //       this.isFormValid = false;
+  //     }
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
-  isFormError(step: FormlyFieldConfig, index: number) {
-    if (this.isTouched(step, index) && !this.isValid(step, index)) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  // isFormError(step: FormlyFieldConfig, index: number) {
+  //   if (this.isTouched(step, index) && !this.isValid(step, index)) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
   onReviewAndSubmit() {
     this.isReviewMode = true;
