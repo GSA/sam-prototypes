@@ -157,7 +157,6 @@ export class DataEntryComponent {
             },
 
             {
-              className: "grid-col-8",
               type: "input",
               key: "cityName",
               templateOptions: {
@@ -290,9 +289,14 @@ export class DataEntryComponent {
   form = new FormGroup({});
   model: any = {
     selectedIndex: 0,
-    check: false,
   };
-  options: FormlyFormOptions = {};
+
+  options: FormlyFormOptions = {
+    formState: {
+      showValidation: false,
+    },
+  };
+
   fields: FormlyFieldConfig[] = [
     {
       type: "stepper",
@@ -359,9 +363,12 @@ export class DataEntryComponent {
                           { label: "Apr", value: "04" },
                         ],
                       },
-                      // modelOptions: {
-                      //   updateOn: "submit",
-                      // },
+                      validation: {
+                        show: true,
+                      },
+                      expressionProperties: {
+                        "templateOptions.required": "formState.showValidation",
+                      },
                     },
                     {
                       className: "grid-col-4 margin-top-5",
@@ -377,9 +384,12 @@ export class DataEntryComponent {
                           { label: "2004", value: "04" },
                         ],
                       },
-                      // modelOptions: {
-                      //   updateOn: "submit",
-                      // },
+                      validation: {
+                        show: true,
+                      },
+                      expressionProperties: {
+                        "templateOptions.required": "formState.showValidation",
+                      },
                     },
                   ],
                 },
@@ -391,7 +401,12 @@ export class DataEntryComponent {
 
                   templateOptions: {
                     label: "Program or Project Title (Optional)",
-                    required: true,
+                  },
+                  validation: {
+                    show: true,
+                  },
+                  expressionProperties: {
+                    "templateOptions.required": "formState.showValidation",
                   },
                 },
                 {
@@ -606,16 +621,21 @@ export class DataEntryComponent {
       ],
     },
   ];
-
+  modelChanges(ev) {
+    console.log(ev, "model");
+  }
   onSelectionChange(index) {
     this.previousPageIndex = this.model["selectedIndex"];
 
     this.isReviewMode = false;
     this.model["selectedIndex"] = index;
     this.currentPageIndex = index;
-    this.model["checked"] = true;
-    console.log(this.model);
+
     if (index !== this.previousPageIndex) {
+      if (this.stepDefinition[this.previousPageIndex].isValid != null) {
+        this.options.formState.showValidation = true;
+      }
+
       const valid = this.isValid(
         this.fields[0].fieldGroup[this.previousPageIndex],
         this.previousPageIndex
@@ -625,7 +645,7 @@ export class DataEntryComponent {
     const findStepValidIndex = this.stepDefinition.filter(
       (x) => x.isValid === false || x.isValid === null
     );
-    console.log(findStepValidIndex, "isv");
+
     this.isFormValid = findStepValidIndex.length > 0 ? false : true;
   }
 
