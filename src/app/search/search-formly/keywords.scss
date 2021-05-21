@@ -39,21 +39,10 @@
   sds-filters {
     formly-field:first-child {
       .sds-filter-keywords {
-        border-top: 1px solid black;
         background-color: white;
-        margin-top: -1rem;
         margin-left: -1rem;
         margin-right: -1rem;
   
-        label:not(.usa-radio__label), p {
-          margin-left: 1rem;
-          margin-right: 1rem;
-        }
-  
-        p {
-          margin-top: 2px;
-          margin-bottom: 1rem;
-        }
       }
     }
 
@@ -62,16 +51,6 @@
         background-color: white;
         margin-left: -1rem;
         margin-right: -1rem;
-  
-        label:not(.usa-radio__label), p {
-          margin-left: 1rem;
-          margin-right: 1rem;
-        }
-  
-        p {
-          margin-top: 2px;
-          margin-bottom: 1rem;
-        }
       }
     }
   }
