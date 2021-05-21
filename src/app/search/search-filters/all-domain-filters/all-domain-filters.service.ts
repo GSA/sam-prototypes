@@ -16,6 +16,7 @@ export class AllDomainFiltersService implements SearchFiltersWrapperService {
   public model = {};
 
   public filters: FormlyFieldConfig[] = [
+		keywordFilter,
     {
 	    key: 'hierarchy',
 	    type: 'autocomplete',
@@ -28,8 +29,6 @@ export class AllDomainFiltersService implements SearchFiltersWrapperService {
 	      model: this.hierarchyService.model
 	    }
 	 },
-	 keywordFilter,
-
 	 {
 	    key: 'status',
 	    type: 'multicheckbox',
