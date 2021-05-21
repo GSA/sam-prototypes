@@ -66,14 +66,14 @@ export class FormlyUtilsService {
       field.fieldGroup.forEach((innerField: FormlyFieldConfig) => {
         if (innerField.type === "repeat" && readonlyMode) {
           field.fieldGroup.splice(field.fieldGroup.indexOf(innerField), 1);
-
           const key = innerField.key.toString();
+          const f = innerField.fieldGroup;
+          let inv = 0;
           this.utilitymodel[key].forEach((element) => {
-            const f = innerField.fieldArray?.fieldGroup;
-            console.log(f, "filji");
-            f[0].templateOptions.subawardItem = element;
-            field.fieldGroup = [...field.fieldGroup, ...f];
+            f[inv].templateOptions.subawardItem = element;
+            inv++;
           });
+          field.fieldGroup = [...field.fieldGroup, ...f];
 
           this._setReadonlyMode(readonlyMode, innerField, model);
         } else {
