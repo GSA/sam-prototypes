@@ -53,10 +53,6 @@ export class FormlyUtilsService {
     return readonlyData;
   }
 
-  private static addRepeatSections(innerField: FormlyFieldConfig) {
-    return innerField.fieldArray?.fieldGroup;
-  }
-
   private static _setReadonlyMode(
     readonlyMode: boolean,
     field: FormlyFieldConfig,

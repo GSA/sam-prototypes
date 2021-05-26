@@ -631,15 +631,15 @@ export class DataEntryComponent {
     this.model["selectedIndex"] = index;
     this.currentPageIndex = index;
 
-    if (index !== this.previousPageIndex) {
-      if (this.stepDefinition[this.previousPageIndex].isValid != null) {
-        this.options.formState.showValidation = true;
-      }
+    if (this.stepDefinition[index].isValid != null) {
+      this.options.formState.showValidation = true;
+    }
 
-      const valid = this.isValid(
-        this.fields[0].fieldGroup[this.previousPageIndex],
-        this.previousPageIndex
-      );
+    const valid = this.isValid(
+      this.fields[0].fieldGroup[this.previousPageIndex],
+      this.previousPageIndex
+    );
+    if (index !== this.previousPageIndex) {
       this.stepDefinition[this.previousPageIndex].isValid = valid;
     }
     const findStepValidIndex = this.stepDefinition.filter(
@@ -705,32 +705,6 @@ export class DataEntryComponent {
     }
     return field.fieldGroup.every((f) => this.isValid(f, index));
   }
-
-  // isFormSuccess(step: FormlyFieldConfig, index: number) {
-  //   if (index == 0) {
-  //     this.formStepperCount = 0;
-  //   }
-
-  //   if (this.isTouched(step, index) && this.isValid(step, index)) {
-  //     this.formStepperCount = this.formStepperCount + 1;
-  //     if (this.formStepperCount == this.fields[0].fieldGroup.length) {
-  //       this.isFormValid = true;
-  //     } else {
-  //       this.isFormValid = false;
-  //     }
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
-
-  // isFormError(step: FormlyFieldConfig, index: number) {
-  //   if (this.isTouched(step, index) && !this.isValid(step, index)) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
 
   onReviewAndSubmit() {
     this.isReviewMode = true;
