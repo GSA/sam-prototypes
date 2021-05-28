@@ -1,6 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup } from "@angular/forms";
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
+import { EntityRegistrationEditorService } from '../../services/entity-registration-editor-service/entity-registration-editor.service';
+
 
 @Component({
   selector: 'app-entity-registration-form',
@@ -401,7 +403,7 @@ export class EntityRegistrationFormComponent implements OnInit {
   ];
 
 
-  constructor() {}
+  constructor(private service: EntityRegistrationEditorService) {}
 
   ngOnInit() {}
 

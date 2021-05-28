@@ -8,15 +8,11 @@ const routes: Routes = [
 		component: EntityRegistrationEditorComponent,
 		children: [
 			{
-				path: 'preview',
-    			loadChildren: () => import("./entity-registration-preview/entity-registration-preview.module").then((m) => m.EntityRegistrationPreviewModule) 
-			},
-			{
 				path: 'review',
     			loadChildren: () => import("./entity-registration-review/entity-registration-review.module").then((m) => m.EntityRegistrationReviewModule) 
 			},
 			{
-				path: 'form',
+				path: 'edit',
     			loadChildren: () => import("./entity-registration-form/entity-registration-form.module").then((m) => m.EntityRegistrationFormModule) 
 			}
 		]
@@ -26,15 +22,11 @@ const routes: Routes = [
 		component: EntityRegistrationEditorComponent,
 		children: [
 			{
-				path: 'preview',
-    			loadChildren: () => import("./entity-registration-preview/entity-registration-preview.module").then((m) => m.EntityRegistrationPreviewModule) 
-			},
-			{
 				path: 'review',
     			loadChildren: () => import("./entity-registration-review/entity-registration-review.module").then((m) => m.EntityRegistrationReviewModule) 
 			},
 			{
-				path: 'form',
+				path: 'edit',
     			loadChildren: () => import("./entity-registration-form/entity-registration-form.module").then((m) => m.EntityRegistrationFormModule) 
 			}
 		]

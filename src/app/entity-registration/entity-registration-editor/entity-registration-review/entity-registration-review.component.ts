@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { EntityRegistrationEditorService } from '../../services/entity-registration-editor-service/entity-registration-editor.service';
 
 @Component({
   selector: 'app-entity-registration-review',
@@ -7,7 +8,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class EntityRegistrationReviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: EntityRegistrationEditorService) { }
 
   ngOnInit(): void {
   }

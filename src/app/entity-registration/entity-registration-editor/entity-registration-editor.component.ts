@@ -11,15 +11,6 @@ export class EntityRegistrationEditorComponent implements OnInit {
 
     model: any;
 
-    @ViewChild('sideNavigation') sideNav;
-
-	public subpageLinks: NavigationLink[] = [
-	    { text: 'Edit', id: 'edit-registration', route: 'form', queryParams: {}, mode: NavigationMode.INTERNAL, selected: true },
-      { text: 'Review', id: 'review-registration', route: 'review', queryParams: {}, mode: NavigationMode.INTERNAL, selected: false },
-	    { text: 'Preview', id: 'preview-registration', route: 'preview', queryParams: {}, mode: NavigationMode.INTERNAL, selected: false }
-    ];
-
-
   constructor(private route: ActivatedRoute, public service: EntityRegistrationEditorService) { }
 
   ngOnInit(): void {  
