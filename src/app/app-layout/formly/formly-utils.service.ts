@@ -62,7 +62,7 @@ export class FormlyUtilsService {
       if (field.templateOptions.label != undefined) {
         let prvHeader: FormlyFieldConfig = {
           key: "Header1",
-          template: `<h2 class="marging-1"> " + field.templateOptions.label + " </h2>`,
+          template: '<h2> ' + field.templateOptions.label + ' </h2>',
         };
         field.fieldGroup = [prvHeader, ...field.fieldGroup];
       }
