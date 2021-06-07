@@ -114,6 +114,7 @@ export const keywordFilter: FormlyFieldConfig =
 									validation: ['booleanSyntax'],
 								},
 								templateOptions: {
+        					placeholder: 'e.g. ((rental AND property) OR (lease and property) AND NOT ( "short term"))',
 									required: true,
 								}
 							},
