@@ -13,7 +13,7 @@ import { FormlyUtilsService } from "../app-layout/formly/formly-utils.service";
   providers: [EntityReportingService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DataEntryComponent implements AfterViewInit {
+export class DataEntryComponent {
   @ViewChild('myTemplate') myTemplate: TemplateRef<any>;
   isReviewMode: boolean = false;
   reviewFields: FormlyFieldConfig[] = [];
@@ -311,15 +311,8 @@ export class DataEntryComponent implements AfterViewInit {
       },
       fieldGroup: [
         {
-          templateOptions: { label: "Report Contract", hasHeader: true },
+          templateOptions: { label: "Review Contract", hasHeader: true },
           fieldGroup: [
-            {
-              key: 'test',
-              type: 'custom',
-              templateOptions: {
-                customResultsTemplate: ''
-              }
-            },
             {
               key: "dataentry.contract",
               type: "contract",
@@ -576,15 +569,23 @@ export class DataEntryComponent implements AfterViewInit {
                   },
                 },
                 {
+                  key: "comparisonText",
+                  template: `<br/><b>In order to determine whether you are required to report executive compensation data, answer the following question(s)</b>
+                  <ul> <li> In your business or organization's preceding completed fiscal year, did your business or organization (the legal entity to which this specific SAM record, represented by a DUNS number, belongs) receive: </li>
+                  <li>80 percent or more of your annual gross revenues in U.S. federal contracts, subcontracts, loans, grants, subgrants, and/or cooperative agreements. </li>
+                  <li>25,000,000 or more in annual gross revenues from U.S. federal contracts, subcontracts, loans, grants, subgrants, and/or cooperative agreements? </li>`,
+                },
+                {
                   className: "grid-col-7",
                   key: "compensation",
                   type: "radio",
-
                   templateOptions: {
-                    label: `In order to determine whether you are required to report executive compensation data, answer the following question(s)`,
-                    description: ` 1. In your business or organization's preceding completed fiscal year, did your business or organization (the legal entity to which this specific SAM record, represented by a DUNS number, belongs) receive:
-                    80 percent or more of your annual gross revenues in U.S. federal contracts, subcontracts, loans, grants, subgrants, and/or cooperative agreements.
-                    $25,000,000 or more in annual gross revenues from U.S. federal contracts, subcontracts, loans, grants, subgrants, and/or cooperative agreements?`,
+                    label: '',
+                    hideLable: true,
+                    // label: `In order to determine whether you are required to report executive compensation data, answer the following question(s)`,
+                    // description: ` 1. In your business or organization's preceding completed fiscal year, did your business or organization (the legal entity to which this specific SAM record, represented by a DUNS number, belongs) receive: <br/>
+                    // 80 percent or more of your annual gross revenues in U.S. federal contracts, subcontracts, loans, grants, subgrants, and/or cooperative agreements.
+                    // $25,000,000 or more in annual gross revenues from U.S. federal contracts, subcontracts, loans, grants, subgrants, and/or cooperative agreements?`,
                     hideOptional: true,
                     options: [
                       { key: "yes", value: "Yes" },
@@ -598,7 +599,7 @@ export class DataEntryComponent implements AfterViewInit {
         },
 
         {
-          templateOptions: { label: "Subaward", hasHeader: true },
+          templateOptions: { label: "Subawardee Data", hasHeader: true },
           fieldGroup: [
             {
               key: "addAwardee",
@@ -631,12 +632,6 @@ export class DataEntryComponent implements AfterViewInit {
     },
   ];
 
-  ngOnInit() {
-    this.fields[0].fieldGroup[0].fieldGroup[0].templateOptions.customResultsTemplate = this.myTemplate;
-  }
-  ngAfterViewInit() {
-    this.fields[0].fieldGroup[0].fieldGroup[0].templateOptions.customResultsTemplate = this.myTemplate;
-  }
 
   modelChanges(ev) {
     console.log(ev, "model");
@@ -726,15 +721,18 @@ export class DataEntryComponent implements AfterViewInit {
   onReviewAndSubmit() {
     this.reviewFields = [];
     this.isReviewMode = true;
+    let prvHeader: FormlyFieldConfig = {
+      key: "reviewHeader",
+      template: ' <h1> Review and Submit </h1>  <hr />'
+    };
+    this.reviewFields.push(prvHeader);
+
     let prvAlert: FormlyFieldConfig = {
-      key: "prvAlert",
+      key: "customTemplate",
       type: 'custom',
       templateOptions: {
-        label: 'test',
         customResultsTemplate: this.myTemplate
       }
-      // template:
-      //   '<div class="sds-card__body sds-card__body--accent-cool"> <h3> Alert ! Review Page </h3> </div> <br/>',
     };
     this.reviewFields.push(prvAlert);
     this.fields[0].fieldGroup.forEach((element) => {

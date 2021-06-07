@@ -54,18 +54,22 @@
 </main>
 
 <ng-template #myTemplate let-item>
-  <div class="sds-card sds-card--bordered">
-    <div class="sds-card__header sds-card__header--center">
-      <div class="sds-card__icon margin-left-2">
-        <sds-icon [icon]="'book'" [classes]="['search']" size="2x"></sds-icon>
+  <div class="sds-alert--expanded info">
+    <div class="grid-container width-full maxw-full margin-0 padding-0">
+      <div class="grid-row">
+        <div class="grid-col-auto">
+          <sds-icon [icon]="'info'"></sds-icon>
+        </div>
+        <div class="grid-col-fill">
+          <span>
+            Please be aware that all information collected on the <a href="https://www.usaspending.gov">FSRS
+              website</a>,
+            including registration information and report data, will be
+            visible to the public on a public website (<a href="https://www.usaspending.gov">www.usaspending.gov</a>).
+          </span>
+        </div>
       </div>
-      <h2 class="sds-card__title padding-left-2 ">title</h2>
-    </div>
-    <div class="sds-card__body">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Sed augue lacus viverra vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt
-        ut labore et dolore magna aliqua. Sed augue lacus viverra vitae.</p>
     </div>
   </div>
+
 </ng-template>
