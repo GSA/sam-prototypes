@@ -27,6 +27,13 @@ export function extractKeywords(keyword: any): string[] {
 	}
 
 	if (keyword.keywordTags) {
+		if(keyword.keywordRadio && (keyword.keywordRadio == 'anyWords' || keyword.keywordRadio == 'allWords')) {
+			  let results = [];
+			  keyword.keywordTags.forEach(tag => {
+			  	results = results.concat(tag.text.split(" "));
+			  });
+			  return results;
+		}
 		return keyword.keywordTags.map(tag => tag.text);
 	}
 

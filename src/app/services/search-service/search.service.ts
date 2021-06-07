@@ -98,6 +98,47 @@ export class SearchService {
         return assistanceData._embedded.results.concat(opportunitiesData).concat(registrationData._embedded.results).concat(exclusionData._embedded.results).concat(integrityData);
     }
 
+    private filterKeywords(records: any[], searchType: string, keywords: string[]): any[] {
+
+        let filteredData = [];
+        switch(searchType) { 
+               case 'exactMatch': { 
+                    filteredData = this.data.filter(data => this.includesAll(data, keywords));              
+                    break; 
+               };
+               case 'anyWords': { 
+                    keywords.forEach(word => {
+                        const results = this.data.filter(
+                            data => JSON.stringify(data).toUpperCase().includes(word.toUpperCase())
+                        );
+                        results.forEach(result => {
+                            const existsInFilteredData = filteredData.find(data => data === result);
+                            if (!existsInFilteredData) {
+                                filteredData.push(result);
+                            }
+                        });
+                    });
+                    break; 
+               } 
+               default: { 
+                  filteredData = this.data.filter(data => this.includesAll(data, keywords));
+                  break; 
+               } 
+        } 
+        return filteredData;
+    }
+
+    includesAll(record: any, keywords: string[]): boolean {
+        let data = JSON.stringify(record);
+        let result = true;
+        keywords.forEach(word => {
+            if(!(data.toUpperCase().includes(word.toUpperCase()))) {
+                result = false;
+            }
+        })
+        return result;
+    }
+
     getData(search: SearchParameters): Observable<SearchResult> {
         if(this.data) {
             this.filterData(search);
@@ -105,20 +146,12 @@ export class SearchService {
             // only do keyword search for demo purpose
             let filteredData = [];
             if (search.filter && search.filter.keyword) {
-                let keyword = extractKeywords(search.filter.keyword);
+                let keywords = extractKeywords(search.filter.keyword);
 
-                if (!keyword) {
+                if (!keywords) {
                     filteredData = this.data;
                 } else {
-                    keyword.forEach(word => {
-                        const results = this.data.filter(data => JSON.stringify(data).includes(word));
-                        results.forEach(result => {
-                            const existsInFilteredData = filteredData.find(data => data === result);
-                            if (!existsInFilteredData) {
-                                filteredData.push(result);
-                            }
-                        })
-                    });
+                    filteredData = this.filterKeywords(this.data, search.filter.keyword.keywordRadio, keywords);
                 }
 
             }
