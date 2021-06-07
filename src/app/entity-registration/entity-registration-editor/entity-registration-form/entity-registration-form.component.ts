@@ -43,96 +43,71 @@ export class EntityRegistrationFormComponent implements OnInit {
                 placeholder: "e.g. None",
                 required: true,
               },
-            },
-            {
-              wrappers: ["form-field"],
-              key: "systeminfo.interfacingSystem",
-              type: "input",
-              templateOptions: {
-                label: "Interfacing System Name and Version",
-                description:
-                  "Provide the name and version number of the interfacing system (COTS, GOTS, or other product) for inclusion in our system security plan.",
-                placeholder: "e.g. None",
-                required: true,
-              },
-            },
-            {
-              wrappers: ["form-field"],
-              key: "systeminfo.systemDescription",
-              type: "textarea",
-              templateOptions: {
-                label: "System Description",
-                description:
-                  "Provide a brief description of the interfacing system and what it does. This may be taken directly from your system security plan, if you have one.",
-                placeholder:
-                  "e.g. The IRS stated in a current MOU that their system tracks all incoming commitment requsts and captures the information necessary to make awards.",
-                required: true,
-              },
-            },
+            }
           ],
         },
         {
-          type: 'stepper',      
-          templateOptions: {
-            label: "Unique Entity Identifier",
-	        hideSidePannel: true,
-	        selectedIndex: 1,
-	      },
-	      expressionProperties: {
-	        selectedIndex: "model.selectedIndex",
-	      },
-          fieldGroup: [
-          	{
-            	templateOptions: { label: "Entity Information" },
-	            fieldGroup: [
-		            {
-		              wrappers: ["form-field"],
-		              key: "orginfo.organization",
-		              type: "input",
-		              templateOptions: {
-		                label: "Federal Hierarchy",
-		                description:
-		                  "Select the federal department, independent agency, sub-tier or office responsible for managing this account.",
-		                placeholder: "e.g. None",
-		                required: true,
-		              },
-		            }
-		        ]
-	        },          	
-	        {
-            	templateOptions: { label: "Validate" },
-	            fieldGroup: [
-		            {
-		              wrappers: ["form-field"],
-		              key: "orginfo.organization",
-		              type: "input",
-		              templateOptions: {
-		                label: "Federal Hierarchy",
-		                description:
-		                  "Select the federal department, independent agency, sub-tier or office responsible for managing this account.",
-		                placeholder: "e.g. None",
-		                required: true,
-		              },
-		            }
-		        ]
-	        },
-          	{
-            	templateOptions: { label: "Request UEI" },
-	            fieldGroup: [
-		            {
-		              wrappers: ["form-field"],
-		              key: "orginfo.organization",
-		              type: "input",
-		              templateOptions: {
-		                label: "Federal Hierarchy",
-		                description:
-		                  "Select the federal department, independent agency, sub-tier or office responsible for managing this account.",
-		                placeholder: "e.g. None",
-		                required: true,
-		              },
-		            }
-		        ]
-	        }
+            type: 'stepper',      
+            templateOptions: { 
+               label: "Unique Entity Identifier",
+  	           hideSidePannel: true,
+  	           selectedIndex: 1,
+  	         },
+  	         expressionProperties: {
+  	           selectedIndex: "model.selectedIndex",
+  	         },
+             fieldGroup: [
+          	   {
+            	     templateOptions: { label: "Entity Information" },
+	                 fieldGroup: [
+    		            {
+    		              wrappers: ["form-field"],
+    		              key: "orginfo.organization",
+    		              type: "input",
+    		              templateOptions: {
+    		                label: "Federal Hierarchy",
+    		                description:
+    		                  "Select the federal department, independent agency, sub-tier or office responsible for managing this account.",
+    		                placeholder: "e.g. None",
+    		                required: true,
+    		              }
+		                }
+		              ]
+	             },          	
+      	       {
+                  	templateOptions: { label: "Validate" },
+      	            fieldGroup: [
+      		            {
+      		              wrappers: ["form-field"],
+      		              key: "orginfo.organization",
+      		              type: "input",
+      		              templateOptions: {
+      		                label: "Federal Hierarchy",
+      		                description:
+      		                  "Select the federal department, independent agency, sub-tier or office responsible for managing this account.",
+      		                placeholder: "e.g. None",
+      		                required: true,
+      		              },
+      		            }
+      		        ]
+      	        },
+              	{
+                	templateOptions: { label: "Request UEI" },
+    	            fieldGroup: [
+    		            {
+    		              wrappers: ["form-field"],
+    		              key: "orginfo.organization",
+    		              type: "input",
+    		              templateOptions: {
+    		                label: "Federal Hierarchy",
+    		                description:
+    		                  "Select the federal department, independent agency, sub-tier or office responsible for managing this account.",
+    		                placeholder: "e.g. None",
+    		                required: true,
+    		              },
+    		            }
+    		        ]
+    	        }
           ],
         },
         {
@@ -374,9 +349,8 @@ export class EntityRegistrationFormComponent implements OnInit {
           ],
         },
         {
-          key: "authorization",
           templateOptions: {
-            label: "Points of Contact",
+            label: "Points of Contact"
           },
           fieldGroup: [
             {

@@ -14,6 +14,7 @@ import { ReviewContractComponent } from "../review-contract/review-contract.comp
 import { SdsActionsMenuModule } from "@gsa-sam/layouts";
 import { ExpandableCardModule } from "../../app-layout/card/card.module";
 import { StepperModule } from "../../app-layout/stepper/stepper.module";
+import { FormlyCustomComponent } from "./formly-custom";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { StepperModule } from "../../app-layout/stepper/stepper.module";
     FormlySubawardComponent,
     SubawardDataComponent,
     ReviewContractComponent,
+    FormlyCustomComponent
   ],
   imports: [
     CommonModule,
@@ -46,8 +48,13 @@ import { StepperModule } from "../../app-layout/stepper/stepper.module";
           component: FormlyContractComponent,
           wrappers: sdsWrappers,
         },
+        {
+          name: "custom",
+          component: FormlyCustomComponent,
+          wrappers: sdsWrappers,
+        },
       ],
     }),
   ],
 })
-export class DataEntryFormlyModule {}
+export class DataEntryFormlyModule { }

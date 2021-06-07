@@ -1,12 +1,15 @@
 <div class="grid-container padding-0">
-  {{subawardItem | json}}
+
   <sds-expandable-card #inputsCard [id]="'subawardcard'" [title]="'item.title'" [showContent]="'false'"
     [isExpandable]="true">
     <ng-container sds-card-title-group-action>
       <sds-actions-menu size="sm" [model]="menu"></sds-actions-menu>
     </ng-container>
     <ng-container sds-card-header-content>
-
+      <div>
+        {{subawardItem | json}}
+        <br />
+      </div>
       <div class="grid-row grid-gap">
         <!-- 1st column -->
         <div class="grid-col-12 tablet:grid-col-3">

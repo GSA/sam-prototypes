@@ -15,21 +15,7 @@ import { find } from "rxjs/operators";
     <cdk-step
       *ngFor="let step of field.fieldGroup; let index = index; let last = last"
     >
-      <ng-template cdkStepLabel>
-        <span
-          *ngIf="validateSuccessStepForm(step, index)"
-          class="usa-button sds-button--circle"
-        >
-          <sds-icon [icon]="'check'"></sds-icon>
-        </span>
-        <span
-          *ngIf="validateFailureStepForm(step, index)"
-          class="usa-button sds-button--circle sds-button--danger"
-        >
-          <sds-icon [icon]="'x'"></sds-icon>
-        </span>
-        {{ step.templateOptions.label }}
-      </ng-template>
+
       <div *ngIf="!step.template">
         <div class="padding-bottom-3" *ngIf="step.templateOptions.hasHeader">
           <h1>

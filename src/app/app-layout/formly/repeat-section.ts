@@ -97,6 +97,12 @@ export class RepeatTypeComponent extends FieldArrayType {
       }
     });
   }
+  ngOnInit(): void {
+    if (this.model != null && this.model.length > 0) {
+      this.field.fieldArray.fieldGroup[0].templateOptions.subawardItem = this.model;
+      this.showNoresultFound = this.model.length == 0 ? true : false;
+    }
+  }
 
   removeItem(i): void {
     this.remove(i);

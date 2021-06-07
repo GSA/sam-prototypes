@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
 import { EntityThreeSixtyServiceModule } from './entity-three-sixty-service.module';
 
-import { EntityRegistrationService } from '../../services/entity-registration-service/entity-registration.service';
+import { EntityRegistrationService } from '../../../services/entity-registration-service/entity-registration.service';
 
 @Injectable({
-  providedIn: 'EntityThreeSixtyServiceModule'
+  providedIn: EntityThreeSixtyServiceModule
 })
 export class EntityThreeSixtyService {
-  private _registration: any;
+  private _entity: any;
 
-  public get registration() {
-  	return this._registration;
+  public get entity() {
+  	return this._entity;
   }
 
-  public setRegistrationById(id: string) {
-    this._registration = this.registrationService.getRecord(id);
+  public setEntityById(id: string) {
+    this._entity = this.registrationService.getRecord(id);
   }
 
   constructor(private registrationService: EntityRegistrationService) { }

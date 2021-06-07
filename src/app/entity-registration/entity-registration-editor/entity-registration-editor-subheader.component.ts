@@ -15,10 +15,6 @@ import { NavigationLink, NavigationMode } from '@gsa-sam/components';
            </sds-button-group-option>
         </sds-button-group>
     </ng-container>
-	  <ng-container subheader-buttons-container>
-        	<button class="usa-button usa-button--secondary">Cancel</button>
-			<button class="usa-button">Submit</button>
-      </ng-container>
 	  <sds-subheader-actions [model]="actionsModel" (clicks)="actionClicked($event)">
       </sds-subheader-actions>
     </sds-subheader>

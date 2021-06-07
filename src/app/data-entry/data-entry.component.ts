@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { Component, ChangeDetectionStrategy, TemplateRef, ViewChild, AfterViewInit } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { SdsDialogService } from "@gsa-sam/components";
@@ -13,7 +13,8 @@ import { FormlyUtilsService } from "../app-layout/formly/formly-utils.service";
   providers: [EntityReportingService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DataEntryComponent {
+export class DataEntryComponent implements AfterViewInit {
+  @ViewChild('myTemplate') myTemplate: TemplateRef<any>;
   isReviewMode: boolean = false;
   reviewFields: FormlyFieldConfig[] = [];
   service: any;
@@ -34,7 +35,7 @@ export class DataEntryComponent {
     public router: Router,
     public dialog: SdsDialogService,
     private entityReportingService: EntityReportingService
-  ) {}
+  ) { }
   subawardeeModel: any = {};
   subawardeeOptions: FormlyFormOptions;
   subawardeefields: FormlyFieldConfig[] = [
@@ -298,6 +299,7 @@ export class DataEntryComponent {
   };
 
   fields: FormlyFieldConfig[] = [
+
     {
       type: "stepper",
       templateOptions: {
@@ -311,6 +313,13 @@ export class DataEntryComponent {
         {
           templateOptions: { label: "Report Contract", hasHeader: true },
           fieldGroup: [
+            {
+              key: 'test',
+              type: 'custom',
+              templateOptions: {
+                customResultsTemplate: ''
+              }
+            },
             {
               key: "dataentry.contract",
               type: "contract",
@@ -621,6 +630,14 @@ export class DataEntryComponent {
       ],
     },
   ];
+
+  ngOnInit() {
+    this.fields[0].fieldGroup[0].fieldGroup[0].templateOptions.customResultsTemplate = this.myTemplate;
+  }
+  ngAfterViewInit() {
+    this.fields[0].fieldGroup[0].fieldGroup[0].templateOptions.customResultsTemplate = this.myTemplate;
+  }
+
   modelChanges(ev) {
     console.log(ev, "model");
   }
@@ -706,35 +723,23 @@ export class DataEntryComponent {
     return field.fieldGroup.every((f) => this.isValid(f, index));
   }
 
-  // isFormSuccess(step: FormlyFieldConfig, index: number) {
-  //   if (index == 0) {
-  //     this.formStepperCount = 0;
-  //   }
-
-  //   if (this.isTouched(step, index) && this.isValid(step, index)) {
-  //     this.formStepperCount = this.formStepperCount + 1;
-  //     if (this.formStepperCount == this.fields[0].fieldGroup.length) {
-  //       this.isFormValid = true;
-  //     } else {
-  //       this.isFormValid = false;
-  //     }
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
-
-  // isFormError(step: FormlyFieldConfig, index: number) {
-  //   if (this.isTouched(step, index) && !this.isValid(step, index)) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
-
   onReviewAndSubmit() {
+    this.reviewFields = [];
     this.isReviewMode = true;
-    this.reviewFields = _.cloneDeep(this.fields[0].fieldGroup);
+    let prvAlert: FormlyFieldConfig = {
+      key: "prvAlert",
+      type: 'custom',
+      templateOptions: {
+        label: 'test',
+        customResultsTemplate: this.myTemplate
+      }
+      // template:
+      //   '<div class="sds-card__body sds-card__body--accent-cool"> <h3> Alert ! Review Page </h3> </div> <br/>',
+    };
+    this.reviewFields.push(prvAlert);
+    this.fields[0].fieldGroup.forEach((element) => {
+      this.reviewFields.push(_.cloneDeep(element));
+    });
     FormlyUtilsService.setReadonlyMode(true, this.reviewFields, this.model);
   }
 }

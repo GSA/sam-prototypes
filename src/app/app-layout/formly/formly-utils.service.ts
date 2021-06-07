@@ -53,27 +53,30 @@ export class FormlyUtilsService {
     return readonlyData;
   }
 
-  private static addRepeatSections(innerField: FormlyFieldConfig) {
-    return innerField.fieldArray?.fieldGroup;
-  }
-
   private static _setReadonlyMode(
     readonlyMode: boolean,
     field: FormlyFieldConfig,
     model?: any
   ) {
     if (field.fieldGroup) {
+      if (field.templateOptions.label != undefined) {
+        let prvHeader: FormlyFieldConfig = {
+          key: "Header1",
+          template: `<h2 class="marging-1"> " + field.templateOptions.label + " </h2>`,
+        };
+        field.fieldGroup = [prvHeader, ...field.fieldGroup];
+      }
       field.fieldGroup.forEach((innerField: FormlyFieldConfig) => {
         if (innerField.type === "repeat" && readonlyMode) {
           field.fieldGroup.splice(field.fieldGroup.indexOf(innerField), 1);
-
           const key = innerField.key.toString();
+          const f = innerField.fieldGroup;
+          let inv = 0;
           this.utilitymodel[key].forEach((element) => {
-            const f = innerField.fieldArray?.fieldGroup;
-            console.log(f, "filji");
-            f[0].templateOptions.subawardItem = element;
-            field.fieldGroup = [...field.fieldGroup, ...f];
+            f[inv].templateOptions.subawardItem = element;
+            inv++;
           });
+          field.fieldGroup = [...field.fieldGroup, ...f];
 
           this._setReadonlyMode(readonlyMode, innerField, model);
         } else {

@@ -7,7 +7,7 @@ import { NavigationLink, NavigationMode } from '@gsa-sam/components';
   template: `
   	<sds-subheader>
       <back-button></back-button>
-	  <subheader-title title="Entity Registration"></subheader-title>
+	  <subheader-title title="Entity 360"></subheader-title>
     <ng-container subheader-buttongroup-container>
         <sds-button-group [mode]="'radio'" class="sds-button-group sds-button-group--secondary" (change)="subpageClicked($event)">
            <sds-button-group-option *ngFor="let page of subpages" [value]="page.id" [checked]="page.selected" [aria-label]="'page.text'">
@@ -15,10 +15,6 @@ import { NavigationLink, NavigationMode } from '@gsa-sam/components';
            </sds-button-group-option>
         </sds-button-group>
     </ng-container>
-	  <ng-container subheader-buttons-container>
-        	<button class="usa-button usa-button--secondary">Cancel</button>
-			<button class="usa-button">Submit</button>
-      </ng-container>
 	  <sds-subheader-actions [model]="actionsModel" (clicks)="actionClicked($event)">
       </sds-subheader-actions>
     </sds-subheader>
