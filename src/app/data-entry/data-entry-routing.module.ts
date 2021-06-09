@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { DataEntryComponent } from "./data-entry.component";
+import { DataEntryReportComponent } from "./report/report.component";
 import { ReviewSubmitComponent } from "./review-submit/review-submit.component";
 
 const routes: Routes = [
@@ -19,10 +20,14 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: "report",
+    component: DataEntryReportComponent
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class DataEntryRoutingModule {}
+export class DataEntryRoutingModule { }
