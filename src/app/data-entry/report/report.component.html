@@ -29,13 +29,13 @@
                 <span class="usa-sr-only">{{field}}</span>
               </li>
 
-              <!-- <li class="usa-sidenav__item" [ngClass]="{'usa-current':  model?.selectedIndex === 4 }">
-                <a href="javascript:void(0);" (click)="onSelectionChange(4)">
+              <li class="usa-sidenav__item" [ngClass]="{'usa-current':  model?.selectedIndex === '4.1' }">
+                <a href="javascript:void(0);" (click)="onSelectionChange('4.1')">
                   Review and Submit
                 </a>
                 <span class="usa-sr-only"> Review and Submit</span>
 
-              </li> -->
+              </li>
             </ul>
           </div>
         </div>
@@ -46,6 +46,12 @@
           <form *ngIf="model.selectedIndex === i" [formGroup]="forms[i]">
             <formly-form [form]="forms[i]" [fields]="field['form']" [model]="models[i].model">
             </formly-form>
+            <div *ngIf="field?.children?.length">
+              <div *ngFor="let child of field?.children, let i = index">
+                <formly-form [form]="forms[i]" [fields]="child['form']" [model]="models[i].model">
+                </formly-form>
+              </div>
+            </div>
           </form>
 
         </div>

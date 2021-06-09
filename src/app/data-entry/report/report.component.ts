@@ -549,8 +549,6 @@ export class DataEntryReportComponent {
                 },
             ]
         },
-
-
         {
             "id": "3",
             label: "Subawardee Data",
@@ -580,6 +578,57 @@ export class DataEntryReportComponent {
                         ],
                     },
                 },
+            ]
+        },
+        {
+            id: 4,
+            label: 'test multiform',
+            form: [
+                {
+                    className: "desktop:grid-col-12 tablet:grid-col-12",
+                    type: "input",
+                    key: "title",
+
+                    templateOptions: {
+                        label: "Program or Project Title ",
+                    },
+                    validation: {
+                        show: true,
+                    },
+                    expressionProperties: {
+                        "templateOptions.required": "formState.showValidation",
+                    },
+                },
+            ],
+            children: [
+                {
+                    id: 4.1,
+                    label: 'nested',
+                    form: [
+                        {
+                            className: "desktop:grid-col-12 tablet:grid-col-12",
+                            type: "input",
+                            key: "nestedtitle",
+
+                            templateOptions: {
+                                label: "Project Title",
+                            },
+
+
+                        },
+                        {
+                            className: "desktop:grid-col-12 tablet:grid-col-12",
+                            type: "textarea",
+                            key: "dataentrytextarea",
+
+                            templateOptions: {
+                                label: "Title ",
+                            },
+
+
+                        },
+                    ]
+                }
             ]
         }
     ];
