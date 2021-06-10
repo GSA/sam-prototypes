@@ -44,7 +44,6 @@ export class DataEntryMultiFormComponent implements OnInit {
   _selectionPanelModel: SelectionPanelModel;
   _currentStep: FormlyStep;
   _currentStepIndex: number;
-  _currentChildStepIndex: number;
   _dataEntryStepsDef: DataEntrySteps[] = [];
 
   constructor(
