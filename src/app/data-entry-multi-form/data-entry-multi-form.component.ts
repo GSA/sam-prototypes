@@ -1,6 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewChild, ElementRef, Inject } from '@angular/core';
-import { NavigationLink, NavigationMode, SelectionPanelModel } from '@gsa-sam/components';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewChild, ElementRef, OnChanges, SimpleChanges } from '@angular/core';
 import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
 
 export interface FormlyStep {
@@ -10,18 +9,9 @@ export interface FormlyStep {
   options?: FormlyFormOptions, // Each step gets it's own options by default if not provided to determine whether to show error or not
   model?: any,
   steps?: FormlyStep[],
+  valid?: boolean;
+  hideFn?: (model, field) => boolean,
 }
-
-export interface DataEntryModel {
-  stepIndex?: number,
-  validityMap?: any,
-  steps: FormlyStep[]
-}
-export interface DataEntrySteps {
-  id: any,
-  text: string
-}
-
 @Component({
   selector: 'app-data-entry-multi-form',
   templateUrl: './data-entry-multi-form.component.html',
@@ -31,7 +21,7 @@ export class DataEntryMultiFormComponent implements OnInit {
 
   @ViewChild('scrollAnchor') scrollAnchor: ElementRef<HTMLDivElement>;
 
-  @Input() dataEntryForm: DataEntryModel;
+  @Input() steps: FormlyStep[];
 
   @Input() model: any = {};
 
@@ -41,9 +31,10 @@ export class DataEntryMultiFormComponent implements OnInit {
 
   @Output() saveData = new EventEmitter<{ model: any, metadata: any }>();
 
+  @Output() stepChange = new EventEmitter<FormlyStep>();
+
   fields: FormlyFieldConfig[];
 
-  _selectionPanelModel: SelectionPanelModel;
   _currentStep: FormlyStep;
   _currentStepIndex: number;
   _dataEntryStepsDef: FormlyStep[] = [];
@@ -53,71 +44,68 @@ export class DataEntryMultiFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this._selectionPanelModel = this._buildSidenavModel(this.dataEntryForm);
-    this._currentStepIndex = this.dataEntryForm.stepIndex ? this.dataEntryForm.stepIndex : 0
-    this._currentStep = this.dataEntryForm.steps[this._currentStepIndex];
-    this.fields = this._currentStep.fieldConfig;
+    this._dataEntryStepsDef = this.getFlatSteps(this.steps);
 
-    if (!this._currentStep.options) {
-      this._currentStep.options = {
-        showError: () => false
-      }
+    this._currentStepIndex =  0;
+    this._currentStep = this._dataEntryStepsDef[this._currentStepIndex];
+
+    if (this.currentStepId) {
+      this._currentStepIndex = this._dataEntryStepsDef.findIndex(step => step.id === this.currentStepId);
+      this._currentStep = this._dataEntryStepsDef[this._currentStepIndex];
     }
 
-    if (this.dataEntryForm.validityMap) {
-      this._selectionPanelModel.navigationLinks.forEach(navLink => {
-        const isValid = this.dataEntryForm.validityMap[navLink.id];
-        if (isValid === true || isValid === false) {
-          this.updateSidenavValidIndicator(navLink, isValid);
-        }
-      });
+    this.changeStep(this._currentStep);
+
+    if (this.stepValidityMap) {
+      this.updateValidity(this.stepValidityMap, this.steps);
+    } else {
+      this.stepValidityMap = {};
     }
-    this._dataEntryStepsDef = this.getFlatElements()
   }
 
   onReviewAndSubmit() {
     console.log('Review and Submit');
   }
 
-  public getFlatElements() {
-    const results = this.dataEntryForm.steps;
-    const flat: any[] = [];
-    const flatten = (array: any) => {
-      for (let i in array) {
-        const item = array[i];
-        flat.push(item);
-        if (
-          item['steps'] &&
-          item['steps'].length
-        ) {
-          flatten(item['steps']);
-        }
+  getFlatSteps(steps: FormlyStep[]): FormlyStep[] {
+    let flat: FormlyStep[] = [];
+    steps.forEach(step => {
+      if (!step.hideFn || !!step.hideFn(step.model ? step.model : this.model, step.fieldConfig)) {
+        flat.push(step);
       }
-    };
-    flatten(results);
+
+      if (step.steps && step.steps.length) {
+        const childSteps = this.getFlatSteps(step.steps);
+        flat = flat.concat(childSteps);
+      }
+    });
+
     return flat;
   }
 
-  onPanelChange(id: string) {
-    this._currentStepIndex = this._dataEntryStepsDef.findIndex(item => item.id === id);
-    this._currentStep = this._dataEntryStepsDef[this._currentStepIndex];
+  changeStep(step: FormlyStep) {
+    this._currentStep = step;
+    this._currentStepIndex = this._dataEntryStepsDef.findIndex(step => step.id === this._currentStep.id);
+    this.currentStepId = this._currentStep.id;
     this.fields = this._currentStep.fieldConfig;
     if (!this._currentStep.options) {
       this._currentStep.options = {};
       this._currentStep.options.showError = () => false;
     }
-    this.scrollAnchor.nativeElement.focus();
+
+    this.stepChange.emit(this._currentStep);
   }
 
-  getBacklabel(): string {
-    return this._currentStepIndex !== 0
-      ? "Back to </br>" + this.dataEntryForm.steps[this._currentStepIndex - 1].label
-      : " Back ";
+  onNextStep() {
+    this._currentStepIndex++;
+    const nextStep = this._dataEntryStepsDef[this._currentStepIndex];
+    this.changeStep(nextStep);
   }
-  getNextlabel(): string {
-    return !(this.dataEntryForm.steps.length === this._currentStepIndex + 1)
-      ? "Go to </br>" + this.dataEntryForm.steps[this._currentStepIndex + 1].label
-      : "Next";
+
+  onPreviousStep() {
+    this._currentStepIndex--;
+    const nextStep = this._dataEntryStepsDef[this._currentStepIndex];
+    this.changeStep(nextStep);
   }
 
   closeback() {
@@ -128,69 +116,25 @@ export class DataEntryMultiFormComponent implements OnInit {
     this._currentStep.options.showError = (field) => !field.formControl.valid;
 
     const isValid = this.fields[0].formControl.valid;
-    const currentNavLink = this._selectionPanelModel.navigationLinks[this._currentStepIndex];
-    this.updateSidenavValidIndicator(currentNavLink, isValid);
+    this._currentStep.valid = isValid;
+    this.stepValidityMap[this._currentStep.id] = isValid;
 
-    this.dataEntryForm.validityMap[this._currentStep.id] = isValid;
     this.scrollAnchor.nativeElement.focus();
     this.saveData.emit({
       model: this.model,
       metadata: {
         stepId: this._currentStep.id,
-        validityMap: this.dataEntryForm.validityMap
+        stepValidityMap: this.stepValidityMap
       }
     });
   }
 
-  private updateSidenavValidIndicator(navLink: NavigationLink, isValid: boolean) {
-    const text = this.dataEntryForm.steps.find(step => step.id === navLink.id).label;
-
-    if (isValid) {
-      navLink.text = text + '-VALID'
-    } else {
-      navLink.text = text + '-INVALID'
-    }
-  }
-
-  private _buildSidenavModel(dataEntryForm: DataEntryModel) {
-    let sidenavModel: SelectionPanelModel = {
-      selectionMode: "SELECTION",
-      navigationLinks: []
-    };
-
-    if (!dataEntryForm) {
-      return sidenavModel;
-    }
-
-    dataEntryForm.steps.forEach(step => {
-      const navigationLink: NavigationLink = this._getNavigationLink(step);
-      sidenavModel.navigationLinks.push(navigationLink);
-    });
-
-    return sidenavModel;
-  }
-
-  private _getNavigationLink(step: FormlyStep) {
-    if (!step.steps) {
-      return {
-        mode: NavigationMode.INTERNAL,
-        id: step.id,
-        text: step.label,
-        route: null,
+  private updateValidity(validityMap: any, steps: FormlyStep[]) {
+    steps.forEach(step => {
+      step.valid = validityMap[step.label];
+      if (step.steps) {
+        this.updateValidity(validityMap, step.steps);
       }
-    }
-
-    const children = [];
-    step.steps.forEach(step => {
-      children.push(this._getNavigationLink(step));
-    });
-
-    return {
-      mode: NavigationMode.INTERNAL,
-      id: step.id,
-      text: step.label,
-      route: null,
-      children,
-    }
+    })
   }
 }

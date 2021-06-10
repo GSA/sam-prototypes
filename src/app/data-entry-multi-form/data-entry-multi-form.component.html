@@ -5,19 +5,8 @@
 </data-entry-subheader>
 
 <main>
-  <div class="sds-page margin-top-2">
+  <div class="margin-top-2">
     <div class="grid-container grid-row grid-gap">
-      <!-- <div class="desktop:grid-col-4 tablet-lg:grid-col-12 mobile-lg:grid-col-12 margin-bottom-3">
-        <div class="sds-card">
-          <div class="sds-card__body sds-card__body--accent-cool">
-            <sds-selection-panel 
-            [model]="_selectionPanelModel"
-            [currentSelection]="_selectionPanelModel.navigationLinks[_currentStepIndex]"
-            (panelSelected)="onPanelChange($event)">
-            </sds-selection-panel>
-          </div>
-        </div>
-      </div> -->
       <div class="desktop:grid-col-4 tablet-lg:grid-col-12 mobile-lg:grid-col-12 margin-bottom-3">
         <div class="sds-card">
           <div class="sds-card__body sds-card__body--accent-cool">
@@ -27,10 +16,12 @@
                 FSRS Report
               </li>
 
-              <li *ngFor="let step of dataEntryForm.steps; let i = index;" class="usa-sidenav__item"
+              <li *ngFor="let step of steps; let i = index;" class="usa-sidenav__item"
                 [ngClass]="{'usa-current':  _currentStep.id === step.id}">
-                <a href="javascript:void(0);" (click)="onPanelChange(step.id)">
+                <a href="javascript:void(0);" (click)="changeStep(step)">
                   {{step.label}}
+                  <span *ngIf="step.valid === true">VALID</span>
+                  <span *ngIf="step.valid === false">INVALID</span>
                 </a>
 
                 <span class="usa-sr-only">{{step}}</span>
@@ -61,7 +52,7 @@
   <div class="sds-button-row">
     <div class="text-right margin-right-1" *ngIf="_currentStepIndex > 0">
       <button class="usa-button sds-button--circle"
-        (click)="onPanelChange(_dataEntryStepsDef[_currentStepIndex - 1].id)">
+        (click)="onPreviousStep()">
         <sds-icon [icon]="'chevron-left'"></sds-icon>
       </button>
       <p class="text-right">Back to <span
@@ -88,7 +79,7 @@
     </div>
     <div class="margin-right-2" *ngIf="_currentStepIndex != _dataEntryStepsDef.length - 1">
       <button cdkStepperNext class="usa-button sds-button--circle"
-        (click)="onPanelChange(_dataEntryStepsDef[_currentStepIndex + 1].id)">
+        (click)="onNextStep()">
         <sds-icon [icon]="'chevron-right'"></sds-icon>
       </button>
       <p class="text-left">
@@ -101,7 +92,7 @@
   <div *ngFor="let pItem of panelItem.steps; let i = index;">
     <ul class="usa-sidenav usa-sidenav--styled">
       <li class="usa-sidenav__item  padding-left-3" [ngClass]="{'usa-current':  _currentStep.id === pItem.id }">
-        <a href="javascript:void(0);" (click)="onPanelChange(pItem.id)">
+        <a href="javascript:void(0);" (click)="changeStep(pItem)">
           {{pItem.label}}
         </a>
       </li>

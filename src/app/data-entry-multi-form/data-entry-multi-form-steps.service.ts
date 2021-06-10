@@ -114,8 +114,7 @@ export class DataEntryMultiFormStepsService {
             className: "grid-col-4",
             type: "input",
             key: "zip",
-            hideExpression: (model) =>
-              this.subawardeeModel.country === "canada",
+            hideExpression: (model) => model === "canada",
             templateOptions: {
               type: "number",
               label: "ZIP Code (+ 4)",
@@ -137,8 +136,7 @@ export class DataEntryMultiFormStepsService {
             key: "state",
             type: "select",
             defaultValue: "None",
-            hideExpression: (model) =>
-              this.subawardeeModel.country === "canada",
+            hideExpression: (model) => model.country === "canada",
             templateOptions: {
               label: "State",
 
@@ -243,8 +241,7 @@ export class DataEntryMultiFormStepsService {
             className: "grid-col-4",
             type: "input",
             key: "congressional_district",
-            hideExpression: (model) =>
-              this.subawardeeModel.country === "canada",
+            hideExpression: (model) => model.country === "canada",
             templateOptions: {
               label: "Congressional District",
             },

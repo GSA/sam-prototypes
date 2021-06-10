@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: '',
     component: DataEntryAppComponent
+  },
+  {
+    path: ':stepId',
+    component: DataEntryAppComponent,
   }
 ];
 

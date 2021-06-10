@@ -1,35 +1,36 @@
 import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
 import { DataEntryMultiFormStepsService } from "./data-entry-multi-form-steps.service";
-import { DataEntryModel } from "./data-entry-multi-form.component";
+import { FormlyStep } from "./data-entry-multi-form.component";
 
 
 @Component({
   selector: `app-data-entry-multi`,
   template: `
     <app-data-entry-multi-form
-      [dataEntryForm]="dataEntryForm"
+      [steps]="steps"
+      [currentStepId]="currentStepId"
+      [stepValidityMap]="stepValidityMap"
       [model]="model"
       (saveData)="onSaveClicked($event)"
+      (stepChange)="onStepChange($event)"
     ></app-data-entry-multi-form>
   `,
 })
 export class DataEntryAppComponent implements OnInit {
-  dataEntryForm: DataEntryModel = {
-    stepIndex: 0,
-    validityMap: {},
-    steps: [
+    steps: FormlyStep[] = [
       {
         id: 'step1Id',
         label: 'Review Contract',
         fieldConfig: this.dataEntryFieldService.getReviewContract(),
         steps: [
           {
-            id: 'stepChild1',
+            id: 'step1Child1',
             label: 'Child Sub awardee modal',
             fieldConfig: this.dataEntryFieldService.getSubawardeefields(),
           },
           {
-            id: 'stepChild2',
+            id: 'step1Child2',
             label: 'Child report details',
             fieldConfig: this.dataEntryFieldService.getReportDetails(),
           }
@@ -46,12 +47,12 @@ export class DataEntryAppComponent implements OnInit {
         fieldConfig: this.dataEntryFieldService.getSubawardeeData(),
         steps: [
           {
-            id: 'stepChild3',
+            id: 'step3Child1',
             label: 'Third Sub awardee modal',
             fieldConfig: this.dataEntryFieldService.getSubawardeefields(),
           },
           {
-            id: 'stepChild4',
+            id: 'step3Child2',
             label: 'Third Child report details',
             fieldConfig: this.dataEntryFieldService.getReportDetails(),
           }
@@ -72,31 +73,46 @@ export class DataEntryAppComponent implements OnInit {
         label: 'Fourth Report Details',
         fieldConfig: this.dataEntryFieldService.getReportDetails('dataentry.details4'),
       }
-    ]
-  };
+    ];
 
   model: any = {};
+  currentStepId: string;
+  stepValidityMap: any;
 
   constructor(
-    private dataEntryFieldService: DataEntryMultiFormStepsService
+    private dataEntryFieldService: DataEntryMultiFormStepsService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
   ) { }
 
   ngOnInit() {
+
     const savedDraft: string = sessionStorage.getItem('dataEntry');
 
     if (!savedDraft) {
-      return;
+      this.currentStepId = this.activatedRoute.snapshot.params.stepId;
+    } else {
+      this.getFormDataFromDraft(savedDraft);
     }
 
-    const savedDraftModel = JSON.parse(savedDraft);
-
-    this.model = savedDraftModel.model || {};
-    this.dataEntryForm.stepIndex = savedDraftModel?.metadata?.stepIndex || 0;
-    this.dataEntryForm.validityMap = savedDraftModel?.metadata?.validityMap || {};
   }
 
   onSaveClicked($event: { model: any, metadata: any }) {
+    console.log($event);
     sessionStorage.setItem('dataEntry', JSON.stringify($event));
+  }
+
+  onStepChange($event: FormlyStep) {
+    this.currentStepId = $event.id;
+    this.router.navigate([$event.id], {relativeTo: this.activatedRoute.parent});
+  }
+
+  getFormDataFromDraft(savedDraft: string) {
+    const savedDraftModel = JSON.parse(savedDraft);
+
+    this.model = savedDraftModel.model || {};
+    this.currentStepId = this.activatedRoute.snapshot.params.stepId || savedDraftModel?.metadata?.stepId;
+    this.stepValidityMap = savedDraftModel?.metadata?.validityMap;
   }
 
 
