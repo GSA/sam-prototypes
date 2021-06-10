@@ -25,8 +25,13 @@ export class DataEntryAppComponent implements OnInit {
         steps: [
           {
             id: 'stepChild1',
-            label: 'children',
+            label: 'Child Sub awardee modal',
             fieldConfig: this.dataEntryFieldService.getSubawardeefields(),
+          },
+          {
+            id: 'stepChild2',
+            label: 'Child report details',
+            fieldConfig: this.dataEntryFieldService.getReportDetails(),
           }
         ]
       },
@@ -39,6 +44,33 @@ export class DataEntryAppComponent implements OnInit {
         id: 'step3Id',
         label: 'Subawardee Data',
         fieldConfig: this.dataEntryFieldService.getSubawardeeData(),
+        steps: [
+          {
+            id: 'stepChild3',
+            label: 'Third Sub awardee modal',
+            fieldConfig: this.dataEntryFieldService.getSubawardeefields(),
+          },
+          {
+            id: 'stepChild4',
+            label: 'Third Child report details',
+            fieldConfig: this.dataEntryFieldService.getReportDetails(),
+          }
+        ]
+      },
+      {
+        id: 'step4Id',
+        label: 'Second Report Details',
+        fieldConfig: this.dataEntryFieldService.getReportDetails('dataentry.details2'),
+      },
+      {
+        id: 'step5Id',
+        label: 'Third Report Details',
+        fieldConfig: this.dataEntryFieldService.getReportDetails('dataentry.details3'),
+      },
+      {
+        id: 'step6Id',
+        label: 'Fourth Report Details',
+        fieldConfig: this.dataEntryFieldService.getReportDetails('dataentry.details4'),
       }
     ]
   };
