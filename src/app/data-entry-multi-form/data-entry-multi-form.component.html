@@ -60,7 +60,7 @@
   <div class="sds-button-row margin-top-0">
     <div class="margin-right-2" *ngIf="_currentStepIndex > 0">
       <button class="usa-button sds-button--circle"
-        (click)="onPanelChange(_selectionPanelModel.navigationLinks[_currentStepIndex - 1])">
+        (click)="onPanelChange(_selectionPanelModel.navigationLinks[_currentStepIndex - 1].id)">
         <sds-icon [icon]="'chevron-left'"></sds-icon>
       </button>
       <p>Back - <span class="display-block">{{_selectionPanelModel.navigationLinks[_currentStepIndex - 1].text}}</span>
@@ -86,7 +86,7 @@
     </div>
     <div class="margin-right-2" *ngIf="_currentStepIndex != dataEntryForm.steps.length - 1">
       <button cdkStepperNext class="usa-button sds-button--circle"
-        (click)="onPanelChange(_selectionPanelModel.navigationLinks[_currentStepIndex + 1])">
+        (click)="onPanelChange(_selectionPanelModel.navigationLinks[_currentStepIndex + 1].id)">
         <sds-icon [icon]="'chevron-right'"></sds-icon>
       </button>
       <p class="text-left">
