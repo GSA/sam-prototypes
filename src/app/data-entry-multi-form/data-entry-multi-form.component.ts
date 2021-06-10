@@ -54,7 +54,11 @@ export class DataEntryMultiFormComponent implements OnInit {
       this._currentStep = this._dataEntryStepsDef[this._currentStepIndex];
     }
 
-    this.changeStep(this._currentStep);
+    this.fields = this._currentStep.fieldConfig;
+    if (!this._currentStep.options) {
+      this._currentStep.options = {};
+      this._currentStep.options.showError = () => false;
+    }
 
     if (this.stepValidityMap) {
       this.updateValidity(this.stepValidityMap, this.steps);
