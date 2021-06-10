@@ -36,15 +36,12 @@ export class DataEntryMultiFormStepsService {
   }
 
 
-  getReportDetails(): FormlyFieldConfig[] {
+  getReportDetails(key?: string): FormlyFieldConfig[] {
     return [
       {
-        key: "dataentry.details",
+        key: key ? key : "dataentry.details",
         templateOptions: {
           placeholder: "Input Unique Entity ID",
-        },
-        modelOptions: {
-          updateOn: 'submit'
         },
         fieldGroup: [
           {
@@ -66,9 +63,6 @@ export class DataEntryMultiFormStepsService {
                   ],
                   required: true,
                 },
-                validation: {
-                  show: true,
-                },
               },
               {
                 className: "grid-col-4 margin-top-5",
@@ -85,9 +79,6 @@ export class DataEntryMultiFormStepsService {
                   ],
                   required: true,
                 },
-                validation: {
-                  show: true,
-                },
               },
             ],
           },
@@ -100,9 +91,6 @@ export class DataEntryMultiFormStepsService {
             templateOptions: {
               label: "Program or Project Title (Optional)",
               required: true,
-            },
-            validation: {
-              show: true,
             },
           },
           {

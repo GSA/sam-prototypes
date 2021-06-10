@@ -11,7 +11,7 @@
           <div class="sds-card__body sds-card__body--accent-cool">
             <sds-selection-panel 
             [model]="_selectionPanelModel"
-            [currentSelection]="_selectionPanelModel.navigationLinks[_currentStep]"
+            [currentSelection]="_selectionPanelModel.navigationLinks[_currentStepIndex]"
             (panelSelected)="onPanelChange($event)">
             </sds-selection-panel>
           </div>
@@ -20,14 +20,14 @@
       <div class="desktop:grid-col-8 tablet-lg:grid-col-12 mobile-lg:grid-col-12">
         <div class="padding-bottom-3">
           <h1>
-            {{ dataEntryForm.steps[_currentStep].label }}
+            {{ _currentStep.label }}
           </h1>
           <hr />
         </div>
         <formly-form class="grid-col-8 padding-right-2" 
-          [model]="model" 
+          [model]="_currentStep.model ? _currentStep.model : model" 
           [fields]="fields"
-          [options]="options">
+          [options]="_currentStep.options">
         </formly-form>
       </div>
     </div>
@@ -36,12 +36,12 @@
 
 <div class="grid-container grid-row grid-gap">
   <div class="sds-button-row margin-top-0">
-    <div class="margin-right-2" *ngIf="_currentStep > 0">
+    <div class="margin-right-2" *ngIf="_currentStepIndex > 0">
       <button class="usa-button sds-button--circle" 
-        (click)="onPanelChange(_selectionPanelModel.navigationLinks[_currentStep - 1])">
+        (click)="onPanelChange(_selectionPanelModel.navigationLinks[_currentStepIndex - 1])">
         <sds-icon [icon]="'chevron-left'"></sds-icon>
       </button>
-      <p>Back - <span class="display-block">{{_selectionPanelModel.navigationLinks[_currentStep - 1].text}}</span></p>
+      <p>Back - <span class="display-block">{{_selectionPanelModel.navigationLinks[_currentStepIndex - 1].text}}</span></p>
     </div>
     <div class="margin-right-2">
       <button class="usa-button sds-button--circle" (click)="closeback();">
@@ -61,14 +61,14 @@
       </button>
       <p class="text-right">Save</p>
     </div>
-    <div class="margin-right-2" *ngIf="_currentStep != dataEntryForm.steps.length - 1">
+    <div class="margin-right-2" *ngIf="_currentStepIndex != dataEntryForm.steps.length - 1">
       <button cdkStepperNext class="usa-button sds-button--circle"
-        (click)="onPanelChange(_selectionPanelModel.navigationLinks[_currentStep + 1])"
+        (click)="onPanelChange(_selectionPanelModel.navigationLinks[_currentStepIndex + 1])"
       >
         <sds-icon [icon]="'chevron-right'"></sds-icon>
       </button>
       <p class="text-left">
-        Next - <span class="display-block">{{_selectionPanelModel.navigationLinks[_currentStep + 1].text}}</span>
+        Next - <span class="display-block">{{_selectionPanelModel.navigationLinks[_currentStepIndex + 1].text}}</span>
       </p>
     </div>
   </div>

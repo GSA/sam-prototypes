@@ -1,12 +1,14 @@
 import { Location } from '@angular/common';
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 import { NavigationLink, NavigationMode, SelectionPanelModel } from '@gsa-sam/components';
-import { FormlyFieldConfig } from '@ngx-formly/core';
+import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
 
 export interface FormlyStep {
   id: string;
   label: string,
   fieldConfig: FormlyFieldConfig[],
+  options?: FormlyFormOptions, // Each step gets it's own options by default if not provided to determine whether to show error or not
+  model?: any,
   steps?: FormlyStep[],
 }
 
@@ -27,22 +29,33 @@ export class DataEntryMultiFormComponent implements OnInit {
 
   @Input() model: any = {};
 
+  @Input() currentStepId: string;
+
+  @Input() stepValidityMap: any = {};
+
   @Output() saveData = new EventEmitter<{model: any, metadata: any}>();
 
-  options: any = {};
   fields: FormlyFieldConfig[];
 
   _selectionPanelModel: SelectionPanelModel;
-  _currentStep = 0;
-
+  _currentStep: FormlyStep;
+  _currentStepIndex: number;
+  
   constructor(
     private location: Location
   ) { }
 
   ngOnInit(): void {
     this._selectionPanelModel = this._buildSidenavModel(this.dataEntryForm);
-    this._currentStep = this.dataEntryForm.stepIndex ? this.dataEntryForm.stepIndex : 0;
-    this.fields = this.dataEntryForm.steps[this._currentStep].fieldConfig;
+    this._currentStepIndex = this.dataEntryForm.stepIndex ? this.dataEntryForm.stepIndex : 0
+    this._currentStep = this.dataEntryForm.steps[this._currentStepIndex];
+    this.fields = this._currentStep.fieldConfig;
+
+    if (!this._currentStep.options) {
+      this._currentStep.options = {
+        showError: () => false
+      }
+    }
 
     if (this.dataEntryForm.validityMap) {
       this._selectionPanelModel.navigationLinks.forEach(navLink => {
@@ -59,19 +72,23 @@ export class DataEntryMultiFormComponent implements OnInit {
   }
 
   onPanelChange($event: NavigationLink) {
-    const stepIndex = this.dataEntryForm.steps.findIndex(step => step.id === $event.id);
-    this.fields = this.dataEntryForm.steps[stepIndex].fieldConfig;
-    this._currentStep = stepIndex;
+    this._currentStepIndex = this.dataEntryForm.steps.findIndex(step => step.id === $event.id);
+    this._currentStep = this.dataEntryForm.steps[this._currentStepIndex];
+    this.fields = this._currentStep.fieldConfig;
+    if (!this._currentStep.options) {
+      this._currentStep.options = {};
+      this._currentStep.options.showError = () => false;
+    }
   }
 
   getBacklabel(): string {
-    return this._currentStep !== 0
-      ? "Back to </br>" + this.dataEntryForm.steps[this._currentStep - 1].label
+    return this._currentStepIndex !== 0
+      ? "Back to </br>" + this.dataEntryForm.steps[this._currentStepIndex - 1].label
       : " Back ";
   }
   getNextlabel(): string {
-    return !(this.dataEntryForm.steps.length === this._currentStep + 1)
-      ? "Go to </br>" + this.dataEntryForm.steps[this._currentStep + 1].label
+    return !(this.dataEntryForm.steps.length === this._currentStepIndex + 1)
+      ? "Go to </br>" + this.dataEntryForm.steps[this._currentStepIndex + 1].label
       : "Next";
   }
 
@@ -80,38 +97,20 @@ export class DataEntryMultiFormComponent implements OnInit {
   }
 
   onSaveClicked() {
-    const currentNavLink = this._selectionPanelModel.navigationLinks[this._currentStep];
-    const isValid = this.updateFieldsAndGetValidity(this.fields);
+    this._currentStep.options.showError = (field) => !field.formControl.valid;
+
+    const isValid = this.fields[0].formControl.valid;
+    const currentNavLink = this._selectionPanelModel.navigationLinks[this._currentStepIndex];
     this.updateSidenavValidIndicator(currentNavLink, isValid);
 
-    const step = this.dataEntryForm.steps[this._currentStep];
-    this.dataEntryForm.validityMap[step.id] = isValid;
+    this.dataEntryForm.validityMap[this._currentStep.id] = isValid;
     this.saveData.emit({
       model: this.model,
       metadata: {
-        stepIndex: this._currentStep,
+        stepId: this._currentStep.id,
         validityMap: this.dataEntryForm.validityMap
       }
     });
-    console.log(this.fields, this.model);   
-  }
-
-  private updateFieldsAndGetValidity(fields: FormlyFieldConfig[]) {
-    let valid = true;
-    fields.forEach(field => {
-      if (field.fieldGroup) {
-        valid = valid && this.updateFieldsAndGetValidity(field.fieldGroup);
-      } else if (field.fieldArray) {
-        valid = valid && this.updateFieldsAndGetValidity([field.fieldArray]);
-      } else {
-        if ((field.formControl as any)._pendingValue != field.formControl.value) {
-          field.formControl.setValue((field.formControl as any)._pendingValue);
-          field.formControl.markAsDirty();
-        }
-        valid = valid && field.formControl.valid;
-      }
-    });
-    return valid;
   }
 
   private updateSidenavValidIndicator(navLink: NavigationLink, isValid: boolean) {
