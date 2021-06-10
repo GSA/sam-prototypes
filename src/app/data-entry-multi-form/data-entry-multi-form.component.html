@@ -57,13 +57,14 @@
 </main>
 
 <div class="grid-container grid-row grid-gap">
-  <div class="sds-button-row margin-top-0">
-    <div class="margin-right-2" *ngIf="_currentStepIndex > 0">
+  <div class="sds-button-row">
+    <div class="text-right margin-right-1" *ngIf="_currentStepIndex > 0">
       <button class="usa-button sds-button--circle"
-        (click)="onPanelChange(_selectionPanelModel.navigationLinks[_currentStepIndex - 1].id)">
+        (click)="onPanelChange(_dataEntryStepsDef[_currentStepIndex - 1].id)">
         <sds-icon [icon]="'chevron-left'"></sds-icon>
       </button>
-      <p>Back - <span class="display-block">{{_selectionPanelModel.navigationLinks[_currentStepIndex - 1].text}}</span>
+      <p class="text-right">Back to <span
+          class="display-block">{{_dataEntryStepsDef[_currentStepIndex - 1].text}}</span>
       </p>
     </div>
     <div class="margin-right-2">
@@ -84,13 +85,13 @@
       </button>
       <p class="text-right">Save</p>
     </div>
-    <div class="margin-right-2" *ngIf="_currentStepIndex != dataEntryForm.steps.length - 1">
+    <div class="margin-right-2" *ngIf="_currentStepIndex != _dataEntryStepsDef.length - 1">
       <button cdkStepperNext class="usa-button sds-button--circle"
-        (click)="onPanelChange(_selectionPanelModel.navigationLinks[_currentStepIndex + 1].id)">
+        (click)="onPanelChange(_dataEntryStepsDef[_currentStepIndex + 1].id)">
         <sds-icon [icon]="'chevron-right'"></sds-icon>
       </button>
       <p class="text-left">
-        Next - <span class="display-block">{{_selectionPanelModel.navigationLinks[_currentStepIndex + 1].text}}</span>
+        Go to <span class="display-block">{{_dataEntryStepsDef[_currentStepIndex + 1].text}}</span>
       </p>
     </div>
   </div>
