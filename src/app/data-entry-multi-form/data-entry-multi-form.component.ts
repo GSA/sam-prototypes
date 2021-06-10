@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewChild, ElementRef, Inject } from '@angular/core';
 import { NavigationLink, NavigationMode, SelectionPanelModel } from '@gsa-sam/components';
 import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
 
@@ -25,6 +25,8 @@ export interface DataEntryModel {
 })
 export class DataEntryMultiFormComponent implements OnInit {
 
+  @ViewChild('scrollAnchor') scrollAnchor: ElementRef<HTMLDivElement>;
+
   @Input() dataEntryForm: DataEntryModel;
 
   @Input() model: any = {};
@@ -42,7 +44,7 @@ export class DataEntryMultiFormComponent implements OnInit {
   _currentStepIndex: number;
   
   constructor(
-    private location: Location
+    private location: Location,
   ) { }
 
   ngOnInit(): void {
@@ -79,6 +81,7 @@ export class DataEntryMultiFormComponent implements OnInit {
       this._currentStep.options = {};
       this._currentStep.options.showError = () => false;
     }
+    this.scrollAnchor.nativeElement.focus();
   }
 
   getBacklabel(): string {
@@ -104,6 +107,7 @@ export class DataEntryMultiFormComponent implements OnInit {
     this.updateSidenavValidIndicator(currentNavLink, isValid);
 
     this.dataEntryForm.validityMap[this._currentStep.id] = isValid;
+    this.scrollAnchor.nativeElement.focus();
     this.saveData.emit({
       model: this.model,
       metadata: {
