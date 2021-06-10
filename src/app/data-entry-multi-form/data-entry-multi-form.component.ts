@@ -17,6 +17,10 @@ export interface DataEntryModel {
   validityMap?: any,
   steps: FormlyStep[]
 }
+export interface DataEntrySteps {
+  id: any,
+  text: string
+}
 
 @Component({
   selector: 'app-data-entry-multi-form',
@@ -40,7 +44,7 @@ export class DataEntryMultiFormComponent implements OnInit {
   _selectionPanelModel: SelectionPanelModel;
   _currentStep: FormlyStep;
   _currentStepIndex: number;
-  _currentChildStepIndex: number;
+  _dataEntryStepsDef: FormlyStep[] = [];
 
   constructor(
     private location: Location
@@ -66,39 +70,35 @@ export class DataEntryMultiFormComponent implements OnInit {
         }
       });
     }
+    this._dataEntryStepsDef = this.getFlatElements()
   }
 
   onReviewAndSubmit() {
     console.log('Review and Submit');
   }
 
-  getField(id, steps, isChild = false) {
-
-    steps.forEach((step, index) => {
-      // this._currentStepIndex = index;
-      if (step.id === id) {
-        if (!isChild) {
-          this._currentStepIndex = index;
+  public getFlatElements() {
+    const results = this.dataEntryForm.steps;
+    const flat: any[] = [];
+    const flatten = (array: any) => {
+      for (let i in array) {
+        const item = array[i];
+        flat.push(item);
+        if (
+          item['steps'] &&
+          item['steps'].length
+        ) {
+          flatten(item['steps']);
         }
-        this._currentChildStepIndex = isChild ? index : -1;
-
-        this._currentStep = step;
-
-      } else {
-
-        if (step.steps?.length > 0) {
-          this.getField(id, step.steps, true)
-        }
-
       }
-    });
-    console.log(this._currentStepIndex, 'current')
-    console.log(this._currentChildStepIndex, 'child')
+    };
+    flatten(results);
+    return flat;
   }
-  onPanelChange(id: string) {
-    // this._currentStepIndex = this.dataEntryForm.steps.findIndex(step => step.id === id);
 
-    this.getField(id, this.dataEntryForm.steps, false)
+  onPanelChange(id: string) {
+    this._currentStepIndex = this._dataEntryStepsDef.findIndex(item => item.id === id);
+    this._currentStep = this._dataEntryStepsDef[this._currentStepIndex];
     this.fields = this._currentStep.fieldConfig;
     if (!this._currentStep.options) {
       this._currentStep.options = {};
