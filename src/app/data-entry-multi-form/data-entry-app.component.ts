@@ -22,6 +22,13 @@ export class DataEntryAppComponent implements OnInit {
         id: 'step1Id',
         label: 'Review Contract',
         fieldConfig: this.dataEntryFieldService.getReviewContract(),
+        steps: [
+          {
+            id: 'stepChild1',
+            label: 'children',
+            fieldConfig: this.dataEntryFieldService.getSubawardeefields(),
+          }
+        ]
       },
       {
         id: 'step2Id',
@@ -40,7 +47,7 @@ export class DataEntryAppComponent implements OnInit {
 
   constructor(
     private dataEntryFieldService: DataEntryMultiFormStepsService
-  ) {}
+  ) { }
 
   ngOnInit() {
     const savedDraft: string = sessionStorage.getItem('dataEntry');
@@ -56,7 +63,7 @@ export class DataEntryAppComponent implements OnInit {
     this.dataEntryForm.validityMap = savedDraftModel?.metadata?.validityMap || {};
   }
 
-  onSaveClicked($event: {model: any, metadata: any}) {
+  onSaveClicked($event: { model: any, metadata: any }) {
     sessionStorage.setItem('dataEntry', JSON.stringify($event));
   }
 

@@ -27,7 +27,7 @@ export class DataEntryMultiFormComponent implements OnInit {
 
   @Input() model: any = {};
 
-  @Output() saveData = new EventEmitter<{model: any, metadata: any}>();
+  @Output() saveData = new EventEmitter<{ model: any, metadata: any }>();
 
   options: any = {};
   fields: FormlyFieldConfig[];
@@ -58,10 +58,25 @@ export class DataEntryMultiFormComponent implements OnInit {
     console.log('Review and Submit');
   }
 
-  onPanelChange($event: NavigationLink) {
-    const stepIndex = this.dataEntryForm.steps.findIndex(step => step.id === $event.id);
-    this.fields = this.dataEntryForm.steps[stepIndex].fieldConfig;
-    this._currentStep = stepIndex;
+  getField(id, steps) {
+    steps.forEach((step) => {
+      if (step.id === id) {
+        this.fields = [];
+        this.fields = step.fieldConfig;
+      } else {
+        if (step.steps?.length > 0) {
+          this.getField(id, step.steps)
+        }
+      }
+    });
+
+  }
+  onPanelChange(id) {
+    this.getField(id, this.dataEntryForm.steps)
+
+    // const stepIndex = this.dataEntryForm.steps.findIndex(step => step.id === id);
+    // this.fields = this.dataEntryForm.steps[stepIndex].fieldConfig;
+    // this._currentStep = stepIndex;
   }
 
   getBacklabel(): string {
@@ -93,7 +108,7 @@ export class DataEntryMultiFormComponent implements OnInit {
         validityMap: this.dataEntryForm.validityMap
       }
     });
-    console.log(this.fields, this.model);   
+    console.log(this.fields, this.model);
   }
 
   private updateFieldsAndGetValidity(fields: FormlyFieldConfig[]) {
