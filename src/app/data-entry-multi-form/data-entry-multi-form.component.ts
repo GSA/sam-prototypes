@@ -44,7 +44,7 @@ export class DataEntryMultiFormComponent implements OnInit {
   _selectionPanelModel: SelectionPanelModel;
   _currentStep: FormlyStep;
   _currentStepIndex: number;
-  _dataEntryStepsDef: DataEntrySteps[] = [];
+  _dataEntryStepsDef: FormlyStep[] = [];
 
   constructor(
     private location: Location
@@ -77,28 +77,13 @@ export class DataEntryMultiFormComponent implements OnInit {
     console.log('Review and Submit');
   }
 
-  getField(id, steps) {
-    steps.forEach((step, index) => {
-      if (step.id === id) {
-        this._currentStep = step;
-      } else {
-        if (step.steps?.length > 0) {
-          this.getField(id, step.steps)
-        }
-      }
-    });
-  }
-
   public getFlatElements() {
     const results = this.dataEntryForm.steps;
-    const flat: DataEntrySteps[] = [];
+    const flat: any[] = [];
     const flatten = (array: any) => {
       for (let i in array) {
         const item = array[i];
-        flat.push({
-          id: item.id,
-          text: item.label
-        });
+        flat.push(item);
         if (
           item['steps'] &&
           item['steps'].length
@@ -113,7 +98,7 @@ export class DataEntryMultiFormComponent implements OnInit {
 
   onPanelChange(id: string) {
     this._currentStepIndex = this._dataEntryStepsDef.findIndex(item => item.id === id);
-    this.getField(id, this.dataEntryForm.steps)
+    this._currentStep = this._dataEntryStepsDef[this._currentStepIndex];
     this.fields = this._currentStep.fieldConfig;
     if (!this._currentStep.options) {
       this._currentStep.options = {};
