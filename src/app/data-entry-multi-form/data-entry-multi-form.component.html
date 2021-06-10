@@ -7,7 +7,7 @@
 <main>
   <div class="sds-page margin-top-2">
     <div class="grid-container grid-row grid-gap">
-      <div class="desktop:grid-col-4 tablet-lg:grid-col-12 mobile-lg:grid-col-12 margin-bottom-3">
+      <!-- <div class="desktop:grid-col-4 tablet-lg:grid-col-12 mobile-lg:grid-col-12 margin-bottom-3">
         <div class="sds-card">
           <div class="sds-card__body sds-card__body--accent-cool">
             <sds-selection-panel 
@@ -15,6 +15,30 @@
             [currentSelection]="_selectionPanelModel.navigationLinks[_currentStepIndex]"
             (panelSelected)="onPanelChange($event)">
             </sds-selection-panel>
+          </div>
+        </div>
+      </div> -->
+      <div class="desktop:grid-col-4 tablet-lg:grid-col-12 mobile-lg:grid-col-12 margin-bottom-3">
+        <div class="sds-card">
+          <div class="sds-card__body sds-card__body--accent-cool">
+
+            <ul class="usa-sidenav usa-sidenav--styled">
+              <li class="usa-sidenav__item padding-1 padding-left-2 text-bold">
+                FSRS Report
+              </li>
+
+              <li *ngFor="let step of dataEntryForm.steps; let i = index;" class="usa-sidenav__item"
+                [ngClass]="{'usa-current':  _currentStep.id === step.id}">
+                <a href="javascript:void(0);" (click)="onPanelChange(step.id)">
+                  {{step.label}}
+                </a>
+
+                <span class="usa-sr-only">{{step}}</span>
+                <ng-container [ngTemplateOutlet]="subPanelTemplate" [ngTemplateOutletContext]="{$implicit:step}">
+                </ng-container>
+              </li>
+
+            </ul>
           </div>
         </div>
       </div>
@@ -25,10 +49,8 @@
           </h1>
           <hr />
         </div>
-        <formly-form class="grid-col-8 padding-right-2" 
-          [model]="_currentStep.model ? _currentStep.model : model" 
-          [fields]="fields"
-          [options]="_currentStep.options">
+        <formly-form class="grid-col-8 padding-right-2" [model]="_currentStep.model ? _currentStep.model : model"
+          [fields]="fields" [options]="_currentStep.options">
         </formly-form>
       </div>
     </div>
@@ -38,11 +60,12 @@
 <div class="grid-container grid-row grid-gap">
   <div class="sds-button-row margin-top-0">
     <div class="margin-right-2" *ngIf="_currentStepIndex > 0">
-      <button class="usa-button sds-button--circle" 
-        (click)="onPanelChange(_selectionPanelModel.navigationLinks[_currentStepIndex - 1])">
+      <button class="usa-button sds-button--circle"
+        (click)="onPanelChange(_selectionPanelModel.navigationLinks[_currentStepIndex - 1].id)">
         <sds-icon [icon]="'chevron-left'"></sds-icon>
       </button>
-      <p>Back - <span class="display-block">{{_selectionPanelModel.navigationLinks[_currentStepIndex - 1].text}}</span></p>
+      <p>Back - <span class="display-block">{{_selectionPanelModel.navigationLinks[_currentStepIndex - 1].text}}</span>
+      </p>
     </div>
     <div class="margin-right-2">
       <button class="usa-button sds-button--circle" (click)="closeback();">
@@ -64,8 +87,7 @@
     </div>
     <div class="margin-right-2" *ngIf="_currentStepIndex != dataEntryForm.steps.length - 1">
       <button cdkStepperNext class="usa-button sds-button--circle"
-        (click)="onPanelChange(_selectionPanelModel.navigationLinks[_currentStepIndex + 1])"
-      >
+        (click)="onPanelChange(_selectionPanelModel.navigationLinks[_currentStepIndex + 1].id)">
         <sds-icon [icon]="'chevron-right'"></sds-icon>
       </button>
       <p class="text-left">
@@ -74,3 +96,14 @@
     </div>
   </div>
 </div>
+<ng-template #subPanelTemplate let-panelItem>
+  <div *ngFor="let pItem of panelItem.steps; let i = index;">
+    <ul class="usa-sidenav usa-sidenav--styled">
+      <li class="usa-sidenav__item  padding-left-3" [ngClass]="{'usa-current':  _currentStep.id === pItem.id }">
+        <a href="javascript:void(0);" (click)="onPanelChange(pItem.id)">
+          {{pItem.label}}
+        </a>
+      </li>
+    </ul>
+  </div>
+</ng-template>

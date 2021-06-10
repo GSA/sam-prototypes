@@ -35,14 +35,15 @@ export class DataEntryMultiFormComponent implements OnInit {
 
   @Input() stepValidityMap: any = {};
 
-  @Output() saveData = new EventEmitter<{model: any, metadata: any}>();
+  @Output() saveData = new EventEmitter<{ model: any, metadata: any }>();
 
   fields: FormlyFieldConfig[];
 
   _selectionPanelModel: SelectionPanelModel;
   _currentStep: FormlyStep;
   _currentStepIndex: number;
-  
+  _currentChildStepIndex: number;
+
   constructor(
     private location: Location,
   ) { }
@@ -73,9 +74,33 @@ export class DataEntryMultiFormComponent implements OnInit {
     console.log('Review and Submit');
   }
 
-  onPanelChange($event: NavigationLink) {
-    this._currentStepIndex = this.dataEntryForm.steps.findIndex(step => step.id === $event.id);
-    this._currentStep = this.dataEntryForm.steps[this._currentStepIndex];
+  getField(id, steps, isChild = false) {
+
+    steps.forEach((step, index) => {
+      // this._currentStepIndex = index;
+      if (step.id === id) {
+        if (!isChild) {
+          this._currentStepIndex = index;
+        }
+        this._currentChildStepIndex = isChild ? index : -1;
+
+        this._currentStep = step;
+
+      } else {
+
+        if (step.steps?.length > 0) {
+          this.getField(id, step.steps, true)
+        }
+
+      }
+    });
+    console.log(this._currentStepIndex, 'current')
+    console.log(this._currentChildStepIndex, 'child')
+  }
+  onPanelChange(id: string) {
+    // this._currentStepIndex = this.dataEntryForm.steps.findIndex(step => step.id === id);
+
+    this.getField(id, this.dataEntryForm.steps, false)
     this.fields = this._currentStep.fieldConfig;
     if (!this._currentStep.options) {
       this._currentStep.options = {};
