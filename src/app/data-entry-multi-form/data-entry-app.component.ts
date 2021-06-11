@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
 import { DataEntryMultiFormStepsService } from "./data-entry-multi-form-steps.service";
 import { FormlyStep } from "./data-entry-multi-form.component";
 
@@ -40,6 +39,7 @@ export class DataEntryAppComponent implements OnInit {
         id: 'step2Id',
         label: 'Report Details',
         fieldConfig: this.dataEntryFieldService.getReportDetails(),
+        hideFn: (model) => !model.dataentry.certificate
       },
       {
         id: 'step3Id',
@@ -81,20 +81,16 @@ export class DataEntryAppComponent implements OnInit {
 
   constructor(
     private dataEntryFieldService: DataEntryMultiFormStepsService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
   ) { }
 
   ngOnInit() {
 
     const savedDraft: string = sessionStorage.getItem('dataEntry');
-
     if (!savedDraft) {
-      this.currentStepId = this.activatedRoute.snapshot.params.stepId;
-    } else {
-      this.getFormDataFromDraft(savedDraft);
+      return;
     }
 
+    this.getFormDataFromDraft(savedDraft);
   }
 
   onSaveClicked($event: { model: any, metadata: any }) {
@@ -104,15 +100,14 @@ export class DataEntryAppComponent implements OnInit {
 
   onStepChange($event: FormlyStep) {
     this.currentStepId = $event.id;
-    this.router.navigate([$event.id], {relativeTo: this.activatedRoute.parent});
   }
 
   getFormDataFromDraft(savedDraft: string) {
     const savedDraftModel = JSON.parse(savedDraft);
 
     this.model = savedDraftModel.model || {};
-    this.currentStepId = this.activatedRoute.snapshot.params.stepId || savedDraftModel?.metadata?.stepId;
-    this.stepValidityMap = savedDraftModel?.metadata?.validityMap;
+    this.currentStepId = savedDraftModel?.metadata?.stepId;
+    this.stepValidityMap = savedDraftModel?.metadata?.stepValidityMap;
   }
 
 
