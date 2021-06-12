@@ -79,12 +79,12 @@ export class DataEntryAppComponent implements OnInit {
   model: any = {};
   currentStepId: string;
   stepValidityMap: any;
-
   constructor(
     private dataEntryFieldService: DataEntryMultiFormStepsService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
   ) { }
+
 
   ngOnInit() {
 
@@ -111,8 +111,8 @@ export class DataEntryAppComponent implements OnInit {
     const savedDraftModel = JSON.parse(savedDraft);
 
     this.model = savedDraftModel.model || {};
-    this.currentStepId = this.activatedRoute.snapshot.params.stepId || savedDraftModel?.metadata?.stepId;
-    this.stepValidityMap = savedDraftModel?.metadata?.validityMap;
+    this.currentStepId = savedDraftModel?.metadata?.stepId;
+    this.stepValidityMap = savedDraftModel?.metadata?.stepValidityMap;
   }
 
 
