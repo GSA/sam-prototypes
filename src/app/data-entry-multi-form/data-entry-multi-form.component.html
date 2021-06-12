@@ -51,8 +51,7 @@
 <div class="grid-container grid-row grid-gap">
   <div class="sds-button-row">
     <div class="text-right margin-right-1" *ngIf="_currentStepIndex > 0">
-      <button class="usa-button sds-button--circle"
-        (click)="onPreviousStep()">
+      <button class="usa-button sds-button--circle" (click)="onPreviousStep()">
         <sds-icon [icon]="'chevron-left'"></sds-icon>
       </button>
       <p class="text-right">Back to <span
@@ -78,8 +77,7 @@
       <p class="text-right">Save</p>
     </div>
     <div class="margin-right-2" *ngIf="_currentStepIndex != _dataEntryStepsDef.length - 1">
-      <button cdkStepperNext class="usa-button sds-button--circle"
-        (click)="onNextStep()">
+      <button cdkStepperNext class="usa-button sds-button--circle" (click)="onNextStep()">
         <sds-icon [icon]="'chevron-right'"></sds-icon>
       </button>
       <p class="text-left">

@@ -31,7 +31,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ 
+  declarations: [
     DataEntryAppComponent,
     DataEntryMultiFormComponent],
   providers: [

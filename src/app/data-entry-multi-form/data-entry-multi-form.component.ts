@@ -46,7 +46,7 @@ export class DataEntryMultiFormComponent implements OnInit {
   ngOnInit(): void {
     this._dataEntryStepsDef = this.getFlatSteps(this.steps);
 
-    this._currentStepIndex =  0;
+    this._currentStepIndex = 0;
     this._currentStep = this._dataEntryStepsDef[this._currentStepIndex];
 
     if (this.currentStepId) {
