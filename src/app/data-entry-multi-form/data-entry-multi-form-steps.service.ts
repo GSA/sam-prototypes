@@ -321,6 +321,7 @@ export class DataEntryMultiFormStepsService {
                     { label: "2004", value: "04" },
                   ],
                   required: true,
+                  showError: false,
                 },
               },
             ],
@@ -334,6 +335,7 @@ export class DataEntryMultiFormStepsService {
             templateOptions: {
               label: "Program or Project Title (Optional)",
               required: true,
+              showError: false,
             },
           },
           {

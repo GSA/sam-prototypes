@@ -1,7 +1,6 @@
-<div tabindex="-1" class="usa-sr-only" aria-hidden="true" #scrollAnchor></div>
 <data-entry-subheader title="FSRS New Report">
   <button class="usa-button usa-button--secondary">Discard Draft</button>
-  <button class="usa-button" (click)="onReviewAndSubmit()" [disabled]="true">Review & Submit</button>
+  <button class="usa-button" (click)="onReviewAndSubmit()" [disabled]="_isReviewAndSubmitDisabled">Review & Submit</button>
 </data-entry-subheader>
 
 <main>
@@ -16,15 +15,22 @@
                 FSRS Report
               </li>
 
-              <li *ngFor="let step of steps; let i = index;" class="usa-sidenav__item"
+              <li *ngFor="let step of getDisplayedSteps(steps); let i = index;" class="usa-sidenav__item"
                 [ngClass]="{'usa-current':  _currentStep.id === step.id}">
-                <a href="javascript:void(0);" (click)="changeStep(step)">
+                <a href="javascript:void(0);" (click)="changeStep(step.id)">
+                  <ng-container [ngSwitch]="step.valid">
+                    <span *ngSwitchCase="true" class="usa-button sds-button--circle">
+                      <sds-icon [icon]="'check'"></sds-icon>
+                    </span>
+                    <span *ngSwitchCase="false" class="usa-button sds-button--circle sds-button--danger">
+                      <sds-icon [icon]="'x'"></sds-icon>
+                    </span>
+                    <span *ngSwitchDefault>
+                      <sds-icon [icon]="'not-completed'"></sds-icon>
+                    </span>
+                  </ng-container>
                   {{step.label}}
-                  <span *ngIf="step.valid === true">VALID</span>
-                  <span *ngIf="step.valid === false">INVALID</span>
                 </a>
-
-                <span class="usa-sr-only">{{step}}</span>
                 <ng-container [ngTemplateOutlet]="subPanelTemplate" [ngTemplateOutletContext]="{$implicit:step}">
                 </ng-container>
               </li>
@@ -41,7 +47,7 @@
           <hr />
         </div>
         <formly-form class="grid-col-8 padding-right-2" [model]="_currentStep.model ? _currentStep.model : model"
-          [fields]="fields" [options]="_currentStep.options">
+          [fields]="fields" [options]="_currentStep.options" (modelChange)="modelChange.emit($event)">
         </formly-form>
       </div>
     </div>
@@ -89,10 +95,21 @@
   </div>
 </div>
 <ng-template #subPanelTemplate let-panelItem>
-  <div *ngFor="let pItem of panelItem.steps; let i = index;">
+  <div *ngFor="let pItem of getDisplayedSteps(panelItem.steps); let i = index;">
     <ul class="usa-sidenav usa-sidenav--styled">
       <li class="usa-sidenav__item  padding-left-3" [ngClass]="{'usa-current':  _currentStep.id === pItem.id }">
-        <a href="javascript:void(0);" (click)="changeStep(pItem)">
+        <a href="javascript:void(0);" (click)="changeStep(pItem.id)">
+          <ng-container [ngSwitch]="pItem.valid">
+            <span *ngSwitchCase="true" class="usa-button sds-button--circle">
+              <sds-icon [icon]="'check'"></sds-icon>
+            </span>
+            <span *ngSwitchCase="false" class="usa-button sds-button--circle sds-button--danger">
+              <sds-icon [icon]="'x'"></sds-icon>
+            </span>
+            <span *ngSwitchDefault>
+              <sds-icon [icon]="'not-completed'"></sds-icon>
+            </span>
+          </ng-container>
           {{pItem.label}}
         </a>
       </li>
