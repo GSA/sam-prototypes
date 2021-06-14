@@ -25,11 +25,6 @@ export class DataEntryAppComponent implements OnInit {
       steps: [
         {
           id: 'step1Child1',
-          label: 'Child Sub awardee modal',
-          fieldConfig: this.dataEntryFieldService.getSubawardeefields(),
-        },
-        {
-          id: 'step1Child2',
           label: 'Child report details',
           fieldConfig: this.dataEntryFieldService.getReportDetails(),
         }
@@ -47,12 +42,7 @@ export class DataEntryAppComponent implements OnInit {
       fieldConfig: this.dataEntryFieldService.getSubawardeeData(),
       steps: [
         {
-          id: 'step3Child1',
-          label: 'Third Sub awardee modal',
-          fieldConfig: this.dataEntryFieldService.getSubawardeefields(),
-        },
-        {
-          id: 'step3Child2',
+          id: 'step3Child',
           label: 'Third Child report details',
           fieldConfig: this.dataEntryFieldService.getReportDetails(),
         }
@@ -72,7 +62,14 @@ export class DataEntryAppComponent implements OnInit {
       id: 'step6Id',
       label: 'Fourth Report Details',
       fieldConfig: this.dataEntryFieldService.getReportDetails('dataentry.details4'),
+    },
+    {
+      id: 'review',
+      label: 'Review and Submit',
+      fieldConfig: [],
+      isReview: true
     }
+
   ];
 
   model: any = {};

@@ -14,6 +14,7 @@ export interface FormlyStep {
   valid?: boolean;
   hideFn?: (model: any, fields?: FormlyFieldConfig[]) => boolean,
   hide?: boolean,
+  isReview?: boolean
 }
 @Component({
   selector: 'app-data-entry-multi-form',
@@ -111,22 +112,26 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
     this.reviewFields.push(prvAlert);
 
     _reviewFields.forEach(element => {
-      this.reviewFields.push({
-        key: element.id,
-        template: '<h2 class="padding-top-1"> ' + element.label + ' </h2><hr />',
-      });
-      element.fieldConfig.forEach(chdElement => {
-        if (chdElement.fieldGroup) {
-          chdElement.fieldGroup.forEach(chdfieldGroup => {
-            this.reviewFields.push(chdfieldGroup);
-          });
-        } else {
-          this.reviewFields.push(chdElement);
-        }
-      });
+      if (!element.isReview) {
+        this.reviewFields.push({
+          key: element.id,
+          template: '<h2 class="padding-top-2"> ' + element.label + ' </h2><hr />',
+        });
+        element.fieldConfig.forEach(chdElement => {
+          if (chdElement.fieldGroup) {
+            chdElement.fieldGroup.forEach(chdfieldGroup => {
+              this.reviewFields.push(chdfieldGroup);
+            });
+          } else {
+            this.reviewFields.push(chdElement);
+          }
+        });
+      }
     });
 
     FormlyUtilsService.setReadonlyMode(true, this.reviewFields, this.model);
+
+    // return this.reviewFields;
   }
 
   getFlatSteps(steps: FormlyStep[]): FormlyStep[] {
@@ -158,6 +163,7 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
    */
   changeStep(stepId: string, incrementor?: 1 | -1) {
     this.isReviewMode = false;
+
     this._dataEntryStepsDef = this.getFlatSteps(this.steps);
     let stepIndex = this._dataEntryStepsDef.findIndex(step => step.id === stepId);
     if (incrementor) {
@@ -165,8 +171,14 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
     }
     this._currentStepIndex = stepIndex;
     this._currentStep = this._dataEntryStepsDef[stepIndex];
+
     this.currentStepId = this._currentStep.id;
-    this.fields = this._currentStep.fieldConfig;
+    if (this._currentStep.isReview) {
+      this.onReviewAndSubmit()
+      this.fields = _.cloneDeep(this.reviewFields)
+    } else {
+      this.fields = this._currentStep.fieldConfig;
+    }
 
     if (!this._currentStep.options) {
       this._currentStep.options = {};
@@ -217,6 +229,9 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
       return [];
     }
     return steps.filter((step => !step.hide));
+  }
+  gotoSubmit() {
+    console.log(this.model, 'submits')
   }
 
   private checkReviewAndSubmit() {

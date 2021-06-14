@@ -1,6 +1,6 @@
 <data-entry-subheader title="FSRS New Report">
   <button class="usa-button usa-button--secondary">Discard Draft</button>
-  <button class="usa-button" (click)="onReviewAndSubmit()">Review &
+  <button class="usa-button" (click)="onReviewAndSubmit()">
     Submit</button>
 </data-entry-subheader>
 
@@ -48,9 +48,8 @@
           <hr />
         </div>
         <formly-form class="grid-col-8 padding-right-2"
-          [model]="!isReviewMode && _currentStep.model ? _currentStep.model : model"
-          [fields]="isReviewMode ? reviewFields :fields" [options]="_currentStep.options"
-          (modelChange)="modelChange.emit($event)">
+          [model]="!isReviewMode && _currentStep.model ? _currentStep.model : model" [fields]="fields"
+          [options]="_currentStep.options" (modelChange)="modelChange.emit($event)">
         </formly-form>
       </div>
     </div>
@@ -85,12 +84,20 @@
       </button>
       <p class="text-right">Save</p>
     </div>
-    <div class="margin-right-2" *ngIf="_currentStepIndex != _dataEntryStepsDef.length - 1">
+    <div class="margin-right-2" *ngIf="_currentStepIndex != _dataEntryStepsDef.length - 1 && !_currentStep.isReview">
       <button cdkStepperNext class="usa-button sds-button--circle" (click)="onNextStep()">
         <sds-icon [icon]="'chevron-right'"></sds-icon>
       </button>
       <p class="text-left">
         Go to <span class="display-block">{{_dataEntryStepsDef[_currentStepIndex + 1].label}}</span>
+      </p>
+    </div>
+    <div class="margin-right-2" *ngIf="_currentStep.isReview">
+      <button cdkStepperNext class="usa-button sds-button--circle" (click)="gotoSubmit()">
+        <sds-icon [icon]="'chevron-right'"></sds-icon>
+      </button>
+      <p class="text-left">
+        Go to Submit
       </p>
     </div>
   </div>
