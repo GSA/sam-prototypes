@@ -17,24 +17,10 @@
 
               <li *ngFor="let step of getDisplayedSteps(steps); let i = index;" class="usa-sidenav__item"
                 [ngClass]="{'usa-current':  _currentStep.id === step.id}">
-                <a href="javascript:void(0);" (click)="changeStep(step.id)">
-                  <ng-container [ngSwitch]="step.valid">
-                    <span *ngSwitchCase="true" class="usa-button sds-button--circle">
-                      <sds-icon [icon]="'check'"></sds-icon>
-                    </span>
-                    <span *ngSwitchCase="false" class="usa-button sds-button--circle sds-button--danger">
-                      <sds-icon [icon]="'x'"></sds-icon>
-                    </span>
-                    <span *ngSwitchDefault>
-                      <sds-icon [icon]="'not-completed'"></sds-icon>
-                    </span>
-                  </ng-container>
-                  {{step.label}}
-                </a>
+                <ng-container [ngTemplateOutlet]="sidenavItem" [ngTemplateOutletContext]="{$implicit: step}"></ng-container>
                 <ng-container [ngTemplateOutlet]="subPanelTemplate" [ngTemplateOutletContext]="{$implicit:step}">
                 </ng-container>
               </li>
-
             </ul>
           </div>
         </div>
@@ -42,7 +28,7 @@
       <div class="desktop:grid-col-8 tablet-lg:grid-col-12 mobile-lg:grid-col-12">
         <div class="padding-bottom-3">
           <h1>
-            {{ _currentStep.label }}
+            {{ _currentStep.text }}
           </h1>
           <hr />
         </div>
@@ -62,7 +48,7 @@
         <sds-icon [icon]="'chevron-left'"></sds-icon>
       </button>
       <p class="text-right">Back to <span
-          class="display-block">{{_dataEntryStepsDef[_currentStepIndex - 1].label}}</span>
+          class="display-block">{{_dataEntryStepsDef[_currentStepIndex - 1].text}}</span>
       </p>
     </div>
     <div class="margin-right-2">
@@ -89,30 +75,48 @@
         <sds-icon [icon]="'chevron-right'"></sds-icon>
       </button>
       <p class="text-left">
-        Go to <span class="display-block">{{_dataEntryStepsDef[_currentStepIndex + 1].label}}</span>
+        Go to <span class="display-block">{{_dataEntryStepsDef[_currentStepIndex + 1].text}}</span>
       </p>
     </div>
   </div>
 </div>
+
 <ng-template #subPanelTemplate let-panelItem>
-  <div *ngFor="let pItem of getDisplayedSteps(panelItem.steps); let i = index;">
+  <div *ngFor="let pItem of getDisplayedSteps(panelItem.children); let i = index;">
     <ul class="usa-sidenav usa-sidenav--styled">
       <li class="usa-sidenav__item  padding-left-3" [ngClass]="{'usa-current':  _currentStep.id === pItem.id }">
-        <a href="javascript:void(0);" (click)="changeStep(pItem.id)">
-          <ng-container [ngSwitch]="pItem.valid">
-            <span *ngSwitchCase="true" class="usa-button sds-button--circle">
-              <sds-icon [icon]="'check'"></sds-icon>
-            </span>
-            <span *ngSwitchCase="false" class="usa-button sds-button--circle sds-button--danger">
-              <sds-icon [icon]="'x'"></sds-icon>
-            </span>
-            <span *ngSwitchDefault>
-              <sds-icon [icon]="'not-completed'"></sds-icon>
-            </span>
-          </ng-container>
-          {{pItem.label}}
-        </a>
+        <ng-container [ngTemplateOutlet]="sidenavItem" [ngTemplateOutletContext]="{$implicit: pItem}"></ng-container>
       </li>
     </ul>
   </div>
+</ng-template>
+
+<ng-template #sidenavItem let-step>
+  <ng-container [ngSwitch]="step.mode">
+    <span *ngSwitchCase="navigationMode.LABEL">
+      <span class="margin-left-1 padding-x-2 padding-y-1 display-block">
+        {{step.text}}
+      </span>
+    </span>
+    <a *ngSwitchDefault href="javascript:void(0);" (click)="changeStep(step.id)">
+      <ng-container [ngTemplateOutlet]="sidenavIcon" [ngTemplateOutletContext]="{$implicit: step}"></ng-container>
+      <span class="margin-left-1">
+        {{step.text}}
+      </span>
+    </a>
+  </ng-container>
+</ng-template>
+
+<ng-template #sidenavIcon let-step>
+  <ng-container [ngSwitch]="step.valid">
+    <span *ngSwitchCase="true" class="usa-button sds-button--circle">
+      <sds-icon [icon]="'check'"></sds-icon>
+    </span>
+    <span *ngSwitchCase="false" class="usa-button sds-button--circle sds-button--danger">
+      <sds-icon [icon]="'x'"></sds-icon>
+    </span>
+    <span *ngSwitchDefault>
+      <sds-icon [icon]="'not-completed'"></sds-icon>
+    </span>
+  </ng-container>
 </ng-template>

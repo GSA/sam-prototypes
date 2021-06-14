@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { NavigationMode } from "@gsa-sam/components";
 import { DataEntryMultiFormStepsService } from "./data-entry-multi-form-steps.service";
 import { FormlyStep } from "./data-entry-multi-form.component";
 
@@ -20,58 +21,78 @@ export class DataEntryAppComponent implements OnInit {
     steps: FormlyStep[] = [
       {
         id: 'step1Id',
-        label: 'Review Contract',
+        text: 'Review Contract',
         fieldConfig: this.dataEntryFieldService.getReviewContract(),
-        steps: [
+        route: '/dataentry-multiform',
+        mode: NavigationMode.INTERNAL,
+        children: [
           {
             id: 'step1Child1',
-            label: 'Child Sub awardee modal',
+            text: 'Child Sub awardee modal',
             fieldConfig: this.dataEntryFieldService.getSubawardeefields(),
+            route: '/dataentry-multiform',
+            mode: NavigationMode.INTERNAL,
           },
           {
             id: 'step1Child2',
-            label: 'Child report details',
+            text: 'Child report details',
             fieldConfig: this.dataEntryFieldService.getReportDetails(),
+            route: '/dataentry-multiform',
+            mode: NavigationMode.INTERNAL,
           }
         ]
       },
       {
         id: 'step2Id',
-        label: 'Report Details',
+        text: 'Report Details',
         fieldConfig: this.dataEntryFieldService.getReportDetails(),
-        hideFn: (model) => !model?.dataentry?.certificate
+        hideFn: (model) => !model?.dataentry?.certificate,
+        route: '/dataentry-multiform',
+        mode: NavigationMode.INTERNAL,
       },
       {
         id: 'step3Id',
-        label: 'Subawardee Data',
+        text: 'Subawardee Data',
         fieldConfig: this.dataEntryFieldService.getSubawardeeData(),
-        steps: [
+        route: '/dataentry-multiform',
+        mode: NavigationMode.INTERNAL,
+        children: [
           {
             id: 'step3Child1',
-            label: 'Third Sub awardee modal',
+            text: 'Third Sub awardee modal',
             fieldConfig: this.dataEntryFieldService.getSubawardeefields(),
+            route: '/dataentry-multiform',
+            mode: NavigationMode.INTERNAL,
           },
           {
             id: 'step3Child2',
-            label: 'Third Child report details',
+            text: 'Third Child report details',
             fieldConfig: this.dataEntryFieldService.getReportDetails(),
+            route: '/dataentry-multiform',
+            mode: NavigationMode.INTERNAL,
           }
         ]
       },
       {
         id: 'step4Id',
-        label: 'Second Report Details',
+        text: 'Second Report Details',
         fieldConfig: this.dataEntryFieldService.getReportDetails('dataentry.details2'),
+        route: '/dataentry-multiform',
+        mode: NavigationMode.INTERNAL,
       },
       {
         id: 'step5Id',
-        label: 'Third Report Details',
+        text: 'Third Report Details',
         fieldConfig: this.dataEntryFieldService.getReportDetails('dataentry.details3'),
+        route: '/dataentry-multiform',
+        mode: NavigationMode.INTERNAL,
       },
       {
         id: 'step6Id',
-        label: 'Fourth Report Details',
+        text: 'Fourth Report Details',
         fieldConfig: this.dataEntryFieldService.getReportDetails('dataentry.details4'),
+        route: '/dataentry-multiform',
+        mode: NavigationMode.INTERNAL,
       }
     ];
 

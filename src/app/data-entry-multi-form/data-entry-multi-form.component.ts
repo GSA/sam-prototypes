@@ -1,19 +1,19 @@
 import { Location } from '@angular/common';
-import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewChild, ElementRef, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { INavigationLink, NavigationMode, Selectable } from '@gsa-sam/components';
 import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
 
-export interface FormlyStep {
-  id: string;
-  label: string,
+export interface FormlyStep extends INavigationLink, Selectable {
   fieldConfig: FormlyFieldConfig[],
   options?: FormlyFormOptions, // Each step gets it's own options by default if not provided to determine whether to show error or not
   model?: any,
-  steps?: FormlyStep[],
+  children?: FormlyStep[],
   valid?: boolean;
   hideFn?: (model: any, fields?: FormlyFieldConfig[]) => boolean,
   hide?: boolean,
 }
+
 @Component({
   selector: 'app-data-entry-multi-form',
   templateUrl: './data-entry-multi-form.component.html',
@@ -36,6 +36,8 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
   @Output() modelChange = new EventEmitter<any>();
 
   fields: FormlyFieldConfig[];
+
+  navigationMode = NavigationMode;
 
   _currentStep: FormlyStep;
   _currentStepIndex: number;
@@ -101,8 +103,8 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
       step.hide = false;
       flat.push(step);
 
-      if (step.steps && step.steps.length) {
-        const childSteps = this.getFlatSteps(step.steps);
+      if (step.children && step.children.length) {
+        const childSteps = this.getFlatSteps(step.children);
         flat = flat.concat(childSteps);
       }
     });
@@ -119,6 +121,13 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
    *  previous to the provided step
    */
   changeStep(stepId: string, incrementor?: 1 | -1) {
+    // Update current step's validity before moving to next step
+    if (this.fields) {
+      const isValid = this.fields[0].formControl.valid;
+      this._currentStep.valid = isValid;
+      this.stepValidityMap[this._currentStep.id] = isValid;
+    }
+
     this._dataEntryStepsDef = this.getFlatSteps(this.steps);
     let stepIndex = this._dataEntryStepsDef.findIndex(step => step.id === stepId);
     if (incrementor) {
@@ -134,9 +143,11 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
       this._currentStep.options.showError = () => false;
     }
 
-    this.router.navigate([], {queryParams: {
-      sdsStepId: this.currentStepId
-    }});
+    if (this._currentStep.mode === NavigationMode.INTERNAL) {
+      this.router.navigate(this._currentStep.route ? [this._currentStep.route] : [], {queryParams: {
+        sdsStepId: this.currentStepId
+      }});
+    }
 
     this.stepChange.emit(this._currentStep);
   }
@@ -185,8 +196,8 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
   private updateValidity(validityMap: any, steps: FormlyStep[]) {
     steps.forEach(step => {
       step.valid = validityMap[step.id];
-      if (step.steps) {
-        this.updateValidity(validityMap, step.steps);
+      if (step.children) {
+        this.updateValidity(validityMap, step.children);
       }
     })
   }
