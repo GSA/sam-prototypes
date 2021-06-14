@@ -59,13 +59,13 @@ export class FormlyUtilsService {
     model?: any
   ) {
     if (field.fieldGroup) {
-      if (field.templateOptions.label != undefined) {
-        let prvHeader: FormlyFieldConfig = {
-          key: "Header1",
-          template: '<h2> ' + field.templateOptions.label + ' </h2>',
-        };
-        field.fieldGroup = [prvHeader, ...field.fieldGroup];
-      }
+      // if (field.templateOptions.label != undefined) {
+      //   let prvHeader: FormlyFieldConfig = {
+      //     key: "Header1",
+      //     template: '<h2> ' + field.templateOptions.label + ' </h2>',
+      //   };
+      //   field.fieldGroup = [prvHeader, ...field.fieldGroup];
+      // }
       field.fieldGroup.forEach((innerField: FormlyFieldConfig) => {
         if (innerField.type === "repeat" && readonlyMode) {
           field.fieldGroup.splice(field.fieldGroup.indexOf(innerField), 1);

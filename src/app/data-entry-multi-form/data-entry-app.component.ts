@@ -93,6 +93,14 @@ export class DataEntryAppComponent implements OnInit {
         fieldConfig: this.dataEntryFieldService.getReportDetails('dataentry.details4'),
         route: '/dataentry-multiform',
         mode: NavigationMode.INTERNAL,
+      },
+      {
+        id: 'review',
+        text: 'Review and Submit',
+        fieldConfig: [],
+        isReview: true,
+        route: '/dataentry-multiform',
+        mode: NavigationMode.INTERNAL,
       }
     ];
 

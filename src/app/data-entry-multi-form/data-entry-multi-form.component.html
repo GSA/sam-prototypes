@@ -1,6 +1,7 @@
 <data-entry-subheader title="FSRS New Report">
   <button class="usa-button usa-button--secondary">Discard Draft</button>
-  <button class="usa-button" (click)="onReviewAndSubmit()" [disabled]="_isReviewAndSubmitDisabled">Review & Submit</button>
+  <button class="usa-button" (click)="onReviewAndSubmit()">
+    Submit</button>
 </data-entry-subheader>
 
 <main>
@@ -28,12 +29,13 @@
       <div class="desktop:grid-col-8 tablet-lg:grid-col-12 mobile-lg:grid-col-12">
         <div class="padding-bottom-3">
           <h1>
-            {{ _currentStep.text }}
+            {{ !isReviewMode ? _currentStep.text : 'Review and Submit' }}
           </h1>
           <hr />
         </div>
-        <formly-form class="grid-col-8 padding-right-2" [model]="_currentStep.model ? _currentStep.model : model"
-          [fields]="fields" [options]="_currentStep.options" (modelChange)="modelChange.emit($event)">
+        <formly-form class="grid-col-8 padding-right-2"
+          [model]="!isReviewMode && _currentStep.model ? _currentStep.model : model" [fields]="fields"
+          [options]="_currentStep.options" (modelChange)="modelChange.emit($event)">
         </formly-form>
       </div>
     </div>
@@ -43,8 +45,7 @@
 <div class="grid-container grid-row grid-gap">
   <div class="sds-button-row">
     <div class="text-right margin-right-1" *ngIf="_currentStepIndex > 0">
-      <button class="usa-button sds-button--circle"
-        (click)="onPreviousStep()">
+      <button class="usa-button sds-button--circle" (click)="onPreviousStep()">
         <sds-icon [icon]="'chevron-left'"></sds-icon>
       </button>
       <p class="text-right">Back to <span
@@ -69,13 +70,20 @@
       </button>
       <p class="text-right">Save</p>
     </div>
-    <div class="margin-right-2" *ngIf="_currentStepIndex != _dataEntryStepsDef.length - 1">
-      <button cdkStepperNext class="usa-button sds-button--circle"
-        (click)="onNextStep()">
+    <div class="margin-right-2" *ngIf="_currentStepIndex != _dataEntryStepsDef.length - 1 && !_currentStep.isReview">
+      <button cdkStepperNext class="usa-button sds-button--circle" (click)="onNextStep()">
         <sds-icon [icon]="'chevron-right'"></sds-icon>
       </button>
       <p class="text-left">
         Go to <span class="display-block">{{_dataEntryStepsDef[_currentStepIndex + 1].text}}</span>
+      </p>
+    </div>
+    <div class="margin-right-2" *ngIf="_currentStep.isReview">
+      <button cdkStepperNext class="usa-button sds-button--circle" (click)="gotoSubmit()">
+        <sds-icon [icon]="'chevron-right'"></sds-icon>
+      </button>
+      <p class="text-left">
+        Go to Submit
       </p>
     </div>
   </div>
@@ -119,4 +127,25 @@
       <sds-icon [icon]="'not-completed'"></sds-icon>
     </span>
   </ng-container>
+
+
+<ng-template #myTemplate let-item>
+  <div class="sds-alert--expanded info">
+    <div class="grid-container width-full maxw-full margin-0 padding-0">
+      <div class="grid-row">
+        <div class="grid-col-auto">
+          <sds-icon [icon]="'info'"></sds-icon>
+        </div>
+        <div class="grid-col-fill">
+          <span>
+            Please be aware that all information collected on the <a href="https://www.usaspending.gov">FSRS
+              website</a>,
+            including registration information and report data, will be
+            visible to the public on a public website (<a href="https://www.usaspending.gov">www.usaspending.gov</a>).
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </ng-template>

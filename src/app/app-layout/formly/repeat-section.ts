@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { ChangeDetectorRef, Component } from "@angular/core";
 import { SdsDialogService } from "@gsa-sam/components";
 import { SdsFormlyDialogComponent } from "@gsa-sam/sam-formly";
 import { FieldArrayType, FormlyFormBuilder } from "@ngx-formly/core";
@@ -67,7 +67,7 @@ import { FieldArrayType, FormlyFormBuilder } from "@ngx-formly/core";
   `,
 })
 export class RepeatTypeComponent extends FieldArrayType {
-  constructor(builder: FormlyFormBuilder, public dialog: SdsDialogService) {
+  constructor(builder: FormlyFormBuilder, public dialog: SdsDialogService, public cdr: ChangeDetectorRef) {
     super(builder);
   }
   showNoresultFound: boolean = true;
@@ -94,6 +94,7 @@ export class RepeatTypeComponent extends FieldArrayType {
         this.add();
         this.model[this.model.length - 1] = result;
         this.showNoresultFound = this.model.length == 0 ? true : false;
+        this.cdr.detectChanges();
       }
     });
   }
