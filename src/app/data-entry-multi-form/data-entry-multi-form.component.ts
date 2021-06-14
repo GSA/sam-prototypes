@@ -128,10 +128,9 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
         });
       }
     });
-
     FormlyUtilsService.setReadonlyMode(true, this.reviewFields, this.model);
 
-    // return this.reviewFields;
+    return this.reviewFields;
   }
 
   getFlatSteps(steps: FormlyStep[]): FormlyStep[] {
@@ -174,8 +173,9 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
 
     this.currentStepId = this._currentStep.id;
     if (this._currentStep.isReview) {
-      this.onReviewAndSubmit()
-      this.fields = _.cloneDeep(this.reviewFields)
+
+      this.fields = this.onReviewAndSubmit();
+      //_.cloneDeep(this.reviewFields)
     } else {
       this.fields = this._currentStep.fieldConfig;
     }
@@ -230,7 +230,7 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
     }
     return steps.filter((step => !step.hide));
   }
-  gotoSubmit() {
+  onSubmit() {
     console.log(this.model, 'submits')
   }
 

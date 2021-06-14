@@ -345,7 +345,7 @@ export class DataEntryMultiFormStepsService {
             key: "title",
 
             templateOptions: {
-              label: "Program or Project Title (Optional)",
+              label: "Program or Project Title",
               required: true,
               showError: false,
             },

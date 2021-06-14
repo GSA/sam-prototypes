@@ -1,6 +1,6 @@
 <data-entry-subheader title="FSRS New Report">
   <button class="usa-button usa-button--secondary">Discard Draft</button>
-  <button class="usa-button" (click)="onReviewAndSubmit()">
+  <button class="usa-button" (click)="onSubmit()">
     Submit</button>
 </data-entry-subheader>
 
@@ -43,14 +43,20 @@
       <div class="desktop:grid-col-8 tablet-lg:grid-col-12 mobile-lg:grid-col-12">
         <div class="padding-bottom-3">
           <h1>
-            {{ !isReviewMode ? _currentStep.label : 'Review and Submit' }}
+            {{  _currentStep.label  }}
           </h1>
           <hr />
         </div>
+
         <formly-form class="grid-col-8 padding-right-2"
           [model]="!isReviewMode && _currentStep.model ? _currentStep.model : model" [fields]="fields"
           [options]="_currentStep.options" (modelChange)="modelChange.emit($event)">
         </formly-form>
+        <div *ngIf="isReviewMode" class="text-right">
+          <button class="usa-button align-right" (click)="onSubmit()">
+            Submit</button>
+        </div>
+
       </div>
     </div>
   </div>
@@ -59,7 +65,7 @@
 <div class="grid-container grid-row grid-gap">
   <div class="sds-button-row">
     <div class="text-right margin-right-1" *ngIf="_currentStepIndex > 0">
-      <button class="usa-button sds-button--circle" (click)="onPreviousStep()">
+      <button class="usa-button sds-button--circle usa-button--base" (click)="onPreviousStep()">
         <sds-icon [icon]="'chevron-left'"></sds-icon>
       </button>
       <p class="text-right">Back to <span
@@ -67,37 +73,29 @@
       </p>
     </div>
     <div class="margin-right-2">
-      <button class="usa-button sds-button--circle" (click)="closeback();">
+      <button class="usa-button sds-button--circle usa-button--base" (click)="closeback();">
         <sds-icon [icon]="'x'"></sds-icon>
       </button>
       <p class="text-right"> Close</p>
     </div>
-    <div class="margin-right-2">
-      <button class="usa-button sds-button--circle">
+    <div class="margin-right-2" *ngIf="!_currentStep.isReview">
+      <button class="usa-button sds-button--circle usa-button--base">
         <sds-icon [icon]="'question'"></sds-icon>
       </button>
       <p class="text-right">Help</p>
     </div>
-    <div class="margin-right-2" (click)="onSaveClicked()">
-      <button class="usa-button sds-button--circle">
+    <div class="margin-right-2" *ngIf="!_currentStep.isReview" (click)="onSaveClicked()">
+      <button class="usa-button sds-button--circle usa-button--base">
         <sds-icon [icon]="'save'"></sds-icon>
       </button>
       <p class="text-right">Save</p>
     </div>
     <div class="margin-right-2" *ngIf="_currentStepIndex != _dataEntryStepsDef.length - 1 && !_currentStep.isReview">
-      <button cdkStepperNext class="usa-button sds-button--circle" (click)="onNextStep()">
+      <button cdkStepperNext class="usa-button sds-button--circle usa-button--base" (click)="onNextStep()">
         <sds-icon [icon]="'chevron-right'"></sds-icon>
       </button>
       <p class="text-left">
         Go to <span class="display-block">{{_dataEntryStepsDef[_currentStepIndex + 1].label}}</span>
-      </p>
-    </div>
-    <div class="margin-right-2" *ngIf="_currentStep.isReview">
-      <button cdkStepperNext class="usa-button sds-button--circle" (click)="gotoSubmit()">
-        <sds-icon [icon]="'chevron-right'"></sds-icon>
-      </button>
-      <p class="text-left">
-        Go to Submit
       </p>
     </div>
   </div>

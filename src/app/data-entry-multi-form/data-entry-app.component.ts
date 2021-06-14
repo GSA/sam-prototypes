@@ -31,45 +31,16 @@ export class DataEntryAppComponent implements OnInit {
       ]
     },
     {
-      id: 'step2Id',
-      label: 'Report Details',
-      fieldConfig: this.dataEntryFieldService.getReportDetails(),
-      hideFn: (model) => !model?.dataentry?.certificate
-    },
-    {
       id: 'step3Id',
       label: 'Subawardee Data',
-      fieldConfig: this.dataEntryFieldService.getSubawardeeData(),
-      steps: [
-        {
-          id: 'step3Child',
-          label: 'Third Child report details',
-          fieldConfig: this.dataEntryFieldService.getReportDetails(),
-        }
-      ]
-    },
-    {
-      id: 'step4Id',
-      label: 'Second Report Details',
-      fieldConfig: this.dataEntryFieldService.getReportDetails('dataentry.details2'),
-    },
-    {
-      id: 'step5Id',
-      label: 'Third Report Details',
-      fieldConfig: this.dataEntryFieldService.getReportDetails('dataentry.details3'),
-    },
-    {
-      id: 'step6Id',
-      label: 'Fourth Report Details',
-      fieldConfig: this.dataEntryFieldService.getReportDetails('dataentry.details4'),
+      fieldConfig: this.dataEntryFieldService.getSubawardeeData()
     },
     {
       id: 'review',
-      label: 'Review and Submit',
+      label: 'Review',
       fieldConfig: [],
       isReview: true
     }
-
   ];
 
   model: any = {};
