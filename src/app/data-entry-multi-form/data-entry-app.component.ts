@@ -39,7 +39,7 @@ export class DataEntryAppComponent implements OnInit {
         id: 'step2Id',
         label: 'Report Details',
         fieldConfig: this.dataEntryFieldService.getReportDetails(),
-        hideFn: (model) => !model.dataentry.certificate
+        hideFn: (model) => !model?.dataentry?.certificate
       },
       {
         id: 'step3Id',
