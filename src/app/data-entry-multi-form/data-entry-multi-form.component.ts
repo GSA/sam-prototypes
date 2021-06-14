@@ -1,6 +1,8 @@
 import { Location } from '@angular/common';
-import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewChild, ElementRef, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewChild, ElementRef, OnChanges, SimpleChanges, TemplateRef } from '@angular/core';
 import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
+import { FormlyUtilsService } from '../app-layout/formly/formly-utils.service';
+import _ from "lodash-es";
 
 export interface FormlyStep {
   id: string;
@@ -38,7 +40,9 @@ export class DataEntryMultiFormComponent implements OnInit {
   _currentStep: FormlyStep;
   _currentStepIndex: number;
   _dataEntryStepsDef: FormlyStep[] = [];
-
+  reviewFields: FormlyFieldConfig[] = [];
+  isReviewMode: boolean = false;
+  @ViewChild('myTemplate') myTemplate: TemplateRef<any>;
   constructor(
     private location: Location,
   ) { }
@@ -68,7 +72,40 @@ export class DataEntryMultiFormComponent implements OnInit {
   }
 
   onReviewAndSubmit() {
-    console.log('Review and Submit');
+
+    let _reviewFields = [];
+    this.isReviewMode = true;
+
+    let prvAlert = {
+      key: "customTemplate",
+      type: 'custom',
+      templateOptions: {
+        customResultsTemplate: this.myTemplate
+      }
+    }
+
+    this.reviewFields = [];
+    _reviewFields = _.cloneDeep(this._dataEntryStepsDef);
+
+    this.reviewFields.push(prvAlert);
+
+    _reviewFields.forEach(element => {
+      this.reviewFields.push({
+        key: element.id,
+        template: '<h2 class="padding-top-1"> ' + element.label + ' </h2><hr />',
+      });
+      element.fieldConfig.forEach(chdElement => {
+        if (chdElement.fieldGroup) {
+          chdElement.fieldGroup.forEach(chdfieldGroup => {
+            this.reviewFields.push(chdfieldGroup);
+          });
+        } else {
+          this.reviewFields.push(chdElement);
+        }
+      });
+    });
+
+    FormlyUtilsService.setReadonlyMode(true, this.reviewFields, this.model);
   }
 
   getFlatSteps(steps: FormlyStep[]): FormlyStep[] {
@@ -88,6 +125,7 @@ export class DataEntryMultiFormComponent implements OnInit {
   }
 
   changeStep(step: FormlyStep) {
+    this.isReviewMode = false;
     this._currentStep = step;
     this._currentStepIndex = this._dataEntryStepsDef.findIndex(step => step.id === this._currentStep.id);
     this.currentStepId = this._currentStep.id;
