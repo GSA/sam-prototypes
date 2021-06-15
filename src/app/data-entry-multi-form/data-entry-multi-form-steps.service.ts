@@ -91,7 +91,6 @@ export class DataEntryMultiFormStepsService {
                 className: "grid-col-7",
                 key: "country",
                 type: "select",
-                defaultValue: "united_states",
                 templateOptions: {
                   label: "Country",
 
@@ -143,7 +142,6 @@ export class DataEntryMultiFormStepsService {
                 className: "grid-col-4",
                 key: "state",
                 type: "select",
-                defaultValue: "None",
                 hideExpression: (model) =>
                   this.subawardeeModel.country === "canada",
                 templateOptions: {
@@ -368,7 +366,6 @@ export class DataEntryMultiFormStepsService {
             className: "grid-col-4",
             key: "state",
             type: "select",
-            defaultValue: "None",
             hideExpression: (model) => model.country === "canada",
             templateOptions: {
               label: "State",
@@ -473,7 +470,6 @@ export class DataEntryMultiFormStepsService {
             className: "grid-col-7",
             key: "country",
             type: "select",
-            defaultValue: "united_states",
             templateOptions: {
               label: "Country",
               hideOptional: true,

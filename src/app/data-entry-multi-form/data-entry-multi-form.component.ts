@@ -5,6 +5,7 @@ import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewChild, OnChanges, SimpleChanges, TemplateRef } from '@angular/core';
 import _ from "lodash-es";
 import { FormlyUtilsService } from '../app-layout/formly/formly-utils.service';
+import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
 
 export interface FormlyStep extends INavigationLink, Selectable {
   fieldConfig: FormlyFieldConfig[],
@@ -80,14 +81,16 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
       this.currentStepId = this._dataEntryStepsDef[0].id;
     }
 
-    this.changeStep(this.currentStepId);
-
     if (this.stepValidityMap) {
       this.updateValidity(this.stepValidityMap, this.steps);
       this.checkReviewAndSubmit();
     } else {
       this.stepValidityMap = {};
     }
+    
+    this.changeStep(this.currentStepId);
+
+
 
     this.activatedRoute.queryParams.subscribe(queryParam => {
       if (queryParam.sdsStepId && queryParam.sdsStepId != this.currentStepId) {
@@ -165,11 +168,10 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
    */
   changeStep(stepId: string, incrementor?: 1 | -1) {
     // Update current step's validity before moving to next step
-    if (this.fields) {
-      const isValid = this.fields[0].formControl.valid;
-      this._currentStep.valid = isValid;
-      this.stepValidityMap[this._currentStep.id] = isValid;
+    if (this.fields && this._currentStep) {
+      this.updateSidenavValidation(this._currentStep);
     }
+
     this.isReviewMode = false;
 
     this._dataEntryStepsDef = this.getFlatSteps(this.steps);
@@ -184,7 +186,6 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
     if (this._currentStep.isReview) {
 
       this.fields = this.onReviewAndSubmit();
-      //_.cloneDeep(this.reviewFields)
     } else {
       this.fields = this._currentStep.fieldConfig;
     }
@@ -192,6 +193,10 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
     if (!this._currentStep.options) {
       this._currentStep.options = {};
       this._currentStep.options.showError = () => false;
+    }
+
+    if (this.stepValidityMap[this._currentStep.id] === false) {
+      this._currentStep.options.showError = (field) => field.formControl.invalid;
     }
 
     if (this._currentStep.mode === NavigationMode.INTERNAL) {
@@ -254,5 +259,59 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
         this.updateValidity(validityMap, step.children);
       }
     })
+  }
+
+  private updateSidenavValidation(currentStep: FormlyStep) {
+    if (!currentStep) {
+      return;
+    }
+
+    const currentStepFieldConfig = currentStep.fieldConfig[0];
+    if (!currentStepFieldConfig || 
+        this.isFormEmpty(currentStepFieldConfig.formControl, currentStepFieldConfig.defaultValue)) {
+      return;
+    }
+
+    const isValid = this.fields[0].formControl.valid;
+    currentStep.valid = isValid;
+    this.stepValidityMap[currentStep.id] = isValid;
+  }
+
+  private isFormEmpty(form: AbstractControl, defaultValue?: any) {
+    if (form.value === false) {
+      return false;
+    }
+
+    if (!form.value || form.value.length === 0) {
+      return true;
+    }
+
+    if (typeof(form.value) != 'object') {
+      return false;
+    }
+
+    const cleanModel = this.getCleanObject(form.value);
+    return Object.keys(cleanModel).length === 0 || _.isEqual(cleanModel, defaultValue);
+  }
+
+
+  private getCleanObject(input: any, output?: any) {
+    output = output || {};
+    for (var key in input) {
+      var value = input[key];
+      if (value) {
+        if (typeof value === 'object' && value !== null) {
+          this.getCleanObject(value, output);
+        } else {
+          // Treat true string as boolean value & ignore value of string 'false'
+          if (value === 'true') {
+            output[key] = true;
+          } else if (value != 'false') {
+            output[key] = value;
+          }
+        }
+      }
+    }
+    return output;
   }
 }
