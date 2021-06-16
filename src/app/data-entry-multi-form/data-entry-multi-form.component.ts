@@ -94,7 +94,6 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
   }
 
   onReviewAndSubmit() {
-    console.log('Review and Submit');
     let _reviewFields = [];
     this.isReviewMode = true;
 
@@ -117,20 +116,28 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
           key: element.id,
           template: '<h2 class="padding-top-2"> ' + element.label + ' </h2><hr />',
         });
-        element.fieldConfig.forEach(chdElement => {
-          if (chdElement.fieldGroup) {
-            chdElement.fieldGroup.forEach(chdfieldGroup => {
-              this.reviewFields.push(chdfieldGroup);
-            });
-          } else {
-            this.reviewFields.push(chdElement);
-          }
-        });
+        element = this.constructReviewField(element);
       }
     });
     FormlyUtilsService.setReadonlyMode(true, this.reviewFields, this.model);
 
     return this.reviewFields;
+  }
+
+  constructReviewField(element) {
+    element.fieldConfig.forEach(chdElement => {
+      if (chdElement.fieldConfig) {
+        this.constructReviewField(chdElement.fieldConfig);
+      }
+      if (chdElement.fieldGroup) {
+        chdElement.fieldGroup.forEach(chdfieldGroup => {
+          this.reviewFields.push(chdfieldGroup);
+        });
+      } else {
+        if (chdElement.type != 'repeat')
+          this.reviewFields.push(chdElement);
+      }
+    });
   }
 
   getFlatSteps(steps: FormlyStep[]): FormlyStep[] {
@@ -175,7 +182,6 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
     if (this._currentStep.isReview) {
 
       this.fields = this.onReviewAndSubmit();
-      //_.cloneDeep(this.reviewFields)
     } else {
       this.fields = this._currentStep.fieldConfig;
     }

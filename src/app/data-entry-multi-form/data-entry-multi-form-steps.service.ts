@@ -545,7 +545,8 @@ export class DataEntryMultiFormStepsService {
           service: this.entityReportingService,
           getDetails: this.getAwardeeDetails,
           btnText: "Auto-fill Vendor Information",
-          inputPlaceHolder: "Input Unique Entity ID",
+          title: 'Add Subawardee',
+          inputPlaceHolder: "Input Unique Entity ID"
         },
         fieldGroup: [
           {
