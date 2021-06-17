@@ -29,6 +29,8 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
 
   @Input() model: any = {};
 
+  @Input() closeUrl: string;
+
   @Input() currentStepId: string;
 
   @Input() stepValidityMap: any = {};
@@ -228,7 +230,9 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
   }
 
   closeback() {
-    this.location.back();
+    this.closeUrl ?
+      this.router.navigateByUrl(this.closeUrl) :
+      this.location.back();
   }
 
   onSaveClicked() {
