@@ -67,7 +67,7 @@ export class RepeatTypeComponent extends FieldArrayType {
       id.toString() + "+AWARD"
     );
     const data: any = {
-      fields: this.field.fieldArray.templateOptions.subawardeefields,
+      fields: [this.field.fieldArray.templateOptions.subawardeefields],
       model: model1,
       submit: "Submit",
       title: "Add Subawardee",

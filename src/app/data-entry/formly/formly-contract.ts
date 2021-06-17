@@ -4,7 +4,6 @@ import { FieldType } from "@ngx-formly/core";
 
 @Component({
   template: `
-  <input type="text" />
     <app-review-contract [items]="to.items"></app-review-contract>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
