@@ -24,7 +24,7 @@ export class DataEntryAppComponent implements OnInit {
       text: 'Review Contract',
       fieldConfig: this.dataEntryFieldService.getReviewContract(),
       route: '/dataentry-multiform',
-      mode: NavigationMode.INTERNAL,
+      mode: NavigationMode.LABEL,
       children: [
         {
           id: 'step1Child1',
@@ -36,7 +36,7 @@ export class DataEntryAppComponent implements OnInit {
         {
           id: 'step1Child2',
           text: 'Child report details',
-          fieldConfig: this.dataEntryFieldService.getReportDetails(),
+          fieldConfig: this.dataEntryFieldService.getReportDetails('dataentry.reportchild1'),
           route: '/dataentry-multiform',
           mode: NavigationMode.INTERNAL,
         }
@@ -56,44 +56,9 @@ export class DataEntryAppComponent implements OnInit {
       fieldConfig: this.dataEntryFieldService.getSubawardeeData(),
       route: '/dataentry-multiform',
       mode: NavigationMode.INTERNAL,
-      children: [
-        {
-          id: 'step3Child1',
-          text: 'Third Sub awardee modal',
-          fieldConfig: this.dataEntryFieldService.getSubawardeefields(),
-          route: '/dataentry-multiform',
-          mode: NavigationMode.INTERNAL,
-        },
-        {
-          id: 'step3Child2',
-          text: 'Third Child report details',
-          fieldConfig: this.dataEntryFieldService.getReportDetails(),
-          route: '/dataentry-multiform',
-          mode: NavigationMode.INTERNAL,
-        }
-      ]
+
     },
-    {
-      id: 'step4Id',
-      text: 'Second Report Details',
-      fieldConfig: this.dataEntryFieldService.getReportDetails('dataentry.details2'),
-      route: '/dataentry-multiform',
-      mode: NavigationMode.INTERNAL,
-    },
-    {
-      id: 'step5Id',
-      text: 'Third Report Details',
-      fieldConfig: this.dataEntryFieldService.getReportDetails('dataentry.details3'),
-      route: '/dataentry-multiform',
-      mode: NavigationMode.INTERNAL,
-    },
-    {
-      id: 'step6Id',
-      text: 'Fourth Report Details',
-      fieldConfig: this.dataEntryFieldService.getReportDetails('dataentry.details4'),
-      route: '/dataentry-multiform',
-      mode: NavigationMode.INTERNAL,
-    },
+
     {
       id: 'review',
       text: 'Review and Submit',
@@ -123,7 +88,7 @@ export class DataEntryAppComponent implements OnInit {
   }
 
   onSaveClicked($event: { model: any, metadata: any }) {
-    console.log($event, this.model, 'moe');
+    console.log($event, 'moe');
     sessionStorage.setItem('dataEntry', JSON.stringify($event));
   }
 

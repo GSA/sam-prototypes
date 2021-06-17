@@ -8,7 +8,7 @@ import { FormlyUtilsService } from '../app-layout/formly/formly-utils.service';
 import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
 
 export interface FormlyStep extends INavigationLink, Selectable {
-  fieldConfig: FormlyFieldConfig[],
+  fieldConfig?: FormlyFieldConfig[],
   options?: FormlyFormOptions, // Each step gets it's own options by default if not provided to determine whether to show error or not
   model?: any,
   children?: FormlyStep[],
@@ -87,7 +87,7 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
     } else {
       this.stepValidityMap = {};
     }
-    
+
     this.changeStep(this.currentStepId);
 
 
@@ -120,7 +120,7 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
       if (!element.isReview) {
         this.reviewFields.push({
           key: element.id,
-          template: '<h2 class="padding-top-2"> ' + element.label + ' </h2><hr />',
+          template: '<h2 class="padding-top-2"> ' + element.text + ' </h2><hr />',
         });
         element = this.constructReviewField(element);
       }
@@ -149,13 +149,15 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
   getFlatSteps(steps: FormlyStep[]): FormlyStep[] {
     let flat: FormlyStep[] = [];
     steps.forEach(step => {
+
       if (step.hideFn && step.hideFn(step.model ? step.model : this.model, step.fieldConfig)) {
         step.hide = true;
         return;
       }
       step.hide = false;
-      flat.push(step);
-
+      if (step.mode !== NavigationMode.LABEL) {
+        flat.push(step);
+      }
       if (step.children && step.children.length) {
         const childSteps = this.getFlatSteps(step.children);
         flat = flat.concat(childSteps);
@@ -207,9 +209,11 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
     }
 
     if (this._currentStep.mode === NavigationMode.INTERNAL) {
-      this.router.navigate(this._currentStep.route ? [this._currentStep.route] : [], {queryParams: {
-        sdsStepId: this.currentStepId
-      }});
+      this.router.navigate(this._currentStep.route ? [this._currentStep.route] : [], {
+        queryParams: {
+          sdsStepId: this.currentStepId
+        }
+      });
     }
 
     this.stepChange.emit(this._currentStep);
@@ -274,8 +278,8 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
     }
 
     const currentStepFieldConfig = currentStep.fieldConfig[0];
-    if (!currentStepFieldConfig || 
-        this.isFormEmpty(currentStepFieldConfig.formControl, currentStepFieldConfig.defaultValue)) {
+    if (!currentStepFieldConfig ||
+      this.isFormEmpty(currentStepFieldConfig.formControl, currentStepFieldConfig.defaultValue)) {
       return;
     }
 
@@ -293,7 +297,7 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
       return true;
     }
 
-    if (typeof(form.value) != 'object') {
+    if (typeof (form.value) != 'object') {
       return false;
     }
 

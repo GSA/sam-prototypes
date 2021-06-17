@@ -263,10 +263,10 @@ export class DataEntryMultiFormStepsService {
 
   }
 
-  getReviewContract(): FormlyFieldConfig[] {
+  getReviewContract(key?): FormlyFieldConfig[] {
     return [
       {
-        key: "dataentry.contract",
+        key: key ? key : "dataentry.contract",
         type: "contract",
         templateOptions: {
           items: this._getData(),
@@ -348,6 +348,9 @@ export class DataEntryMultiFormStepsService {
               required: true,
               showError: false,
             },
+            modelOptions: {
+              updateOn: 'blur'
+            }
           },
           {
             template:
