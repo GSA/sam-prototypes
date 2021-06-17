@@ -47,46 +47,60 @@
           </div>
 
           <div class="grid-container grid-row grid-gap align-right">
-            <div class="sds-button-row">
-              <div class="text-right margin-right-1" *ngIf="_currentStepIndex > 0">
-                <button class="usa-button sds-button--circle usa-button--big usa-button--base"
-                  (click)="onPreviousStep()">
-                  <sds-icon [icon]="'chevron-left'"></sds-icon>
-                </button>
-                <p class="text-secondary text-right">Back to <span
-                    class="display-block">{{_dataEntryStepsDef[_currentStepIndex - 1].text}}</span>
-                </p>
-              </div>
-              <div class="margin-right-2">
-                <button class="usa-button sds-button--circle usa-button--big usa-button--base" (click)="closeback();">
-                  <sds-icon [icon]="'x'"></sds-icon>
-                </button>
-                <p class="text-secondary text-right"> Close</p>
-              </div>
-              <div class="margin-right-2" *ngIf="!_currentStep.isReview">
-                <button class="usa-button sds-button--circle usa-button--big usa-button--base">
-                  <sds-icon [icon]="'question'"></sds-icon>
-                </button>
-                <p class="text-secondary text-right">Help</p>
-              </div>
-              <div class="margin-right-2" *ngIf="!_currentStep.isReview" (click)="onSaveClicked()">
-                <button class="usa-button sds-button--circle usa-button--big usa-button--base">
-                  <sds-icon [icon]="'save'"></sds-icon>
-                </button>
-                <p class="text-secondary text-right">Save</p>
-              </div>
-              <div class="margin-right-2"
-                *ngIf="_currentStepIndex != _dataEntryStepsDef.length - 1 && !_currentStep.isReview">
-                <button cdkStepperNext
-                  class="usa-button sds-button--circle usa-button--base usa-button--big usa-button--active"
-                  (click)="onNextStep()">
-                  <sds-icon [icon]="'chevron-right'"></sds-icon>
-                </button>
-                <p class="text-left text-secondary">
-                  Go to <span class="display-block">{{_dataEntryStepsDef[_currentStepIndex + 1].text}}</span>
-                </p>
-              </div>
+            <div class="text-right margin-right-1" *ngIf="_currentStepIndex > 0">
+              <button class="usa-button sds-button--circle usa-button--base usa-button--big padding-2"
+                (click)="onPreviousStep()" [attr.id]="id + '-prevBtn'">
+                <sds-icon [icon]="'chevron-left'"></sds-icon>
+              </button>
+
+              <label [attr.for]="id + '-prevBtn'" class="text-right usa-link cursor-pointer display-block margin-top-2">
+                Back to
+                <span class="display-block">{{_dataEntryStepsDef[_currentStepIndex - 1].text}}</span>
+              </label>
             </div>
+            <div class="margin-right-2">
+              <button class="usa-button sds-button--circle usa-button--big usa-button--base padding-2"
+                (click)="closeback();" [attr.id]="id + '-closeBtn'">
+                <sds-icon [icon]="'x'"></sds-icon>
+              </button>
+              <label [attr.for]="id + '-closeBtn'"
+                class="text-center usa-link cursor-pointer display-block margin-top-2">
+                Close
+              </label>
+            </div>
+            <div class="margin-right-2" *ngIf="!_currentStep.isReview">
+              <button class="usa-button sds-button--circle usa-button--big usa-button--base padding-2"
+                [attr.id]="id + '-helpBtn'">
+                <sds-icon [icon]="'question'"></sds-icon>
+              </button>
+              <label [attr.for]="id + '-helpBtn'"
+                class="text-center usa-link cursor-pointer display-block margin-top-2">
+                Help
+              </label>
+            </div>
+            <div class="margin-right-2" *ngIf="!_currentStep.isReview" (click)="onSaveClicked()"
+              [attr.id]="id + '-saveBtn'">
+              <button class="usa-button sds-button--circle usa-button--big usa-button--base padding-2">
+                <sds-icon [icon]="'save'"></sds-icon>
+              </button>
+              <label [attr.for]="id + '-saveBtn'"
+                class="text-center usa-link cursor-pointer display-block margin-top-2">
+                Save
+              </label>
+            </div>
+            <div class="margin-right-2"
+              *ngIf="_currentStepIndex != _dataEntryStepsDef.length - 1 && !_currentStep.isReview">
+              <button cdkStepperNext
+                class="usa-button sds-button--circle usa-button--base usa-button--big usa-button--active padding-2"
+                (click)="onNextStep()" [attr.id]="id + '-nextBtn'">
+                <sds-icon [icon]="'chevron-right'"></sds-icon>
+              </button>
+              <label [attr.for]="id + '-nextBtn'" class="text-left usa-link cursor-pointer display-block margin-top-2">
+                Go to
+                <span class="display-block">{{_dataEntryStepsDef[_currentStepIndex + 1].text}}</span>
+              </label>
+            </div>
+
           </div>
 
 
@@ -109,7 +123,7 @@
 <ng-template #sidenavItem let-step>
   <ng-container [ngSwitch]="step.mode">
     <span *ngSwitchCase="navigationMode.LABEL">
-      <span class="margin-left-1 padding-x-2 padding-y-1 display-block">
+      <span class="margin-left-1 padding-x-2 padding-y-1 display-block text-bold">
         {{step.text}}
       </span>
     </span>

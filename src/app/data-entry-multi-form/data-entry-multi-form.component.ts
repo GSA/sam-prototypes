@@ -2,21 +2,23 @@ import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { INavigationLink, NavigationMode, Selectable } from '@gsa-sam/components';
 import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
-import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewChild, OnChanges, SimpleChanges, TemplateRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewChild, OnChanges, SimpleChanges, TemplateRef, ChangeDetectorRef } from '@angular/core';
 import _ from "lodash-es";
 import { FormlyUtilsService } from '../app-layout/formly/formly-utils.service';
-import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
+import { AbstractControl } from '@angular/forms';
 
 export interface FormlyStep extends INavigationLink, Selectable {
-  fieldConfig?: FormlyFieldConfig[],
+  fieldConfig?: FormlyFieldConfig,
   options?: FormlyFormOptions, // Each step gets it's own options by default if not provided to determine whether to show error or not
   model?: any,
   children?: FormlyStep[],
   valid?: boolean;
-  hideFn?: (model: any, fields?: FormlyFieldConfig[]) => boolean,
+  hideFn?: (model: any, field?: FormlyFieldConfig) => boolean,
   hide?: boolean,
   isReview?: boolean
 }
+
+let nextId = 0;
 
 @Component({
   selector: 'app-data-entry-multi-form',
@@ -34,6 +36,8 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
   @Input() currentStepId: string;
 
   @Input() stepValidityMap: any = {};
+
+  @Input() id = `data-entry-${nextId++}`;
 
   @Output() saveData = new EventEmitter<{ model: any, metadata: any }>();
 
@@ -59,6 +63,7 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
     private location: Location,
     private router: Router,
     private activatedRoute: ActivatedRoute,
+    public cdr: ChangeDetectorRef,
   ) { }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -91,8 +96,6 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
     }
 
     this.changeStep(this.currentStepId);
-
-
 
     this.activatedRoute.queryParams.subscribe(queryParam => {
       if (queryParam.sdsStepId && queryParam.sdsStepId != this.currentStepId) {
@@ -133,7 +136,8 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
   }
 
   constructReviewField(element) {
-    element.fieldConfig.forEach(chdElement => {
+    const fieldConfigArray = [element.fieldConfig];
+    fieldConfigArray.forEach(chdElement => {
       if (chdElement.fieldConfig) {
         this.constructReviewField(chdElement.fieldConfig);
       }
@@ -198,7 +202,7 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
 
       this.fields = this.onReviewAndSubmit();
     } else {
-      this.fields = this._currentStep.fieldConfig;
+      this.fields = [this._currentStep.fieldConfig];
     }
 
     if (!this._currentStep.options) {
@@ -281,7 +285,7 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
       return;
     }
 
-    const currentStepFieldConfig = currentStep.fieldConfig[0];
+    const currentStepFieldConfig = currentStep.fieldConfig;
     if (!currentStepFieldConfig ||
       this.isFormEmpty(currentStepFieldConfig.formControl, currentStepFieldConfig.defaultValue)) {
       return;

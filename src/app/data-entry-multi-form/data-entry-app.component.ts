@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 import { NavigationMode } from "@gsa-sam/components";
 import { DataEntryMultiFormStepsService } from "./data-entry-multi-form-steps.service";
 import { FormlyStep } from "./data-entry-multi-form.component";
@@ -21,23 +22,29 @@ import { FormlyStep } from "./data-entry-multi-form.component";
 export class DataEntryAppComponent implements OnInit {
   steps: FormlyStep[] = [
     {
-      id: 'step1Id',
-      text: 'Review Contract',
-      fieldConfig: this.dataEntryFieldService.getReviewContract(),
+      id: 'step1',
+      text: 'Step 1',
       route: '/dataentry-multiform',
       mode: NavigationMode.LABEL,
       children: [
         {
           id: 'step1Child1',
-          text: 'Child Sub awardee modal',
-          fieldConfig: this.dataEntryFieldService.getSubawardeefields(),
+          text: 'Review Contract',
+          fieldConfig: this.dataEntryFieldService.getReviewContract('step1Child1'),
           route: '/dataentry-multiform',
           mode: NavigationMode.INTERNAL,
         },
         {
           id: 'step1Child2',
+          text: 'Child Sub awardee modal',
+          fieldConfig: this.dataEntryFieldService.getSubawardeefields('step1Child2'),
+          route: '/dataentry-multiform',
+          mode: NavigationMode.INTERNAL,
+        },
+        {
+          id: 'step1Child3',
           text: 'Child report details',
-          fieldConfig: this.dataEntryFieldService.getReportDetails('dataentry.reportchild1'),
+          fieldConfig: this.dataEntryFieldService.getReportDetails('step1Child3'),
           route: '/dataentry-multiform',
           mode: NavigationMode.INTERNAL,
         }
@@ -46,7 +53,7 @@ export class DataEntryAppComponent implements OnInit {
     {
       id: 'step2Id',
       text: 'Report Details',
-      fieldConfig: this.dataEntryFieldService.getReportDetails(),
+      fieldConfig: this.dataEntryFieldService.getReportDetails('step2'),
       hideFn: (model) => !model?.dataentry?.certificate,
       route: '/dataentry-multiform',
       mode: NavigationMode.INTERNAL,
@@ -54,16 +61,14 @@ export class DataEntryAppComponent implements OnInit {
     {
       id: 'step3Id',
       text: 'Subawardee Data',
-      fieldConfig: this.dataEntryFieldService.getSubawardeeData(),
+      fieldConfig: this.dataEntryFieldService.getSubawardeeData('step3'),
       route: '/dataentry-multiform',
       mode: NavigationMode.INTERNAL,
-
     },
 
     {
       id: 'review',
       text: 'Review and Submit',
-      fieldConfig: [],
       isReview: true,
       route: '/dataentry-multiform',
       mode: NavigationMode.INTERNAL,
@@ -97,6 +102,7 @@ export class DataEntryAppComponent implements OnInit {
 
   onStepChange($event: FormlyStep) {
     this.currentStepId = $event.id;
+    console.log(this.model);
   }
 
   getFormDataFromDraft(savedDraft: string) {
