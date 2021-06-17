@@ -18,7 +18,8 @@
 
               <li *ngFor="let step of getDisplayedSteps(steps); let i = index;" class="usa-sidenav__item"
                 [ngClass]="{'usa-current':  _currentStep.id === step.id}">
-                <ng-container [ngTemplateOutlet]="sidenavItem" [ngTemplateOutletContext]="{$implicit: step}"></ng-container>
+                <ng-container [ngTemplateOutlet]="sidenavItem" [ngTemplateOutletContext]="{$implicit: step}">
+                </ng-container>
                 <ng-container [ngTemplateOutlet]="subPanelTemplate" [ngTemplateOutletContext]="{$implicit:step}">
                 </ng-container>
               </li>
@@ -77,7 +78,8 @@
       <p class="text-right">Save</p>
     </div>
     <div class="margin-right-2" *ngIf="_currentStepIndex != _dataEntryStepsDef.length - 1 && !_currentStep.isReview">
-      <button cdkStepperNext class="usa-button sds-button--circle usa-button--base" (click)="onNextStep()">
+      <button cdkStepperNext class="usa-button sds-button--circle usa-button--base usa-button--active"
+        (click)="onNextStep()">
         <sds-icon [icon]="'chevron-right'"></sds-icon>
       </button>
       <p class="text-left">
@@ -127,23 +129,23 @@
   </ng-container>
 
 
-<ng-template #myTemplate let-item>
-  <div class="sds-alert--expanded info">
-    <div class="grid-container width-full maxw-full margin-0 padding-0">
-      <div class="grid-row">
-        <div class="grid-col-auto">
-          <sds-icon [icon]="'info'"></sds-icon>
-        </div>
-        <div class="grid-col-fill">
-          <span>
-            Please be aware that all information collected on the <a href="https://www.usaspending.gov">FSRS
-              website</a>,
-            including registration information and report data, will be
-            visible to the public on a public website (<a href="https://www.usaspending.gov">www.usaspending.gov</a>).
-          </span>
+  <ng-template #myTemplate let-item>
+    <div class="sds-alert--expanded info">
+      <div class="grid-container width-full maxw-full margin-0 padding-0">
+        <div class="grid-row">
+          <div class="grid-col-auto">
+            <sds-icon [icon]="'info'"></sds-icon>
+          </div>
+          <div class="grid-col-fill">
+            <span>
+              Please be aware that all information collected on the <a href="https://www.usaspending.gov">FSRS
+                website</a>,
+              including registration information and report data, will be
+              visible to the public on a public website (<a href="https://www.usaspending.gov">www.usaspending.gov</a>).
+            </span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-</ng-template>
+  </ng-template>

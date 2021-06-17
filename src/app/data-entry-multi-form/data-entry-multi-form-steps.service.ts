@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
+import { dataEntrySubawardeeRepeaterRequired } from "../data-entry/formly/formly-module";
 import { EntityReportingService } from "../services/entity-reporting-service/entity-reporting.service";
 
 @Injectable()
@@ -533,6 +534,9 @@ export class DataEntryMultiFormStepsService {
     return [{
       key: "addAwardee",
       type: "repeat",
+      templateOptions: {
+        required: true
+      },
       fieldArray: {
         fieldGroupClassName: "row",
         templateOptions: {
@@ -542,8 +546,13 @@ export class DataEntryMultiFormStepsService {
           getDetails: this.getAwardeeDetails,
           btnText: "Auto-fill Vendor Information",
           title: 'Add Subawardee',
-          inputPlaceHolder: "Input Unique Entity ID"
+          inputPlaceHolder: "Input Unique Entity ID",
+
         },
+        validators: {
+          required: dataEntrySubawardeeRepeaterRequired
+        },
+
         fieldGroup: [
           {
             className: "col-sm-4",

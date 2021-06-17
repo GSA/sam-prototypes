@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule, FormControl, ValidationErrors } from "@angular/forms";
 import { SdsFormlyModule, sdsWrappers } from "@gsa-sam/sam-formly";
 import { FormlyModule } from "@ngx-formly/core";
 
@@ -58,3 +58,8 @@ import { FormlyCustomComponent } from "./formly-custom";
   ],
 })
 export class DataEntryFormlyModule { }
+
+export function dataEntrySubawardeeRepeaterRequired(control: FormControl): ValidationErrors {
+  console.log(control.value, control, 'control')
+  return control.value && control.value.items && control.value.length ? { required: true } : null;
+}
