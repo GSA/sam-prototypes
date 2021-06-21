@@ -52,15 +52,6 @@ import { FieldArrayType, FormlyFormBuilder } from "@ngx-formly/core";
         class="margin-top-2"
       >
         <formly-group [field]="field" [options]="options" [form]="formControl">
-          <div class="col-sm-2 d-flex align-items-center">
-            <button
-              class="usa-button sds-danger"
-              type="button"
-              (click)="removeItem(i)"
-            >
-              Remove
-            </button>
-          </div>
         </formly-group>
       </div>
     </div>
@@ -76,7 +67,7 @@ export class RepeatTypeComponent extends FieldArrayType {
       id.toString() + "+AWARD"
     );
     const data: any = {
-      fields: this.field.fieldArray.templateOptions.subawardeefields,
+      fields: [this.field.fieldArray.templateOptions.subawardeefields],
       model: model1,
       submit: "Submit",
       title: "Add Subawardee",

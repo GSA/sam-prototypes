@@ -12,6 +12,7 @@ import { FormlyStep } from "./data-entry-multi-form.component";
       [steps]="steps"
       [currentStepId]="currentStepId"
       [stepValidityMap]="stepValidityMap"
+      [closeUrl]="closeUrl"
       [model]="model"
       (saveData)="onSaveClicked($event)"
       (stepChange)="onStepChange($event)"
@@ -73,6 +74,8 @@ export class DataEntryAppComponent implements OnInit {
       mode: NavigationMode.INTERNAL,
     }
   ];
+
+  closeUrl = 'http://localhost:4200/#'
 
   model: any = {};
   currentStepId: string;
