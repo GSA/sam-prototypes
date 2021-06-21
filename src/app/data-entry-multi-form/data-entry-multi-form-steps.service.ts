@@ -542,7 +542,7 @@ export class DataEntryMultiFormStepsService {
         fieldGroupClassName: "row",
         templateOptions: {
           subawardeeModel: this.subawardeeModel,
-          subawardeefields: this.getSubawardeefields(),
+          subawardeefields: [this.getSubawardeefields()],
           service: this.entityReportingService,
           getDetails: this.getAwardeeDetails,
           btnText: "Auto-fill Vendor Information",

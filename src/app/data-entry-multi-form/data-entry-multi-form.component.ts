@@ -197,7 +197,6 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
 
     this.currentStepId = this._currentStep.id;
     if (this._currentStep.isReview) {
-
       this.fields = this.onReviewAndSubmit();
     } else {
       this.fields = [this._currentStep.fieldConfig];
