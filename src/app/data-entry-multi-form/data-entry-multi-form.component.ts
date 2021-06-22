@@ -198,6 +198,18 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
     // Update current step's validity before moving to next step
     if (this.fields && this._currentStep) {
       this.updateSidenavValidation(this._currentStep);
+
+      // If validity map is defined, then save the step when moving away from it
+      if (this.stepValidityMap[this._currentStep.id] === true ||
+        this.stepValidityMap[this._currentStep.id] === false) {
+        this.saveData.emit({
+          model: this.model,
+          metadata: {
+            stepId: this._currentStep.id,
+            stepValidityMap: this.stepValidityMap
+          }
+        });
+      }
     }
 
     this.isReviewMode = false;
@@ -281,7 +293,7 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
   }
 
   private checkReviewAndSubmit() {
-    this._isReviewAndSubmitDisabled = this._dataEntryStepsDef.some(step => !step.valid);
+    this._isReviewAndSubmitDisabled = this._dataEntryStepsDef.some(step => !step.valid && !step.isReview);
   }
 
   private updateValidity(validityMap: any, steps: FormlyStep[]) {
