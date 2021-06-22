@@ -39,6 +39,13 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
 
   @Input() id = `data-entry-${nextId++}`;
 
+  /**
+   * Toggle custom error handling from user side. By default, errors are displayed
+   * only on save click or when loading a pre-saved form with defined validity.
+   * @default false
+   */
+  @Input() customErrorHandling = false;
+
   @Output() saveData = new EventEmitter<{ model: any, metadata: any }>();
 
   @Output() stepChange = new EventEmitter<FormlyStep>();
@@ -182,6 +189,12 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
    *  previous to the provided step
    */
   changeStep(stepId: string, incrementor?: 1 | -1) {
+    this._dataEntryStepsDef = this.getFlatSteps(this.steps);
+    let stepIndex = this._dataEntryStepsDef.findIndex(step => step.id === stepId);
+    if (incrementor) {
+      stepIndex = stepIndex + incrementor;
+    }
+
     // Update current step's validity before moving to next step
     if (this.fields && this._currentStep) {
       this.updateSidenavValidation(this._currentStep);
@@ -189,11 +202,6 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
 
     this.isReviewMode = false;
 
-    this._dataEntryStepsDef = this.getFlatSteps(this.steps);
-    let stepIndex = this._dataEntryStepsDef.findIndex(step => step.id === stepId);
-    if (incrementor) {
-      stepIndex = stepIndex + incrementor;
-    }
     this._currentStepIndex = stepIndex;
     this._currentStep = this._dataEntryStepsDef[stepIndex];
 
@@ -204,8 +212,11 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
       this.fields = [this._currentStep.fieldConfig];
     }
 
-    if (!this._currentStep.options) {
+    if (!this._currentStep.options && !this.customErrorHandling) {
       this._currentStep.options = {};
+    }
+
+    if (!this._currentStep.options.showError && !this.customErrorHandling) {
       this._currentStep.options.showError = () => false;
     }
 
@@ -241,7 +252,10 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
   onSaveClicked() {
     this._dataEntryStepsDef = this.getFlatSteps(this.steps);
     this._currentStepIndex = this._dataEntryStepsDef.findIndex(step => step.id === this._currentStep.id);
-    this._currentStep.options.showError = (field) => !field.formControl.valid;
+
+    if (!this.customErrorHandling) {
+      this._currentStep.options.showError = (field) => !field.formControl.valid;
+    }
 
     const isValid = this.fields[0].formControl.valid;
     this._currentStep.valid = isValid;

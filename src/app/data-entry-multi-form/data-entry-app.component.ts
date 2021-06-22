@@ -54,7 +54,6 @@ export class DataEntryAppComponent implements OnInit {
       id: 'step2Id',
       text: 'Report Details',
       fieldConfig: this.dataEntryFieldService.getReportDetails('step2'),
-      hideFn: (model) => !model?.dataentry?.certificate,
       route: '/dataentry-multiform',
       mode: NavigationMode.INTERNAL,
     },

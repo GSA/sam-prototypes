@@ -1,6 +1,6 @@
 <data-entry-subheader title="FSRS New Report">
   <button class="usa-button usa-button--secondary">Discard Draft</button>
-  <button class="usa-button" (click)="onSubmit()">
+  <button class="usa-button" (click)="onSubmit()" [disabled]="_isReviewAndSubmitDisabled">
     Submit</button>
 </data-entry-subheader>
 
@@ -127,7 +127,8 @@
         {{step.text}}
       </span>
     </span>
-    <a *ngSwitchDefault href="javascript:void(0);" (click)="changeStep(step.id)">
+    <a *ngSwitchDefault href="javascript:void(0);"
+      (click)="changeStep(step.id)">
       <ng-container [ngTemplateOutlet]="sidenavIcon" [ngTemplateOutletContext]="{$implicit: step}"></ng-container>
       <span class="margin-left-1">
         {{step.text}}
