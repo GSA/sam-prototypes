@@ -34,13 +34,7 @@ export class DataEntryAppComponent implements OnInit {
           route: '/dataentry-multiform',
           mode: NavigationMode.INTERNAL,
         },
-        {
-          id: 'step1Child2',
-          text: 'Child Sub awardee modal',
-          fieldConfig: this.dataEntryFieldService.getSubawardeefields('step1Child2'),
-          route: '/dataentry-multiform',
-          mode: NavigationMode.INTERNAL,
-        },
+
         {
           id: 'step1Child3',
           text: 'Child report details',
@@ -74,7 +68,7 @@ export class DataEntryAppComponent implements OnInit {
     }
   ];
 
-  closeUrl = 'http://localhost:4200/#'
+  closeUrl = '';
 
   model: any = {};
   currentStepId: string;

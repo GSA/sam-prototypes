@@ -13,9 +13,10 @@ import { SdsIconModule } from "@gsa-sam/components";
 import { ExpandableCardModule } from "../card/card.module";
 import { SdsActionsMenuModule } from "@gsa-sam/layouts";
 import { RepeatTypeComponent } from "./repeat-section";
+import { ReadOnlyRepeatTypeComponent } from "./readonly-repeat-section";
 
 @NgModule({
-  declarations: [FormlyFieldStepperComponent, RepeatTypeComponent],
+  declarations: [FormlyFieldStepperComponent, RepeatTypeComponent, ReadOnlyRepeatTypeComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -39,8 +40,13 @@ import { RepeatTypeComponent } from "./repeat-section";
           component: RepeatTypeComponent,
           wrappers: sdsWrappers,
         },
+        {
+          name: "readonlyrepeat",
+          component: ReadOnlyRepeatTypeComponent,
+          wrappers: sdsWrappers,
+        },
       ],
     }),
   ],
 })
-export class AppLayoutFormlyModule {}
+export class AppLayoutFormlyModule { }

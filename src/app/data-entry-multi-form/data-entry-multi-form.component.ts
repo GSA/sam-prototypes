@@ -1,8 +1,8 @@
-import { Location } from '@angular/common';
+import { DOCUMENT, Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { INavigationLink, NavigationMode, Selectable } from '@gsa-sam/components';
 import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
-import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewChild, OnChanges, SimpleChanges, TemplateRef, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewChild, OnChanges, SimpleChanges, TemplateRef, ChangeDetectorRef, Inject } from '@angular/core';
 import _ from "lodash-es";
 import { FormlyUtilsService } from '../app-layout/formly/formly-utils.service';
 import { AbstractControl } from '@angular/forms';
@@ -71,6 +71,7 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     public cdr: ChangeDetectorRef,
+    @Inject(DOCUMENT) private document: Document
   ) { }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -131,10 +132,16 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
     _reviewFields.forEach(element => {
       if (!element.isReview) {
         this.reviewFields.push({
-          key: element.id,
+          key: element.id + '_review',
           template: '<h2 class="padding-top-2"> ' + element.text + ' </h2><hr />',
         });
-        element = this.constructReviewField(element);
+
+        if (element.fieldConfig.type == 'repeat') {
+          element.fieldConfig.type = 'readonlyrepeat';
+          this.reviewFields.push(element.fieldConfig);
+        } else {
+          this.reviewFields.push(element.fieldConfig);
+        }
       }
     });
     FormlyUtilsService.setReadonlyMode(true, this.reviewFields, this.model);
@@ -150,11 +157,19 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
       }
       if (chdElement.fieldGroup) {
         chdElement.fieldGroup.forEach(chdfieldGroup => {
-          this.reviewFields.push(chdfieldGroup);
+          if (chdElement.type == 'repeat') {
+            if (chdElement.fieldGroup) {
+              chdfieldGroup.fieldGroup.forEach(element => {
+                this.reviewFields.push(element);
+              });
+            }
+          } else {
+            this.reviewFields.push(chdfieldGroup);
+          }
         });
-      } else {
-        if (chdElement.type != 'repeat')
-          this.reviewFields.push(chdElement);
+      }
+      else {
+        this.reviewFields.push(chdElement);
       }
     });
   }
@@ -257,9 +272,11 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
   }
 
   closeback() {
+
     this.closeUrl ?
-      this.router.navigateByUrl(this.closeUrl) :
+      window.open(this.closeUrl) :
       this.location.back();
+
   }
 
   onSaveClicked() {

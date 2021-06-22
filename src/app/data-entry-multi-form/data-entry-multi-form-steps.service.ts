@@ -563,6 +563,13 @@ export class DataEntryMultiFormStepsService {
               subawardItem: {},
             },
           },
+          {
+            key: "tsInput",
+            type: "input",
+            templateOptions: {
+              label: "Number",
+            },
+          },
         ],
       },
     };
