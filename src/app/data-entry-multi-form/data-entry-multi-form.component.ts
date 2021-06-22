@@ -209,6 +209,7 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
             stepValidityMap: this.stepValidityMap
           }
         });
+        this.checkReviewAndSubmit();
       }
     }
 
