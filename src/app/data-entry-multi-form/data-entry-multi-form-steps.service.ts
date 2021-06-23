@@ -568,6 +568,7 @@ export class DataEntryMultiFormStepsService {
             type: "input",
             templateOptions: {
               label: "Number",
+              required: true
             },
           },
         ],

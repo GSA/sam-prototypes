@@ -57,7 +57,7 @@ import { FieldArrayType, FormlyFormBuilder } from "@ngx-formly/core";
     </div>
   `,
 })
-export class RepeatTypeComponent extends FieldArrayType {
+export class SubawardeeRepeatTypeComponent extends FieldArrayType {
   constructor(builder: FormlyFormBuilder, public dialog: SdsDialogService, public cdr: ChangeDetectorRef) {
     super(builder);
   }

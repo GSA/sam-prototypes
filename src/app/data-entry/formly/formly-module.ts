@@ -15,6 +15,8 @@ import { SdsActionsMenuModule } from "@gsa-sam/layouts";
 import { ExpandableCardModule } from "../../app-layout/card/card.module";
 import { StepperModule } from "../../app-layout/stepper/stepper.module";
 import { FormlyCustomComponent } from "./formly-custom";
+import { SubawardeeRepeatTypeComponent } from "./repeat-section";
+import { SubawardeeReadOnlyRepeatTypeComponent } from "./readonly-repeat-section";
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FormlyCustomComponent } from "./formly-custom";
     FormlySubawardComponent,
     SubawardDataComponent,
     ReviewContractComponent,
-    FormlyCustomComponent
+    FormlyCustomComponent,
+    SubawardeeRepeatTypeComponent,
+    SubawardeeReadOnlyRepeatTypeComponent
   ],
   imports: [
     CommonModule,
@@ -46,6 +50,16 @@ import { FormlyCustomComponent } from "./formly-custom";
         {
           name: "contract",
           component: FormlyContractComponent,
+          wrappers: sdsWrappers,
+        },
+        {
+          name: "repeat",
+          component: SubawardeeRepeatTypeComponent,
+          wrappers: sdsWrappers,
+        },
+        {
+          name: "readonlyrepeat",
+          component: SubawardeeReadOnlyRepeatTypeComponent,
           wrappers: sdsWrappers,
         },
         {
