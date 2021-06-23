@@ -149,8 +149,9 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges, AfterCont
 
         if (element.type == 'repeat') {
           element.type = 'readonlyrepeat';
-          this.reviewFields.push(element.fieldConfig);
-        } else {
+        }
+
+        if (element.fieldConfig) {
           this.reviewFields.push(element.fieldConfig);
         }
       }
