@@ -17,7 +17,7 @@
                   FSRS Report
                 </li>
 
-                <li *ngFor="let step of getDisplayedSteps(steps); let i = index;" class="usa-sidenav__item"
+                <li *ngFor="let step of getDisplayedSteps(stepTemplates); let i = index;" class="usa-sidenav__item"
                   [ngClass]="{'usa-current':  _currentStep.id === step.id}">
                   <ng-container [ngTemplateOutlet]="sidenavItem" [ngTemplateOutletContext]="{$implicit: step}">
                   </ng-container>
@@ -30,7 +30,7 @@
         </div>
         <div class="grid-col-fill">
 
-          <div class="padding-bottom-3">
+          <!-- <div class="padding-bottom-3">
             <h1>
               {{ !isReviewMode ? _currentStep.text : 'Review and Submit' }}
             </h1>
@@ -44,7 +44,8 @@
           <div *ngIf="isReviewMode" class="text-right">
             <button class="usa-button align-right" (click)="onSubmit()">
               Submit</button>
-          </div>
+          </div> -->
+          <ng-content></ng-content>
 
           <div class="grid-container grid-row grid-gap align-right">
             <div class="text-right margin-right-1" *ngIf="_currentStepIndex > 0">
@@ -68,7 +69,7 @@
                 Close
               </label>
             </div>
-            <div class="margin-right-2" *ngIf="!_currentStep.isReview">
+            <div class="margin-right-2" *ngIf="!_currentStep?.isReview">
               <button class="usa-button sds-button--circle usa-button--big usa-button--base padding-2"
                 [attr.id]="id + '-helpBtn'">
                 <sds-icon [icon]="'question'"></sds-icon>
@@ -78,7 +79,7 @@
                 Help
               </label>
             </div>
-            <div class="margin-right-2" *ngIf="!_currentStep.isReview" (click)="onSaveClicked()"
+            <div class="margin-right-2" *ngIf="!_currentStep?.isReview" (click)="onSaveClicked()"
               [attr.id]="id + '-saveBtn'">
               <button class="usa-button sds-button--circle usa-button--big usa-button--base padding-2">
                 <sds-icon [icon]="'save'"></sds-icon>
@@ -89,7 +90,7 @@
               </label>
             </div>
             <div class="margin-right-2"
-              *ngIf="_currentStepIndex != _dataEntryStepsDef.length - 1 && !_currentStep.isReview">
+              *ngIf="_currentStepIndex != _dataEntryStepsDef.length - 1 && !_currentStep?.isReview">
               <button cdkStepperNext
                 class="usa-button sds-button--circle usa-button--base usa-button--big usa-button--active padding-2"
                 (click)="onNextStep()" [attr.id]="id + '-nextBtn'">

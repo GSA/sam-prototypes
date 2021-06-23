@@ -58,6 +58,9 @@ export class FormlyUtilsService {
     field: FormlyFieldConfig,
     model?: any
   ) {
+    if (!field) {
+      return;
+    }
     if (field.fieldGroup) {
       field.fieldGroup.forEach((innerField: FormlyFieldConfig) => {
         // if (innerField.type === "repeat" && readonlyMode) {

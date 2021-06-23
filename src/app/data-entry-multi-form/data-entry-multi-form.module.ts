@@ -18,6 +18,7 @@ import {
   check,
 } from "ngx-bootstrap-icons";
 import { DataEntryAppComponent } from './data-entry-app.component';
+import { DataEntryStepComponent, SdsStepFooterComponent, SdsStepHeaderComponent } from './data-entry-step.component';
 
 const routes: Routes = [
   {
@@ -29,7 +30,11 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     DataEntryAppComponent,
-    DataEntryMultiFormComponent],
+    DataEntryStepComponent,
+    SdsStepFooterComponent,
+    SdsStepHeaderComponent,
+    DataEntryMultiFormComponent
+  ],
   providers: [
     DataEntryMultiFormStepsService,
   ],

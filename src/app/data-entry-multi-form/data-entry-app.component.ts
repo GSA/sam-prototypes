@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
 import { NavigationMode } from "@gsa-sam/components";
 import { DataEntryMultiFormStepsService } from "./data-entry-multi-form-steps.service";
 import { FormlyStep } from "./data-entry-multi-form.component";
@@ -7,17 +6,7 @@ import { FormlyStep } from "./data-entry-multi-form.component";
 
 @Component({
   selector: `app-data-entry-multi`,
-  template: `
-    <app-data-entry-multi-form
-      [steps]="steps"
-      [currentStepId]="currentStepId"
-      [stepValidityMap]="stepValidityMap"
-      [closeUrl]="closeUrl"
-      [model]="model"
-      (saveData)="onSaveClicked($event)"
-      (stepChange)="onStepChange($event)"
-    ></app-data-entry-multi-form>
-  `,
+  templateUrl: './data-entry-app.component.html',
 })
 export class DataEntryAppComponent implements OnInit {
   steps: FormlyStep[] = [
@@ -95,7 +84,6 @@ export class DataEntryAppComponent implements OnInit {
 
   onStepChange($event: FormlyStep) {
     this.currentStepId = $event.id;
-    console.log(this.model);
   }
 
   getFormDataFromDraft(savedDraft: string) {

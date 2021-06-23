@@ -1,11 +1,12 @@
-import { DOCUMENT, Location } from '@angular/common';
+import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { INavigationLink, NavigationMode, Selectable } from '@gsa-sam/components';
 import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
-import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewChild, OnChanges, SimpleChanges, TemplateRef, ChangeDetectorRef, Inject } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewChild, OnChanges, SimpleChanges, TemplateRef, ChangeDetectorRef, Inject, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
 import _ from "lodash-es";
 import { FormlyUtilsService } from '../app-layout/formly/formly-utils.service';
 import { AbstractControl } from '@angular/forms';
+import { DataEntryStepComponent } from './data-entry-step.component';
 
 export interface FormlyStep extends INavigationLink, Selectable {
   fieldConfig?: FormlyFieldConfig,
@@ -25,9 +26,11 @@ let nextId = 0;
   templateUrl: './data-entry-multi-form.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DataEntryMultiFormComponent implements OnInit, OnChanges {
+export class DataEntryMultiFormComponent implements OnInit, OnChanges, AfterContentInit {
 
-  @Input() steps: FormlyStep[];
+  @ContentChildren(DataEntryStepComponent) stepTemplates: QueryList<DataEntryStepComponent>;
+
+  // @Input() steps: FormlyStep[];
 
   @Input() model: any = {};
 
@@ -48,7 +51,7 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
 
   @Output() saveData = new EventEmitter<{ model: any, metadata: any }>();
 
-  @Output() stepChange = new EventEmitter<FormlyStep>();
+  @Output() stepChange = new EventEmitter<DataEntryStepComponent>();
 
   @Output() modelChange = new EventEmitter<any>();
 
@@ -56,9 +59,9 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
 
   navigationMode = NavigationMode;
 
-  _currentStep: FormlyStep;
+  _currentStep: DataEntryStepComponent;
   _currentStepIndex: number;
-  _dataEntryStepsDef: FormlyStep[] = [];
+  _dataEntryStepsDef: DataEntryStepComponent[] = [];
 
   _isReviewAndSubmitDisabled = true;
 
@@ -71,7 +74,6 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     public cdr: ChangeDetectorRef,
-    @Inject(DOCUMENT) private document: Document
   ) { }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -84,8 +86,12 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
     }
   }
 
-  ngOnInit(): void {
-    this._dataEntryStepsDef = this.getFlatSteps(this.steps);
+  ngAfterContentInit() {
+
+    this._dataEntryStepsDef = this.getFlatSteps(this.stepTemplates);
+    this._dataEntryStepsDef.forEach(step => {
+      step.model = step.model ? step.model : this.model
+    });
 
     this._currentStepIndex = 0;
     this._currentStep = this._dataEntryStepsDef[this._currentStepIndex];
@@ -97,7 +103,7 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
     }
 
     if (this.stepValidityMap) {
-      this.updateValidity(this.stepValidityMap, this.steps);
+      this.updateValidity(this.stepValidityMap, this.stepTemplates);
       this.checkReviewAndSubmit();
     } else {
       this.stepValidityMap = {};
@@ -110,6 +116,11 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
         this.changeStep(queryParam.sdsStepId);
       }
     })
+  }
+
+  ngOnInit(): void {
+
+
   }
 
   onReviewAndSubmit() {
@@ -136,8 +147,8 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
           template: '<h2 class="padding-top-2"> ' + element.text + ' </h2><hr />',
         });
 
-        if (element.fieldConfig.type == 'repeat') {
-          element.fieldConfig.type = 'readonlyrepeat';
+        if (element.type == 'repeat') {
+          element.type = 'readonlyrepeat';
           this.reviewFields.push(element.fieldConfig);
         } else {
           this.reviewFields.push(element.fieldConfig);
@@ -174,18 +185,18 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
     });
   }
 
-  getFlatSteps(steps: FormlyStep[]): FormlyStep[] {
-    let flat: FormlyStep[] = [];
-    steps.forEach(step => {
+  getFlatSteps(stepTemplates: QueryList<DataEntryStepComponent>): DataEntryStepComponent[] {
+    let flat: DataEntryStepComponent[] = [];
+    stepTemplates.forEach(step => {
+        if (step.hideFn && step.hideFn(step.model ? step.model : this.model, step.fieldConfig)) {
+          step.hide = true;
+          return;
+        }
+        step.hide = false;
+        if (step.mode !== NavigationMode.LABEL) {
+          flat.push(step);
+        }
 
-      if (step.hideFn && step.hideFn(step.model ? step.model : this.model, step.fieldConfig)) {
-        step.hide = true;
-        return;
-      }
-      step.hide = false;
-      if (step.mode !== NavigationMode.LABEL) {
-        flat.push(step);
-      }
       if (step.children && step.children.length) {
         const childSteps = this.getFlatSteps(step.children);
         flat = flat.concat(childSteps);
@@ -204,7 +215,7 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
    *  previous to the provided step
    */
   changeStep(stepId: string, incrementor?: 1 | -1) {
-    this._dataEntryStepsDef = this.getFlatSteps(this.steps);
+    this._dataEntryStepsDef = this.getFlatSteps(this.stepTemplates);
     let stepIndex = this._dataEntryStepsDef.findIndex(step => step.id === stepId);
     if (incrementor) {
       stepIndex = stepIndex + incrementor;
@@ -233,9 +244,16 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
     this._currentStepIndex = stepIndex;
     this._currentStep = this._dataEntryStepsDef[stepIndex];
 
+    this.updateSelected(this.stepTemplates, stepId);
+    this._currentStep.selected = true;
     this.currentStepId = this._currentStep.id;
+
     if (this._currentStep.isReview) {
       this.fields = this.onReviewAndSubmit();
+      this._currentStep.fieldConfig = {
+        key: this.currentStepId,
+        fieldGroup: this.fields
+      }
     } else {
       this.fields = [this._currentStep.fieldConfig];
     }
@@ -280,7 +298,7 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
   }
 
   onSaveClicked() {
-    this._dataEntryStepsDef = this.getFlatSteps(this.steps);
+    this._dataEntryStepsDef = this.getFlatSteps(this.stepTemplates);
     this._currentStepIndex = this._dataEntryStepsDef.findIndex(step => step.id === this._currentStep.id);
 
     if (!this.customErrorHandling) {
@@ -300,22 +318,47 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
     });
   }
 
-  getDisplayedSteps(steps: FormlyStep[]) {
+  getDisplayedSteps(steps: QueryList<DataEntryStepComponent>) {
     if (!steps) {
       return [];
     }
     return steps.filter((step => !step.hide));
   }
+
   onSubmit() {
     console.log(this.model, 'submits')
+  }
+
+  private updateSelected(stepTemplates: QueryList<DataEntryStepComponent>, selectedId: string): boolean {
+    let isSelected = false;
+    stepTemplates.forEach(template => {
+      if (template.children && template.children.length) {
+        isSelected = this.updateSelected(template.children, selectedId);
+        template.selected = isSelected;
+      } else {
+        if (template.id === selectedId) {
+          template.selected = true;
+          isSelected = true;
+        } else {
+          template.selected = false;
+        }
+      }
+    });
+
+    return isSelected;
   }
 
   private checkReviewAndSubmit() {
     this._isReviewAndSubmitDisabled = this._dataEntryStepsDef.some(step => !step.valid && !step.isReview);
   }
 
-  private updateValidity(validityMap: any, steps: FormlyStep[]) {
-    steps.forEach(step => {
+  private updateValidity(validityMap: any, stepTemplates: QueryList<DataEntryStepComponent>) {
+    stepTemplates.forEach(step => {
+
+      if (!step) {
+        return;
+      }
+
       step.valid = validityMap[step.id];
       if (step.children) {
         this.updateValidity(validityMap, step.children);
@@ -323,7 +366,7 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
     })
   }
 
-  private updateSidenavValidation(currentStep: FormlyStep) {
+  private updateSidenavValidation(currentStep: DataEntryStepComponent) {
     if (!currentStep) {
       return;
     }
@@ -340,6 +383,10 @@ export class DataEntryMultiFormComponent implements OnInit, OnChanges {
   }
 
   private isFormEmpty(form: AbstractControl, defaultValue?: any) {
+    if (!form) {
+      return true;
+    }
+
     if (form.value === false) {
       return false;
     }

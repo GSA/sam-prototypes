@@ -82,8 +82,11 @@ export class RepeatTypeComponent extends FieldArrayType {
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.field.fieldArray.fieldGroup[0].templateOptions.subawardItem = result;
+
         this.add();
-        this.model[this.model.length - 1] = result;
+        const registeredForm = this.formControl.controls[this.formControl.controls.length - 1];
+        registeredForm.setValue({[this.to.repeaterKey]: result});
+        console.log(this.formControl.value);
         this.showNoresultFound = this.model.length == 0 ? true : false;
         this.cdr.detectChanges();
       }

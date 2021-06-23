@@ -536,7 +536,8 @@ export class DataEntryMultiFormStepsService {
       key: key ? key : "addAwardee",
       type: "repeat",
       templateOptions: {
-        required: true
+        required: true,
+        repeaterKey: 'subawards',
       },
       fieldArray: {
         fieldGroupClassName: "row",
@@ -561,13 +562,6 @@ export class DataEntryMultiFormStepsService {
             type: "subaward",
             templateOptions: {
               subawardItem: {},
-            },
-          },
-          {
-            key: "tsInput",
-            type: "input",
-            templateOptions: {
-              label: "Number",
             },
           },
         ],
