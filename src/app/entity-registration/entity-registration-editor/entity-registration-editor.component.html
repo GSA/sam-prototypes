@@ -2,23 +2,6 @@
 <main>
   <div class="sds-page margin-top-2">
   	<div class="grid-container">
-  		<h1 class="margin-top-6">{{service.registration.name}}</h1>
-		<div class="grid-row grid-gap">
-			<div class="grid-col-6">
-				<div class="display-flex flex-row flex-justify-start">
-					<display-field label="Unique Entity ID">{{service.registration.dunsNumber}}</display-field>
-					<display-field class="margin-left-4" label="CAGE/NCAGE">{{service.registration.cageCode}}</display-field>
-					<display-field class="margin-left-4" label="Expiration Date">{{service.registration.registrationExpirationDate | date }}</display-field>
-				</div>
-			</div>
-			<div class="grid-col-6">
-				<div class="display-flex flex-row flex-justify-end">
-					<button class="usa-button usa-button--secondary">Cancel</button>
-					<button class="usa-button margin-right-4">Submit</button>
-				</div>
-			</div>
-		</div>  
-		<hr class="margin-bottom-3">
   		<router-outlet></router-outlet>
   	</div>
   </div>

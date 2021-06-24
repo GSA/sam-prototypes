@@ -12,9 +12,10 @@ import { SdsButtonGroupModule } from '@gsa-sam/sam-material-extensions';
 import {AppLayoutModule} from '../app-layout.module';
 
 import { DataEntrySubheaderComponent } from './data-entry-subheader.component';
+import { DataEntrySideNavComponent } from './data-entry-side-nav/data-entry-side-nav.component';
 
 @NgModule({
-  declarations: [DataEntrySubheaderComponent],
+  declarations: [DataEntrySubheaderComponent, DataEntrySideNavComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -25,6 +26,6 @@ import { DataEntrySubheaderComponent } from './data-entry-subheader.component';
       Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
     )
   ],
-  exports: [DataEntrySubheaderComponent]
+  exports: [DataEntrySubheaderComponent, DataEntrySideNavComponent]
 })
 export class DataEntryLayoutModule { }
