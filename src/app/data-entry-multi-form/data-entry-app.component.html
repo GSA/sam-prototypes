@@ -1,8 +1,10 @@
-<app-data-entry-multi-form 
+<div class="grid-container">
+  <sds-stepper
   [model]="model" 
   [currentStepId]="currentStepId" 
   [stepValidityMap]="stepValidityMap"
   (saveData)="onSaveClicked($event)"
+  (stepChange)="onStepChange($event)"
 >
   <sds-step *ngFor="let step of steps" 
     [id]="step.id" 
@@ -10,13 +12,60 @@
     [text]="step.text"
     [mode]="step.mode"
     [isReview]="step.isReview"
-  >
-    <sds-step *ngFor="let childStep of step.children" [text]="childStep.text" [id]="childStep.id" [fieldConfig]="childStep.fieldConfig"></sds-step>
+  > 
+    <span sdsStepHeader *ngIf="!step.children">
+      <ng-container [ngTemplateOutlet]="stepHeader" [ngTemplateOutletContext]="{$implicit: step.text}"></ng-container>
+    </span>
+
+    <sds-step *ngFor="let childStep of step.children" [text]="childStep.text" [id]="childStep.id" [fieldConfig]="childStep.fieldConfig">
+      <span sdsStepHeader>
+        <ng-container [ngTemplateOutlet]="stepHeader" [ngTemplateOutletContext]="{$implicit: childStep.text}"></ng-container>
+      </span>
+    </sds-step>
   </sds-step>
-  <sds-step [text]="'Custom Step'" [id]="'customId'" [stepTemplate]="customStep">
+  <sds-step [text]="'Review and Submit'" [id]="'reviewId'" [stepTemplate]="customStep" [mode]="navigationMode.INTERNAL">
     <ng-template #customStep>
-      <span>Hello World</span>
+      <div class="margin-bottom-8">
+        <span sdsStepHeader>
+          <ng-container [ngTemplateOutlet]="stepHeader" [ngTemplateOutletContext]="{$implicit: 'Review and Submit'}"></ng-container>
+        </span>
+        <formly-form [fields]="reviewFields" [model]="model">
+          <button class="usa-button usa-button--primary float-right margin-top-2">Submit</button>
+        </formly-form>
+      </div>
+
     </ng-template>
   </sds-step>
-</app-data-entry-multi-form>
+</sds-stepper>
+</div>
+
+<ng-template #stepHeader let-headerText>
+  <div class="padding-bottom-3">
+    <h1>
+      {{ headerText}}
+    </h1>
+    <hr />
+  </div>
+</ng-template>
+
+<ng-template #myTemplate let-item>
+  <div class="sds-alert--expanded info">
+    <div class="grid-container width-full maxw-full margin-0 padding-0">
+      <div class="grid-row">
+        <div class="grid-col-auto">
+          <sds-icon [icon]="'info'"></sds-icon>
+        </div>
+        <div class="grid-col-fill">
+          <span>
+            Please be aware that all information collected on the <a href="https://www.usaspending.gov">FSRS
+              website</a>,
+            including registration information and report data, will be
+            visible to the public on a public website (<a href="https://www.usaspending.gov">www.usaspending.gov</a>).
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
 

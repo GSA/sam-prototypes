@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DataEntryMultiFormComponent } from './data-entry-multi-form.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SdsIconModule, SdsSelectionPanelModule } from '@gsa-sam/components';
 import { DataEntryLayoutModule } from '../app-layout/data-entry-layout/data-entry-layout.module';
@@ -18,7 +17,7 @@ import {
   check,
 } from "ngx-bootstrap-icons";
 import { DataEntryAppComponent } from './data-entry-app.component';
-import { DataEntryStepComponent, SdsStepFooterComponent, SdsStepHeaderComponent } from './data-entry-step.component';
+import { SdsFormlyStepperModule } from '@gsa-sam/sam-formly';
 
 const routes: Routes = [
   {
@@ -30,10 +29,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     DataEntryAppComponent,
-    DataEntryStepComponent,
-    SdsStepFooterComponent,
-    SdsStepHeaderComponent,
-    DataEntryMultiFormComponent
   ],
   providers: [
     DataEntryMultiFormStepsService,
@@ -50,7 +45,7 @@ const routes: Routes = [
     NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, x, check }),
     EntityReportingServiceModule,
     RouterModule.forChild(routes),
+    SdsFormlyStepperModule,
   ],
-  exports: [DataEntryMultiFormComponent]
 })
 export class DataEntryMultiFormModule { }
