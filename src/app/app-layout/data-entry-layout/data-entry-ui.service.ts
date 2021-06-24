@@ -23,6 +23,7 @@ export class DataEntryNavigationLink implements INavigationLink {
   }
 }
 
+
 export abstract class DataEntryUiService {
  
   public selectedLinkChange$ = new BehaviorSubject<DataEntryNavigationLink>(null);

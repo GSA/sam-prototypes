@@ -7,7 +7,7 @@ import { INavigationLink } from '@gsa-sam/components';
 })
 export class DataEntrySideNavComponent implements OnInit {
 
-  @Input() links: INavigationLink;
+  @Input() links: INavigationLink[];
 
   selectedLink: INavigationLink;
 
