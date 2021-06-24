@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component } from "@angular/core";
 import { SdsDialogService } from "@gsa-sam/components";
-import { SdsFormlyDialogComponent } from "@gsa-sam/sam-formly";
+import { SdsFormlyDialogComponent, SdsFormlyTypes } from "@gsa-sam/sam-formly";
 import { FieldArrayType, FormlyFormBuilder } from "@ngx-formly/core";
 
 @Component({
@@ -15,5 +15,27 @@ import { FieldArrayType, FormlyFormBuilder } from "@ngx-formly/core";
 export class SubawardeeReadOnlyRepeatTypeComponent extends FieldArrayType {
   constructor(builder: FormlyFormBuilder) {
     super(builder);
+  }
+  ngOnInit() {
+    this.processFieldGroup(this.field.fieldGroup);
+  }
+
+  processFieldGroup(groupElement) {
+    groupElement.forEach(element => {
+      if (element.fieldGroup && element.fieldGroup.length > 0) {
+        this.processFieldGroup(element.fieldGroup);
+      }
+
+      if (element.templateOptions) {
+        const isSdsFieldType = Object.values(SdsFormlyTypes).includes(
+          element.type as any
+        );
+        if (isSdsFieldType) {
+          element.templateOptions.readonlyMode = true;
+        } else {
+          element.templateOptions.readonlyMode = false;
+        }
+      }
+    });
   }
 }
