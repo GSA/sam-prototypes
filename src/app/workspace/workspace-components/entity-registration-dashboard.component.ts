@@ -7,7 +7,7 @@ import { EntityRegistrationService } from '../../services/entity-registration-se
   selector: 'entity-registration-dashboard',
   template: `
     <workspace-card [title]="title" [route]="route">
-      <button class="usa-button usa-button--outline">Register</button>
+      <button class="usa-button usa-button--outline">Get Started</button>
       <p><a [routerLink]="['/']">What do I need for registration?</a></p>
       <workspace-statistics>
       	<workspace-statistic *ngFor="let statistic of statistics" [route]="route" [queryParams]="[statistic.key]"

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { SideNavigationModel, NavigationMode } from '@gsa-sam/components';
-import { EntityRegistrationService } from '../../services/entity-registration-service/entity-registration.service';
+import { NavigationLink, NavigationMode } from '@gsa-sam/components';
+import { EntityRegistrationEditorService } from '../services/entity-registration-editor-service/entity-registration-editor.service';
 
 @Component({
   selector: 'app-entity-registration-editor',
@@ -11,19 +11,7 @@ export class EntityRegistrationEditorComponent implements OnInit {
 
     model: any;
 
-    @ViewChild('sideNavigation') sideNav;
-
-	public sideMenu: SideNavigationModel = {
-	    navigationLinks: [
-		    { text: 'Review', id: 'hierarchy-children', route: 'review', queryParams: {}, mode: NavigationMode.INTERNAL },
-		    { text: 'Edit', id: 'hierarchy-profile', route: '', queryParams: {}, mode: NavigationMode.INTERNAL },
-		    { text: 'Preview', id: 'hierarchy-settings', route: 'preview', queryParams: {}, mode: NavigationMode.INTERNAL },
-		    { text: 'History', id: 'hierarchy-history', route: 'history', queryParams: {}, mode: NavigationMode.INTERNAL }
-	    ]
-	 };
-
-
-  constructor(private route: ActivatedRoute, public service: EntityRegistrationService) { }
+  constructor(private route: ActivatedRoute, public service: EntityRegistrationEditorService) { }
 
   ngOnInit(): void {  
     let key = this.route.snapshot.paramMap.get('id');
@@ -38,8 +26,7 @@ export class EntityRegistrationEditorComponent implements OnInit {
   }
 
   updateKey(key: string) {
-    this.model = this.service.getRecord(key);
-    this.sideMenu.navigationLinks[1].route = '/entity-registration/form/' + key;
+    this.service.setRegistrationById(key);
   }
 
 

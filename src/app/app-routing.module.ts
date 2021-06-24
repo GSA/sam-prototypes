@@ -110,7 +110,7 @@ const routes: Routes = [
     },
   },
   {
-    path: "entity-360",
+    path: "entity360",
     loadChildren: () =>
       import("./entity-three-sixty/entity-three-sixty.module").then((m) => m.EntityThreeSixtyModule),    
     data: {

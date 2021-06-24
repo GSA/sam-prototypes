@@ -4,25 +4,33 @@ import { EntityRegistrationEditorComponent } from './entity-registration-editor.
 
 const routes: Routes = [
 	{
-		path: ':id',
+		path: '',
 		component: EntityRegistrationEditorComponent,
 		children: [
-			{
-				path: 'preview',
-    			loadChildren: () => import("./entity-registration-preview/entity-registration-preview.module").then((m) => m.EntityRegistrationPreviewModule) 
-			},
 			{
 				path: 'review',
     			loadChildren: () => import("./entity-registration-review/entity-registration-review.module").then((m) => m.EntityRegistrationReviewModule) 
 			},
 			{
-				path: 'history',
-    			loadChildren: () => import("./entity-registration-history/entity-registration-history.module").then((m) => m.EntityRegistrationHistoryModule) 
+				path: 'edit',
+    			loadChildren: () => import("./entity-registration-form/entity-registration-form.module").then((m) => m.EntityRegistrationFormModule) 
+			}
+		]
+	},
+	{
+		path: ':id',
+		component: EntityRegistrationEditorComponent,
+		children: [
+			{
+				path: 'review',
+    			loadChildren: () => import("./entity-registration-review/entity-registration-review.module").then((m) => m.EntityRegistrationReviewModule) 
+			},
+			{
+				path: 'edit',
+    			loadChildren: () => import("./entity-registration-form/entity-registration-form.module").then((m) => m.EntityRegistrationFormModule) 
 			}
 		]
 	}
-
-
 ];
 
 @NgModule({

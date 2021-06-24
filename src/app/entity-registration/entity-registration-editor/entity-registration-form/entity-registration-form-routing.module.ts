@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { EntityRegistrationHistoryComponent } from './entity-registration-history.component';
+import { EntityRegistrationFormComponent } from './entity-registration-form.component';
 
 const routes: Routes = [
 	{
 		path: '',
-		component: EntityRegistrationHistoryComponent
+		component: EntityRegistrationFormComponent
 	}
 ];
-
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class EntityRegistrationHistoryRoutingModule { }
+export class EntityRegistrationFormRoutingModule { }

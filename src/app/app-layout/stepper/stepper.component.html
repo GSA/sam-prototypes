@@ -14,6 +14,19 @@
           {{ step.label }}
         </ng-template>
         <span class="usa-sr-only">completed</span>
+        <ul>
+          <li *ngFor="let child of step.children; let i = index;" class="usa-sidenav__item";
+              [ngClass]="{'usa-current':  selectedIndex === i }">
+            <a href="javascript:void(0);" (click)="selectedIndex = i">
+              <ng-container *ngIf="child.stepLabel; else showChildLabelText" [ngTemplateOutlet]="child.stepLabel.template">
+              </ng-container>
+            </a>
+            <ng-template #showChildLabelText>
+              {{ child.label }}
+            </ng-template>
+            <span class="usa-sr-only">completed</span>
+          </li>
+        </ul>
       </li>
     </ul>
   </div>

@@ -15,21 +15,7 @@ import { find } from "rxjs/operators";
     <cdk-step
       *ngFor="let step of field.fieldGroup; let index = index; let last = last"
     >
-      <ng-template cdkStepLabel>
-        <span
-          *ngIf="validateSuccessStepForm(step, index)"
-          class="usa-button sds-button--circle"
-        >
-          <sds-icon [icon]="'check'"></sds-icon>
-        </span>
-        <span
-          *ngIf="validateFailureStepForm(step, index)"
-          class="usa-button sds-button--circle sds-button--danger"
-        >
-          <sds-icon [icon]="'x'"></sds-icon>
-        </span>
-        {{ step.templateOptions.label }}
-      </ng-template>
+
       <div *ngIf="!step.template">
         <div class="padding-bottom-3" *ngIf="step.templateOptions.hasHeader">
           <h1>
@@ -42,11 +28,7 @@ import { find } from "rxjs/operators";
         <div *ngIf="!step.templateOptions.reviewMode; else reviewStep">
           <formly-field [field]="step"></formly-field>
         </div>
-        <ng-template #reviewStep>
-          <ng-container *ngFor="let stepField of field.fieldGroup">
-            <formly-field #reviewAll [field]="stepField"></formly-field>
-          </ng-container>
-        </ng-template>
+
       </div>
 
       <div *ngIf="step.template"></div>
@@ -59,11 +41,22 @@ export class FormlyFieldStepperComponent extends FieldType {
   selectedIndex;
   ngOnInit() {
     this.field.fieldGroup.forEach((x, index) => {
-      let names: any = {};
-      names.index = index;
-      names.label = x.templateOptions.label;
-      this.stepInfoList.push(names);
+      this.stepInfoList.push(this.initializeStep(x, index));
     });
+  }
+
+  initializeStep(step: any, index: number): any {
+    let next: any = {};
+    next.index = index;
+    next.label = step.templateOptions.label;
+    if(step.type == 'stepper' && step.fieldGroup) {
+       let children:any[] = [];
+       step.fieldGroup.forEach((x, index) => {
+          children.push(this.initializeStep(x, index));
+       })
+       next.children = children;
+    }
+    return next;
   }
 
   getStepForm(i, field: FormlyFieldConfig) {

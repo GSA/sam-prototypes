@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { IAddress } from '../../services/location-service/location.service';
+import { IAddress } from '../services/location-service/location.service';
 
 
 @Component({

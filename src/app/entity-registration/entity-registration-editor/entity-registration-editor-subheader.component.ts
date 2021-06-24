@@ -1,13 +1,13 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { NavigationLink } from '@gsa-sam/components';
+import { NavigationLink, NavigationMode } from '@gsa-sam/components';
 
 @Component({
-  selector: 'data-entry-subheader',
+  selector: 'entity-registration-editor-subheader',
   template: `
   	<sds-subheader>
       <back-button></back-button>
-	  <subheader-title [title]="title"></subheader-title>
+	  <subheader-title title="Entity Registration"></subheader-title>
     <ng-container subheader-buttongroup-container>
         <sds-button-group [mode]="'radio'" class="sds-button-group sds-button-group--secondary" (change)="subpageClicked($event)">
            <sds-button-group-option *ngFor="let page of subpages" [value]="page.id" [checked]="page.selected" [aria-label]="'page.text'">
@@ -15,23 +15,22 @@ import { NavigationLink } from '@gsa-sam/components';
            </sds-button-group-option>
         </sds-button-group>
     </ng-container>
-	  <ng-container subheader-buttons-container>
-        <ng-content select="button"></ng-content>
-      </ng-container>
 	  <sds-subheader-actions [model]="actionsModel" (clicks)="actionClicked($event)">
       </sds-subheader-actions>
     </sds-subheader>
   `
 })
-export class DataEntrySubheaderComponent implements OnInit {
-
-  @Input() title: string;
-
-  @Input() subpages: NavigationLink[];
+export class EntityRegistrationEditorSubheaderComponent implements OnInit {
 
   @Output() download: EventEmitter<any> = new EventEmitter();
 
-  url: string;
+  id: string;
+
+  public subpages: NavigationLink[] = [
+	    { text: 'Edit', id: 'edit', route: 'form', queryParams: {}, mode: NavigationMode.INTERNAL, selected: false },
+        { text: 'Review', id: 'review', route: 'review', queryParams: {}, mode: NavigationMode.INTERNAL, selected: false },
+	    { text: 'Preview', id: 'preview', route: 'preview', queryParams: {}, mode: NavigationMode.INTERNAL, selected: false }
+    ];
 
   public actionsModel = {
     actions: [
@@ -42,9 +41,22 @@ export class DataEntrySubheaderComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.parent.url.subscribe(
-      url => this.url = url[0].path
+    this.route.url.subscribe(
+      url => {
+          this.id = url[0].path;
+          this.setSelectedSubpage(this.route.snapshot.firstChild.url[0].path);
+      }
     );
+  }
+
+  setSelectedSubpage(id: string) {
+      for(let i=0; i<this.subpages.length; i++) {
+          if(this.subpages[i].id == id) {
+             this.subpages[i].selected = true;
+          } else {
+             this.subpages[i].selected = false;
+          }
+      }
   }
 
   subpageClicked($event) {
@@ -59,8 +71,12 @@ export class DataEntrySubheaderComponent implements OnInit {
        }
     }
 
-    if(route) {
-      this.router.navigate([route], { relativeTo: this.route });
+    if($event.value == 'review' ) {
+      this.router.navigate(['/entity-registration/editor', this.id, 'review']);
+    } else if ($event.value == 'edit') {
+      this.router.navigate(['/entity-registration/editor', this.id, 'edit']);
+    } else if ($event.value == 'preview') {
+      this.router.navigate(['/entity360', this.id, 'registration']);
     }
   }
 
