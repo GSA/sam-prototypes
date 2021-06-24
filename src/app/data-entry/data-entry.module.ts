@@ -21,11 +21,15 @@ import { AppLayoutFormlyModule } from "../app-layout/formly/formly-module";
 import { ExpandableCardModule } from "../app-layout/card/card.module";
 import { DataEntryLayoutModule } from "../app-layout/data-entry-layout/data-entry-layout.module";
 import { StepperModule } from "../app-layout/stepper/stepper.module";
+import { DataEntryReportComponent } from "./report/report.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
-  declarations: [DataEntryComponent, ReviewSubmitComponent],
+  declarations: [DataEntryComponent, ReviewSubmitComponent, DataEntryReportComponent],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     ExpandableCardModule,
     SdsActionsMenuModule,
     SdsIconModule,
@@ -37,8 +41,9 @@ import { StepperModule } from "../app-layout/stepper/stepper.module";
     FormlyModule.forRoot(),
     DataEntryFormlyModule,
     AppLayoutFormlyModule,
+
     NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, x, check }),
   ],
-  exports: [ReviewSubmitComponent, DataEntryComponent],
+  exports: [ReviewSubmitComponent, DataEntryComponent, DataEntryReportComponent],
 })
-export class DataEntryModule {}
+export class DataEntryModule { }

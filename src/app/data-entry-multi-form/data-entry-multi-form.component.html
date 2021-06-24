@@ -1,0 +1,173 @@
+<data-entry-subheader title="FSRS New Report">
+  <button class="usa-button usa-button--secondary">Discard Draft</button>
+  <button class="usa-button" (click)="onSubmit()" [disabled]="_isReviewAndSubmitDisabled">
+    Submit</button>
+</data-entry-subheader>
+
+<main>
+  <div class="sds-page">
+    <div class="grid-container">
+      <div class="grid-row grid-gap">
+        <div class="grid-col-auto">
+          <div class="sds-card">
+            <div class="sds-card__body sds-card__body--accent-cool">
+
+              <ul class="usa-sidenav usa-sidenav--styled">
+                <li class="usa-sidenav__item padding-1 padding-left-2 text-bold">
+                  FSRS Report
+                </li>
+
+                <li *ngFor="let step of getDisplayedSteps(stepTemplates); let i = index;" class="usa-sidenav__item"
+                  [ngClass]="{'usa-current':  _currentStep.id === step.id}">
+                  <ng-container [ngTemplateOutlet]="sidenavItem" [ngTemplateOutletContext]="{$implicit: step}">
+                  </ng-container>
+                  <ng-container [ngTemplateOutlet]="subPanelTemplate" [ngTemplateOutletContext]="{$implicit:step}">
+                  </ng-container>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="grid-col-fill">
+
+          <!-- <div class="padding-bottom-3">
+            <h1>
+              {{ !isReviewMode ? _currentStep.text : 'Review and Submit' }}
+            </h1>
+            <hr />
+          </div>
+
+          <formly-form class="grid-col-8 padding-right-2"
+            [model]="!isReviewMode && _currentStep.model ? _currentStep.model : model" [fields]="fields"
+            [options]="_currentStep.options" (modelChange)="modelChange.emit($event)">
+          </formly-form>
+          <div *ngIf="isReviewMode" class="text-right">
+            <button class="usa-button align-right" (click)="onSubmit()">
+              Submit</button>
+          </div> -->
+          <ng-content></ng-content>
+
+          <div class="grid-container grid-row grid-gap align-right">
+            <div class="text-right margin-right-1" *ngIf="_currentStepIndex > 0">
+              <button class="usa-button sds-button--circle usa-button--base usa-button--big padding-2"
+                (click)="onPreviousStep()" [attr.id]="id + '-prevBtn'">
+                <sds-icon [icon]="'chevron-left'"></sds-icon>
+              </button>
+
+              <label [attr.for]="id + '-prevBtn'" class="text-right usa-link cursor-pointer display-block margin-top-2">
+                Back to
+                <span class="display-block">{{_dataEntryStepsDef[_currentStepIndex - 1].text}}</span>
+              </label>
+            </div>
+            <div class="margin-right-2">
+              <button class="usa-button sds-button--circle usa-button--big usa-button--base padding-2"
+                (click)="closeback();" [attr.id]="id + '-closeBtn'">
+                <sds-icon [icon]="'x'"></sds-icon>
+              </button>
+              <label [attr.for]="id + '-closeBtn'"
+                class="text-center usa-link cursor-pointer display-block margin-top-2">
+                Close
+              </label>
+            </div>
+            <div class="margin-right-2" *ngIf="!_currentStep?.isReview">
+              <button class="usa-button sds-button--circle usa-button--big usa-button--base padding-2"
+                [attr.id]="id + '-helpBtn'">
+                <sds-icon [icon]="'question'"></sds-icon>
+              </button>
+              <label [attr.for]="id + '-helpBtn'"
+                class="text-center usa-link cursor-pointer display-block margin-top-2">
+                Help
+              </label>
+            </div>
+            <div class="margin-right-2" *ngIf="!_currentStep?.isReview" (click)="onSaveClicked()"
+              [attr.id]="id + '-saveBtn'">
+              <button class="usa-button sds-button--circle usa-button--big usa-button--base padding-2">
+                <sds-icon [icon]="'save'"></sds-icon>
+              </button>
+              <label [attr.for]="id + '-saveBtn'"
+                class="text-center usa-link cursor-pointer display-block margin-top-2">
+                Save
+              </label>
+            </div>
+            <div class="margin-right-2"
+              *ngIf="_currentStepIndex != _dataEntryStepsDef.length - 1 && !_currentStep?.isReview">
+              <button cdkStepperNext
+                class="usa-button sds-button--circle usa-button--base usa-button--big usa-button--active padding-2"
+                (click)="onNextStep()" [attr.id]="id + '-nextBtn'">
+                <sds-icon [icon]="'chevron-right'"></sds-icon>
+              </button>
+              <label [attr.for]="id + '-nextBtn'" class="text-left usa-link cursor-pointer display-block margin-top-2">
+                Go to
+                <span class="display-block">{{_dataEntryStepsDef[_currentStepIndex + 1].text}}</span>
+              </label>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<ng-template #subPanelTemplate let-panelItem>
+  <div *ngFor="let pItem of getDisplayedSteps(panelItem.children); let i = index;">
+    <ul class="usa-sidenav usa-sidenav--styled bg-base-lighter">
+      <li class="usa-sidenav__item  padding-left-3" [ngClass]="{'usa-current':  _currentStep.id === pItem.id }">
+        <ng-container [ngTemplateOutlet]="sidenavItem" [ngTemplateOutletContext]="{$implicit: pItem}"></ng-container>
+      </li>
+    </ul>
+  </div>
+</ng-template>
+
+<ng-template #sidenavItem let-step>
+  <ng-container [ngSwitch]="step.mode">
+    <span *ngSwitchCase="navigationMode.LABEL">
+      <span class="margin-left-1 padding-x-2 padding-y-1 display-block text-bold">
+        {{step.text}}
+      </span>
+    </span>
+    <a *ngSwitchDefault href="javascript:void(0);"
+      (click)="changeStep(step.id)">
+      <ng-container [ngTemplateOutlet]="sidenavIcon" [ngTemplateOutletContext]="{$implicit: step}"></ng-container>
+      <span class="margin-left-1">
+        {{step.text}}
+      </span>
+    </a>
+  </ng-container>
+</ng-template>
+
+<ng-template #sidenavIcon let-step>
+  <ng-container [ngSwitch]="step.valid">
+    <span *ngSwitchCase="true" class="usa-button sds-button--circle">
+      <sds-icon [icon]="'check'"></sds-icon>
+    </span>
+    <span *ngSwitchCase="false" class="usa-button sds-button--circle sds-button--danger">
+      <sds-icon [icon]="'x'"></sds-icon>
+    </span>
+    <span *ngSwitchDefault>
+      <sds-icon [icon]="'not-completed'"></sds-icon>
+    </span>
+  </ng-container>
+
+
+  <ng-template #myTemplate let-item>
+    <div class="sds-alert--expanded info">
+      <div class="grid-container width-full maxw-full margin-0 padding-0">
+        <div class="grid-row">
+          <div class="grid-col-auto">
+            <sds-icon [icon]="'info'"></sds-icon>
+          </div>
+          <div class="grid-col-fill">
+            <span>
+              Please be aware that all information collected on the <a href="https://www.usaspending.gov">FSRS
+                website</a>,
+              including registration information and report data, will be
+              visible to the public on a public website (<a href="https://www.usaspending.gov">www.usaspending.gov</a>).
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>

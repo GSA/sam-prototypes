@@ -1,8 +1,8 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule, FormControl, ValidationErrors } from "@angular/forms";
 import { SdsFormlyModule, sdsWrappers } from "@gsa-sam/sam-formly";
-import { FormlyModule } from "@ngx-formly/core";
+import { FormlyFieldConfig, FormlyModule } from "@ngx-formly/core";
 
 import { CdkStepperModule } from "@angular/cdk/stepper";
 import { FormlySubawardComponent } from "./formly-subaward";
@@ -15,6 +15,8 @@ import { SdsActionsMenuModule } from "@gsa-sam/layouts";
 import { ExpandableCardModule } from "../../app-layout/card/card.module";
 import { StepperModule } from "../../app-layout/stepper/stepper.module";
 import { FormlyCustomComponent } from "./formly-custom";
+import { SubawardeeRepeatTypeComponent } from "./repeat-section";
+import { SubawardeeReadOnlyRepeatTypeComponent } from "./readonly-repeat-section";
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FormlyCustomComponent } from "./formly-custom";
     FormlySubawardComponent,
     SubawardDataComponent,
     ReviewContractComponent,
-    FormlyCustomComponent
+    FormlyCustomComponent,
+    SubawardeeRepeatTypeComponent,
+    SubawardeeReadOnlyRepeatTypeComponent
   ],
   imports: [
     CommonModule,
@@ -49,6 +53,16 @@ import { FormlyCustomComponent } from "./formly-custom";
           wrappers: sdsWrappers,
         },
         {
+          name: "repeat",
+          component: SubawardeeRepeatTypeComponent,
+          wrappers: sdsWrappers,
+        },
+        {
+          name: "readonlyrepeat",
+          component: SubawardeeReadOnlyRepeatTypeComponent,
+          wrappers: sdsWrappers,
+        },
+        {
           name: "custom",
           component: FormlyCustomComponent,
           wrappers: sdsWrappers,
@@ -58,3 +72,7 @@ import { FormlyCustomComponent } from "./formly-custom";
   ],
 })
 export class DataEntryFormlyModule { }
+
+export function dataEntrySubawardeeRepeaterRequired(control: FormControl, field: FormlyFieldConfig, model: any): ValidationErrors {
+  return field.parent.model.length ? { required: true } : { required: false };
+}

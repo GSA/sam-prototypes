@@ -1,15 +1,11 @@
 <div class="grid-container padding-0">
 
-  <sds-expandable-card #inputsCard [id]="'subawardcard'" [title]="'item.title'" [showContent]="'false'"
+  <sds-expandable-card #inputsCard [id]="'subawardcard'" [title]="'subaward'" [showContent]="'false'"
     [isExpandable]="true">
     <ng-container sds-card-title-group-action>
       <sds-actions-menu size="sm" [model]="menu"></sds-actions-menu>
     </ng-container>
     <ng-container sds-card-header-content>
-      <div>
-        {{subawardItem | json}}
-        <br />
-      </div>
       <div class="grid-row grid-gap">
         <!-- 1st column -->
         <div class="grid-col-12 tablet:grid-col-3">
@@ -33,7 +29,7 @@
             <div class="grid-col">
               <div class="sds-field sds-field--small">
                 <div class="sds-field__name has-usa-tag">Unique Entity ID:</div>
-                <div class="sds-field__value left-align">902930291</div>
+                <div class="sds-field__value">902930291</div>
               </div>
             </div>
           </div>
@@ -65,6 +61,7 @@
         </div>
       </div>
     </ng-container>
+
     <ng-container sds-card-content>
       <div class="grid-row grid-gap">
 
@@ -101,7 +98,7 @@
             <div class="grid-col">
               <div class="sds-field sds-field--small">
                 <div class="sds-field__name has-usa-tag">Unique Entity ID:</div>
-                <div class="sds-field__value left-align">1A23B45C67D89E</div>
+                <div class="sds-field__value">1A23B45C67D89E</div>
               </div>
             </div>
           </div>
@@ -174,9 +171,5 @@
       </div>
 
     </ng-container>
-    <ng-container sds-card-title-group-action>
-
-    </ng-container>
   </sds-expandable-card>
 </div>
-<!-- </div> -->

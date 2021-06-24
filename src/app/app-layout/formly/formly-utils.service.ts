@@ -58,30 +58,36 @@ export class FormlyUtilsService {
     field: FormlyFieldConfig,
     model?: any
   ) {
+    if (!field) {
+      return;
+    }
     if (field.fieldGroup) {
-      if (field.templateOptions.label != undefined) {
-        let prvHeader: FormlyFieldConfig = {
-          key: "Header1",
-          template: '<h2> ' + field.templateOptions.label + ' </h2>',
-        };
-        field.fieldGroup = [prvHeader, ...field.fieldGroup];
-      }
       field.fieldGroup.forEach((innerField: FormlyFieldConfig) => {
-        if (innerField.type === "repeat" && readonlyMode) {
-          field.fieldGroup.splice(field.fieldGroup.indexOf(innerField), 1);
-          const key = innerField.key.toString();
-          const f = innerField.fieldGroup;
-          let inv = 0;
-          this.utilitymodel[key].forEach((element) => {
-            f[inv].templateOptions.subawardItem = element;
-            inv++;
-          });
-          field.fieldGroup = [...field.fieldGroup, ...f];
+        // if (innerField.type === "repeat" && readonlyMode) {
+        //   field.fieldGroup.splice(field.fieldGroup.indexOf(innerField), 1);
+        //   const key = innerField.key.toString();
+        //   const f = innerField.fieldGroup;
+        //   let inv = 0;
+        //   this.utilitymodel[key].forEach((element) => {
+        //     f[inv].templateOptions.subawardItem = element;
+        //     inv++;
+        //   });
+        //   field.fieldGroup = [...field.fieldGroup, ...f];
 
-          this._setReadonlyMode(readonlyMode, innerField, model);
-        } else {
-          this._setReadonlyMode(readonlyMode, innerField, model);
-        }
+        //   this._setReadonlyMode(readonlyMode, innerField, model);
+        // } else {
+        //   this._setReadonlyMode(readonlyMode, innerField, model);
+        // }
+
+        // debugger;
+        // if (innerField.type === "repeat" && readonlyMode) {
+        //   innerField.type = "readonlyrepeat";
+        //   this._setReadonlyMode(readonlyMode, innerField, model);
+        // } else {
+        //   this._setReadonlyMode(readonlyMode, innerField, model);
+        // }
+
+        this._setReadonlyMode(readonlyMode, innerField, model);
       });
     }
 

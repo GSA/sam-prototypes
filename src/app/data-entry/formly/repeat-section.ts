@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { ChangeDetectorRef, Component } from "@angular/core";
 import { SdsDialogService } from "@gsa-sam/components";
 import { SdsFormlyDialogComponent } from "@gsa-sam/sam-formly";
 import { FieldArrayType, FormlyFormBuilder } from "@ngx-formly/core";
@@ -9,7 +9,7 @@ import { FieldArrayType, FormlyFormBuilder } from "@ngx-formly/core";
     <div class="grid-col">
       <div class="grid-row">
         <div class="grid-col">
-          <h3>Add Subawardee</h3>
+          <h3>{{field.fieldArray.templateOptions.title}}</h3>
           <input
             #input
             class="usa-input"
@@ -19,7 +19,7 @@ import { FieldArrayType, FormlyFormBuilder } from "@ngx-formly/core";
             type="text"
           />
         </div>
-        <div class="grid-col padding-3">
+        <div class="grid-col padding-left-3 padding-top-3">
           <button
             class="usa-button"
             type="button"
@@ -32,7 +32,7 @@ import { FieldArrayType, FormlyFormBuilder } from "@ngx-formly/core";
     </div>
 
     <div
-      class="sds-card sds-card__body--accent-cool"
+      class="sds-card sds-card__body--accent-cool margin-top-3"
       *ngIf="this.showNoresultFound"
     >
       <div class="sds-card__header sds-card__header--left">
@@ -52,22 +52,13 @@ import { FieldArrayType, FormlyFormBuilder } from "@ngx-formly/core";
         class="margin-top-2"
       >
         <formly-group [field]="field" [options]="options" [form]="formControl">
-          <div class="col-sm-2 d-flex align-items-center">
-            <button
-              class="usa-button sds-danger"
-              type="button"
-              (click)="removeItem(i)"
-            >
-              Remove
-            </button>
-          </div>
         </formly-group>
       </div>
     </div>
   `,
 })
-export class RepeatTypeComponent extends FieldArrayType {
-  constructor(builder: FormlyFormBuilder, public dialog: SdsDialogService) {
+export class SubawardeeRepeatTypeComponent extends FieldArrayType {
+  constructor(builder: FormlyFormBuilder, public dialog: SdsDialogService, public cdr: ChangeDetectorRef) {
     super(builder);
   }
   showNoresultFound: boolean = true;
@@ -94,6 +85,7 @@ export class RepeatTypeComponent extends FieldArrayType {
         this.add();
         this.model[this.model.length - 1] = result;
         this.showNoresultFound = this.model.length == 0 ? true : false;
+        this.cdr.detectChanges();
       }
     });
   }

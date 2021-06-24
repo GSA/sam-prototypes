@@ -8,7 +8,7 @@ import { find } from "rxjs/operators";
   template: ` <app-stepper
     linear
     [hideSidePannel]="to.hideSidePannel"
-    [selectedIndex]="model.selectedIndex"
+    [selectedIndex]="selectedIndex"
     (selectionChange)="onStepChange($event)"
     [stepInfoList]="stepInfoList"
   >

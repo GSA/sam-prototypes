@@ -1,0 +1,22 @@
+<app-data-entry-multi-form 
+  [model]="model" 
+  [currentStepId]="currentStepId" 
+  [stepValidityMap]="stepValidityMap"
+  (saveData)="onSaveClicked($event)"
+>
+  <sds-step *ngFor="let step of steps" 
+    [id]="step.id" 
+    [fieldConfig]="step.fieldConfig" 
+    [text]="step.text"
+    [mode]="step.mode"
+    [isReview]="step.isReview"
+  >
+    <sds-step *ngFor="let childStep of step.children" [text]="childStep.text" [id]="childStep.id" [fieldConfig]="childStep.fieldConfig"></sds-step>
+  </sds-step>
+  <sds-step [text]="'Custom Step'" [id]="'customId'" [stepTemplate]="customStep">
+    <ng-template #customStep>
+      <span>Hello World</span>
+    </ng-template>
+  </sds-step>
+</app-data-entry-multi-form>
+
