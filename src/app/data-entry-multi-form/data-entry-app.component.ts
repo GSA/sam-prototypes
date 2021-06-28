@@ -1,15 +1,17 @@
-import { ChangeDetectorRef, Component, OnInit, TemplateRef, ViewChild } from "@angular/core";
-import { NavigationMode } from "@gsa-sam/components";
+import { ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit, TemplateRef, ViewChild } from "@angular/core";
+import { NavigationLink, NavigationMode } from "@gsa-sam/components";
 import { FormlyFieldConfig } from "@ngx-formly/core";
+import { GlobalConfig, ToastrService } from "ngx-toastr";
 import { FormlyUtilsService } from "../app-layout/formly/formly-utils.service";
 import { DataEntryMultiFormStepsService } from "./data-entry-multi-form-steps.service";
-
+import { Location } from '@angular/common';
+import { Router } from "@angular/router";
 
 @Component({
   selector: `app-data-entry-multi`,
   templateUrl: './data-entry-app.component.html',
 })
-export class DataEntryAppComponent implements OnInit {
+export class DataEntryAppComponent implements OnInit, OnDestroy {
   @ViewChild('myTemplate') myTemplate: TemplateRef<any>;
 
   steps = [
@@ -68,12 +70,46 @@ export class DataEntryAppComponent implements OnInit {
   reviewFields: FormlyFieldConfig[];
   isReviewStep = false;
   navigationMode = NavigationMode;
-  
+  options: GlobalConfig;
+  subpages: NavigationLink[] = [
+    { text: 'Edit', id: 'edit', route: 'form', queryParams: {}, mode: NavigationMode.INTERNAL, selected: false },
+    { text: 'Review', id: 'review', route: 'review', queryParams: {}, mode: NavigationMode.INTERNAL, selected: false },
+    { text: 'Preview', id: 'preview', route: 'preview', queryParams: {}, mode: NavigationMode.INTERNAL, selected: false }
+  ];
+
+
+
+  @HostListener('window:beforeunload', ['$event'])
+  beforeUnloadHandler(event) {
+    const data = {
+      model: this.model,
+      metadata: {
+        stepId: this.currentStepId,
+        stepValidityMap: this.stepValidityMap
+      }
+    }
+    this.onSaveClicked(data);
+  }
   constructor(
     private dataEntryFieldService: DataEntryMultiFormStepsService,
     private cdr: ChangeDetectorRef,
-  ) { }
+    private toastr: ToastrService,
+    public router: Router
+  ) {
+    this.options = this.toastr.toastrConfig;
+    this.options.iconClasses = {
+      error: 'sds-toast--error',
+      info: 'sds-toast--info',
+      success: 'sds-toast--success',
+      warning: 'sds-toast--warning',
+    };
+    this.options.closeButton = true;
 
+  }
+  goto() {
+    // window.open('http://www.goggle.com/')
+    this.router.navigate(['/search']);
+  }
   ngOnInit() {
 
     const savedDraft: string = sessionStorage.getItem('dataEntry');
@@ -84,9 +120,27 @@ export class DataEntryAppComponent implements OnInit {
     this.getFormDataFromDraft(savedDraft);
   }
 
+
+  ngOnDestroy() {
+    const data = {
+      model: this.model,
+      metadata: {
+        stepId: this.currentStepId,
+        stepValidityMap: this.stepValidityMap
+      }
+    }
+    sessionStorage.setItem('dataEntry', JSON.stringify(data));
+    this.showSuccessSaveToaster()
+  }
+
   onSaveClicked($event: { model: any, metadata: any }) {
     console.log($event, 'moe');
     sessionStorage.setItem('dataEntry', JSON.stringify($event));
+    this.showSuccessSaveToaster()
+  }
+
+  showSuccessSaveToaster() {
+    this.toastr.success('Saved successfully', "");
   }
 
   onStepChange($event) {
@@ -145,17 +199,18 @@ export class DataEntryAppComponent implements OnInit {
     return reviewFields;
   }
 
+
   getFlatSteps(steps: any[]): any[] {
     let flat: any[] = [];
     steps.forEach(step => {
-        if (step.hideFn && step.hideFn(step.model ? step.model : this.model, step.fieldConfig)) {
-          step.hide = true;
-          return;
-        }
-        step.hide = false;
-        if (step.mode !== NavigationMode.LABEL) {
-          flat.push(step);
-        }
+      if (step.hideFn && step.hideFn(step.model ? step.model : this.model, step.fieldConfig)) {
+        step.hide = true;
+        return;
+      }
+      step.hide = false;
+      if (step.mode !== NavigationMode.LABEL) {
+        flat.push(step);
+      }
 
       if (step.children && step.children.length) {
         const childSteps = this.getFlatSteps(step.children);
