@@ -1,4 +1,4 @@
-<data-entry-subheader title="FSRS New Report" [subpages]="subpages">
+<data-entry-subheader title="FSRS New Report" [subpages]="subpages" (subpageEventClicked)="onSubPageEventClick($event)">
 </data-entry-subheader>
 <main>
   <div class="grid-container">
@@ -31,7 +31,6 @@
               <button class="usa-button usa-button--primary float-right margin-top-2">Submit</button>
             </formly-form>
           </div>
-
         </ng-template>
       </sds-step>
     </sds-stepper>

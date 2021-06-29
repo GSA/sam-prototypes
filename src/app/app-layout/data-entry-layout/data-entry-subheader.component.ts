@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NavigationLink } from '@gsa-sam/components';
 
@@ -33,6 +33,8 @@ export class DataEntrySubheaderComponent implements OnInit {
 
   url: string;
 
+  @Output() subpageEventClicked: EventEmitter<any> = new EventEmitter();
+
   public actionsModel = {
     actions: [
       { id: 'download', icon: 'bars', text: 'Download' }
@@ -47,21 +49,26 @@ export class DataEntrySubheaderComponent implements OnInit {
     );
   }
 
-  subpageClicked($event) {
-    console.log($event);
-    let route: string = null;
-    let queryParams: any = null;
-    for(let i=0; i<this.subpages.length; i++) {
-       if(this.subpages[i].id == $event.value) {
-          route = this.subpages[i].route;
-          if(this.subpages[i].queryParams)
-          queryParams = this.subpages[i].queryParams;
-       }
-    }
+  ngOnchanges(changes: SimpleChanges) {
+    console.log(changes); // here you will get the data from parent once the input param is change
+  }
 
-    if(route) {
-      this.router.navigate([route], { relativeTo: this.route });
-    }
+  subpageClicked($event) {
+    // console.log($event);
+    // let route: string = null;
+    // let queryParams: any = null;
+    // for(let i=0; i<this.subpages.length; i++) {
+    //    if(this.subpages[i].id == $event.value) {
+    //       route = this.subpages[i].route;
+    //       if(this.subpages[i].queryParams)
+    //       queryParams = this.subpages[i].queryParams;
+    //    }
+    // }
+
+    // if(route) {
+    //   this.router.navigate([route], { relativeTo: this.route });
+    // }
+    this.subpageEventClicked.emit($event.value);
   }
 
   actionClicked(buttonId) {
