@@ -11,6 +11,9 @@ import { HttpClientModule } from "@angular/common/http";
 import {
   SdsExternalLinkDirectivesModule,
   SdsIconModule,
+  SdsToastComponent,
+  SdsToastModule,
+  SdsToastSettings
 } from "@gsa-sam/components";
 import { SdsHeaderModule, SdsFooterModule } from "@gsa-sam/layouts";
 import { FormlyModule } from "@ngx-formly/core";
@@ -21,6 +24,7 @@ import { SamModelService } from "./model/sam-model.service";
 import _ from "lodash-es";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import { ToastrModule } from "ngx-toastr";
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,11 +39,14 @@ import { allIcons as sdsAllIcons } from "@gsa-sam/components";
     SdsExternalLinkDirectivesModule,
     FormlyModule,
     SdsIconModule,
+    SdsToastModule,
+    ToastrModule.forRoot(SdsToastSettings),
     NgxBootstrapIconsModule.pick(
       Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
     ),
   ],
   providers: [],
+  entryComponents: [SdsToastComponent],
   bootstrap: [AppComponent],
   exports: [],
 })
@@ -50,5 +57,5 @@ export class AppModule {
       providers: [SamModelService, AppService],
     };
   }
-  constructor() {}
+  constructor() { }
 }

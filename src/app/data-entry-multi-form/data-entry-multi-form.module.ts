@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { SdsIconModule, SdsSelectionPanelModule } from '@gsa-sam/components';
+import { SdsIconModule, SdsSelectionPanelModule, SdsToastModule } from '@gsa-sam/components';
 import { DataEntryLayoutModule } from '../app-layout/data-entry-layout/data-entry-layout.module';
 import { FormlyModule } from '@ngx-formly/core';
 import { SdsFormlyModule } from '@gsa-sam/sam-formly';
@@ -18,6 +18,7 @@ import {
 } from "ngx-bootstrap-icons";
 import { DataEntryAppComponent } from './data-entry-app.component';
 import { SdsFormlyStepperModule } from '@gsa-sam/sam-formly';
+import { SdsButtonGroupModule } from '@gsa-sam/sam-material-extensions';
 
 const routes: Routes = [
   {
@@ -42,6 +43,8 @@ const routes: Routes = [
     DataEntryFormlyModule,
     AppLayoutFormlyModule,
     SdsIconModule,
+    SdsToastModule,
+    SdsButtonGroupModule,
     NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, x, check }),
     EntityReportingServiceModule,
     RouterModule.forChild(routes),
