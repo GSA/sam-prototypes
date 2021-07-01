@@ -9,8 +9,8 @@ const routes: Routes = [
 		loadChildren: () => import('./system-accounts-workspace/system-accounts-workspace.module').then(m => m.SystemAccountsWorkspaceModule)
 	},
 	{
-		path: 'profile',
-		loadChildren: () => import('./system-account/system-account.module').then(m => m.SystemAccountModule)
+		path: 'editor',
+		loadChildren: () => import('./system-account-editor/system-account-editor.module').then(m => m.SystemAccountEditorModule)
 	}
 ];
 
