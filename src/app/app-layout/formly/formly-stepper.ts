@@ -49,12 +49,12 @@ export class FormlyFieldStepperComponent extends FieldType {
     let next: any = {};
     next.index = index;
     next.label = step.templateOptions.label;
-    if(step.type == 'stepper' && step.fieldGroup) {
-       let children:any[] = [];
-       step.fieldGroup.forEach((x, index) => {
-          children.push(this.initializeStep(x, index));
-       })
-       next.children = children;
+    if (step.type == 'stepper' && step.fieldGroup) {
+      let children: any[] = [];
+      step.fieldGroup.forEach((x, index) => {
+        children.push(this.initializeStep(x, index));
+      })
+      next.children = children;
     }
     return next;
   }
@@ -77,7 +77,7 @@ export class FormlyFieldStepperComponent extends FieldType {
   }
 
   onStepChange($event: StepperSelectionEvent) {
-    this.model.selectedIndex = $event.selectedIndex;
+    // this.model.selectedIndex = $event.selectedIndex;
     this.selectedIndex = $event.selectedIndex;
     // const findField = this.field.fieldGroup[$event.selectedIndex];
     // if (findField.templateOptions.reviewMode) {

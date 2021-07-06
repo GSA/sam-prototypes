@@ -62,4 +62,12 @@ export class StepperComponent extends CdkStepper {
   closeback() {
     this.location.back();
   }
+
+  getStepClass(currentIndex) {
+    if (this.selectedIndex > currentIndex) {
+      return 'usa-step-indicator__segment--complete';
+    } else if (this.selectedIndex == currentIndex) {
+      return 'usa-step-indicator__segment--current';
+    }
+  }
 }
