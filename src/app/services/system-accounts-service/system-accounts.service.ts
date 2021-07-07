@@ -1,13 +1,29 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { SearchParameters, SearchResult, SearchListConfiguration } from '@gsa-sam/layouts';
 import { Statistic, StatisticsService } from '../interfaces/public-apis';
-
+import { systemAccounts } from './system-account.data';
 import { SystemAccountsServiceModule } from './system-accounts-service.module';
 
 @Injectable({
   providedIn: SystemAccountsServiceModule
 })
 export class SystemAccountsService implements StatisticsService {
+
+	public configuration: SearchListConfiguration = {
+	  defaultSortValue: "expirationDateDescending",
+	  pageSize: 25,
+	  sortList:
+	    [
+	      { text: "Expiration Date (Nearest)", value: "expirationDateDescending" },
+	      { text: "Expiration Date (Farthest)", value: "expirationDateAscending" },
+	      { text: "System Account Name (A - Z)", value: "nameAscending" },
+	      { text: "System Account Name (Z - A)", value: "nameDescending" }
+	    ],
+	  defaultFilterValue: {
+        dummy: false
+    }
+	};
 
   private statistics: Statistic[] = [
 		{
@@ -47,4 +63,11 @@ export class SystemAccountsService implements StatisticsService {
     getStatistics(key?: string): Observable<Statistic[]> {
   		return of(this.statistics);
   	}
+
+  	getData(search: SearchParameters): Observable<SearchResult> {
+        return of({
+            items: systemAccounts,
+            totalItems: systemAccounts.length
+        });
+    }
 }

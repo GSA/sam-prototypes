@@ -1,2 +1,20 @@
-<p>system-account-editor works!</p>
-<router-outlet></router-outlet>
+<sds-subheader>
+	<back-button></back-button>
+	<subheader-title title="System Account"></subheader-title>
+	<ng-container subheader-buttongroup-container>
+		<sds-button-group [mode]="'radio'" class="sds-button-group sds-button-group--secondary" (change)="subpageClicked($event)">
+		   <sds-button-group-option *ngFor="let page of subpages" [value]="page.id" [checked]="page.selected" [aria-label]="'page.text'">
+		      {{page.text}}
+		   </sds-button-group-option>
+		</sds-button-group>
+	</ng-container>
+	<sds-subheader-actions [model]="actionsModel" (clicks)="actionClicked($event)">
+	</sds-subheader-actions>
+</sds-subheader>
+<main>
+  <div class="sds-page margin-top-2">
+  	<div class="grid-container">
+  		<router-outlet></router-outlet>
+  	</div>
+  </div>
+</main>
