@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SdsIconModule, SdsSelectionPanelModule, SdsToastModule } from '@gsa-sam/components';
 import { DataEntryLayoutModule } from '../app-layout/data-entry-layout/data-entry-layout.module';
 import { FormlyModule } from '@ngx-formly/core';
-import { SdsFormlyModule } from '@gsa-sam/sam-formly';
+import { SdsFormlyModule, SdsStepperModule } from '@gsa-sam/sam-formly';
 import { DataEntryFormlyModule } from '../data-entry/formly/formly-module';
 import { EntityReportingServiceModule } from '../services/entity-reporting-service/entity-reporting-service.module';
 import { DataEntryMultiFormStepsService } from './data-entry-multi-form-steps.service';
@@ -13,11 +13,15 @@ import {
   NgxBootstrapIconsModule,
   chevronLeft,
   chevronRight,
-  x,
-  check,
+  slashCircleFill,
+  checkCircleFill,
+  circle,
+  question,
+  save,
+  x
 } from "ngx-bootstrap-icons";
 import { DataEntryAppComponent } from './data-entry-app.component';
-import { SdsFormlyStepperModule } from '@gsa-sam/sam-formly';
+import { DataEntryCustomStepperComponent } from './data-entry-custom-stepper.component';
 import { SdsButtonGroupModule } from '@gsa-sam/sam-material-extensions';
 
 const routes: Routes = [
@@ -30,6 +34,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     DataEntryAppComponent,
+    DataEntryCustomStepperComponent,
   ],
   providers: [
     DataEntryMultiFormStepsService,
@@ -43,12 +48,12 @@ const routes: Routes = [
     DataEntryFormlyModule,
     AppLayoutFormlyModule,
     SdsIconModule,
+    NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, circle, slashCircleFill, checkCircleFill, question, save, x }),
     SdsToastModule,
     SdsButtonGroupModule,
-    NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, x, check }),
     EntityReportingServiceModule,
     RouterModule.forChild(routes),
-    SdsFormlyStepperModule,
+    SdsStepperModule,
   ],
 })
 export class DataEntryMultiFormModule { }

@@ -84,6 +84,7 @@ export class SubawardeeRepeatTypeComponent extends FieldArrayType {
         this.field.fieldArray.fieldGroup[0].templateOptions.subawardItem = result;
         this.add();
         this.model[this.model.length - 1] = result;
+        this.formControl.controls[this.model.length - 1].setValue({subawards: result});
         this.showNoresultFound = this.model.length == 0 ? true : false;
         this.cdr.detectChanges();
       }
