@@ -1,4 +1,5 @@
 import { Component, OnInit, Inject, TemplateRef, Input, Output, EventEmitter, forwardRef } from '@angular/core';
+import { FormGroup } from "@angular/forms";
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 import { SdsFormlyStepper } from './sds-formly-stepper';
 
@@ -11,18 +12,22 @@ let nextId = 0;
 @Component({
   selector: 'sds-formly-step',
   template: `
-    <ng-container *ngIf="selected">
       <ng-container *ngIf="stepTemplate; else formlyField" [ngTemplateOutlet]="stepTemplate"></ng-container>
         <ng-template #formlyField>
-            <formly-form *ngIf="fieldConfig"
+          <form [formGroup]="form">
+            <formly-form
               [model]="model" [fields]="[fieldConfig]"
-              [options]="options" (modelChange)="onModelChange($event)">
+              [options]="options" [form]="form" (modelChange)="onModelChange($event)">
             </formly-form>
+          </form>
         </ng-template>  
-      </ng-container>
   `
 })
 export class SdsFormlyStepComponent implements OnInit {
+
+
+
+  form = new FormGroup({});
 
   @Input() stepTemplate: TemplateRef<any>;
 
@@ -70,7 +75,7 @@ export class SdsFormlyStepComponent implements OnInit {
   }
 
   constructor(@Inject(forwardRef(() => SdsFormlyStepper)) public _stepper: SdsFormlyStepper) { 
-
+      // Injection works here
   }
 
   ngOnInit(): void {

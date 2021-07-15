@@ -1,6 +1,4 @@
 import { Component, OnInit, Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
-
-import { FormGroup } from "@angular/forms";
 import { NavigationMode } from '@gsa-sam/components';
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 
@@ -17,46 +15,49 @@ export class SystemAccountFormComponent extends SdsFormlyStepper implements OnIn
 
   id: string = 'system-account';
 
-  steps = [
-    {
-      id: "system-information",
-      text: "System Information",
-      fieldConfig: this.editorService.getFields("system-information"),
-      route: "/system-accounts/editor/edit",
-      mode: NavigationMode.INTERNAL
-    },
-    {
-      id: "organization-information",
-      text: "Organization Information",
-      fieldConfig: this.editorService.getFields("organization-information"),
-      route: "/system-accounts/editor/edit",
-      mode: NavigationMode.INTERNAL,
-    },
-    {
-      id: "permissions",
-      text: "Permissions",
-      fieldConfig: this.editorService.getFields("permissions"),
-      route: "/system-accounts/editor/edit",
-      mode: NavigationMode.INTERNAL,
-    },
-    {
-      id: "security",
-      text: "Security",
-      fieldConfig: this.editorService.getFields("security"),
-      route: "/system-accounts/editor/edit",
-      mode: NavigationMode.INTERNAL,
-    },
-    {
-      id: "authorization",
-      text: "Authorization",
-      fieldConfig: this.editorService.getFields("authorization"),
-      route: "/system-accounts/editor/edit",
-      mode: NavigationMode.INTERNAL,
-    }
-  ];
+  model: any = {};
+
+  steps: any[];
 
   constructor(public editorService: SystemAccountEditorService) { 
     super();
+    this.steps = [
+      {
+        id: "system-information",
+        text: "System Information",
+        fieldConfig: this.editorService.getFields("system-information"),
+        route: "/system-accounts/editor/edit",
+        mode: NavigationMode.INTERNAL
+      },
+      {
+        id: "organization-information",
+        text: "Organization Information",
+        fieldConfig: this.editorService.getFields("organization-information"),
+        route: "/system-accounts/editor/edit",
+        mode: NavigationMode.INTERNAL,
+      },
+      {
+        id: "permissions",
+        text: "Permissions",
+        fieldConfig: this.editorService.getFields("permissions"),
+        route: "/system-accounts/editor/edit",
+        mode: NavigationMode.INTERNAL,
+      },
+      {
+        id: "security",
+        text: "Security",
+        fieldConfig: this.editorService.getFields("security"),
+        route: "/system-accounts/editor/edit",
+        mode: NavigationMode.INTERNAL,
+      },
+      {
+        id: "authorization",
+        text: "Authorization",
+        fieldConfig: this.editorService.getFields("authorization"),
+        route: "/system-accounts/editor/edit",
+        mode: NavigationMode.INTERNAL,
+      }
+    ];
   }
 
   ngOnInit(): void {
