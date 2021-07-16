@@ -95,7 +95,7 @@ export class FormlyUtilsService {
       const isSdsFieldType = Object.values(SdsFormlyTypes).includes(
         field.type as any
       );
-      if (isSdsFieldType) {
+      if (isSdsFieldType || field.type === 'repeat') {
         field.templateOptions.readonlyMode = readonlyMode;
       } else {
         field.templateOptions.readonlyMode = false;

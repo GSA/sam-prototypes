@@ -6,82 +6,82 @@ import {
   OnInit,
   TemplateRef,
   ViewChild,
+  ViewEncapsulation,
 } from "@angular/core";
 import { NavigationLink, NavigationMode } from "@gsa-sam/components";
 import { FormlyFieldConfig } from "@ngx-formly/core";
 import { GlobalConfig, ToastrService } from "ngx-toastr";
 import { FormlyUtilsService } from "../app-layout/formly/formly-utils.service";
 import { DataEntryMultiFormStepsService } from "./data-entry-multi-form-steps.service";
-import { Location } from "@angular/common";
 import { Router } from "@angular/router";
 
 @Component({
   selector: `app-data-entry-multi`,
   templateUrl: "./data-entry-app.component.html",
+  styles: [
+    'sam-formly-wrapper-animation div {max-height: none !important }',
+  ],
+  encapsulation: ViewEncapsulation.None,
 })
 export class DataEntryAppComponent implements OnInit, OnDestroy {
-  @ViewChild("myTemplate") myTemplate: TemplateRef<any>;
+  @ViewChild("myTemplate", {static: true}) myTemplate: TemplateRef<any>;
 
   steps = [
     {
       id: "step1",
       text: "Step 1",
-      route: "/dataentry-multiform",
-      mode: NavigationMode.LABEL,
+      editable: false,
       children: [
         {
           id: "step1Child1",
           text: "Review Contract",
-          fieldConfig: this.dataEntryFieldService.getReviewContract(
-            "step1Child1"
-          ),
-          route: "/dataentry-multiform",
-          mode: NavigationMode.INTERNAL,
+          editable: true,
+          fieldConfig: this.dataEntryFieldService.getReviewContract("step1Child1"),
         },
 
         {
           id: "step1Child3",
+          editable: true,
           text: "Child report details",
-          fieldConfig: this.dataEntryFieldService.getReportDetails(
-            "step1Child3"
-          ),
-          route: "/dataentry-multiform",
-          mode: NavigationMode.INTERNAL,
+          fieldConfig: this.dataEntryFieldService.getReportDetails("step1Child3"),
         },
       ],
     },
     {
       id: "step2Id",
       text: "Report Details",
+      editable: true,
       fieldConfig: this.dataEntryFieldService.getReportDetails("step2"),
-      route: "/dataentry-multiform",
-      mode: NavigationMode.INTERNAL,
     },
     {
       id: "step3Id",
       text: "Subawardee Data",
+      editable: true,
       fieldConfig: this.dataEntryFieldService.getSubawardeeData("step3"),
-      route: "/dataentry-multiform",
-      mode: NavigationMode.INTERNAL,
     },
-
-    // {
-    //   id: 'review',
-    //   text: 'Review and Submit',
-    //   isReview: true,
-    //   route: '/dataentry-multiform',
-    //   mode: NavigationMode.INTERNAL,
-    // }
+    {
+      id: 'reviewId',
+      text: 'Review and Submit',
+      editable: true,
+      isReview: true,
+      fieldConfig: {
+        fieldGroup: [,
+          this.dataEntryFieldService.getReviewContract("step1Child1"),
+          this.dataEntryFieldService.getReportDetails("step1Child3"),
+          this.dataEntryFieldService.getReportDetails("step2"),
+          this.dataEntryFieldService.getSubawardeeData("step3", true),
+        ]
+      }
+    }
   ];
 
   closeUrl = "";
 
   model: any = {};
   currentStepId: string;
-  stepValidityMap: any;
+  stepValidityMap: any = {};
   reviewFields: FormlyFieldConfig[];
   isReviewStep = false;
-  navigationMode = NavigationMode;
   options: GlobalConfig;
   subpages: NavigationLink[] = [
     {
@@ -137,10 +137,20 @@ export class DataEntryAppComponent implements OnInit, OnDestroy {
     this.options.closeButton = true;
   }
   ngOnInit() {
+    const reviewStep = this.steps.find(step => step.isReview);
+    reviewStep.fieldConfig.fieldGroup.unshift(          {
+      key: "customTemplate",
+      type: "custom",
+      templateOptions: {
+        customResultsTemplate: this.myTemplate,
+      },
+    });
+
     const savedDraft: string = sessionStorage.getItem("dataEntry");
     if (!savedDraft) {
       return;
     }
+
 
     this.getFormDataFromDraft(savedDraft);
   }
@@ -159,6 +169,7 @@ export class DataEntryAppComponent implements OnInit, OnDestroy {
 
   onSaveClicked($event: { model: any; metadata: any }) {
     sessionStorage.setItem("dataEntry", JSON.stringify($event));
+    this.stepValidityMap = $event.metadata.stepValidityMap;
     this.showSuccessSaveToaster();
   }
 
@@ -168,31 +179,17 @@ export class DataEntryAppComponent implements OnInit, OnDestroy {
 
   onStepChange($event) {
     this.currentStepId = $event.id;
-    if (this.currentStepId === "reviewId") {
+    if (this.currentStepId != 'reviewId' && !this.isReviewStep) {
+      return;
+    }
+
+    if (this.currentStepId === 'reviewId') {
       this.isReviewStep = true;
-      this.reviewFields = this.onReviewAndSubmit();
-      this.subpages.forEach((element) => {
-        if (element.id == "review") {
-          element.selected = true;
-        } else {
-          element.selected = false;
-        }
-      });
-    } else if (this.isReviewStep) {
+      this.onReviewAndSubmit();
+    } else {
+      // Previous step was review, but now we've navigated away, reset readonly mode to edit mode
       this.isReviewStep = false;
-      this.reviewFields.forEach((element) => {
-        if (element.type == "readonlyrepeat") {
-          element.type = "repeat";
-        }
-      });
-      FormlyUtilsService.setReadonlyMode(false, this.reviewFields, this.model);
-      this.subpages.forEach((element) => {
-        if (element.id == "edit") {
-          element.selected = true;
-        } else {
-          element.selected = false;
-        }
-      });
+      this.onReviewAndSubmit(false);
     }
     this.cdr.detectChanges();
   }
@@ -205,39 +202,10 @@ export class DataEntryAppComponent implements OnInit, OnDestroy {
     this.stepValidityMap = savedDraftModel?.metadata?.stepValidityMap;
   }
 
-  onReviewAndSubmit() {
-    let _reviewFields = this.getFlatSteps(this.steps);
-    let reviewFields = [];
-
-    let prvAlert = {
-      key: "customTemplate",
-      type: "custom",
-      templateOptions: {
-        customResultsTemplate: this.myTemplate,
-      },
-    };
-
-    reviewFields.push(prvAlert);
-
-    _reviewFields.forEach((element) => {
-      if (!element.isReview) {
-        reviewFields.push({
-          key: element.id + "_review",
-          template:
-            '<h2 class="padding-top-2"> ' + element.text + " </h2><hr />",
-        });
-
-        if (element.fieldConfig.type == "repeat") {
-          element.fieldConfig.type = "readonlyrepeat";
-        }
-
-        if (element.fieldConfig) {
-          reviewFields.push(element.fieldConfig);
-        }
-      }
-    });
-    FormlyUtilsService.setReadonlyMode(true, reviewFields, this.model);
-
+  onReviewAndSubmit(enable = true) {
+    const reviewStep = this.steps.find(step => step.isReview);
+    let reviewFields = reviewStep.fieldConfig.fieldGroup;
+    FormlyUtilsService.setReadonlyMode(enable, reviewFields, this.model);
     return reviewFields;
   }
 
@@ -252,7 +220,7 @@ export class DataEntryAppComponent implements OnInit, OnDestroy {
         return;
       }
       step.hide = false;
-      if (step.mode !== NavigationMode.LABEL) {
+      if (step.editable && !step.isReview) {
         flat.push(step);
       }
 

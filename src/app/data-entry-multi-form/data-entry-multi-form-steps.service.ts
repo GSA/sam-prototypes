@@ -531,10 +531,10 @@ export class DataEntryMultiFormStepsService {
     };
   }
 
-  getSubawardeeData(key?: string): FormlyFieldConfig {
+  getSubawardeeData(key?: string, readonly?: boolean): FormlyFieldConfig {
     return {
       key: key ? key : "addAwardee",
-      type: "repeat",
+      type: readonly ? "readonlyrepeat" : "repeat",
       templateOptions: {
         required: true,
         repeaterKey: 'subawards',
