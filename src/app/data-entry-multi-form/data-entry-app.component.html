@@ -5,7 +5,7 @@
   <data-entry-custom-stepper [model]="model" [currentStepId]="currentStepId" [stepValidityMap]="stepValidityMap"
     (saveData)="onSaveClicked($event)" (stepChange)="onStepChange($event)">
     <sds-step *ngFor="let step of steps" [id]="step.id" [fieldConfig]="step.fieldConfig" [text]="step.text"
-      [mode]="step.mode" [isReview]="step.isReview">
+      [editable]="step.editable" [isReview]="step.isReview">
       <span sdsStepHeader *ngIf="!step.children">
         <ng-container [ngTemplateOutlet]="stepHeader" [ngTemplateOutletContext]="{$implicit: step.text}"></ng-container>
       </span>
@@ -17,21 +17,6 @@
           </ng-container>
         </span>
       </sds-step>
-    </sds-step>
-    <sds-step [text]="'Review and Submit'" [id]="'reviewId'" [stepTemplate]="customStep"
-      [mode]="navigationMode.INTERNAL">
-      <ng-template #customStep>
-        <div class="margin-bottom-8">
-          <span sdsStepHeader>
-            <ng-container [ngTemplateOutlet]="stepHeader" [ngTemplateOutletContext]="{$implicit: 'Review and Submit'}">
-            </ng-container>
-          </span>
-          <formly-form [fields]="reviewFields" [model]="model">
-            <button class="usa-button usa-button--primary float-right margin-top-2">Submit</button>
-          </formly-form>
-        </div>
-
-      </ng-template>
     </sds-step>
   </data-entry-custom-stepper>
 </div>

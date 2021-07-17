@@ -24,7 +24,7 @@
     "@angular/router": "^10.2.0",
     "@gsa-sam/components": "10.0.30",
     "@gsa-sam/layouts": "10.0.30",
-    "@gsa-sam/sam-formly": "10.0.33-data-entry",
+    "@gsa-sam/sam-formly": "10.0.33-data-entry.2",
     "@gsa-sam/sam-material-extensions": "10.0.30",
     "@gsa-sam/sam-styles": "0.0.110",
     "@gsa-sam/ngx-uswds": "0.0.1",

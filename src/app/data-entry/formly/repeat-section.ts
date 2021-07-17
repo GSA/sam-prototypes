@@ -6,7 +6,7 @@ import { FieldArrayType, FormlyFormBuilder } from "@ngx-formly/core";
 @Component({
   selector: "formly-repeat-section",
   template: `
-    <div class="grid-col">
+    <div class="grid-col" *ngIf="!to.readonlyMode">
       <div class="grid-row">
         <div class="grid-col">
           <h3>{{field.fieldArray.templateOptions.title}}</h3>
@@ -60,6 +60,10 @@ import { FieldArrayType, FormlyFormBuilder } from "@ngx-formly/core";
 export class SubawardeeRepeatTypeComponent extends FieldArrayType {
   constructor(builder: FormlyFormBuilder, public dialog: SdsDialogService, public cdr: ChangeDetectorRef) {
     super(builder);
+  }
+
+  log(item) {
+    console.log(item);
   }
   showNoresultFound: boolean = true;
   addSubawardee(id) {
