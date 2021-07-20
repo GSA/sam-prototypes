@@ -16,8 +16,8 @@
         </responsive-sidebar>
       </div>
       <div class="grid-col-fill">
-        <sds-formly-step *ngFor="let step of steps; let i = index" [selected]="i == 0" [id]="step.id" [fieldConfig]="step.fieldConfig" [text]="step.text" [model]="model">
-        </sds-formly-step>
+        <sds-step *ngFor="let step of steps; let i = index" [id]="step.id" [fieldConfig]="step.fieldConfig" [text]="step.text">
+        </sds-step>
 
         <div class="grid-row grid-gap align-right margin-top-4">
           <div class="text-right margin-right-1">

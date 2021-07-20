@@ -1,26 +1,31 @@
-import { Component, OnInit, Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, Directive, Input, TemplateRef, ViewContainerRef, ChangeDetectorRef } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NavigationMode } from '@gsa-sam/components';
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 
-import { SdsFormlyStepper } from '../../../app-layout/formly-stepper/sds-formly-stepper';
+import { SdsStepper } from '@gsa-sam/sam-formly';
 import { SystemAccountEditorService } from '../system-account-editor-service/system-account-editor.service';
 
 
 @Component({
   selector: 'system-account-form',
   templateUrl: './system-account-form.component.html',
-  providers: [{provide: SdsFormlyStepper, useExisting: SystemAccountFormComponent}]
+  providers: [{provide: SdsStepper, useExisting: SystemAccountFormComponent}]
 })
-export class SystemAccountFormComponent extends SdsFormlyStepper implements OnInit {
+export class SystemAccountFormComponent extends SdsStepper implements OnInit {
 
   id: string = 'system-account';
 
-  model: any = {};
-
   steps: any[];
 
-  constructor(public editorService: SystemAccountEditorService) { 
-    super();
+  constructor(router: Router,
+      activatedRoute: ActivatedRoute,
+      cdr: ChangeDetectorRef,
+      public editorService: SystemAccountEditorService) { 
+    super(router, activatedRoute, cdr);
+    this.model = {};
+    this.stepValidityMap = {};
+    this.queryParamKey = "advancedStepper";
     this.steps = [
       {
         id: "system-information",
