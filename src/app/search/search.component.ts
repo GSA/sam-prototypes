@@ -123,6 +123,7 @@ export class SearchComponent implements OnInit {
     this.setFilters(this.domain);
 
     this.filterChange$.subscribe((res) => {
+      console.log(res);
       this.filterModel = res;
       this.resultList.updateFilter(res);
     });

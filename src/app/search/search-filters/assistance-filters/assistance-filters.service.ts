@@ -6,6 +6,7 @@ import {
   HierarchyService,
   SearchFiltersWrapperService 
 } from '../../../common/public-apis';
+import { keywordFilter } from '../common/keywordfilter';
 
 
 @Injectable({
@@ -18,14 +19,7 @@ export class AssistanceFiltersService implements SearchFiltersWrapperService {
   public model = {};
 
   public filters: FormlyFieldConfig[] = [
-  {
-      key: 'keyword',
-      type: 'input',
-      templateOptions: {
-          label: 'Keyword',
-          hideOptional: true
-      }
-    },
+    keywordFilter,
     {
       key: 'dates',
       templateOptions: {

@@ -10,6 +10,7 @@ import {
   HierarchyService,
   SearchFiltersWrapperService 
 } from '../../../common/public-apis';
+import { keywordFilter } from '../common/keywordfilter';
 
 let offersDueService = new DateRangeService();
 offersDueService.settings.id = 'offers-due-date';
@@ -32,14 +33,7 @@ export class ContractOpportunityFiltersService implements SearchFiltersWrapperSe
   public model = {};
 
   public filters: FormlyFieldConfig[] = [
-	{
-	    key: 'keyword',
-	    type: 'input',
-	    templateOptions: {
-	        label: 'Keyword',
-          hideOptional: true
-	    }
-  },  
+	keywordFilter, 
 	{
 	      key: 'title',
 	      type: 'input',

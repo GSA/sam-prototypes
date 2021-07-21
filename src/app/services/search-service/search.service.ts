@@ -11,6 +11,7 @@ import { opportunitiesData } from '../contract-opportunities-service/opportuniti
 import { contractData } from '../contract-data-service/contract-data.data';
 import { integrityData } from '../integrity-service/integrity.data';
 import { hierarchyData } from '../hierarchy-service/hierarchy.data';
+import { extractKeywords } from 'src/app/search/search-filters/common/keywordfilter';
 
 
 @Injectable({
@@ -97,15 +98,62 @@ export class SearchService {
         return assistanceData._embedded.results.concat(opportunitiesData).concat(registrationData._embedded.results).concat(exclusionData._embedded.results).concat(integrityData);
     }
 
-    getData(search: SearchParameters): Observable<SearchResult> {
+    private filterKeywords(records: any[], searchType: string, keywords: string[]): any[] {
 
+        let filteredData = [];
+        switch(searchType) { 
+               case 'exactMatch': { 
+                    filteredData = this.data.filter(data => this.includesAll(data, keywords));              
+                    break; 
+               };
+               case 'anyWords': { 
+                    keywords.forEach(word => {
+                        const results = this.data.filter(
+                            data => JSON.stringify(data).toUpperCase().includes(word.toUpperCase())
+                        );
+                        results.forEach(result => {
+                            const existsInFilteredData = filteredData.find(data => data === result);
+                            if (!existsInFilteredData) {
+                                filteredData.push(result);
+                            }
+                        });
+                    });
+                    break; 
+               } 
+               default: { 
+                  filteredData = this.data.filter(data => this.includesAll(data, keywords));
+                  break; 
+               } 
+        } 
+        return filteredData;
+    }
+
+    includesAll(record: any, keywords: string[]): boolean {
+        let data = JSON.stringify(record);
+        let result = true;
+        keywords.forEach(word => {
+            if(!(data.toUpperCase().includes(word.toUpperCase()))) {
+                result = false;
+            }
+        })
+        return result;
+    }
+
+    getData(search: SearchParameters): Observable<SearchResult> {
         if(this.data) {
             this.filterData(search);
 
             // only do keyword search for demo purpose
-            let filteredData = this.data;
+            let filteredData = [];
             if (search.filter && search.filter.keyword) {
-                filteredData = this.data.filter(data => JSON.stringify(data).includes(search.filter.keyword));
+                let keywords = extractKeywords(search.filter.keyword);
+
+                if (!keywords) {
+                    filteredData = this.data;
+                } else {
+                    filteredData = this.filterKeywords(this.data, search.filter.keyword.keywordRadio, keywords);
+                }
+
             }
 
             this.sortItems(filteredData, search);
