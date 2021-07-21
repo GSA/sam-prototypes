@@ -1,0 +1,55 @@
+<sds-subheader>
+  <back-button></back-button>
+  <subheader-title title="Entity Reporting Workspace"></subheader-title>
+    <sds-search name="keyword-search" [(ngModel)]="subheaderSearchModel" (ngModelChange)="search()"
+    [searchSettings]="subheaderSearchSettings">
+  </sds-search>
+  <ng-container subheader-buttongroup-container>
+    <sds-button-group
+      [mode]="'radio'"
+      class="sds-button-group sds-button-group--secondary"
+    >
+      <sds-button-group-option *ngFor="let link of buttonLinks" [aria-label]="link.text" [value]="link.text">
+        {{link.text}}
+      </sds-button-group-option>
+    </sds-button-group>
+  </ng-container>
+
+  <sds-subheader-actions [model]="subheaderActions" (clicks)="actionClicked($event)">
+  </sds-subheader-actions>
+</sds-subheader>
+
+<main>
+  <div class="sds-page">
+    <div class="grid-container">
+      <div class="grid-row grid-gap">
+        <div class="desktop:grid-col-3 tablet-lg:grid-col-12 mobile-lg:grid-col-12 margin-bottom-3">
+          <responsive-sidebar title="Filter By">
+  
+              <div class="sds-card sds-card--collapsible"
+                [ngClass]="{'sds-card--collapsed': !filtersExpanded}">
+                <div class="sds-card__body sds-card__body--accent-cool" id="filtersBody">
+                  <sds-filters #filters
+                    [advancedFilters]="false" [form]="form"
+                    [fields]="fields" [model]="filterModel" (filterChange)="filterChange$.next($event)">
+                  </sds-filters>
+                </div>
+              </div>
+    
+          </responsive-sidebar>
+        </div>
+        <div class="desktop:grid-col-9 tablet-lg:grid-col-12 mobile-lg:grid-col-12">
+          <search-list-layout #resultList [service]="service" [configuration]="listModel"
+            [isHistoryEnabled]="true"
+            [enableApiCall]="true">
+            <ng-template #resultContent let-item>
+              <div>
+                <award-item [model]="item"></award-item>
+              </div>
+            </ng-template>
+          </search-list-layout>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

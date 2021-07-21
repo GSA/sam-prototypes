@@ -1,4 +1,4 @@
-import { ViewChild, Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { ViewChild, Component, OnInit, TemplateRef, ChangeDetectorRef } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
@@ -49,6 +49,7 @@ export class SearchComponent implements OnInit {
   };
 
   @ViewChild('resultList', { static: true }) resultList: SearchListLayoutComponent;
+  @ViewChild('noResultsTemplate', { static: false }) private noResultsTemplate: TemplateRef<any>;
 
   parentDomain: any;
   domain: any;
@@ -173,6 +174,10 @@ export class SearchComponent implements OnInit {
 
   back() {
       this.location.back();
+  }
+
+  addInactiveResults() {
+
   }
 
 

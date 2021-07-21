@@ -131,6 +131,11 @@ export class SamModelService {
             mode: NavigationMode.INTERNAL,
             route: "/home/assistance",
           },
+          {
+            text: "Data Entry",
+            mode: NavigationMode.INTERNAL,
+            route: "/dataentry/report",
+          },
         ],
       },
       {
@@ -173,7 +178,7 @@ export class SamModelService {
   constructor(
     public router: Router,
     private locationStrategy: LocationStrategy
-  ) {}
+  ) { }
 
   signIn(redirectUrl?: string) {
     this.signedIn = true;

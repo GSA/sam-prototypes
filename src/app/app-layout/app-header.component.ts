@@ -64,9 +64,9 @@ export class AppHeaderComponent implements OnInit {
       imageClassPrefix: "sds",
       imageClass: "messages",
       text: "Notifications",
-      route: "/messages",
+      route: "/notifications",
       mode: NavigationMode.INTERNAL,
-      id: "messages",
+      id: "notifications",
     },
     {
       imageClassPrefix: "sds",

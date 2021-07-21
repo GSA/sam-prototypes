@@ -104,7 +104,7 @@
         </div>
         <div class="desktop:grid-col-9 tablet-lg:grid-col-12 mobile-lg:grid-col-12">
           <search-list-layout #resultList [service]="service" [configuration]="listModel"
-            [isHistoryEnabled]="!responsiveDialog" [enableApiCall]="!responsiveDialog">
+            [isHistoryEnabled]="!responsiveDialog" [enableApiCall]="!responsiveDialog" [customResultsTemplate]="noResultsTemplate">
             <ng-template #resultContent let-item>
               <div>
                 <assistance-result *ngIf="item._type == 'assistanceListing'" [model]="item"></assistance-result>
@@ -124,3 +124,24 @@
     </div>
   </div>
 </main>
+
+<ng-template #noResultsTemplate>
+  
+  <div class="sds-card sds-card--vertical sds-card--shadowed sds-card--bordered bg-base-lightest">
+    <div class="sds-card__header padding-3">
+        <div class="sds-stack sds-2x">
+            <sds-icon class="sds-stack-icon" [size]="'3x'" [icon]="'circle'"></sds-icon>
+            <sds-icon class="sds-stack-icon" [size]="'2x'" [icon]="'search'"></sds-icon>
+        </div> 
+    </div> 
+    <div class="sds-card__body margin-2"> 
+        <h1 class="sds-card__title">No matches found</h1> 
+          <p>Your search did not return any results for active records.</p> 
+          <p>Would you like to return inactive records in your search results.</p> 
+          <div class="margin-top-3"> 
+              <button class="usa-button usa-button--outline" (click)="addInactiveResults()">Yes</button>
+              <button class="usa-button usa-button--outline" (click)="back()">Go Back</button> 
+          </div> 
+     </div> 
+ </div>
+</ng-template>

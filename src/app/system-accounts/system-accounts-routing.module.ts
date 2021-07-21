@@ -5,12 +5,12 @@ import { SystemAccountModule } from './system-account/system-account.module';
 
 const routes: Routes = [
 	{
-		path: '',
+		path: 'workspace',
 		loadChildren: () => import('./system-accounts-workspace/system-accounts-workspace.module').then(m => m.SystemAccountsWorkspaceModule)
 	},
 	{
-		path: 'account-detail',
-		loadChildren: () => import('./system-account/system-account.module').then(m => m.SystemAccountModule)
+		path: 'editor',
+		loadChildren: () => import('./system-account-editor/system-account-editor.module').then(m => m.SystemAccountEditorModule)
 	}
 ];
 

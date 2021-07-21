@@ -1,15 +1,40 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
 
-import { SystemAccountRoutingModule } from './system-account-routing.module';
-import { SystemAccountComponent } from './system-account.component';
+import { FormlyModule } from "@ngx-formly/core";
+
+import { SdsFormlyModule } from "@gsa-sam/sam-formly";
+
+import { DataEntryLayoutModule } from "../../app-layout/data-entry-layout/data-entry-layout.module";
+
+import { SystemAccountRoutingModule } from "./system-account-routing.module";
+import { SystemAccountComponent } from "./system-account.component";
+import { AppLayoutFormlyModule } from "src/app/app-layout/formly/formly-module";
+import { StepperModule } from "../../app-layout/stepper/stepper.module";
+import { SdsIconModule } from "@gsa-sam/components";
+import {
+  NgxBootstrapIconsModule,
+  chevronLeft,
+  chevronRight,
+  x,
+  check,
+} from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [SystemAccountComponent],
   imports: [
     CommonModule,
-    SystemAccountRoutingModule
+    RouterModule,
+    SdsFormlyModule,
+    FormlyModule,
+    SdsIconModule,
+    StepperModule,
+    AppLayoutFormlyModule,
+    DataEntryLayoutModule,
+    SystemAccountRoutingModule,
+    NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, x, check }),
   ],
-  exports: [SystemAccountComponent]
+  exports: [SystemAccountComponent],
 })
-export class SystemAccountModule { }
+export class SystemAccountModule {}

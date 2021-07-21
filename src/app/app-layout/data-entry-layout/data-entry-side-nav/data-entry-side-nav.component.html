@@ -1,0 +1,10 @@
+  <ul class="usa-sidenav">
+  	<li *ngFor="let link of links" class="usa-sidenav__item usa-sidenav--styled">
+  		<a [routerLink]="link.route">{{link.text}}</a>
+  		<ul>
+	  		<li *ngFor="let child of links.children" class="usa-sidenav__item usa-sidenav--styled">
+	  			<a [routerLink]="child.route">{{child.text}}</a>
+	  		</li>
+  		</ul>
+  	</li>
+  </ul>

@@ -1,49 +1,25 @@
-<sds-subheader>
-  <!-- BACK BUTTON -->
-  <button class="sds-button sds-button--circular">
-    <sds-icon [icon]="'chevron-left'"></sds-icon>
-  </button>
-
-  <!-- TITLE -->
-  <h1 class="font-heading-md text-semibold tablet-lg:width-mobile">System Accounts</h1>
-
-  <!-- SEARCH (OPTIONAL) -->
-  <sds-search (term)="newSearch($event)" parentSelector=".grid-row" placeholder="Enter an ID, name, or keyword"
-    inputClass="width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block"></sds-search>
-
-  <!-- PRIMARY/SECONDARY BUTTONS (OPTIONAL) -->
-  <ng-container subheader-buttons-container>
-    <button class="usa-button margin-top-05 tablet:margin-top-0" (click)="newAccount($event)">Create Account</button>
-  </ng-container>
-
-  <!-- ACTIONS BUTTONS (OPTIONAL) -->
-  <sds-subheader-actions [model]="subheader" (clicks)="subheaderActionClicked($event)">
-  </sds-subheader-actions>
-</sds-subheader>
-<sds-page>
-  <sds-page-options class="sam-page__options">
-    <sds-toolbar [expanded]="true">
-      <sds-accordion>
-        <sds-accordion-item [expanded]="false">
-          <sds-accordion-item-header>Navigate To</sds-accordion-item-header>
-          <sds-side-navigation #sideNav [model]="navigationModel"></sds-side-navigation>
-        </sds-accordion-item>
-        <sds-accordion-item [expanded]="true">
-          <sds-accordion-item-header>Filter By</sds-accordion-item-header>
-          <sds-filters [form]="form" [fields]="filterService.filters" [model]="filterService.model"
-            (filterChange)="filterChange$.next($event)">
-          </sds-filters>
-        </sds-accordion-item>
-      </sds-accordion>
-    </sds-toolbar>
-    <div class="sds-page__content tablet:grid-col-fill margin-0">
-      <search-list-layout #resultList [service]="service" [configuration]="service.model">
-        <ng-template #resultContent let-item>
-          <div>
-            <system-account-item [model]="item"></system-account-item>
-          </div>
-        </ng-template>
-      </search-list-layout>
+<workspace-subheader [title]="title" [placeholder]="placeholder">
+</workspace-subheader>
+<main>
+  <div class="sds-page">
+      <div class="grid-container">
+    <div class="grid-row grid-gap">
+      <div class="desktop:grid-col-3 tablet-lg:grid-col-12 mobile-lg:grid-col-12 margin-bottom-3">
+        <responsive-sidebar title="Filter By" (onApply)="onApplyFilters()">
+          <div class="sds-card__body sds-card__body--accent-cool" id="panelBody">
+              <system-accounts-filters #filters></system-accounts-filters>
+            </div>
+        </responsive-sidebar>
+      </div>
+      <div class="desktop:grid-col-9 tablet-lg:grid-col-12 margin-bottom-3">
+        <search-list-layout #resultList [service]="service" [configuration]="service.configuration"
+              [isHistoryEnabled]="false" [enableApiCall]="true">
+              <ng-template #resultContent let-item>
+                <system-account-item [model]="item"></system-account-item>
+              </ng-template>
+            </search-list-layout>
+      </div> 
     </div>
-  </sds-page-options>
-</sds-page>
+  </div>
+  </div>
+</main>

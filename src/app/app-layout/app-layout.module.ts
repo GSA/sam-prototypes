@@ -2,6 +2,10 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormlyModule } from "@ngx-formly/core";
 
+import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { allIcons as sdsAllIcons } from "@gsa-sam/components";
+import _ from "lodash-es";
+
 import {
   SdsCollapseModule,
   SdsExternalLinkDirectivesModule,
@@ -28,6 +32,7 @@ import { BackButtonComponent } from "./back-button.component";
 import { DisplayNavigationComponent } from "./display-navigation/display-navigation.component";
 import { DisplaySectionComponent } from "./display-section.component";
 import { DisplaySubsectionComponent } from "./display-subsection.component";
+import { ResponsiveSidebarComponent } from "./responsive-sidebar.component";
 
 @NgModule({
   declarations: [
@@ -41,6 +46,7 @@ import { DisplaySubsectionComponent } from "./display-subsection.component";
     DisplayNavigationComponent,
     DisplaySectionComponent,
     DisplaySubsectionComponent,
+    ResponsiveSidebarComponent
   ],
   imports: [
     CommonModule,
@@ -52,21 +58,25 @@ import { DisplaySubsectionComponent } from "./display-subsection.component";
     SdsCollapseModule,
     SdsSideNavigationModule,
     SideToolbarModule,
-    SdsExternalLinkDirectivesModule,
     SdsIconModule,
+    SdsExternalLinkDirectivesModule,
+    SdsIconModule,    
+    NgxBootstrapIconsModule.pick(
+      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+    )
   ],
   exports: [
     AppHeaderComponent,
     AppFooterComponent,
     AppFeedbackComponent,
     AppAlertsComponent,
-
     DisplaySubheaderComponent,
     SubheaderTitleComponent,
     BackButtonComponent,
     DisplayNavigationComponent,
     DisplaySectionComponent,
     DisplaySubsectionComponent,
+    ResponsiveSidebarComponent
   ],
 })
 export class AppLayoutModule {}

@@ -1,0 +1,37 @@
+<h1 class="margin-bottom-2">Email Settings</h1>
+
+<display-section *ngFor="let item of emailSettings" [title]="item.title" [id]="item.key">
+  <form [id]="item.key + '_form'">
+	  <sds-table [data]="item.children" [tableName]="item.key + '_table'">
+
+	  <sds-table-column sdsColumnName="title">
+	    <ng-template #sdsHeaderCell>
+	    	<input class="usa-checkbox__input" type="checkbox" [id]="item.key + '_title'">
+	    	<label class="usa-checkbox__label sr-only" [for]="item.key + '_title'">Title</label>
+	    </ng-template>
+	    <ng-template #sdsCell let-element="element">
+	    	<input class="usa-checkbox__input" type="checkbox" [id]="element.key">
+	    	<label class="usa-checkbox__label sr-only" [for]="element.key">{{element.title}}</label>
+	    </ng-template>
+	  </sds-table-column>
+	  <sds-table-column sdsColumnName="frequency">
+	    <ng-template #sdsHeaderCell>Frequency</ng-template>
+	    <ng-template #sdsCell let-element="element">
+	    	<select class="usa-select" name="options" [id]="element.key + '_options'">
+   				 <option value="immediately">Immediately</option>
+    			 <option value="daily">Daily</option>
+    			 <option value="weekly">Weekly</option>
+    			 <option value="none">Never</option>
+  			</select>
+  		</ng-template>
+	  </sds-table-column>
+
+	  <sds-header-row [displayedColumns]="displayedColumns"></sds-header-row>
+	  <sds-row [displayedColumns]="displayedColumns"></sds-row>
+
+	  </sds-table>
+	</form>
+
+</display-section>
+
+

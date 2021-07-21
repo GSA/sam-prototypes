@@ -1,0 +1,51 @@
+<data-entry-subheader title="FSRS New Report" [subpages]="subpages" (subpageEventClicked)="onSubPageEventClick($event)">
+</data-entry-subheader>
+
+<div class="grid-container">
+  <data-entry-custom-stepper [model]="model" [currentStepId]="currentStepId" [stepValidityMap]="stepValidityMap"
+    (saveData)="onSaveClicked($event)" (stepChange)="onStepChange($event)">
+    <sds-step *ngFor="let step of steps" [id]="step.id" [fieldConfig]="step.fieldConfig" [text]="step.text"
+      [editable]="step.editable" [isReview]="step.isReview">
+      <span sdsStepHeader *ngIf="!step.children">
+        <ng-container [ngTemplateOutlet]="stepHeader" [ngTemplateOutletContext]="{$implicit: step.text}"></ng-container>
+      </span>
+
+      <sds-step *ngFor="let childStep of step.children" [text]="childStep.text" [id]="childStep.id"
+        [fieldConfig]="childStep.fieldConfig">
+        <span sdsStepHeader>
+          <ng-container [ngTemplateOutlet]="stepHeader" [ngTemplateOutletContext]="{$implicit: childStep.text}">
+          </ng-container>
+        </span>
+      </sds-step>
+    </sds-step>
+  </data-entry-custom-stepper>
+</div>
+
+<ng-template #stepHeader let-headerText>
+  <div class="padding-bottom-3">
+    <h1>
+      {{ headerText}}
+    </h1>
+    <hr />
+  </div>
+</ng-template>
+
+<ng-template #myTemplate let-item>
+  <div class="sds-alert--expanded info">
+    <div class="grid-container width-full maxw-full margin-0 padding-0">
+      <div class="grid-row">
+        <div class="grid-col-auto">
+          <sds-icon [icon]="'info'"></sds-icon>
+        </div>
+        <div class="grid-col-fill">
+          <span>
+            Please be aware that all information collected on the <a href="https://www.usaspending.gov">FSRS
+              website</a>,
+            including registration information and report data, will be
+            visible to the public on a public website (<a href="https://www.usaspending.gov">www.usaspending.gov</a>).
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
