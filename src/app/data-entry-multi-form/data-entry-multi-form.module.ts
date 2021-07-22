@@ -23,6 +23,9 @@ import {
 import { DataEntryAppComponent } from './data-entry-app.component';
 import { DataEntryCustomStepperComponent } from './data-entry-custom-stepper.component';
 import { SdsButtonGroupModule } from '@gsa-sam/sam-material-extensions';
+import { DataEntryNgxStepperComponent } from './data-entry-ngx-stepper.component';
+import { UsaStepIndicatorModule } from '@gsa-sam/ngx-uswds';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -35,12 +38,14 @@ const routes: Routes = [
   declarations: [
     DataEntryAppComponent,
     DataEntryCustomStepperComponent,
+    DataEntryNgxStepperComponent
   ],
   providers: [
     DataEntryMultiFormStepsService,
   ],
   imports: [
     CommonModule,
+    FormsModule,
     SdsSelectionPanelModule,
     DataEntryLayoutModule,
     FormlyModule.forRoot(),
@@ -48,6 +53,7 @@ const routes: Routes = [
     DataEntryFormlyModule,
     AppLayoutFormlyModule,
     SdsIconModule,
+    UsaStepIndicatorModule,
     NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, circle, slashCircleFill, checkCircleFill, question, save, x }),
     SdsToastModule,
     SdsButtonGroupModule,

@@ -24,8 +24,8 @@ import { Router } from "@angular/router";
   encapsulation: ViewEncapsulation.None,
 })
 export class DataEntryAppComponent implements OnInit, OnDestroy {
-  @ViewChild("myTemplate", {static: true}) myTemplate: TemplateRef<any>;
-
+  @ViewChild("myTemplate", { static: true }) myTemplate: TemplateRef<any>;
+  stepperType: boolean = false;
   steps = [
     {
       id: "step1",
@@ -138,7 +138,7 @@ export class DataEntryAppComponent implements OnInit, OnDestroy {
   }
   ngOnInit() {
     const reviewStep = this.steps.find(step => step.isReview);
-    reviewStep.fieldConfig.fieldGroup.unshift(          {
+    reviewStep.fieldConfig.fieldGroup.unshift({
       key: "customTemplate",
       type: "custom",
       templateOptions: {
