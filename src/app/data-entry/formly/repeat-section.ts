@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component } from "@angular/core";
 import { SdsDialogService } from "@gsa-sam/components";
 import { SdsFormlyDialogComponent } from "@gsa-sam/sam-formly";
 import { FieldArrayType, FormlyFormBuilder } from "@ngx-formly/core";
+import { AddSubawardeeModalComponent } from '../../data-entry-multi-form/modal/add-subawardee-modal.component'
 
 @Component({
   selector: "formly-repeat-section",
@@ -78,8 +79,8 @@ export class SubawardeeRepeatTypeComponent extends FieldArrayType {
       cancel: "No thanks",
     };
 
-    const dialogRef = this.dialog.open(SdsFormlyDialogComponent, {
-      width: "medium",
+    const dialogRef = this.dialog.open(AddSubawardeeModalComponent, {
+      width: "large",
       data: data,
     });
 
@@ -88,7 +89,7 @@ export class SubawardeeRepeatTypeComponent extends FieldArrayType {
         this.field.fieldArray.fieldGroup[0].templateOptions.subawardItem = result;
         this.add();
         this.model[this.model.length - 1] = result;
-        this.formControl.controls[this.model.length - 1].setValue({subawards: result});
+        this.formControl.controls[this.model.length - 1].setValue({ subawards: result });
         this.showNoresultFound = this.model.length == 0 ? true : false;
         this.cdr.detectChanges();
       }
