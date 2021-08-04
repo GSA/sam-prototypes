@@ -8,7 +8,7 @@ import { FormlyFieldStepperComponent } from "./formly-stepper";
 import { StepperModule } from "../stepper/stepper.module";
 import { CdkStepperModule } from "@angular/cdk/stepper";
 
-import { SdsIconModule } from "@gsa-sam/components";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 import { ExpandableCardModule } from "../card/card.module";
 import { SdsActionsMenuModule } from "@gsa-sam/layouts";
@@ -24,7 +24,7 @@ import { SdsActionsMenuModule } from "@gsa-sam/layouts";
     CdkStepperModule,
     ReactiveFormsModule,
     SdsFormlyModule,
-    SdsIconModule,
+    IconModule,
     FormlyModule,
 
     SdsFormlyModule.forChild({

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { SdsDialogModule, SdsIconModule, SdsSelectionPanelModule, SdsToastModule } from '@gsa-sam/components';
+import { SdsDialogModule, SdsSelectionPanelModule, SdsToastModule } from '@gsa-sam/components';
 import { DataEntryLayoutModule } from '../app-layout/data-entry-layout/data-entry-layout.module';
 import { FormlyModule } from '@ngx-formly/core';
 import { SdsFormlyModule, SdsStepperModule } from '@gsa-sam/sam-formly';
@@ -29,6 +29,7 @@ import { FormsModule } from '@angular/forms';
 import { AddSubawardeeModalComponent } from './modal/add-subawardee-modal.component';
 import { USWDSCustomStepperComponent } from './modal/uswds-custom-stepper.component';
 import { UswdsStepperComponent } from './modal/uswds-stepper.component';
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 
 const routes: Routes = [
   {
@@ -58,7 +59,7 @@ const routes: Routes = [
     SdsFormlyModule,
     DataEntryFormlyModule,
     AppLayoutFormlyModule,
-    SdsIconModule,
+    IconModule,
     UsaStepIndicatorModule,
     NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, circle, slashCircleFill, checkCircleFill, question, save, x }),
     SdsToastModule,

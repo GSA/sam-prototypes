@@ -13,7 +13,6 @@ import {
   SdsAccordionModule,
   SdsPageModule,
   SdsSearchModule,
-  SdsIconModule,
 } from "@gsa-sam/components";
 import {
   SdsFiltersModule,
@@ -25,6 +24,7 @@ import { HelpComponent } from "./help.component";
 import { HelpItemModule } from "./help-item/help-item.module";
 import { HelpServiceModule } from "./service/service.module";
 import { chevronLeft, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   declarations: [HelpComponent],
@@ -32,7 +32,7 @@ import { chevronLeft, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
     CommonModule,
     RouterModule,
     FormsModule,
-    SdsIconModule,
+    IconModule,
     FormlyModule,
     FormlySelectModule,
     SdsFiltersModule,
@@ -51,4 +51,4 @@ import { chevronLeft, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
   exports: [HelpComponent],
   providers: [SDSFormlyUpdateComunicationService],
 })
-export class HelpModule {}
+export class HelpModule { }

@@ -12,7 +12,7 @@ import {
   SdsPageModule,
   SdsSearchModule,
   SdsDialogModule,
-  SdsIconModule,
+
 } from "@gsa-sam/components";
 import {
   SdsFiltersModule,
@@ -30,13 +30,14 @@ import { SearchSaveResultModule } from "./search-save-result/search-save-result.
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   declarations: [SearchSaveComponent],
   imports: [
     CommonModule,
     RouterModule,
-    SdsIconModule,
+    IconModule,
     SdsSideNavigationModule,
     SdsToolbarModule,
     SdsAccordionModule,
@@ -60,4 +61,4 @@ import _ from "lodash-es";
     ),
   ],
 })
-export class SearchSaveModule {}
+export class SearchSaveModule { }

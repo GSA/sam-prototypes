@@ -3,13 +3,13 @@
     <span class="sds-list__item-content">
       <a *ngIf="item.external" class="usa-link text-semibold" [href]="item.url">
         <div class="display-flex flex-row flex-align-center">
-          <sds-icon [icon]="'file-text'" [size]="'xs'"></sds-icon>
+          <usa-icon [icon]="'file-text'" [size]="'xs'"></usa-icon>
           <span>{{item.label}}</span>
         </div>
       </a>
       <a *ngIf="!item.external" class="usa-link text-semibold" [routerLink]="[item.url]">
         <div class="display-flex flex-row flex-align-center">
-          <sds-icon [icon]="'file-text'" [size]="'xs'"></sds-icon>
+          <usa-icon [icon]="'file-text'" [size]="'xs'"></usa-icon>
           <span>{{item.label}}</span>
         </div>
       </a>

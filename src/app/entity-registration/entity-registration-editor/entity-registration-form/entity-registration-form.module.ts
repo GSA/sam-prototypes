@@ -7,7 +7,7 @@ import { FormlyModule } from "@ngx-formly/core";
 
 import { SdsFormlyModule } from "@gsa-sam/sam-formly";
 import { StepperModule } from "../../../app-layout/stepper/stepper.module";
-import { SdsIconModule } from "@gsa-sam/components";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 import {
   NgxBootstrapIconsModule,
   chevronLeft,
@@ -33,7 +33,7 @@ import { EntityRegistrationFormComponent } from './entity-registration-form.comp
     RouterModule,
     FormlyModule,
     SdsFormlyModule,
-    SdsIconModule,
+    IconModule,
     StepperModule,
     AppLayoutModule,
     AppLayoutFormlyModule,

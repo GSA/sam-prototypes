@@ -10,7 +10,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
 import {
   SdsExternalLinkDirectivesModule,
-  SdsIconModule,
   SdsToastComponent,
   SdsToastModule,
   SdsToastSettings
@@ -39,7 +38,7 @@ import { IconModule } from "@gsa-sam/ngx-uswds-icons";
     AppLayoutModule,
     SdsExternalLinkDirectivesModule,
     FormlyModule,
-    SdsIconModule,
+    IconModule,
     SdsToastModule,
     IconModule,
     ToastrModule.forRoot(SdsToastSettings),

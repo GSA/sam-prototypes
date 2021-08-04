@@ -11,7 +11,7 @@ import { DatabankServiceModule } from "../../services/databank-service/databank-
 
 import { DatabankReportRoutingModule } from "./databank-report-routing.module";
 import { DatabankReportComponent } from "./databank-report.component";
-import { SdsIconModule } from "@gsa-sam/components";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
@@ -21,7 +21,7 @@ import _ from "lodash-es";
   imports: [
     CommonModule,
     RouterModule,
-    SdsIconModule,
+    IconModule,
     SdsSubheaderModule,
     HierarchyPickerModule,
     HierarchyNavPickerModule,
@@ -33,4 +33,4 @@ import _ from "lodash-es";
   ],
   exports: [DatabankReportComponent],
 })
-export class DatabankReportModule {}
+export class DatabankReportModule { }

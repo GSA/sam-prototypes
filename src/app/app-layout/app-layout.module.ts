@@ -9,7 +9,6 @@ import _ from "lodash-es";
 import {
   SdsCollapseModule,
   SdsExternalLinkDirectivesModule,
-  SdsIconModule,
   SdsSideNavigationModule,
 } from "@gsa-sam/components";
 
@@ -33,6 +32,7 @@ import { DisplayNavigationComponent } from "./display-navigation/display-navigat
 import { DisplaySectionComponent } from "./display-section.component";
 import { DisplaySubsectionComponent } from "./display-subsection.component";
 import { ResponsiveSidebarComponent } from "./responsive-sidebar.component";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   declarations: [
@@ -58,9 +58,8 @@ import { ResponsiveSidebarComponent } from "./responsive-sidebar.component";
     SdsCollapseModule,
     SdsSideNavigationModule,
     SideToolbarModule,
-    SdsIconModule,
     SdsExternalLinkDirectivesModule,
-    SdsIconModule,    
+    IconModule,
     NgxBootstrapIconsModule.pick(
       Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
     )
@@ -79,4 +78,4 @@ import { ResponsiveSidebarComponent } from "./responsive-sidebar.component";
     ResponsiveSidebarComponent
   ],
 })
-export class AppLayoutModule {}
+export class AppLayoutModule { }

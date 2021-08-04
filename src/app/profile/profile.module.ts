@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 
-import { SdsIconModule, SdsSideNavigationModule } from '@gsa-sam/components';
+import { SdsSideNavigationModule } from '@gsa-sam/components';
 
 import { SdsSubheaderModule } from '@gsa-sam/layouts';
 
@@ -14,13 +14,14 @@ import { ProfileComponent } from "./profile.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   declarations: [ProfileComponent],
   imports: [
     CommonModule,
     RouterModule,
-    SdsIconModule,
+    IconModule,
     SdsSideNavigationModule,
     SdsSubheaderModule,
     AppLayoutModule,
@@ -31,4 +32,4 @@ import _ from "lodash-es";
   ],
   exports: [ProfileComponent],
 })
-export class ProfileModule {}
+export class ProfileModule { }

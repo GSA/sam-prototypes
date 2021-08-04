@@ -5,10 +5,10 @@ import { FormsModule } from "@angular/forms";
 import { SearchResultListEntityDataItemComponent } from "./search-list-item-entity.component";
 
 import { SdsActionsMenuModule } from "@gsa-sam/layouts";
-import { SdsIconModule } from "@gsa-sam/components";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   declarations: [SearchResultListEntityDataItemComponent],
@@ -17,7 +17,7 @@ import _ from "lodash-es";
     RouterModule,
     FormsModule,
     SdsActionsMenuModule,
-    SdsIconModule,
+    IconModule,
     NgxBootstrapIconsModule.pick(
       Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
     ),
@@ -25,5 +25,5 @@ import _ from "lodash-es";
   exports: [SearchResultListEntityDataItemComponent],
 })
 export class SearchResultListEntityDataItemModule {
-  constructor() {}
+  constructor() { }
 }

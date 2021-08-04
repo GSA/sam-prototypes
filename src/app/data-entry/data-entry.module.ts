@@ -4,7 +4,7 @@ import { DataEntryComponent } from "./data-entry.component";
 import { DataEntryRoutingModule } from "./data-entry-routing.module";
 
 import { SdsActionsMenuModule } from "@gsa-sam/layouts";
-import { SdsDialogModule, SdsIconModule, SdsSelectionPanelModule } from "@gsa-sam/components";
+import { SdsDialogModule, SdsSelectionPanelModule } from "@gsa-sam/components";
 import { ReviewSubmitComponent } from "./review-submit/review-submit.component";
 
 import { SdsFormlyModule, SdsStepperModule } from "@gsa-sam/sam-formly";
@@ -25,6 +25,7 @@ import { DataEntryReportComponent } from "./report/report.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AddSubawardeeModalComponent } from "../data-entry-multi-form/modal/add-subawardee-modal.component";
 import { UsaStepIndicatorModule } from "@gsa-sam/ngx-uswds";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   declarations: [DataEntryComponent, ReviewSubmitComponent, DataEntryReportComponent],
@@ -34,7 +35,7 @@ import { UsaStepIndicatorModule } from "@gsa-sam/ngx-uswds";
     ReactiveFormsModule,
     ExpandableCardModule,
     SdsActionsMenuModule,
-    SdsIconModule,
+    IconModule,
     SdsSelectionPanelModule,
     StepperModule,
     DataEntryRoutingModule,

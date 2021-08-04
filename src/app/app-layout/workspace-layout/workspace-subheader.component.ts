@@ -6,7 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
       <sds-subheader>
       <!-- =============== BACK BUTTON =============== -->
       <button class="sds-button sds-button--circular sds-navbar__back-button" [routerLink]="['/workspace']">
-        <sds-icon [icon]="'chevron-left'"></sds-icon>
+        <usa-icon [icon]="'chevron-left'"></usa-icon>
         <span class="usa-sr-only">Go Back</span>
       </button>
 
@@ -58,14 +58,14 @@ export class WorkspaceSubheaderComponent implements OnInit {
 
   ngOnInit(): void {
 
-  	this.searchSettings = {
-  		placeholder: this.placeholder,   
-  		parentSelector: '.sds-subheader__content',
-    	inputClass: 'width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block',
-    	size: 'small',
-    	ariaLabel: 'Search Exclusions',
-    	dropdown: {}
-  	}
+    this.searchSettings = {
+      placeholder: this.placeholder,
+      parentSelector: '.sds-subheader__content',
+      inputClass: 'width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block',
+      size: 'small',
+      ariaLabel: 'Search Exclusions',
+      dropdown: {}
+    }
   }
 
   searchSubmit(keyword) {

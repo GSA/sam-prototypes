@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
-import { SdsIconModule } from "@gsa-sam/components";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 import { StepperComponent } from "./stepper.component";
 import { CdkStepperModule } from "@angular/cdk/stepper";
 import {
@@ -16,10 +16,10 @@ import {
   declarations: [StepperComponent],
   imports: [
     CommonModule,
-    SdsIconModule,
+    IconModule,
     CdkStepperModule,
     NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, x }),
   ],
   exports: [StepperComponent],
 })
-export class StepperModule {}
+export class StepperModule { }

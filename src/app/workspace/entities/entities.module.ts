@@ -12,7 +12,7 @@ import {
   SdsAccordionModule,
   SdsPageModule,
   SdsSearchModule,
-  SdsIconModule,
+
 } from "@gsa-sam/components";
 import {
   SdsFiltersModule,
@@ -23,6 +23,7 @@ import { FormlyModule } from "@ngx-formly/core";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   imports: [
@@ -37,7 +38,7 @@ import _ from "lodash-es";
     SdsSideNavigationModule,
     SdsSearchModule,
     SdsSubheaderModule,
-    SdsIconModule,
+    IconModule,
     FormlyModule.forRoot(),
     EntitiesRoutingModule,
     SearchListServiceModule,
@@ -49,4 +50,4 @@ import _ from "lodash-es";
   exports: [EntityListComponent],
   providers: [EntityService],
 })
-export class EntitiesModule {}
+export class EntitiesModule { }

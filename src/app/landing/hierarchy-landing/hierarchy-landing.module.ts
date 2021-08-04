@@ -6,7 +6,7 @@ import { RouterModule } from "@angular/router";
 import {
   SdsSearchModule,
   SdsVideoPlayerModule,
-  SdsIconModule,
+  
 } from "@gsa-sam/components";
 
 import { SdsAccordionModule } from "@gsa-sam/sam-material-extensions";
@@ -16,6 +16,7 @@ import { HierarchyLandingComponent } from "./hierarchy-landing.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   declarations: [HierarchyLandingComponent],
@@ -26,7 +27,7 @@ import _ from "lodash-es";
     SdsSearchModule,
     SdsAccordionModule,
     HierarchyLandingRoutingModule,
-    SdsIconModule,
+    IconModule,
     NgxBootstrapIconsModule.pick(
       Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
     ),

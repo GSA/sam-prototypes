@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { SdsIconModule, SdsSelectionPanelModule, SdsToastModule } from '@gsa-sam/components';
+import { SdsSelectionPanelModule, SdsToastModule } from '@gsa-sam/components';
 import { FormlyModule } from '@ngx-formly/core';
 import { SdsFormlyModule, SdsStepperModule } from '@gsa-sam/sam-formly';
 import { AppLayoutModule } from '../../../app-layout/app-layout.module';
@@ -18,6 +18,7 @@ import { SystemAccountFormRoutingModule } from './system-account-form-routing.mo
 import { SystemAccountEditorServiceModule } from '../system-account-editor-service/system-account-editor-service.module';
 import { SystemAccountFormComponent } from './system-account-form.component';
 import { SystemAccountStepperComponent } from './system-account-stepper.component';
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { SystemAccountStepperComponent } from './system-account-stepper.componen
   imports: [
     CommonModule,
     RouterModule,
-    SdsIconModule, 
+    IconModule,
     SdsToastModule,
     FormlyModule,
     SdsFormlyModule,

@@ -9,7 +9,6 @@ import {
   SdsAccordionModule,
   SdsPageModule,
   SdsSearchModule,
-  SdsIconModule,
 } from "@gsa-sam/components";
 
 import { AlertDataModule } from "./alert-data/alert-data.module";
@@ -19,11 +18,12 @@ import { AlertsComponent } from "./alerts.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 @NgModule({
   declarations: [AlertsComponent],
   imports: [
     CommonModule,
-    SdsIconModule,
+    IconModule,
     RouterModule,
     NgxBootstrapIconsModule.pick(
       Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
@@ -40,4 +40,4 @@ import _ from "lodash-es";
   ],
   exports: [AlertsComponent],
 })
-export class AlertsModule {}
+export class AlertsModule { }

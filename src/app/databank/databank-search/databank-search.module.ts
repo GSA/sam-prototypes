@@ -7,7 +7,6 @@ import {
   SdsPageModule,
   SdsCollapseModule,
   SdsSearchModule,
-  SdsIconModule,
 } from "@gsa-sam/components";
 import { SdsFiltersModule } from "@gsa-sam/sam-formly";
 import { SdsSubheaderModule, SearchListServiceModule } from "@gsa-sam/layouts";
@@ -25,6 +24,7 @@ import { DatabankSearchComponent } from "./databank-search.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   declarations: [DatabankSearchComponent],
@@ -32,7 +32,7 @@ import _ from "lodash-es";
     CommonModule,
     FormlyModule,
     FormsModule,
-    SdsIconModule,
+    IconModule,
     SdsSideNavigationModule,
     SdsToolbarModule,
     SdsAccordionModule,
@@ -54,4 +54,4 @@ import _ from "lodash-es";
   exports: [DatabankSearchComponent],
   providers: [],
 })
-export class DatabankSearchModule {}
+export class DatabankSearchModule { }

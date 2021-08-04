@@ -10,7 +10,6 @@ import {
   SdsAccordionModule,
   SdsPageModule,
   SdsSearchModule,
-  SdsIconModule,
 } from "@gsa-sam/components";
 
 import {
@@ -26,6 +25,7 @@ import { AssistancelistItemModule } from "./assistancelist-item/assistancelist-i
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   declarations: [AssistancelistComponent],
@@ -33,7 +33,7 @@ import _ from "lodash-es";
     CommonModule,
     AssistancelistRoutingModule,
     FormsModule,
-    SdsIconModule,
+    IconModule,
     SdsSideNavigationModule,
     SdsToolbarModule,
     SdsAccordionModule,
@@ -51,4 +51,4 @@ import _ from "lodash-es";
   exports: [AssistancelistComponent],
   providers: [SDSFormlyUpdateComunicationService],
 })
-export class AssistancelistModule {}
+export class AssistancelistModule { }

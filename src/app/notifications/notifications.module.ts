@@ -7,7 +7,6 @@ import {
   SdsToolbarModule,
   SdsAccordionModule,
   SdsSearchModule,
-  SdsIconModule,
 } from "@gsa-sam/components";
 
 import {
@@ -27,14 +26,15 @@ import { NotificationsRoutingModule } from "./notifications-routing.module";
 import { FeedServicesModule } from "../services/feed-services/feed-services.module";
 import { NotificationsComponent } from "./notifications.component";
 import { NotificationFiltersComponent } from './notification-filters/notification-filters.component';
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule, 
+    RouterModule,
     AppLayoutModule,
     WorkspaceLayoutModule,
-    SdsIconModule,
+    IconModule,
     FormlyModule,
     FormsModule,
     SdsSideNavigationModule,
@@ -53,5 +53,5 @@ import { NotificationFiltersComponent } from './notification-filters/notificatio
   exports: [NotificationFiltersComponent],
   providers: [SDSFormlyUpdateComunicationService]
 })
-export class NotificationsModule {}
+export class NotificationsModule { }
 

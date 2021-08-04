@@ -7,7 +7,7 @@ import {
   SdsAccordionModule,
   SdsPageModule,
   SdsSearchModule,
-  SdsIconModule,
+
 } from "@gsa-sam/components";
 
 import {
@@ -26,11 +26,12 @@ import { RequestComponent } from "./request.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   imports: [
     CommonModule,
-    SdsIconModule,
+    IconModule,
     FormlyModule,
     FormsModule,
     SdsSideNavigationModule,
@@ -53,4 +54,4 @@ import _ from "lodash-es";
   ],
   declarations: [RequestComponent],
 })
-export class RequestModule {}
+export class RequestModule { }

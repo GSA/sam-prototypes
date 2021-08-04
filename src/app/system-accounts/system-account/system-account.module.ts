@@ -12,7 +12,7 @@ import { SystemAccountRoutingModule } from "./system-account-routing.module";
 import { SystemAccountComponent } from "./system-account.component";
 import { AppLayoutFormlyModule } from "src/app/app-layout/formly/formly-module";
 import { StepperModule } from "../../app-layout/stepper/stepper.module";
-import { SdsIconModule } from "@gsa-sam/components";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 import {
   NgxBootstrapIconsModule,
   chevronLeft,
@@ -28,7 +28,7 @@ import {
     RouterModule,
     SdsFormlyModule,
     FormlyModule,
-    SdsIconModule,
+    IconModule,
     StepperModule,
     AppLayoutFormlyModule,
     DataEntryLayoutModule,
@@ -37,4 +37,4 @@ import {
   ],
   exports: [SystemAccountComponent],
 })
-export class SystemAccountModule {}
+export class SystemAccountModule { }

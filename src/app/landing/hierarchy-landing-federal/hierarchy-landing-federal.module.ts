@@ -3,13 +3,14 @@ import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 
-import { SdsSearchModule, SdsIconModule } from "@gsa-sam/components";
+import { SdsSearchModule } from "@gsa-sam/components";
 
 import { HierarchyLandingFederalRoutingModule } from "./hierarchy-landing-federal-routing.module";
 import { HierarchyLandingFederalComponent } from "./hierarchy-landing-federal.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   declarations: [HierarchyLandingFederalComponent],
@@ -22,7 +23,7 @@ import _ from "lodash-es";
     FormsModule,
     SdsSearchModule,
     HierarchyLandingFederalRoutingModule,
-    SdsIconModule,
+    IconModule,
   ],
   exports: [HierarchyLandingFederalComponent],
 })

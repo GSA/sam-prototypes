@@ -16,11 +16,11 @@
                 [ngClass]="{'usa-current':  model?.selectedIndex === i}">
                 <a href="javascript:void(0);" (click)="onSelectionChange(i)">
                   <span *ngIf="validateSuccessStepForm(step, i)" class="usa-button sds-button--circle">
-                    <sds-icon [icon]="'check'"></sds-icon>
+                    <usa-icon [icon]="'check'"></usa-icon>
                   </span>
                   <span *ngIf="validateFailureStepForm(step, i)"
                     class="usa-button sds-button--circle sds-button--danger">
-                    <sds-icon [icon]="'x'"></sds-icon>
+                    <usa-icon [icon]="'x'"></usa-icon>
                   </span>
 
                   {{step.templateOptions.label}}

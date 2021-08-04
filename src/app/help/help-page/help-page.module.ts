@@ -4,7 +4,6 @@ import { CommonModule } from "@angular/common";
 import { SdsSubheaderModule } from "@gsa-sam/layouts";
 
 import {
-  SdsIconModule,
   SdsPageModule,
   SdsSearchModule,
 } from "@gsa-sam/components";
@@ -14,12 +13,13 @@ import { HelpPageComponent } from "./help-page.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   declarations: [HelpPageComponent],
   imports: [
     CommonModule,
-    SdsIconModule,
+    IconModule,
     SdsSubheaderModule,
     SdsPageModule,
     SdsSearchModule,
@@ -30,4 +30,4 @@ import _ from "lodash-es";
   ],
   exports: [HelpPageComponent],
 })
-export class HelpPageModule {}
+export class HelpPageModule { }

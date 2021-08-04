@@ -6,7 +6,7 @@ import { RouterModule } from "@angular/router";
 import {
   SdsSearchModule,
   SdsVideoPlayerModule,
-  SdsIconModule,
+
 } from "@gsa-sam/components";
 
 import { OpportunitiesLandingFederalRoutingModule } from "./opportunities-landing-federal-routing.module";
@@ -14,6 +14,7 @@ import { OpportunitiesLandingFederalComponent } from "./opportunities-landing-fe
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   declarations: [OpportunitiesLandingFederalComponent],
@@ -27,7 +28,7 @@ import _ from "lodash-es";
     SdsSearchModule,
     SdsVideoPlayerModule,
     OpportunitiesLandingFederalRoutingModule,
-    SdsIconModule,
+    IconModule,
   ],
   exports: [OpportunitiesLandingFederalComponent],
 })

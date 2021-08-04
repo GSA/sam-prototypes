@@ -6,7 +6,7 @@ import { Location } from '@angular/common';
   selector: "back-button",
   template: `
     <button class="sds-button sds-button--circular" (click)="back()">
-      <sds-icon [icon]="'chevron-left'"></sds-icon>
+      <usa-icon [icon]="'chevron-left'"></usa-icon>
       <span class="usa-sr-only">Go Back</span>
     </button>
   `,
@@ -22,6 +22,6 @@ export class BackButtonComponent implements OnInit {
   }
 
   back() {
-	  this.location.back();
+    this.location.back();
   }
 }

@@ -8,7 +8,7 @@ import {
   SdsAccordionModule,
   SdsPageModule,
   SdsSearchModule,
-  SdsIconModule,
+
 } from "@gsa-sam/components";
 import {
   SdsFiltersModule,
@@ -24,6 +24,7 @@ import { DatabankComponent } from "./databank.component";
 import { NgxBootstrapIconsModule, allIcons } from "ngx-bootstrap-icons";
 import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 @NgModule({
   imports: [
     CommonModule,
@@ -42,8 +43,8 @@ import _ from "lodash-es";
     SdsSubheaderModule,
     SdsFiltersModule,
     DatabankRoutingModule,
-    SdsIconModule,
+    IconModule,
   ],
   declarations: [DatabankComponent],
 })
-export class DatabankModule {}
+export class DatabankModule { }

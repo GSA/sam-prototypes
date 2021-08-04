@@ -42,26 +42,26 @@
   <div class="sds-button-row">
     <div class="text-right margin-right-1" *ngIf="isPreviousButtonHidden()">
       <button cdkStepperPrevious class="usa-button sds-button--circle">
-        <sds-icon [icon]="'chevron-left'"></sds-icon>
+        <usa-icon [icon]="'chevron-left'"></usa-icon>
       </button>
       <p class="text-right" [innerHTML]="getBacklabel()"></p>
     </div>
     <div class="margin-right-1">
       <button class="usa-button sds-button--circle" (click)="closeback();">
-        <sds-icon [icon]="'x'"></sds-icon>
+        <usa-icon [icon]="'x'"></usa-icon>
       </button>
       <p class="text-right"> Close</p>
     </div>
     <div class="margin-right-1">
       <button class="usa-button sds-button--circle">
-        <sds-icon [icon]="'question'"></sds-icon>
+        <usa-icon [icon]="'question'"></usa-icon>
       </button>
       <p class="text-right">Help</p>
     </div>
 
     <div class="margin-right-1" *ngIf="isNextButtonHidden()">
       <button cdkStepperNext class="usa-button sds-button--circle">
-        <sds-icon [icon]="'chevron-right'"></sds-icon>
+        <usa-icon [icon]="'chevron-right'"></usa-icon>
       </button>
       <p class="text-left" [innerHTML]="getNextlabel()"></p>
     </div>

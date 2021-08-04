@@ -11,7 +11,7 @@ import { SdsSubheaderModule } from "@gsa-sam/layouts";
 import {
   SdsSearchModule,
   SdsVideoPlayerModule,
-  SdsIconModule,
+
 } from "@gsa-sam/components";
 
 import { LandingLayoutModule } from "../app-layout/landing-layout/landing-layout.module";
@@ -28,6 +28,7 @@ import { HomeHelpComponent } from "./home-help/home-help.component";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   imports: [
@@ -43,7 +44,7 @@ import _ from "lodash-es";
     FeedServicesModule,
     LandingLayoutModule,
     HomeRoutingModule,
-    SdsIconModule,
+    IconModule,
     NgxBootstrapIconsModule.pick(
       Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
     ),
@@ -66,4 +67,4 @@ import _ from "lodash-es";
     HomeHelpComponent,
   ],
 })
-export class HomeModule {}
+export class HomeModule { }
