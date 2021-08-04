@@ -25,6 +25,7 @@ import _ from "lodash-es";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import { ToastrModule } from "ngx-toastr";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   declarations: [AppComponent],
@@ -40,6 +41,7 @@ import { ToastrModule } from "ngx-toastr";
     FormlyModule,
     SdsIconModule,
     SdsToastModule,
+    IconModule,
     ToastrModule.forRoot(SdsToastSettings),
     NgxBootstrapIconsModule.pick(
       Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
