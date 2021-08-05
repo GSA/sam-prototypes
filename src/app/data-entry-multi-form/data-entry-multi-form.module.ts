@@ -67,7 +67,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     SdsStepperModule,
     SdsDialogModule,
-
   ],
 
   entryComponents: [AddSubawardeeModalComponent]

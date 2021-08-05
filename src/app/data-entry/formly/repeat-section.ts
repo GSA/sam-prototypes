@@ -77,6 +77,7 @@ export class SubawardeeRepeatTypeComponent extends FieldArrayType {
       submit: "Submit",
       title: "Add Subawardee",
       cancel: "No thanks",
+      stepValidityMap: this.field.fieldArray.templateOptions.stepValidityMap,
     };
 
     const dialogRef = this.dialog.open(AddSubawardeeModalComponent, {
