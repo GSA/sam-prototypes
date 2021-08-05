@@ -27,8 +27,7 @@ import { DataEntryNgxStepperComponent } from './data-entry-ngx-stepper.component
 import { UsaStepIndicatorModule } from '@gsa-sam/ngx-uswds';
 import { FormsModule } from '@angular/forms';
 import { AddSubawardeeModalComponent } from './modal/add-subawardee-modal.component';
-import { USWDSCustomStepperComponent } from './modal/uswds-custom-stepper.component';
-
+import { AddSubawardeeStepperComponent } from './modal/add-subawardee-stepper.component';
 import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 
 const routes: Routes = [
@@ -44,7 +43,7 @@ const routes: Routes = [
     DataEntryCustomStepperComponent,
     DataEntryNgxStepperComponent,
     AddSubawardeeModalComponent,
-    USWDSCustomStepperComponent
+    AddSubawardeeStepperComponent
   ],
   providers: [
     DataEntryMultiFormStepsService,

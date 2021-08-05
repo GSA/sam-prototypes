@@ -3,13 +3,13 @@ import { SdsStepper } from "@gsa-sam/sam-formly";
 
 
 @Component({
-  selector: `uswds-custom-stepper-demo`,
-  templateUrl: './uswds-custom-stepper.component.html',
+  selector: `add-subawardee-stepper`,
+  templateUrl: './add-subawardee-stepper.component.html',
   providers: [
-    {provide: SdsStepper, useExisting: USWDSCustomStepperComponent}
+    { provide: SdsStepper, useExisting: AddSubawardeeStepperComponent }
   ]
 })
-export class USWDSCustomStepperComponent extends SdsStepper implements AfterContentInit {
+export class AddSubawardeeStepperComponent extends SdsStepper implements AfterContentInit {
 
   stepLabels = [];
   currentStepIndex = 0;
@@ -21,7 +21,7 @@ export class USWDSCustomStepperComponent extends SdsStepper implements AfterCont
         this.currentStepIndex = index;
       }
 
-      return {...stepTemplate, label: stepTemplate.text};
+      return { ...stepTemplate, label: stepTemplate.text };
     });
   }
 }
