@@ -5,6 +5,13 @@
 
 <div sds-dialog-content>
   <div class="padding-x-9 padding-y-2 font-sans-2xs line-height-sans-6 text-base">
-
+    <div class="display-flex flex-justify-center">
+      <uswds-custom-stepper-demo [model]="model" [stepValidityMap]="stepValidityMap" [queryParamKey]="'subawardee'"
+        (saveData)="onSaveData($event)">
+        <sds-step id="stepOne" text="Entity Title" [fieldConfig]="stepOne"></sds-step>
+        <sds-step id="stepTwo" text="Purpose of Registration" [fieldConfig]="stepTwo"></sds-step>
+        <sds-step id="stepThree" text="Taxpayer Details" [fieldConfig]="stepThree"></sds-step>
+      </uswds-custom-stepper-demo>
+    </div>
   </div>
 </div>

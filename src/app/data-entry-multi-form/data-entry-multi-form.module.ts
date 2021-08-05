@@ -28,7 +28,7 @@ import { UsaStepIndicatorModule } from '@gsa-sam/ngx-uswds';
 import { FormsModule } from '@angular/forms';
 import { AddSubawardeeModalComponent } from './modal/add-subawardee-modal.component';
 import { USWDSCustomStepperComponent } from './modal/uswds-custom-stepper.component';
-import { UswdsStepperComponent } from './modal/uswds-stepper.component';
+
 import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 
 const routes: Routes = [
@@ -44,8 +44,7 @@ const routes: Routes = [
     DataEntryCustomStepperComponent,
     DataEntryNgxStepperComponent,
     AddSubawardeeModalComponent,
-    USWDSCustomStepperComponent,
-    UswdsStepperComponent
+    USWDSCustomStepperComponent
   ],
   providers: [
     DataEntryMultiFormStepsService,
@@ -70,10 +69,7 @@ const routes: Routes = [
     SdsDialogModule,
 
   ],
-  bootstrap: [
-    UswdsStepperComponent,
-    USWDSCustomStepperComponent,
-  ],
+
   entryComponents: [AddSubawardeeModalComponent]
 })
 export class DataEntryMultiFormModule { }
