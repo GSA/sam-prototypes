@@ -2,31 +2,8 @@
 </data-entry-subheader>
 
 <div class="grid-container">
-  <div class="usa-checkbox margin-2 align-right">
-    <input class="usa-checkbox__input" id="truth" type="checkbox" name="historical-figures-1" value="truth"
-      [(ngModel)]="stepperType" checked="checked">
-    <label class="usa-checkbox__label" for="truth">Ngx Stepper</label>
-  </div>
-  <data-entry-ngx-stepper *ngIf="stepperType" [model]="model" [currentStepId]="currentStepId"
-    [stepValidityMap]="stepValidityMap" (saveData)="onSaveClicked($event)" (stepChange)="onStepChange($event)">
-    <sds-step *ngFor="let step of getFlatSteps(steps)" [id]="step.id" [fieldConfig]="step.fieldConfig"
-      [text]="step.text" [editable]="step.editable" [isReview]="step.isReview">
-      <span sdsStepHeader *ngIf="!step.children">
-        <ng-container [ngTemplateOutlet]="stepHeader" [ngTemplateOutletContext]="{$implicit: step.text}"></ng-container>
-      </span>
-
-      <!-- <sds-step *ngFor="let childStep of step.children" [text]="childStep.text" [id]="childStep.id"
-        [fieldConfig]="childStep.fieldConfig">
-        <span sdsStepHeader>
-          <ng-container [ngTemplateOutlet]="stepHeader" [ngTemplateOutletContext]="{$implicit: childStep.text}">
-          </ng-container>
-        </span>
-      </sds-step> -->
-    </sds-step>
-  </data-entry-ngx-stepper>
-
-  <data-entry-custom-stepper *ngIf="!stepperType" [model]="model" [currentStepId]="currentStepId"
-    [stepValidityMap]="stepValidityMap" (saveData)="onSaveClicked($event)" (stepChange)="onStepChange($event)">
+  <data-entry-custom-stepper [model]="model" [currentStepId]="currentStepId" [stepValidityMap]="stepValidityMap"
+    (saveData)="onSaveClicked($event)" (stepChange)="onStepChange($event)">
     <sds-step *ngFor="let step of steps" [id]="step.id" [fieldConfig]="step.fieldConfig" [text]="step.text"
       [editable]="step.editable" [isReview]="step.isReview">
       <span sdsStepHeader *ngIf="!step.children">

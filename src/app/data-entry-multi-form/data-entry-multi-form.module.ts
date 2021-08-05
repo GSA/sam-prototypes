@@ -23,7 +23,6 @@ import {
 import { DataEntryAppComponent } from './data-entry-app.component';
 import { DataEntryCustomStepperComponent } from './data-entry-custom-stepper.component';
 import { SdsButtonGroupModule } from '@gsa-sam/sam-material-extensions';
-import { DataEntryNgxStepperComponent } from './data-entry-ngx-stepper.component';
 import { UsaStepIndicatorModule } from '@gsa-sam/ngx-uswds';
 import { FormsModule } from '@angular/forms';
 import { AddSubawardeeModalComponent } from './modal/add-subawardee-modal.component';
@@ -41,7 +40,6 @@ const routes: Routes = [
   declarations: [
     DataEntryAppComponent,
     DataEntryCustomStepperComponent,
-    DataEntryNgxStepperComponent,
     AddSubawardeeModalComponent,
     AddSubawardeeStepperComponent
   ],
