@@ -10,8 +10,7 @@ import { SdsSubheaderModule } from "@gsa-sam/layouts";
 
 import {
   SdsSearchModule,
-  SdsVideoPlayerModule,
-  SdsIconModule,
+  SdsVideoPlayerModule
 } from "@gsa-sam/components";
 
 import { LandingLayoutModule } from "../app-layout/landing-layout/landing-layout.module";
@@ -25,8 +24,8 @@ import { HomeSplashTileComponent } from "./home-splash-tile/home-splash-tile.com
 import { HomeSearchBarComponent } from "./home-search-bar/home-search-bar.component";
 import { HomeRegisterTileComponent } from "./home-register-tile/home-register-tile.component";
 import { HomeHelpComponent } from "./home-help/home-help.component";
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
 
 @NgModule({
@@ -43,9 +42,9 @@ import _ from "lodash-es";
     FeedServicesModule,
     LandingLayoutModule,
     HomeRoutingModule,
-    SdsIconModule,
+    IconModule,
     NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+      Object.assign(_.cloneDeep(allIcons))
     ),
   ],
   declarations: [

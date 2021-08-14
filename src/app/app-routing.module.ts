@@ -133,16 +133,6 @@ const routes: Routes = [
       import("./integrity/integrity.module").then((m) => m.IntegrityModule),
   },
   {
-    path: "dataentry",
-    loadChildren: () =>
-      import("./data-entry/data-entry.module").then((m) => m.DataEntryModule),
-  },
-  {
-    path: "dataentry-multiform",
-    loadChildren: () =>
-      import("./data-entry-multi-form/data-entry-multi-form.module").then((m) => m.DataEntryMultiFormModule),
-  },
-  {
     path: "entity-reporting",
     loadChildren: () =>
       import("./entity-reporting/entity-reporting.module").then((m) => m.EntityReportingModule),

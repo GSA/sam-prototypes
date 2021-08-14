@@ -5,14 +5,13 @@ import { RouterModule } from "@angular/router";
 
 import {
   SdsSearchModule,
-  SdsVideoPlayerModule,
-  SdsIconModule,
+  SdsVideoPlayerModule
 } from "@gsa-sam/components";
 
 import { ExclusionsFederalRoutingModule } from "./exclusions-federal-routing.module";
 import { ExclusionsFederalComponent } from "./exclusions-federal.component";
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
 
 @NgModule({
@@ -20,14 +19,14 @@ import _ from "lodash-es";
   imports: [
     CommonModule,
     RouterModule,
+    IconModule,
     NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+      Object.assign(_.cloneDeep(allIcons))
     ),
     FormsModule,
     SdsSearchModule,
     SdsVideoPlayerModule,
-    ExclusionsFederalRoutingModule,
-    SdsIconModule,
+    ExclusionsFederalRoutingModule
   ],
   exports: [ExclusionsFederalComponent],
 })

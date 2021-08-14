@@ -7,11 +7,11 @@ import { INavigationLink, NavigationMode } from "@gsa-sam/components";
     <div class="sds-card sds-card--vertical">
       <div class="sds-card__header">
         <div class="sds-card__icon">
-          <sds-icon
+          <usa-icon
             class="text-info"
             [icon]="'exclamation-triangle'"
             [size]="'2x'"
-          ></sds-icon>
+          ></usa-icon>
         </div>
       </div>
       <div class="sds-card__body">

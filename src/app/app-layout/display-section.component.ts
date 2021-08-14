@@ -13,7 +13,7 @@ import {
         [id]="id"
         class="display-flex flex-row flex-align-center border-top-2px border-base-light padding-top-05"
       >
-        <sds-icon class="text-secondary" [icon]="'stop-fill'"></sds-icon>
+        <usa-icon class="text-secondary" [icon]="'stop-fill'"></usa-icon>
         <h2 class="margin-top-0 margin-left-1">{{ title }}</h2>
       </div>
       <div class="padding-top-1 padding-bottom-4">

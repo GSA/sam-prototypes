@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { SdsDialogRef } from '@gsa-sam/components';
 
 @Component({
@@ -40,7 +41,14 @@ export class ResponsiveSidebarComponent implements OnInit {
   @Output() onApply: EventEmitter<any> = new EventEmitter();
   @Output() onChange: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  constructor(private router: Router) {
+    router.events.subscribe((val) => {
+        // see also 
+        if(!this.showApply && this.isMobileMode && this.responsiveDialog && val instanceof NavigationEnd) {
+           this.onApplyFilter();
+        }
+    });
+  }
 
   ngOnInit(): void {
   }

@@ -6,8 +6,7 @@ import {
   SdsSideNavigationModule,
   SdsToolbarModule,
   SdsAccordionModule,
-  SdsSearchModule,
-  SdsIconModule,
+  SdsSearchModule
 } from "@gsa-sam/components";
 
 import {
@@ -20,6 +19,7 @@ import { SdsSubheaderModule, SearchListServiceModule } from "@gsa-sam/layouts";
 import { FormlyModule } from "@ngx-formly/core";
 import { FormsModule } from "@angular/forms";
 
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { AppLayoutModule } from '../app-layout/app-layout.module';
 import { WorkspaceLayoutModule } from '../app-layout/workspace-layout/workspace-layout.module';
 
@@ -34,7 +34,7 @@ import { NotificationFiltersComponent } from './notification-filters/notificatio
     RouterModule, 
     AppLayoutModule,
     WorkspaceLayoutModule,
-    SdsIconModule,
+    IconModule,
     FormlyModule,
     FormsModule,
     SdsSideNavigationModule,

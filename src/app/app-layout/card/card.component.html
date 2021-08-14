@@ -6,9 +6,9 @@
         <button [id]="id + 'ExpansionInd'" *ngIf="isExpandable"
           class="sds-expansion-indicator usa-button usa-button--unstyled" [disabled]="expansionIndicatorDisabled"
           (click)="toggleContent()">
-          <sds-icon c [icon]="showContent?  'dash':  'plus'" [size]="'lg'"
+          <usa-icon c [icon]="showContent?  'dash':  'plus'" [size]="'lg'"
             [@expansionIndicatorRotate]="showContent ? 'expanded' : 'collapsed'">
-          </sds-icon>
+          </usa-icon>
         </button>
         <h3 class="sds-card__title" [id]="id + 'Title'">{{ title }}</h3>
       </div>

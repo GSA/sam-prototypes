@@ -3,7 +3,6 @@ import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 
 import {
-  SdsIconModule,
   SdsSideNavigationModule,
   SdsToolbarModule,
 } from "@gsa-sam/components";
@@ -13,24 +12,20 @@ import { IntegrityServiceModule } from "../../services/integrity-service/integri
 
 import { IntegrityDisplayRoutingModule } from "./integrity-display-routing.module";
 import { IntegrityDisplayComponent } from "./integrity-display.component";
-import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-import { allIcons as sdsAllIcons } from "@gsa-sam/components";
-import _ from "lodash-es";
+
+import { AppLayoutModule } from '../../app-layout/app-layout.module';
 
 @NgModule({
   declarations: [IntegrityDisplayComponent],
   imports: [
     CommonModule,
     RouterModule,
-    SdsIconModule,
     SdsSideNavigationModule,
     SdsToolbarModule,
     SdsSubheaderModule,
+    AppLayoutModule,
     IntegrityServiceModule,
-    IntegrityDisplayRoutingModule,
-    NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
-    ),
+    IntegrityDisplayRoutingModule
   ],
   exports: [IntegrityDisplayComponent],
 })

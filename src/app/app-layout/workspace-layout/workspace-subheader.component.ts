@@ -6,7 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
       <sds-subheader>
       <!-- =============== BACK BUTTON =============== -->
       <button class="sds-button sds-button--circular sds-navbar__back-button" [routerLink]="['/workspace']">
-        <sds-icon [icon]="'chevron-left'"></sds-icon>
+        <usa-icon [icon]="'chevron-left'"></usa-icon>
         <span class="usa-sr-only">Go Back</span>
       </button>
 

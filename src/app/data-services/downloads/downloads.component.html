@@ -1,15 +1,9 @@
 <sds-subheader>
   <!-- =============== BACK BUTTON =============== -->
-  <button id="backbutton" class="sds-button sds-button--circular" aria-label="Back to Wages Home"
-    [routerLink]="['/home/wages']">
-    <sds-icon [icon]="'chevron-left'"></sds-icon>
-  </button>
+  
+  <back-button></back-button>
+  <subheader-title title="Alerts"></subheader-title>
 
-
-  <!-- =============== TITLE =============== -->
-  <span class="font-heading-lg text-semibold">
-    Download Files
-  </span>
 
   <sds-search name="dataservices-search" [(ngModel)]="searchModel" (ngModelChange)="search()"
     [searchSettings]="searchSettings">

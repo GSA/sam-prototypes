@@ -10,8 +10,7 @@ import {
   SdsToolbarModule,
   SdsSearchModule,
   SdsExternalLinkDirectivesModule,
-  SdsVideoPlayerModule,
-  SdsIconModule,
+  SdsVideoPlayerModule
 } from "@gsa-sam/components";
 
 import { SdsAccordionModule } from "@gsa-sam/sam-material-extensions";
@@ -20,8 +19,8 @@ import { WagesLandingRoutingModule } from "./wages-landing-routing.module";
 import { WagesLandingComponent } from "./wages-landing.component";
 import { WagesSubPagesComponent } from "./wages-sub-pages.component";
 import { WagesSubMenuModule } from "./wages-sub-menu/wages-sub-menu.module";
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
 
 @NgModule({
@@ -37,13 +36,13 @@ import _ from "lodash-es";
     SdsVideoPlayerModule,
     SdsAccordionModule,
     NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+      Object.assign(_.cloneDeep(allIcons))
     ),
     SdsExternalLinkDirectivesModule,
 
     WagesSubMenuModule,
     WagesLandingRoutingModule,
-    SdsIconModule,
+    IconModule,
   ],
   exports: [WagesLandingComponent, WagesSubPagesComponent],
 })

@@ -4,12 +4,13 @@ import { RouterModule } from '@angular/router';
 
 import { chevronLeft, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
-import { SdsSideNavigationModule, SdsIconModule } from "@gsa-sam/components";
+import { SdsSideNavigationModule } from "@gsa-sam/components";
 import { SdsButtonGroupModule } from '@gsa-sam/sam-material-extensions';
 import { SdsSubheaderModule, SideToolbarModule } from "@gsa-sam/layouts";
 
 import { ComponentsModule } from '../components/components.module';
 import { AppLayoutModule } from '../app-layout/app-layout.module';
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 
 import { EntityThreeSixtyServiceModule } from 
   './services/entity-three-sixty-service/entity-three-sixty-service.module';
@@ -29,8 +30,8 @@ import { EntityThreeSixtyNavigationComponent } from './entity-three-sixty-naviga
   imports: [
     CommonModule,
     RouterModule,
+    IconModule,
     SdsSideNavigationModule,
-    SdsIconModule,
     SdsSubheaderModule,
     ComponentsModule,
     SdsButtonGroupModule,

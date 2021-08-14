@@ -6,7 +6,7 @@ import { Location } from '@angular/common';
   selector: "back-button",
   template: `
     <button class="sds-button sds-button--circular" (click)="back()">
-      <sds-icon [icon]="'chevron-left'"></sds-icon>
+      <usa-icon [icon]="'chevron-left'"></usa-icon>
       <span class="usa-sr-only">Go Back</span>
     </button>
   `,
@@ -15,6 +15,7 @@ import { Location } from '@angular/common';
 export class BackButtonComponent implements OnInit {
 
   @Input() route: string;
+  @Input() queryParams: any[];
 
   constructor(private router: Router, private location: Location) { }
 
@@ -22,6 +23,10 @@ export class BackButtonComponent implements OnInit {
   }
 
   back() {
-	  this.location.back();
+    if(!this.route) {
+	     this.location.back();
+    } else {
+       this.router.navigate([this.route]);
+    }
   }
 }

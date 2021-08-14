@@ -7,7 +7,6 @@ import {
   SdsPageModule,
   SdsCollapseModule,
   SdsSearchModule,
-  SdsIconModule,
   SdsSelectionPanelModule,
 } from "@gsa-sam/components";
 import {
@@ -48,8 +47,8 @@ import { SearchServiceModule } from "../services/search-service/search-service.m
 import { AdvancedFiltersModule } from "./search-filters/advanced-filters/advanced-filters.module";
 import { SearchRoutingModule } from "./search-routing.module";
 import { SearchComponent } from "./search.component";
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
 import { SearchFormlyModule } from "./search-formly/search-formly.module";
 
@@ -92,11 +91,11 @@ import { SearchFormlyModule } from "./search-formly/search-formly.module";
     SearchServiceModule,
     SearchRoutingModule,
     AdvancedFiltersModule,
-    SdsIconModule,
+    IconModule,
     SdsSelectionPanelModule,
     SideToolbarModule,
     NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+      Object.assign(_.cloneDeep(allIcons))
     ),
     SearchFormlyModule,
   ],

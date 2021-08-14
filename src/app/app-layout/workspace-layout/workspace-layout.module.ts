@@ -5,7 +5,7 @@ import { FormlyModule } from "@ngx-formly/core";
 import { FormsModule } from "@angular/forms";
 import { chevronLeft, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
-import { SdsIconModule } from "@gsa-sam/components";
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 
 import { SdsSearchModule } from '@gsa-sam/components';
 import { SdsSubheaderModule } from "@gsa-sam/layouts";
@@ -20,7 +20,7 @@ import { WorkspaceFieldComponent } from './workspace-field.component';
     RouterModule,
     FormlyModule,
     FormsModule,
-    SdsIconModule,
+    IconModule,
     SdsSearchModule,
     SdsSubheaderModule,
     NgxBootstrapIconsModule.pick({ chevronLeft }),

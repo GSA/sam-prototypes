@@ -12,14 +12,14 @@ import {
   SdsToolbarModule,
   SdsAccordionModule,
   SdsPageModule,
-  SdsSearchModule,
-  SdsIconModule,
+  SdsSearchModule
 } from "@gsa-sam/components";
 import {
   SdsFiltersModule,
   SDSFormlyUpdateComunicationService,
 } from "@gsa-sam/sam-formly";
 
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { HelpRoutingModule } from "./help-routing.module";
 import { HelpComponent } from "./help.component";
 import { HelpItemModule } from "./help-item/help-item.module";
@@ -32,7 +32,7 @@ import { chevronLeft, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
     CommonModule,
     RouterModule,
     FormsModule,
-    SdsIconModule,
+    IconModule,
     FormlyModule,
     FormlySelectModule,
     SdsFiltersModule,

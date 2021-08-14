@@ -1,7 +1,7 @@
 <sds-subheader>
   <!-- =============== BACK BUTTON =============== -->
   <button role="link" class="sds-button sds-button--circular" (click)="goBack();">
-    <sds-icon [icon]="'chevron-left'"></sds-icon>
+    <usa-icon [icon]="'chevron-left'"></usa-icon>
   </button>
 
   <!-- =============== TITLE =============== -->
@@ -25,7 +25,7 @@
         <div class="tablet-lg:grid-col-8 tablet-lg:grid-offset-2">
           <div *ngIf="isSearchResult" class="grid-row">
             <div class="grid-col-12">
-              <a class="usa-link sds-icon-link sds-icon-link--left" (click)="goBack();" href="javascript:void(0);">
+              <a class="usa-link usa-icon-link usa-icon-link--left" (click)="goBack();" href="javascript:void(0);">
                 <i class="fa fa-angle-left fa-2x"></i>
                 Back to search results
               </a>

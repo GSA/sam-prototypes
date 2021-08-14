@@ -13,6 +13,8 @@ export class SystemAccountEditorService {
 
   form = new FormGroup({});
   model: any = { selectedIndex: 0 };
+  stepValidityMap = {};
+  
   options: FormlyFormOptions = {};
   fields: FormlyFieldConfig[] = [
     {
@@ -111,20 +113,20 @@ export class SystemAccountEditorService {
                 hideOptional: true,
                 options: [
                   {
-                    key: "read-public",
-                    value: "Read Public",
+                    value: "read-public",
+                    label: "Read Public",
                   },
                   {
-                    key: "read-sensitive",
-                    value: "Read Sensitive (Terms of Use)",
+                    value: "read-sensitive",
+                    label: "Read Sensitive (Terms of Use)",
                   },
                   {
-                    key: "write-public",
-                    value: "Write Public",
+                    value: "write-public",
+                    label: "Write Public",
                   },
                   {
-                    key: "write-sensitive",
-                    value: "Write Sensitive",
+                    value: "write-sensitive",
+                    label: "Write Sensitive",
                   },
                 ],
               },
@@ -138,20 +140,20 @@ export class SystemAccountEditorService {
                 hideOptional: true,
                 options: [
                   {
-                    key: "read-public",
-                    value: "Read Public",
+                    value: "read-public",
+                    label: "Read Public",
                   },
                   {
-                    key: "write",
-                    value: "Write (Terms of Use)",
+                    value: "write",
+                    label: "Write (Terms of Use)",
                   },
                   {
-                    key: "read-dod",
-                    value: "Read DoD (Terms of Use)",
+                    value: "read-dod",
+                    label: "Read DoD (Terms of Use)",
                   },
                   {
-                    key: "write-dod",
-                    value: "Write DoD",
+                    value: "write-dod",
+                    label: "Write DoD",
                   },
                 ],
               },
@@ -165,16 +167,16 @@ export class SystemAccountEditorService {
                 hideOptional: true,
                 options: [
                   {
-                    key: "read-public",
-                    value: "Read Public",
+                    value: "read-public",
+                    label: "Read Public",
                   },
                   {
-                    key: "read-fouo",
-                    value: "Read For Official Use Only (Terms of Use)",
+                    value: "read-fouo",
+                    label: "Read For Official Use Only (Terms of Use)",
                   },
                   {
-                    key: "read-sensitive",
-                    value: "Read Sensitive (Terms of Use)",
+                    value: "read-sensitive",
+                    label: "Read Sensitive (Terms of Use)",
                   },
                 ],
               },
@@ -188,12 +190,12 @@ export class SystemAccountEditorService {
                 hideOptional: true,
                 options: [
                   {
-                    key: "read-public",
-                    value: "Read Public Only",
+                    value: "read-public",
+                    label: "Read Public Only",
                   },
                   {
-                    key: "read-fouo",
-                    value: "Read For Official Use Only (Terms of Use)",
+                    value: "read-fouo",
+                    label: "Read For Official Use Only (Terms of Use)",
                   },
                 ],
               },
@@ -207,8 +209,8 @@ export class SystemAccountEditorService {
                 hideOptional: true,
                 options: [
                   {
-                    key: "read-public",
-                    value: "Read Public",
+                    value: "read-public",
+                    label: "Read Public",
                   },
                 ],
               },
@@ -222,8 +224,8 @@ export class SystemAccountEditorService {
                 hideOptional: true,
                 options: [
                   {
-                    key: "read-public",
-                    value: "Read Public",
+                    value: "read-public",
+                    label: "Read Public",
                   },
                 ],
               },
@@ -237,8 +239,8 @@ export class SystemAccountEditorService {
                 hideOptional: true,
                 options: [
                   {
-                    key: "read-public",
-                    value: "Read Public",
+                    value: "read-public",
+                    label: "Read Public",
                   },
                 ],
               },

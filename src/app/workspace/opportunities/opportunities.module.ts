@@ -8,8 +8,7 @@ import {
   SdsToolbarModule,
   SdsAccordionModule,
   SdsPageModule,
-  SdsSearchModule,
-  SdsIconModule,
+  SdsSearchModule
 } from "@gsa-sam/components";
 import {
   SdsFiltersModule,
@@ -21,8 +20,8 @@ import { FormlyModule } from "@ngx-formly/core";
 import { OpportunitiesComponent } from "./opportunities.component";
 import { OpportunitiesRoutingModule } from "./opportunities-routing.module";
 
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
 
 @NgModule({
@@ -39,11 +38,11 @@ import _ from "lodash-es";
     SdsSideNavigationModule,
     SdsSearchModule,
     SdsSubheaderModule,
-    SdsIconModule,
+    IconModule,
     FormlyModule.forRoot(),
     SearchListServiceModule,
     NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+      Object.assign(_.cloneDeep(allIcons))
     ),
   ],
   declarations: [OpportunitiesComponent],

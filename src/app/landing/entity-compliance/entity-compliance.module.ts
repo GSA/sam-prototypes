@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  SdsSearchModule,
-  SdsIconModule
+  SdsSearchModule
 } from '@gsa-sam/components';
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 
 import { EntityComplianceRoutingModule } from './entity-compliance-routing.module';
 import { EntityComplianceComponent } from './entity-compliance.component';
@@ -14,7 +14,7 @@ import { EntityComplianceComponent } from './entity-compliance.component';
     CommonModule,
     SdsSearchModule,
     EntityComplianceRoutingModule,
-    SdsIconModule
+    IconModule
   ],
   exports: [EntityComplianceComponent]
 })

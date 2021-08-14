@@ -4,18 +4,20 @@ import { DataEntryComponent } from "./data-entry.component";
 import { DataEntryRoutingModule } from "./data-entry-routing.module";
 
 import { SdsActionsMenuModule } from "@gsa-sam/layouts";
-import { SdsIconModule, SdsSelectionPanelModule } from "@gsa-sam/components";
+import { SdsSelectionPanelModule } from "@gsa-sam/components";
 import { ReviewSubmitComponent } from "./review-submit/review-submit.component";
 
 import { SdsFormlyModule } from "@gsa-sam/sam-formly";
 import { FormlyModule } from "@ngx-formly/core";
 import { DataEntryFormlyModule } from "./formly/formly-module";
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import {
   NgxBootstrapIconsModule,
   chevronLeft,
   chevronRight,
   x,
   check,
+  notCompleted
 } from "ngx-bootstrap-icons";
 import { AppLayoutFormlyModule } from "../app-layout/formly/formly-module";
 import { ExpandableCardModule } from "../app-layout/card/card.module";
@@ -32,7 +34,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     ReactiveFormsModule,
     ExpandableCardModule,
     SdsActionsMenuModule,
-    SdsIconModule,
+    IconModule,
     SdsSelectionPanelModule,
     StepperModule,
     DataEntryRoutingModule,
@@ -42,7 +44,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     DataEntryFormlyModule,
     AppLayoutFormlyModule,
 
-    NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, x, check }),
+    NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, x, check, notCompleted }),
   ],
   exports: [ReviewSubmitComponent, DataEntryComponent, DataEntryReportComponent],
 })

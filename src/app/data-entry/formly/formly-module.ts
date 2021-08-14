@@ -7,7 +7,7 @@ import { FormlyFieldConfig, FormlyModule } from "@ngx-formly/core";
 import { CdkStepperModule } from "@angular/cdk/stepper";
 import { FormlySubawardComponent } from "./formly-subaward";
 import { FormlyContractComponent } from "./formly-contract";
-import { SdsIconModule } from "@gsa-sam/components";
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { SubawardDataComponent } from "../subaward-data/subaward-data.component";
 import { ReviewContractComponent } from "../review-contract/review-contract.component";
 
@@ -37,7 +37,7 @@ import { SubawardeeReadOnlyRepeatTypeComponent } from "./readonly-repeat-section
     CdkStepperModule,
     ReactiveFormsModule,
     SdsFormlyModule,
-    SdsIconModule,
+    IconModule,
     FormlyModule,
 
     SdsFormlyModule.forChild({

@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { RegistrationLandingEntityRoutingModule } from './registration-landing-entity-routing.module';
 import { RegistrationLandingEntityComponent } from './registration-landing-entity.component';
-import { SdsIconModule } from '@gsa-sam/components';
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 
 @NgModule({
   declarations: [RegistrationLandingEntityComponent],
   imports: [
     CommonModule,
     RegistrationLandingEntityRoutingModule,
-    SdsIconModule
+    IconModule
   ],
   exports: [RegistrationLandingEntityComponent]
 })
