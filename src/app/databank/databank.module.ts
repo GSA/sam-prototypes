@@ -7,8 +7,7 @@ import {
   SdsToolbarModule,
   SdsAccordionModule,
   SdsPageModule,
-  SdsSearchModule,
-
+  SdsSearchModule
 } from "@gsa-sam/components";
 import {
   SdsFiltersModule,
@@ -21,17 +20,17 @@ import { FormsModule } from "@angular/forms";
 
 import { DatabankRoutingModule } from "./databank-routing.module";
 import { DatabankComponent } from "./databank.component";
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { NgxBootstrapIconsModule, allIcons } from "ngx-bootstrap-icons";
-import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
-import { IconModule } from "@gsa-sam/ngx-uswds-icons";
+
 @NgModule({
   imports: [
     CommonModule,
     FormlyModule,
     FormsModule,
     NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+      Object.assign(_.cloneDeep(allIcons))
     ),
     SdsSideNavigationModule,
     SdsToolbarModule,

@@ -7,7 +7,7 @@ import { FormlyFieldConfig, FormlyModule } from "@ngx-formly/core";
 import { CdkStepperModule } from "@angular/cdk/stepper";
 import { FormlySubawardComponent } from "./formly-subaward";
 import { FormlyContractComponent } from "./formly-contract";
-import { IconModule } from "@gsa-sam/ngx-uswds-icons";
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { SubawardDataComponent } from "../subaward-data/subaward-data.component";
 import { ReviewContractComponent } from "../review-contract/review-contract.component";
 

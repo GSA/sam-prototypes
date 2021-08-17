@@ -11,8 +11,7 @@ import {
   SdsAccordionModule,
   SdsPageModule,
   SdsSearchModule,
-  SdsDialogModule,
-
+  SdsDialogModule
 } from "@gsa-sam/components";
 import {
   SdsFiltersModule,
@@ -27,10 +26,9 @@ import { FormlySelectModule } from "@ngx-formly/core/select";
 import { SearchSaveServiceModule } from "./search-save-service/search-save-service.module";
 
 import { SearchSaveResultModule } from "./search-save-result/search-save-result.module";
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
-import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   declarations: [SearchSaveComponent],
@@ -57,7 +55,7 @@ import { IconModule } from "@gsa-sam/ngx-uswds-icons";
     SearchSaveServiceModule,
     SearchSaveResultModule,
     NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+      Object.assign(_.cloneDeep(allIcons))
     ),
   ],
 })

@@ -7,9 +7,8 @@ import { SdsSubheaderModule } from "@gsa-sam/layouts";
 
 import { DatabankHistoryRoutingModule } from "./databank-history-routing.module";
 import { DatabankHistoryComponent } from "./databank-history.component";
-import { IconModule } from "@gsa-sam/ngx-uswds-icons";
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
 
 @NgModule({
@@ -21,7 +20,7 @@ import _ from "lodash-es";
     IconModule,
     SdsSubheaderModule,
     NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+      Object.assign(_.cloneDeep(allIcons))
     ),
 
     DatabankHistoryRoutingModule,

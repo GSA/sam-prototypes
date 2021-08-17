@@ -23,9 +23,9 @@ import { LandingListComponent } from "./landing-list/landing-list.component";
 import { LandingCardComponent } from "./landing-card/landing-card.component";
 import { LandingFeedComponent } from "./landing-feed.component";
 import { NavigateComponent } from "./navigate/navigate.component";
-import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-import { allIcons as sdsAllIcons } from "@gsa-sam/components";
-import _ from "lodash-es";
+
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
+import { chevronLeft, chevronRight, dash, x, fileText, plus, question, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 @NgModule({
   declarations: [
@@ -51,9 +51,8 @@ import _ from "lodash-es";
     ReactiveFormsModule,
     SdsFormlyModule,
     LayoutComponentsModule,
-    NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
-    ),
+    IconModule,
+    NgxBootstrapIconsModule.pick({chevronLeft, chevronRight, dash, x, fileText, plus, question})
   ],
   exports: [
     LandingSearchComponent,

@@ -12,8 +12,8 @@ export class SystemAccountEditorComponent implements OnInit {
   id: string;
 
   public subpages: NavigationLink[] = [
-      { text: 'Edit', id: 'edit', route: 'form', queryParams: {}, mode: NavigationMode.INTERNAL, selected: false },
-      { text: 'Review', id: 'review', route: 'review', queryParams: {}, mode: NavigationMode.INTERNAL, selected: false }
+      { text: 'Review', id: 'review', route: 'review', queryParams: {}, mode: NavigationMode.INTERNAL, selected: false },
+      { text: 'Edit', id: 'edit', route: 'form', queryParams: {}, mode: NavigationMode.INTERNAL, selected: false }
     ];
 
   public actionsModel = {

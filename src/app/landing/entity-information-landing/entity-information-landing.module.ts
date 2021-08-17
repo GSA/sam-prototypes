@@ -4,14 +4,12 @@ import { RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import { LandingLayoutModule } from "../../app-layout/landing-layout/landing-layout.module";
 
-import { IconModule } from "@gsa-sam/ngx-uswds-icons";
-
 import { EntityInformationLandingRoutingModule } from "./entity-information-landing-routing.module";
 import { EntityInformationLandingComponent } from "./entity-information-landing.component";
 import { SplashTileComponent } from "./splash-tile.component";
 import { SplashAlertComponent } from "./splash-alert.component";
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
 
 @NgModule({
@@ -28,7 +26,7 @@ import _ from "lodash-es";
     IconModule,
     LandingLayoutModule,
     NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+      Object.assign(_.cloneDeep(allIcons))
     ),
   ],
   exports: [EntityInformationLandingComponent, SplashAlertComponent],

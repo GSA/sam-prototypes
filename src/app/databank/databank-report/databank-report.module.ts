@@ -11,9 +11,8 @@ import { DatabankServiceModule } from "../../services/databank-service/databank-
 
 import { DatabankReportRoutingModule } from "./databank-report-routing.module";
 import { DatabankReportComponent } from "./databank-report.component";
-import { IconModule } from "@gsa-sam/ngx-uswds-icons";
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
 
 @NgModule({
@@ -28,7 +27,7 @@ import _ from "lodash-es";
     DatabankServiceModule,
     DatabankReportRoutingModule,
     NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+      Object.assign(_.cloneDeep(allIcons))
     ),
   ],
   exports: [DatabankReportComponent],

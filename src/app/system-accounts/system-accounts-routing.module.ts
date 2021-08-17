@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SystemAccountsWorkspaceModule } from './system-accounts-workspace/system-accounts-workspace.module';
-import { SystemAccountModule } from './system-account/system-account.module';
 
 const routes: Routes = [
 	{

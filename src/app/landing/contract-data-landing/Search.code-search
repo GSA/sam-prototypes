@@ -3,269 +3,269 @@
 220 results - 24 files
 
 src/app/landing/assistance-landing-federal/assistance-landing-federal.component.html:
-  124:                   <sds-icon [icon]="'file-earmark'" [size]="'xs'"></sds-icon>
-  132:                   <sds-icon [icon]="'file-earmark'" [size]="'xs'"></sds-icon>
-  153:                   <sds-icon [icon]="'file-earmark'" [size]="'xs'"></sds-icon>
-  161:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  169:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  177:                   <sds-icon [icon]="['document-pdf']"></sds-icon>
-  185:                   <sds-icon [icon]="['camera-reels']" [size]="'xs'"></sds-icon>
-  206:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  214:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
-  237:                     <sds-icon [icon]="['box-arrow-up-right']" [size]="'xs'"></sds-icon>
-  255:                   <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  263:                   <sds-icon [icon]="['book']" [size]="'xs'"></sds-icon>
-  271:                   <sds-icon [icon]="['camera-reels']" [size]="'xs'"></sds-icon>
+  124:                   <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
+  132:                   <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
+  153:                   <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
+  161:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  169:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  177:                   <usa-icon [icon]="['document-pdf']"></usa-icon>
+  185:                   <usa-icon [icon]="['camera-reels']" [size]="'xs'"></usa-icon>
+  206:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  214:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></usa-icon>
+  237:                     <usa-icon [icon]="['box-arrow-up-right']" [size]="'xs'"></usa-icon>
+  255:                   <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  263:                   <usa-icon [icon]="['book']" [size]="'xs'"></usa-icon>
+  271:                   <usa-icon [icon]="['camera-reels']" [size]="'xs'"></usa-icon>
 
 src/app/landing/contract-data-landing/contract-data-landing.component.html:
-  147:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  155:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  163:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
-  186:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  194:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  202:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
-  210:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
-  218:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
-  226:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
-  249:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  257:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
-  269:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  292:                   <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  300:                   <sds-icon [icon]="['book']" [size]="'xs'"></sds-icon>
-  308:                   <sds-icon [icon]="['camera-reels']" [size]="'xs'"></sds-icon>
+  147:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  155:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  163:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></usa-icon>
+  186:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  194:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  202:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></usa-icon>
+  210:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></usa-icon>
+  218:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></usa-icon>
+  226:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></usa-icon>
+  249:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  257:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></usa-icon>
+  269:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  292:                   <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  300:                   <usa-icon [icon]="['book']" [size]="'xs'"></usa-icon>
+  308:                   <usa-icon [icon]="['camera-reels']" [size]="'xs'"></usa-icon>
 
 src/app/landing/entity-information-landing/splash-tile.component.html:
-   7:         <sds-icon class="sds-stack-icon text-primary-lighter" [size]="'2x'" [icon]="['square-fill']"></sds-icon>
-   8:         <sds-icon class="sds-stack-icon text-base-darker" [size]="'md'" [icon]="['plus-square']"></sds-icon>
-  15:         <sds-icon class="sds-stack-icon text-accent-cool-lighter" [size]="'2x'" [icon]="['square-fill']"></sds-icon>
-  16:         <sds-icon class="sds-stack-icon text-base-darker" [size]="'md'" [icon]="['pencil-square']"></sds-icon>
-  22:         <sds-icon class="sds-stack-icon text-accent-warm-lighter" [size]="'2x'" [icon]="['square-fill']"></sds-icon>
-  23:         <sds-icon class="sds-stack-icon text-base-darker" [size]="'md'" [icon]="['check-square']"></sds-icon>
+   7:         <usa-icon class="sds-stack-icon text-primary-lighter" [size]="'2x'" [icon]="['square-fill']"></usa-icon>
+   8:         <usa-icon class="sds-stack-icon text-base-darker" [size]="'md'" [icon]="['plus-square']"></usa-icon>
+  15:         <usa-icon class="sds-stack-icon text-accent-cool-lighter" [size]="'2x'" [icon]="['square-fill']"></usa-icon>
+  16:         <usa-icon class="sds-stack-icon text-base-darker" [size]="'md'" [icon]="['pencil-square']"></usa-icon>
+  22:         <usa-icon class="sds-stack-icon text-accent-warm-lighter" [size]="'2x'" [icon]="['square-fill']"></usa-icon>
+  23:         <usa-icon class="sds-stack-icon text-base-darker" [size]="'md'" [icon]="['check-square']"></usa-icon>
 
 src/app/landing/exclusions/exclusions.component.html:
-  126:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  134:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  142:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  161:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  169:                   <sds-icon [icon]="['document-pdf']"></sds-icon>
-  196:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  204:                   <sds-icon [icon]="['document-pdf']"></sds-icon>
-  212:                   <sds-icon [icon]="['camera-reels']" [size]="'xs'"></sds-icon>
-  220:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
-  241:                   <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  249:                   <sds-icon [icon]="['book']" [size]="'xs'"></sds-icon>
-  257:                   <sds-icon [icon]="['camera-reels']" [size]="'xs'"></sds-icon>
+  126:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  134:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  142:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  161:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  169:                   <usa-icon [icon]="['document-pdf']"></usa-icon>
+  196:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  204:                   <usa-icon [icon]="['document-pdf']"></usa-icon>
+  212:                   <usa-icon [icon]="['camera-reels']" [size]="'xs'"></usa-icon>
+  220:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></usa-icon>
+  241:                   <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  249:                   <usa-icon [icon]="['book']" [size]="'xs'"></usa-icon>
+  257:                   <usa-icon [icon]="['camera-reels']" [size]="'xs'"></usa-icon>
 
 src/app/landing/exclusions-federal/exclusions-federal.component.html:
-   76:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-   84:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-   92:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  100:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  108:                   <sds-icon [icon]="['document-pdf']"></sds-icon>
-  129:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  137:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  145:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  153:                   <sds-icon [icon]="['document-pdf']"></sds-icon>
-  161:                   <sds-icon [icon]="['camera-reels']" [size]="'xs'"></sds-icon>
-  182:                   <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  190:                   <sds-icon [icon]="['book']" [size]="'xs'"></sds-icon>
-  198:                   <sds-icon [icon]="['camera-reels']" [size]="'xs'"></sds-icon>
+   76:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+   84:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+   92:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  100:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  108:                   <usa-icon [icon]="['document-pdf']"></usa-icon>
+  129:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  137:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  145:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  153:                   <usa-icon [icon]="['document-pdf']"></usa-icon>
+  161:                   <usa-icon [icon]="['camera-reels']" [size]="'xs'"></usa-icon>
+  182:                   <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  190:                   <usa-icon [icon]="['book']" [size]="'xs'"></usa-icon>
+  198:                   <usa-icon [icon]="['camera-reels']" [size]="'xs'"></usa-icon>
 
 src/app/landing/hierarchy-landing/hierarchy-landing.component.html:
-  119:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  127:                   <sds-icon [icon]="['document-pdf']"></sds-icon>
-  135:                   <sds-icon [icon]="['camera-reels']" [size]="'xs'"></sds-icon>
-  143:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
-  164:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  172:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
-  193:                   <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  201:                   <sds-icon [icon]="['book']" [size]="'xs'"></sds-icon>
-  209:                   <sds-icon [icon]="['camera-reels']" [size]="'xs'"></sds-icon>
+  119:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  127:                   <usa-icon [icon]="['document-pdf']"></usa-icon>
+  135:                   <usa-icon [icon]="['camera-reels']" [size]="'xs'"></usa-icon>
+  143:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></usa-icon>
+  164:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  172:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></usa-icon>
+  193:                   <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  201:                   <usa-icon [icon]="['book']" [size]="'xs'"></usa-icon>
+  209:                   <usa-icon [icon]="['camera-reels']" [size]="'xs'"></usa-icon>
 
 src/app/landing/hierarchy-landing-federal/hierarchy-landing-federal.component.html:
-   77:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-   85:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-   93:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  101:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  122:                   <sds-icon [icon]="['document-pdf']"></sds-icon>
-  130:                   <sds-icon [icon]="['document-pdf']"></sds-icon>
-  138:                   <sds-icon [icon]="['document-pdf']"></sds-icon>
-  146:                   <sds-icon [icon]="['document-pdf']"></sds-icon>
-  168:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  176:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
-  197:                   <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  205:                   <sds-icon [icon]="['book']" [size]="'xs'"></sds-icon>
-  213:                   <sds-icon [icon]="['camera-reels']" [size]="'xs'"></sds-icon>
+   77:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+   85:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+   93:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  101:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  122:                   <usa-icon [icon]="['document-pdf']"></usa-icon>
+  130:                   <usa-icon [icon]="['document-pdf']"></usa-icon>
+  138:                   <usa-icon [icon]="['document-pdf']"></usa-icon>
+  146:                   <usa-icon [icon]="['document-pdf']"></usa-icon>
+  168:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  176:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></usa-icon>
+  197:                   <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  205:                   <usa-icon [icon]="['book']" [size]="'xs'"></usa-icon>
+  213:                   <usa-icon [icon]="['camera-reels']" [size]="'xs'"></usa-icon>
 
 src/app/landing/integrity-landing/integrity-landing.component.html:
-   95:                   <sds-icon [icon]="['document-pdf']"></sds-icon>
-  103:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
-  112:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
-  121:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
-  144:                   <sds-icon [icon]="['document-pdf']"></sds-icon>
-  152:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
-  174:                   <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  182:                   <sds-icon [icon]="['book']" [size]="'xs'"></sds-icon>
-  190:                   <sds-icon [icon]="['camera-reels']" [size]="'xs'"></sds-icon>
+   95:                   <usa-icon [icon]="['document-pdf']"></usa-icon>
+  103:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
+  112:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
+  121:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
+  144:                   <usa-icon [icon]="['document-pdf']"></usa-icon>
+  152:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
+  174:                   <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  182:                   <usa-icon [icon]="['book']" [size]="'xs'"></usa-icon>
+  190:                   <usa-icon [icon]="['camera-reels']" [size]="'xs'"></usa-icon>
 
 src/app/landing/opportunities-landing/opportunities-landing.component.html:
-  126:                 <sds-icon [icon]="['document-pdf']"></sds-icon>
-  132:                 <sds-icon class="action-icon" [icon]="['angle-circle' ]" [rotate]="180">
-  152:                 <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  158:                 <sds-icon [icon]="['book']" [size]="'xs'"></sds-icon>
-  164:                 <sds-icon [icon]="['camera-reels']" [size]="'xs'"></sds-icon>
-  195:                 <sds-icon [icon]="['document-pdf']"></sds-icon>
-  201:                 <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
-  221:                 <sds-icon [icon]="['document-pdf']"></sds-icon>
-  227:                 <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
-  234:                 <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
-  254:                 <sds-icon [icon]="['document-pdf']"></sds-icon>
-  260:                 <sds-icon [icon]="['document-pdf']"></sds-icon>
-  266:                 <sds-icon [icon]="['camera-reels']" [size]="'xs'"></sds-icon>
-  272:                 <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
-  302:                         <sds-icon [icon]="['box-arrow-up-right']" [size]="'xs'"></sds-icon>
-  309:                         <sds-icon [icon]="['box-arrow-up-right']" [size]="'xs'"></sds-icon>
-  316:                         <sds-icon [icon]="['box-arrow-up-right']" [size]="'xs'"></sds-icon>
-  329:                         <sds-icon [icon]="['box-arrow-up-right']" [size]="'xs'"></sds-icon>
-  336:                         <sds-icon [icon]="['box-arrow-up-right']" [size]="'xs'"></sds-icon>
-  343:                         <sds-icon [icon]="['box-arrow-up-right']" [size]="'xs'"></sds-icon>
-  351:                         <sds-icon [icon]="['box-arrow-up-right']" [size]="'xs'"></sds-icon>
-  364:                         <sds-icon [icon]="['box-arrow-up-right']" [size]="'xs'"></sds-icon>
+  126:                 <usa-icon [icon]="['document-pdf']"></usa-icon>
+  132:                 <usa-icon class="action-icon" [icon]="['angle-circle' ]" [rotate]="180">
+  152:                 <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  158:                 <usa-icon [icon]="['book']" [size]="'xs'"></usa-icon>
+  164:                 <usa-icon [icon]="['camera-reels']" [size]="'xs'"></usa-icon>
+  195:                 <usa-icon [icon]="['document-pdf']"></usa-icon>
+  201:                 <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
+  221:                 <usa-icon [icon]="['document-pdf']"></usa-icon>
+  227:                 <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
+  234:                 <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
+  254:                 <usa-icon [icon]="['document-pdf']"></usa-icon>
+  260:                 <usa-icon [icon]="['document-pdf']"></usa-icon>
+  266:                 <usa-icon [icon]="['camera-reels']" [size]="'xs'"></usa-icon>
+  272:                 <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
+  302:                         <usa-icon [icon]="['box-arrow-up-right']" [size]="'xs'"></usa-icon>
+  309:                         <usa-icon [icon]="['box-arrow-up-right']" [size]="'xs'"></usa-icon>
+  316:                         <usa-icon [icon]="['box-arrow-up-right']" [size]="'xs'"></usa-icon>
+  329:                         <usa-icon [icon]="['box-arrow-up-right']" [size]="'xs'"></usa-icon>
+  336:                         <usa-icon [icon]="['box-arrow-up-right']" [size]="'xs'"></usa-icon>
+  343:                         <usa-icon [icon]="['box-arrow-up-right']" [size]="'xs'"></usa-icon>
+  351:                         <usa-icon [icon]="['box-arrow-up-right']" [size]="'xs'"></usa-icon>
+  364:                         <usa-icon [icon]="['box-arrow-up-right']" [size]="'xs'"></usa-icon>
 
 src/app/landing/opportunities-landing-federal/opportunities-landing-federal.component.html:
-   77:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-   85:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-   93:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  101:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  122:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  130:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  138:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  146:                   <sds-icon [icon]="['document-pdf']"></sds-icon>
-  154:                   <sds-icon [icon]="['camera-reels']" [size]="'xs'"></sds-icon>
-  175:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  183:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  191:                   <sds-icon [icon]="['document-pdf']"></sds-icon>
-  199:                   <sds-icon [icon]="['camera-reels']" [size]="'xs'"></sds-icon>
-  207:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
-  228:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  236:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
-  257:                   <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  265:                   <sds-icon [icon]="['book']" [size]="'xs'"></sds-icon>
-  273:                   <sds-icon [icon]="['camera-reels']" [size]="'xs'"></sds-icon>
+   77:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+   85:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+   93:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  101:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  122:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  130:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  138:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  146:                   <usa-icon [icon]="['document-pdf']"></usa-icon>
+  154:                   <usa-icon [icon]="['camera-reels']" [size]="'xs'"></usa-icon>
+  175:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  183:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  191:                   <usa-icon [icon]="['document-pdf']"></usa-icon>
+  199:                   <usa-icon [icon]="['camera-reels']" [size]="'xs'"></usa-icon>
+  207:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></usa-icon>
+  228:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  236:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></usa-icon>
+  257:                   <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  265:                   <usa-icon [icon]="['book']" [size]="'xs'"></usa-icon>
+  273:                   <usa-icon [icon]="['camera-reels']" [size]="'xs'"></usa-icon>
 
 src/app/landing/registration-landing/registration-landing.component.html:
-   47:                   <sds-icon [icon]="['folder-check']" [size]="'2x'"></sds-icon>
-   51:                   <sds-icon [icon]="['folder-check']" [size]="'2x'"></sds-icon>
-   55:                   <sds-icon [icon]="['check-2-circle']" [size]="'2x'"></sds-icon>
-   95:               <sds-icon [icon]="['check-2-circle']" [size]="'2x'"></sds-icon>
-   99:               <sds-icon [icon]="['check-2-circle']" [size]="'2x'"></sds-icon>
-  103:               <sds-icon [icon]="['check-2-circle']" [size]="'2x'"></sds-icon>
-  123:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  131:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
-  152:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  160:                   <sds-icon [icon]="['document-pdf']"></sds-icon>
-  168:                   <sds-icon [icon]="['camera-reels']" [size]="'xs'"></sds-icon>
-  176:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></sds-icon>
-  198:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  203:                     <sds-icon class="external-link" [icon]="['box-arrow-up-right']" [size]="'xs'"></sds-icon>
-  208:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  212:                       [icon]="['box-arrow-up-right']" [size]="'xs'"></sds-icon></a>
-  217:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  221:                       [icon]="['box-arrow-up-right']" [size]="'xs'"></sds-icon></a>
-  239:                   <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  247:                   <sds-icon [icon]="['book']" [size]="'xs'"></sds-icon>
-  255:                   <sds-icon [icon]="['camera-reels']" [size]="'xs'"></sds-icon>
+   47:                   <usa-icon [icon]="['folder-check']" [size]="'2x'"></usa-icon>
+   51:                   <usa-icon [icon]="['folder-check']" [size]="'2x'"></usa-icon>
+   55:                   <usa-icon [icon]="['check-2-circle']" [size]="'2x'"></usa-icon>
+   95:               <usa-icon [icon]="['check-2-circle']" [size]="'2x'"></usa-icon>
+   99:               <usa-icon [icon]="['check-2-circle']" [size]="'2x'"></usa-icon>
+  103:               <usa-icon [icon]="['check-2-circle']" [size]="'2x'"></usa-icon>
+  123:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  131:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></usa-icon>
+  152:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  160:                   <usa-icon [icon]="['document-pdf']"></usa-icon>
+  168:                   <usa-icon [icon]="['camera-reels']" [size]="'xs'"></usa-icon>
+  176:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180"></usa-icon>
+  198:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  203:                     <usa-icon class="external-link" [icon]="['box-arrow-up-right']" [size]="'xs'"></usa-icon>
+  208:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  212:                       [icon]="['box-arrow-up-right']" [size]="'xs'"></usa-icon></a>
+  217:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  221:                       [icon]="['box-arrow-up-right']" [size]="'xs'"></usa-icon></a>
+  239:                   <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  247:                   <usa-icon [icon]="['book']" [size]="'xs'"></usa-icon>
+  255:                   <usa-icon [icon]="['camera-reels']" [size]="'xs'"></usa-icon>
 
 src/app/landing/shared/landing-list/landing-list.component.html:
-   6:           <sds-icon [icon]="['file-text']" [size]="'xs'"></sds-icon>
-  12:           <sds-icon [icon]="['file-text']" [size]="'xs'"></sds-icon>
+   6:           <usa-icon [icon]="['file-text']" [size]="'xs'"></usa-icon>
+  12:           <usa-icon [icon]="['file-text']" [size]="'xs'"></usa-icon>
 
 src/app/landing/wages-landing/wages-landing.component.html:
-   25:                       <sds-icon [icon]="['search']" [size]="'lg'"></sds-icon>
-   35:                       <sds-icon [icon]="['search']" [size]="'lg'"></sds-icon>
-   44:                             <sds-icon [icon]="['check-2-circle']" [size]="'2x'"></sds-icon>
-   55:                             <sds-icon [icon]="['check-2-circle']" [size]="'2x'"></sds-icon>
-   83:                     <sds-icon [icon]="['info-square']" [size]="'xs'"></sds-icon>
-   91:                     <sds-icon [icon]="['info-square']" [size]="'xs'"></sds-icon>
-   99:                     <sds-icon [icon]="['info-square']" [size]="'xs'"></sds-icon>
-  107:                     <sds-icon [icon]="['info-square']" [size]="'xs'"></sds-icon>
-  115:                     <sds-icon [icon]="['document-pdf']"></sds-icon>
-  123:                     <sds-icon [icon]="['info-square']" [size]="'xs'"></sds-icon>
-  140:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  148:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  156:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  164:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  173:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  182:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  190:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  198:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  206:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  214:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  222:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  231:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  244:                       Acts (Department of Labor) <sds-icon [icon]="['box-arrow-up-right']" [size]="'xs'"></sds-icon></a>
-  258:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  266:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  274:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  283:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  292:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  300:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  309:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  318:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  326:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  334:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  342:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  351:                     <sds-icon [icon]="['question-circle']" [size]="'xs'"></sds-icon>
-  378:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
-  385:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
-  394:                   <sds-icon [icon]="['file-earmark']" [size]="'sm'"></sds-icon>
-  403:                   <sds-icon [icon]="['file-earmark']" [size]="'sm'"></sds-icon>
-  406:                   Department of Labor DBA analysts by state <sds-icon [icon]="['box-arrow-up-right']" [size]="'xs'">
-  426:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
-  448:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
-  457:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
-  466:                   <sds-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
-  490:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  498:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  508:                   <sds-icon [icon]="['file-earmark']" [size]="'xs'"></sds-icon>
-  531:                   <sds-icon [icon]="['question-circle']" [size]="'sm'"></sds-icon>
-  539:                   <sds-icon [icon]="['book']" [size]="'sm'"></sds-icon>
-  547:                   <sds-icon [icon]="['camera-reels']" [size]="'sm'"></sds-icon>
+   25:                       <usa-icon [icon]="['search']" [size]="'lg'"></usa-icon>
+   35:                       <usa-icon [icon]="['search']" [size]="'lg'"></usa-icon>
+   44:                             <usa-icon [icon]="['check-2-circle']" [size]="'2x'"></usa-icon>
+   55:                             <usa-icon [icon]="['check-2-circle']" [size]="'2x'"></usa-icon>
+   83:                     <usa-icon [icon]="['info-square']" [size]="'xs'"></usa-icon>
+   91:                     <usa-icon [icon]="['info-square']" [size]="'xs'"></usa-icon>
+   99:                     <usa-icon [icon]="['info-square']" [size]="'xs'"></usa-icon>
+  107:                     <usa-icon [icon]="['info-square']" [size]="'xs'"></usa-icon>
+  115:                     <usa-icon [icon]="['document-pdf']"></usa-icon>
+  123:                     <usa-icon [icon]="['info-square']" [size]="'xs'"></usa-icon>
+  140:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  148:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  156:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  164:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  173:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  182:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  190:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  198:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  206:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  214:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  222:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  231:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  244:                       Acts (Department of Labor) <usa-icon [icon]="['box-arrow-up-right']" [size]="'xs'"></usa-icon></a>
+  258:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  266:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  274:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  283:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  292:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  300:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  309:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  318:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  326:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  334:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  342:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  351:                     <usa-icon [icon]="['question-circle']" [size]="'xs'"></usa-icon>
+  378:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
+  385:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
+  394:                   <usa-icon [icon]="['file-earmark']" [size]="'sm'"></usa-icon>
+  403:                   <usa-icon [icon]="['file-earmark']" [size]="'sm'"></usa-icon>
+  406:                   Department of Labor DBA analysts by state <usa-icon [icon]="['box-arrow-up-right']" [size]="'xs'">
+  426:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
+  448:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
+  457:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
+  466:                   <usa-icon class="action-icon" [icon]="['angle-circle']" [rotate]="180">
+  490:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  498:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  508:                   <usa-icon [icon]="['file-earmark']" [size]="'xs'"></usa-icon>
+  531:                   <usa-icon [icon]="['question-circle']" [size]="'sm'"></usa-icon>
+  539:                   <usa-icon [icon]="['book']" [size]="'sm'"></usa-icon>
+  547:                   <usa-icon [icon]="['camera-reels']" [size]="'sm'"></usa-icon>
 
 src/app/landing/wages-landing/wages-sub-pages.component.html:
-  5:     <sds-icon [icon]="['chevron-left']"></sds-icon>
+  5:     <usa-icon [icon]="['chevron-left']"></usa-icon>
 
 src/app/news/news.component.html:
-  4:     <sds-icon [icon]="['chevron-left']"></sds-icon>
+  4:     <usa-icon [icon]="['chevron-left']"></usa-icon>
 
 src/app/profile/profile.component.html:
-  5:     <sds-icon [icon]="['chevron-left']"></sds-icon>
+  5:     <usa-icon [icon]="['chevron-left']"></usa-icon>
 
 src/app/request/request.component.html:
-  4:     <sds-icon [icon]="['chevron-left']"></sds-icon>
+  4:     <usa-icon [icon]="['chevron-left']"></usa-icon>
 
 src/app/search/search.component.html:
-   4:     <sds-icon [icon]="['chevron-left']"></sds-icon>
-  43:                     <sds-icon [icon]="['chevron-left']"></sds-icon>
+   4:     <usa-icon [icon]="['chevron-left']"></usa-icon>
+  43:                     <usa-icon [icon]="['chevron-left']"></usa-icon>
 
 src/app/search/search-save/search-save.component.html:
-  4:     <sds-icon [icon]="['chevron-left']"></sds-icon>
+  4:     <usa-icon [icon]="['chevron-left']"></usa-icon>
 
 src/app/system-accounts/system-accounts-workspace/system-accounts-workspace.component.html:
-  4:     <sds-icon [icon]="['chevron-left']"></sds-icon>
+  4:     <usa-icon [icon]="['chevron-left']"></usa-icon>
 
 src/app/workspace/assistancelist/assistancelist.component.html:
-  4:     <sds-icon [icon]="['chevron-left']"></sds-icon>
+  4:     <usa-icon [icon]="['chevron-left']"></usa-icon>
 
 src/app/workspace/entities/entity-list.component.html:
-  4:     <sds-icon [icon]="['chevron-left']"></sds-icon>
+  4:     <usa-icon [icon]="['chevron-left']"></usa-icon>
 
 src/app/workspace/entities/entity-entry/search-list-item-entity.component.html:
-  202:                         <sds-icon [icon]="['exclamation']" size="3x"></sds-icon>
-  268:               <sds-icon [icon]="['check']" size="sm"></sds-icon>
-  478:                           <sds-icon [icon]="['exclamation']" size="3x"></sds-icon>
-  552:                 <sds-icon [icon]="['check']" size="sm"></sds-icon>
-  560:                 <sds-icon [icon]="['ellipsis-h']" size="sm"></sds-icon>
+  202:                         <usa-icon [icon]="['exclamation']" size="3x"></usa-icon>
+  268:               <usa-icon [icon]="['check']" size="sm"></usa-icon>
+  478:                           <usa-icon [icon]="['exclamation']" size="3x"></usa-icon>
+  552:                 <usa-icon [icon]="['check']" size="sm"></usa-icon>
+  560:                 <usa-icon [icon]="['ellipsis-h']" size="sm"></usa-icon>
 
 src/app/workspace/opportunities/opportunities.component.html:
-  4:     <sds-icon [icon]="['chevron-left']"></sds-icon>
+  4:     <usa-icon [icon]="['chevron-left']"></usa-icon>

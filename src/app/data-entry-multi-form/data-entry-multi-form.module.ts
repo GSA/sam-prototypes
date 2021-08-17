@@ -8,7 +8,6 @@ import { SdsFormlyModule, SdsStepperModule } from '@gsa-sam/sam-formly';
 import { DataEntryFormlyModule } from '../data-entry/formly/formly-module';
 import { EntityReportingServiceModule } from '../services/entity-reporting-service/entity-reporting-service.module';
 import { DataEntryMultiFormStepsService } from './data-entry-multi-form-steps.service';
-import { AppLayoutFormlyModule } from '../app-layout/formly/formly-module';
 import {
   NgxBootstrapIconsModule,
   chevronLeft,
@@ -54,7 +53,6 @@ const routes: Routes = [
     FormlyModule.forRoot(),
     SdsFormlyModule,
     DataEntryFormlyModule,
-    AppLayoutFormlyModule,
     IconModule,
     UsaStepIndicatorModule,
     NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, circle, slashCircleFill, checkCircleFill, question, save, x }),

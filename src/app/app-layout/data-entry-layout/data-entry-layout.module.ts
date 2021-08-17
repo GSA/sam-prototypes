@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
 
 import { SdsSubheaderModule } from "@gsa-sam/layouts";
@@ -23,7 +22,7 @@ import { DataEntrySideNavComponent } from './data-entry-side-nav/data-entry-side
     SdsSubheaderModule,
     SdsButtonGroupModule,
     NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+      Object.assign(_.cloneDeep(allIcons))
     )
   ],
   exports: [DataEntrySubheaderComponent, DataEntrySideNavComponent]

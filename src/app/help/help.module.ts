@@ -12,7 +12,7 @@ import {
   SdsToolbarModule,
   SdsAccordionModule,
   SdsPageModule,
-  SdsSearchModule,
+  SdsSearchModule
 } from "@gsa-sam/components";
 import {
   SdsFiltersModule,

@@ -7,7 +7,7 @@ import { MatDividerModule } from "@angular/material/divider";
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { CardComponent } from "./card.component";
-import { IconModule } from "@gsa-sam/ngx-uswds-icons";
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { NgxBootstrapIconsModule, dash, plus, x } from "ngx-bootstrap-icons";
 // Component
 

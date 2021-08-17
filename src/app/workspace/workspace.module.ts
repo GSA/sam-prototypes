@@ -9,8 +9,8 @@ import { WorkspaceServiceModule } from '../services/workspace-service/workspace-
 
 import { WorkspaceRoutingModule } from "./workspace-routing.module";
 import { WorkspaceComponent } from "./workspace.component";
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
 import { AutocompleteSampleDataService } from "./entities/entity-service/autocomplete-sample.service";
 
@@ -23,8 +23,9 @@ import { AutocompleteSampleDataService } from "./entities/entity-service/autocom
     WorkspaceComponentsModule,
     WorkspaceRoutingModule,
     FeedServicesModule,
+    IconModule,
     NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+      Object.assign(_.cloneDeep(allIcons))
     ),
   ],
   declarations: [WorkspaceComponent],

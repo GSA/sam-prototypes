@@ -5,7 +5,6 @@ import { RegistrationLandingEntityRoutingModule } from './registration-landing-e
 import { RegistrationLandingEntityComponent } from './registration-landing-entity.component';
 import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 
-
 @NgModule({
   declarations: [RegistrationLandingEntityComponent],
   imports: [
