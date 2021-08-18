@@ -5,7 +5,7 @@
 
   <div class="padding-x-9 padding-y-2 font-sans-2xs line-height-sans-6 text-base">
     <add-subawardee-stepper [model]="model" [stepValidityMap]="data.stepValidityMap" [queryParamKey]="'subawardee'"
-      [isRouteEnabled]="false" (saveData)="onSaveData($event)">
+      [isRouteEnabled]="false" (saveData)="onSaveData($event)" [linear]="true">
       <sds-step *ngFor="let step of data.fields" [id]="step.templateOptions.id" [fieldConfig]="step"
         [text]="step.templateOptions.label">
       </sds-step>

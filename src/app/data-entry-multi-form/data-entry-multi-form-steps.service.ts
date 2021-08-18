@@ -253,6 +253,39 @@ export class DataEntryMultiFormStepsService {
           },
         ],
       },
+      // step 3
+      {
+        templateOptions: {
+          label: "Details",
+          id: 'subStep3'
+        },
+        fieldGroup: [
+          {
+            key: "dunsNumber",
+            type: "input",
+            templateOptions: {
+              label: "Number",
+            },
+          },
+          {
+            key: "name",
+            type: "input",
+            templateOptions: {
+              label: "Name",
+            },
+          },
+
+          {
+            key: "description1",
+            type: "textarea",
+            templateOptions: {
+              label:
+                "Description of the overall purpose and expected outcomes, OR results of the contract, including significant deliverables and, if appropriate, associated units of measure. (Optional)",
+            },
+          }
+        ],
+      },
+
     ]
 
   }
