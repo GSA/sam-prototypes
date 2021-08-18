@@ -7,13 +7,12 @@ import { FormlyFieldConfig, FormlyModule } from "@ngx-formly/core";
 import { CdkStepperModule } from "@angular/cdk/stepper";
 import { FormlySubawardComponent } from "./formly-subaward";
 import { FormlyContractComponent } from "./formly-contract";
-import { IconModule } from "@gsa-sam/ngx-uswds-icons";
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { SubawardDataComponent } from "../subaward-data/subaward-data.component";
 import { ReviewContractComponent } from "../review-contract/review-contract.component";
 
 import { SdsActionsMenuModule } from "@gsa-sam/layouts";
 import { ExpandableCardModule } from "../../app-layout/card/card.module";
-import { StepperModule } from "../../app-layout/stepper/stepper.module";
 import { FormlyCustomComponent } from "./formly-custom";
 import { SubawardeeRepeatTypeComponent } from "./repeat-section";
 import { SubawardeeReadOnlyRepeatTypeComponent } from "./readonly-repeat-section";
@@ -31,7 +30,7 @@ import { SubawardeeReadOnlyRepeatTypeComponent } from "./readonly-repeat-section
   imports: [
     CommonModule,
     FormsModule,
-    StepperModule,
+
     SdsActionsMenuModule,
     ExpandableCardModule,
     CdkStepperModule,

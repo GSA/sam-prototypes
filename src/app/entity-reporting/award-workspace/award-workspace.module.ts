@@ -6,8 +6,7 @@ import { Subject } from "rxjs";
 
 import {
   SdsCollapseModule,
-  SdsSearchModule,
-
+  SdsSearchModule
 } from "@gsa-sam/components";
 import { SdsFiltersModule } from "@gsa-sam/sam-formly";
 import {
@@ -30,8 +29,6 @@ import { AwardWorkspaceComponent } from "./award-workspace.component";
 import { AwardItemComponent } from "./award-item.component";
 import { ResponsiveSidebarComponent } from "../../app-layout/responsive-sidebar.component";
 import { SearchResultComponent } from "../../app-layout/search-result.component";
-import { IconModule } from "@gsa-sam/ngx-uswds-icons";
-//"../../../../../app-layout/responsive-sidebar.component";
 
 @NgModule({
   declarations: [
@@ -47,7 +44,6 @@ import { IconModule } from "@gsa-sam/ngx-uswds-icons";
     AppLayoutModule,
     ComponentsModule,
     SdsSearchModule,
-    IconModule,
     SdsButtonGroupModule,
     SdsFiltersModule,
     SdsSubheaderModule,

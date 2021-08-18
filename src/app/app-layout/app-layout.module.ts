@@ -1,10 +1,9 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { RouterModule } from '@angular/router';
 import { FormlyModule } from "@ngx-formly/core";
 
-import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-import { allIcons as sdsAllIcons } from "@gsa-sam/components";
-import _ from "lodash-es";
+import { chevronLeft, chevronRight, dash, x, fileText, plus, question, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 import {
   SdsCollapseModule,
@@ -58,11 +57,9 @@ import { IconModule } from "@gsa-sam/ngx-uswds-icons";
     SdsCollapseModule,
     SdsSideNavigationModule,
     SideToolbarModule,
-    SdsExternalLinkDirectivesModule,
     IconModule,
-    NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
-    )
+    SdsExternalLinkDirectivesModule,
+    NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, dash, x, fileText, plus, question })
   ],
   exports: [
     AppHeaderComponent,

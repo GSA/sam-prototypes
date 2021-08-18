@@ -10,6 +10,7 @@ import { SdsFiltersModule, SDSFormlyUpdateComunicationService } from "@gsa-sam/s
 import { SdsSubheaderModule, SearchListServiceModule } from "@gsa-sam/layouts";
 
 import { AppLayoutModule } from '../../app-layout/app-layout.module';
+import { DataEntryLayoutModule } from '../../app-layout/data-entry-layout/data-entry-layout.module';
 import { WorkspaceLayoutModule } from '../../app-layout/workspace-layout/workspace-layout.module';
 
 import { SystemAccountsFiltersComponent } from './system-accounts-filters.component';
@@ -33,6 +34,7 @@ import { SystemAccountsWorkspaceComponent } from "./system-accounts-workspace.co
     SdsSubheaderModule,
     SearchListServiceModule,
     AppLayoutModule,
+    DataEntryLayoutModule,
     WorkspaceLayoutModule,
     SystemAccountItemModule,
     SystemAccountsServiceModule,

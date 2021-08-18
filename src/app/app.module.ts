@@ -20,9 +20,6 @@ import { FormlyModule } from "@ngx-formly/core";
 import { AppLayoutModule } from "./app-layout/app-layout.module";
 import { AppService } from "./services/app-service/app.service";
 import { SamModelService } from "./model/sam-model.service";
-import _ from "lodash-es";
-import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import { ToastrModule } from "ngx-toastr";
 import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
@@ -38,13 +35,9 @@ import { IconModule } from "@gsa-sam/ngx-uswds-icons";
     AppLayoutModule,
     SdsExternalLinkDirectivesModule,
     FormlyModule,
-    IconModule,
     SdsToastModule,
     IconModule,
     ToastrModule.forRoot(SdsToastSettings),
-    NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
-    ),
   ],
   providers: [],
   entryComponents: [SdsToastComponent],

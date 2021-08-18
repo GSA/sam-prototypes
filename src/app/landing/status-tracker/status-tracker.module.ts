@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
 import { SdsFiltersModule } from '@gsa-sam/sam-formly';
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 
 import { StatusTrackerRoutingModule } from './status-tracker-routing.module';
 import { StatusTrackerComponent } from './status-tracker.component';
-import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 
 @NgModule({
   declarations: [StatusTrackerComponent],

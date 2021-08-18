@@ -6,8 +6,7 @@ import {
   SdsToolbarModule,
   SdsAccordionModule,
   SdsPageModule,
-  SdsSearchModule,
-
+  SdsSearchModule
 } from "@gsa-sam/components";
 
 import {
@@ -23,10 +22,9 @@ import { RequestRoutingModule } from "./request-routing.module";
 import { RequestServiceModule } from "./service/service.module";
 import { RequestItemModule } from "./request-item/request-item.module";
 import { RequestComponent } from "./request.component";
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
-import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   imports: [
@@ -49,7 +47,7 @@ import { IconModule } from "@gsa-sam/ngx-uswds-icons";
     RequestItemModule,
 
     NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+      Object.assign(_.cloneDeep(allIcons))
     ),
   ],
   declarations: [RequestComponent],

@@ -5,13 +5,10 @@ import { FormsModule } from "@angular/forms";
 
 import { SdsSubheaderModule } from "@gsa-sam/layouts";
 import { SdsSearchModule } from "@gsa-sam/components";
+import { AppLayoutModule } from '../../app-layout/app-layout.module';
 
 import { DownloadsRoutingModule } from "./downloads-routing.module";
 import { DownloadsComponent } from "./downloads.component";
-import { NgxBootstrapIconsModule, allIcons } from "ngx-bootstrap-icons";
-import { allIcons as sdsAllIcons } from "@gsa-sam/components";
-import _ from "lodash-es";
-import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   declarations: [DownloadsComponent],
@@ -19,12 +16,9 @@ import { IconModule } from "@gsa-sam/ngx-uswds-icons";
     CommonModule,
     RouterModule,
     FormsModule,
-    IconModule,
+    AppLayoutModule,
     SdsSubheaderModule,
     SdsSearchModule,
-    NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
-    ),
     DownloadsRoutingModule,
   ],
   exports: [DownloadsComponent],

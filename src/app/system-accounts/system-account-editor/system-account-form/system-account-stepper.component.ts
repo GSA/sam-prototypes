@@ -1,14 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { SdsStepper } from '@gsa-sam/sam-formly';
 
 @Component({
-  selector: 'app-system-account-stepper',
-  templateUrl: './system-account-stepper.component.html'
+  selector: 'system-account-stepper',
+  providers: [{provide: SdsStepper, useExisting: SystemAccountStepperComponent}],
+  templateUrl: './system-account-stepper.component.html',
+  styles: [
+    '.justify-content-space-between {justify-content: space-between; }',
+    '.usa-sidenav__item--disabled {cursor: default; hover:none; opacity: 60%; pointer-events: none}',
+  ]
 })
-export class SystemAccountStepperComponent implements OnInit {
+export class SystemAccountStepperComponent extends SdsStepper {
 
-  constructor() { }
+  onCancelClicked() {
+  }
 
-  ngOnInit(): void {
+  onSideNavClick() {
   }
 
 }

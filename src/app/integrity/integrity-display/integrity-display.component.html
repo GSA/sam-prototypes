@@ -1,13 +1,8 @@
 <sds-subheader>
-  <!-- =============== BACK BUTTON =============== -->
-  <button class="sds-button sds-button--circular" (click)="back();">
-    <usa-icon [icon]="'chevron-left'"></usa-icon>
-  </button>
 
-  <!-- =============== TITLE =============== -->
-  <span class="font-heading-lg text-semibold margin-right-6">
-    Integrity Record
-  </span>
+  <back-button></back-button>
+
+  <subheader-title title="Integrity Record"></subheader-title>
 
   <sds-subheader-actions [model]="subheaderActions" (clicks)="log($event)">
   </sds-subheader-actions>

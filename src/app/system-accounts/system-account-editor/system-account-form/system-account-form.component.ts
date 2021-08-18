@@ -10,23 +10,15 @@ import { SystemAccountEditorService } from '../system-account-editor-service/sys
 @Component({
   selector: 'system-account-form',
   templateUrl: './system-account-form.component.html',
-  providers: [{provide: SdsStepper, useExisting: SystemAccountFormComponent}]
+  providers: [SdsStepper],
 })
-export class SystemAccountFormComponent extends SdsStepper implements OnInit {
+export class SystemAccountFormComponent implements OnInit {
 
   id: string = 'system-account';
 
-  steps: any[];
+  showLoading = false;
 
-  constructor(router: Router,
-      activatedRoute: ActivatedRoute,
-      cdr: ChangeDetectorRef,
-      public editorService: SystemAccountEditorService) { 
-    super(router, activatedRoute, cdr);
-    this.model = {};
-    this.stepValidityMap = {};
-    this.queryParamKey = "advancedStepper";
-    this.steps = [
+  steps: any[] = [
       {
         id: "system-information",
         text: "System Information",
@@ -62,7 +54,25 @@ export class SystemAccountFormComponent extends SdsStepper implements OnInit {
         route: "/system-accounts/editor/edit",
         mode: NavigationMode.INTERNAL,
       }
-    ];
+  ];
+
+  currentStepId: string;
+
+  reinitializeComponents = false;
+
+  onStepChange($event) {
+    this.currentStepId = $event.id;
+  }
+
+  onSaveData(data: {model: any, metadata: any}) {
+    console.log(data);
+  }
+
+  updateModel($event) {
+    console.log('Updating...' + $event);
+  }
+
+  constructor(public editorService: SystemAccountEditorService) { 
   }
 
   ngOnInit(): void {

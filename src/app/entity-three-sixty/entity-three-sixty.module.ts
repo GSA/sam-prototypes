@@ -30,8 +30,8 @@ import { IconModule } from '@gsa-sam/ngx-uswds-icons';
   imports: [
     CommonModule,
     RouterModule,
-    SdsSideNavigationModule,
     IconModule,
+    SdsSideNavigationModule,
     SdsSubheaderModule,
     ComponentsModule,
     SdsButtonGroupModule,

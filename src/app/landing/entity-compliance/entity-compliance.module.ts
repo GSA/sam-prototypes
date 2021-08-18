@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  SdsSearchModule,
-  
+  SdsSearchModule
 } from '@gsa-sam/components';
 
 import { EntityComplianceRoutingModule } from './entity-compliance-routing.module';

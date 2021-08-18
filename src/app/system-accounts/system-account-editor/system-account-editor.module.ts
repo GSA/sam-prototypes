@@ -10,6 +10,7 @@ import { SdsSubheaderModule } from "@gsa-sam/layouts";
 
 import { ComponentsModule } from '../../components/components.module';
 import { AppLayoutModule } from '../../app-layout/app-layout.module';
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 
 import { SystemAccountEditorRoutingModule } from './system-account-editor-routing.module';
 import { SystemAccountEditorComponent } from './system-account-editor.component';
@@ -22,6 +23,7 @@ import { SystemAccountEditorComponent } from './system-account-editor.component'
     RouterModule,
     ComponentsModule,
     AppLayoutModule,
+    IconModule,
     SdsSubheaderModule,
     SdsButtonGroupModule,
     NgxBootstrapIconsModule.pick({ chevronLeft }),

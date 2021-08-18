@@ -5,16 +5,14 @@ import { RouterModule } from "@angular/router";
 
 import {
   SdsSearchModule,
-  SdsVideoPlayerModule,
-
+  SdsVideoPlayerModule
 } from "@gsa-sam/components";
 
 import { OpportunitiesLandingFederalRoutingModule } from "./opportunities-landing-federal-routing.module";
 import { OpportunitiesLandingFederalComponent } from "./opportunities-landing-federal.component";
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
-import { allIcons as sdsAllIcons } from "@gsa-sam/components";
 import _ from "lodash-es";
-import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   declarations: [OpportunitiesLandingFederalComponent],
@@ -22,7 +20,7 @@ import { IconModule } from "@gsa-sam/ngx-uswds-icons";
     CommonModule,
     RouterModule,
     NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons), _.cloneDeep(sdsAllIcons))
+      Object.assign(_.cloneDeep(allIcons))
     ),
     FormsModule,
     SdsSearchModule,
@@ -32,4 +30,4 @@ import { IconModule } from "@gsa-sam/ngx-uswds-icons";
   ],
   exports: [OpportunitiesLandingFederalComponent],
 })
-export class OpportunitiesLandingFederalModule {}
+export class OpportunitiesLandingFederalModule { }
