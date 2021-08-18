@@ -9,11 +9,9 @@ import { SdsAccordionModule } from "@gsa-sam/sam-material-extensions";
 
 import { IntegrityLandingRoutingModule } from "./integrity-landing-routing.module";
 import { IntegrityLandingComponent } from "./integrity-landing.component";
-
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import _ from "lodash-es";
-import { IconModule } from "@gsa-sam/ngx-uswds-icons";
-
 
 @NgModule({
   declarations: [IntegrityLandingComponent],
