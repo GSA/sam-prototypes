@@ -32,7 +32,6 @@ import { DisplayNavigationComponent } from "./display-navigation/display-navigat
 import { DisplaySectionComponent } from "./display-section.component";
 import { DisplaySubsectionComponent } from "./display-subsection.component";
 import { ResponsiveSidebarComponent } from "./responsive-sidebar.component";
-import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   declarations: [
