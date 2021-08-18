@@ -65,4 +65,4 @@ import _ from "lodash-es";
     HomeHelpComponent,
   ],
 })
-export class HomeModule {}
+export class HomeModule { }

@@ -52,4 +52,4 @@ import _ from "lodash-es";
   ],
   declarations: [RequestComponent],
 })
-export class RequestModule {}
+export class RequestModule { }

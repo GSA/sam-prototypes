@@ -29,4 +29,4 @@ import _ from "lodash-es";
   ],
   exports: [HelpPageComponent],
 })
-export class HelpPageModule {}
+export class HelpPageModule { }

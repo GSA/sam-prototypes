@@ -10,9 +10,8 @@ import { SdsSubheaderModule, SideToolbarModule } from "@gsa-sam/layouts";
 
 import { ComponentsModule } from '../components/components.module';
 import { AppLayoutModule } from '../app-layout/app-layout.module';
-import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 
-import { EntityThreeSixtyServiceModule } from 
+import { EntityThreeSixtyServiceModule } from
   './services/entity-three-sixty-service/entity-three-sixty-service.module';
 
 import { EntityThreeSixtyRoutingModule } from './entity-three-sixty-routing.module';
@@ -23,6 +22,7 @@ import { EntityRegistrationSummaryComponent } from "./entity-registration-summar
 import { SummaryReviewListComponent } from "./summary-review-list.component";
 import { SummaryAddressesComponent } from "./summary-addresses.component";
 import { EntityThreeSixtyNavigationComponent } from './entity-three-sixty-navigation.component';
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 
 
 @NgModule({

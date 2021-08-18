@@ -48,4 +48,4 @@ import _ from "lodash-es";
   exports: [EntityListComponent],
   providers: [EntityService],
 })
-export class EntitiesModule {}
+export class EntitiesModule { }

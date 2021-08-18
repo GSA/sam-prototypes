@@ -46,7 +46,7 @@ export class SummaryReviewListComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }

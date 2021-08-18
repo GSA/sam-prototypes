@@ -33,4 +33,4 @@ import _ from "lodash-es";
   ],
   exports: [ExclusionsComponent],
 })
-export class ExclusionsModule {}
+export class ExclusionsModule { }

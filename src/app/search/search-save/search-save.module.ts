@@ -59,4 +59,4 @@ import _ from "lodash-es";
     ),
   ],
 })
-export class SearchSaveModule {}
+export class SearchSaveModule { }

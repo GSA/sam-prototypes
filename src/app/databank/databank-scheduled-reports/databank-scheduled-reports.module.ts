@@ -24,4 +24,4 @@ import _ from "lodash-es";
   ],
   exports: [DatabankScheduledReportsComponent],
 })
-export class DatabankScheduledReportsModule {}
+export class DatabankScheduledReportsModule { }

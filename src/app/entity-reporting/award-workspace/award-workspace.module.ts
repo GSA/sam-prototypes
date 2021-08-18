@@ -54,4 +54,4 @@ import { SearchResultComponent } from "../../app-layout/search-result.component"
   ],
   exports: [AwardWorkspaceComponent, AwardItemComponent],
 })
-export class AwardWorkspaceModule {}
+export class AwardWorkspaceModule { }

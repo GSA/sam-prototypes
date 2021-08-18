@@ -30,4 +30,4 @@ import _ from "lodash-es";
   ],
   exports: [OpportunitiesLandingComponent],
 })
-export class OpportunitiesLandingModule {}
+export class OpportunitiesLandingModule { }

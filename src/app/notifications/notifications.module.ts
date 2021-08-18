@@ -31,7 +31,7 @@ import { NotificationFiltersComponent } from './notification-filters/notificatio
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule, 
+    RouterModule,
     AppLayoutModule,
     WorkspaceLayoutModule,
     IconModule,
@@ -53,5 +53,5 @@ import { NotificationFiltersComponent } from './notification-filters/notificatio
   exports: [NotificationFiltersComponent],
   providers: [SDSFormlyUpdateComunicationService]
 })
-export class NotificationsModule {}
+export class NotificationsModule { }
 

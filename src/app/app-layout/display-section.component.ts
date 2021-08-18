@@ -26,7 +26,7 @@ export class DisplaySectionComponent implements OnInit {
   @Input() title: string;
   @Input() id: string;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }

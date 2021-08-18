@@ -33,4 +33,4 @@ import _ from "lodash-es";
   ],
   exports: [AssistanceLandingComponent],
 })
-export class AssistanceLandingModule {}
+export class AssistanceLandingModule { }

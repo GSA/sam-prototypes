@@ -1,12 +1,10 @@
 <system-account-stepper #stepper [queryParamKey]="'sdsAdvancedStepper'" [model]="editorService.model"
-  [stepValidityMap]="editorService.stepValidityMap" (stepChange)="onStepChange($event)"
-  [linear]="false"
+  [stepValidityMap]="editorService.stepValidityMap" (stepChange)="onStepChange($event)" [linear]="false"
   (saveData)="onSaveData($event)">
-  <sds-step *ngFor="let step of steps" [id]="step.id" [text]="step.text"
-      [fieldConfig]="step.fieldConfig">
-      <h1 sdsStepHeader class="margin-top-0">
-        {{step.text}}
+  <sds-step *ngFor="let step of steps" [id]="step.id" [text]="step.text" [fieldConfig]="step.fieldConfig">
+    <h1 sdsStepHeader class="margin-top-0">
+      {{step.text}}
       <hr>
-      </h1>
+    </h1>
   </sds-step>
 </system-account-stepper>

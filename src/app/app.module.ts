@@ -21,6 +21,7 @@ import { AppLayoutModule } from "./app-layout/app-layout.module";
 import { AppService } from "./services/app-service/app.service";
 import { SamModelService } from "./model/sam-model.service";
 import { ToastrModule } from "ngx-toastr";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,6 +36,7 @@ import { ToastrModule } from "ngx-toastr";
     SdsExternalLinkDirectivesModule,
     FormlyModule,
     SdsToastModule,
+    IconModule,
     ToastrModule.forRoot(SdsToastSettings),
   ],
   providers: [],

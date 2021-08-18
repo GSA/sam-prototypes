@@ -46,4 +46,4 @@ import _ from "lodash-es";
   ],
   exports: [WagesLandingComponent, WagesSubPagesComponent],
 })
-export class WagesLandingModule {}
+export class WagesLandingModule { }

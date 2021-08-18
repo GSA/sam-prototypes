@@ -24,13 +24,12 @@ import { SystemAccountEditorServiceModule } from '../system-account-editor-servi
 import { SystemAccountFormComponent } from './system-account-form.component';
 import { SystemAccountStepperComponent } from './system-account-stepper.component';
 
-
 @NgModule({
   declarations: [SystemAccountFormComponent, SystemAccountStepperComponent],
   imports: [
     CommonModule,
     RouterModule,
-    IconModule, 
+    IconModule,
     SdsToastModule,
     FormlyModule,
     SdsFormlyModule,

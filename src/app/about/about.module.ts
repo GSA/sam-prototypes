@@ -17,4 +17,4 @@ import { AboutComponent } from "./about.component";
   ],
   exports: [AboutComponent],
 })
-export class AboutModule {}
+export class AboutModule { }

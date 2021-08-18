@@ -26,4 +26,4 @@ import _ from "lodash-es";
   ],
   exports: [HierarchyLandingFederalComponent],
 })
-export class HierarchyLandingFederalModule {}
+export class HierarchyLandingFederalModule { }

@@ -48,4 +48,4 @@ import _ from "lodash-es";
   declarations: [OpportunitiesComponent],
   exports: [OpportunitiesComponent],
 })
-export class OpportunitiesModule {}
+export class OpportunitiesModule { }

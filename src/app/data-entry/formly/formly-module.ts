@@ -13,7 +13,6 @@ import { ReviewContractComponent } from "../review-contract/review-contract.comp
 
 import { SdsActionsMenuModule } from "@gsa-sam/layouts";
 import { ExpandableCardModule } from "../../app-layout/card/card.module";
-import { StepperModule } from "../../app-layout/stepper/stepper.module";
 import { FormlyCustomComponent } from "./formly-custom";
 import { SubawardeeRepeatTypeComponent } from "./repeat-section";
 import { SubawardeeReadOnlyRepeatTypeComponent } from "./readonly-repeat-section";
@@ -31,7 +30,7 @@ import { SubawardeeReadOnlyRepeatTypeComponent } from "./readonly-repeat-section
   imports: [
     CommonModule,
     FormsModule,
-    StepperModule,
+
     SdsActionsMenuModule,
     ExpandableCardModule,
     CdkStepperModule,

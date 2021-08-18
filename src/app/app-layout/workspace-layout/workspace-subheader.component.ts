@@ -58,14 +58,14 @@ export class WorkspaceSubheaderComponent implements OnInit {
 
   ngOnInit(): void {
 
-  	this.searchSettings = {
-  		placeholder: this.placeholder,   
-  		parentSelector: '.sds-subheader__content',
-    	inputClass: 'width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block',
-    	size: 'small',
-    	ariaLabel: 'Search Exclusions',
-    	dropdown: {}
-  	}
+    this.searchSettings = {
+      placeholder: this.placeholder,
+      parentSelector: '.sds-subheader__content',
+      inputClass: 'width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block',
+      size: 'small',
+      ariaLabel: 'Search Exclusions',
+      dropdown: {}
+    }
   }
 
   searchSubmit(keyword) {

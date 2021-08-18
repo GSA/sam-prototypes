@@ -19,12 +19,12 @@ import {
   SDSFormlyUpdateComunicationService,
 } from "@gsa-sam/sam-formly";
 
-import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { HelpRoutingModule } from "./help-routing.module";
 import { HelpComponent } from "./help.component";
 import { HelpItemModule } from "./help-item/help-item.module";
 import { HelpServiceModule } from "./service/service.module";
 import { chevronLeft, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   declarations: [HelpComponent],
@@ -51,4 +51,4 @@ import { chevronLeft, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
   exports: [HelpComponent],
   providers: [SDSFormlyUpdateComunicationService],
 })
-export class HelpModule {}
+export class HelpModule { }

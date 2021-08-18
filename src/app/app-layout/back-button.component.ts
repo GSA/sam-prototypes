@@ -23,10 +23,10 @@ export class BackButtonComponent implements OnInit {
   }
 
   back() {
-    if(!this.route) {
-	     this.location.back();
+    if (!this.route) {
+      this.location.back();
     } else {
-       this.router.navigate([this.route]);
+      this.router.navigate([this.route]);
     }
   }
 }

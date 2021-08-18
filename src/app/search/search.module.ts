@@ -101,4 +101,4 @@ import { SearchFormlyModule } from "./search-formly/search-formly.module";
   ],
   exports: [SearchComponent],
 })
-export class SearchModule {}
+export class SearchModule { }

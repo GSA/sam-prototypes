@@ -50,4 +50,4 @@ import _ from "lodash-es";
   exports: [AssistancelistComponent],
   providers: [SDSFormlyUpdateComunicationService],
 })
-export class AssistancelistModule {}
+export class AssistancelistModule { }

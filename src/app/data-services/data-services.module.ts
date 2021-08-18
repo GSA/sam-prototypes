@@ -22,4 +22,4 @@ import { IconModule } from '@gsa-sam/ngx-uswds-icons';
   declarations: [DataServicesComponent],
   exports: [DataServicesComponent],
 })
-export class DataServicesModule {}
+export class DataServicesModule { }

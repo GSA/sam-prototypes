@@ -31,4 +31,4 @@ import _ from "lodash-es";
   ],
   exports: [EntityInformationLandingComponent, SplashAlertComponent],
 })
-export class EntityInformationLandingModule {}
+export class EntityInformationLandingModule { }
