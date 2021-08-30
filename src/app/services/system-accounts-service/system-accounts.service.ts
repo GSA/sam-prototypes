@@ -3,10 +3,9 @@ import { Observable, of } from 'rxjs';
 import { SearchParameters, SearchResult, SearchListConfiguration } from '@gsa-sam/layouts';
 import { Statistic, StatisticsService } from '../interfaces/public-apis';
 import { systemAccounts } from './system-account.data';
-import { SystemAccountsServiceModule } from './system-accounts-service.module';
 
 @Injectable({
-  providedIn: SystemAccountsServiceModule
+  providedIn: 'root'
 })
 export class SystemAccountsService implements StatisticsService {
 

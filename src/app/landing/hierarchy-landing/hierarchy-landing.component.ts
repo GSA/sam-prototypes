@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { LocationStrategy } from '@angular/common';
-import { SamModelService } from '../../model/sam-model.service';
+import { AppService } from '../../services/app-service/app.service';
 import {allIcons} from 'ngx-bootstrap-icons';
 
 @Component({
@@ -12,7 +12,7 @@ import {allIcons} from 'ngx-bootstrap-icons';
 })
 export class HierarchyLandingComponent implements OnInit {
 
-  constructor(private router: Router, public locationStrategy: LocationStrategy, public model: SamModelService) { }
+  constructor(private router: Router, public locationStrategy: LocationStrategy, public service: AppService) { }
 
   ngOnInit() {
   }

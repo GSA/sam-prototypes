@@ -79,9 +79,9 @@ export class WorkspaceComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.requestsService.getFeedItems().subscribe((requests: FeedItem[]) =>
+    this.requestsService.getData(this.feedParameters).subscribe((results: SearchResult) =>
       {
-        this.requests = requests;
+        this.requests = results.items;
       });
     this.notificationsService.getData(this.feedParameters).subscribe((results: SearchResult) =>
       {

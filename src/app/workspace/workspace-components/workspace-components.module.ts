@@ -16,7 +16,6 @@ import { EntityReportingDashboardComponent } from './entity-reporting-dashboard.
 import { EntityRegistrationServiceModule } from '../../services/entity-registration-service/entity-registration-service.module';
 import { ContractOpportunitiesServiceModule } from '../../services/contract-opportunities-service/contract-opportunities-service.module';
 import { AssistanceServiceModule } from '../../services/assistance-service/assistance-service.module';
-import { SystemAccountsServiceModule } from '../../services/system-accounts-service/system-accounts-service.module';
 import { HierarchyServiceModule } from '../../services/hierarchy-service/hierarchy-service.module';
 import { WorkspaceStatisticSquareComponent, WorkspaceStatisticsSquareComponent } from './workspace-statistic-square.component';
 import { ResponsibilityQualificationDashboardComponent } from './responsibility-qualification-dashboard.component';
@@ -30,7 +29,6 @@ import { ResponsibilityQualificationDashboardComponent } from './responsibility-
     AssistanceServiceModule,
     ContractOpportunitiesServiceModule,
     EntityRegistrationServiceModule,
-    SystemAccountsServiceModule,
     HierarchyServiceModule
   ],
   exports: [WorkspaceCardComponent, WorkspaceStatisticComponent, WorkspaceStatisticsComponent, WorkspaceDashboardComponent, ContractOpportunitiesDashboardComponent, AssistanceListingsDashboardComponent, CbaDashboardComponent, EntityRegistrationDashboardComponent, UserDirectoryDashboardComponent, FederalHierarchyDashboardComponent, SystemAccountsDashboardComponent, EntityReportingDashboardComponent, WorkspaceStatisticSquareComponent, WorkspaceStatisticsSquareComponent, ResponsibilityQualificationDashboardComponent]

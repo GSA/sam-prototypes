@@ -1,6 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { SamModelService } from '../model/sam-model.service';
 
 @Component({
   selector: 'app-data-services',
@@ -17,9 +16,7 @@ export class DataServicesComponent implements OnInit {
   }
 
   constructor(
-    private router: Router,
-    public model: SamModelService
-  ) {}
+    private router: Router) {}
 
   ngOnInit() {
   }

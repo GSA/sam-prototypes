@@ -64,15 +64,8 @@ const routes: Routes = [
 				data: {
 				  id: "home"
 				}
-			},
-			{
-				path: 'site-map',
-				loadChildren: () => import ('./site-map/site-map.module').then(m => m.SiteMapModule),
-				data: {
-				  id: "home"
-				}
 			}
-  	  ]
+  	]
   }
 ];
 

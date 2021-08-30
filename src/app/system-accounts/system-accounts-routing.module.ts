@@ -9,6 +9,10 @@ const routes: Routes = [
 	{
 		path: 'editor',
 		loadChildren: () => import('./system-account-editor/system-account-editor.module').then(m => m.SystemAccountEditorModule)
+	},
+	{
+		path: 'request',
+		loadChildren: () => import('./system-account-request/system-account-request.module').then(m => m.SystemAccountRequestModule)
 	}
 ];
 

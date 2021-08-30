@@ -20,7 +20,6 @@ import {
 import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 
 import { SystemAccountFormRoutingModule } from './system-account-form-routing.module';
-import { SystemAccountEditorServiceModule } from '../system-account-editor-service/system-account-editor-service.module';
 import { SystemAccountFormComponent } from './system-account-form.component';
 import { SystemAccountStepperComponent } from './system-account-stepper.component';
 
@@ -38,7 +37,6 @@ import { SystemAccountStepperComponent } from './system-account-stepper.componen
     SdsStepperModule,
     AppLayoutModule,
     NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, circle, slashCircleFill, checkCircleFill, question, save, x }),
-    SystemAccountEditorServiceModule,
     SystemAccountFormRoutingModule
   ],
   exports: [SystemAccountFormComponent, SystemAccountStepperComponent]

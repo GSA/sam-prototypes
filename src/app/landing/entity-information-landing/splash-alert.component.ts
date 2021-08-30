@@ -1,11 +1,10 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-
-import { SamModelService } from '../../model/sam-model.service';
+import { AppService } from '../../services/app-service/app.service';
 
 @Component({
   selector: 'splash-alert',
   template: `
-      <landing-alert *ngIf="!appModel.signedIn">
+      <landing-alert *ngIf="!service.signedIn">
         <div class="grid-row">
           <div class="grid-col-fill">
             You must be signed in to search for entity registrations
@@ -22,12 +21,12 @@ import { SamModelService } from '../../model/sam-model.service';
 })
 export class SplashAlertComponent implements OnInit {
 
-  constructor(public appModel: SamModelService) { }
+  constructor(public service: AppService) { }
 
   ngOnInit(): void {}
 
   signIn() {
-    this.appModel.signIn('/home/entity-information');
+    this.service.signIn('/home/entity-information');
   }
 
 }

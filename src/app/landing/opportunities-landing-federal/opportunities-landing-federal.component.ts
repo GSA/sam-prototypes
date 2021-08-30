@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
-import { SamModelService } from '../../model/sam-model.service';
+import { AppService } from '../../services/app-service/app.service';
 import {allIcons} from 'ngx-bootstrap-icons';
 
 @Component({
@@ -31,7 +31,7 @@ export class OpportunitiesLandingFederalComponent implements OnInit {
     'preload': 'none'
   };
 
-  constructor(private router: Router, public model: SamModelService) { }
+  constructor(private router: Router, public service: AppService) { }
 
   ngOnInit() {
   }

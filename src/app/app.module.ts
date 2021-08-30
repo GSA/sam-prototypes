@@ -19,7 +19,8 @@ import { FormlyModule } from "@ngx-formly/core";
 
 import { AppLayoutModule } from "./app-layout/app-layout.module";
 import { AppService } from "./services/app-service/app.service";
-import { SamModelService } from "./model/sam-model.service";
+import { SystemAccountsService } from "./services/system-accounts-service/system-accounts.service";
+import { SystemAccountEditorService } from "./system-accounts/system-account-editor/system-account-editor-service/system-account-editor.service"; 
 import { ToastrModule } from "ngx-toastr";
 
 @NgModule({
@@ -46,7 +47,7 @@ export class AppModule {
   static forRoot(): ModuleWithProviders<AppModule> {
     return {
       ngModule: AppModule,
-      providers: [SamModelService, AppService],
+      providers: [AppService, SystemAccountsService, SystemAccountEditorService],
     };
   }
   constructor() { }

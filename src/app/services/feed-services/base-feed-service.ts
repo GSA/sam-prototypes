@@ -1,6 +1,6 @@
 import { Observable, of } from 'rxjs';
 import { SearchParameters, SearchListInterface, SearchResult, SearchListConfiguration } from '@gsa-sam/layouts';
-import { FeedItem, Domain, domainMap } from '../interfaces/public-apis';
+import { FeedItem, Domain, domainMap, itemTypeMap } from '../interfaces/public-apis';
 
 export abstract class BaseFeedService implements SearchListInterface {
 
@@ -46,6 +46,21 @@ export abstract class BaseFeedService implements SearchListInterface {
            }
        }
        return of(domains);
+    }
+
+    getItemTypes(): Observable<any[]> {
+        let itemTypes:any[] = [];
+       let feedItems = this.getFeedItems();
+       for(let i=0; i<feedItems.length; i++) {
+          let compareItem = feedItems[i].itemType;
+          if(!(itemTypes.some(result => result.value == compareItem))) {
+                itemTypes.push({
+                    value: compareItem,
+                    label: itemTypeMap.get(compareItem)
+                });
+          }
+       }
+       return of(itemTypes);       
     }
 
     filterFunction(domain: any, data: FeedItem[]): FeedItem[] {

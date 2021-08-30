@@ -4,10 +4,8 @@ import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 
 import { SystemAccountsService } from '../../../services/system-accounts-service/system-accounts.service';
 
-import { SystemAccountEditorServiceModule } from './system-account-editor-service.module';
-
 @Injectable({
-  providedIn: SystemAccountEditorServiceModule
+  providedIn: 'root'
 })
 export class SystemAccountEditorService {
 

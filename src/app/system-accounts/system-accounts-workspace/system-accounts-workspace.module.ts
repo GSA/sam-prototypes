@@ -16,7 +16,6 @@ import { WorkspaceLayoutModule } from '../../app-layout/workspace-layout/workspa
 import { SystemAccountsFiltersComponent } from './system-accounts-filters.component';
 import { SystemAccountItemModule } from "./system-account-item/system-account-item.module";
 import { SystemAccountsWorkspaceRoutingModule } from "./system-accounts-workspace-routing.module";
-import { SystemAccountsServiceModule } from "../../services/system-accounts-service/system-accounts-service.module";
 import { SystemAccountsWorkspaceComponent } from "./system-accounts-workspace.component";
 
 @NgModule({
@@ -37,7 +36,6 @@ import { SystemAccountsWorkspaceComponent } from "./system-accounts-workspace.co
     DataEntryLayoutModule,
     WorkspaceLayoutModule,
     SystemAccountItemModule,
-    SystemAccountsServiceModule,
     SystemAccountsWorkspaceRoutingModule,
   ],
   exports: [SystemAccountsWorkspaceComponent, SystemAccountsFiltersComponent],

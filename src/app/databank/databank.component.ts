@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
-import { SamModelService } from '../model/sam-model.service';
+import { AppService } from '../services/app-service/app.service';
 import { filter, map } from 'rxjs/operators';
 
 @Component({
@@ -10,7 +10,7 @@ import { filter, map } from 'rxjs/operators';
 })
 export class DatabankComponent implements OnInit {
 
-  constructor(public model: SamModelService) {}
+  constructor(public service: AppService) {}
 
   ngOnInit() {
     

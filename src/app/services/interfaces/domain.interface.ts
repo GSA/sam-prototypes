@@ -1,6 +1,7 @@
 
 export enum Domain {
-  Contracting = 1,
+	All,
+  Contracting,
   ContractOpportunities,
   ContractData,
   AssistanceListings,

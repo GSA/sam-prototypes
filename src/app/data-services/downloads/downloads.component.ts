@@ -6,8 +6,6 @@ import {
   Inject
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SamModelService } from '../../model/sam-model.service';
-
 import { fileExtractData } from './downloads.data';
 
 
@@ -60,7 +58,7 @@ export class DownloadsComponent implements OnInit, AfterViewInit {
       placeholder: 'Enter an filename'
     }
 
-    constructor(private model:SamModelService, private route: ActivatedRoute) {
+    constructor(private route: ActivatedRoute) {
         this.currentFolder = fileExtractData.map(initFileData)[0];
         this.breadcrumbs.push(this.currentFolder);
     }

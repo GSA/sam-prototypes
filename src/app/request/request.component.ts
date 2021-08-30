@@ -1,11 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Subject } from 'rxjs';
 
-import { SideNavigationModel, NavigationMode } from '@gsa-sam/components';
+import { NavigationMode } from '@gsa-sam/components';
+import { SearchListLayoutComponent } from '@gsa-sam/layouts';
 
-import { SamModelService } from '../model/sam-model.service';
-import { RequestService } from './service/request.service';
-import { requestNavigationData} from './navigation/navigation.data';
+import { FeedItem } from '../services/interfaces/public-apis';
+import { RequestsService } from '../services/feed-services/requests.service';
+import { RequestFiltersComponent } from './request-filters/request-filters.component';
 
 @Component({
   selector: 'sam-request',
@@ -15,6 +16,16 @@ import { requestNavigationData} from './navigation/navigation.data';
 export class RequestComponent implements OnInit {
 
   domain: string;
+  title: string = "Requests";
+  placeholder: string = "e.g. role, john mason";
+
+  @ViewChild('resultList', { static: true })
+  resultList: SearchListLayoutComponent;
+
+  @ViewChild('filters', { static: true })
+  filters: RequestFiltersComponent;
+
+  public filterChange$ = new Subject<object>();
 
   public subheader = {
     buttons: [],
@@ -23,20 +34,23 @@ export class RequestComponent implements OnInit {
     ]
   };
 
-  constructor(private route: ActivatedRoute, public service: RequestService, public model: SamModelService) {  
+  constructor(public service: RequestsService) {  
+
   }
 
   ngOnInit() {
-      this.domain = this.route.snapshot.queryParamMap.get('domain');
-      this.route.queryParamMap.subscribe(queryParams => {
-        this.domain = queryParams.get('domain');
-        if(!this.domain) {
-          this.domain = 'all';
-        }
-      });
+    this.filterChange$.subscribe((res) => {
+      this.resultList.updateFilter(res);
+    });
   }
 
-  public sideNavModel: SideNavigationModel = requestNavigationData;
+  ngAfterViewInit() {
+    this.resultList.updateFilter(this.filters.filterModel);
+  }
+
+  onApplyFilters() {
+    this.resultList.updateSearchResultsModel({filterModel: this.filters.filterModel});
+  }
 
   log(value) {
     console.log(`%cLog: ${value}`, 'color: blue; font-weight: bold');

@@ -46,9 +46,9 @@
                 </ul>
               </div>
               <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-                <button *ngIf="!model.signedIn" class="usa-button width-full margin-top-2" [routerLink]="['/workspace']"
+                <button *ngIf="!service.signedIn" class="usa-button width-full margin-top-2" [routerLink]="['/workspace']"
                   [queryParams]="{signin: true}">Sign in to get started</button>
-                <button *ngIf="model.signedIn" class="usa-button width-full margin-top-2"
+                <button *ngIf="service.signedIn" class="usa-button width-full margin-top-2"
                   [routerLink]="['/workspace']">Go to workspace</button>
               </div>
               <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">

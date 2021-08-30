@@ -15,7 +15,7 @@
             <p>Government users: We encourage you to request a role if you need access to restricted data.
             </p>
           </div>
-          <div *ngIf="!model.signedIn" class="desktop:grid-col-5 display-none desktop:display-flex">
+          <div *ngIf="!service.signedIn" class="desktop:grid-col-5 display-none desktop:display-flex">
             <div class="sds-tile--outline display-flex flex-column flex-justify height-full">
               <div>
                 <h2>Sign in to get started</h2>
@@ -34,7 +34,7 @@
     <!-- Tile -->
     <div class="grid-row desktop:display-none">
       <div class="grid-col-11 margin-x-auto">
-        <div *ngIf="!model.signedIn" class="desktop:grid-col-5 display-none desktop:display-flex">
+        <div *ngIf="!service.signedIn" class="desktop:grid-col-5 display-none desktop:display-flex">
           <div class="sds-tile--outline display-flex flex-column flex-justify height-full">
             <div>
               <h2>Sign in to get started</h2>
