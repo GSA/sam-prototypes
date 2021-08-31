@@ -14,18 +14,18 @@
 </sds-subheader>
 <main>
   <div class="sds-page">
-      <div class="grid-container">
-        <div class="grid-row">
-          <div class="grid-col margin-0">
-            <search-list-layout [service]="service" [configuration]="service.configuration">
-                <ng-template #resultContent let-item>
-                  <div>
-                    <alert-item [model]="item"></alert-item>
-                  </div>
-                </ng-template>
-            </search-list-layout>
-          </div>
+    <div class="grid-container">
+      <div class="grid-row">
+        <div class="grid-col margin-0">
+          <search-list-layout [service]="service" [configuration]="service.configuration">
+            <ng-template #resultContent let-item>
+              <div>
+                <alert-item [model]="item"></alert-item>
+              </div>
+            </ng-template>
+          </search-list-layout>
         </div>
+      </div>
     </div>
   </div>
 </main>

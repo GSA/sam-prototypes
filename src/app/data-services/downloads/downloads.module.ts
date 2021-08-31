@@ -23,4 +23,4 @@ import { DownloadsComponent } from "./downloads.component";
   ],
   exports: [DownloadsComponent],
 })
-export class DownloadsModule {}
+export class DownloadsModule { }

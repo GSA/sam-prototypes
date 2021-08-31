@@ -22,6 +22,7 @@ import { AppService } from "./services/app-service/app.service";
 import { SystemAccountsService } from "./services/system-accounts-service/system-accounts.service";
 import { SystemAccountEditorService } from "./system-accounts/system-account-editor/system-account-editor-service/system-account-editor.service"; 
 import { ToastrModule } from "ngx-toastr";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,6 +37,7 @@ import { ToastrModule } from "ngx-toastr";
     SdsExternalLinkDirectivesModule,
     FormlyModule,
     SdsToastModule,
+    IconModule,
     ToastrModule.forRoot(SdsToastSettings),
   ],
   providers: [],

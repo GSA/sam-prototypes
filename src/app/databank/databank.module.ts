@@ -23,6 +23,7 @@ import { DatabankComponent } from "./databank.component";
 import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { NgxBootstrapIconsModule, allIcons } from "ngx-bootstrap-icons";
 import _ from "lodash-es";
+
 @NgModule({
   imports: [
     CommonModule,
@@ -45,4 +46,4 @@ import _ from "lodash-es";
   ],
   declarations: [DatabankComponent],
 })
-export class DatabankModule {}
+export class DatabankModule { }

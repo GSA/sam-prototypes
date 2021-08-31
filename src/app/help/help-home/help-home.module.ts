@@ -24,4 +24,4 @@ import _ from "lodash-es";
   ],
   exports: [HelpHomeComponent],
 })
-export class HelpHomeModule {}
+export class HelpHomeModule { }

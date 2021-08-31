@@ -24,5 +24,5 @@ import _ from "lodash-es";
   exports: [SearchResultListEntityDataItemComponent],
 })
 export class SearchResultListEntityDataItemModule {
-  constructor() {}
+  constructor() { }
 }

@@ -32,4 +32,4 @@ import _ from "lodash-es";
   ],
   exports: [HierarchyLandingComponent],
 })
-export class HierarchyLandingModule {}
+export class HierarchyLandingModule { }

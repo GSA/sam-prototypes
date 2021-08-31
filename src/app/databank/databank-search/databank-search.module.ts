@@ -53,4 +53,4 @@ import _ from "lodash-es";
   exports: [DatabankSearchComponent],
   providers: [],
 })
-export class DatabankSearchModule {}
+export class DatabankSearchModule { }

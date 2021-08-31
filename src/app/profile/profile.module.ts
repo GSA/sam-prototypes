@@ -31,4 +31,4 @@ import _ from "lodash-es";
   ],
   exports: [ProfileComponent],
 })
-export class ProfileModule {}
+export class ProfileModule { }

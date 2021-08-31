@@ -27,4 +27,4 @@ import _ from "lodash-es";
   ],
   exports: [DatabankHistoryComponent],
 })
-export class DatabankHistoryModule {}
+export class DatabankHistoryModule { }

@@ -3,7 +3,6 @@ import { CommonModule } from "@angular/common";
 import { RouterModule } from '@angular/router';
 import { FormlyModule } from "@ngx-formly/core";
 
-import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 import { chevronLeft, chevronRight, dash, x, fileText, plus, question, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 import {
@@ -32,6 +31,7 @@ import { DisplayNavigationComponent } from "./display-navigation/display-navigat
 import { DisplaySectionComponent } from "./display-section.component";
 import { DisplaySubsectionComponent } from "./display-subsection.component";
 import { ResponsiveSidebarComponent } from "./responsive-sidebar.component";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
   declarations: [
@@ -59,7 +59,7 @@ import { ResponsiveSidebarComponent } from "./responsive-sidebar.component";
     SideToolbarModule,
     IconModule,
     SdsExternalLinkDirectivesModule,
-    NgxBootstrapIconsModule.pick({chevronLeft, chevronRight, dash, x, fileText, plus, question})
+    NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, dash, x, fileText, plus, question })
   ],
   exports: [
     AppHeaderComponent,
@@ -75,4 +75,4 @@ import { ResponsiveSidebarComponent } from "./responsive-sidebar.component";
     ResponsiveSidebarComponent
   ],
 })
-export class AppLayoutModule {}
+export class AppLayoutModule { }

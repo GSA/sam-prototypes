@@ -11,9 +11,9 @@ import {
 import { NavigationLink, NavigationMode } from "@gsa-sam/components";
 import { FormlyFieldConfig } from "@ngx-formly/core";
 import { GlobalConfig, ToastrService } from "ngx-toastr";
-import { FormlyUtilsService } from "../app-layout/formly/formly-utils.service";
 import { DataEntryMultiFormStepsService } from "./data-entry-multi-form-steps.service";
 import { Router } from "@angular/router";
+import { FormlyUtilsService } from "@gsa-sam/sam-formly";
 
 @Component({
   selector: `app-data-entry-multi`,
@@ -24,8 +24,8 @@ import { Router } from "@angular/router";
   encapsulation: ViewEncapsulation.None,
 })
 export class DataEntryAppComponent implements OnInit, OnDestroy {
-  @ViewChild("myTemplate", {static: true}) myTemplate: TemplateRef<any>;
-
+  @ViewChild("myTemplate", { static: true }) myTemplate: TemplateRef<any>;
+  stepperType: boolean = false;
   steps = [
     {
       id: "step1",
@@ -138,7 +138,7 @@ export class DataEntryAppComponent implements OnInit, OnDestroy {
   }
   ngOnInit() {
     const reviewStep = this.steps.find(step => step.isReview);
-    reviewStep.fieldConfig.fieldGroup.unshift(          {
+    reviewStep.fieldConfig.fieldGroup.unshift({
       key: "customTemplate",
       type: "custom",
       templateOptions: {
@@ -205,7 +205,7 @@ export class DataEntryAppComponent implements OnInit, OnDestroy {
   onReviewAndSubmit(enable = true) {
     const reviewStep = this.steps.find(step => step.isReview);
     let reviewFields = reviewStep.fieldConfig.fieldGroup;
-    FormlyUtilsService.setReadonlyMode(enable, reviewFields, this.model);
+    FormlyUtilsService.setReadonlyMode(enable, reviewFields);
     return reviewFields;
   }
 

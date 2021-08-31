@@ -19,4 +19,4 @@ import _ from "lodash-es";
   ],
   exports: [AssistanceLandingFederalComponent],
 })
-export class AssistanceLandingFederalModule {}
+export class AssistanceLandingFederalModule { }

@@ -20,4 +20,4 @@ import { PocCardComponent } from "./display/poc-card.component";
     PocCardComponent,
   ],
 })
-export class ComponentsModule {}
+export class ComponentsModule { }

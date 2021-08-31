@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import {
   SdsSearchModule
 } from '@gsa-sam/components';
-import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 
 import { EntityComplianceRoutingModule } from './entity-compliance-routing.module';
 import { EntityComplianceComponent } from './entity-compliance.component';
+import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 
 @NgModule({
   declarations: [EntityComplianceComponent],

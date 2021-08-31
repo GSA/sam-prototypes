@@ -96,7 +96,7 @@ const routes: Routes = [
   {
     path: "profile",
     loadChildren: () =>
-      import("./profile/profile.module").then((m) => m.ProfileModule),    
+      import("./profile/profile.module").then((m) => m.ProfileModule),
     data: {
       id: "workspace",
     },
@@ -104,7 +104,7 @@ const routes: Routes = [
   {
     path: "federal-hierarchy",
     loadChildren: () =>
-      import("./federal-hierarchy/federal-hierarchy.module").then((m) => m.FederalHierarchyModule),    
+      import("./federal-hierarchy/federal-hierarchy.module").then((m) => m.FederalHierarchyModule),
     data: {
       id: "workspace",
     },
@@ -112,7 +112,7 @@ const routes: Routes = [
   {
     path: "entity360",
     loadChildren: () =>
-      import("./entity-three-sixty/entity-three-sixty.module").then((m) => m.EntityThreeSixtyModule),    
+      import("./entity-three-sixty/entity-three-sixty.module").then((m) => m.EntityThreeSixtyModule),
     data: {
       id: "search",
     },
@@ -131,6 +131,16 @@ const routes: Routes = [
     path: "integrity",
     loadChildren: () =>
       import("./integrity/integrity.module").then((m) => m.IntegrityModule),
+  },
+  {
+    path: "dataentry",
+    loadChildren: () =>
+      import("./data-entry/data-entry.module").then((m) => m.DataEntryModule),
+  },
+  {
+    path: "dataentry-multiform",
+    loadChildren: () =>
+      import("./data-entry-multi-form/data-entry-multi-form.module").then((m) => m.DataEntryMultiFormModule),
   },
   {
     path: "entity-reporting",
@@ -182,4 +192,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

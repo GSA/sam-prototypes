@@ -32,4 +32,4 @@ import _ from "lodash-es";
   ],
   exports: [DatabankReportComponent],
 })
-export class DatabankReportModule {}
+export class DatabankReportModule { }

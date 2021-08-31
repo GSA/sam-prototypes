@@ -18,6 +18,6 @@ import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeSealComponent implements OnInit {
-  constructor() {}
-  ngOnInit(): void {}
+  constructor() { }
+  ngOnInit(): void { }
 }

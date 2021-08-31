@@ -29,4 +29,4 @@ import _ from "lodash-es";
   ],
   exports: [IntegrityLandingComponent],
 })
-export class IntegrityLandingModule {}
+export class IntegrityLandingModule { }

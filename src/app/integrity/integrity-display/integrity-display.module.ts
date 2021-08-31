@@ -29,4 +29,4 @@ import { AppLayoutModule } from '../../app-layout/app-layout.module';
   ],
   exports: [IntegrityDisplayComponent],
 })
-export class IntegrityDisplayModule {}
+export class IntegrityDisplayModule { }

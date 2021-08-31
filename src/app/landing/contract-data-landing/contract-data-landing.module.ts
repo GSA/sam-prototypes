@@ -22,4 +22,4 @@ import _ from "lodash-es";
   ],
   exports: [ContractDataLandingComponent],
 })
-export class ContractDataLandingModule {}
+export class ContractDataLandingModule { }

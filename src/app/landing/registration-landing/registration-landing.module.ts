@@ -33,4 +33,4 @@ import _ from "lodash-es";
   ],
   exports: [RegistrationLandingComponent],
 })
-export class RegistrationLandingModule {}
+export class RegistrationLandingModule { }

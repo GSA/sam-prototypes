@@ -30,4 +30,4 @@ import _ from "lodash-es";
   ],
   exports: [ExclusionsFederalComponent],
 })
-export class ExclusionsFederalModule {}
+export class ExclusionsFederalModule { }
