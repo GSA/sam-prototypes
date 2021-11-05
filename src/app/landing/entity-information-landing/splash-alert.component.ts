@@ -10,7 +10,7 @@ import { AppService } from '../../services/app-service/app.service';
             You must be signed in to search for entity registrations
           </div>
           <div class="grid-col-auto">
-            <button class="usa-button usa-button--secondary" (click)="signIn();">
+            <button class="usa-button usa-button--primary-lighter" (click)="signIn();">
               Sign In
             </button>
           </div>

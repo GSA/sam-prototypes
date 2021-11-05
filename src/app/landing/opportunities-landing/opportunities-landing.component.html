@@ -57,7 +57,7 @@
                   </button>
                 </div>
                 <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-                  <button class="usa-button usa-button--secondary width-full"
+                  <button class="usa-button usa-button--primary-lighter width-full"
                     [routerLink]="['/home/opportunities-federal']">
                     Go to contract opportunites federal home
                   </button>
@@ -75,7 +75,7 @@
           <sds-accordion-item *ngFor="let help of searchHelp" #first>
             <sds-accordion-title>{{help.title}}</sds-accordion-title>
             <sds-accordion-content>
-              <ul class="sds-list sds-list--icon padding-0">
+              <ul class="usa-list usa-list--icon padding-0">
                 <li *ngFor="let article of help.articles">
                   <span class="sds-list__item-icon">
                     <i [ngClass]="article.icon"></i>
@@ -99,7 +99,7 @@
           <p class="text-base-dark">Manage federal funding and awarding organizations as a hierarchy administrator.</p>
           <div class="desktop:flex-column flex-justify-center grid-row grid-gap">
             <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-              <button class="usa-button usa-button--secondary width-full">Federal Hierarchy for Federal Users</button>
+              <button class="usa-button usa-button--primary-lighter width-full">Federal Hierarchy for Federal Users</button>
             </div>
             <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
               <button class="usa-button width-full">Sign in to Get Started</button>
@@ -111,171 +111,183 @@
     <!-- CARDS -->
     <div class="grid-row grid-gap flex-wrap margin-top-4 padding-x-3 desktop:padding-0">
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a class="sds-card__link">
-              <h2 class="sds-card__title">Do I need a user account?</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <p>Anyone may search contract opportunities without an account. A user account lets you save searches,
-              follow changes to opportunities, and join interested vendor lists.</p>
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <!-- REPLACE ICON -->
-                <usa-icon [icon]="'document-pdf'"></usa-icon>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Quick start guide for creating a login.gov account</a>
-                </span>
-              </li>
-              <li>
-                <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
-                </usa-icon>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Sign up at login.gov</a>
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a class="sds-card__link">
-              <h2 class="sds-card__title">Help</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <usa-icon [icon]="'question-circle'" [size]="'xs'"></usa-icon>
-                <span class="sds-list__item-content">
-                  <a [routerLink]="['/help']" class="usa-link">Frequently Asked Questions</a>
-                </span>
-              </li>
-              <li>
-                <usa-icon [icon]="'book'" [size]="'xs'"></usa-icon>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Glossary Terms</a>
-                </span>
-              </li>
-              <li>
-                <usa-icon [icon]="'camera-reels'" [size]="'xs'"></usa-icon>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Videos</a>
-                </span>
-              </li>
-            </ul>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a>
+                <h2 class="usa-card__heading">Do I need a user account?</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <p>Anyone may search contract opportunities without an account. A user account lets you save searches,
+                follow changes to opportunities, and join interested vendor lists.</p>
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <!-- REPLACE ICON -->
+                  <usa-icon [icon]="'document-pdf'"></usa-icon>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Quick start guide for creating a login.gov account</a>
+                  </span>
+                </li>
+                <li>
+                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
+                  </usa-icon>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Sign up at login.gov</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a class="sds-card__link">
-              <h2 class="sds-card__title">Video: Search Opportunities</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <sds-video-player [VPConfiguration]="videoConfiguration"></sds-video-player>
-          </div>
-        </div>
-      </div>
-      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a class="sds-card__link">
-              <h2 class="sds-card__title">Opportunities Reports</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <usa-icon [icon]="'document-pdf'"></usa-icon>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">How to run a DataBank report</a>
-                </span>
-              </li>
-              <li>
-                <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
-                </usa-icon>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Go to DataBank reports</a>
-                </span>
-              </li>
-            </ul>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a>
+                <h2 class="usa-card__heading">Help</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <usa-icon [icon]="'question-circle'" [size]="'lg'"></usa-icon>
+                  <span class="sds-list__item-content">
+                    <a [routerLink]="['/help']" class="usa-link">Frequently Asked Questions</a>
+                  </span>
+                </li>
+                <li>
+                  <usa-icon [icon]="'book'" [size]="'lg'"></usa-icon>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Glossary Terms</a>
+                  </span>
+                </li>
+                <li>
+                  <usa-icon [icon]="'camera-reels'" [size]="'lg'"></usa-icon>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Videos</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a class="sds-card__link">
-              <h2 class="sds-card__title">Download Data Files</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <usa-icon [icon]="'document-pdf'"></usa-icon>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">How to use contract opportunities data files</a>
-                </span>
-              </li>
-              <li>
-                <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
-                </usa-icon>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Go to contract opportunities data</a>
-                </span>
-              </li>
-              <li>
-                <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
-                </usa-icon>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Go to <span class="text-bold">Buy American Act</span> data</a>
-                </span>
-              </li>
-            </ul>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a>
+                <h2 class="usa-card__heading">Video: Search Opportunities</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <sds-video-player [VPConfiguration]="videoConfiguration"></sds-video-player>
+            </div>
           </div>
         </div>
       </div>
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a class="sds-card__link">
-              <h2 class="sds-card__title">Connect to Data Services</h2>
-            </a>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a>
+                <h2 class="usa-card__heading">Opportunities Reports</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <usa-icon [icon]="'document-pdf'"></usa-icon>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">How to run a DataBank report</a>
+                  </span>
+                </li>
+                <li>
+                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
+                  </usa-icon>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Go to DataBank reports</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="sds-card__body">
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <usa-icon [icon]="'document-pdf'"></usa-icon>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">How to use data services</a>
-                </span>
-              </li>
-              <li>
-                <usa-icon [icon]="'document-pdf'"></usa-icon>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Data services quick start guide</a>
-                </span>
-              </li>
-              <li>
-                <usa-icon [icon]="'camera-reels'" [size]="'xs'"></usa-icon>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Video: Using data services</a>
-                </span>
-              </li>
-              <li>
-                <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
-                </usa-icon>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Go to public contract opportunties API</a>
-                </span>
-              </li>
-            </ul>
+        </div>
+      </div>
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a>
+                <h2 class="usa-card__heading">Download Data Files</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <usa-icon [icon]="'document-pdf'"></usa-icon>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">How to use contract opportunities data files</a>
+                  </span>
+                </li>
+                <li>
+                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
+                  </usa-icon>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Go to contract opportunities data</a>
+                  </span>
+                </li>
+                <li>
+                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
+                  </usa-icon>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Go to <span class="text-bold">Buy American Act</span> data</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a>
+                <h2 class="usa-card__heading">Connect to Data Services</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <usa-icon [icon]="'document-pdf'"></usa-icon>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">How to use data services</a>
+                  </span>
+                </li>
+                <li>
+                  <usa-icon [icon]="'document-pdf'"></usa-icon>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Data services quick start guide</a>
+                  </span>
+                </li>
+                <li>
+                  <usa-icon [icon]="'camera-reels'" [size]="'lg'"></usa-icon>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Video: Using data services</a>
+                  </span>
+                </li>
+                <li>
+                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
+                  </usa-icon>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Go to public contract opportunties API</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -283,88 +295,90 @@
 
     <div class="grid-row padding-x-3 desktop:padding-0">
       <div class="grid-col-12 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a class="sds-card__link">
-              <h2 class="sds-card__title">External Resources</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <div class="grid-row grid-gap-2 padding-2 flex-wrap">
-              <div class="tablet:grid-col-6 desktop:grid-col-4 tablet:margin-top-0">
-                <h3 class="sds-card__title">Policy and Regulations</h3>
-                <p>Learn about policy that guides federal contracting.</p>
-                <ul class="sds-list">
-                  <li>
-                    <span class="sds-list__item-content">
-                      <a class="usa-link" target="_blank" href="https://acquisition.gov">
-                        Acquisition.gov
-                        <usa-icon [icon]="'box-arrow-up-right'" [size]="'xs'"></usa-icon>
-                      </a></span>
-                  </li>
-                  <li>
-                    <span class="sds-list__item-content">
-                      <a class="usa-link" target="_blank" href="https://www.acquisition.gov/?q=browsefar">
-                        Federal Acquistion Regulation (FAR)
-                        <usa-icon [icon]="'box-arrow-up-right'" [size]="'xs'"></usa-icon>
-                      </a></span>
-                  </li>
-                  <li>
-                    <span class="sds-list__item-content">
-                      <a class="usa-link" target="_blank" href="https://www.acquisition.gov/Supplemental_Regulations">
-                        Supplemental Agency Regulations
-                        <usa-icon [icon]="'box-arrow-up-right'" [size]="'xs'"></usa-icon>
-                      </a></span>
-                  </li>
-                </ul>
-              </div>
-              <div class="tablet:grid-col-6 desktop:grid-col-4 margin-top-2 tablet:margin-top-0">
-                <h3 class="sds-card__title">Small Business Resources</h3>
-                <p>Find support and training to help orient small businesses to federal contracting.</p>
-                <ul class="sds-list">
-                  <li>
-                    <span class="sds-list__item-content">
-                      <a class="usa-link" target="_blank" href="http://www.dla.mil/HQ/SmallBusiness/PTAP.aspx">
-                        Procurement Technical Assistance Program
-                        <usa-icon [icon]="'box-arrow-up-right'" [size]="'xs'"></usa-icon>
-                      </a></span>
-                  </li>
-                  <li>
-                    <span class="sds-list__item-content">
-                      <a class="usa-link" target="_blank" href="http://web.sba.gov/pro-net/search/dsp_dsbs.cfm">
-                        Dynamic Small Business Search
-                        <usa-icon [icon]="'box-arrow-up-right'" [size]="'xs'"></usa-icon>
-                      </a></span>
-                  </li>
-                  <li>
-                    <span class="sds-list__item-content">
-                      <a class="usa-link" target="_blank" href="https://eweb1.sba.gov/subnet/client/dsp_Landing.cfm">
-                        SBA Subcontracting Network (SubNet)
-                        <usa-icon [icon]="'box-arrow-up-right'" [size]="'xs'"></usa-icon>
-                      </a></span>
-                  </li>
-                  <li>
-                    <span class="sds-list__item-content">
-                      <a class="usa-link" target="_blank"
-                        href="https://www.sba.gov/federal-contracting/counseling-help">
-                        SBA Commercial Market Representative (CMR)
-                        <usa-icon [icon]="'box-arrow-up-right'" [size]="'xs'"></usa-icon>
-                      </a></span>
-                  </li>
-                </ul>
-              </div>
-              <div class="tablet:grid-col-6 desktop:grid-col-4 margin-top-2 tablet:margin-top-0">
-                <h3 class="sds-card__title">Forecasting</h3>
-                <p>Link to individual agency recurring procurement forecasts.</p>
-                <ul class="sds-list">
-                  <li>
-                    <span class="sds-list__item-content">
-                      <a class="usa-link" target="_blank" href="https://www.acquisition.gov/?q=procurement-forecasts">
-                        Federal Agency Business Forecasts
-                        <usa-icon [icon]="'box-arrow-up-right'" [size]="'xs'"></usa-icon>
-                      </a></span>
-                  </li>
-                </ul>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a>
+                <h2 class="usa-card__heading">External Resources</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <div class="grid-row grid-gap-2 padding-2 flex-wrap">
+                <div class="tablet:grid-col-6 desktop:grid-col-4 tablet:margin-top-0">
+                  <h3 class="usa-card__heading">Policy and Regulations</h3>
+                  <p>Learn about policy that guides federal contracting.</p>
+                  <ul class="sds-list">
+                    <li>
+                      <span class="sds-list__item-content">
+                        <a class="usa-link" target="_blank" href="https://acquisition.gov">
+                          Acquisition.gov
+                          <usa-icon [icon]="'box-arrow-up-right'" [size]="'lg'"></usa-icon>
+                        </a></span>
+                    </li>
+                    <li>
+                      <span class="sds-list__item-content">
+                        <a class="usa-link" target="_blank" href="https://www.acquisition.gov/?q=browsefar">
+                          Federal Acquistion Regulation (FAR)
+                          <usa-icon [icon]="'box-arrow-up-right'" [size]="'lg'"></usa-icon>
+                        </a></span>
+                    </li>
+                    <li>
+                      <span class="sds-list__item-content">
+                        <a class="usa-link" target="_blank" href="https://www.acquisition.gov/Supplemental_Regulations">
+                          Supplemental Agency Regulations
+                          <usa-icon [icon]="'box-arrow-up-right'" [size]="'lg'"></usa-icon>
+                        </a></span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="tablet:grid-col-6 desktop:grid-col-4 margin-top-2 tablet:margin-top-0">
+                  <h3 class="usa-card__heading">Small Business Resources</h3>
+                  <p>Find support and training to help orient small businesses to federal contracting.</p>
+                  <ul class="sds-list">
+                    <li>
+                      <span class="sds-list__item-content">
+                        <a class="usa-link" target="_blank" href="http://www.dla.mil/HQ/SmallBusiness/PTAP.aspx">
+                          Procurement Technical Assistance Program
+                          <usa-icon [icon]="'box-arrow-up-right'" [size]="'lg'"></usa-icon>
+                        </a></span>
+                    </li>
+                    <li>
+                      <span class="sds-list__item-content">
+                        <a class="usa-link" target="_blank" href="http://web.sba.gov/pro-net/search/dsp_dsbs.cfm">
+                          Dynamic Small Business Search
+                          <usa-icon [icon]="'box-arrow-up-right'" [size]="'lg'"></usa-icon>
+                        </a></span>
+                    </li>
+                    <li>
+                      <span class="sds-list__item-content">
+                        <a class="usa-link" target="_blank" href="https://eweb1.sba.gov/subnet/client/dsp_Landing.cfm">
+                          SBA Subcontracting Network (SubNet)
+                          <usa-icon [icon]="'box-arrow-up-right'" [size]="'lg'"></usa-icon>
+                        </a></span>
+                    </li>
+                    <li>
+                      <span class="sds-list__item-content">
+                        <a class="usa-link" target="_blank"
+                          href="https://www.sba.gov/federal-contracting/counseling-help">
+                          SBA Commercial Market Representative (CMR)
+                          <usa-icon [icon]="'box-arrow-up-right'" [size]="'lg'"></usa-icon>
+                        </a></span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="tablet:grid-col-6 desktop:grid-col-4 margin-top-2 tablet:margin-top-0">
+                  <h3 class="usa-card__heading">Forecasting</h3>
+                  <p>Link to individual agency recurring procurement forecasts.</p>
+                  <ul class="sds-list">
+                    <li>
+                      <span class="sds-list__item-content">
+                        <a class="usa-link" target="_blank" href="https://www.acquisition.gov/?q=procurement-forecasts">
+                          Federal Agency Business Forecasts
+                          <usa-icon [icon]="'box-arrow-up-right'" [size]="'lg'"></usa-icon>
+                        </a></span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

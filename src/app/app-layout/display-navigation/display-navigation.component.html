@@ -1,20 +1,24 @@
 <sds-side-toolbar (responsiveDialog)="onDialogChange($event)" (responsiveView)="onResponsiveViewChange($event)"
   [responsiveButtonText]="'Page Menu'">
   <ng-template #toolbarContent let-toolbarContent>
-    <div class="sds-card" *ngIf="isMobileMode">
-      <div class="sds-card__header sds-card__header--accent-cool grid-row">
-        <button id="cancelButton" class="sds-button sds-button--circular sds-button--white" (click)="onCancel()"
-          aria-label="Close Side Menu">
-          <usa-icon [icon]="'chevron-left'"></usa-icon>
-        </button>
-        <div class="margin-x-auto">
-          <h2 class="sds-card__title margin-top-1 margin-left-neg-2">Page Menu</h2>
+    <div class="usa-card" *ngIf="isMobileMode">
+      <div class="usa-card__container">
+        <div class="usa-card__header bg-accent-cool-lighter grid-row">
+          <button id="cancelButton" class="sds-button sds-button--circular sds-button--white" (click)="onCancel()"
+            aria-label="Close Side Menu">
+            <usa-icon [icon]="'chevron-left'"></usa-icon>
+          </button>
+          <div class="margin-x-auto">
+            <h2 class="usa-card__heading margin-top-1 margin-left-neg-2">Page Menu</h2>
+          </div>
         </div>
       </div>
     </div>
-    <div class="sds-card">
-      <div class="sds-card__body sds-card__body--accent-cool" id="panelBody">
-        <sds-side-navigation #sideNav [model]="model" (linkEvent)="onNavigate($event)"></sds-side-navigation>
+    <div class="usa-card">
+      <div class="usa-card__container">
+        <div class="usa-card__body bg-accent-cool-lighter" id="panelBody">
+          <sds-side-navigation #sideNav [model]="model" (linkEvent)="onNavigate($event)"></sds-side-navigation>
+        </div>
       </div>
     </div>
   </ng-template>

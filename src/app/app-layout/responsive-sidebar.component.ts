@@ -7,20 +7,23 @@ import { SdsDialogRef } from '@gsa-sam/components';
   template: `
           <sds-side-toolbar (responsiveDialog)="onDialogChange($event)" (responsiveView)="isMobileMode = $event;" [responsiveButtonText]="title">
             <ng-template #toolbarContent>
-              <div class="sds-card" *ngIf="isMobileMode">
-                <div class="sds-card__header sds-card__header--accent-cool grid-row">
-                  <button id="cancelButton" class="sds-button sds-button--circular sds-button--white" (click)="onCancelClicked()"
-                    [aria-label]="'Cancel ' + title">
-                    <fa-icon [icon]="['fas', 'chevron-left']" [fixedWidth]="true"></fa-icon>
-                  </button>
-                  <div class="margin-x-auto">
-                    <h2 class="sds-card__title margin-top-1 margin-left-neg-2">{{title}}</h2>
+              <div class="usa-card" *ngIf="isMobileMode">
+                <div class="usa-card__container">
+                  <div class="usa-card__header bg-accent-cool-lighter grid-row">
+                    <button id="cancelButton" class="sds-button sds-button--circular sds-button--white padding-top-1" (click)="onCancelClicked()"
+                      [aria-label]="'Cancel ' + title">
+                      <usa-icon [icon]="'chevron-left'"></usa-icon>
+                    </button>
+                    <div class="margin-x-auto">
+                      <h2 class="usa-card__heading margin-top-1 margin-left-neg-2">{{title}}</h2>
+                    </div>
                   </div>
                 </div>
+ 
               </div>
               <ng-content></ng-content>
-              <div class="sds-card" *ngIf="isMobileMode && showApply">
-                <div class="sds-card__body sds-card__body--accent-cool">
+              <div class="usa-card" *ngIf="isMobileMode && showApply">
+                <div class="usa-card__body bg-accent-cool-lighter">
                   <button class="usa-button" id="applyButton" aria-label="Apply" (click)="onApplyFilter()">Apply</button>
                 </div>
               </div>

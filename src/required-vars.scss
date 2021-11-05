@@ -1,0 +1,38 @@
+$theme-font-weight-thin: 100 !default;
+$theme-font-weight-medium: 500 !default;
+$theme-font-weight-semibold: 600 !default;
+
+$theme-page-margins-bottom: 8 !default;
+
+$button-shadow:0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2) !default;
+
+@mixin adjust-responsive-site-margins {
+    margin-left: -(units($theme-site-margins-mobile-width));
+    margin-right: -(units($theme-site-margins-mobile-width));
+    padding-left: (units($theme-site-margins-mobile-width));
+    padding-right: (units($theme-site-margins-mobile-width));
+    @include at-media($theme-site-margins-breakpoint) {
+        margin-left: -(units($theme-site-margins-width));
+        margin-right: -(units($theme-site-margins-width));
+        padding-left: (units($theme-site-margins-width));
+        padding-right: (units($theme-site-margins-width));
+    }
+}
+
+// Not required, but needed for testing so that when swaping, edge of demos line up
+$theme-grid-container-max-width:      'widescreen';
+$theme-header-max-width:              'widescreen';
+$theme-header-min-width:              'tablet';
+$theme-banner-max-width:              'widescreen';
+
+$theme-utility-breakpoints: (
+  'card':             false,   // 160px
+  'card-lg':          false,   // 240px
+  'mobile':           false,   // 320px
+  'mobile-lg':        true,    // 480px
+  'tablet':           true,    // 640px
+  'tablet-lg':        true,   // 800px
+  'desktop':          true,    // 1024px
+  'desktop-lg':       false,   // 1200px
+  'widescreen':       false,   // 1400px
+);

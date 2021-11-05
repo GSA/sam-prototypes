@@ -28,7 +28,6 @@
             "preserveSymlinks": true,
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/material.theme.scss", "src/styles.scss"],
-            "scripts": ["node_modules/uswds/dist/js/uswds.min.js"]
           },
           "configurations": {
             "production": {

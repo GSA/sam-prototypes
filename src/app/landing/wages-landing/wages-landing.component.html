@@ -13,50 +13,52 @@
         </div>
         <div class="grid-row">
           <div class="grid-col-12">
-            <div class="sds-card sds-card--bordered shadow-none">
-              <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-                <h2>Search wage determination</h2>
-              </div>
-              <div class="sds-card__body bg-white">
-                <div class="grid-row grid-gap">
-                  <div class="tablet:grid-col-6">
-                    <h3>I know the WD number</h3>
-                    <div class="display-flex flex-row flex-align-center padding-bottom-2">
-                      <usa-icon [icon]="'search'" [size]="'lg'"></usa-icon>
-                      <span class="padding-left-1">Search by WD Number</span>
-                    </div>
-                    <sds-search [(ngModel)]="model" (ngModelChange)="search()" [searchSettings]="searchSettings"
-                      placeholder="Ex: PA200001 or 2015-4045">
-                    </sds-search>
-                  </div>
-                  <div class="tablet:grid-col-6">
-                    <h3>I do not know the number</h3>
-                    <div class="display-flex flex-row flex-align-center padding-bottom-2">
-                      <usa-icon [icon]="'search'" [size]="'lg'"></usa-icon>
-                      <span class="padding-left-1">Start your search by selecting a category</span>
-                    </div>
-                    <div class="grid-row grid-gap">
-                      <div class="tablet:grid-col-6">
-                        <button class="sds-button sds-button--icon-lg" [routerLink]="['/search']"
-                          [queryParams]="{index: 'sca'}">
-                          <div class="sds-button__header">
-                            <h4>Public Building or Works</h4>
-                            <usa-icon [icon]="'check-2-circle'" [size]="'2x'"></usa-icon>
-                          </div>
-                          <p>Wage rates for laborers and mechanics</p>
-                          <span>Davis-Bacon Act (DBA)</span>
-                        </button>
+            <div class="usa-card">
+              <div class="usa-card__container shadow-none">
+                <div class="usa-card__header bg-accent-cool-lighter">
+                  <h2>Search wage determination</h2>
+                </div>
+                <div class="usa-card__body bg-white">
+                  <div class="grid-row grid-gap">
+                    <div class="tablet:grid-col-6">
+                      <h3>I know the WD number</h3>
+                      <div class="display-flex flex-row flex-align-center padding-bottom-2">
+                        <usa-icon [icon]="'search'" [size]="'lg'"></usa-icon>
+                        <span class="padding-left-1">Search by WD Number</span>
                       </div>
-                      <div class="tablet:grid-col-6">
-                        <button class="sds-button sds-button--icon-lg" [routerLink]="['/search']"
-                          [queryParams]="{index: 'dba'}">
-                          <div class="sds-button__header">
-                            <h4>Service Contracts</h4>
-                            <usa-icon [icon]="'check-2-circle'" [size]="'2x'"></usa-icon>
-                          </div>
-                          <p>Wage rates for service employees</p>
-                          <span>Service Contract Act (SCA)</span>
-                        </button>
+                      <sds-search [(ngModel)]="model" (ngModelChange)="search()" [searchSettings]="searchSettings"
+                        placeholder="Ex: PA200001 or 2015-4045">
+                      </sds-search>
+                    </div>
+                    <div class="tablet:grid-col-6">
+                      <h3>I do not know the number</h3>
+                      <div class="display-flex flex-row flex-align-center padding-bottom-2">
+                        <usa-icon [icon]="'search'" [size]="'lg'"></usa-icon>
+                        <span class="padding-left-1">Start your search by selecting a category</span>
+                      </div>
+                      <div class="grid-row grid-gap">
+                        <div class="tablet:grid-col-6">
+                          <button class="sds-button sds-button--icon-lg" [routerLink]="['/search']"
+                            [queryParams]="{index: 'sca'}">
+                            <div class="sds-button__header">
+                              <h4>Public Building or Works</h4>
+                              <usa-icon [icon]="'check-2-circle'" [size]="'2x'"></usa-icon>
+                            </div>
+                            <p>Wage rates for laborers and mechanics</p>
+                            <span>Davis-Bacon Act (DBA)</span>
+                          </button>
+                        </div>
+                        <div class="tablet:grid-col-6">
+                          <button class="sds-button sds-button--icon-lg" [routerLink]="['/search']"
+                            [queryParams]="{index: 'dba'}">
+                            <div class="sds-button__header">
+                              <h4>Service Contracts</h4>
+                              <usa-icon [icon]="'check-2-circle'" [size]="'2x'"></usa-icon>
+                            </div>
+                            <p>Wage rates for service employees</p>
+                            <span>Service Contract Act (SCA)</span>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -77,7 +79,7 @@
               <h3>Getting started searching wage determinations</h3>
             </sds-accordion-title>
             <sds-accordion-content>
-              <ul class="sds-list sds-list--icon">
+              <ul class="usa-list usa-list--icon">
                 <li>
                   <span class="sds-list__item-icon">
                     <usa-icon [icon]="'info-square'" [size]="'xs'"></usa-icon>
@@ -134,7 +136,7 @@
               <h3>Learn about the Davis-Bacon Act</h3>
             </sds-accordion-title>
             <sds-accordion-content>
-              <ul class="sds-list sds-list--icon">
+              <ul class="usa-list usa-list--icon">
                 <li>
                   <span class="sds-list__item-icon">
                     <usa-icon [icon]="'question-circle'" [size]="'xs'"></usa-icon>
@@ -252,7 +254,7 @@
               <h3>Learn about the Service Contract Act</h3>
             </sds-accordion-title>
             <sds-accordion-content>
-              <ul class="sds-list sds-list--icon">
+              <ul class="usa-list usa-list--icon">
                 <li>
                   <span class="sds-list__item-icon">
                     <usa-icon [icon]="'question-circle'" [size]="'xs'"></usa-icon>
@@ -365,204 +367,214 @@
 
     <div class="grid-row grid-gap flex-wrap padding-3 flex-justify-center">
       <div class="tablet:grid-col-5 desktop:grid-col padding-1">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">DBA Resources</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
-                  </usa-icon>
-                </span>
-                <a class="usa-link" [routerLink]="['/home/wages/resources/dba-conformances']">DBA Conformances</a>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
-                  </usa-icon>
-                </span>
-                <a class="usa-link" [routerLink]="['/home/wages/resources/dbas-tobe-revised']">
-                  DBAs to be Revised
-                </a>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'sm'"></usa-icon>
-                </span>
-                <a class="usa-link" [routerLink]="['/home/wages/resources/sca-conformances']">
-                  DBA Rollover Crosswalk
-                </a>
-              </li>
-
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'sm'"></usa-icon>
-                </span>
-                <a class="usa-link" href="https://www.dol.gov/agencies/whd/government-contracts/state-assignments">
-                  Department of Labor DBA analysts by state <usa-icon [icon]="'box-arrow-up-right'" [size]="'xs'">
-                  </usa-icon>
-                </a>
-              </li>
-
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="tablet:grid-col-5 desktop:grid-col padding-1">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">SCA Resources</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
-                  </usa-icon>
-                </span>
-                <a class="usa-link" [routerLink]="['/home/wages/resources/sca-conformances']">
-                  SCA Conformances
-                </a>
-              </li>
-            </ul>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a [routerLink]="['news']">
+                <h2 class="usa-card__heading">DBA Resources</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
+                    </usa-icon>
+                  </span>
+                  <a class="usa-link" [routerLink]="['/home/wages/resources/dba-conformances']">DBA Conformances</a>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
+                    </usa-icon>
+                  </span>
+                  <a class="usa-link" [routerLink]="['/home/wages/resources/dbas-tobe-revised']">
+                    DBAs to be Revised
+                  </a>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'sm'"></usa-icon>
+                  </span>
+                  <a class="usa-link" [routerLink]="['/home/wages/resources/sca-conformances']">
+                    DBA Rollover Crosswalk
+                  </a>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'sm'"></usa-icon>
+                  </span>
+                  <a class="usa-link" href="https://www.dol.gov/agencies/whd/government-contracts/state-assignments">
+                    Department of Labor DBA analysts by state <usa-icon [icon]="'box-arrow-up-right'" [size]="'xs'">
+                    </usa-icon>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
       <div class="tablet:grid-col-5 desktop:grid-col padding-1">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">Other Resources</h2>
-            </a>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a [routerLink]="['news']">
+                <h2 class="usa-card__heading">SCA Resources</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
+                    </usa-icon>
+                  </span>
+                  <a class="usa-link" [routerLink]="['/home/wages/resources/sca-conformances']">
+                    SCA Conformances
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="sds-card__body">
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
-                  </usa-icon>
-                </span>
-                <a class="usa-link" [routerLink]="['/home/wages/resources/labor-advisors']">
-                  Labor Advisors
-                </a>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
-                  </usa-icon>
-                </span>
-                <a class="usa-link" [routerLink]="['/home/wages/resources/all-agency-memos']">
-                  All Agency Memorandums
-                </a>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
-                  </usa-icon>
-                </span>
-                <a class="usa-link" [routerLink]="['/home/wages/resources/cross-index']">
-                  Cross Index for Contract Labor Standards
-                </a>
-              </li>
-            </ul>
+        </div>
+      </div>
+      <div class="tablet:grid-col-5 desktop:grid-col padding-1">
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a [routerLink]="['news']">
+                <h2 class="usa-card__heading">Other Resources</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
+                    </usa-icon>
+                  </span>
+                  <a class="usa-link" [routerLink]="['/home/wages/resources/labor-advisors']">
+                    Labor Advisors
+                  </a>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
+                    </usa-icon>
+                  </span>
+                  <a class="usa-link" [routerLink]="['/home/wages/resources/all-agency-memos']">
+                    All Agency Memorandums
+                  </a>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180">
+                    </usa-icon>
+                  </span>
+                  <a class="usa-link" [routerLink]="['/home/wages/resources/cross-index']">
+                    Cross Index for Contract Labor Standards
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="grid-row grid-gap flex-wrap padding-3 flex-justify-center">
       <div class="grid-row tablet:grid-col-4 desktop:grid-col padding-1">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">Forms</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a class="usa-link" href=" ">SF308 - Request For Wage Determination And Response To Request (DBA)</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a class="usa-link" href=" ">
-                    E98 - Notice of Intention to Make a Service Contract and Response to Notice (SCA)
-                  </a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a class="usa-link" href=" ">
-                    SF1444 - Request for Authorization of Additional Classification and Rate
-                  </a>
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="grid-row tablet:grid-col-4 desktop:grid-col padding-1">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">Help</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'question-circle'" [size]="'sm'"></usa-icon>
-                </span>
-                <a class="usa-link" [routerLink]="['']">
-                  Frequently Asked Questions
-                </a>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'book'" [size]="'sm'"></usa-icon>
-                </span>
-                <a class="usa-link" [routerLink]="['']">
-                  Glossary Terms
-                </a>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'camera-reels'" [size]="'sm'"></usa-icon>
-                </span>
-                <a class="usa-link" [routerLink]="['']">
-                  Videos
-                </a>
-              </li>
-            </ul>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a [routerLink]="['news']">
+                <h2 class="usa-card__heading">Forms</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a class="usa-link" href=" ">SF308 - Request For Wage Determination And Response To Request (DBA)</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a class="usa-link" href=" ">
+                      E98 - Notice of Intention to Make a Service Contract and Response to Notice (SCA)
+                    </a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a class="usa-link" href=" ">
+                      SF1444 - Request for Authorization of Additional Classification and Rate
+                    </a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
       <div class="grid-row tablet:grid-col-4 desktop:grid-col padding-1">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">Training 001: Wage Determinations</h2>
-            </a>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a [routerLink]="['news']">
+                <h2 class="usa-card__heading">Help</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'question-circle'" [size]="'sm'"></usa-icon>
+                  </span>
+                  <a class="usa-link" [routerLink]="['']">
+                    Frequently Asked Questions
+                  </a>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'book'" [size]="'sm'"></usa-icon>
+                  </span>
+                  <a class="usa-link" [routerLink]="['']">
+                    Glossary Terms
+                  </a>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'camera-reels'" [size]="'sm'"></usa-icon>
+                  </span>
+                  <a class="usa-link" [routerLink]="['']">
+                    Videos
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="sds-card__body">
-            <sds-video-player [VPConfiguration]="videoConfiguration"></sds-video-player>
+        </div>
+      </div>
+      <div class="grid-row tablet:grid-col-4 desktop:grid-col padding-1">
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a [routerLink]="['news']">
+                <h2 class="usa-card__heading">Training 001: Wage Determinations</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <sds-video-player [VPConfiguration]="videoConfiguration"></sds-video-player>
+            </div>
           </div>
         </div>
       </div>

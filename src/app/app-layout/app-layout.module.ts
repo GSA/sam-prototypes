@@ -3,7 +3,7 @@ import { CommonModule } from "@angular/common";
 import { RouterModule } from '@angular/router';
 import { FormlyModule } from "@ngx-formly/core";
 
-import { chevronLeft, chevronRight, dash, x, fileText, plus, question, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import { chevronLeft, chevronRight, dash, x, fileText, plus, question, circleFill, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
 import {
   SdsCollapseModule,
@@ -31,8 +31,8 @@ import { DisplayNavigationComponent } from "./display-navigation/display-navigat
 import { DisplaySectionComponent } from "./display-section.component";
 import { DisplaySubsectionComponent } from "./display-subsection.component";
 import { ResponsiveSidebarComponent } from "./responsive-sidebar.component";
-import { IconModule } from "@gsa-sam/ngx-uswds-icons";
-
+import { IconModule, logOut, workspace, messages, request, logIn } from "@gsa-sam/ngx-uswds-icons";
+import { UsaHeaderModule } from '@gsa-sam/ngx-uswds';
 @NgModule({
   declarations: [
     AppHeaderComponent,
@@ -49,7 +49,6 @@ import { IconModule } from "@gsa-sam/ngx-uswds-icons";
   ],
   imports: [
     CommonModule,
-    SdsHeaderModule,
     SdsFooterModule,
     SdsSubheaderModule,
     SdsSystemAlertModule,
@@ -59,7 +58,11 @@ import { IconModule } from "@gsa-sam/ngx-uswds-icons";
     SideToolbarModule,
     IconModule,
     SdsExternalLinkDirectivesModule,
-    NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, dash, x, fileText, plus, question })
+    UsaHeaderModule,
+    NgxBootstrapIconsModule.pick({ 
+      chevronLeft, chevronRight, dash, x, 
+      fileText, plus, question, logOut, workspace,
+      messages, request, logIn })
   ],
   exports: [
     AppHeaderComponent,

@@ -51,7 +51,7 @@
                   </button>
                 </div>
                 <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-                  <button class="usa-button usa-button--secondary width-full"
+                  <button class="usa-button usa-button--primary-lighter width-full"
                     [routerLink]="['/home/exclusions-federal']">
                     Go to exclusions federal home
                   </button>
@@ -70,7 +70,7 @@
           <sds-accordion-item *ngFor="let help of searchHelp" #first>
             <sds-accordion-title>{{help.title}}</sds-accordion-title>
             <sds-accordion-content>
-              <ul class="sds-list sds-list--icon padding-0">
+              <ul class="usa-list usa-list--icon padding-0">
                 <li *ngFor="let article of help.articles">
                   <span class="sds-list__item-icon">
                     <i [ngClass]="article.icon"></i>
@@ -103,7 +103,7 @@
               </button>
             </div>
             <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-              <button class="usa-button usa-button--secondary width-full" [routerLink]="['/home/assistance/federal']">
+              <button class="usa-button usa-button--primary-lighter width-full" [routerLink]="['/home/assistance/federal']">
                 Go to exclusions federal home
               </button>
             </div>
@@ -115,152 +115,160 @@
     <!-- Cards -->
     <div class="grid-row grid-gap flex-wrap margin-top-4">
       <div class="tablet:grid-col-6 desktop:grid-col-3 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <h2 class="sds-card__title">Exclusions Resources</h2>
-          </div>
-          <div class="sds-card__body">
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Types of exclusions</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Legacy CT Codes</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Agency exclusions points of contact</a>
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="tablet:grid-col-6 desktop:grid-col-3 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <h2 class="sds-card__title">Download Data Files</h2>
-          </div>
-          <div class="sds-card__body">
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Downloading exclusions files</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'document-pdf'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Understanding the exclusions extract</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Go to exclusions downloads</a>
-                </span>
-              </li>
-            </ul>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <h2 class="usa-card__heading">Exclusions Resources</h2>
+            </div>
+            <div class="usa-card__body">
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Types of exclusions</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Legacy CT Codes</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Agency exclusions points of contact</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
       <div class="tablet:grid-col-6 desktop:grid-col-3 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <h2 class="sds-card__title">Connect to Data Services</h2>
-          </div>
-          <div class="sds-card__body">
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">How to use data services</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'document-pdf'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Data services quick start guide</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'camera-reels'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Video: Using data services</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Go to public exclusions API</a>
-                </span>
-              </li>
-            </ul>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <h2 class="usa-card__heading">Download Data Files</h2>
+            </div>
+            <div class="usa-card__body">
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Downloading exclusions files</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'document-pdf'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Understanding the exclusions extract</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Go to exclusions downloads</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
       <div class="tablet:grid-col-6 desktop:grid-col-3 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">Help</h2>
-            </a>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <h2 class="usa-card__heading">Connect to Data Services</h2>
+            </div>
+            <div class="usa-card__body">
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">How to use data services</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'document-pdf'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Data services quick start guide</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'camera-reels'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Video: Using data services</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Go to public exclusions API</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="sds-card__body">
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'question-circle'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a [routerLink]="['/help']" class="usa-link">Frequently Asked Questions</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'book'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Glossary Terms</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'camera-reels'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Videos</a>
-                </span>
-              </li>
-            </ul>
+        </div>
+      </div>
+      <div class="tablet:grid-col-6 desktop:grid-col-3 margin-y-2">
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a [routerLink]="['news']">
+                <h2 class="usa-card__heading">Help</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'question-circle'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a [routerLink]="['/help']" class="usa-link">Frequently Asked Questions</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'book'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Glossary Terms</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'camera-reels'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Videos</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

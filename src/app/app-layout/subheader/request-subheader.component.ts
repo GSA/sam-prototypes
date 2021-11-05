@@ -11,7 +11,7 @@ import { RequestItem } from '../../services/interfaces/public-apis';
 
     <ng-container subheader-buttons-container>
         <button class="usa-button" (click)="onApprove()">Approve</button>
-        <button class="usa-button usa-button--secondary" (click)="onReject()">Reject</button>
+        <button class="usa-button usa-button--primary-lighter" (click)="onReject()">Reject</button>
     </ng-container>
     <sds-subheader-actions [model]="actionsModel" (clicks)="onAction($event)">
       </sds-subheader-actions>

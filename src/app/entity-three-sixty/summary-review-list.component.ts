@@ -4,19 +4,23 @@ import { INavigationLink, NavigationMode } from "@gsa-sam/components";
 @Component({
   selector: "summary-review-list",
   template: `
-    <div class="sds-card sds-card--vertical">
-      <div class="sds-card__header">
-        <div class="sds-card__icon">
-          <usa-icon
-            class="text-info"
-            [icon]="'exclamation-triangle'"
-            [size]="'2x'"
-          ></usa-icon>
+    <div class="usa-card sds-card--vertical">
+      <div class="usa-card__container">
+
+        <div class="usa-card__header">
+          <div class="sds-card__icon">
+            <usa-icon
+              class="text-info"
+              [icon]="'exclamation-triangle'"
+              [size]="'2x'"
+            ></usa-icon>
+          </div>
         </div>
-      </div>
-      <div class="sds-card__body">
-        <span class="sds-card__title text-semibold margin-0">Review</span>
-        <link-list [links]="links"></link-list>
+      
+        <div class="usa-card__body">
+          <span class="usa-card__heading text-semibold margin-0">Review</span>
+          <link-list [links]="links"></link-list>
+        </div>
       </div>
     </div>
   `,

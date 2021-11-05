@@ -27,19 +27,19 @@
 <div class="grid-row sds-field margin-bottom-1">
 	<div class="grid-col-auto sds-field__value">{{ pagingText }}</div>
 </div>
-<div *ngFor="let following of followings" class="sds-card margin-bottom-1">
-	<div class="sds-card__body">
-		<h2><a class="usa-link" href="">{{following.title}}</a><i class="sds-status sds-status--sm sds-status--green margin-left-3"></i><span class="sds-field--small">{{ following.status }}</span></h2>
-
-		<div [ngSwitch]="domain">
-		  <div *ngSwitchCase="Contract Opportunities">
-		    <ng-container *ngTemplateOutlet="contractOpportunitiesDetails; context: {following: following}"></ng-container>
-		  </div>
-		  <div *ngSwitchDefault>
-		    <ng-container *ngTemplateOutlet="defaultDetails; context: {following: following}"></ng-container>
-		  </div>
+<div *ngFor="let following of followings" class="usa-card margin-bottom-1">
+	<div class="usa-card__container">
+		<div class="usa-card__body">
+			<h2><a class="usa-link" href="">{{following.title}}</a><i class="sds-status sds-status--sm sds-status--green margin-left-3"></i><span class="sds-field--small">{{ following.status }}</span></h2>
+			<div [ngSwitch]="domain">
+				<div *ngSwitchCase="Contract Opportunities">
+					<ng-container *ngTemplateOutlet="contractOpportunitiesDetails; context: {following: following}"></ng-container>
+				</div>
+				<div *ngSwitchDefault>
+					<ng-container *ngTemplateOutlet="defaultDetails; context: {following: following}"></ng-container>
+				</div>
+			</div>
 		</div>
-
 	</div>
 </div>
 

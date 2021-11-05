@@ -5,7 +5,7 @@ import { SideNavigationModel, NavigationMode } from '@gsa-sam/components';
   selector: 'entity-three-sixty-navigation',
   template: `
      <responsive-sidebar title="Navigate To" (onApply)="onNavigateMobile()">
-        <div class="sds-card__body sds-card__body--accent-cool" id="panelBody">
+        <div class="usa-card__body bg-accent-cool-lighter" id="panelBody">
           <sds-side-navigation #sideNavigation [model]="sideMenu" (linkEvent)="onNavigateLink($event)"></sds-side-navigation> 
         </div>
     </responsive-sidebar>

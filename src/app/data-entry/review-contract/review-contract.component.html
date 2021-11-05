@@ -5,201 +5,203 @@
   {{items | json}}
 </pre> -->
 
-<div class="margin-top-2 sds-card  sds-card--collapsible">
+<div class="margin-top-2 usa-card  sds-card--collapsible">
+  <div class="usa-card__container">
+    <div class="usa-card__body usa-card__body bg-accent-cool-lighter">
 
-  <div class="sds-card__body sds-card__body sds-card__body--accent-cool">
+      <h3> Simplicity Corporation</h3>
 
-    <h3> Simplicity Corporation</h3>
+      <div class="grid-row grid-gap">
 
-    <div class="grid-row grid-gap">
+        <!-- 1st column -->
+        <div class="grid-col-12 tablet:grid-col-3">
 
-      <!-- 1st column -->
-      <div class="grid-col-12 tablet:grid-col-3">
-
-        <div class="grid-row margin-y-2">
-          <div class="sds-field sds-field--stacked sds-field--small">
-            <div class="sds-field__name">Contract Number:</div>
-            <div class="sds-field__value">{{items.identifiers[0].piid}}</div>
-          </div>
-        </div>
-
-        <div class="grid-row margin-y-2">
-          <div class="sds-field sds-field--stacked sds-field--small">
-            <div class="sds-field__name">Doing Business As Name:</div>
-            <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[0].name}}</div>
-          </div>
-        </div>
-
-      </div>
-      <!-- 2nd column -->
-      <div class="grid-col-12 tablet:grid-col-3">
-        <!-- DUNS -->
-        <div class="grid-row margin-y-2">
-          <!-- Tag -->
-          <div class="grid-col-auto">
-            <div class="usa-tag sds-tag--info-purple sds-static--tag">DUNS</div>
-          </div>
-          <!-- Key/Value Wrapper -->
-          <div class="grid-col">
-            <div class="sds-field sds-field--small">
-              <div class="sds-field__name has-usa-tag">Unique Entity ID:</div>
-              <div class="sds-field__value left-align"> {{items.vendor.dunsNumber}} </div>
+          <div class="grid-row margin-y-2">
+            <div class="sds-field sds-field--stacked sds-field--small">
+              <div class="sds-field__name">Contract Number:</div>
+              <div class="sds-field__value">{{items.identifiers[0].piid}}</div>
             </div>
           </div>
-        </div>
 
-        <!-- SAM -->
-        <div class="grid-row margin-y-2">
-          <!-- Tag -->
-          <div class="grid-col-auto">
-            <div class="usa-tag sds-tag--info-white sds-static--tag">SAM</div>
-          </div>
-          <!-- Key/Value Wrapper -->
-          <div class="grid-col">
-            <div class="sds-field sds-field--small">
-              <div class="sds-field__name has-usa-tag">Unique Entity ID:</div>
-              <div class="sds-field__value left-align">Not Available</div>
+          <div class="grid-row margin-y-2">
+            <div class="sds-field sds-field--stacked sds-field--small">
+              <div class="sds-field__name">Doing Business As Name:</div>
+              <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[0].name}}</div>
             </div>
           </div>
+
         </div>
-
-      </div>
-
-      <!-- 3rd column -->
-      <div class="grid-col-12 tablet:grid-col-3">
-
-        <div class="grid-row margin-y-2">
-          <div class="sds-field sds-field--stacked sds-field--small">
-            <div class="sds-field__name">Award Amount:</div>
-            <div class="sds-field__value">{{items.contract.obligatedAmount}}</div>
-          </div>
-        </div>
-
-        <div class="grid-row margin-y-2">
-          <div class="sds-field sds-field--stacked sds-field--small">
-            <div class="sds-field__name">NAICS Code:</div>
-            <div class="sds-field__value sds-results-child--hilite">
-              <div>Not available</div>
-              <!-- <div>{{items.productOrService.naics[0].code}}--{{items.productOrService.naics[0].value}}</div> -->
+        <!-- 2nd column -->
+        <div class="grid-col-12 tablet:grid-col-3">
+          <!-- DUNS -->
+          <div class="grid-row margin-y-2">
+            <!-- Tag -->
+            <div class="grid-col-auto">
+              <div class="usa-tag sds-tag--info-purple sds-static--tag">DUNS</div>
             </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- 4th column -->
-      <div class="grid-col-12 tablet:grid-col-3">
-
-        <div class="grid-row margin-y-2">
-          <div class="sds-field sds-field--stacked sds-field--small">
-            <div class="sds-field__name">Date Signed (Base Award):</div>
-            <div class="sds-field__value">{{items.contract.signedDate | date: 'yyyy-MM-dd'}} </div>
-          </div>
-        </div>
-
-
-        <div class="grid-row margin-y-2">
-          <div class="sds-field sds-field--stacked sds-field--small">
-            <div class="sds-field__name">Physical Address:</div>
-            <div class="sds-field__value sds-results-child--hilite">
-              <div>{{items.vendor.address.streetAddress}}</div>
-              <div>
-                {{items.vendor.address.city}}, {{items.vendor.address.state.name}} {{items.vendor.address.zip}}
-                {{items.vendor.address.country.name}}
+            <!-- Key/Value Wrapper -->
+            <div class="grid-col">
+              <div class="sds-field sds-field--small">
+                <div class="sds-field__name has-usa-tag">Unique Entity ID:</div>
+                <div class="sds-field__value left-align"> {{items.vendor.dunsNumber}} </div>
               </div>
             </div>
           </div>
-        </div>
 
-      </div>
-    </div>
-
-    <hr />
-    <h3>Subtier and Office</h3>
-    <div class="grid-row grid-gap">
-
-      <!-- 1st column -->
-      <div class="grid-col-12 tablet:grid-col-3">
-
-        <div class="grid-row margin-y-2">
-          <div class="sds-field sds-field--stacked sds-field--small">
-            <div class="sds-field__name">Contracting Subtier ID:</div>
-            <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[0].organizationId}}</div>
-          </div>
-        </div>
-
-        <div class="grid-row margin-y-2">
-          <div class="sds-field sds-field--stacked sds-field--small">
-            <div class="sds-field__name">Funding Subtier ID:</div>
-            <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[0].organizationId}}</div>
-          </div>
-        </div>
-
-      </div>
-      <!-- 2nd column -->
-      <div class="grid-col-12 tablet:grid-col-3">
-
-        <div class="grid-row margin-y-2">
-          <div class="sds-field sds-field--stacked sds-field--small">
-            <div class="sds-field__name">Contracting Subtier Name:</div>
-            <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[0].name}}</div>
-          </div>
-        </div>
-
-        <div class="grid-row margin-y-2">
-          <div class="sds-field sds-field--stacked sds-field--small">
-            <div class="sds-field__name">Funding Subtier Name:</div>
-            <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[0].name}}</div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- 3rd column -->
-      <div class="grid-col-12 tablet:grid-col-3">
-
-        <div class="grid-row margin-y-2">
-          <div class="sds-field sds-field--stacked sds-field--small">
-            <div class="sds-field__name">Contracting Office ID:(Level2)</div>
-            <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[1].organizationId}}</div>
-          </div>
-        </div>
-
-        <div class="grid-row margin-y-2">
-          <div class="sds-field sds-field--stacked sds-field--small">
-            <div class="sds-field__name">Funding Office ID:(Level2 )</div>
-            <div class="sds-field__value sds-results-child--hilite">
-              <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[1].organizationId}}</div>
-
+          <!-- SAM -->
+          <div class="grid-row margin-y-2">
+            <!-- Tag -->
+            <div class="grid-col-auto">
+              <div class="usa-tag sds-tag--info-white sds-static--tag">SAM</div>
+            </div>
+            <!-- Key/Value Wrapper -->
+            <div class="grid-col">
+              <div class="sds-field sds-field--small">
+                <div class="sds-field__name has-usa-tag">Unique Entity ID:</div>
+                <div class="sds-field__value left-align">Not Available</div>
+              </div>
             </div>
           </div>
+
         </div>
 
+        <!-- 3rd column -->
+        <div class="grid-col-12 tablet:grid-col-3">
+
+          <div class="grid-row margin-y-2">
+            <div class="sds-field sds-field--stacked sds-field--small">
+              <div class="sds-field__name">Award Amount:</div>
+              <div class="sds-field__value">{{items.contract.obligatedAmount}}</div>
+            </div>
+          </div>
+
+          <div class="grid-row margin-y-2">
+            <div class="sds-field sds-field--stacked sds-field--small">
+              <div class="sds-field__name">NAICS Code:</div>
+              <div class="sds-field__value sds-results-child--hilite">
+                <div>Not available</div>
+                <!-- <div>{{items.productOrService.naics[0].code}}--{{items.productOrService.naics[0].value}}</div> -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 4th column -->
+        <div class="grid-col-12 tablet:grid-col-3">
+
+          <div class="grid-row margin-y-2">
+            <div class="sds-field sds-field--stacked sds-field--small">
+              <div class="sds-field__name">Date Signed (Base Award):</div>
+              <div class="sds-field__value">{{items.contract.signedDate | date: 'yyyy-MM-dd'}} </div>
+            </div>
+          </div>
+
+
+          <div class="grid-row margin-y-2">
+            <div class="sds-field sds-field--stacked sds-field--small">
+              <div class="sds-field__name">Physical Address:</div>
+              <div class="sds-field__value sds-results-child--hilite">
+                <div>{{items.vendor.address.streetAddress}}</div>
+                <div>
+                  {{items.vendor.address.city}}, {{items.vendor.address.state.name}} {{items.vendor.address.zip}}
+                  {{items.vendor.address.country.name}}
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
-      <!-- 4th column -->
-      <div class="grid-col-12 tablet:grid-col-3">
+      <hr />
+      <h3>Subtier and Office</h3>
+      <div class="grid-row grid-gap">
 
-        <div class="grid-row margin-y-2">
-          <div class="sds-field sds-field--stacked sds-field--small">
-            <div class="sds-field__name">Contracting Office Name:(Level3 )</div>
-            <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[1].name}}</div>
+        <!-- 1st column -->
+        <div class="grid-col-12 tablet:grid-col-3">
+
+          <div class="grid-row margin-y-2">
+            <div class="sds-field sds-field--stacked sds-field--small">
+              <div class="sds-field__name">Contracting Subtier ID:</div>
+              <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[0].organizationId}}</div>
+            </div>
           </div>
+
+          <div class="grid-row margin-y-2">
+            <div class="sds-field sds-field--stacked sds-field--small">
+              <div class="sds-field__name">Funding Subtier ID:</div>
+              <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[0].organizationId}}</div>
+            </div>
+          </div>
+
+        </div>
+        <!-- 2nd column -->
+        <div class="grid-col-12 tablet:grid-col-3">
+
+          <div class="grid-row margin-y-2">
+            <div class="sds-field sds-field--stacked sds-field--small">
+              <div class="sds-field__name">Contracting Subtier Name:</div>
+              <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[0].name}}</div>
+            </div>
+          </div>
+
+          <div class="grid-row margin-y-2">
+            <div class="sds-field sds-field--stacked sds-field--small">
+              <div class="sds-field__name">Funding Subtier Name:</div>
+              <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[0].name}}</div>
+            </div>
+          </div>
+
         </div>
 
+        <!-- 3rd column -->
+        <div class="grid-col-12 tablet:grid-col-3">
 
-        <div class="grid-row margin-y-2">
-          <div class="sds-field sds-field--stacked sds-field--small">
-            <div class="sds-field__name">Funding Office Name: (Level3 )</div>
-            <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[1].name}}</div>
+          <div class="grid-row margin-y-2">
+            <div class="sds-field sds-field--stacked sds-field--small">
+              <div class="sds-field__name">Contracting Office ID:(Level2)</div>
+              <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[1].organizationId}}</div>
+            </div>
           </div>
+
+          <div class="grid-row margin-y-2">
+            <div class="sds-field sds-field--stacked sds-field--small">
+              <div class="sds-field__name">Funding Office ID:(Level2 )</div>
+              <div class="sds-field__value sds-results-child--hilite">
+                <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[1].organizationId}}
+                </div>
+
+              </div>
+            </div>
+          </div>
+
         </div>
 
+        <!-- 4th column -->
+        <div class="grid-col-12 tablet:grid-col-3">
+
+          <div class="grid-row margin-y-2">
+            <div class="sds-field sds-field--stacked sds-field--small">
+              <div class="sds-field__name">Contracting Office Name:(Level3 )</div>
+              <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[1].name}}</div>
+            </div>
+          </div>
+
+
+          <div class="grid-row margin-y-2">
+            <div class="sds-field sds-field--stacked sds-field--small">
+              <div class="sds-field__name">Funding Office Name: (Level3 )</div>
+              <div class="sds-field__value">{{items.purchaser.contractingOrganizationHierarchy[1].name}}</div>
+            </div>
+          </div>
+
+        </div>
       </div>
+
+      <hr />
+      <h3>Desciption of Requirement</h3>
+      <div class="sds-field__name">{{items.desciption}}</div>
     </div>
-
-    <hr />
-    <h3>Desciption of Requirement</h3>
-    <div class="sds-field__name">{{items.desciption}}</div>
   </div>
 </div>

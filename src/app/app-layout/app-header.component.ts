@@ -10,6 +10,7 @@ import { Router, ActivatedRoute, NavigationEnd } from "@angular/router";
 import { filter, map } from "rxjs/operators";
 import { NavigationMode } from "@gsa-sam/components";
 import { AppService } from "../services/app-service/app.service";
+import { UsaHeaderComponent } from "@gsa-sam/ngx-uswds";
 
 @Component({
   selector: "app-header",
@@ -24,25 +25,46 @@ import { AppService } from "../services/app-service/app.service";
         </div>
       </div>
     </div>
-    <sds-header
-      #header
-      [model]="model"
-      [showTopBanner]="false"
-      [showHeaderLogo]="!isHomePage"
+    <usa-header #header
+      [primaryNavItems]="model.navigationLinks" 
+      [secondaryNavItems]="model.secondaryLinks"
+      [title]="headerLogo"
+      [extended]="true"
       (linkEvent)="menuItemSelected($event)"
-    ></sds-header>
+    >
+      <ng-template #headerLogo>
+        <div class="sds-navbar--blank" *ngIf="isHomePage; else showLogo"></div>
+        <ng-template #showLogo>
+          <a [routerLink]="model.home.route" title="Home" aria-label="Go to Home page" *ngIf="!isHomePage">
+            <img class="sds-header__logo" [src]="model.home.logo" [alt]="model.home.text" />
+          </a>
+        </ng-template>
+      </ng-template>
+
+      <ng-template usaHeaderSecondaryLinkTemplate let-link>
+        <a [attr.id]="link.id" (click)="menuItemSelected(link)" [attr.href]="'javascript:void(0);'"
+          [ngClass]="{'usa-current': link.selected}">
+          <div class="sds-stack sds-sm">
+            <usa-icon class="sds-stack-icon text-ink" [icon]="link.imageClass"></usa-icon>
+            <usa-icon *ngIf="link.hasCounter" class="sds-stack-icon" [icon]="'circle-fill'" [size]="'xs'"
+              [classes]="['counter-icon']"></usa-icon>
+          </div>
+          <span class="sds-nav__secondary-item-text">{{ link.text }}</span>
+        </a>
+      </ng-template>
+    </usa-header>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppHeaderComponent implements OnInit {
   isHomePage: boolean = true;
-  @ViewChild("header", { static: true }) header;
+  @ViewChild("header", { static: true }) header: UsaHeaderComponent;
 
   model: any;
 
   signInItem = {
     imageClassPrefix: "sds",
-    imageClass: "log-out",
+    imageClass: "logIn",
     mode: NavigationMode.EVENT,
     text: "Sign In",
     route: "/workspace",
@@ -184,7 +206,6 @@ export class AppHeaderComponent implements OnInit {
         filter((event) => event instanceof NavigationEnd),
         map((event: NavigationEnd) => {
           this.isHomePage = event.url == "/";
-
           let itemCode = "id";
           let child = this.route.firstChild;
           let searchedValue = null;
@@ -205,8 +226,8 @@ export class AppHeaderComponent implements OnInit {
         })
       )
       .subscribe((customData: any) => {
-        this.header.select(customData);
         this.cdr.detectChanges();
+        this.header.changeDetector.detectChanges();
       });
   }
 
@@ -227,5 +248,7 @@ export class AppHeaderComponent implements OnInit {
     } else if (link.id == "signout") {
       this.appService.signOut();
     }
+
+    this.router.navigateByUrl(link.route);
   }
 }

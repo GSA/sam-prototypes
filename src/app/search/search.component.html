@@ -36,67 +36,75 @@
           <sds-side-toolbar (responsiveDialog)="onDialogChange($event)"
             (responsiveView)="onResponsiveViewChange($event)" [responsiveButtonText]="'Advanced Search'">
             <ng-template #toolbarContent>
-              <div class="sds-card" *ngIf="isMobileMode">
-                <div class="sds-card__header sds-card__header--accent-cool grid-row">
-                  <button id="cancelButton" class="sds-button sds-button--circular sds-button--white"
-                    (click)="onCancelClicked()" aria-label="Cancel Advanced Search">
-                    <usa-icon [icon]="'chevron-left'"></usa-icon>
-                  </button>
-                  <div class="margin-x-auto">
-                    <h2 class="sds-card__title margin-top-1 margin-left-neg-2">Advanced Search</h2>
+              <div class="usa-card" *ngIf="isMobileMode">
+                <div class="usa-card__container">
+                  <div class="usa-card__header bg-accent-cool-lighter grid-row">
+                    <button id="cancelButton" class="sds-button sds-button--circular sds-button--white"
+                      (click)="onCancelClicked()" aria-label="Cancel Advanced Search">
+                      <usa-icon [icon]="'chevron-left'"></usa-icon>
+                    </button>
+                    <div class="margin-x-auto">
+                      <h2 class="usa-card__heading margin-top-1 margin-left-neg-2">Advanced Search</h2>
+                    </div>
                   </div>
                 </div>
               </div>
 
 
-              <div class="sds-card sds-card--collapsible" [ngClass]="{'sds-card--collapsed': !domainExpanded}">
-                <div role="button" class="sds-card__header sds-card__header--action"
-                  [attr.aria-expanded]="domainExpanded" aria-controls="panelBody" tabindex="0"
-                  aria-label="Select Domain" (click)="domainExpanded = !domainExpanded"
-                  (keyup.enter)="domainExpanded = !domainExpanded">
-                  <div class="sds-card__title">Select Domain<br />
-                    <span class="sds-card__subtitle">
-                      {{domain?.text}}
-                    </span>
+              <div class="usa-card sds-card--collapsible" [ngClass]="{'sds-card--collapsed': !domainExpanded}">
+                <div class="usa-card__container">
+                  <div role="button" class="usa-card__header usa-card__header--action"
+                    [attr.aria-expanded]="domainExpanded" aria-controls="panelBody" tabindex="0"
+                    aria-label="Select Domain" (click)="domainExpanded = !domainExpanded"
+                    (keyup.enter)="domainExpanded = !domainExpanded">
+                    <div class="usa-card__heading">Select Domain<br />
+                      <span class="sds-card__subtitle">
+                        {{domain?.text}}
+                      </span>
+                    </div>
+                    <div class="sds-card__action sds-card__collapse"></div>
                   </div>
-
-                  <div class="sds-card__action sds-card__collapse"></div>
-                </div>
-
-                <div class="sds-card__body sds-card__body--accent-cool" id="panelBody">
-                  <sds-selection-panel [model]="navigationModel" [currentSelection]="initialDomain"
-                    (panelSelected)="onPanelSelection($event)">
-                  </sds-selection-panel>
+                  <div class="usa-card__body bg-accent-cool-lighter" id="panelBody">
+                    <sds-selection-panel [model]="navigationModel" [currentSelection]="initialDomain"
+                      (panelSelected)="onPanelSelection($event)">
+                    </sds-selection-panel>
+                  </div>
                 </div>
               </div>
 
-              <div class="sds-card" *ngIf="domain && domain.children">
-                <div class="sds-card__body sds-card__body--accent-cool">
-                  <sds-sub-panel [model]="domain.children" (subPanelClicked)="subDomainSelected($event)">
-                  </sds-sub-panel>
+              <div class="usa-card" *ngIf="domain && domain.children">
+                <div class="usa-card__container">
+                  <div class="usa-card__body bg-accent-cool-lighter">
+                    <sds-sub-panel [model]="domain.children" (subPanelClicked)="subDomainSelected($event)">
+                    </sds-sub-panel>
+                  </div>
                 </div>
               </div>
 
 
-              <div class="sds-card sds-card--collapsible" [ngClass]="{'sds-card--collapsed': !filtersExpanded}">
-                <div class="sds-card__header sds-card__header--action" role="button" tabindex="0"
-                  aria-controls="filtersBody" [attr.aria-label]="'Filter By'" [attr.aria-expanded]="filtersExpanded"
-                  (click)="filtersExpanded = !filtersExpanded" (keyup.enter)="filtersExpanded = !filtersExpanded">
-                  <div class="sds-card__title">Filter By</div>
-                  <div class="sds-card__action sds-card__collapse"></div>
-                </div>
-                <div class="sds-card__body sds-card__body--accent-cool" id="filtersBody">
-                  <sds-filters #filters [advancedFilters]="showAdvancedFilters" [form]="form"
-                    [defaultModel]="defaultFilterModel" [fields]="fields" [model]="filterModel"
-                    (filterChange)="filterChange$.next($event)">
-                  </sds-filters>
+              <div class="usa-card sds-card--collapsible" [ngClass]="{'sds-card--collapsed': !filtersExpanded}">
+                <div class="usa-card__container">
+                  <div class="usa-card__header usa-card__header--action" role="button" tabindex="0"
+                    aria-controls="filtersBody" [attr.aria-label]="'Filter By'" [attr.aria-expanded]="filtersExpanded"
+                    (click)="filtersExpanded = !filtersExpanded" (keyup.enter)="filtersExpanded = !filtersExpanded">
+                    <div class="usa-card__heading">Filter By</div>
+                    <div class="sds-card__action sds-card__collapse"></div>
+                  </div>
+                  <div class="usa-card__body bg-accent-cool-lighter" id="filtersBody">
+                    <sds-filters #filters [advancedFilters]="showAdvancedFilters" [form]="form"
+                      [defaultModel]="defaultFilterModel" [fields]="fields" [model]="filterModel"
+                      (filterChange)="filterChange$.next($event)">
+                    </sds-filters>
+                  </div>
                 </div>
               </div>
 
-              <div class="sds-card" *ngIf="isMobileMode">
-                <div class="sds-card__body sds-card__body--accent-cool">
-                  <button class="usa-button" id="applyButton" aria-label="Apply"
-                    (click)="onApplyFilter()">Apply</button>
+              <div class="usa-card" *ngIf="isMobileMode">
+                <div class="usa-card__container">
+                  <div class="usa-card__body bg-accent-cool-lighter">
+                    <button class="usa-button" id="applyButton" aria-label="Apply"
+                      (click)="onApplyFilter()">Apply</button>
+                  </div>
                 </div>
               </div>
             </ng-template>
@@ -127,21 +135,23 @@
 
 <ng-template #noResultsTemplate>
   
-  <div class="sds-card sds-card--vertical sds-card--shadowed sds-card--bordered bg-base-lightest">
-    <div class="sds-card__header padding-3">
-        <div class="sds-stack sds-2x">
-            <usa-icon class="sds-stack-icon" [size]="'3x'" [icon]="'circle'"></usa-icon>
-            <usa-icon class="sds-stack-icon" [size]="'2x'" [icon]="'search'"></usa-icon>
-        </div> 
-    </div> 
-    <div class="sds-card__body margin-2"> 
-        <h1 class="sds-card__title">No matches found</h1> 
-          <p>Your search did not return any results for active records.</p> 
-          <p>Would you like to return inactive records in your search results.</p> 
-          <div class="margin-top-3"> 
-              <button class="usa-button usa-button--outline" (click)="addInactiveResults()">Yes</button>
-              <button class="usa-button usa-button--outline" (click)="back()">Go Back</button> 
-          </div> 
-     </div> 
+  <div class="usa-card sds-card--vertical bg-base-lightest">
+    <div class="usa-card__container">
+      <div class="usa-card__header padding-3">
+          <div class="sds-stack sds-2x">
+              <usa-icon class="sds-stack-icon" [size]="'3x'" [icon]="'circle'"></usa-icon>
+              <usa-icon class="sds-stack-icon" [size]="'2x'" [icon]="'search'"></usa-icon>
+          </div>
+      </div>
+      <div class="usa-card__body margin-2">
+          <h1 class="usa-card__heading">No matches found</h1>
+            <p>Your search did not return any results for active records.</p>
+            <p>Would you like to return inactive records in your search results.</p>
+            <div class="margin-top-3">
+                <button class="usa-button usa-button--outline" (click)="addInactiveResults()">Yes</button>
+                <button class="usa-button usa-button--outline" (click)="back()">Go Back</button>
+            </div>
+       </div>
+    </div>
  </div>
 </ng-template>

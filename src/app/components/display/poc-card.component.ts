@@ -4,11 +4,12 @@ import { IAddress } from '../../services/location-service/location.service';
 @Component({
   selector: 'poc-card',
   template: `
-    <div class="sds-card margin-bottom-1">
-        <div class="sds-card__body">
+    <div class="usa-card margin-bottom-1">
+      <div class="usa-card__container">
+        <div class="usa-card__body">
             <div class="grid-row grid-gap margin-bottom-1">
                 <div class="grid-col-auto">
-					<div class="sds-card__title ">{{name + ' (' + title + ')'}}</div>
+					<div class="usa-card__heading ">{{name + ' (' + title + ')'}}</div>
                 </div>
                 <div class="grid-col-fill" *ngIf="isPrimary">
                 	<span class="usa-tag sds-tag--info-white">Primary</span>
@@ -31,6 +32,7 @@ import { IAddress } from '../../services/location-service/location.service';
 	      		</div>
           </div>
         </div>
+      </div>
     </div>
   `,
   styleUrls: ['./display.scss'],

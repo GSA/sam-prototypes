@@ -52,7 +52,7 @@
                   [routerLink]="['/workspace']">Go to workspace</button>
               </div>
               <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-                <button class="usa-button usa-button--secondary width-full" [routerLink]="['/home/hierarchy']">
+                <button class="usa-button usa-button--primary-lighter width-full" [routerLink]="['/home/hierarchy']">
                   Go to federal hierarchy home
                 </button>
               </div>
@@ -64,159 +64,167 @@
     <!-- CARDS -->
     <div class="grid-row grid-gap flex-wrap padding-3 flex-justify-center">
       <div class="grid-row tablet:grid-col-6 desktop:grid-col-3 padding-1">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a class="sds-card__link">
-              <h2 class="sds-card__title">Manage Hierarchy</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Create an office</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Edit an office</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">End date an office</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Move an office</a>
-                </span>
-              </li>
-            </ul>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a>
+                <h2 class="usa-card__heading">Manage Hierarchy</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Create an office</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Edit an office</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">End date an office</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Move an office</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
       <div class="grid-row tablet:grid-col-6 desktop:grid-col-3 padding-1">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a class="sds-card__link">
-              <h2 class="sds-card__title">Change Request Forms</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'document-pdf'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Department change request form</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'document-pdf'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Subtier change request form</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'document-pdf'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Office change request form</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'document-pdf'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Quick start guide for change requests</a>
-                </span>
-              </li>
-            </ul>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a>
+                <h2 class="usa-card__heading">Change Request Forms</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'document-pdf'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Department change request form</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'document-pdf'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Subtier change request form</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'document-pdf'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Office change request form</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'document-pdf'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Quick start guide for change requests</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="grid-row tablet:grid-col-6 desktop:grid-col-3 padding-1">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a class="sds-card__link">
-              <h2 class="sds-card__title">Administrative Reports</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Administrative reports for federal hierarchy</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Go to administrative reports</a>
-                </span>
-              </li>
-            </ul>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a>
+                <h2 class="usa-card__heading">Administrative Reports</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Administrative reports for federal hierarchy</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Go to administrative reports</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
       <div class="grid-row tablet:grid-col-6 desktop:grid-col-3 padding-1">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a class="sds-card__link">
-              <h2 class="sds-card__title">Help</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'question-circle'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Frequently Asked Questions</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'book'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Glossary Terms</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'camera-reels'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Videos</a>
-                </span>
-              </li>
-            </ul>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a>
+                <h2 class="usa-card__heading">Help</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'question-circle'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Frequently Asked Questions</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'book'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Glossary Terms</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'camera-reels'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Videos</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

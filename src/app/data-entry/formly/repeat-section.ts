@@ -33,17 +33,19 @@ import { AddSubawardeeModalComponent } from '../../data-entry-multi-form/modal/a
     </div>
 
     <div
-      class="sds-card sds-card__body--accent-cool margin-top-3"
+      class="usa-card bg-accent-cool-lighter margin-top-3"
       *ngIf="this.showNoresultFound"
     >
-      <div class="sds-card__header sds-card__header--left">
-        <h2 class="sds-card__title ">No Subawardees</h2>
-      </div>
-      <div class="sds-card__body ">
-        <p>
-          To add a subawardee, begin by entering a subawardee Unique Entity ID
-          above.
-        </p>
+      <div class="usa-card__container">
+        <div class="usa-card__header">
+          <h2 class="usa-card__heading ">No Subawardees</h2>
+        </div>
+        <div class="usa-card__body ">
+          <p>
+            To add a subawardee, begin by entering a subawardee Unique Entity ID
+            above.
+          </p>
+        </div>
       </div>
     </div>
 

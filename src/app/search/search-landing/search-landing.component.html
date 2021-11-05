@@ -31,89 +31,95 @@
 		<!-- CARDS -->
 		<div class="grid-row grid-gap flex-wrap margin-top-4 padding-x-3 desktop:padding-0">
 			<div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-  			<div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">Authenticated Search</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-          	<p>You must sign in to search the following Entity Information</p>
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-search"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Entity Registrations</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-search"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Exclusions</a>
-                </span>
-              </li>
-            </ul>
+  			<div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a [routerLink]="['news']">
+                <h2 class="usa-card__heading">Authenticated Search</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <p>You must sign in to search the following Entity Information</p>
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-search"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Entity Registrations</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-search"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Exclusions</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 			</div>
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">Help</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-question-circle"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a [routerLink]="['/help']" class="usa-link">Frequently Asked Questions</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-book"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Glossary Terms</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-video-square"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Videos</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-document-pdf"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Quick start guide for creating a login.gov account</a>
-                </span>
-              </li>
-            </ul>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a [routerLink]="['news']">
+                <h2 class="usa-card__heading">Help</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a [routerLink]="['/help']" class="usa-link">Frequently Asked Questions</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-book"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Glossary Terms</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-video-square"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Videos</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-document-pdf"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Quick start guide for creating a login.gov account</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">Search Overview</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <sds-video-player [VPConfiguration]="videoConfiguration"></sds-video-player>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a [routerLink]="['news']">
+                <h2 class="usa-card__heading">Search Overview</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <sds-video-player [VPConfiguration]="videoConfiguration"></sds-video-player>
+            </div>
           </div>
         </div>
       </div>

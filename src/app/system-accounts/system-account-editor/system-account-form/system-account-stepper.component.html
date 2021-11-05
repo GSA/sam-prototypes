@@ -1,19 +1,20 @@
 <div class="grid-row grid-gap">
       <div class="desktop:grid-col-3 tablet-lg:grid-col-12 mobile-lg:grid-col-12 margin-bottom-3">
         <responsive-sidebar [title]="'Navigate To'" [showApply]="false">
-          <div class="sds-card">
-            <div class="sds-card__body sds-card__body--accent-cool">
-
-              <ul class="usa-sidenav usa-sidenav--styled">
-                <li *ngFor="let step of stepTemplates; let i = index;" class="usa-sidenav__item" [ngClass]="{
-                    'usa-current':  selectedStep?.id === step.id
-                  }">
-                  <ng-container [ngTemplateOutlet]="sidenavItem" [ngTemplateOutletContext]="{$implicit: step}">
-                  </ng-container>
-                  <ng-container [ngTemplateOutlet]="subPanelTemplate" [ngTemplateOutletContext]="{$implicit:step}">
-                  </ng-container>
-                </li>
-              </ul>
+          <div class="usa-card">
+            <div class="usa-card__container">
+              <div class="usa-card__body bg-accent-cool-lighter">
+                <ul class="usa-sidenav usa-sidenav--styled">
+                  <li *ngFor="let step of stepTemplates; let i = index;" class="usa-sidenav__item" [ngClass]="{
+                      'usa-current':  selectedStep?.id === step.id
+                    }">
+                    <ng-container [ngTemplateOutlet]="sidenavItem" [ngTemplateOutletContext]="{$implicit: step}">
+                    </ng-container>
+                    <ng-container [ngTemplateOutlet]="subPanelTemplate" [ngTemplateOutletContext]="{$implicit:step}">
+                    </ng-container>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </responsive-sidebar>

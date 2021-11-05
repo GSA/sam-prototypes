@@ -11,7 +11,7 @@
                 [routerLink]="['/reports/awards/standard']">DataBank</a> is the only place to go to create and run
               contract data reports. If you are searching for contract data (i.e., searching for specific contracts),
               you must do so at <a class="usa-link" href="FPDS.gov">FPDS.gov <usa-icon [icon]="'box-arrow-up-right'"
-                  [size]="'xs'"></usa-icon></a>, which remains the authoritative source for contract data.</p>
+                  [size]="'lg'"></usa-icon></a>, which remains the authoritative source for contract data.</p>
             <p class="text-base-dark">Contract data provides detailed information on all contract actions that are
               required to be reported by federal agencies.  These are actions with an estimated value of $10,000 or
               more. </p>
@@ -20,7 +20,7 @@
             <span class="text-base padding-bottom-1">Legacy Website</span>
             <img src="assets/img/fpds.jpg" class="height-4">
             <p><a class="usa-link text-bold" href="FPDS.gov" target="_blank">Go to FPDS.gov <usa-icon
-                  [icon]="'box-arrow-up-right'" [size]="'xs'"></usa-icon></a></p>
+                  [icon]="'box-arrow-up-right'" [size]="'lg'"></usa-icon></a></p>
           </div>
         </div>
       </div>
@@ -33,7 +33,7 @@
           <sds-accordion-item *ngFor="let help of reportsTraining" #first>
             <sds-accordion-title>{{help.title}}</sds-accordion-title>
             <sds-accordion-content>
-              <ul class="sds-list sds-list--icon padding-0">
+              <ul class="usa-list usa-list--icon padding-0">
                 <li *ngFor="let article of help.articles">
                   <span class="sds-list__item-icon">
                     <i [ngClass]="article.icon"></i>
@@ -52,266 +52,278 @@
     <!-- CARDS -->
     <div class="grid-row grid-gap flex-wrap padding-3 flex-justify-center">
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a class="sds-card__link">
-              <h2 class="sds-card__title">Standard Reports</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <p>Standard reports contain information about contract activity formatted to meet the needs of both
-              government and public users. There are 36 standard contract data reports in the DataBank.</p>
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Quick start guide for standard reports</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Reference guide for standard reports</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Go to Standard Reports</a>
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">Ad Hoc Reports</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <p>Ad hoc reports are created with an advanced tool that lets you design reports with data fields and
-              filters you choose. We recommend that you become familiar with the contract data fields and have some
-              knowledge of business intelligence tools before working with it..</p>
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Quick start guide for ad hoc reports</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Reference guide for ad hoc reports</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Go to Ad Hoc Reports</a>
-                </span>
-              </li>
-            </ul>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a>
+                <h2 class="usa-card__heading">Standard Reports</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <p>Standard reports contain information about contract activity formatted to meet the needs of both
+                government and public users. There are 36 standard contract data reports in the DataBank.</p>
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Quick start guide for standard reports</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Reference guide for standard reports</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Go to Standard Reports</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a class="sds-card__link">
-              <h2 class="sds-card__title">Administrative Reports</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <p>Administrative reports are accessible only by federal users who are assigned an administrative role for
-              contract data in SAM.gov. These reports contain “For Official Use Only” data or other sensitive
-              information. There are currently 6 administrative contract data reports represented in the DataBank.</p>
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Quick start guide for adminstrative reports</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Reference guide for administrative reports</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Go to Administrative Reports</a>
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a class="sds-card__link">
-              <h2 class="sds-card__title">Static Reports</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <p>Static reports have been prepared on a fiscal year basis for the public and aggregate data across the
-              Federal Government. The following reports are available for download.</p>
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Quick start guide for static reports</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Reference guide for static reports</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href=" " class="usa-link">National Interest Action / Other Reports</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href=" " class="usa-link">Small Business Goaling Reports</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href=" " class="usa-link">Top 100 Contractors Reports</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href=" " class="usa-link">Federal Procurement Reports</a>
-                </span>
-              </li>
-            </ul>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a [routerLink]="['news']">
+                <h2 class="usa-card__heading">Ad Hoc Reports</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <p>Ad hoc reports are created with an advanced tool that lets you design reports with data fields and
+                filters you choose. We recommend that you become familiar with the contract data fields and have some
+                knowledge of business intelligence tools before working with it..</p>
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Quick start guide for ad hoc reports</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Reference guide for ad hoc reports</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Go to Ad Hoc Reports</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a class="sds-card__link">
-              <h2 class="sds-card__title">Do I need a user account?</h2>
-            </a>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a>
+                <h2 class="usa-card__heading">Administrative Reports</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <p>Administrative reports are accessible only by federal users who are assigned an administrative role for
+                contract data in SAM.gov. These reports contain “For Official Use Only” data or other sensitive
+                information. There are currently 6 administrative contract data reports represented in the DataBank.</p>
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Quick start guide for adminstrative reports</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Reference guide for administrative reports</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Go to Administrative Reports</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="sds-card__body">
-            <p>You must sign up for a user account to access the contract data standard and ad hoc reports. All users
-              including public users can run these reports, but you must be signed in.</p>
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Quick start guide for creating a login.gov account</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Sign up at login.gov</a>
-                </span>
-              </li>
-            </ul>
-            <p><b>Government users:</b> We encourage you to request a contract data role if you need access to
-              restricted data such as DoD’s 90-day award data.</p>
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'file-earmark'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Request a federal role</a>
-                </span>
-              </li>
-            </ul>
+        </div>
+      </div>
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a>
+                <h2 class="usa-card__heading">Static Reports</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <p>Static reports have been prepared on a fiscal year basis for the public and aggregate data across the
+                Federal Government. The following reports are available for download.</p>
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Quick start guide for static reports</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Reference guide for static reports</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href=" " class="usa-link">National Interest Action / Other Reports</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href=" " class="usa-link">Small Business Goaling Reports</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href=" " class="usa-link">Top 100 Contractors Reports</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href=" " class="usa-link">Federal Procurement Reports</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a>
+                <h2 class="usa-card__heading">Do I need a user account?</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <p>You must sign up for a user account to access the contract data standard and ad hoc reports. All users
+                including public users can run these reports, but you must be signed in.</p>
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Quick start guide for creating a login.gov account</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon class="action-icon" [icon]="'angle-circle'" [rotate]="180"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Sign up at login.gov</a>
+                  </span>
+                </li>
+              </ul>
+              <p><b>Government users:</b> We encourage you to request a contract data role if you need access to
+                restricted data such as DoD’s 90-day award data.</p>
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'file-earmark'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Request a federal role</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
 
 
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a class="sds-card__link">
-              <h2 class="sds-card__title">Help</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'question-circle'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Frequently asked questions</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'book'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Glossary Terms</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <usa-icon [icon]="'camera-reels'" [size]="'xs'"></usa-icon>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Videos</a>
-                </span>
-              </li>
-            </ul>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a>
+                <h2 class="usa-card__heading">Help</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'question-circle'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Frequently asked questions</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'book'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Glossary Terms</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <usa-icon [icon]="'camera-reels'" [size]="'lg'"></usa-icon>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Videos</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

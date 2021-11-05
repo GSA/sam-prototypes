@@ -15,7 +15,7 @@
             <sds-search *ngIf="false" name="opps-search" [(ngModel)]="searchModel" (ngModelChange)="search()"
               [searchSettings]="searchSettings">
             </sds-search>
-            <ul class="sds-list sds-list--icon">
+            <ul class="usa-list usa-list--icon">
               <li>
                 <span class="sds-list__item-icon">
                   <i class="sds fa-download"></i>
@@ -46,7 +46,7 @@
             <div class="sds-tile--outline display-flex flex-column flex-justify margin-top-2">
               <h2>APIs</h2>
               <p class="text-base-dark">Explore our API documentation.</p>
-              <ul class="sds-list sds-list--icon">
+              <ul class="usa-list usa-list--icon">
                 <li>
                   <span class="sds-list__item-icon">
                     <usa-icon class="action-icon" [icon]="'arrow-right-circle'" [rotate]="180">
@@ -54,14 +54,14 @@
                   </span>
                   <span class="sds-list__item-content">
                     <a href="https://open.gsa.gov" target="_blank" class="usa-link">Go to Open GSA
-                      <usa-icon [icon]="'box-arrow-up-right'" [size]="'xs'"></usa-icon>
+                      <usa-icon [icon]="'box-arrow-up-right'" [size]="'lg'"></usa-icon>
                     </a>
                   </span>
                 </li>
               </ul>
 
               <p class="text-base-dark">To access controlled APIs, request a system account.</p>
-              <ul class="sds-list sds-list--icon">
+              <ul class="usa-list usa-list--icon">
                 <li>
                   <span class="sds-list__item-icon">
                     <i class="sds fa-document"></i>
@@ -101,7 +101,8 @@
           <p class="text-base-dark">Manage federal funding and awarding organizations as a hierarchy administrator.</p>
           <div class="desktop:flex-column flex-justify-center grid-row grid-gap">
             <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
-              <button class="usa-button usa-button--secondary width-full">Federal Hierarchy for Federal Users</button>
+              <button class="usa-button usa-button--primary-lighter width-full">Federal Hierarchy for Federal
+                Users</button>
             </div>
             <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-12 margin-y-1">
               <button class="usa-button width-full">Sign in to Get Started</button>
@@ -113,135 +114,145 @@
     <!-- CARDS -->
     <div class="grid-row grid-gap flex-wrap margin-top-4 padding-x-3 desktop:padding-0">
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">Data Dictionary</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <p class="text-base-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
-            </p>
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Go to data dictionary</a>
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">Technical Interface Community</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <p class="text-base-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
-            </p>
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Go to Technical Interface Community</a>
-                </span>
-              </li>
-            </ul>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a [routerLink]="['news']">
+                <h2 class="usa-card__heading">Data Dictionary</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <p class="text-base-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.
+              </p>
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Go to data dictionary</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">Help</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <ul class="sds-list sds-list--icon">
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-question-circle"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a [routerLink]="['/help']" class="usa-link">Frequently Asked Questions</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-book"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Glossary Terms</a>
-                </span>
-              </li>
-              <li>
-                <span class="sds-list__item-icon">
-                  <i class="sds fa-video-square"></i>
-                </span>
-                <span class="sds-list__item-content">
-                  <a href="#" class="usa-link">Videos</a>
-                </span>
-              </li>
-            </ul>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a [routerLink]="['news']">
+                <h2 class="usa-card__heading">Technical Interface Community</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <p class="text-base-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.
+              </p>
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-angle-circle fa-rotate-180 bg-primary radius-pill fa-fw"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Go to Technical Interface Community</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
       <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">CFDA PDF Editions</h2>
-            </a>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a [routerLink]="['news']">
+                <h2 class="usa-card__heading">Help</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <ul class="usa-list usa-list--icon">
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-question-circle"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a [routerLink]="['/help']" class="usa-link">Frequently Asked Questions</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-book"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Glossary Terms</a>
+                  </span>
+                </li>
+                <li>
+                  <span class="sds-list__item-icon">
+                    <i class="sds fa-video-square"></i>
+                  </span>
+                  <span class="sds-list__item-content">
+                    <a href="#" class="usa-link">Videos</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="sds-card__body">
-            <p>Annual CFDA catalogs, dating back to 2008, are available for download as PDF files.</p>
+        </div>
+      </div>
+      <div class="tablet:grid-col-6 desktop:grid-col-4 margin-y-2">
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a [routerLink]="['news']">
+                <h2 class="usa-card__heading">CFDA PDF Editions</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <p>Annual CFDA catalogs, dating back to 2008, are available for download as PDF files.</p>
+            </div>
           </div>
         </div>
       </div>
       <div class="tablet:grid-col-12 desktop:grid-col-8 margin-y-2">
-        <div class="sds-card sds-card--shadowed sds-card--bordered height-full width-full">
-          <div class="sds-card__header sds-card__header--accent-cool sds-card__header--left">
-            <a [routerLink]="['news']" class="sds-card__link">
-              <h2 class="sds-card__title">External Resources</h2>
-            </a>
-          </div>
-          <div class="sds-card__body">
-            <ul class="sds-list">
-              <li>
-                <span class="sds-list__item-content">
-                  <a class="usa-link text-semibold" target="_blank"
-                    href="https://www.grants.gov/web/grants/learn-grants.html">
-                    Grants.gov Learning Center.
-                    <usa-icon [icon]="'box-arrow-up-right'" [size]="'xs'"></usa-icon>
-                  </a> Learn and navigate the grants lifecycle from online application through post-award.</span>
-              </li>
-              <li>
-                <span class="sds-list__item-content">
-                  <a class="usa-link text-semibold" target="_blank" href="https://usaspending.gov">
-                    USASpending.gov
-                    <usa-icon [icon]="'box-arrow-up-right'" [size]="'xs'"></usa-icon>
-                  </a> Visit the official open data source of federal spending information.</span>
-              </li>
-              <li>
-                <span class="sds-list__item-content">
-                  <a class="usa-link text-semibold" target="_blank" href="https://www.usa.gov/benefits-grants-loans">
-                    USA.gov Government Benefits, Grants, and Loans.
-                    <usa-icon [icon]="'box-arrow-up-right'" [size]="'xs'"></usa-icon>
-                  </a> Learn about affordable housing, grants, loans, and other assistance for individuals and
-                  organizations.</span>
-              </li>
-            </ul>
+        <div class="usa-card height-full width-full">
+          <div class="usa-card__container">
+            <div class="usa-card__header bg-accent-cool-lighter">
+              <a [routerLink]="['news']">
+                <h2 class="usa-card__heading">External Resources</h2>
+              </a>
+            </div>
+            <div class="usa-card__body">
+              <ul class="sds-list">
+                <li>
+                  <span class="sds-list__item-content">
+                    <a class="usa-link text-semibold" target="_blank"
+                      href="https://www.grants.gov/web/grants/learn-grants.html">
+                      Grants.gov Learning Center.
+                      <usa-icon [icon]="'box-arrow-up-right'" [size]="'lg'"></usa-icon>
+                    </a> Learn and navigate the grants lifecycle from online application through post-award.</span>
+                </li>
+                <li>
+                  <span class="sds-list__item-content">
+                    <a class="usa-link text-semibold" target="_blank" href="https://usaspending.gov">
+                      USASpending.gov
+                      <usa-icon [icon]="'box-arrow-up-right'" [size]="'lg'"></usa-icon>
+                    </a> Visit the official open data source of federal spending information.</span>
+                </li>
+                <li>
+                  <span class="sds-list__item-content">
+                    <a class="usa-link text-semibold" target="_blank" href="https://www.usa.gov/benefits-grants-loans">
+                      USA.gov Government Benefits, Grants, and Loans.
+                      <usa-icon [icon]="'box-arrow-up-right'" [size]="'lg'"></usa-icon>
+                    </a> Learn about affordable housing, grants, loans, and other assistance for individuals and
+                    organizations.</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -265,12 +276,12 @@
           </div>
           <div class="grid-row">
             <div class="grid-col-12 tablet-lg:grid-col-8">
-              <div class="n-sds-card">
-                <div class="n-sds-card__heading">
+              <div>
+                <div>
                   <h2 class="font-sans-lg margin-top-4 text-ink text-semibold">Downloads</h2>
                   <p class="usa-prose">Enter a filename or description to search for a downloadable file.</p>
                 </div>
-                <div class="n-sds-card__content">
+                <div>
                   <div class="usa-search--big maxw-tablet">
                   </div>
                   <div class="grid-row">
