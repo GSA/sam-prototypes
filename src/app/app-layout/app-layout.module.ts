@@ -1,7 +1,5 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { RouterModule } from '@angular/router';
-import { FormlyModule } from "@ngx-formly/core";
 
 import { chevronLeft, chevronRight, dash, x, fileText, plus, question, circleFill, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
@@ -12,7 +10,6 @@ import {
 } from "@gsa-sam/components";
 
 import {
-  SdsHeaderModule,
   SdsFooterModule,
   SdsFeedbackModule,
   SdsSystemAlertModule,
@@ -62,7 +59,7 @@ import { UsaHeaderModule } from '@gsa-sam/ngx-uswds';
     NgxBootstrapIconsModule.pick({ 
       chevronLeft, chevronRight, dash, x, 
       fileText, plus, question, logOut, workspace,
-      messages, request, logIn })
+      circleFill, messages, request, logIn })
   ],
   exports: [
     AppHeaderComponent,

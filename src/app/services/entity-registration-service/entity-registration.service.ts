@@ -72,6 +72,7 @@ export class EntityRegistrationService implements StatisticsService, SearchListI
     }
 
   public getRecord(uei): any {
+    if (!uei) return this.data[0];
      for(let i=0; i<this.data.length; i++) {
        if(this.data[i].dunsNumber == uei) {
            return this.data[i];

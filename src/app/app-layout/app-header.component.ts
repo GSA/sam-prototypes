@@ -25,6 +25,10 @@ import { UsaHeaderComponent } from "@gsa-sam/ngx-uswds";
         </div>
       </div>
     </div>
+    <!-- <select (change)="swapTheme($event)">
+      <option value="sds">SDS</option>
+      <option value="uswds">USWDS</option>
+    </select> -->
     <usa-header #header
       [primaryNavItems]="model.navigationLinks" 
       [secondaryNavItems]="model.secondaryLinks"
@@ -36,7 +40,7 @@ import { UsaHeaderComponent } from "@gsa-sam/ngx-uswds";
         <div class="sds-navbar--blank" *ngIf="isHomePage; else showLogo"></div>
         <ng-template #showLogo>
           <a [routerLink]="model.home.route" title="Home" aria-label="Go to Home page" *ngIf="!isHomePage">
-            <img class="sds-header__logo" [src]="model.home.logo" [alt]="model.home.text" />
+            <img class="height-5" [src]="model.home.logo" [alt]="model.home.text" />
           </a>
         </ng-template>
       </ng-template>
@@ -109,6 +113,8 @@ export class AppHeaderComponent implements OnInit {
     },
   ];
 
+  styleSheetLink: HTMLLinkElement;
+
   constructor(
     public appService: AppService,
     public router: Router,
@@ -116,6 +122,10 @@ export class AppHeaderComponent implements OnInit {
     public locationStrategy: LocationStrategy,
     private cdr: ChangeDetectorRef
   ) {
+    this.styleSheetLink = document.querySelector(
+      'link[id="selected-style"]'
+    );
+
     this.appService.signInChange$.subscribe((value) => {
       this.signInOutEvent(value);
     });
@@ -250,5 +260,9 @@ export class AppHeaderComponent implements OnInit {
     }
 
     this.router.navigateByUrl(link.route);
+  }
+
+  swapTheme(e){
+    this.styleSheetLink.setAttribute('href', `${e.target.value}.css`);
   }
 }

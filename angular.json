@@ -27,7 +27,18 @@
             "tsConfig": "src/tsconfig.app.json",
             "preserveSymlinks": true,
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/material.theme.scss", "src/styles.scss"],
+            "styles": [
+              {
+                "input": "src/uswds-styles.scss",
+                "inject": false,
+                "bundleName": "uswds"
+              },
+              {
+                "input": "src/sam-styles.scss",
+                "inject": true,
+                "bundleName": "sds"
+              }
+            ]
           },
           "configurations": {
             "production": {

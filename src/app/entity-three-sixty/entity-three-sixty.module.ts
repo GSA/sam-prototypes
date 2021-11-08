@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { chevronLeft, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
@@ -24,12 +24,18 @@ import { SummaryAddressesComponent } from "./summary-addresses.component";
 import { EntityThreeSixtyNavigationComponent } from './entity-three-sixty-navigation.component';
 import { IconModule } from '@gsa-sam/ngx-uswds-icons';
 
+const routes: Routes = [
+  {
+    path: '',
+    component: EntityThreeSixtyComponent
+  }
+];
 
 @NgModule({
   declarations: [EntityThreeSixtyComponent, EntityThreeSixtySubheaderComponent, EntityRegistrationSummaryComponent, SummaryReviewListComponent, SummaryAddressesComponent, EntityThreeSixtyNavigationComponent],
   imports: [
     CommonModule,
-    RouterModule,
+    RouterModule.forChild(routes),
     IconModule,
     SdsSideNavigationModule,
     SdsSubheaderModule,

@@ -9,7 +9,7 @@ import { IAddress } from '../../services/location-service/location.service';
         <div class="usa-card__body">
             <div class="grid-row grid-gap margin-bottom-1">
                 <div class="grid-col-auto">
-					<div class="usa-card__heading ">{{name + ' (' + title + ')'}}</div>
+					        <div>{{name + ' (' + title + ')'}}</div>
                 </div>
                 <div class="grid-col-fill" *ngIf="isPrimary">
                 	<span class="usa-tag sds-tag--info-white">Primary</span>
