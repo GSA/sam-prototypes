@@ -38,7 +38,7 @@ import { AddSubawardeeModalComponent } from '../../data-entry-multi-form/modal/a
     >
       <div class="usa-card__container">
         <div class="usa-card__header">
-          <h2 class="usa-card__heading ">No Subawardees</h2>
+          <h2 class="usa-card__heading">No Subawardees</h2>
         </div>
         <div class="usa-card__body ">
           <p>
