@@ -36,34 +36,32 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    DataEntryAppComponent,
-    DataEntryCustomStepperComponent,
-    AddSubawardeeModalComponent,
-    AddSubawardeeStepperComponent
-  ],
-  providers: [
-    DataEntryMultiFormStepsService,
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    SdsSelectionPanelModule,
-    DataEntryLayoutModule,
-    FormlyModule.forRoot(),
-    SdsFormlyModule,
-    DataEntryFormlyModule,
-    IconModule,
-    UsaStepIndicatorModule,
-    NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, circle, slashCircleFill, checkCircleFill, question, save, x }),
-    SdsToastModule,
-    SdsButtonGroupModule,
-    EntityReportingServiceModule,
-    RouterModule.forChild(routes),
-    SdsStepperModule,
-    SdsDialogModule,
-  ],
-
-  entryComponents: [AddSubawardeeModalComponent]
+    declarations: [
+        DataEntryAppComponent,
+        DataEntryCustomStepperComponent,
+        AddSubawardeeModalComponent,
+        AddSubawardeeStepperComponent
+    ],
+    providers: [
+        DataEntryMultiFormStepsService,
+    ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        SdsSelectionPanelModule,
+        DataEntryLayoutModule,
+        FormlyModule.forRoot(),
+        SdsFormlyModule,
+        DataEntryFormlyModule,
+        IconModule,
+        UsaStepIndicatorModule,
+        NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, circle, slashCircleFill, checkCircleFill, question, save, x }),
+        SdsToastModule,
+        SdsButtonGroupModule,
+        EntityReportingServiceModule,
+        RouterModule.forChild(routes),
+        SdsStepperModule,
+        SdsDialogModule,
+    ]
 })
 export class DataEntryMultiFormModule { }

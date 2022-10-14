@@ -9,10 +9,9 @@ import { SdsSubheaderModule, SearchListServiceModule } from "@gsa-sam/layouts";
 
 import {
   SdsSideNavigationModule,
-  SdsToolbarModule,
   SdsAccordionModule,
   SdsPageModule,
-  SdsSearchModule
+  SdsSearchModule,
 } from "@gsa-sam/components";
 import {
   SdsFiltersModule,
@@ -38,7 +37,7 @@ import { IconModule } from "@gsa-sam/ngx-uswds-icons";
     SdsFiltersModule,
     SdsSubheaderModule,
     SdsSideNavigationModule,
-    SdsToolbarModule,
+
     SdsAccordionModule,
     SdsPageModule,
     SdsSearchModule,
@@ -51,4 +50,4 @@ import { IconModule } from "@gsa-sam/ngx-uswds-icons";
   exports: [HelpComponent],
   providers: [SDSFormlyUpdateComunicationService],
 })
-export class HelpModule { }
+export class HelpModule {}

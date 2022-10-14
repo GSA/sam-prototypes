@@ -5,19 +5,33 @@
   </button>
 
   <!-- TITLE -->
-  <h1 class="font-heading-md text-semibold tablet-lg:width-mobile">Contract Opportunities</h1>
+  <h1 class="font-heading-md text-semibold tablet-lg:width-mobile">
+    Contract Opportunities
+  </h1>
 
   <!-- SEARCH (OPTIONAL) -->
-  <sds-search (term)="newSearch($event)" parentSelector=".grid-row" placeholder="Enter an ID, name, or keyword"
-    inputClass="width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block"></sds-search>
+  <sds-search
+    (term)="newSearch($event)"
+    parentSelector=".grid-row"
+    placeholder="Enter an ID, name, or keyword"
+    inputClass="width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block"
+  ></sds-search>
 
   <!-- PRIMARY/SECONDARY BUTTONS (OPTIONAL) -->
   <ng-container subheader-buttons-container>
-    <button class="usa-button margin-top-05 tablet:margin-top-0" (click)="newAccount($event)">Create Listing</button>
+    <button
+      class="usa-button margin-top-05 tablet:margin-top-0"
+      (click)="newAccount($event)"
+    >
+      Create Listing
+    </button>
   </ng-container>
 
   <!-- ACTIONS BUTTONS (OPTIONAL) -->
-  <sds-subheader-actions [model]="subheader" (clicks)="subheaderActionClicked($event)">
+  <sds-subheader-actions
+    [model]="subheader"
+    (clicks)="subheaderActionClicked($event)"
+  >
   </sds-subheader-actions>
 </sds-subheader>
 <sds-page>
@@ -26,11 +40,19 @@
       <sds-accordion>
         <sds-accordion-item [expanded]="false">
           <sds-accordion-item-header>Navigate To</sds-accordion-item-header>
-          <sds-side-navigation #sideNav [model]="navigationModel"></sds-side-navigation>
+          <sds-side-navigation
+            #sideNav
+            [model]="navigationModel"
+          ></sds-side-navigation>
         </sds-accordion-item>
         <sds-accordion-item [expanded]="true">
           <sds-accordion-item-header>Filter By</sds-accordion-item-header>
-          <sds-filters [form]="form" [fields]="filters" [model]="model" (filterChange)="filterChange$.next($event)">
+          <sds-filters
+            [form]="form"
+            [fields]="filters"
+            [model]="model"
+            (filterChange)="filterChange$.next($event)"
+          >
           </sds-filters>
         </sds-accordion-item>
       </sds-accordion>

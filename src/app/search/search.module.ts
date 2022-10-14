@@ -3,7 +3,6 @@ import { CommonModule } from "@angular/common";
 
 import {
   SdsSideNavigationModule,
-  SdsToolbarModule,
   SdsPageModule,
   SdsCollapseModule,
   SdsSearchModule,
@@ -47,7 +46,7 @@ import { SearchServiceModule } from "../services/search-service/search-service.m
 import { AdvancedFiltersModule } from "./search-filters/advanced-filters/advanced-filters.module";
 import { SearchRoutingModule } from "./search-routing.module";
 import { SearchComponent } from "./search.component";
-import { IconModule } from '@gsa-sam/ngx-uswds-icons';
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import _ from "lodash-es";
 import { SearchFormlyModule } from "./search-formly/search-formly.module";
@@ -60,7 +59,7 @@ import { SearchFormlyModule } from "./search-formly/search-formly.module";
     FormsModule,
 
     SdsSideNavigationModule,
-    SdsToolbarModule,
+
     SdsAccordionModule,
     SdsPageModule,
     SdsCollapseModule,
@@ -94,11 +93,9 @@ import { SearchFormlyModule } from "./search-formly/search-formly.module";
     IconModule,
     SdsSelectionPanelModule,
     SideToolbarModule,
-    NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons))
-    ),
+    NgxBootstrapIconsModule.pick(Object.assign(_.cloneDeep(allIcons))),
     SearchFormlyModule,
   ],
   exports: [SearchComponent],
 })
-export class SearchModule { }
+export class SearchModule {}

@@ -1,9 +1,9 @@
-import { FormControl, ValidationErrors } from "@angular/forms";
+import { UntypedFormControl, ValidationErrors } from "@angular/forms";
 import { SelectionMode } from "@gsa-sam/components";
 import { SdsFormlyTypes } from "@gsa-sam/sam-formly";
 import { FormlyFieldConfig } from "@ngx-formly/core";
 
-export function booleanSyntax(control: FormControl): ValidationErrors {
+export function booleanSyntax(control: UntypedFormControl): ValidationErrors {
   const ret = /AND|OR|and|or|XOR|&&|<=|>=|<|>|!=|==|&|OR*|!|\|{1,2}/gi.exec(control.value) ? null : 
 		{booleanSyntax: 'Please enter a valid boolean query'};
   return ret;

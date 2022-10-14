@@ -1,11 +1,18 @@
-import { Component, ChangeDetectionStrategy, TemplateRef, ViewChild, AfterViewInit } from "@angular/core";
-import { FormGroup } from "@angular/forms";
+import {
+  Component,
+  ChangeDetectionStrategy,
+  TemplateRef,
+  ViewChild,
+  AfterViewInit,
+} from "@angular/core";
+
 import { ActivatedRoute, Router } from "@angular/router";
 import { SdsDialogService } from "@gsa-sam/components";
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 import { EntityReportingService } from "../services/entity-reporting-service/entity-reporting.service";
 import _ from "lodash-es";
 import { FormlyUtilsService } from "@gsa-sam/sam-formly";
+import { FormGroup } from "@angular/forms";
 @Component({
   selector: "app-data-entry",
   templateUrl: "./data-entry.component.html",
@@ -14,7 +21,7 @@ import { FormlyUtilsService } from "@gsa-sam/sam-formly";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DataEntryComponent {
-  @ViewChild('myTemplate') myTemplate: TemplateRef<any>;
+  @ViewChild("myTemplate") myTemplate: TemplateRef<any>;
   isReviewMode: boolean = false;
   reviewFields: FormlyFieldConfig[] = [];
   service: any;
@@ -35,7 +42,7 @@ export class DataEntryComponent {
     public router: Router,
     public dialog: SdsDialogService,
     private entityReportingService: EntityReportingService
-  ) { }
+  ) {}
   subawardeeModel: any = {};
   subawardeeOptions: FormlyFormOptions;
   subawardeefields: FormlyFieldConfig[] = [
@@ -299,7 +306,6 @@ export class DataEntryComponent {
   };
 
   fields: FormlyFieldConfig[] = [
-
     {
       type: "stepper",
       templateOptions: {
@@ -580,7 +586,7 @@ export class DataEntryComponent {
                   key: "compensation",
                   type: "radio",
                   templateOptions: {
-                    label: '',
+                    label: "",
                     hideLable: true,
                     // label: `In order to determine whether you are required to report executive compensation data, answer the following question(s)`,
                     // description: ` 1. In your business or organization's preceding completed fiscal year, did your business or organization (the legal entity to which this specific SAM record, represented by a DUNS number, belongs) receive: <br/>
@@ -631,7 +637,6 @@ export class DataEntryComponent {
       ],
     },
   ];
-
 
   modelChanges(ev) {
     console.log(ev, "model");
@@ -723,16 +728,16 @@ export class DataEntryComponent {
     this.isReviewMode = true;
     let prvHeader: FormlyFieldConfig = {
       key: "reviewHeader",
-      template: ' <h1> Review and Submit </h1>  <hr />'
+      template: " <h1> Review and Submit </h1>  <hr />",
     };
     this.reviewFields.push(prvHeader);
 
     let prvAlert: FormlyFieldConfig = {
       key: "customTemplate",
-      type: 'custom',
+      type: "custom",
       templateOptions: {
-        customResultsTemplate: this.myTemplate
-      }
+        customResultsTemplate: this.myTemplate,
+      },
     };
     this.reviewFields.push(prvAlert);
     this.fields[0].fieldGroup.forEach((element) => {

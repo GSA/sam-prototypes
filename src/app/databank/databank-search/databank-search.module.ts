@@ -3,10 +3,9 @@ import { CommonModule } from "@angular/common";
 
 import {
   SdsSideNavigationModule,
-  SdsToolbarModule,
   SdsPageModule,
   SdsCollapseModule,
-  SdsSearchModule
+  SdsSearchModule,
 } from "@gsa-sam/components";
 import { SdsFiltersModule } from "@gsa-sam/sam-formly";
 import { SdsSubheaderModule, SearchListServiceModule } from "@gsa-sam/layouts";
@@ -21,7 +20,7 @@ import { DatabankSearchItemModule } from "./databank-search-item/databank-search
 
 import { DatabankSearchRoutingModule } from "./databank-search-routing.module";
 import { DatabankSearchComponent } from "./databank-search.component";
-import { IconModule } from '@gsa-sam/ngx-uswds-icons';
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import _ from "lodash-es";
 
@@ -33,7 +32,7 @@ import _ from "lodash-es";
     FormsModule,
     IconModule,
     SdsSideNavigationModule,
-    SdsToolbarModule,
+
     SdsAccordionModule,
     SdsPageModule,
     SdsCollapseModule,
@@ -44,13 +43,11 @@ import _ from "lodash-es";
     SdsFiltersModule,
     DatabankSearchItemModule,
     SearchListServiceModule,
-    NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons))
-    ),
+    NgxBootstrapIconsModule.pick(Object.assign(_.cloneDeep(allIcons))),
     DatabankServiceModule,
     DatabankSearchRoutingModule,
   ],
   exports: [DatabankSearchComponent],
   providers: [],
 })
-export class DatabankSearchModule { }
+export class DatabankSearchModule {}

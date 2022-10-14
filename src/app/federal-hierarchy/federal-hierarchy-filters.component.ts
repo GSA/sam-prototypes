@@ -1,81 +1,82 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { FormlyFieldConfig } from '@ngx-formly/core';
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { FormGroup } from "@angular/forms";
+import { FormlyFieldConfig } from "@ngx-formly/core";
 
 @Component({
-  selector: 'federal-hierarchy-filters',
-  template: `	
-    <sds-filters #filters [advancedFilters]="false" [form]="form"
-		[fields]="fields" [model]="filterModel">
+  selector: "federal-hierarchy-filters",
+  template: `
+    <sds-filters
+      #filters
+      [advancedFilters]="false"
+      [form]="form"
+      [fields]="fields"
+      [model]="filterModel"
+    >
     </sds-filters>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FederalHierarchyFiltersComponent implements OnInit {
-
   public filterModel = {
-  	unused: true,
-  	elementKey: '100000000'
+    unused: true,
+    elementKey: "100000000",
   };
 
   form = new FormGroup({});
 
   public fields: FormlyFieldConfig[] = [
-  {
-      key: 'keyword',
-      type: 'input',
+    {
+      key: "keyword",
+      type: "input",
       templateOptions: {
-          label: 'Keyword',
-          hideOptional: true
-      }
+        label: "Keyword",
+        hideOptional: true,
+      },
     },
     {
-      key: 'level',
-      type: 'multicheckbox',
+      key: "level",
+      type: "multicheckbox",
       templateOptions: {
-        label: 'Hierarchy Level',
-        group: 'accordion',
+        label: "Hierarchy Level",
+        group: "accordion",
         expand: false,
         options: [
-              { label: 'Sub Tier', value: 'SUB TIER' },
-              { label: 'Major Command', value: 'MAJOR COMMAND' },
-              { label: 'Sub Command', value: 'SUB COMMAND' },
-              { label: 'Office', value: 'OFFICE' }
-        ]
-      }
+          { label: "Sub Tier", value: "SUB TIER" },
+          { label: "Major Command", value: "MAJOR COMMAND" },
+          { label: "Sub Command", value: "SUB COMMAND" },
+          { label: "Office", value: "OFFICE" },
+        ],
+      },
     },
     {
-      key: 'officeType',
-      type: 'multicheckbox',
+      key: "officeType",
+      type: "multicheckbox",
       templateOptions: {
-        label: 'Office Type',
-        group: 'accordion',
+        label: "Office Type",
+        group: "accordion",
         expand: false,
         options: [
-              { label: 'Funding', value: 'funding' },
-              { label: 'Awarding', value: 'awarding' }
-        ]
-      }
+          { label: "Funding", value: "funding" },
+          { label: "Awarding", value: "awarding" },
+        ],
+      },
     },
     {
-      key: 'status',
-      type: 'multicheckbox',
+      key: "status",
+      type: "multicheckbox",
       templateOptions: {
-        label: 'Status',
-        group: 'accordion',
+        label: "Status",
+        group: "accordion",
         expand: false,
         options: [
-              { label: 'Active', value: 'active' },
-              { label: 'Inactive', value: 'inactive' }
-        ]
-      }
-   }
+          { label: "Active", value: "active" },
+          { label: "Inactive", value: "inactive" },
+        ],
+      },
+    },
   ];
 
-  constructor() { 
-  }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
