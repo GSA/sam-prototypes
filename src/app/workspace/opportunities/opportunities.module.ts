@@ -8,6 +8,7 @@ import {
   SdsAccordionModule,
   SdsPageModule,
   SdsSearchModule,
+  SdsSideToolbarModule,
 } from "@gsa-sam/components";
 import {
   SdsFiltersModule,
@@ -31,7 +32,7 @@ import _ from "lodash-es";
     ReactiveFormsModule,
     OpportunitiesWsItemModule,
     SdsPageModule,
-
+    SdsSideToolbarModule,
     SdsAccordionModule,
     SdsFiltersModule,
     SdsSideNavigationModule,

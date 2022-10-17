@@ -3,7 +3,7 @@ import { CommonModule } from "@angular/common";
 
 import {
   SdsSideNavigationModule,
-  SdsToolbarModule,
+  SdsSideToolbarModule,
   SdsAccordionModule,
   SdsPageModule,
 } from "@gsa-sam/components";
@@ -18,7 +18,7 @@ import { PoliciesComponent } from "./policies.component";
   imports: [
     CommonModule,
     SdsSideNavigationModule,
-    SdsToolbarModule,
+    SdsSideToolbarModule,
     SdsAccordionModule,
     SdsPageModule,
     SdsSubheaderModule,

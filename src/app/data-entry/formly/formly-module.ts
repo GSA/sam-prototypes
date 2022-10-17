@@ -3,8 +3,8 @@ import { CommonModule } from "@angular/common";
 import {
   ReactiveFormsModule,
   FormsModule,
-  UntypedFormControl,
   ValidationErrors,
+  FormControl,
 } from "@angular/forms";
 import { SdsFormlyModule, sdsWrappers } from "@gsa-sam/sam-formly";
 import { FormlyFieldConfig, FormlyModule } from "@ngx-formly/core";
@@ -78,7 +78,7 @@ import { SubawardeeReadOnlyRepeatTypeComponent } from "./readonly-repeat-section
 export class DataEntryFormlyModule {}
 
 export function dataEntrySubawardeeRepeaterRequired(
-  control: UntypedFormControl,
+  control: FormControl,
   field: FormlyFieldConfig,
   model: any
 ): ValidationErrors {

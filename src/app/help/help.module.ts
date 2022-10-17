@@ -12,6 +12,7 @@ import {
   SdsAccordionModule,
   SdsPageModule,
   SdsSearchModule,
+  SdsSideToolbarModule,
 } from "@gsa-sam/components";
 import {
   SdsFiltersModule,
@@ -30,6 +31,7 @@ import { IconModule } from "@gsa-sam/ngx-uswds-icons";
   imports: [
     CommonModule,
     RouterModule,
+    SdsSideToolbarModule,
     FormsModule,
     IconModule,
     FormlyModule,

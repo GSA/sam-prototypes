@@ -9,6 +9,7 @@ import {
   SdsAccordionModule,
   SdsPageModule,
   SdsSearchModule,
+  SdsSideToolbarModule,
 } from "@gsa-sam/components";
 
 import {
@@ -33,7 +34,8 @@ import _ from "lodash-es";
     FormsModule,
     IconModule,
     SdsSideNavigationModule,
-
+    SdsSideToolbarModule,
+    SdsActionsMenuModule,
     SdsAccordionModule,
     SdsPageModule,
     SdsSearchModule,

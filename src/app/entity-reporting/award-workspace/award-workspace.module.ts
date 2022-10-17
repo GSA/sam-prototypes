@@ -6,14 +6,11 @@ import { Subject } from "rxjs";
 
 import {
   SdsCollapseModule,
-  SdsSearchModule
+  SdsSearchModule,
+  SdsSideToolbarModule,
 } from "@gsa-sam/components";
 import { SdsFiltersModule } from "@gsa-sam/sam-formly";
-import {
-  SdsSubheaderModule,
-  SearchListServiceModule,
-  SideToolbarModule,
-} from "@gsa-sam/layouts";
+import { SdsSubheaderModule, SearchListServiceModule } from "@gsa-sam/layouts";
 import { SdsButtonGroupModule } from "@gsa-sam/sam-material-extensions";
 
 import { FormlyModule } from "@ngx-formly/core";
@@ -48,10 +45,10 @@ import { SearchResultComponent } from "../../app-layout/search-result.component"
     SdsFiltersModule,
     SdsSubheaderModule,
     SearchListServiceModule,
-    SideToolbarModule,
+    SdsSideToolbarModule,
     EntityReportingServiceModule,
     AwardWorkspaceRoutingModule,
   ],
   exports: [AwardWorkspaceComponent, AwardItemComponent],
 })
-export class AwardWorkspaceModule { }
+export class AwardWorkspaceModule {}

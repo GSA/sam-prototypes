@@ -11,6 +11,7 @@ import {
   SdsPageModule,
   SdsSearchModule,
   SdsDialogModule,
+  SdsSideToolbarModule,
 } from "@gsa-sam/components";
 import {
   SdsFiltersModule,
@@ -33,6 +34,7 @@ import _ from "lodash-es";
   declarations: [SearchSaveComponent],
   imports: [
     CommonModule,
+    SdsSideToolbarModule,
     RouterModule,
     IconModule,
     SdsSideNavigationModule,

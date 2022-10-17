@@ -2,20 +2,34 @@
   <sds-subheader>
     <!-- =============== TITLE =============== -->
     <h1>Policies</h1>
-
   </sds-subheader>
 </ng-container>
 
 <sds-page>
   <sds-page-options class="sam-page__options">
-    <sds-toolbar class="tablet:grid-col-auto" #toolbar="sdsToolbar" [expanded]="true">
-      <sds-accordion>
-        <sds-accordion-item [expanded]="true">
-          <sds-accordion-item-header>Show</sds-accordion-item-header>
-          <sds-side-navigation #sideNav [model]="sideNavModel"></sds-side-navigation>
-        </sds-accordion-item>
-       </sds-accordion>
-    </sds-toolbar>
+    <div class="grid-row">
+      <div class="grid-col-4">
+        <sds-side-toolbar [responsiveButtonText]="'Open Navigation'">
+          <ng-template #toolbarContent>
+            <usa-accordion [singleSelect]="true" [bordered]="true">
+              <usa-accordion-item>
+                <ng-template UsaAccordionHeader>
+                  <div class="sds-accordion__item-header-title">Show</div>
+                </ng-template>
+                <ng-template UsaAccordionContent>
+                  <sds-side-navigation
+                    #sideNav
+                    [model]="sideNavModel"
+                    [ariaLabel]="'Show Side Navigation'"
+                  ></sds-side-navigation>
+                </ng-template>
+              </usa-accordion-item>
+            </usa-accordion>
+          </ng-template>
+        </sds-side-toolbar>
+      </div>
+    </div>
+
     <div class="sds-page__content tablet:grid-col margin-0">
       <router-outlet></router-outlet>
     </div>

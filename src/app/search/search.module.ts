@@ -7,16 +7,13 @@ import {
   SdsCollapseModule,
   SdsSearchModule,
   SdsSelectionPanelModule,
+  SdsSideToolbarModule,
 } from "@gsa-sam/components";
 import {
   SdsFiltersModule,
   SDSFormlyUpdateComunicationService,
 } from "@gsa-sam/sam-formly";
-import {
-  SdsSubheaderModule,
-  SearchListServiceModule,
-  SideToolbarModule,
-} from "@gsa-sam/layouts";
+import { SdsSubheaderModule, SearchListServiceModule } from "@gsa-sam/layouts";
 import { SdsAccordionModule } from "@gsa-sam/sam-material-extensions";
 
 import { FormlyModule } from "@ngx-formly/core";
@@ -50,6 +47,7 @@ import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import _ from "lodash-es";
 import { SearchFormlyModule } from "./search-formly/search-formly.module";
+import { AppLayoutModule } from "../app-layout/app-layout.module";
 
 @NgModule({
   declarations: [SearchComponent],
@@ -57,7 +55,7 @@ import { SearchFormlyModule } from "./search-formly/search-formly.module";
     CommonModule,
     FormlyModule,
     FormsModule,
-
+    AppLayoutModule,
     SdsSideNavigationModule,
 
     SdsAccordionModule,
@@ -92,7 +90,7 @@ import { SearchFormlyModule } from "./search-formly/search-formly.module";
     AdvancedFiltersModule,
     IconModule,
     SdsSelectionPanelModule,
-    SideToolbarModule,
+    SdsSideToolbarModule,
     NgxBootstrapIconsModule.pick(Object.assign(_.cloneDeep(allIcons))),
     SearchFormlyModule,
   ],

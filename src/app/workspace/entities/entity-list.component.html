@@ -5,41 +5,80 @@
   </button>
 
   <!-- TITLE -->
-  <h1 class="font-heading-md text-semibold tablet-lg:width-mobile">Entity Registrations</h1>
+  <h1 class="font-heading-md text-semibold tablet-lg:width-mobile">
+    Entity Registrations
+  </h1>
 
   <!-- SEARCH (OPTIONAL) -->
-  <sds-search (term)="newSearch($event)" parentSelector=".grid-row" placeholder="Enter an ID, name, or keyword"
-    inputClass="width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block"></sds-search>
+  <sds-search
+    (term)="newSearch($event)"
+    parentSelector=".grid-row"
+    placeholder="Enter an ID, name, or keyword"
+    inputClass="width-card-lg widescreen:width-mobile display-none desktop-lg:display-inline-block"
+  ></sds-search>
 
   <!-- PRIMARY/SECONDARY BUTTONS (OPTIONAL) -->
   <ng-container subheader-buttons-container>
-    <button class="usa-button margin-top-05 tablet:margin-top-0" (click)="newAccount($event)">Register Entity</button>
+    <button
+      class="usa-button margin-top-05 tablet:margin-top-0"
+      (click)="newAccount($event)"
+    >
+      Register Entity
+    </button>
   </ng-container>
 
   <!-- ACTIONS BUTTONS (OPTIONAL) -->
-  <sds-subheader-actions [model]="subheader" (clicks)="subheaderActionClicked($event)">
+  <sds-subheader-actions
+    [model]="subheader"
+    (clicks)="subheaderActionClicked($event)"
+  >
   </sds-subheader-actions>
 </sds-subheader>
 <sds-page>
   <sds-page-options class="sam-page__options">
-    <sds-toolbar [expanded]="true">
-      <sds-accordion>
-        <sds-accordion-item [expanded]="false">
-          <sds-accordion-item-header>Navigate To</sds-accordion-item-header>
-          <sds-side-navigation #sideNav [model]="navigationModel"></sds-side-navigation>
-        </sds-accordion-item>
-        <sds-accordion-item [expanded]="true">
-          <sds-accordion-item-header>Filter By</sds-accordion-item-header>
-          <sds-filters [form]="form" [fields]="filters" [model]="model" (filterChange)="filterChange$.next($event)">
-          </sds-filters>
-        </sds-accordion-item>
-      </sds-accordion>
-    </sds-toolbar>
+    <div class="grid-row">
+      <div class="grid-col-4">
+        <sds-side-toolbar [responsiveButtonText]="'Open Navigation'">
+          <ng-template #toolbarContent>
+            <usa-accordion [singleSelect]="true" [bordered]="true">
+              <usa-accordion-item>
+                <ng-template UsaAccordionHeader>
+                  <div class="sds-accordion__item-header-title">
+                    Navigate To
+                  </div>
+                </ng-template>
+                <ng-template UsaAccordionContent>
+                  <sds-side-navigation
+                    #sideNav
+                    [model]="navigationModel"
+                    [ariaLabel]="'Demo Side Navigation'"
+                  ></sds-side-navigation>
+                </ng-template>
+              </usa-accordion-item>
+              <usa-accordion-item header="Filter By">
+                <ng-template UsaAccordionContent>
+                  <sds-filters
+                    [form]="form"
+                    [fields]="filters"
+                    [model]="model"
+                    (filterChange)="filterChange$.next($event)"
+                  >
+                  </sds-filters>
+                </ng-template>
+              </usa-accordion-item>
+            </usa-accordion>
+          </ng-template>
+        </sds-side-toolbar>
+      </div>
+    </div>
+
     <div class="sds-page__content tablet:grid-col-fill margin-0">
       <search-list-layout [service]="service" [configuration]="configuration">
         <ng-template #resultContent let-item>
           <div>
-            <search-result-list-item-entity [model]="item"></search-result-list-item-entity>
+            <search-result-list-item-entity
+              [model]="item"
+            ></search-result-list-item-entity>
           </div>
         </ng-template>
       </search-list-layout>
