@@ -24,8 +24,8 @@ $theme-font-role-body: 'sans';
 $theme-font-role-alt: 'sans';
 
 
-@import '~@gsa-sam/sam-styles/src/stylesheets/sam.scss';
-
+//@import '~@gsa-sam/sam-styles/src/stylesheets/sam.scss';
+@import '~@gsa-sam/sam-styles/src/index.scss';
 $wcag-target: 'A';
 /* autoprefixer grid: autoplace */
 
