@@ -1,43 +1,44 @@
 
-$theme-image-path: '~@gsa-sam/sam-styles/src/img';
-$theme-font-path: '~@gsa-sam/sam-styles/src/fonts';
-@import '~@gsa-sam/sam-styles/src/stylesheets/sam';
+// // $theme-image-path: '~@gsa-sam/sam-styles/src/img';
+// // $theme-font-path: '~@gsa-sam/sam-styles/src/fonts';
+// // @import '~@gsa-sam/sam-styles/src/stylesheets/sam';
+// @import '~@gsa-sam/sam-styles/src/index.scss';
 
-.display-row {
-	@include grid-row;
-	@include grid-gap;
-}
+// .display-row {
+// 	@include grid-row;
+// 	@include grid-gap;
+// }
 
-.display-col {
+// .display-col {
 
-    @include u-margin-bottom(1);
-    @include grid-col(12);
+//     @include u-margin-bottom(1);
+//     @include grid-col(12);
 
-	@include at-media("mobile-lg") {
-       @include grid-col(6);
-    }
+// 	@include at-media("mobile-lg") {
+//        @include grid-col(6);
+//     }
 
-    @include at-media("tablet-lg") {
-       @include grid-col(3);
-    }
+//     @include at-media("tablet-lg") {
+//        @include grid-col(3);
+//     }
 	
-}
+// }
 
-.result-row {
-  @include grid-row;
-  @include grid-gap;
-}
+// .result-row {
+//   @include grid-row;
+//   @include grid-gap;
+// }
 
-.result-col {
+// .result-col {
 
-    @include u-margin-bottom(1);
-    @include grid-col(12);
+//     @include u-margin-bottom(1);
+//     @include grid-col(12);
 
-  @include at-media("mobile-lg") {
-       @include grid-col(6);
-    }
+//   @include at-media("mobile-lg") {
+//        @include grid-col(6);
+//     }
 
-    @include at-media("tablet-lg") {
-       @include grid-col(3);
-    }
-}
+//     @include at-media("tablet-lg") {
+//        @include grid-col(3);
+//     }
+// }
