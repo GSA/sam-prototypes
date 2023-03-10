@@ -25,7 +25,6 @@
     "@ckeditor/ckeditor5-angular": "^4.0.0",
     "@ckeditor/ckeditor5-build-classic": "^35.2.1",
     "@gsa-sam/components": "^14.0.0-beta.0",
-    "@gsa-sam/ngx-uswds": "^14.0.0-beta.0",
     "@gsa-sam/ngx-uswds-icons": "^14.0.0-beta.0",
     "@gsa-sam/sam-formly": "^14.0.0-beta.0",
     "@gsa-sam/sam-material-extensions": "^14.0.0-beta.0",
