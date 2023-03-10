@@ -5,7 +5,7 @@ import {
   ViewChild,
   AfterViewInit,
 } from "@angular/core";
-import { FormGroup } from "@angular/forms";
+import { UntypedFormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { SdsDialogService } from "@gsa-sam/components";
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
@@ -631,7 +631,7 @@ export class DataEntryReportComponent {
   ];
 
   public models: any[] = [];
-  public forms: FormGroup[] = [];
+  public forms: UntypedFormGroup[] = [];
   public model: any = {
     selectedIndex: 0,
   };
@@ -647,7 +647,7 @@ export class DataEntryReportComponent {
   }
   ngOnInit() {
     this.dataEntryfields.forEach((field) => {
-      this.forms.push(new FormGroup({}));
+      this.forms.push(new UntypedFormGroup({}));
       this.models.push({
         id: field["id"],
         label: field["label"],

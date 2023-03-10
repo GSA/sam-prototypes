@@ -2,7 +2,7 @@ import { ViewChild, Component, OnInit, ChangeDetectorRef } from "@angular/core";
 import { Location } from "@angular/common";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Subject } from "rxjs";
-import { FormGroup } from "@angular/forms";
+import { UntypedFormGroup } from "@angular/forms";
 import { FormlyFieldConfig } from "@ngx-formly/core";
 
 import {
@@ -51,7 +51,7 @@ export class AwardWorkspaceComponent implements OnInit {
   @ViewChild("resultList", { static: true })
   resultList: SearchListLayoutComponent;
 
-  form = new FormGroup({});
+  form = new UntypedFormGroup({});
   filterModel = {};
   fields: FormlyFieldConfig[] = awardFilters;
 

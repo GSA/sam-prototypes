@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup } from "@angular/forms";
+import { UntypedFormGroup } from "@angular/forms";
 import { FormlyFieldConfig } from "@ngx-formly/core";
 import { RequestsService } from "../../services/feed-services/requests.service";
 
@@ -21,7 +21,7 @@ export class RequestFiltersComponent implements OnInit {
     unused: true,
   };
 
-  form = new FormGroup({});
+  form = new UntypedFormGroup({});
 
   public fields: FormlyFieldConfig[] = [
     {

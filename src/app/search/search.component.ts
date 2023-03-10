@@ -8,7 +8,7 @@ import {
 import { Location } from "@angular/common";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Subject } from "rxjs";
-import { FormGroup } from "@angular/forms";
+import { UntypedFormGroup } from "@angular/forms";
 import { FormlyFieldConfig } from "@ngx-formly/core";
 
 import {
@@ -69,7 +69,7 @@ export class SearchComponent implements OnInit {
   parentDomain: any;
   domain: any;
   initialDomain: any;
-  form = new FormGroup({});
+  form = new UntypedFormGroup({});
   filterModel = {};
   fields: FormlyFieldConfig[] = [];
   showAdvancedFilters: boolean = false;

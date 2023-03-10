@@ -11,7 +11,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { Location } from "@angular/common";
 import { BehaviorSubject } from "rxjs";
 import { FormlyFieldConfig } from "@ngx-formly/core";
-import { FormGroup } from "@angular/forms";
+import { UntypedFormGroup } from "@angular/forms";
 import { CdkAccordionItem } from "@angular/cdk/accordion";
 
 import { SideNavigationModel, NavigationMode } from "@gsa-sam/components";
@@ -46,7 +46,7 @@ export class HelpComponent implements OnInit, AfterViewInit {
 
   public sideNavModel: SideNavigationModel = helpNavigationData;
 
-  form = new FormGroup({});
+  form = new UntypedFormGroup({});
   public filterChange$ = new BehaviorSubject<object>(null);
 
   public pageActions = {

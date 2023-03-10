@@ -117,8 +117,9 @@
       }
     }
   },
-  "defaultProject": "sam-gov",
   "cli": {
-    "defaultCollection": "@ngrx/schematics"
+    "schematicCollections": [
+      "@ngrx/schematics"
+    ]
   }
 }

@@ -12,7 +12,7 @@ import { SearchListConfiguration } from "@gsa-sam/layouts";
 import { FormlyFieldConfig } from "@ngx-formly/core";
 
 import { filter, map } from "rxjs/operators";
-import { FormGroup } from "@angular/forms";
+import { UntypedFormGroup } from "@angular/forms";
 import { BehaviorSubject } from "rxjs";
 
 import { assistanceFilters } from "./filter.config";
@@ -36,7 +36,7 @@ export class AssistancelistComponent implements OnInit {
 
   @ViewChild("resultList", { static: true }) resultList;
 
-  form = new FormGroup({});
+  form = new UntypedFormGroup({});
 
   model = {};
 

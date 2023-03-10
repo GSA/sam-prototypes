@@ -30,7 +30,7 @@ import {
 } from "@gsa-sam/components";
 
 import { filter, map } from "rxjs/operators";
-import { FormGroup } from "@angular/forms";
+import { UntypedFormGroup } from "@angular/forms";
 import { BehaviorSubject } from "rxjs";
 import { SearchListConfiguration } from "@gsa-sam/layouts";
 
@@ -63,7 +63,7 @@ export class DatabankSearchComponent implements OnInit {
 
   @ViewChild("resultList", { static: true }) resultList;
 
-  form = new FormGroup({});
+  form = new UntypedFormGroup({});
   filterModel = {};
   fields: FormlyFieldConfig[] = filters;
 

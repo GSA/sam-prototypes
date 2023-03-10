@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { FormGroup } from "@angular/forms";
+import { UntypedFormGroup } from "@angular/forms";
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 
 import { SystemAccountsService } from "../../../services/system-accounts-service/system-accounts.service";
@@ -8,7 +8,7 @@ import { SystemAccountsService } from "../../../services/system-accounts-service
   providedIn: "root",
 })
 export class SystemAccountEditorService {
-  form = new FormGroup({});
+  form = new UntypedFormGroup({});
   model: any = { selectedIndex: 0 };
   stepValidityMap = {};
 

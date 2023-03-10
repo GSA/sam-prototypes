@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
-import { FormGroup } from "@angular/forms";
+import { UntypedFormGroup } from "@angular/forms";
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 import { EntityRegistrationEditorService } from "../../services/entity-registration-editor-service/entity-registration-editor.service";
 
@@ -9,7 +9,7 @@ import { EntityRegistrationEditorService } from "../../services/entity-registrat
 })
 export class EntityRegistrationFormComponent implements OnInit {
   currentPageIndex = 0;
-  form = new FormGroup({});
+  form = new UntypedFormGroup({});
   model: any = { selectedIndex: 0 };
   options: FormlyFormOptions = {};
 

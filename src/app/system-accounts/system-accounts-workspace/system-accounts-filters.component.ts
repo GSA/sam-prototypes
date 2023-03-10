@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup } from "@angular/forms";
+import { UntypedFormGroup } from "@angular/forms";
 import { FormlyFieldConfig } from "@ngx-formly/core";
 
 @Component({
@@ -21,7 +21,7 @@ export class SystemAccountsFiltersComponent implements OnInit {
     elementKey: "100000000",
   };
 
-  form = new FormGroup({});
+  form = new UntypedFormGroup({});
 
   public fields: FormlyFieldConfig[] = [
     {

@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
-import { FormGroup } from "@angular/forms";
+import { UntypedFormGroup } from "@angular/forms";
 import { FormlyFieldConfig } from "@ngx-formly/core";
 import { NotificationsService } from "../../services/feed-services/notifications.service";
 
@@ -22,7 +22,7 @@ export class NotificationFiltersComponent implements OnInit {
     unused: true,
   };
 
-  form = new FormGroup({});
+  form = new UntypedFormGroup({});
 
   public fields: FormlyFieldConfig[] = [
     {

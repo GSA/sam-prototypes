@@ -15,7 +15,7 @@ import { BehaviorSubject } from "rxjs";
 import { opportunitiesFilters } from "./filter.config";
 
 import { workspaceSideNavigationData } from "../../common/workspace/navigation.data";
-import { FormGroup } from "@angular/forms";
+import { UntypedFormGroup } from "@angular/forms";
 
 @Component({
   selector: "app-opportunities",
@@ -34,7 +34,7 @@ export class OpportunitiesComponent implements OnInit {
 
   @ViewChild("resultList", { static: true }) resultList;
 
-  form = new FormGroup({});
+  form = new UntypedFormGroup({});
 
   model = {};
 

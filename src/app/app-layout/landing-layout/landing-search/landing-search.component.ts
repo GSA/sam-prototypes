@@ -5,7 +5,7 @@ import {
   Input,
 } from "@angular/core";
 import { Router } from "@angular/router";
-import { FormGroup } from "@angular/forms";
+import { UntypedFormGroup } from "@angular/forms";
 import { FormlyFormOptions, FormlyFieldConfig } from "@ngx-formly/core";
 
 @Component({
@@ -19,7 +19,7 @@ export class LandingSearchComponent implements OnInit {
   model: any = {
     isactive: true,
   };
-  form = new FormGroup({});
+  form = new UntypedFormGroup({});
   options: FormlyFormOptions = {};
 
   fields: FormlyFieldConfig[] = [

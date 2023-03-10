@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { FormGroup } from "@angular/forms";
+import { UntypedFormGroup } from "@angular/forms";
 import { SdsDialogService } from "@gsa-sam/components";
 
 import { SdsFormlyDialogComponent } from "@gsa-sam/sam-formly";
@@ -13,7 +13,7 @@ import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 export class SubawardDataComponent implements OnInit {
   @Input() subawardeeList: any[] = [];
   @Input() subawardItem: any = {};
-  form = new FormGroup({});
+  form = new UntypedFormGroup({});
   model: any = {};
   options: FormlyFormOptions = {};
   fields: FormlyFieldConfig[] = [

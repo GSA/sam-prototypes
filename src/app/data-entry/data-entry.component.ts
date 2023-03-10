@@ -12,7 +12,7 @@ import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 import { EntityReportingService } from "../services/entity-reporting-service/entity-reporting.service";
 import _ from "lodash-es";
 import { FormlyUtilsService } from "@gsa-sam/sam-formly";
-import { FormGroup } from "@angular/forms";
+import { UntypedFormGroup } from "@angular/forms";
 @Component({
   selector: "app-data-entry",
   templateUrl: "./data-entry.component.html",
@@ -294,7 +294,7 @@ export class DataEntryComponent {
     },
   ];
 
-  form = new FormGroup({});
+  form = new UntypedFormGroup({});
   model: any = {
     selectedIndex: 0,
   };

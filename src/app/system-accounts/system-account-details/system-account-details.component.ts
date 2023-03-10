@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup } from "@angular/forms";
+import { UntypedFormGroup } from "@angular/forms";
 import { FormlyUtilsService } from "@gsa-sam/sam-formly";
 
 import { SystemAccountEditorService } from "../system-account-editor/system-account-editor-service/system-account-editor.service";
@@ -9,7 +9,7 @@ import { SystemAccountEditorService } from "../system-account-editor/system-acco
   templateUrl: "./system-account-details.component.html",
 })
 export class SystemAccountDetailsComponent implements OnInit {
-  form = new FormGroup({});
+  form = new UntypedFormGroup({});
 
   constructor(public editorService: SystemAccountEditorService) {}
 

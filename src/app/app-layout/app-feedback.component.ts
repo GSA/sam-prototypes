@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
-import { FormControl } from "@angular/forms";
+import { UntypedFormControl } from "@angular/forms";
 
 @Component({
   selector: "app-feedback",
@@ -15,11 +15,11 @@ import { FormControl } from "@angular/forms";
 export class AppFeedbackComponent implements OnInit {
   constructor() {}
 
-  feedbackModel: FormControl;
+  feedbackModel: UntypedFormControl;
   isCollapsed: boolean = true;
 
   ngOnInit() {
-    this.feedbackModel = new FormControl("");
+    this.feedbackModel = new UntypedFormControl("");
   }
 
   onFeedbackSubmit(feedback) {

@@ -4,7 +4,7 @@ import {
   ReactiveFormsModule,
   FormsModule,
   ValidationErrors,
-  FormControl,
+  UntypedFormControl,
 } from "@angular/forms";
 import { SdsFormlyModule, sdsWrappers } from "@gsa-sam/sam-formly";
 import { FormlyFieldConfig, FormlyModule } from "@ngx-formly/core";
@@ -78,7 +78,7 @@ import { SubawardeeReadOnlyRepeatTypeComponent } from "./readonly-repeat-section
 export class DataEntryFormlyModule {}
 
 export function dataEntrySubawardeeRepeaterRequired(
-  control: FormControl,
+  control: UntypedFormControl,
   field: FormlyFieldConfig,
   model: any
 ): ValidationErrors {

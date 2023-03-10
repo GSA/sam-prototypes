@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
-import { FormGroup } from "@angular/forms";
+import { UntypedFormGroup } from "@angular/forms";
 import { FormlyFormOptions, FormlyFieldConfig } from "@ngx-formly/core";
 import { allIcons } from "ngx-bootstrap-icons";
 
@@ -14,7 +14,7 @@ export class StatusTrackerComponent implements OnInit {
 
   ngOnInit() {}
 
-  form = new FormGroup({});
+  form = new UntypedFormGroup({});
   model: any = {};
   options: any = null;
   fields: FormlyFieldConfig[] = [

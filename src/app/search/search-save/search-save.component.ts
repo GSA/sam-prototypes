@@ -31,7 +31,7 @@ import {
 import { SearchListConfiguration } from "@gsa-sam/layouts";
 
 import { filter, map } from "rxjs/operators";
-import { FormGroup } from "@angular/forms";
+import { UntypedFormGroup } from "@angular/forms";
 import { BehaviorSubject } from "rxjs";
 
 import { SearchSaveService } from "./search-save-service/search-save.service";
@@ -54,7 +54,7 @@ export class SearchSaveComponent implements OnInit {
     placeholder: "Enter an ID or keyword",
   };
 
-  form = new FormGroup({});
+  form = new UntypedFormGroup({});
   filterModel = {};
   fields: FormlyFieldConfig[] = searchSaveListFilters;
 
