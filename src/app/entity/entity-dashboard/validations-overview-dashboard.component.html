@@ -1,0 +1,59 @@
+<h2>Validations</h2>
+<p>Validations may take time for manual review.  We recommend you submit your validations as soon as possible and then continue with the other sections while your information is being validated.</p>
+
+<div class="grid-row grid-gap margin-bottom-1">
+	<div class="grid-col-auto" ><h3>Business Information</h3></div>
+    <div class="grid-col-fill">
+        <span class="sds-tag sds-tag--status">
+            <i class="sds-status sds-status--sm bg-base"></i>{{model.entity.business.status}}
+        </span>
+    </div>
+    <div class="grid-col-auto">
+    	<button class="usa-button">Start Validation</button>
+    </div>
+</div>
+<p *ngIf="!model.entity.business.validated">
+	Start now!
+</p>
+<div class="grid-row grid-gap margin-bottom-1">
+	<div class="grid-col-auto" ><h3>Entity Relationships</h3></div>
+    <div class="grid-col-fill">
+        <span class="sds-tag sds-tag--status">
+            <i class="sds-status sds-status--sm bg-base"></i>{{model.entity.relationships.status}}
+        </span>
+    </div>
+    <div class="grid-col-auto">
+    	<button class="usa-button bg-primary-lighter" [disabled]="!model.entity.business.validated">Start Validation</button>
+    </div>
+</div>
+<p *ngIf="!model.entity.business.validated">
+	You must validation your business information before validating entity relationships.
+</p>
+<div class="grid-row grid-gap margin-bottom-1">
+	<div class="grid-col-auto" ><h3>CAGE Information</h3></div>
+    <div class="grid-col-fill">
+        <span class="sds-tag sds-tag--status">
+            <i class="sds-status sds-status--sm bg-base"></i>{{model.entity.cage.status}}
+        </span>
+    </div>
+    <div class="grid-col-auto">
+    	<button class="usa-button bg-primary-lighter" [disabled]="!model.entity.business.validated">Start Validation</button>
+    </div>
+</div>
+<p *ngIf="!model.entity.business.validated">
+		You must validation your business information before validating entity relationships.
+</p>
+<div class="grid-row grid-gap margin-bottom-1">
+	<div class="grid-col-auto" ><h3>Tax Information</h3></div>
+    <div class="grid-col-fill">
+        <span class="sds-tag sds-tag--status">
+            <i class="sds-status sds-status--sm bg-base"></i>{{model.entity.tax.status}}
+        </span>
+    </div>
+    <div class="grid-col-auto">
+    	<button class="usa-button bg-primary-lighter">Start Validation</button>
+    </div>
+</div>
+<p *ngIf="!model.entity.business.validated">
+	You may start...
+</p>

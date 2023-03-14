@@ -8,9 +8,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
         <div class="sds-field__value sds-field__value--small">
 			<ng-content></ng-content>
         </div>
-     </div>
-  `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+     </div>`
 })
 export class WorkspaceFieldComponent implements OnInit {
 

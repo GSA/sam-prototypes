@@ -119,6 +119,6 @@
   },
   "defaultProject": "sam-gov",
   "cli": {
-    "defaultCollection": "@ngrx/schematics"
+    "schematicCollections": ["@angular-eslint/schematics"]
   }
 }

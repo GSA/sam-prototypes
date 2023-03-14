@@ -110,6 +110,14 @@ const routes: Routes = [
     },
   },
   {
+    path: "entity",
+    loadChildren: () =>
+      import("./entity/entity.module").then((m) => m.EntityModule),
+    data: {
+      id: "workspace",
+    },
+  },
+  {
     path: "entity360",
     loadChildren: () =>
       import("./entity-three-sixty/entity-three-sixty.module").then((m) => m.EntityThreeSixtyModule),
