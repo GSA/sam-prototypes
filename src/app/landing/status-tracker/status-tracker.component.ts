@@ -1,64 +1,61 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
-import {allIcons} from 'ngx-bootstrap-icons';
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { FormGroup } from "@angular/forms";
+import { FormlyFormOptions, FormlyFieldConfig } from "@ngx-formly/core";
+import { allIcons } from "ngx-bootstrap-icons";
 
 @Component({
-  selector: 'app-status-tracker',
-  templateUrl: './status-tracker.component.html',
-  styleUrls: ['./status-tracker.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  selector: "app-status-tracker",
+  templateUrl: "./status-tracker.component.html",
+  styleUrls: ["./status-tracker.component.scss"],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StatusTrackerComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   form = new FormGroup({});
   model: any = {};
-  options:any=null;
+  options: any = null;
   fields: FormlyFieldConfig[] = [
     {
-      fieldGroupClassName: 'grid-row grid-gap',
+      fieldGroupClassName: "grid-row grid-gap",
       fieldGroup: [
         {
-          className: 'grid-col-8',
-          type: 'input',
-          key: 'uei-duns',
+          className: "grid-col-8",
+          type: "input",
+          key: "uei-duns",
           templateOptions: {
             required: true,
-            label: 'Unique Entity ID',
-          }
+            label: "Unique Entity ID",
+          },
         },
         {
-          className: 'grid-col-4',
-          key: 'eft-id',
-          type: 'input',
+          className: "grid-col-4",
+          key: "eft-id",
+          type: "input",
           templateOptions: {
             required: true,
-            label: 'EFT Identifier'
-          }
-        }
+            label: "EFT Identifier",
+          },
+        },
       ],
     },
     {
-      fieldGroupClassName: 'grid-row',
+      fieldGroupClassName: "grid-row",
       fieldGroup: [
         {
-          className: 'grid-col-6',
-          type: 'input',
-          key: 'cage',
+          className: "grid-col-6",
+          type: "input",
+          key: "cage",
           templateOptions: {
             required: true,
-            label: 'CAGE / NCAGE'
-          }
-        }
-      ]
-    }];
+            label: "CAGE / NCAGE",
+          },
+        },
+      ],
+    },
+  ];
 
-  submit() {
-  }
-
+  submit() {}
 }

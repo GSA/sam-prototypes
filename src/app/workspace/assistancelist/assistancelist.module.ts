@@ -2,14 +2,14 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
-import { SdsActionsMenuModule } from "@gsa-sam/layouts";
+import { SdsActionsMenuModule } from "@gsa-sam/components";
 
 import {
   SdsSideNavigationModule,
-  SdsToolbarModule,
   SdsAccordionModule,
   SdsPageModule,
-  SdsSearchModule
+  SdsSearchModule,
+  SdsSideToolbarModule,
 } from "@gsa-sam/components";
 
 import {
@@ -22,7 +22,7 @@ import { FormlyModule } from "@ngx-formly/core";
 import { AssistancelistRoutingModule } from "./assistancelist-routing.module";
 import { AssistancelistComponent } from "./assistancelist.component";
 import { AssistancelistItemModule } from "./assistancelist-item/assistancelist-item.module";
-import { IconModule } from '@gsa-sam/ngx-uswds-icons';
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import _ from "lodash-es";
 
@@ -34,7 +34,8 @@ import _ from "lodash-es";
     FormsModule,
     IconModule,
     SdsSideNavigationModule,
-    SdsToolbarModule,
+    SdsSideToolbarModule,
+    SdsActionsMenuModule,
     SdsAccordionModule,
     SdsPageModule,
     SdsSearchModule,
@@ -43,11 +44,9 @@ import _ from "lodash-es";
     SearchListServiceModule,
     AssistancelistItemModule,
     FormlyModule,
-    NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons))
-    ),
+    NgxBootstrapIconsModule.pick(Object.assign(_.cloneDeep(allIcons))),
   ],
   exports: [AssistancelistComponent],
   providers: [SDSFormlyUpdateComunicationService],
 })
-export class AssistancelistModule { }
+export class AssistancelistModule {}

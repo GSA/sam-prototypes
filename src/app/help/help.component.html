@@ -1,44 +1,70 @@
 <sds-subheader>
   <!-- =============== BACK BUTTON =============== -->
-  <button id="backbutton" class="sds-button sds-button--circular" aria-label="Back" (click)="location.back();">
+  <button
+    id="backbutton"
+    class="sds-button sds-button--circular"
+    aria-label="Back"
+    (click)="location.back()"
+  >
     <usa-icon [icon]="'chevron-left'"></usa-icon>
   </button>
 
-
   <!-- =============== TITLE =============== -->
-  <span class="font-heading-lg text-semibold">
-    Help
-  </span>
-  <sds-search name="helpsearch" [(ngModel)]="searchModel" (ngModelChange)="search()" [searchSettings]="searchSettings">
+  <span class="font-heading-lg text-semibold"> Help </span>
+  <sds-search
+    name="helpsearch"
+    [(ngModel)]="searchModel"
+    (ngModelChange)="search()"
+    [searchSettings]="searchSettings"
+  >
   </sds-search>
   <sds-subheader-actions [model]="pageActions" (clicks)="log($event)">
   </sds-subheader-actions>
-
 </sds-subheader>
 <main>
   <div class="sds-page">
     <div class="grid-container">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-auto">
-          <sds-toolbar #toolbar="sdsToolbar" [expanded]="true">
-            <sds-accordion>
-              <sds-accordion-item [expanded]="false">
-                <sds-accordion-item-header>
-                  <span class="text-normal">Select Domain</span> <br>
-                  <span>{{domainLabel}}</span>
-                </sds-accordion-item-header>
-                <sds-side-navigation #sideNav [model]="sideNavModel"></sds-side-navigation>
-              </sds-accordion-item>
-              <sds-accordion-item #filtersAccordion [expanded]="true">
-                <sds-accordion-item-header>Filter By</sds-accordion-item-header>
-                <sds-filters [form]="form" [fields]="filtersService.config" [model]="filtersService.model"
-                  (filterChange)="filterChange$.next($event)"></sds-filters>
-              </sds-accordion-item>
-            </sds-accordion>
-          </sds-toolbar>
+          <div class="grid-row">
+            <div class="grid-col-4">
+              <sds-side-toolbar [responsiveButtonText]="'Open Navigation'">
+                <ng-template #toolbarContent>
+                  <usa-accordion [singleSelect]="true" [bordered]="true">
+                    <usa-accordion-item>
+                      <ng-template UsaAccordionHeader>
+                        <span class="text-normal">Select Domain</span> <br />
+                        <span>{{ domainLabel }}</span>
+                      </ng-template>
+                      <ng-template UsaAccordionContent>
+                        <sds-side-navigation
+                          #sideNav
+                          [model]="sideNavModel"
+                          [ariaLabel]="'Demo Side Navigation'"
+                        ></sds-side-navigation>
+                      </ng-template>
+                    </usa-accordion-item>
+                    <usa-accordion-item header="Filter By">
+                      <ng-template UsaAccordionContent>
+                        <sds-filters
+                          [form]="form"
+                          [fields]="filtersService.config"
+                          [model]="filtersService.model"
+                          (filterChange)="filterChange$.next($event)"
+                        ></sds-filters>
+                      </ng-template>
+                    </usa-accordion-item>
+                  </usa-accordion>
+                </ng-template>
+              </sds-side-toolbar>
+            </div>
+          </div>
         </div>
         <div class="tablet:grid-col-fill">
-          <search-list-layout [service]="service" [configuration]="service.configuration">
+          <search-list-layout
+            [service]="service"
+            [configuration]="service.configuration"
+          >
             <ng-template #resultContent let-item>
               <div>
                 <help-item [model]="item"></help-item>

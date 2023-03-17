@@ -1,0 +1,63 @@
+<main>
+  <div class="sds-page margin-top-4">
+  	<div class="grid-container">
+		<h1 class="margin-bottom-2">Get Started</h1>
+		<p class="margin-bottom-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		<sds-tabs [(selectedTab)]="selectedTab">
+  			<sds-tab-panel #updateTab [tabHeader]="updateTabHeader" ariaLabel="Update or Renew an Entity">
+  				<ng-template #updateTabHeader>
+      				<h2>Most Recent Entities</h2>
+    			</ng-template>
+
+		<div class="margin-8">
+		<p>Showing 2 of 2 entities</p>
+		<div *ngFor="let entity of entities" class="border-base-lighter border-1px padding-2">
+			<div class="grid-row grid-gap margin-bottom-1">
+				<div class="grid-col-auto" ><h3>{{entity.legalBusinessName}}</h3></div>
+			    <div class="grid-col-fill">
+			        <span class="sds-tag sds-tag--status">
+			            <i class="sds-status sds-status--sm bg-warning"></i>{{entity.status}}
+			        </span>
+			    </div>
+			    <div class="grid-col-auto">
+			    	<button class="usa-button usa-button--base bg-base-lighter" [routerLink]="'/entity/dashboard'">Update</button>
+			    </div>
+			</div>
+
+			<div class="grid-row grid-gap">
+				<div class="grid-col-3 tablet:grid-col-2">
+						<workspace-field label="Unique Entity ID">{{entity.uei ? entity.uei : '(blank)'}}</workspace-field>
+					</div>
+					<div class="grid-col-3 tablet:grid-col-2">
+						<workspace-field label="Physical Address">{{entity.city + ', ' + entity.state}}</workspace-field>
+					</div>
+					<div class="grid-col-6  tablet:grid-col-2">
+						<workspace-field label="Last Updated">{{entity.lastUpdated}}</workspace-field>
+					</div>
+				</div>  
+			</div>
+		<button class="usa-button usa-button--base bg-base-lighter" [routerLink]="'/entity-registration/workspace'">View All</button>
+		</div>
+	</sds-tab-panel>
+	<sds-tab-panel #statusTab [tabHeader]="statusTabHeader" ariaLabel="Check Entity Status">
+		<ng-template #statusTabHeader>
+  			<h2>Check Entity Status</h2>
+		</ng-template>
+    </sds-tab-panel>
+	<sds-tab-panel #tab2 [tabHeader]="newTabHeader" ariaLabel="Add a new entity">
+		<ng-template #newTabHeader>
+			<h2>Add a new entity</h2>
+		</ng-template>
+		<div class="margin-8">
+		<p>Your entity will be assigned a unique entity ID when you add it to SAM.gov.</p>
+		<ul><li>Your unique entity ID is permanent.  It will be used to identify your entity for as long as it exists as a legal entity.</li>
+		   <li>Your entity must have a unique combination of a legal business name and physical address. </li>
+		</ul>
+		<p>Carefully review your existing entities before adding a new one, to prevent duplicates.</p>
+		<button class="usa-button" [routerLink]="'/entity/start'">New Entity</button>
+	</div>
+	</sds-tab-panel>
+</sds-tabs>
+	</div>
+</div>
+</main>

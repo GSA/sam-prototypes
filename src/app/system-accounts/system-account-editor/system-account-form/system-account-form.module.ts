@@ -1,11 +1,14 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
-import { SdsSelectionPanelModule, SdsToastModule } from '@gsa-sam/components';
-import { FormlyModule } from '@ngx-formly/core';
-import { SdsFormlyModule, SdsStepperModule } from '@gsa-sam/sam-formly';
-import { AppLayoutModule } from '../../../app-layout/app-layout.module';
-import { SdsActionsMenuModule, SideToolbarModule } from "@gsa-sam/layouts";
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterModule, Routes } from "@angular/router";
+import {
+  SdsSelectionPanelModule,
+  SdsSideToolbarModule,
+  SdsToastModule,
+} from "@gsa-sam/components";
+import { FormlyModule } from "@ngx-formly/core";
+import { SdsFormlyModule, SdsStepperModule } from "@gsa-sam/sam-formly";
+import { AppLayoutModule } from "../../../app-layout/app-layout.module";
 import {
   NgxBootstrapIconsModule,
   chevronLeft,
@@ -15,13 +18,13 @@ import {
   circle,
   question,
   save,
-  x
+  x,
 } from "ngx-bootstrap-icons";
-import { IconModule } from '@gsa-sam/ngx-uswds-icons';
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
-import { SystemAccountFormRoutingModule } from './system-account-form-routing.module';
-import { SystemAccountFormComponent } from './system-account-form.component';
-import { SystemAccountStepperComponent } from './system-account-stepper.component';
+import { SystemAccountFormRoutingModule } from "./system-account-form-routing.module";
+import { SystemAccountFormComponent } from "./system-account-form.component";
+import { SystemAccountStepperComponent } from "./system-account-stepper.component";
 
 @NgModule({
   declarations: [SystemAccountFormComponent, SystemAccountStepperComponent],
@@ -32,12 +35,21 @@ import { SystemAccountStepperComponent } from './system-account-stepper.componen
     SdsToastModule,
     FormlyModule,
     SdsFormlyModule,
-    SideToolbarModule,
+    SdsSideToolbarModule,
     SdsStepperModule,
     AppLayoutModule,
-    NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, circle, slashCircleFill, checkCircleFill, question, save, x }),
-    SystemAccountFormRoutingModule
+    NgxBootstrapIconsModule.pick({
+      chevronLeft,
+      chevronRight,
+      circle,
+      slashCircleFill,
+      checkCircleFill,
+      question,
+      save,
+      x,
+    }),
+    SystemAccountFormRoutingModule,
   ],
-  exports: [SystemAccountFormComponent, SystemAccountStepperComponent]
+  exports: [SystemAccountFormComponent, SystemAccountStepperComponent],
 })
-export class SystemAccountFormModule { }
+export class SystemAccountFormModule {}

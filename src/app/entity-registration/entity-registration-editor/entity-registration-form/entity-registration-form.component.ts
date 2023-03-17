@@ -1,20 +1,17 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
-import { EntityRegistrationEditorService } from '../../services/entity-registration-editor-service/entity-registration-editor.service';
-
+import { EntityRegistrationEditorService } from "../../services/entity-registration-editor-service/entity-registration-editor.service";
 
 @Component({
-  selector: 'app-entity-registration-form',
-  templateUrl: './entity-registration-form.component.html'
+  selector: "app-entity-registration-form",
+  templateUrl: "./entity-registration-form.component.html",
 })
 export class EntityRegistrationFormComponent implements OnInit {
-
   currentPageIndex = 0;
   form = new FormGroup({});
   model: any = { selectedIndex: 0 };
   options: FormlyFormOptions = {};
-
 
   constructor(public service: EntityRegistrationEditorService) {}
 
@@ -66,5 +63,4 @@ export class EntityRegistrationFormComponent implements OnInit {
   onDownload(event) {
     console.log("Downloading...");
   }
-
 }

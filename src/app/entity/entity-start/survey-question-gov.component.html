@@ -1,0 +1,18 @@
+<h1 class="margin-top-0">
+    Are you registering a government entity?
+</h1>
+<p>Select <strong>Yes</strong> if you are registering an official organization, department, or institution of a U.S. state, U.S. local, U.S. tribal or foreign government.</p>
+<form [formGroup]="form" class="measure-4">
+  <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+</form>
+
+<div class="sds-alert--expanded">
+<div class="grid-row grid-gap">
+	<div class="grid-col-auto padding-right-1">
+		<usa-icon [icon]="'exclamation-triangle'" [size]="'2x'"></usa-icon> 
+	</div>
+	<div class="grid-col-fill">
+		<p>If you are unsure whether you are registering a government entity, check with your government authorities to confirm.  Each government 	determines for itself what qualifies as a government entity.  Private companies with a public mission generally do not qualify.</p>
+	</div>
+</div>
+</div>

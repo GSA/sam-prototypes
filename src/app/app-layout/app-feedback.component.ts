@@ -1,27 +1,29 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { FormControl } from "@angular/forms";
 
 @Component({
-  selector: 'app-feedback',
+  selector: "app-feedback",
   template: `
-  	<sds-feedback [feedbackModel]="feedbackModel" [isCollapsedContent]="isCollapsed" (feedbackSubmit)="onFeedbackSubmit($event)"></sds-feedback>
+    <sds-feedback
+      [feedbackModel]="feedbackModel"
+      [isCollapsedContent]="isCollapsed"
+      (feedbackSubmit)="onFeedbackSubmit($event)"
+    ></sds-feedback>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppFeedbackComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   feedbackModel: FormControl;
   isCollapsed: boolean = true;
 
   ngOnInit() {
-    this.feedbackModel = new FormControl('');
+    this.feedbackModel = new FormControl("");
   }
 
   onFeedbackSubmit(feedback) {
     this.isCollapsed = true;
-  	console.log('Thank you for your feedback');
+    console.log("Thank you for your feedback");
   }
-
 }

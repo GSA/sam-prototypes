@@ -1,0 +1,52 @@
+<main>
+  <div class="sds-page margin-top-6">
+  	<div class="grid-container">
+  		<div class="grid-row">
+		<div class="grid-col-8 grid-offset-2">
+		  <entity-start-stepper>
+		  	  <sds-step id="surveyqone" 
+		  	    text="What is your goal?"
+		  	    [stepTemplate]="surveyqoneTemplate">
+		  	  </sds-step>
+		  	  <sds-step
+			    id="surveyqtwo"
+			    text="Who is requiring your entity to be registered?"
+			    [stepTemplate]="surveyqtwoTemplate"
+		  	  ></sds-step>
+		  	  <sds-step
+			    id="goventity"
+			    text="Are you registering a government entity?"
+			    [stepTemplate]="govEntityTemplate"
+		  	  ></sds-step>
+		  	  <sds-step
+			    id="foreignentity"
+			    text="Are you registering a foreign entity?"
+			    [stepTemplate]="foreignEntityTemplate"
+		  	  ></sds-step>
+		  	  <sds-step
+			    id="surveyresult"
+			    text="Select an option"
+			    [stepTemplate]="surveyResultTemplate"
+		  	  ></sds-step>
+		  </entity-start-stepper>
+		</div>
+		</div>
+  	</div>
+  </div>
+</main>
+
+<ng-template #surveyqoneTemplate>
+  <survey-question-one></survey-question-one>
+</ng-template>
+<ng-template #surveyqtwoTemplate>
+  <survey-question-two></survey-question-two>
+</ng-template>
+<ng-template #govEntityTemplate>
+	<survey-question-gov></survey-question-gov>
+</ng-template>
+<ng-template #foreignEntityTemplate>
+	<survey-question-foreign></survey-question-foreign>
+</ng-template>
+<ng-template #surveyResultTemplate>
+	<survey-result></survey-result>
+</ng-template>

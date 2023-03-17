@@ -1,0 +1,24 @@
+<div class="grid-col-fill">
+    <div [ngTemplateOutlet]="selectedStep ? selectedStep.content : null"></div>
+    <div class="grid-row grid-gap flex-justify-center margin-top-4">
+      <div class="margin-right-1">
+        <button
+          class="usa-button usa-button--base"
+          sdsStepperPrevious>
+          Previous
+        </button>
+      </div>
+
+      <div class="margin-right-1">
+        <button class="usa-button usa-button--base" [attr.id]="id + '-closeBtn'">
+          Close
+        </button>
+      </div>
+
+      <div class="margin-right-1">
+        <button class="usa-button usa-button--base" [attr.id]="id + '-helpBtn'" sdsStepperNext>
+          Next
+        </button>
+      </div>
+  </div>
+</div>

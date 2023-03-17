@@ -1,0 +1,91 @@
+<h2>Entity Summary</h2>
+
+<h3>Ready to start</h3>
+<p>We recommend you submit your entity validation first</p>
+<div class="grid-container padding-x-0">
+	<div class="grid-row"> 
+		<div class="grid-col-6"> 
+			<overview-card title="Business Information" [status]="model.entity.business.status">
+				<div class="grid-row">
+					<div class="grid-col-auto">
+					  <usa-icon class="text-secondary" [icon]="'clock-fill'" [size]="'2x'"></usa-icon>
+					</div>
+					<div class="grid-col-fill">
+						<div class="font-sans-2xs text-italic text-left margin-top-0">May require manual review<br>Review typically takes 2 - 5 business days</div>
+					</div>
+				</div>
+			</overview-card>
+		</div>
+	</div>
+</div>
+
+<h3>Other validations</h3>
+<p>We recommend you submit your other validations next</p>
+<div class="grid-container padding-x-0">
+	<div class="grid-row grid-gap"> 
+		<div class="grid-col-6 margin-bottom-2"> 
+			<overview-card title="Entity Relationships" [status]="model.entity.relationships.status">
+				<div class="grid-row">
+					<div class="grid-col-auto">
+					  <usa-icon class="text-secondary" [icon]="'clock-fill'" [size]="'2x'"></usa-icon>
+					</div>
+					<div class="grid-col-fill">
+						<div class="font-sans-2xs text-italic text-left margin-top-0">May require manual review<br>Review typically takes 2 - 5 business days</div>
+					</div>
+				</div>
+			</overview-card>
+		</div>
+		<div class="grid-col-6 margin-bottom-2">
+			<overview-card title="Tax Information" [status]="model.entity.tax.status">
+				<div class="grid-row">
+					<div class="grid-col-auto">
+					  <usa-icon class="text-secondary" [icon]="'clock-fill'" [size]="'2x'"></usa-icon>
+					</div>
+					<div class="grid-col-fill">
+						<div class="font-sans-2xs text-italic text-left margin-top-0">Requires manual review<br>Review typically takes 1 - 2 business days</div>
+					</div>
+				</div>
+			</overview-card>
+		</div>
+		<div class="grid-col-6 margin-bottom-2">
+			<overview-card title="CAGE Information" [status]="model.entity.cage.status">
+				<div class="grid-row">
+					<div class="grid-col-auto">
+					  <usa-icon class="text-secondary" [icon]="'clock-fill'" [size]="'2x'"></usa-icon>
+					</div>
+					<div class="grid-col-fill">
+						<div class="font-sans-2xs text-italic text-left margin-top-0">Requires manual review<br>Review typically takes 2 - 10 business days</div>
+					</div>
+				</div>
+			</overview-card>
+		</div>
+	</div>
+</div>
+
+
+<h3>Other sections</h3>
+<div class="grid-container padding-x-0">
+	<div class="grid-row grid-gap"> 
+		<div class="grid-col-6 margin-bottom-2"> 
+			<overview-card title="Financial Information" [status]="model.entity.relationships.status">
+			</overview-card>
+		</div>
+		<div class="grid-col-6 margin-bottom-2">
+			<overview-card title="Industry Description" [status]="model.entity.tax.status">
+			</overview-card>
+		</div>
+		<div class="grid-col-6 margin-bottom-2">
+			<overview-card title="Legal Information" [status]="model.entity.cage.status">
+			</overview-card>
+		</div>
+		<div class="grid-col-6 margin-bottom-2">
+			<overview-card title="Employee Information" [status]="model.entity.cage.status">
+			</overview-card>
+		</div>
+		<div class="grid-col-6 margin-bottom-2">
+			<overview-card title="Socio-Economic Information" [status]="model.entity.cage.status">
+				<div class="font-sans-2xs text-italic text-left margin-top-0">Optional</div>
+			</overview-card>
+		</div>
+	</div>
+</div>

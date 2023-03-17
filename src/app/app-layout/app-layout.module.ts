@@ -1,14 +1,24 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { RouterModule } from '@angular/router';
+import { RouterModule } from "@angular/router";
 import { FormlyModule } from "@ngx-formly/core";
 
-import { chevronLeft, chevronRight, dash, x, fileText, plus, question, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
+import {
+  chevronLeft,
+  chevronRight,
+  dash,
+  x,
+  fileText,
+  plus,
+  question,
+  NgxBootstrapIconsModule,
+} from "ngx-bootstrap-icons";
 
 import {
   SdsCollapseModule,
   SdsExternalLinkDirectivesModule,
   SdsSideNavigationModule,
+  SdsSideToolbarModule,
 } from "@gsa-sam/components";
 
 import {
@@ -17,7 +27,6 @@ import {
   SdsFeedbackModule,
   SdsSystemAlertModule,
   SdsSubheaderModule,
-  SideToolbarModule,
 } from "@gsa-sam/layouts";
 
 import { AppAlertsComponent } from "./app-alerts.component";
@@ -45,7 +54,7 @@ import { IconModule } from "@gsa-sam/ngx-uswds-icons";
     DisplayNavigationComponent,
     DisplaySectionComponent,
     DisplaySubsectionComponent,
-    ResponsiveSidebarComponent
+    ResponsiveSidebarComponent,
   ],
   imports: [
     CommonModule,
@@ -56,10 +65,18 @@ import { IconModule } from "@gsa-sam/ngx-uswds-icons";
     SdsFeedbackModule,
     SdsCollapseModule,
     SdsSideNavigationModule,
-    SideToolbarModule,
+    SdsSideToolbarModule,
     IconModule,
     SdsExternalLinkDirectivesModule,
-    NgxBootstrapIconsModule.pick({ chevronLeft, chevronRight, dash, x, fileText, plus, question })
+    NgxBootstrapIconsModule.pick({
+      chevronLeft,
+      chevronRight,
+      dash,
+      x,
+      fileText,
+      plus,
+      question,
+    }),
   ],
   exports: [
     AppHeaderComponent,
@@ -72,7 +89,7 @@ import { IconModule } from "@gsa-sam/ngx-uswds-icons";
     DisplayNavigationComponent,
     DisplaySectionComponent,
     DisplaySubsectionComponent,
-    ResponsiveSidebarComponent
+    ResponsiveSidebarComponent,
   ],
 })
-export class AppLayoutModule { }
+export class AppLayoutModule {}

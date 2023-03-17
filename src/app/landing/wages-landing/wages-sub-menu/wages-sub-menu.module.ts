@@ -1,24 +1,22 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
 import {
-    SdsSideNavigationModule,
-    SdsToolbarModule,
-    SdsAccordionModule
-  } from '@gsa-sam/components';
+  SdsSideNavigationModule,
+  SdsAccordionModule,
+  SdsSideToolbarModule,
+} from "@gsa-sam/components";
 
-import { WagesSubMenuComponent } from './wages-sub-menu.component';
+import { WagesSubMenuComponent } from "./wages-sub-menu.component";
 
 @NgModule({
   declarations: [WagesSubMenuComponent],
   imports: [
     CommonModule,
     SdsSideNavigationModule,
-    SdsToolbarModule,
-    SdsAccordionModule
+    SdsSideToolbarModule,
+    SdsAccordionModule,
   ],
-  exports: [   
-  	WagesSubMenuComponent
-  ]
+  exports: [WagesSubMenuComponent],
 })
-export class WagesSubMenuModule { }
+export class WagesSubMenuModule {}

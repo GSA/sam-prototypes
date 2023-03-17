@@ -1,13 +1,11 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { SdsTableModule } from '@gsa-sam/sam-material-extensions';
-import { AppLayoutModule } from '../../app-layout/app-layout.module';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { SdsTableModule } from "@gsa-sam/sam-material-extensions";
+import { AppLayoutModule } from "../../app-layout/app-layout.module";
 
-import { SdsActionsMenuModule } from '@gsa-sam/layouts';
-
-import { AccountDataServicesRoutingModule } from './account-data-services-routing.module';
-import { AccountDataServicesComponent } from './account-data-services.component';
-
+import { AccountDataServicesRoutingModule } from "./account-data-services-routing.module";
+import { AccountDataServicesComponent } from "./account-data-services.component";
+import { SdsActionsMenuModule } from "@gsa-sam/components";
 
 @NgModule({
   declarations: [AccountDataServicesComponent],
@@ -16,9 +14,9 @@ import { AccountDataServicesComponent } from './account-data-services.component'
     SdsTableModule,
     SdsActionsMenuModule,
     AppLayoutModule,
-    AccountDataServicesRoutingModule
+    AccountDataServicesRoutingModule,
   ],
   exports: [AccountDataServicesComponent],
-  bootstrap: [AccountDataServicesComponent]
+  bootstrap: [AccountDataServicesComponent],
 })
-export class AccountDataServicesModule { }
+export class AccountDataServicesModule {}

@@ -3,8 +3,7 @@ import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { AssistancelistItemComponent } from "./assistancelist-item.component";
-
-import { SdsActionsMenuModule } from "@gsa-sam/layouts";
+import { SdsActionsMenuModule } from "@gsa-sam/components";
 
 @NgModule({
   declarations: [AssistancelistItemComponent],

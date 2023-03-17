@@ -1,0 +1,31 @@
+
+<div class="sds-card"> 
+	<div class="sds-card__header sds-card__header--left"> 
+		<div class="grid-container padding-0">
+			<div class="grid-row margin-bottom-1 width-full">
+					<div class="grid-col-fill" ><h3>{{title}}</h3></div>
+				    <div class="grid-col-auto">
+				        <span class="sds-tag sds-tag--status padding-left-1">
+				            <i class="sds-status sds-status--sm bg-base"></i>{{status}}
+				        </span>
+				    </div>
+			</div>
+			<ng-content></ng-content>
+		</div>
+	</div> 
+	<div class="sds-card__body"> 
+		<div class="grid-container padding-0">
+			<div class="grid-row width-full">
+				<div class="grid-col-4">
+					<button class="usa-button bg-base-lightest border-base">Start</button>
+				</div>
+				<div class="grid-col-4">
+					<a class="usa-link" [routerLink]="''"><usa-icon [icon]="'question-circle'" [size]="'2x'"></usa-icon>Help</a>
+				</div>
+				<div class="grid-col-4">
+					<a class="usa-link" [routerLink]="''"><usa-icon [icon]="'file-word-fill'" [size]="'2x'"></usa-icon>Guide</a>
+				</div>
+			</div>
+		</div>
+	</div> 
+</div> 

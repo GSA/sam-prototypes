@@ -6,60 +6,62 @@ import {
   ChangeDetectorRef,
   AfterViewInit,
   ChangeDetectionStrategy,
-  OnChanges
-} from '@angular/core';
+  OnChanges,
+} from "@angular/core";
 
-import { Location } from '@angular/common';
+import { Location } from "@angular/common";
 
 import {
   ActivatedRoute,
   Router,
   NavigationEnd,
   UrlSegment,
-  NavigationStart
-} from '@angular/router';
+  NavigationStart,
+} from "@angular/router";
 
-import { FormlyFieldConfig } from '@ngx-formly/core';
+import { FormlyFieldConfig } from "@ngx-formly/core";
 import { CdkAccordionItem } from "@angular/cdk/accordion";
-import { SideNavigationModel, NavigationMode, INavigationLink, SdsDialogService, SDS_DIALOG_DATA } from '@gsa-sam/components';
+import {
+  SideNavigationModel,
+  NavigationMode,
+  INavigationLink,
+  SdsDialogService,
+  SDS_DIALOG_DATA,
+} from "@gsa-sam/components";
 
-import { filter, map } from 'rxjs/operators';
-import { FormGroup } from '@angular/forms';
-import { BehaviorSubject } from 'rxjs';
-import { SearchListConfiguration } from '@gsa-sam/layouts';
+import { filter, map } from "rxjs/operators";
+import { FormGroup } from "@angular/forms";
+import { BehaviorSubject } from "rxjs";
+import { SearchListConfiguration } from "@gsa-sam/layouts";
 
-import { DatabankService } from '../../services/databank-service/databank.service';
+import { DatabankService } from "../../services/databank-service/databank.service";
 
-import { filters } from './filters.config';
-
+import { filters } from "./filters.config";
 
 @Component({
-  selector: 'app-databank-search',
-  templateUrl: './databank-search.component.html',
-  styleUrls: ['./databank-search.component.scss']
+  selector: "app-databank-search",
+  templateUrl: "./databank-search.component.html",
+  styleUrls: ["./databank-search.component.scss"],
 })
 export class DatabankSearchComponent implements OnInit {
-
   public subheaderSearchModel: {};
 
   public subheaderSearchSettings = {
-    placeholder: 'Enter an ID or keyword'
-  }
+    placeholder: "Enter an ID or keyword",
+  };
 
   listModel: SearchListConfiguration = {
     defaultSortValue: "relevanceDescending",
     pageSize: 25,
-    sortList:
-    [
+    sortList: [
       { text: "Relevance", value: "relevanceDescending" },
       { text: "Updated Date", value: "dateDescending" },
       { text: "Title: A - Z", value: "titleAscending" },
-      { text: "Title: Z - A", value: "titleDescending" }
-    ]
+      { text: "Title: Z - A", value: "titleDescending" },
+    ],
   };
-  
-  @ViewChild('resultList', { static: true }) resultList;
 
+  @ViewChild("resultList", { static: true }) resultList;
 
   form = new FormGroup({});
   filterModel = {};
@@ -72,49 +74,37 @@ export class DatabankSearchComponent implements OnInit {
     private route: ActivatedRoute,
     public router: Router,
     private location: Location,
-    private change: ChangeDetectorRef) { 
+    private change: ChangeDetectorRef
+  ) {}
 
-  }
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
-
-  ngAfterViewInit() {      
+  ngAfterViewInit() {
     this.change.detectChanges();
-    if(this.resultList) {
-        this.resultList.updateFilter(this.filterModel);
+    if (this.resultList) {
+      this.resultList.updateFilter(this.filterModel);
     }
   }
 
   log(value) {
-    console.log(`%cLog: ${value}`, 'color: blue; font-weight: bold');
+    console.log(`%cLog: ${value}`, "color: blue; font-weight: bold");
   }
 
   search() {
-  	console.log(`%cLog: search databank`, 'color: blue; font-weight: bold');
+    console.log(`%cLog: search databank`, "color: blue; font-weight: bold");
   }
 
   resetAll() {
     this.filterModel = {};
   }
 
-  openDownloadDialog() {
+  openDownloadDialog() {}
 
-  }
+  openSaveDialog() {}
 
-  openSaveDialog() {
-
-  }
-
-  openSaveAsDialog() {
-
-  }
+  openSaveAsDialog() {}
 
   back() {
-      this.location.back();
+    this.location.back();
   }
-
 }
-
-
-

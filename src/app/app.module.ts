@@ -25,25 +25,24 @@ import { ToastrModule } from "ngx-toastr";
 import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserAnimationsModule,
-    BrowserModule,
-    HttpClientModule,
-    RouterModule,
-    A11yModule,
-    AppRoutingModule,
-    AppLayoutModule,
-    SdsExternalLinkDirectivesModule,
-    FormlyModule,
-    SdsToastModule,
-    IconModule,
-    ToastrModule.forRoot(SdsToastSettings),
-  ],
-  providers: [],
-  entryComponents: [SdsToastComponent],
-  bootstrap: [AppComponent],
-  exports: [],
+    declarations: [AppComponent],
+    imports: [
+        BrowserAnimationsModule,
+        BrowserModule,
+        HttpClientModule,
+        RouterModule,
+        A11yModule,
+        AppRoutingModule,
+        AppLayoutModule,
+        SdsExternalLinkDirectivesModule,
+        FormlyModule,
+        SdsToastModule,
+        IconModule,
+        ToastrModule.forRoot(SdsToastSettings),
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    exports: []
 })
 export class AppModule {
   static forRoot(): ModuleWithProviders<AppModule> {

@@ -4,10 +4,9 @@ import { RouterModule } from "@angular/router";
 
 import {
   SdsSideNavigationModule,
-  SdsToolbarModule,
   SdsAccordionModule,
   SdsPageModule,
-  SdsSearchModule
+  SdsSearchModule,
 } from "@gsa-sam/components";
 import {
   SdsFiltersModule,
@@ -20,7 +19,7 @@ import { FormsModule } from "@angular/forms";
 
 import { DatabankRoutingModule } from "./databank-routing.module";
 import { DatabankComponent } from "./databank.component";
-import { IconModule } from '@gsa-sam/ngx-uswds-icons';
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 import { NgxBootstrapIconsModule, allIcons } from "ngx-bootstrap-icons";
 import _ from "lodash-es";
 
@@ -29,11 +28,9 @@ import _ from "lodash-es";
     CommonModule,
     FormlyModule,
     FormsModule,
-    NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons))
-    ),
+    NgxBootstrapIconsModule.pick(Object.assign(_.cloneDeep(allIcons))),
     SdsSideNavigationModule,
-    SdsToolbarModule,
+
     SdsAccordionModule,
     SdsPageModule,
     SdsSearchModule,
@@ -46,4 +43,4 @@ import _ from "lodash-es";
   ],
   declarations: [DatabankComponent],
 })
-export class DatabankModule { }
+export class DatabankModule {}

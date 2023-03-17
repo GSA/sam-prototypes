@@ -1,0 +1,189 @@
+<main>
+  <div class="sds-page margin-top-4">
+  	<div class="grid-container">
+		<h1 class="margin-bottom-2">{{title}}</h1>
+		<p class="margin-bottom-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		<vertical-tabs [(selectedTab)]="selectedTab">
+			 <vertical-tab #overviewTab [tabHeader]="overviewHeader" ariaLabel="Update or Renew an Entity">
+  				<ng-template #overviewHeader>
+  					<div class="bg-base-dark padding-y-2 padding-x-1">
+      					<h2 class="text-left text-base-lightest">Entity Summary</h2>
+      				</div>
+    			</ng-template>
+
+				<div class="margin-8">
+					<overview-dashboard></overview-dashboard>	
+				</div>
+			</vertical-tab>  
+  			<vertical-tab #validationsTab [tabHeader]="validationsHeader" ariaLabel="Update or Renew an Entity">
+  				<ng-template #validationsHeader>
+  					<div class="bg-base-light padding-y-1 padding-x-1">
+      					<h2 class="text-left">Validations</h2>
+      				</div>
+    			</ng-template>
+
+				<div class="margin-8">
+					<validations-overview-dashboard></validations-overview-dashboard>	
+				</div>
+			</vertical-tab>  			
+			<vertical-tab #businessInformationTab [tabHeader]="businessInformationHeader" ariaLabel="Update or Renew an Entity">
+  				<ng-template #businessInformationHeader>
+  					<div class="grid-row padding-x-1 padding-y-2">
+  						<div class="grid-col-fill">
+      						<h3 class="text-left">Business Information</h3>
+      					</div>
+      					<div class="grid-col-auto">
+					  		<usa-icon [icon]="'circle'" [size]="'sm'"></usa-icon>
+      					</div>
+      				</div>
+    			</ng-template>
+
+				<div class="margin-8">
+					<business-information-dashboard></business-information-dashboard>
+				
+				</div>
+			</vertical-tab>
+			<vertical-tab #entityRelationshipsTab [tabHeader]="entityRelationshipsHeader" ariaLabel="Update or Renew an Entity">
+  				<ng-template #entityRelationshipsHeader>
+  					<div class="grid-row padding-x-1 padding-y-2">
+  						<div class="grid-col-fill">
+      						<h3 class="text-left">Entity Relationships</h3>
+      					</div>
+      					<div class="grid-col-auto">
+					  		<usa-icon [icon]="'circle'" [size]="'sm'"></usa-icon>
+      					</div>
+      				</div>
+    			</ng-template>
+				<div class="margin-8">
+					<entity-relationships-dashboard></entity-relationships-dashboard>
+				</div>
+			</vertical-tab>
+			<vertical-tab #cageInformationTab [tabHeader]="cageInformationHeader" ariaLabel="Update or Renew an Entity">
+  				<ng-template #cageInformationHeader>
+  					<div class="grid-row padding-x-1 padding-y-2">
+  						<div class="grid-col-fill">
+      						<h3 class="text-left">Tax Information</h3>
+      					</div>
+      					<div class="grid-col-auto">
+					  		<usa-icon [icon]="'circle'" [size]="'sm'"></usa-icon>
+      					</div>
+      				</div>
+    			</ng-template>
+
+				<div class="margin-8">
+					<cage-information-dashboard></cage-information-dashboard>
+				
+				</div>
+			</vertical-tab>
+			<vertical-tab #taxInformationTab [tabHeader]="taxInformationHeader" ariaLabel="Update or Renew an Entity">
+  				<ng-template #taxInformationHeader>
+  					<div class="grid-row padding-x-1 padding-y-2">
+  						<div class="grid-col-fill">
+      						<h3 class="text-left">CAGE Code</h3>
+      					</div>
+      					<div class="grid-col-auto">
+					  		<usa-icon [icon]="'circle'" [size]="'sm'"></usa-icon>
+      					</div>
+      				</div>
+    			</ng-template>
+
+				<div class="margin-8">
+					<tax-information-dashboard></tax-information-dashboard>
+				
+				</div>
+			</vertical-tab>
+			<vertical-tab #sectionsTab [tabHeader]="sectionsHeader" ariaLabel="Update or Renew an Entity">
+  				<ng-template #sectionsHeader>
+  					<div class="bg-base-light padding-y-1 padding-x-1">
+      					<h2 class="text-left">Other Sections</h2>
+      				</div>
+    			</ng-template>
+
+				<div class="margin-8">
+					<sections-overview-dashboard></sections-overview-dashboard>
+				</div>
+			</vertical-tab>
+			<vertical-tab #financialInformationTab [tabHeader]="financialInformationHeader" ariaLabel="Update or Renew an Entity">
+  				<ng-template #financialInformationHeader>
+  					<div class="grid-row padding-x-1 padding-y-2">
+  						<div class="grid-col-fill">
+      						<h3 class="text-left">Financial Information</h3>
+      					</div>
+      					<div class="grid-col-auto">
+					  		<usa-icon [icon]="'circle'" [size]="'sm'"></usa-icon>
+      					</div>
+      				</div>
+    			</ng-template>
+
+				<div class="margin-8">
+					<financial-information-dashboard></financial-information-dashboard>
+				</div>
+			</vertical-tab>
+			<vertical-tab #industryInformationTab [tabHeader]="industryInformationHeader" ariaLabel="Update or Renew an Entity">
+  				<ng-template #industryInformationHeader>
+  					<div class="grid-row padding-x-1 padding-y-2">
+  						<div class="grid-col-fill">
+      						<h3 class="text-left">Industry Description</h3>
+      					</div>
+      					<div class="grid-col-auto">
+					  		<usa-icon [icon]="'circle'" [size]="'sm'"></usa-icon>
+      					</div>
+      				</div>
+    			</ng-template>
+
+				<div class="margin-8">
+					<industry-information-dashboard></industry-information-dashboard>
+				</div>
+			</vertical-tab>
+			<vertical-tab #legalInformationTab [tabHeader]="legalInformationHeader" ariaLabel="Update or Renew an Entity">
+  				<ng-template #legalInformationHeader>
+  					<div class="grid-row padding-x-1 padding-y-2">
+  						<div class="grid-col-fill">
+      						<h3 class="text-left">Legal Information</h3>
+      					</div>
+      					<div class="grid-col-auto">
+					  		<usa-icon [icon]="'circle'" [size]="'sm'"></usa-icon>
+      					</div>
+      				</div>
+    			</ng-template>
+
+				<div class="margin-8">
+					<legal-information-dashboard></legal-information-dashboard>
+				</div>
+			</vertical-tab>
+			<vertical-tab #employeeInformationTab [tabHeader]="employeeInformationHeader" ariaLabel="Update or Renew an Entity">
+  				<ng-template #employeeInformationHeader>
+  					<div class="grid-row padding-x-1 padding-y-2">
+  						<div class="grid-col-fill">
+      						<h3 class="text-left">Employee Information</h3>
+      					</div>
+      					<div class="grid-col-auto">
+					  		<usa-icon [icon]="'circle'" [size]="'sm'"></usa-icon>
+      					</div>
+      				</div>
+    			</ng-template>
+
+				<div class="margin-8">
+					<employee-information-dashboard></employee-information-dashboard>
+				</div>
+			</vertical-tab>
+			<vertical-tab #socioEconomicTab [tabHeader]="socioEconomicHeader" ariaLabel="Update or Renew an Entity">
+  				<ng-template #socioEconomicHeader>
+  					<div class="grid-row padding-x-1 padding-y-2">
+  						<div class="grid-col-fill">
+      						<h3 class="text-left">Socio-Economic Information</h3>
+      					</div>
+      					<div class="grid-col-auto">
+					  		<usa-icon [icon]="'circle'" [size]="'sm'"></usa-icon>
+      					</div>
+      				</div>
+    			</ng-template>
+
+				<div class="margin-8">
+					<socio-economic-dashboard></socio-economic-dashboard>
+				</div>
+			</vertical-tab>
+		</vertical-tabs>
+	</div>
+  </div>
+</main>

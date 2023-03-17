@@ -5,10 +5,10 @@ import { OpportunitiesWsItemModule } from "./opportunities-ws-item/opportunities
 
 import {
   SdsSideNavigationModule,
-  SdsToolbarModule,
   SdsAccordionModule,
   SdsPageModule,
-  SdsSearchModule
+  SdsSearchModule,
+  SdsSideToolbarModule,
 } from "@gsa-sam/components";
 import {
   SdsFiltersModule,
@@ -20,7 +20,7 @@ import { FormlyModule } from "@ngx-formly/core";
 import { OpportunitiesComponent } from "./opportunities.component";
 import { OpportunitiesRoutingModule } from "./opportunities-routing.module";
 
-import { IconModule } from '@gsa-sam/ngx-uswds-icons';
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import _ from "lodash-es";
 
@@ -32,7 +32,7 @@ import _ from "lodash-es";
     ReactiveFormsModule,
     OpportunitiesWsItemModule,
     SdsPageModule,
-    SdsToolbarModule,
+    SdsSideToolbarModule,
     SdsAccordionModule,
     SdsFiltersModule,
     SdsSideNavigationModule,
@@ -41,11 +41,9 @@ import _ from "lodash-es";
     IconModule,
     FormlyModule.forRoot(),
     SearchListServiceModule,
-    NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons))
-    ),
+    NgxBootstrapIconsModule.pick(Object.assign(_.cloneDeep(allIcons))),
   ],
   declarations: [OpportunitiesComponent],
   exports: [OpportunitiesComponent],
 })
-export class OpportunitiesModule { }
+export class OpportunitiesModule {}

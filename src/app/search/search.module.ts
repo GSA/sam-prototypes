@@ -3,21 +3,17 @@ import { CommonModule } from "@angular/common";
 
 import {
   SdsSideNavigationModule,
-  SdsToolbarModule,
   SdsPageModule,
   SdsCollapseModule,
   SdsSearchModule,
   SdsSelectionPanelModule,
+  SdsSideToolbarModule,
 } from "@gsa-sam/components";
 import {
   SdsFiltersModule,
   SDSFormlyUpdateComunicationService,
 } from "@gsa-sam/sam-formly";
-import {
-  SdsSubheaderModule,
-  SearchListServiceModule,
-  SideToolbarModule,
-} from "@gsa-sam/layouts";
+import { SdsSubheaderModule, SearchListServiceModule } from "@gsa-sam/layouts";
 import { SdsAccordionModule } from "@gsa-sam/sam-material-extensions";
 
 import { FormlyModule } from "@ngx-formly/core";
@@ -47,10 +43,11 @@ import { SearchServiceModule } from "../services/search-service/search-service.m
 import { AdvancedFiltersModule } from "./search-filters/advanced-filters/advanced-filters.module";
 import { SearchRoutingModule } from "./search-routing.module";
 import { SearchComponent } from "./search.component";
-import { IconModule } from '@gsa-sam/ngx-uswds-icons';
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import _ from "lodash-es";
 import { SearchFormlyModule } from "./search-formly/search-formly.module";
+import { AppLayoutModule } from "../app-layout/app-layout.module";
 
 @NgModule({
   declarations: [SearchComponent],
@@ -58,9 +55,9 @@ import { SearchFormlyModule } from "./search-formly/search-formly.module";
     CommonModule,
     FormlyModule,
     FormsModule,
-
+    AppLayoutModule,
     SdsSideNavigationModule,
-    SdsToolbarModule,
+
     SdsAccordionModule,
     SdsPageModule,
     SdsCollapseModule,
@@ -93,12 +90,10 @@ import { SearchFormlyModule } from "./search-formly/search-formly.module";
     AdvancedFiltersModule,
     IconModule,
     SdsSelectionPanelModule,
-    SideToolbarModule,
-    NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons))
-    ),
+    SdsSideToolbarModule,
+    NgxBootstrapIconsModule.pick(Object.assign(_.cloneDeep(allIcons))),
     SearchFormlyModule,
   ],
   exports: [SearchComponent],
 })
-export class SearchModule { }
+export class SearchModule {}

@@ -7,11 +7,11 @@ import { SearchSaveComponent } from "./search-save.component";
 
 import {
   SdsSideNavigationModule,
-  SdsToolbarModule,
   SdsAccordionModule,
   SdsPageModule,
   SdsSearchModule,
-  SdsDialogModule
+  SdsDialogModule,
+  SdsSideToolbarModule,
 } from "@gsa-sam/components";
 import {
   SdsFiltersModule,
@@ -26,7 +26,7 @@ import { FormlySelectModule } from "@ngx-formly/core/select";
 import { SearchSaveServiceModule } from "./search-save-service/search-save-service.module";
 
 import { SearchSaveResultModule } from "./search-save-result/search-save-result.module";
-import { IconModule } from '@gsa-sam/ngx-uswds-icons';
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import _ from "lodash-es";
 
@@ -34,15 +34,16 @@ import _ from "lodash-es";
   declarations: [SearchSaveComponent],
   imports: [
     CommonModule,
+    SdsSideToolbarModule,
     RouterModule,
     IconModule,
     SdsSideNavigationModule,
-    SdsToolbarModule,
+
     SdsAccordionModule,
     SdsPageModule,
     SdsSearchModule,
     SdsDialogModule,
-    SdsToolbarModule,
+
     SdsSideNavigationModule,
     SdsSubheaderModule,
     SdsFiltersModule,
@@ -54,9 +55,7 @@ import _ from "lodash-es";
     SearchSaveRoutingModule,
     SearchSaveServiceModule,
     SearchSaveResultModule,
-    NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons))
-    ),
+    NgxBootstrapIconsModule.pick(Object.assign(_.cloneDeep(allIcons))),
   ],
 })
-export class SearchSaveModule { }
+export class SearchSaveModule {}

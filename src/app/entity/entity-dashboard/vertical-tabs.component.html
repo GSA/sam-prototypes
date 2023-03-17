@@ -1,0 +1,31 @@
+<div class="grid-row">
+  <div class="grid-col-auto">
+    <div role="tablist">
+      <div *ngFor="let tabPanel of tabPanels" class="grid-row">
+      <button
+        role="tab"
+        class="bg-accent-cool-lighter padding-0 border-1px border-base-lighter grid-col-fill"
+        [attr.aria-selected]="tabPanel.selected"
+        [attr.tabindex]="tabPanel.selected ? 0 : -1"
+        [attr.aria-controls]="tabPanel.id"
+        [attr.aria-label]="tabPanel.ariaLabel"
+        [disabled]="tabPanel.disabled"
+        (click)="onTabClicked($event, tabPanel)"
+        (keydown)="onKeyDown($event)"
+      >
+        <ng-container *ngIf="isObj(tabPanel.tabHeader); else textHeader">
+          <ng-template *ngTemplateOutlet="tabPanel.tabHeader"></ng-template>
+        </ng-container>
+        <ng-template #textHeader>
+          {{ tabPanel.tabHeader }}
+        </ng-template>
+      </button>
+      </div>
+    </div>
+  </div>
+  <div class="grid-col-fill">
+    <div class="border-base-light border-1px" tabindex="0">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

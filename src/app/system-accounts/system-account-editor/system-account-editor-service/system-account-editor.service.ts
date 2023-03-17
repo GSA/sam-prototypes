@@ -1,30 +1,28 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 
-import { SystemAccountsService } from '../../../services/system-accounts-service/system-accounts.service';
+import { SystemAccountsService } from "../../../services/system-accounts-service/system-accounts.service";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class SystemAccountEditorService {
-
   form = new FormGroup({});
   model: any = { selectedIndex: 0 };
   stepValidityMap = {};
-  
+
   options: FormlyFormOptions = {};
   fields: FormlyFieldConfig[] = [
     {
-      key: 'system-information',
+      key: "system-information",
       fieldGroup: [
         {
           key: "accountName",
           type: "input",
           templateOptions: {
             label: "System Account Name",
-            description:
-              "Provide a unique name for your new system account",
+            description: "Provide a unique name for your new system account",
             placeholder: "e.g. None",
             required: true,
           },
@@ -55,7 +53,7 @@ export class SystemAccountEditorService {
       ],
     },
     {
-      key: 'organization-information',
+      key: "organization-information",
       fieldGroup: [
         {
           key: "organization",
@@ -93,7 +91,7 @@ export class SystemAccountEditorService {
       ],
     },
     {
-      key: 'permissions',
+      key: "permissions",
       fieldGroup: [
         {
           key: "permissions",
@@ -261,7 +259,7 @@ export class SystemAccountEditorService {
       ],
     },
     {
-      key: 'security',
+      key: "security",
       fieldGroup: [
         {
           key: "ipAddress",
@@ -336,8 +334,7 @@ export class SystemAccountEditorService {
           key: "attachments",
           fieldGroup: [
             {
-              template:
-                "<h2>Attachments</h2><button>Attach Document</button>",
+              template: "<h2>Attachments</h2><button>Attach Document</button>",
             },
           ],
         },
@@ -353,15 +350,14 @@ export class SystemAccountEditorService {
     },
   ];
 
-  constructor(private accountsService: SystemAccountsService) { }
+  constructor(private accountsService: SystemAccountsService) {}
 
   getFields(id: string): FormlyFieldConfig {
-    for(let i=0; i<this.fields.length; i++) {
-      if(id === this.fields[i].key) {
+    for (let i = 0; i < this.fields.length; i++) {
+      if (id === this.fields[i].key) {
         return this.fields[i];
       }
     }
     return null;
-
   }
 }

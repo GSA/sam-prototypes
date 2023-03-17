@@ -1,7 +1,19 @@
-  <sds-toolbar #toolbar="sdsToolbar" [expanded]="true">
-    <sds-accordion>
-      <sds-accordion-item [expanded]="true">
-        <sds-side-navigation #sideNav [model]="sideMenu"></sds-side-navigation>
-      </sds-accordion-item>
-    </sds-accordion>
-  </sds-toolbar>
+<div class="grid-row">
+  <div class="grid-col-4">
+    <sds-side-toolbar [responsiveButtonText]="'Open Navigation'">
+      <ng-template #toolbarContent>
+        <usa-accordion [singleSelect]="true" [bordered]="true">
+          <usa-accordion-item>
+            <ng-template UsaAccordionContent>
+              <sds-side-navigation
+                #sideNav
+                [model]="sideMenu"
+                [ariaLabel]="'Demo Side Navigation'"
+              ></sds-side-navigation>
+            </ng-template>
+          </usa-accordion-item>
+        </usa-accordion>
+      </ng-template>
+    </sds-side-toolbar>
+  </div>
+</div>

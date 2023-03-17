@@ -1,20 +1,18 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
 
 import { chevronLeft, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 
-import { SdsButtonGroupModule } from '@gsa-sam/sam-material-extensions';
+import { SdsButtonGroupModule } from "@gsa-sam/sam-material-extensions";
 import { SdsSubheaderModule } from "@gsa-sam/layouts";
 
-import { ComponentsModule } from '../../components/components.module';
-import { AppLayoutModule } from '../../app-layout/app-layout.module';
-import { IconModule } from '@gsa-sam/ngx-uswds-icons';
+import { ComponentsModule } from "../../components/components.module";
+import { AppLayoutModule } from "../../app-layout/app-layout.module";
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 
-import { SystemAccountEditorRoutingModule } from './system-account-editor-routing.module';
-import { SystemAccountEditorComponent } from './system-account-editor.component';
-
+import { SystemAccountEditorRoutingModule } from "./system-account-editor-routing.module";
+import { SystemAccountEditorComponent } from "./system-account-editor.component";
 
 @NgModule({
   declarations: [SystemAccountEditorComponent],
@@ -27,10 +25,8 @@ import { SystemAccountEditorComponent } from './system-account-editor.component'
     SdsSubheaderModule,
     SdsButtonGroupModule,
     NgxBootstrapIconsModule.pick({ chevronLeft }),
-    SystemAccountEditorRoutingModule
+    SystemAccountEditorRoutingModule,
   ],
-  exports: [SystemAccountEditorComponent]
+  exports: [SystemAccountEditorComponent],
 })
-export class SystemAccountEditorModule { }
-
-
+export class SystemAccountEditorModule {}

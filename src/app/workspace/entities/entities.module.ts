@@ -8,17 +8,17 @@ import { SearchResultListEntityDataItemModule } from "./entity-entry/search-list
 
 import {
   SdsSideNavigationModule,
-  SdsToolbarModule,
   SdsAccordionModule,
   SdsPageModule,
-  SdsSearchModule
+  SdsSearchModule,
+  SdsSideToolbarModule,
 } from "@gsa-sam/components";
 import {
   SdsFiltersModule,
   SDSFormlyUpdateComunicationService,
 } from "@gsa-sam/sam-formly";
 import { SdsSubheaderModule, SearchListServiceModule } from "@gsa-sam/layouts";
-import { IconModule } from '@gsa-sam/ngx-uswds-icons';
+import { IconModule } from "@gsa-sam/ngx-uswds-icons";
 import { FormlyModule } from "@ngx-formly/core";
 import { allIcons, NgxBootstrapIconsModule } from "ngx-bootstrap-icons";
 import _ from "lodash-es";
@@ -30,7 +30,7 @@ import _ from "lodash-es";
     ReactiveFormsModule,
     SearchResultListEntityDataItemModule,
     SdsPageModule,
-    SdsToolbarModule,
+    SdsSideToolbarModule,
     SdsAccordionModule,
     SdsFiltersModule,
     SdsSideNavigationModule,
@@ -40,12 +40,10 @@ import _ from "lodash-es";
     FormlyModule.forRoot(),
     EntitiesRoutingModule,
     SearchListServiceModule,
-    NgxBootstrapIconsModule.pick(
-      Object.assign(_.cloneDeep(allIcons))
-    ),
+    NgxBootstrapIconsModule.pick(Object.assign(_.cloneDeep(allIcons))),
   ],
   declarations: [EntityListComponent],
   exports: [EntityListComponent],
   providers: [EntityService],
 })
-export class EntitiesModule { }
+export class EntitiesModule {}

@@ -1,34 +1,38 @@
-import { Component, OnInit, Input, ViewChild, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  ViewChild,
+  ChangeDetectorRef,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 
-import { OpportunitiesService } from './service/opportunities.service';
-import { SearchListConfiguration } from '@gsa-sam/layouts';
-import { FormlyFieldConfig } from '@ngx-formly/core';
+import { OpportunitiesService } from "./service/opportunities.service";
+import { SearchListConfiguration } from "@gsa-sam/layouts";
 
-import { filter, map } from 'rxjs/operators';
-import { FormGroup } from '@angular/forms';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject } from "rxjs";
 
-import { opportunitiesFilters } from './filter.config';
+import { opportunitiesFilters } from "./filter.config";
 
-import { workspaceSideNavigationData } from '../../common/workspace/navigation.data';
+import { workspaceSideNavigationData } from "../../common/workspace/navigation.data";
+import { FormGroup } from "@angular/forms";
 
 @Component({
-  selector: 'app-opportunities',
-  templateUrl: './opportunities.component.html',
-  styleUrls: ['./opportunities.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Default
+  selector: "app-opportunities",
+  templateUrl: "./opportunities.component.html",
+  styleUrls: ["./opportunities.component.scss"],
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class OpportunitiesComponent implements OnInit {
-
   subheader = {
     actions: [
-      { id: 'downloadAction', icon: 'downloadAction', text: 'Download' }
-    ]
+      { id: "downloadAction", icon: "downloadAction", text: "Download" },
+    ],
   };
 
   navigationModel = workspaceSideNavigationData;
 
-  @ViewChild('resultList', { static: true }) resultList;
+  @ViewChild("resultList", { static: true }) resultList;
 
   form = new FormGroup({});
 
@@ -40,39 +44,40 @@ export class OpportunitiesComponent implements OnInit {
 
   public filterChange$ = new BehaviorSubject<object>(null);
 
-  constructor(public service: OpportunitiesService, private change: ChangeDetectorRef) {
-
-  }
+  constructor(
+    public service: OpportunitiesService,
+    private change: ChangeDetectorRef
+  ) {}
 
   configuration: SearchListConfiguration = {
-    defaultSortValue: 'modifiedAscending', pageSize: 25,
-    sortList: [{ text: 'Last Modified (Newest)', value: 'modifiedAscending' },
-    { text: 'Last Modified (Oldest)', value: 'modifiedDescending' },
-    { text: 'Solicitation ID (Low - High)', value: 'isAscending' },
-    { text: 'Solicitation ID (High - Low)', value: 'isDescending' },
-    { text: 'Title A - Z', value: 'titleA-Z' },
-    { text: 'Title Z - A', value: 'titleZ-A' },
-    ]
-
+    defaultSortValue: "modifiedAscending",
+    pageSize: 25,
+    sortList: [
+      { text: "Last Modified (Newest)", value: "modifiedAscending" },
+      { text: "Last Modified (Oldest)", value: "modifiedDescending" },
+      { text: "Solicitation ID (Low - High)", value: "isAscending" },
+      { text: "Solicitation ID (High - Low)", value: "isDescending" },
+      { text: "Title A - Z", value: "titleA-Z" },
+      { text: "Title Z - A", value: "titleZ-A" },
+    ],
   };
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  ngAfterViewInit() {      
+  ngAfterViewInit() {
     this.change.detectChanges();
   }
 
-  subheaderActionClicked(action) {
-
-  }
+  subheaderActionClicked(action) {}
 
   newAccount(event) {
-    console.log(`%cLog: Creating new account`, 'color: blue; font-weight: bold');
+    console.log(
+      `%cLog: Creating new account`,
+      "color: blue; font-weight: bold"
+    );
   }
 
   newSearch(event) {
-    console.log(`%cLog: Searching accounts`, 'color: blue; font-weight: bold');
+    console.log(`%cLog: Searching accounts`, "color: blue; font-weight: bold");
   }
-
 }
