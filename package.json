@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "federalist": "npm install --only=dev && ng build --prod --base-href=$BASEURL/"
+    "federalist": "npm install --only=dev && ng build --configuration production --base-href=$BASEURL/"
   },
   "private": true,
   "dependencies": {
