@@ -30,7 +30,7 @@
     "@gsa-sam/ngx-uswds-icons": "^14.0.0-beta.0",
     "@gsa-sam/sam-formly": "^14.0.0-beta.0",
     "@gsa-sam/sam-material-extensions": "^14.0.0-beta.0",
-    "@gsa-sam/sam-styles": "^1.0.1-alpha.3",
+    "@gsa-sam/sam-styles": "^3.0.0-alpha.1",
     "@ngrx/effects": "^14.3.2",
     "@ngrx/entity": "^14.3.2",
     "@ngrx/router-store": "^14.3.2",
