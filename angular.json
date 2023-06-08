@@ -41,7 +41,7 @@
               },
               {
                 "glob": "**/*",
-                "input": "./node_modules/@gsa-sam/sam-styles/src/packages/images",
+                "input": "./node_modules/@gsa-sam/sam-styles/sam-styles/packages/images",
                 "output": "/assets/uswds/img/"
               }
             ],
