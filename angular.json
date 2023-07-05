@@ -26,9 +26,33 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "preserveSymlinks": true,
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/material.theme.scss", "src/styles.scss"],
-            "scripts": ["node_modules/uswds/dist/js/uswds.min.js"]
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@uswds/uswds/dist/fonts/",
+                "output": "/assets/uswds/fonts/"
+              },
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@uswds/uswds/dist/img/",
+                "output": "/assets/uswds/img/"
+              },
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@gsa-sam/sam-styles/sam-styles/packages/images",
+                "output": "/assets/uswds/img/"
+              }
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./node_modules/@uswds/uswds/packages",
+                "./node_modules/@gsa-sam/sam-styles"
+              ]
+            },
+            "styles": [ "src/styles.scss", "src/material.theme.scss"],
+            "scripts": []
           },
           "configurations": {
             "production": {
