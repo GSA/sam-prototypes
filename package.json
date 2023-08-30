@@ -45,14 +45,14 @@
     "lodash-es": "^4.17.15",
     "ngx-bootstrap-icons": "^1.7.2",
     "ngx-highlightjs": "^4.1.1",
-    "ngx-markdown": "14.0.1",
+    "ngx-markdown": "^15.0.0",
     "ngx-toastr": "^13.2.0",
     "qs": "^6.9.6",
     "rxjs": "~6.5.5",
     "sass": "^1.58.3",
     "tsickle": "0.39.1",
     "tslib": "^2.0.0",
-    "typescript": "4.6.4",
+    "typescript": "^4.8.2",
     "zone.js": "^0.11.3"
   },
   "devDependencies": {
