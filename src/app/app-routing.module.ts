@@ -187,7 +187,7 @@ const routes: Routes = [
       scrollPositionRestoration: "enabled",
       useHash: true,
       anchorScrolling: "enabled",
-      relativeLinkResolution: "legacy",
+    //  relativeLinkResolution: "legacy",
     }),
   ],
   exports: [RouterModule],
