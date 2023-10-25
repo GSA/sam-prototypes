@@ -14,7 +14,7 @@ import { FieldArrayType, FormlyFormBuilder } from "@ngx-formly/core";
 })
 export class SubawardeeReadOnlyRepeatTypeComponent extends FieldArrayType {
   constructor(builder: FormlyFormBuilder) {
-    super(builder);
+    super();
   }
   ngOnInit() {
     this.processFieldGroup(this.field.fieldGroup);

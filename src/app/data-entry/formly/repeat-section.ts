@@ -60,7 +60,7 @@ import { AddSubawardeeModalComponent } from '../../data-entry-multi-form/modal/a
 })
 export class SubawardeeRepeatTypeComponent extends FieldArrayType {
   constructor(builder: FormlyFormBuilder, public dialog: SdsDialogService, public cdr: ChangeDetectorRef) {
-    super(builder);
+    super();
   }
 
   log(item) {
@@ -68,16 +68,16 @@ export class SubawardeeRepeatTypeComponent extends FieldArrayType {
   }
   showNoresultFound: boolean = true;
   addSubawardee(id) {
-    const model1 = this.field.fieldArray.templateOptions.getDetails(
+    const model1 = this.field.fieldArray['templateOptions'].getDetails(
       id.toString() + "+AWARD"
     );
     const data: any = {
-      fields: this.field.fieldArray.templateOptions.subawardeefields,
+      fields: this.field.fieldArray['templateOptions'].subawardeefields,
       model: model1,
       submit: "Submit",
       title: "Add Subawardee",
       cancel: "No thanks",
-      stepValidityMap: this.field.fieldArray.templateOptions.stepValidityMap,
+      stepValidityMap: this.field.fieldArray['templateOptions'].stepValidityMap,
     };
 
     const dialogRef = this.dialog.open(AddSubawardeeModalComponent, {
@@ -87,7 +87,7 @@ export class SubawardeeRepeatTypeComponent extends FieldArrayType {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        this.field.fieldArray.fieldGroup[0].templateOptions.subawardItem = result;
+        this.field.fieldArray['fieldGroup'][0].templateOptions.subawardItem = result;
         this.add();
         this.model[this.model.length - 1] = result;
         this.formControl.controls[this.model.length - 1].setValue({ subawards: result });
@@ -98,7 +98,7 @@ export class SubawardeeRepeatTypeComponent extends FieldArrayType {
   }
   ngOnInit(): void {
     if (this.model != null && this.model.length > 0) {
-      this.field.fieldArray.fieldGroup[0].templateOptions.subawardItem = this.model;
+      this.field.fieldArray['fieldGroup'][0].templateOptions.subawardItem = this.model;
       this.showNoresultFound = this.model.length == 0 ? true : false;
     }
   }

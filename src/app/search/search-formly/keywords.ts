@@ -11,13 +11,13 @@ export class FormlyKeywordComponent extends FieldType implements OnInit {
   _initialModel: any;
 
   ngOnInit() {
-    if (!this.field.fieldArray || !this.field.fieldArray.fieldGroup) {
+    if (!this.field.fieldArray || !this.field.fieldArray['fieldGroup']) {
       throw new Error('Please define contents of keywords through a fieldGroup within the fieldArray property')
     }
 
     this._initialModel = this.model && this.model[this.key as string] ? {...this.model[this.key as string]} : {};
-    if (this.field.fieldArray && this.field.fieldArray.fieldGroup) {
-      this.field.fieldArray.fieldGroup.forEach((fieldConfig: FormlyFieldConfig) => {
+    if (this.field.fieldArray && this.field.fieldArray['fieldGroup']) {
+      this.field.fieldArray['fieldGroup'].forEach((fieldConfig: FormlyFieldConfig) => {
         this.updateFieldConfig(fieldConfig);
       })
     }
