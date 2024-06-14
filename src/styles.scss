@@ -1,3 +1,12 @@
+@use "sam-styles/packages/theme/settings" with (
+  $sam-uswds-font-path: "/assets/uswds/fonts",
+  $sam-uswds-image-path: "/assets/uswds/img"
+);
+@use "sam-styles/packages/theme/variables" with (
+  $sam-image-path: "/assets/uswds/img"
+);
+@forward "sam-styles";
+
 
 @import '~@angular/cdk/overlay-prebuilt.css';
 
@@ -22,9 +31,6 @@ $theme-font-type-sans: 'source-sans-pro';
 $theme-font-role-heading: 'sans';
 $theme-font-role-body: 'sans';
 $theme-font-role-alt: 'sans';
-
-
-@import '~@gsa-sam/sam-styles/src/stylesheets/sam.scss';
 
 $wcag-target: 'A';
 /* autoprefixer grid: autoplace */
